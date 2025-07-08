@@ -15,7 +15,7 @@ public partial class BDD_SIDCOPContext : DbContext
     }
 
     public BDD_SIDCOPContext()
-    { 
+    {
     }
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
@@ -191,6 +191,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbCAIs", "Vnta");
 
+            entity.HasIndex(e => e.NCai_Codigo, "UQ_tbCAIs_NCai_Codigo").IsUnique();
+
             entity.Property(e => e.NCai_Codigo)
                 .IsRequired()
                 .HasMaxLength(37)
@@ -293,6 +295,12 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasKey(e => e.Clie_Id).HasName("PK_Gral_tbClientes_Clie_Id");
 
             entity.ToTable("tbClientes", "Gral");
+
+            entity.HasIndex(e => e.Clie_Codigo, "UQ_tbClientes_Clie_Codigo").IsUnique();
+
+            entity.HasIndex(e => e.Clie_DNI, "UQ_tbClientes_Clie_DNI").IsUnique();
+
+            entity.HasIndex(e => e.Clie_RTN, "UQ_tbClientes_Clie_RTN").IsUnique();
 
             entity.Property(e => e.Clie_Apellidos)
                 .IsRequired()
@@ -414,6 +422,8 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasKey(e => e.CoFa_Id).HasName("PK_Vnta_tbConfiguracionFacturas_CoFa_Id");
 
             entity.ToTable("tbConfiguracionFacturas", "Vnta");
+
+            entity.HasIndex(e => e.CoFa_RTN, "UQ_tbConfiguracionFacturas_CoFa_RTN").IsUnique();
 
             entity.Property(e => e.CoFa_Correo)
                 .IsRequired()
@@ -658,6 +668,8 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.ToTable("tbEmpleados", "Gral");
 
             entity.HasIndex(e => e.Empl_Codigo, "UQ__tbEmplea__40E62F3A78D3E75E").IsUnique();
+
+            entity.HasIndex(e => e.Empl_Codigo, "UQ_tbEmpleados_Empl_Codigo").IsUnique();
 
             entity.Property(e => e.Empl_Apellidos)
                 .IsRequired()
@@ -1205,6 +1217,10 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbProductos", "Inve");
 
+            entity.HasIndex(e => e.Prod_Codigo, "UQ_tbProductos_Prod_Codigo").IsUnique();
+
+            entity.HasIndex(e => e.Prod_CodigoBarra, "UQ_tbProductos_Prod_CodigoBarra").IsUnique();
+
             entity.Property(e => e.Prod_Codigo)
                 .IsRequired()
                 .HasMaxLength(10)
@@ -1338,6 +1354,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbProveedores", "Gral");
 
+            entity.HasIndex(e => e.Prov_Codigo, "UQ_tbProveedores_Prov_Codigo").IsUnique();
+
             entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.Prov_Codigo)
@@ -1386,6 +1404,8 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasKey(e => e.PuEm_Id).HasName("PK_Vnta_tbPuntosEmision_PuEm_Id");
 
             entity.ToTable("tbPuntosEmision", "Vnta");
+
+            entity.HasIndex(e => e.PuEm_Codigo, "UQ_tbPuntosEmision_PuEm_Codigo").IsUnique();
 
             entity.Property(e => e.PuEm_Codigo)
                 .IsRequired()
@@ -1560,6 +1580,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbRutas", "Logi");
 
+            entity.HasIndex(e => e.Ruta_Codigo, "UQ_tbRutas_Ruta_Codigo").IsUnique();
+
             entity.Property(e => e.Ruta_Codigo)
                 .IsRequired()
                 .HasMaxLength(20)
@@ -1733,9 +1755,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasIndex(e => e.Usua_Usuario, "UQ__tbUsuari__9ED44AB4B049A082").IsUnique();
 
             entity.Property(e => e.Usua_Clave).IsRequired();
-            entity.Property(e => e.Usua_Codigo)
-                .HasMaxLength(5)
-                .IsUnicode(false);
             entity.Property(e => e.Usua_EsAdmin).HasDefaultValue(true);
             entity.Property(e => e.Usua_Estado).HasDefaultValue(true);
             entity.Property(e => e.Usua_FechaCreacion).HasColumnType("datetime");
@@ -1751,6 +1770,8 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasKey(e => e.Vend_Id).HasName("PK_Vnta_tbVendedores_Vend_Id");
 
             entity.ToTable("tbVendedores", "Vnta");
+
+            entity.HasIndex(e => e.Vend_Codigo, "UQ_tbVendedores_Vend_Codigo").IsUnique();
 
             entity.Property(e => e.Vend_Apellidos)
                 .IsRequired()
