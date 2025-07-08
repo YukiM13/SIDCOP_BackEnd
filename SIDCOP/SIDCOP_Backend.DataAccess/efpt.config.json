@@ -1,0 +1,237 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "BDD_SIDCOPContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Context",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "SIDCOP_Backend.DataAccess",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 1,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[Acce].[tbAcciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbPermisos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Acce].[tbUsuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbCanales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbCargos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbClientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbColonias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEmpleados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbMarcas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbMarcasVehiculos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbModelos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbMunicipios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbProveedores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbSucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbCategorias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbInventarioBodegas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbInventarioSucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbProductos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbPromociones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbPromocionesDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbSubcategorias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbBodegas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbRecargas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbRecargasDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbRutas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbTraslados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbTrasladosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbCAIs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbConfiguracionFacturas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbCuentasPorCobrar]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbDevoluciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbDevolucionesDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbFacturas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbFacturasDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbImpuestos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPedidos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPedidosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPreciosPorProducto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPuntosEmision]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbRegistrosCAI]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbVendedores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbVendedoresPorRuta]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

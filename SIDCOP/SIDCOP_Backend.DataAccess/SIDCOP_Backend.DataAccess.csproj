@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\Inventario\" />
+    <Folder Include="Repositories\General\" />
+    <Folder Include="Repositories\Logistica\" />
+    <Folder Include="Repositories\Dashboards\" />
+    <Folder Include="Repositories\Reportes\" />
+    <Folder Include="Repositories\Ventas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SIDCOP_Backend.Entities\SIDCOP_Backend.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
