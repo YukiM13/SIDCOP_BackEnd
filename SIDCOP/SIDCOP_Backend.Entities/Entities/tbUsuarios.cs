@@ -21,8 +21,6 @@ public partial class tbUsuarios
 
     public bool Usua_EsAdmin { get; set; }
 
-    public string Usua_Codigo { get; set; }
-
     public int Usua_Creacion { get; set; }
 
     public DateTime Usua_FechaCreacion { get; set; }
