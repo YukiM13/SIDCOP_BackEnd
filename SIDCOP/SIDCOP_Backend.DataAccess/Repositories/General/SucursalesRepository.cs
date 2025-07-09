@@ -55,7 +55,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         public IEnumerable<tbSucursales> List()
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbSucursales>(ScriptDatabase.Sucursales_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+
+            return result;
         }
 
         public RequestStatus Update(tbSucursales item)

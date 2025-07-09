@@ -1,4 +1,5 @@
 ﻿using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     public class AccesoServices
     {
         private readonly UsuarioRepository _usuarioRepository;
+        
 
         public AccesoServices(UsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
-            
+
         }
 
         #region Usuarios 
@@ -36,5 +38,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
+
+        
     }
 }
