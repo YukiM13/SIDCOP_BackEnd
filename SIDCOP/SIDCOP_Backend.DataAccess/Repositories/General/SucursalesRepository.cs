@@ -25,7 +25,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         {
             if (item == null)
             {
-                return new RequestStatus { CodeStatus = 0, MessageStatus = "Los datos llegaron vacios o datos erroneos" };
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
             var parameter = new DynamicParameters();
             parameter.Add("@Sucu_Descripcion", item.Sucu_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -43,13 +43,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
-                    return new RequestStatus { CodeStatus = 0, MessageStatus = "Error desconocido" };
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
                 return result;
             }
             catch (Exception ex)
             {
-                return new RequestStatus { CodeStatus = 0, MessageStatus = $"Error inesperado: {ex.Message}" };
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
 

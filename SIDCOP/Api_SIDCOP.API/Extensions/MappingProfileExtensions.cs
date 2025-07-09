@@ -16,6 +16,8 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbEstadosCiviles, EstadoCivilViewModel>().ReverseMap();
             // CreateMap<tbDepartamentos, DepartamentosViewModel>().ReverseMap();
             CreateMap<tbColonias, ColoniaViewModel>().ReverseMap();
+            CreateMap<tbSucursales, SucursalesViewModel>().ReverseMap();
+
 
         }
     }

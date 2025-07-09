@@ -90,25 +90,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 var insertResult = _sucursalesRepository.Insert(sucursal);
 
-                if (insertResult.CodeStatus == 1)
+                if (insertResult.code_Status == 1)
                 {
                     //result.Ok = true;
                     //result.Message = ;
-                    return result.Ok(insertResult.MessageStatus);
-                    //return result.Ok(insertResult.MessageStatus);
+                    return result.Ok(insertResult.message_Status);
+                    //return result.Ok(insertResult.message_Status);
                 }
                 else
                 {
                     //result.IsSuccess = false;
-                    //result.Message = insertResult.MessageStatus;
-                    //return result.Error(insertResult.MessageStatus);
-                    return result.Error(insertResult.MessageStatus);
+                    //result.Message = insertResult.message_Status;
+                    //return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult.message_Status);
                 }
 
             }
             catch (Exception ex)
             {
-                //return new RequestStatus { CodeStatus = 0, MessageStatus = $"Error inesperado: {ex.Message}" };
+                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
                 //return result.Error($"Error al insertar carro: {ex.Message}");
                 return result.Error($"Error al insertar sucursal: {ex.Message}");
             }
