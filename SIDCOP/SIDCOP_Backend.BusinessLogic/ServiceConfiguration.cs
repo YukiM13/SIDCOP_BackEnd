@@ -20,6 +20,7 @@ namespace SIDCOP_Backend.BusinessLogic
             SIDCOP_Context.BuildConnectionString(connectionString);
 
             services.AddScoped<UsuarioRepository>();
+            services.AddScoped<ColoniaRepository>(); 
 
         }
 
