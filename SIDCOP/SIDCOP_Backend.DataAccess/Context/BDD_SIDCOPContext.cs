@@ -298,12 +298,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.HasIndex(e => e.Clie_Codigo, "UQ_tbClientes_Clie_Codigo").IsUnique();
 
-            entity.HasIndex(e => e.Clie_DNI, "UQ_tbClientes_Clie_DNI").IsUnique();
-
-            entity.HasIndex(e => e.Clie_RTN, "UQ_tbClientes_Clie_RTN").IsUnique();
-
             entity.Property(e => e.Clie_Apellidos)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Codigo)
@@ -312,7 +307,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Confirmacion).HasDefaultValue(false);
             entity.Property(e => e.Clie_Correo)
-                .IsRequired()
                 .HasMaxLength(40)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_DNI)
@@ -326,14 +320,18 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Clie_Estado).HasDefaultValue(true);
             entity.Property(e => e.Clie_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Clie_FechaModificacion).HasColumnType("datetime");
+            entity.Property(e => e.Clie_FechaNacimiento).HasColumnType("datetime");
+            entity.Property(e => e.Clie_ImagenDelNegocio)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.Clie_Latitud).HasColumnType("decimal(9, 6)");
             entity.Property(e => e.Clie_LimiteCredito).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Clie_Longitud).HasColumnType("decimal(9, 6)");
             entity.Property(e => e.Clie_NombreNegocio)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Nombres)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_ObservacionRetiro)
@@ -348,7 +346,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Saldo).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Clie_Sexo)
-                .IsRequired()
                 .HasMaxLength(1)
                 .IsUnicode(false)
                 .IsFixedLength();
@@ -438,7 +435,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.CoFa_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.CoFa_Logo)
                 .IsRequired()
-                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.CoFa_NombreEmpresa)
                 .HasMaxLength(100)
@@ -1760,6 +1756,7 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Usua_Estado).HasDefaultValue(true);
             entity.Property(e => e.Usua_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Usua_FechaModificacion).HasColumnType("datetime");
+            entity.Property(e => e.Usua_Imagen).IsUnicode(false);
             entity.Property(e => e.Usua_Usuario)
                 .IsRequired()
                 .HasMaxLength(50)

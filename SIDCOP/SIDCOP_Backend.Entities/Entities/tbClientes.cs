@@ -21,6 +21,8 @@ public partial class tbClientes
 
     public string Clie_NombreNegocio { get; set; }
 
+    public string Clie_ImagenDelNegocio { get; set; }
+
     public string Clie_DireccionExacta { get; set; }
 
     public string Clie_Telefono { get; set; }
@@ -29,7 +31,7 @@ public partial class tbClientes
 
     public string Clie_Sexo { get; set; }
 
-    public DateOnly Clie_FechaNacimiento { get; set; }
+    public DateTime? Clie_FechaNacimiento { get; set; }
 
     public int Cana_Id { get; set; }
 
@@ -55,6 +57,8 @@ public partial class tbClientes
 
     public string Clie_ObservacionRetiro { get; set; }
 
+    public bool? Clie_Confirmacion { get; set; }
+
     public int Usua_Creacion { get; set; }
 
     public DateTime Clie_FechaCreacion { get; set; }
@@ -64,8 +68,6 @@ public partial class tbClientes
     public DateTime? Clie_FechaModificacion { get; set; }
 
     public bool Clie_Estado { get; set; }
-
-    public bool? Clie_Confirmacion { get; set; }
 
     public virtual tbCanales Cana { get; set; }
 
