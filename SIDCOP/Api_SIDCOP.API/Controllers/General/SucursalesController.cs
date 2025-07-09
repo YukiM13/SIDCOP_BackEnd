@@ -29,16 +29,16 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("InsertarSucursal")]
-        public IActionResult Insertar([FromBody] Models.General.SucursalesViewModel sucursalViewModel)
+        public IActionResult Insertar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
         {
-            if (sucursalViewModel == null)
+            if (SucursalesViewModel == null)
             {
                 return BadRequest("Invalid data.");
             }
-            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(sucursalViewModel);
+            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
             var result = _generalServices.InsertarSucursal(sucursal);
 
-            if (result.Ok)
+            if (result.Success)
             {
                 return Ok(result);
             }
