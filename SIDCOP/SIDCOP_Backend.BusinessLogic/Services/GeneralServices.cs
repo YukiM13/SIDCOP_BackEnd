@@ -34,6 +34,36 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult ActualizarMunicipios(tbMunicipios item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var muni = _municipioRepository.Update(item);
+                return result.Ok(muni);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public IEnumerable<tbMunicipios> ListarMunicipios()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbMunicipios> muni = null;
+                return muni;
+            }
+        }
+
         #endregion
 
     }

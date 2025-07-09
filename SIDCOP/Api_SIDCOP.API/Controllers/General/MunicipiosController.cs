@@ -23,6 +23,15 @@ namespace Api_SIDCOP.API.Controllers.Acceso
            
         }
 
+
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            var list = _generalServices.ListarMunicipios();
+            return Ok(list);
+        }
+
+
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] MunicipioViewModel municipioViewModel)
         {
@@ -31,6 +40,13 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             var response = _generalServices.InsertarMunicipios(municipio);
             return Ok(response);
         }
+        [HttpPost("Actualizar")]
+        public IActionResult Actualizar([FromBody] MunicipioViewModel municipioViewModel)
+        {
+            var municipio = _mapper.Map<tbMunicipios>(municipioViewModel);
 
+            var response = _generalServices.ActualizarMunicipios(municipio);
+            return Ok(response);
+        }
     }
 }

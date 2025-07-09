@@ -15,6 +15,9 @@ namespace SIDCOP_Backend.DataAccess
 
         #region Municipios
         public const string Municipios_Insertar = "[Gral].[SP_Municipio_Insertar]";
+        public const string Municipios_Actualizar = "[Gral].[SP_Municipio_Actualizar]";
+        public const string Municipios_Listar = "[Gral].[SP_Municipio_Listar]";
+        
         #endregion
     }
 }
