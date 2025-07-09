@@ -310,6 +310,7 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsRequired()
                 .HasMaxLength(10)
                 .IsUnicode(false);
+            entity.Property(e => e.Clie_Confirmacion).HasDefaultValue(false);
             entity.Property(e => e.Clie_Correo)
                 .IsRequired()
                 .HasMaxLength(40)

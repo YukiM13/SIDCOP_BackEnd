@@ -65,6 +65,8 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
+    public bool? Clie_Confirmacion { get; set; }
+
     public virtual tbCanales Cana { get; set; }
 
     public virtual tbColonias Colo { get; set; }
