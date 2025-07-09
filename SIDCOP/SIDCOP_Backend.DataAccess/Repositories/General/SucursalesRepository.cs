@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
-    class SucursalesRepository : IRepository<tbSucursales>
+    public class SucursalesRepository : IRepository<tbSucursales>
     {
         public RequestStatus Delete(tbSucursales item)
         {

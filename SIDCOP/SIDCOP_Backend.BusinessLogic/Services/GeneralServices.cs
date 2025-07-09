@@ -8,5 +8,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class GeneralServices
     {
+
     }
 }
