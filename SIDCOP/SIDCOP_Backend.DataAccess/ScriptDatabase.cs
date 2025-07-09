@@ -12,5 +12,10 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
 
         #endregion
+
+
+        #region EstadosCiviles
+           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        #endregion
     }
 }
