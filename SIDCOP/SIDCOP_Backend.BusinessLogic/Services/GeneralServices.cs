@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {

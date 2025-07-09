@@ -23,5 +23,9 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
+
+        #region EstadosCiviles
+           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        #endregion
     }
 }
