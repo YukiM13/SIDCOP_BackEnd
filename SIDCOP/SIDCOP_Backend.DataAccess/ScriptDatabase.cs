@@ -40,5 +40,10 @@ namespace SIDCOP_Backend.DataAccess
         public const string Sucursal_Buscar = "Gral.SP_Sucursal_Buscar";
 
         #endregion
+
+        #region EstadosCiviles
+           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+
+        #endregion
     }
 }
