@@ -1,7 +1,11 @@
 ﻿using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using MailKit.Net.Smtp;
 using SIDCOP_Backend.BusinessLogic.Services;
+using Api_SIDCOP.API.Models.Acceso;
+using MailKit.Security;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
@@ -28,5 +32,101 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
+        [HttpPost("Usuario/EnviarCorreo")]
+        public async Task<IActionResult> GenerarCodigo([FromBody] EmailRequest request)
+        {
+            try
+            {
+                var servicioCorreo = new EmailService();
+                await servicioCorreo.EnviarCodigoVerificacionAsync(request);
+                return Ok(new { mensaje = "Correo enviado exitosamente" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
+        public class EmailService
+        {
+            public async Task EnviarCodigoVerificacionAsync(EmailRequest item)
+            {
+                var mensaje = new MimeMessage();
+                mensaje.From.Add(new MailboxAddress("SIDCOP", "sidcop.soporte@gmail.com"));
+                mensaje.To.Add(new MailboxAddress("", item.to_email));
+                mensaje.Subject = "Código de verificación para restablecer contraseña";
+
+                string htmlConCodigo = $@"
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <style>
+    body {{
+      background-color: #1c1c1e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      margin: 0;
+    }}
+    .container {{
+      max-width: 500px;
+      margin: auto;
+      background-color: #141A2F;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }}
+    .logo {{
+      width: 100px;
+      margin-bottom: 20px;
+    }}
+    .code {{
+      font-size: 36px;
+      font-weight: bold;
+      color: #D6B68A;
+      margin: 20px 0;
+    }}
+    .footer {{
+      margin-top: 30px;
+      font-size: 12px;
+      color: #aaaaaa;
+    }}
+    a {{
+      color: #00aaff;
+    }}
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <img src='https://firebasestorage.googleapis.com/v0/b/fir-upload-pdf-d2c3f.firebasestorage.app/o/logo%2Flogo_original.png?alt=media&token=bb1b29e0-0494-4873-a6e6-cef4c02d6c52' alt='Logo' class='logo' />
+    <h2>Tu código de verificación</h2>
+    <div class='code'>{item.codigo}</div>
+    <p>No compartas este código con nadie. Si no fuiste tú quien lo solicitó, te recomendamos cambiar tu contraseña.</p>
+    <p>Muchas gracias,</p>
+    <p>El equipo de SIDCOP</p>
+    <div class='footer'>
+      &copy; 2025 SIDCOP. Todos los derechos reservados.
+    </div>
+  </div>
+</body>
+</html>";
+
+                var builder = new BodyBuilder
+                {
+                    HtmlBody = htmlConCodigo
+                };
+
+                mensaje.Body = builder.ToMessageBody();
+
+                using var smtp = new SmtpClient();
+                await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync("sidcop.soporte@gmail.com", "pbpg xsqp otkj eqdx");
+                await smtp.SendAsync(mensaje);
+                await smtp.DisconnectAsync(true);
+            }
+        }
     }
+
+
 }
