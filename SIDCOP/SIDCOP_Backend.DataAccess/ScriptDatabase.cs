@@ -27,5 +27,21 @@ namespace SIDCOP_Backend.DataAccess
         #region EstadosCiviles
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
         #endregion
+
+        #region Categorias
+        public const string Categoria_Listar = "[Inve].[SP_Categorias_Listar]";
+        public const string Categoria_Insertar = "[Inve].[SP_Categoria_Insertar]";
+        public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
+        public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
+        public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        #endregion
+
+        #region Modelos
+        public const string Modelos_Listar = "[Gral].[SP_Modelos_Listar]";
+        public const string Modelos_Insertar = "[Gral].[SP_Modelo_Insertar]";
+        public const string Modelos_Eliminar = "[Gral].[SP_Modelo_Eliminar]";
+        public const string Modelos_Actualizar = "[Gral].[SP_Modelo_Actualizar]";
+        public const string Modelos_Buscar = "[Gral].[SP_Modelo_Buscar]";
+        #endregion
     }
 }
