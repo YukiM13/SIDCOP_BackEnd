@@ -113,6 +113,28 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al insertar sucursal: {ex.Message}");
             }
         }
+
+        public ServiceResult ActualizarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var updateResult = _sucursalesRepository.Update(sucursal);
+                if (updateResult.code_Status == 1)
+                {
+                    return result.Ok(updateResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(updateResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al actualizar sucursal: {ex.Message}");
+            }
+        }
+
         #endregion
     }
 }

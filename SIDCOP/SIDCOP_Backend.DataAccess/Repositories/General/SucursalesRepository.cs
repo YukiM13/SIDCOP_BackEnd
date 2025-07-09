@@ -67,7 +67,36 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         public RequestStatus Update(tbSucursales item)
         {
-            throw new NotImplementedException();
+            if (item == null)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
+            }
+            var parameter = new DynamicParameters();
+            parameter.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Descripcion", item.Sucu_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_DireccionExacta", item.Sucu_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Telefono1", item.Sucu_Telefono1, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Telefono2", item.Sucu_Telefono2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Correo", item.Sucu_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_FechaModificacion", item.Sucu_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+
         }
     }
 }

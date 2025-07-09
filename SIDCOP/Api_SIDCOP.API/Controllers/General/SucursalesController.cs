@@ -49,17 +49,24 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
-        /*
-          
-         public IActionResult Insert([FromBody] CarroDTO item)
+        [HttpPut("ActualizarSucursal")]
+        public IActionResult Actualizar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
         {
-            var mapped = _mapper.Map<CarroDTO>(item);
-            var insertResult = _vehiServices.InsertCarroCompleto(mapped);
-
-            return Ok(insertResult);
-
+            if (SucursalesViewModel == null)
+            {
+                return BadRequest("Invalid data.");
+            }
+            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
+            var result = _generalServices.ActualizarSucursal(sucursal);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
-         
-         */
+
     }
 }
