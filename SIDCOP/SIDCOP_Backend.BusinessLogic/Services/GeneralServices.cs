@@ -109,7 +109,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return muni;
             }
         }
-
         #endregion
     
     

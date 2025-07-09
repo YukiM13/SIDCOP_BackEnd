@@ -52,13 +52,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+
+
         public IEnumerable<tbMunicipios> List()
         {
             var parameter = new DynamicParameters();
 
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbMunicipios>(ScriptDatabase.Usuarios_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+            var result = db.Query<tbMunicipios>(ScriptDatabase.Municipios_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
 
             return result;

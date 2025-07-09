@@ -16,6 +16,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Municipios_Insertar = "[Gral].[SP_Municipio_Insertar]";
         public const string Municipios_Actualizar = "[Gral].[SP_Municipio_Actualizar]";
         public const string Municipios_Listar = "[Gral].[SP_Municipio_Listar]";
+        public const string Municipios_Buscar = "[Gral].[SP_Municipio_Buscar]";
+        public static string Municipios_Eliminar = "[Gral].[SP_Municipio_Eliminar]"; 
         #endregion
 
         #region Colonias
@@ -24,10 +26,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar= "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
-
         #endregion
-
-
 
         #region EstadosCiviles
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
