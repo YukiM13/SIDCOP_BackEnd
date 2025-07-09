@@ -12,5 +12,9 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
 
         #endregion
+
+        #region Municipios
+        public const string Municipios_Insertar = "[Gral].[SP_Municipio_Insertar]";
+        #endregion
     }
 }

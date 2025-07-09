@@ -12,6 +12,8 @@ namespace Api_SIDCOP.API.Extensions
         public MappingProfileExtensions()
         {
             CreateMap<tbUsuarios, UsuarioViewModel>().ReverseMap();
+
+            CreateMap<tbMunicipios, MunicipioViewModel>().ReverseMap();
             // CreateMap<tbDepartamentos, DepartamentosViewModel>().ReverseMap();
 
         }
