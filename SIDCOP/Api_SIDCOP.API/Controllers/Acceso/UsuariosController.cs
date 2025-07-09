@@ -6,6 +6,7 @@ using MailKit.Net.Smtp;
 using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
+using System.Drawing;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
@@ -32,7 +33,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
-        [HttpPost("Usuario/EnviarCorreo")]
+        [HttpPost("EnviarCorreo")]
         public async Task<IActionResult> GenerarCodigo([FromBody] EmailRequest request)
         {
             try
@@ -95,16 +96,19 @@ namespace Api_SIDCOP.API.Controllers.Acceso
     a {{
       color: #00aaff;
     }}
+    .im {{
+        color: #f9f5f9;
+     }}
   </style>
 </head>
 <body>
-  <div class='container'>
+   <div class='container'>
     <img src='https://firebasestorage.googleapis.com/v0/b/fir-upload-pdf-d2c3f.firebasestorage.app/o/logo%2Flogo_original.png?alt=media&token=bb1b29e0-0494-4873-a6e6-cef4c02d6c52' alt='Logo' class='logo' />
-    <h2>Tu código de verificación</h2>
+    <h2 style=""color: #ffffff;"">Tu código de verificación</h2>
     <div class='code'>{item.codigo}</div>
-    <p>No compartas este código con nadie. Si no fuiste tú quien lo solicitó, te recomendamos cambiar tu contraseña.</p>
-    <p>Muchas gracias,</p>
-    <p>El equipo de SIDCOP</p>
+    <p style=""color: #ffffff;"">No compartas este código con nadie. Si no fuiste tú quien lo solicitó, te recomendamos cambiar tu contraseña.</p>
+    <p style=""color: #ffffff;"">Muchas gracias,</p>
+    <p style=""color: #ffffff;"">El equipo de SIDCOP</p>
     <div class='footer'>
       &copy; 2025 SIDCOP. Todos los derechos reservados.
     </div>
