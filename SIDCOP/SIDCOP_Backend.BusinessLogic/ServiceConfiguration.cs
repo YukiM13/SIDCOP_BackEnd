@@ -3,6 +3,7 @@ using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,9 @@ namespace SIDCOP_Backend.BusinessLogic
 
         public static void BusinessLogic(this IServiceCollection services)
         {
-            //services.AddScoped<GeneralServices>();
+          
             services.AddScoped<AccesoServices>();
+            services.AddScoped<GeneralServices>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
         }
