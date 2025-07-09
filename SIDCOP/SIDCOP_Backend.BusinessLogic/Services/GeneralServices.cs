@@ -16,10 +16,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     {
 
         private readonly ColoniaRepository _coloniaRepository;
+        private readonly EstadoCivilRepository _estadocivilRepository; 
 
-        public GeneralServices(ColoniaRepository coloniaRepository)
+        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository)
         {
             _coloniaRepository = coloniaRepository;
+            _estadocivilRepository = estadoCivilRepository; 
 
         }
 
@@ -39,6 +41,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
                 IEnumerable<tbColonias> colonia = null;
                 return colonia;
+            }
+        }
+        #endregion
+
+
+        #region Estados Civiles
+        public IEnumerable<tbEstadosCiviles> ListEsCi()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                IEnumerable<tbEstadosCiviles> esci = null;
+                return esci;
             }
         }
         #endregion
