@@ -66,27 +66,36 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             string mensaje = (result == 0) ? "Error al actualizar el Estado Civil" : "Estado Civil actualizado correctamente";
             return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
-
-        public RequestStatus EliminarEsCi(tbEstadosCiviles item)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
-
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.EstadoCivil_Eliminar, parameters, commandType: CommandType.StoredProcedure);
-
-            string mensaje = (result == 0) ? "Error al eliminar el Estado Civil" : "Estado Civil correctamente";
-            return new RequestStatus { code_Status = result, message_Status = mensaje };
-        }
-
-        public tbEstadosCiviles BuscarEsCi(tbEstadosCiviles item)
+        public RequestStatus EliminarEsCi(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@EsCv_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.EstadoCivil_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+        }
 
+        public tbEstadosCiviles BuscarEsCi(int? id)
+        {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.QueryFirstOrDefault<tbEstadosCiviles>(ScriptDatabase.EstadoCivil_Buscar, parameter, commandType: CommandType.StoredProcedure);
-
+            var parameter = new DynamicParameters();
+            parameter.Add("@EsCv_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbEstadosCiviles>(ScriptDatabase.EstadoCivil_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Estado Civil no encontrada");
+            }
             return result;
         }
 

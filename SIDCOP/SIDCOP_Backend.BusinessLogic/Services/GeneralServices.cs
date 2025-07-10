@@ -18,7 +18,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ClienteRepository _clienteRepository;
         private readonly MarcaRepository _marcaRepository;
 
-        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository)
+        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, MarcaRepository marcaRepository)
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
@@ -47,7 +47,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
-
 
         #region Estados Civiles
         public IEnumerable<tbEstadosCiviles> ListEsCi()
@@ -94,31 +93,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarEsCi(tbEstadosCiviles item)
+        public ServiceResult EliminarEsCi(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _estadocivilRepository.EliminarEsCi(item);
-                return result.Ok(list);
+                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
             }
         }
 
-        public ServiceResult BuscarEsCi(tbEstadosCiviles item)
+        public tbEstadosCiviles BuscarEsCi(int? id)
         {
-            var result = new ServiceResult();
             try
             {
-                var list = _estadocivilRepository.BuscarEsCi(item);
-                return result.Ok(list);
+                var EsCi = _estadocivilRepository.BuscarEsCi(id);
+                return EsCi;
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
             }
         }
 
@@ -171,31 +176,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarMarca(tbMarcas item)
+        public ServiceResult EliminarMarca(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _marcaRepository.EliminarMarca(item);
-                return result.Ok(list);
+                var deleteResult = _marcaRepository.EliminarMarca(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error($"Error al eliminar la Marca: {ex.Message}");
             }
         }
 
-        public ServiceResult BuscarMarca(tbMarcas item)
+        public tbMarcas BuscarMarca(int? id)
         {
-            var result = new ServiceResult();
             try
             {
-                var list = _marcaRepository.BuscarMarca(item);
-                return result.Ok(list);
+                var marca = _marcaRepository.BuscarMarca(id);
+                return marca;
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                throw new Exception($"Error al buscar marca: {ex.Message}");
             }
         }
 

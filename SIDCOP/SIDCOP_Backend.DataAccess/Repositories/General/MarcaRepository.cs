@@ -12,12 +12,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
      public class MarcaRepository: IRepository<tbMarcas>
     {
-
-        public RequestStatus Delete(tbMarcas item)
-        {
-            throw new NotImplementedException();
-        }
-
         public tbMarcas Find(int? id)
         {
             throw new NotImplementedException();
@@ -74,34 +68,45 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
-        public RequestStatus EliminarMarca(tbMarcas item)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
-
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.Marca_Eliminar, parameters, commandType: CommandType.StoredProcedure);
-
-            string mensaje = (result == 0) ? "Error al eliminar la Marca" : "Marca eliminada correctamente";
-            return new RequestStatus { code_Status = result, message_Status = mensaje };
-        }
-
-
-        public tbMarcas BuscarMarca(tbMarcas item)
+        public RequestStatus EliminarMarca(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
-
+            parameter.Add("@Marc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Marca_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+        }
+        public tbMarcas BuscarMarca(int? id)
+        {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.QueryFirstOrDefault<tbMarcas>(ScriptDatabase.Marca_Buscar, parameter, commandType: CommandType.StoredProcedure);
-
+            var parameter = new DynamicParameters();
+            parameter.Add("@Marc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbMarcas>(ScriptDatabase.Marca_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Marca no encontrada");
+            }
             return result;
         }
-
         public RequestStatus Update(tbMarcas item)
         {
             throw new NotImplementedException();
         }
 
+        public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

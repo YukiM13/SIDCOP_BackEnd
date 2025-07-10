@@ -48,18 +48,40 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(result);
         }
 
-        [HttpPost("Eliminar")]
-        public IActionResult Eliminar([FromBody] tbEstadosCiviles item)
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            var result = _generalServices.EliminarEsCi(item);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var result = _generalServices.EliminarEsCi(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
 
-        [HttpPost("Buscar")]
-        public IActionResult Buscar([FromBody] tbEstadosCiviles item)
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
         {
-            var result = _generalServices.BuscarEsCi(item);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var marca = _generalServices.BuscarEsCi(id);
+            if (marca != null)
+            {
+                return Ok(marca);
+            }
+            else
+            {
+                return NotFound("Estado Civil not found.");
+            }
         }
 
     }

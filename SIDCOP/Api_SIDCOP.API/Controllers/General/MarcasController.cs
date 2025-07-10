@@ -44,18 +44,47 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(result);
         }
 
-        [HttpPost("Eliminar")]
-        public IActionResult Eliminar([FromBody] tbMarcas item)
+        //[HttpPost("Eliminar")]
+        //public IActionResult Eliminar([FromBody] tbMarcas item)
+        //{
+        //    var result = _generalServices.EliminarMarca(item);
+        //    return Ok(result);
+        //}
+
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            var result = _generalServices.EliminarMarca(item);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var result = _generalServices.EliminarMarca(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
 
-        [HttpPost("Buscar")]
-        public IActionResult Buscar([FromBody] tbMarcas item)
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
         {
-            var result = _generalServices.BuscarMarca(item);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var marca = _generalServices.BuscarMarca(id);
+            if (marca != null)
+            {
+                return Ok(marca);
+            }
+            else
+            {
+                return NotFound("Marca not found.");
+            }
         }
 
     }

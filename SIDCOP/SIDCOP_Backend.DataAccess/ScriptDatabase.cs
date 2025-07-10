@@ -67,7 +67,6 @@ namespace SIDCOP_Backend.DataAccess
         public static string Marca_Actualizar = "[Gral].[SP_Marca_Actualizar]";
         public static string Marca_Eliminar = "[Gral].[SP_Marca_Eliminar]";
         public static string Marca_Buscar = "[Gral].[SP_Marca_Buscar]";
-           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
 
         #endregion
 
