@@ -57,6 +57,13 @@ namespace SIDCOP_Backend.DataAccess
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
+        
+
+        #endregion
+
+        #region Clientes
+        public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
+        public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         #endregion
 
 
@@ -73,6 +80,35 @@ namespace SIDCOP_Backend.DataAccess
         #region Clientes
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        #endregion
+
+
+
+
+        #region Empleados
+        public static string Empleados_Listar       = "[Gral].[SP_Empleados_Listar]";
+        public static string Empleados_Buscar       = "[Gral].[SP_Empleado_Buscar]";
+        public static string Empleados_Eliminar     = "[Gral].[SP_Empleado_Eliminar]";
+        public static string Empleados_Insertar     = "[Gral].[SP_Empleado_Insertar]";
+        public static string Empleados_Actualizar   = "[Gral].[SP_Empleado_Actualizar]";
+
+        #endregion
+
+
+        #region Rutas
+        public static string Rutas_Agregar = "[].[]";
+        public static string Rutas_listar = "[].[]";
+        public static string Rutas_Filtrar = "[].[]";
+        public static string Rutas_Eliminar = "[].[]";
+        public static string Rutas_Editar = "[].[]";
+        #endregion
+
+        #region Cais
+        public static string Cai_Agregar = "[].[]";
+        public static string Cai_Listar = "[].[]";
+        public static string Cai_Eliminar = "[].[]";
+        public static string Cai_Editar = "[].[]";
+        public static string Cai_Filtrar = "[].[]";
         #endregion
     }
 }

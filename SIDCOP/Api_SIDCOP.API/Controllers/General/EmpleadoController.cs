@@ -1,30 +1,25 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
+﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
-
-using MimeKit;
-using MailKit.Net.Smtp;
-using Api_SIDCOP.API.Models.Acceso;
-using MailKit.Security;
 using SIDCOP_Backend.Entities.Entities;
-using Api_SIDCOP.API.Models.General;
 
 namespace Api_SIDCOP.API.Controllers.General
 {
+
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
 
-
-    public class ColoniaController : Controller
+    public class EmpleadoController : Controller
     {
         public readonly GeneralServices _generalServices;
         public readonly IMapper _mapper;
 
 
 
-        public ColoniaController(GeneralServices generalServices, IMapper mapper)
+        public EmpleadoController(GeneralServices generalServices, IMapper mapper)
         {
             _generalServices = generalServices;
             _mapper = mapper;
@@ -32,27 +27,27 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpGet("Listar")]
-        public IActionResult ListarColonia()
+        public IActionResult ListarEmpleado()
         {
-            var list = _generalServices.ListarColonia();
+            var list = _generalServices.ListarEmpleado();
             return Ok(list);
         }
 
-    
+
         [HttpPost("Insertar")]
-        public IActionResult Insert([FromBody] ColoniaViewModel item)
+        public IActionResult Insert([FromBody] EmpleadoViewModel item)
         {
-            var mapped = _mapper.Map<tbColonias>(item);
-            var result = _generalServices.InsertarColonia(mapped);
+            var mapped = _mapper.Map<tbEmpleados>(item);
+            var result = _generalServices.InsertarEmpleados(mapped);
             return Ok(result);
         }
 
 
         [HttpPut("Actualizar")]
-        public IActionResult Update([FromBody] ColoniaViewModel item)
+        public IActionResult Update([FromBody] EmpleadoViewModel item)
         {
-            var mapped = _mapper.Map<tbColonias>(item);
-            var result = _generalServices.UpdateColonia(mapped);
+            var mapped = _mapper.Map<tbEmpleados>(item);
+            var result = _generalServices.UpdateEmpleados(mapped);
             return Ok(result);
         }
 
@@ -66,7 +61,7 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalida.");
             }
-            var result = _generalServices.DeleteColonia(id);
+            var result = _generalServices.DeleteEmpleado(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -78,7 +73,6 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
 
-
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
@@ -86,14 +80,14 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalida.");
             }
-            var Colonia = _generalServices.BuscarColonia(id);
-            if (Colonia != null)
+            var empleado = _generalServices.FindEmpleados(id);
+            if (empleado != null)
             {
-                return Ok(Colonia);
+                return Ok(empleado);
             }
             else
             {
-                return NotFound("Colonia not found.");
+                return NotFound("Empleado not found.");
             }
         }
 

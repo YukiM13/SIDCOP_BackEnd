@@ -25,11 +25,12 @@ public partial class tbEstadosCiviles
     [NotMapped]
     public string UsuarioModificacion { get; set; }
 
-    //public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
-    //public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
-    //public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    //public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
+    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 }
