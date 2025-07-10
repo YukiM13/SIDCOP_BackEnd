@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,23 @@ namespace SIDCOP_Backend.DataAccess
         #region Usuarios
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
 
+        #endregion
+
+
+        #region Departamentos
+            public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
+            public const string Departamentos_Insertar = "[Gral].[SP_Departamento_Insertar]";
+            public const string Departamento_Actualizar = "[Gral].[SP_Departamento_Actualizar]";
+            public const string Departamento_Eliminar = "[Gral].[SP_Departamento_Eliminar]";
+            public const string Departamento_Buscar = "[Gral].[SP_Departamento_Buscar]";
+        #endregion
+
+        #region Marcas Vehiculos
+            public const string MarcasVehiculos_Listar = "[Gral].[SP_MarcasVehiculos_Listar]";
+            public const string MarcasVehiculos_Insertar = "[Gral].[SP_MarcaVehiculo_Insertar]";
+            public const string MarcasVehiculos_Actualizar = "[Gral].[SP_MarcaVehiculo_Actualizar]";
+            public const string MarcasVehiculos_Eliminar = "[Gral].[SP_MarcaVehiculo_Eliminar]";
+            public const string MarcasVehiculos_Buscar = "[Gral].[SP_MarcaVehiculo_Buscar]";
         #endregion
 
         #region Productos
@@ -42,7 +60,7 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region Colonias
-        public static string Colonias_Listar = "[Gral].[SP_Colonia_Listar]";
+        public static string Colonias_Listar = "[Gral].[SP_Colonias_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar= "[Gral].[SP_Colonia_Insertar]";
@@ -51,13 +69,45 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region EstadosCiviles
-           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
+        public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
+        public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
+        public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
+        
 
         #endregion
 
         #region Clientes
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
+        public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
+        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
+        #endregion
+
+
+
+        #region Marcas
+        public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";
+        public static string Marca_Insertar = "[Gral].[SP_Marca_Insertar]";
+        public static string Marca_Actualizar = "[Gral].[SP_Marca_Actualizar]";
+        public static string Marca_Eliminar = "[Gral].[SP_Marca_Eliminar]";
+        public static string Marca_Buscar = "[Gral].[SP_Marca_Buscar]";
+
+        #endregion
+
+
+
+
+
+        #region Empleados
+        public static string Empleados_Listar       = "[Gral].[SP_Empleados_Listar]";
+        public static string Empleados_Buscar       = "[Gral].[SP_Empleado_Buscar]";
+        public static string Empleados_Eliminar     = "[Gral].[SP_Empleado_Eliminar]";
+        public static string Empleados_Insertar     = "[Gral].[SP_Empleado_Insertar]";
+        public static string Empleados_Actualizar   = "[Gral].[SP_Empleado_Actualizar]";
+
         #endregion
 
 
@@ -75,5 +125,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string Cai_Eliminar = "[Vnta].[]";
         public static string Cai_Filtrar = "[Vnta].[SP_CAI_Buscar]";
         #endregion
+
+        #region Canales
+            public static string Canales_Listar     = "[Gral].[SP_Canales_Listar]";
+            public static string Canales_Insertar   = "[Gral].[SP_Canal_Insertar]";
+            public static string Canales_Actualizar = "[Gral].[SP_Canal_Actualizar]";
+            public static string Canales_Eliminar   = "[Gral].[SP_Canal_Eliminar]";
+            public static string Canales_Buscar     = "[Gral].[SP_Canal_Buscar]";
+        #endregion
+
+
     }
 }

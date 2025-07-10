@@ -25,8 +25,13 @@ namespace Api_SIDCOP.API.Controllers.General
             _mapper = mapper;
 
         }
-      
 
+        [HttpGet("Listar")]
+        public IActionResult ListarCliente()
+        {
+            var list = _generalServices.ListClientes();
+            return Ok(list);
+        }
 
         [HttpPost("Insertar")]
         public IActionResult InsertarCliente([FromBody] ClienteViewModel item)
@@ -35,6 +40,51 @@ namespace Api_SIDCOP.API.Controllers.General
             var insert = _generalServices.InsertCliente(mapped);
             return Ok(insert);
         }
-        
+
+        [HttpPut("Actualizar")]
+        public IActionResult ActualizarCliente([FromBody] ClienteViewModel item)
+        {
+            var mapped = _mapper.Map<tbClientes>(item);
+            var insert = _generalServices. UpdateCliente(mapped);
+            return Ok(insert);
+        }
+
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var cliente = _generalServices.BuscarCliente(id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Cliente not found.");
+            }
+        }
+
+
+        [HttpPut("CambioEstado")]
+        public IActionResult CambioEstado(int? id, DateTime? fecha)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
+            var result = _generalServices.CambioEstadoCliente(id, fecha);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
     }
 }

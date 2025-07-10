@@ -63,5 +63,12 @@
         public DateTime? Clie_FechaModificacion { get; set; }
 
         public bool Clie_Estado { get; set; }
+
+        public string? UsuaC_Nombre { get; set; }
+        public string? UsuaM_Nombre { get; set; }
+        public string? Cana_Descripcion { get; set; }
+        public string? Colo_Descripcion { get; set; }
+        public string? EsCv_Descripcion { get; set; }
+        public string? Ruta_Descripcion { get; set; }
     }
 }
