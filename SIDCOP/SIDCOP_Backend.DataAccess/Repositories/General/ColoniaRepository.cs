@@ -17,9 +17,42 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
+
+
+        public RequestStatus Delete2(int? id)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Colo_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Colonias_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+        }
+
+
+
         public tbColonias Find(int? id)
         {
-            throw new NotImplementedException();
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Colo_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbColonias>(ScriptDatabase.Colonias_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Colonia no encontrada");
+            }
+            return result;
         }
 
 

@@ -16,14 +16,98 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly EstadoCivilRepository _estadocivilRepository; 
         private readonly MarcaRepository _marcaRepository;
      private readonly ClienteRepository _clienteRepository;
-        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, MarcaRepository marcaRepository , ClienteRepository clienteRepository)
+        private readonly EmpleadoRepository _empleadoRepository;
+        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, 
+            MarcaRepository marcaRepository , ClienteRepository clienteRepository, EmpleadoRepository empleadoRepository)
         {
             _coloniaRepository = coloniaRepository;
             _estadocivilRepository = estadoCivilRepository; 
             _marcaRepository = marcaRepository;
             _clienteRepository = clienteRepository;
+            _empleadoRepository = empleadoRepository; 
 
         }
+
+
+        #region Empleados
+        public IEnumerable<tbEmpleados> ListarEmpleado()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _empleadoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                IEnumerable<tbEmpleados> empleados = null;
+                return empleados;
+            }
+        }
+        public ServiceResult InsertarEmpleados(tbEmpleados item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _empleadoRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public ServiceResult UpdateEmpleados(tbEmpleados empleados)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _empleadoRepository.Update(empleados);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult DeleteEmpleado(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _empleadoRepository.Delete2(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar: {ex.Message}");
+            }
+        }
+
+        public tbEmpleados FindEmpleados(int? id)
+        {
+            try
+            {
+                var sucursal = _empleadoRepository.Find(id);
+                return sucursal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar : {ex.Message}");
+            }
+        }
+
+
+        #endregion
 
 
         #region Colonias 
@@ -73,7 +157,38 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
+        public ServiceResult DeleteColonia(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _coloniaRepository.Delete2(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar : {ex.Message}");
+            }
+        }
+        public tbColonias BuscarSucursal(int? id)
+        {
+            try
+            {
+                var colonia = _coloniaRepository.Find(id);
+                return colonia;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar : {ex.Message}");
+            }
+        }
 
 
 

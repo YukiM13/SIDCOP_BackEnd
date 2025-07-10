@@ -43,5 +43,19 @@ namespace SIDCOP_Backend.DataAccess
         public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";
         public static string Marca_Insertar = "[Gral].[SP_Marca_Insertar]";
         #endregion
+
+
+
+
+        #region Empleados
+        public static string Empleados_Listar       = "[Gral].[SP_Empleado_Listar]";
+        public static string Empleados_Buscar       = "[Gral].[SP_Empleado_Buscar]";
+        public static string Empleados_Eliminar     = "[Gral].[SP_Empleado_Eliminar]";
+        public static string Empleados_Insertar     = "[Gral].[SP_Empleado_Insertar]";
+        public static string Empleados_Actualizar   = "[Gral].[SP_Empleado_Actualizar]";
+
+        #endregion
+
+
     }
 }
