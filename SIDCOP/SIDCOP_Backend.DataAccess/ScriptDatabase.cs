@@ -14,6 +14,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+        #region Clientes
+        public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
+        public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        #endregion
         #region Colonias
         public static string Colonias_Listar = "[Gral].[SP_Colonia_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";

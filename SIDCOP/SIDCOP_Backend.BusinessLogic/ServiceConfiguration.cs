@@ -23,6 +23,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ColoniaRepository>();
             services.AddScoped<MarcaRepository>();
             services.AddScoped<EstadoCivilRepository>();
+            services.AddScoped<ClienteRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
