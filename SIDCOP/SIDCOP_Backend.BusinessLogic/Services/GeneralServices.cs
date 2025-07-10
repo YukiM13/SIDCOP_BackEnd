@@ -21,11 +21,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly CargoRepository _cargoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
+<<<<<<< Updated upstream
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
+=======
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository)
+>>>>>>> Stashed changes
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
@@ -36,10 +41,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _canalRepository = canalRepository;
 
             _empleadoRepository = empleadoRepository;
+<<<<<<< Updated upstream
              _departamentoRepository = departamentoRepository;
             _marcaVehiculoRepository = marcaVehiculoRepository;
        
 
+=======
+            _clienteRepository = clienteRepository;
+            _marcaRepository = marcaRepository;
+            _empleadoRepository = empleadoRepository;
+            _cargoRepository = cargoRepository;
+>>>>>>> Stashed changes
         }
 
         #region Departamentos
@@ -786,6 +798,85 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 throw new Exception($"Error al buscar canal: {ex.Message}");
+            }
+        }
+        #endregion
+
+        #region Cargos
+        public IEnumerable<tbCargos> ListarCargos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _cargoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCargos> cargos = null;
+                return cargos;
+            }
+        }
+
+        public ServiceResult InsertarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _cargoRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _cargoRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarCargo(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var delete = _cargoRepository.Delete(id);
+                if (delete.code_Status == 1)
+                {
+                    return result.Ok(delete.message_Status);
+                }
+                else
+                {
+                    return result.Error(delete.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar cargo: {ex.Message}");
+            }
+        }
+
+        public tbCargos BuscarCargo(int? id)
+        {
+            try
+            {
+                var cargo = _cargoRepository.Find(id);
+                return cargo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cargo: {ex.Message}");
             }
         }
         #endregion

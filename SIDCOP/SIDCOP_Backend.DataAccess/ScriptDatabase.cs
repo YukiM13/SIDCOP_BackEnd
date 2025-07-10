@@ -135,6 +135,12 @@ namespace SIDCOP_Backend.DataAccess
             public static string Canales_Buscar     = "[Gral].[SP_Canal_Buscar]";
         #endregion
 
-
+        #region Cargos
+            public static string Cargos_Listar      = "[Gral].[SP_Cargos_Listar]";
+            public static string Cargos_Insertar    = "[Gral].[SP_Cargo_Insertar]";
+            public static string Cargos_Actualizar  = "[Gral].[SP_Cargo_Actualizar]";
+            public static string Cargos_Eliminar    = "[Gral].[SP_Cargo_Eliminar]";
+            public static string Cargos_Buscar      = "[Gral].[SP_Cargo_Buscar]";
+        #endregion
     }
 }
