@@ -11,7 +11,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class MunicipioRepository : IRepository<tbMunicipios>
     {
-        public RequestStatus Delete(tbMunicipios item)
+      
+
+        public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
