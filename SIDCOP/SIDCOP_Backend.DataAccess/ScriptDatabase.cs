@@ -54,5 +54,10 @@ namespace SIDCOP_Backend.DataAccess
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
 
         #endregion
+
+        #region Clientes
+        public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
+        public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        #endregion
     }
 }

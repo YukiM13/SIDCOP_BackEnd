@@ -15,12 +15,15 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly EstadoCivilRepository _estadocivilRepository;
         private readonly SucursalesRepository _sucursalesRepository;
         private readonly ColoniaRepository _coloniaRepository;
+        private readonly EstadoCivilRepository _estadocivilRepository;
+        private readonly ClienteRepository _clienteRepository;
 
-        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository)
+        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository)
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
+            _clienteRepository = clienteRepository;
 
         }
 
@@ -167,5 +170,22 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion
+
+        #region Clientes
+        public ServiceResult InsertCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clienteRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        #endregion
+
     }
 }

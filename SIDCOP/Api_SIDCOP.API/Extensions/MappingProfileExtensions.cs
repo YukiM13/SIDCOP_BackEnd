@@ -20,6 +20,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbSucursales, SucursalesViewModel>().ReverseMap();
             CreateMap<tbProductos, ProductosViewModel>().ReverseMap();
 
+            CreateMap<tbClientes, ClienteViewModel>().ReverseMap();
 
         }
     }
