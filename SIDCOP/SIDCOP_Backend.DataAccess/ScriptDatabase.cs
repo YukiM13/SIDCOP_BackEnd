@@ -59,5 +59,22 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         #endregion
+
+
+        #region Rutas
+        public static string Rutas_Agregar = "[].[]";
+        public static string Rutas_listar = "[].[]";
+        public static string Rutas_Filtrar = "[].[]";
+        public static string Rutas_Eliminar = "[].[]";
+        public static string Rutas_Editar = "[].[]";
+        #endregion
+
+        #region Cais
+        public static string Cai_Agregar = "[].[]";
+        public static string Cai_Listar = "[].[]";
+        public static string Cai_Eliminar = "[].[]";
+        public static string Cai_Editar = "[].[]";
+        public static string Cai_Filtrar = "[].[]";
+        #endregion
     }
 }
