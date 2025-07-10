@@ -17,24 +17,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ColoniaRepository _coloniaRepository;
         private readonly ClienteRepository _clienteRepository;
         private readonly CanalRepository _canalRepository;
-        private readonly ColoniaRepository _coloniaRepository;
-        private readonly EstadoCivilRepository _estadocivilRepository; 
         private readonly MarcaRepository _marcaRepository;
-        private readonly ClienteRepository _clienteRepository;
         private readonly EmpleadoRepository _empleadoRepository;
-        private readonly SucursalesRepository _sucursalesRepository;
 
-
-        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, 
-            MarcaRepository marcaRepository , ClienteRepository clienteRepository,
-             EmpleadoRepository empleadoRepository,  SucursalesRepository sucursalesRepository){
-                
-             }
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository)
         {
-            _estadocivilRepository = estadoCivilRepository;
+            _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
 
