@@ -13,34 +13,6 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
-        #region Productos
-
-        public const string Productos_Listar = "Inve.SP_Productos_Listar";
-
-        public const string Producto_Insertar = "Inve.SP_Producto_Insertar";
-
-        public const string Producto_Actualizar = "Inve.SP_Producto_Actualizar";
-
-        public const string Producto_Eliminar = "Inve.SP_Producto_Eliminar";
-
-        public const string Producto_Buscar = "Inve.SP_Producto_Buscar";
-
-        #endregion
-
-        #region Sucursales
-
-        public const string Sucursales_Listar = "Gral.SP_Sucursales_Listar";
-
-        public const string Sucursal_Insertar = "Gral.SP_Sucursal_Insertar";
-
-        public const string Sucursal_Actualizar = "Gral.SP_Sucursal_Actualizar";
-
-        public const string Sucursal_Eliminar = "Gral.SP_Sucursal_Eliminar";
-
-        public const string Sucursal_Buscar = "Gral.SP_Sucursal_Buscar";
-
-        #endregion
-
         #region Colonias
         public static string Colonias_Listar = "[Gral].[SP_Colonia_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";
@@ -50,14 +22,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+
+
         #region EstadosCiviles
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
-
-        #endregion
-
-        #region Clientes
-        public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
-        public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         #endregion
 
         #region Categorias

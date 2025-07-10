@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ColoniaRepository : IRepository<tbColonias>
     {
-        public RequestStatus Delete(int? id)
+        public RequestStatus Delete(tbColonias item)
         {
             throw new NotImplementedException();
         }

@@ -35,5 +35,7 @@ namespace Api_SIDCOP.API.Controllers.General
             var list = _generalServices.ListarColonia();
             return Ok(list);
         }
+
+
     }
 }

@@ -14,7 +14,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public RequestStatus Update(T item);
 
-        public RequestStatus Delete(int? id);
+        public RequestStatus Delete(T item);
 
         public T Find(int? id);
     }
