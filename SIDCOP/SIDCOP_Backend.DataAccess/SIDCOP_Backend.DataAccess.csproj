@@ -11,7 +11,6 @@
     <Folder Include="Repositories\Logistica\" />
     <Folder Include="Repositories\Dashboards\" />
     <Folder Include="Repositories\Reportes\" />
-    <Folder Include="Repositories\Ventas\" />
   </ItemGroup>
 
   <ItemGroup>
