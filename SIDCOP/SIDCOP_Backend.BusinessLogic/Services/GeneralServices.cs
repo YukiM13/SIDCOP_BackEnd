@@ -16,14 +16,15 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly SucursalesRepository _sucursalesRepository;
         private readonly ColoniaRepository _coloniaRepository;
         private readonly ClienteRepository _clienteRepository;
+        private readonly CanalRepository _canalRepository;
 
-        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository)
+        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository)
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
             _clienteRepository = clienteRepository;
-
+            _canalRepository = canalRepository;
         }
 
 
@@ -178,6 +179,51 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 var insert = _clienteRepository.Insert(item);
                 return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        #endregion
+
+        #region Canales
+        public IEnumerable<tbCanales> ListarCanales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _canalRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCanales> canales = null;
+                return canales;
+            }
+        }
+
+        public ServiceResult InsertarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _canalRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _canalRepository.Update(item);
+                return result.Ok(update);
             }
             catch (Exception ex)
             {
