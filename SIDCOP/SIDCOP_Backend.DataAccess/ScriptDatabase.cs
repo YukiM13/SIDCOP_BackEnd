@@ -62,19 +62,18 @@ namespace SIDCOP_Backend.DataAccess
 
 
         #region Rutas
-        public static string Rutas_Agregar = "[].[]";
-        public static string Rutas_listar = "[].[]";
-        public static string Rutas_Filtrar = "[].[]";
-        public static string Rutas_Eliminar = "[].[]";
-        public static string Rutas_Editar = "[].[]";
+        public static string Rutas_Agregar = "[Logi].[SP_Ruta_Insertar]";
+        public static string Rutas_listar = "[Logi].[SP_Rutas_Listar]";
+        public static string Rutas_Filtrar = "[Logi].[SP_Ruta_Buscar]";
+        public static string Rutas_Eliminar = "[Logi].[SP_Ruta_Eliminar]";
+        public static string Rutas_Editar = "[Logi].[SP_Ruta_Actualizar]";
         #endregion
 
         #region Cais
-        public static string Cai_Agregar = "[].[]";
-        public static string Cai_Listar = "[].[]";
-        public static string Cai_Eliminar = "[].[]";
-        public static string Cai_Editar = "[].[]";
-        public static string Cai_Filtrar = "[].[]";
+        public static string Cai_Agregar = "[Vnta].[SP_CAI_Insertar]";
+        public static string Cai_Listar = "[Vnta].[SP_CAIs_Listar]";
+        public static string Cai_Eliminar = "[Vnta].[]";
+        public static string Cai_Filtrar = "[Vnta].[SP_CAI_Buscar]";
         #endregion
     }
 }

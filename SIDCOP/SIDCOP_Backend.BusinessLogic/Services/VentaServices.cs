@@ -17,15 +17,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class VentaServices
     {
-        private readonly CaiSRepository _CaiSrepository;
+        private readonly CaiSRepository _caiSRepository;
 
+        public VentaServices(CaiSRepository caiSrepository)
+        {
+            _caiSRepository = caiSrepository;
+        }
 
         #region CaiS
         public tbCAIs BuscarCaiS(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
-            parameter.Add("@NCai_Codigo", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
@@ -38,7 +42,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         {
             try
             {
-                var list = _CaiSrepository.List();
+                var list = _caiSRepository.List();
                 return list;
             }
             catch (Exception ex)
@@ -48,12 +52,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
-        public int InsertarCaiS(tbCAIs item)
+        public int CrearCai(tbCAIs item)
         {
             try
             {
-                var list = _CaiSrepository.Insert(item);
+                var list = _caiSRepository.Insert(item);
                 return list.code_Status;
             }
             catch (Exception ex)
@@ -61,6 +64,18 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return 0;
             }
         }
+        //public int InsertarCaiS(tbCAIs item)
+        //{
+        //    try
+        //    {
+        //        var list = _CaiSrepository.Insert(item);
+        //        return list.code_Status;
+        //    }
+        //    catch (Exception ex)
+        //    {   
+        //        return 0;
+        //    }
+        //}
 
 
         public ServiceResult EliminarCai(int? id)
@@ -68,7 +83,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _CaiSrepository.Delete(id);
+                var deleteResult = _caiSRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
                     return result.Ok(deleteResult.message_Status);

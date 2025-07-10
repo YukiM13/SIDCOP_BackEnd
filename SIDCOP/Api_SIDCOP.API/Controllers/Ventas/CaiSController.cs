@@ -56,7 +56,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         public IActionResult Insert([FromBody] CaiSViewModel item)
         {
             var mapped = _mapper.Map<tbCAIs>(item);
-            var result = _ventaServices.InsertarCaiS(mapped);
+            var result = _ventaServices.CrearCai(mapped);
             return Ok(result);
         }
 
