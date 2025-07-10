@@ -67,5 +67,7 @@ namespace SIDCOP_Backend.DataAccess
             public static string Canales_Eliminar   = "[Gral].[SP_Canal_Eliminar]";
             public static string Canales_Buscar     = "[Gral].[SP_Canal_Buscar]";
         #endregion
+
+
     }
 }

@@ -21,14 +21,14 @@ namespace Api_SIDCOP.API.Controllers.General
             _mapper = mapper;
         }
 
-        [HttpGet("ListarCanales")]
+        [HttpGet("Listar")]
         public IActionResult ListarCanales()
         {
             var list = _generalServices.ListarCanales();
             return Ok(list);
         }
 
-        [HttpPost("InsertarCanal")]
+        [HttpPost("Insertar")]
         public IActionResult InsertarCanal([FromBody]CanalViewModel item)
         {
             var mapped = _mapper.Map<tbCanales>(item);
@@ -36,7 +36,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(insert);
         }
 
-        [HttpPut("ActualizarCanal")]
+        [HttpPut("Actualizar")]
         public IActionResult ActualizarCanal([FromBody] CanalViewModel item)
         {
             var mapped = _mapper.Map<tbCanales>(item);
@@ -44,25 +44,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(update);
         }
 
-        [HttpPut("EliminarCanal/{id}")]
-        public IActionResult Eliminar(int? id)
-        {
-            if(id<=0)
-            {
-                return BadRequest("Id Invalida.");
-            }
-            var delete = _generalServices.EliminarCanal(id);
-            if(delete.Success)
-            {
-                return Ok(delete);
-            }
-            else
-            {
-                return BadRequest(delete);
-            }
-        }
-
-        [HttpGet("BuscarCanal/{id}")]
+        [HttpGet("Buscar/{id}")]
         public IActionResult BuscarCanal(int? id)
         {
             if (id <= 0)
@@ -77,6 +59,24 @@ namespace Api_SIDCOP.API.Controllers.General
             else
             {
                 return NotFound("Canal no encontrado.");
+            }
+        }
+
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
+        {
+            if(id<=0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var delete = _generalServices.EliminarCanal(id);
+            if(delete.Success)
+            {
+                return Ok(delete);
+            }
+            else
+            {
+                return BadRequest(delete);
             }
         }
     }
