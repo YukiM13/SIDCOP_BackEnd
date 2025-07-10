@@ -27,15 +27,15 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPut("Eliminar")]
-        public IActionResult Eliminar([FromBody] Models.Inventario.ProductosViewModel productosViewModel)
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            if (productosViewModel.Prod_Id <= 0)
+            if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            var producto = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbProductos>(productosViewModel);
-            var result = _inventarioServices.EliminarProducto(producto);
+            //var producto = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbProductos>(productosViewModel);
+            var result = _inventarioServices.EliminarProducto(id);
             if (result.Success)
             {
                 return Ok(result);

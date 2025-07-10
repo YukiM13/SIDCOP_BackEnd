@@ -11,10 +11,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class SucursalesRepository : IRepository<tbSucursales>
     {
-        public RequestStatus Delete(tbSucursales item)
+        public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);

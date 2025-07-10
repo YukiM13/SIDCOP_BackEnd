@@ -29,12 +29,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<tbProductos>();
             }
         }
-        public ServiceResult EliminarProducto(tbProductos producto)
+        public ServiceResult EliminarProducto(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _productosRepository.Delete(producto);
+                var deleteResult = _productosRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
                     return result.Ok(deleteResult.message_Status);

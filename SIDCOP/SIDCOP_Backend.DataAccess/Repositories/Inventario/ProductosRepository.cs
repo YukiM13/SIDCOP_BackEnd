@@ -11,10 +11,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class ProductosRepository : IRepository<tbProductos>
     {
-        public RequestStatus Delete(tbProductos item)
+        public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);

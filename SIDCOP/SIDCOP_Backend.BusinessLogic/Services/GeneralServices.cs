@@ -134,12 +134,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarSucursal(tbSucursales sucursal)
+        public ServiceResult EliminarSucursal(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _sucursalesRepository.Delete(sucursal);
+                var deleteResult = _sucursalesRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
                     return result.Ok(deleteResult.message_Status);

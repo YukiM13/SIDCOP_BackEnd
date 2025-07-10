@@ -68,15 +68,15 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-        [HttpPut("Eliminar")]
-        public IActionResult Eliminar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            if (SucursalesViewModel.Sucu_Id <= 0)
+            if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
-            var result = _generalServices.EliminarSucursal(sucursal);
+            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
+            var result = _generalServices.EliminarSucursal(id);
             if (result.Success)
             {
                 return Ok(result);
