@@ -11,19 +11,38 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class CanalRepository : IRepository<tbCanales>
     {
-        public RequestStatus Delete(tbCanales item)
-        {
-            throw new NotImplementedException();
-        }
-
         public RequestStatus Delete(int? id)
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+            parameter.Add("@Cana_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Canales_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public tbCanales Find(int? id)
         {
-            throw new NotImplementedException();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Cana_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbCanales>(ScriptDatabase.Canales_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new KeyNotFoundException("Canal no encontrado.");
+            }
+            return result;
         }
 
         public RequestStatus Insert(tbCanales item)

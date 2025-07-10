@@ -43,5 +43,41 @@ namespace Api_SIDCOP.API.Controllers.General
             var update = _generalServices.ActualizarCanal(mapped);
             return Ok(update);
         }
+
+        [HttpPut("EliminarCanal/{id}")]
+        public IActionResult Eliminar(int? id)
+        {
+            if(id<=0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var delete = _generalServices.EliminarCanal(id);
+            if(delete.Success)
+            {
+                return Ok(delete);
+            }
+            else
+            {
+                return BadRequest(delete);
+            }
+        }
+
+        [HttpGet("BuscarCanal/{id}")]
+        public IActionResult BuscarCanal(int? id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var canal = _generalServices.BuscarCanal(id);
+            if (canal != null)
+            {
+                return Ok(canal);
+            }
+            else
+            {
+                return NotFound("Canal no encontrado.");
+            }
+        }
     }
 }

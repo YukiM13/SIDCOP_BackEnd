@@ -230,6 +230,40 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult EliminarCanal(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var delete = _canalRepository.Delete(id);
+                if (delete.code_Status == 1)
+                {
+                    return result.Ok(delete.message_Status);
+                }
+                else
+                {
+                    return result.Error(delete.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbCanales BuscarCanal(int? id)
+        {
+            try
+            {
+                var canal = _canalRepository.Find(id);
+                return canal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar canal: {ex.Message}");
+            }
+        }
         #endregion
 
     }
