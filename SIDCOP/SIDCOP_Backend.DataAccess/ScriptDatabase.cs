@@ -57,7 +57,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
-           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        
 
         #endregion
 
@@ -77,7 +77,7 @@ namespace SIDCOP_Backend.DataAccess
 
 
         #region Empleados
-        public static string Empleados_Listar       = "[Gral].[SP_Empleado_Listar]";
+        public static string Empleados_Listar       = "[Gral].[SP_Empleados_Listar]";
         public static string Empleados_Buscar       = "[Gral].[SP_Empleado_Buscar]";
         public static string Empleados_Eliminar     = "[Gral].[SP_Empleado_Eliminar]";
         public static string Empleados_Insertar     = "[Gral].[SP_Empleado_Insertar]";

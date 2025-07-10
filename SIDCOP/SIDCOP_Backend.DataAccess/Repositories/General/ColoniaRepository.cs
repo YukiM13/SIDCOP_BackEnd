@@ -34,8 +34,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-
-
         public tbColonias Find(int? id)
         {
 

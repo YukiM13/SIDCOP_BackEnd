@@ -57,7 +57,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Empl_DNI", item.Empl_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Codigo", item.Empl_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Nombres", item.Empl_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Empl_Apellido", item.Empl_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Empl_Apellidos", item.Empl_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Sexo", item.Empl_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_FechaNacimiento", item.Empl_FechaNacimiento, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Correo", item.Empl_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input); 
@@ -105,9 +105,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var parameter = new DynamicParameters();
             parameter.Add("@Empl_Id", item.Empl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_DNI", item.Empl_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Empl_Codigo", item.Empl_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Nombres", item.Empl_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Empl_Apellido", item.Empl_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Empl_Apellidos", item.Empl_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Sexo", item.Empl_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_FechaNacimiento", item.Empl_FechaNacimiento, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_Correo", item.Empl_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
