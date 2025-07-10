@@ -365,9 +365,9 @@ public partial class BDD_SIDCOPContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Gral_tbClientes_tbColonias_Colo_Id");
 
-            entity.HasOne(d => d.EsCv).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.EsCv_Id)
-                .HasConstraintName("FK_Gral_tbClientes_tbEstadosCiviles_EsCv_Id");
+            //entity.HasOne(d => d.EsCv).WithMany(p => p.tbClientes)
+            //    .HasForeignKey(d => d.EsCv_Id)
+            //    .HasConstraintName("FK_Gral_tbClientes_tbEstadosCiviles_EsCv_Id");
 
             entity.HasOne(d => d.Ruta).WithMany(p => p.tbClientes)
                 .HasForeignKey(d => d.Ruta_Id)
@@ -715,10 +715,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Gral_tbEmpleados_Gral_tbColonias_Colo_Id");
 
-            entity.HasOne(d => d.EsCv).WithMany(p => p.tbEmpleados)
-                .HasForeignKey(d => d.EsCv_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbEmpleados_Gral_tbEstadosCiviles_EsCv_Id");
+            //entity.HasOne(d => d.EsCv).WithMany(p => p.tbEmpleados)
+            //    .HasForeignKey(d => d.EsCv_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbEmpleados_Gral_tbEstadosCiviles_EsCv_Id");
 
             entity.HasOne(d => d.Sucu).WithMany(p => p.tbEmpleados)
                 .HasForeignKey(d => d.Sucu_Id)
@@ -748,14 +748,14 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.EsCv_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.EsCv_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbEstadosCivilesUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbEstadosCiviles_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbEstadosCivilesUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbEstadosCiviles_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbEstadosCivilesUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Gral_tbEstadosCiviles_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbEstadosCivilesUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Gral_tbEstadosCiviles_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbFacturas>(entity =>
@@ -964,14 +964,14 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Marc_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Marc_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbMarcasUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbMarcas_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbMarcasUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbMarcas_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbMarcasUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Gral_tbMarcas_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbMarcasUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Gral_tbMarcas_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbMarcasVehiculos>(entity =>
@@ -1251,10 +1251,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Inve_tbProductos_Vnta_tbImpuestos_Impu_Id");
 
-            entity.HasOne(d => d.Marc).WithMany(p => p.tbProductos)
-                .HasForeignKey(d => d.Marc_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbProductos_Gral_tbMarcas_Marc_Id");
+            //entity.HasOne(d => d.Marc).WithMany(p => p.tbProductos)
+            //    .HasForeignKey(d => d.Marc_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbProductos_Gral_tbMarcas_Marc_Id");
 
             entity.HasOne(d => d.Prov).WithMany(p => p.tbProductos)
                 .HasForeignKey(d => d.Prov_Id)

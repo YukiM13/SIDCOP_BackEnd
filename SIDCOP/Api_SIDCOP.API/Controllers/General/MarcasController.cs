@@ -1,13 +1,8 @@
 ﻿using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
-using MailKit.Net.Smtp;
 using SIDCOP_Backend.BusinessLogic.Services;
-using Api_SIDCOP.API.Models.Acceso;
-using MailKit.Security;
 using SIDCOP_Backend.Entities.Entities;
-
 
 namespace Api_SIDCOP.API.Controllers.General
 {
@@ -15,12 +10,13 @@ namespace Api_SIDCOP.API.Controllers.General
     [Route("[controller]")]
     [ApiKey]
 
-    public class EstadosCivilesController :  Controller
+    public class MarcasController : Controller
     {
         public readonly GeneralServices _generalServices;
         public readonly IMapper _mapper;
 
-        public EstadosCivilesController(GeneralServices generalServices, IMapper mapper)
+
+        public MarcasController(GeneralServices generalServices, IMapper mapper)
         {
             _generalServices = generalServices;
             _mapper = mapper;
@@ -30,14 +26,14 @@ namespace Api_SIDCOP.API.Controllers.General
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _generalServices.ListEsCi();
+            var list = _generalServices.ListMarcas();
             return Ok(list);
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] tbEstadosCiviles item)
+        public IActionResult Insertar([FromBody] tbMarcas item)
         {
-            var result = _generalServices.InsertEsCi(item);
+            var result = _generalServices.InsertMarca(item);
             return Ok(result);
         }
 
