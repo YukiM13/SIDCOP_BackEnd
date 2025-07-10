@@ -18,6 +18,9 @@ public partial class tbEstadosCiviles
 
     public int? Usua_Modificacion { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public DateTime? EsCv_FechaModificacion { get; set; }
 
     [NotMapped]
