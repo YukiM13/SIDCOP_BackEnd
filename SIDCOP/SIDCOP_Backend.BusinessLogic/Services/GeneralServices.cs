@@ -12,30 +12,30 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class GeneralServices
     {
-
+        private readonly EstadoCivilRepository _estadocivilRepository;
+        private readonly SucursalesRepository _sucursalesRepository;
         private readonly ColoniaRepository _coloniaRepository;
         private readonly ClienteRepository _clienteRepository;
+        private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
-         private readonly EmpleadoRepository _empleadoRepository;
-        private readonly SucursalesRepository _sucursalesRepository;
-         private readonly EstadoCivilRepository _estadocivilRepository; 
+        private readonly EmpleadoRepository _empleadoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
-         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, MarcaRepository marcaRepository,EmpleadoRepository empleadoRepository
-         
-         )
-
-               
+        ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository)
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
+
+            _marcaRepository = marcaRepository;
+            _clienteRepository = clienteRepository;
+            _canalRepository = canalRepository;
+            _empleadoRepository = empleadoRepository;
             _clienteRepository = clienteRepository;
             _marcaRepository = marcaRepository;
-                _empleadoRepository = empleadoRepository; 
-
+            _empleadoRepository = empleadoRepository; 
         }
-
 
         #region Empleados
         public IEnumerable<tbEmpleados> ListarEmpleado()
@@ -547,6 +547,85 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 IEnumerable<tbClientes> clientes = null;
                 return clientes;
+            }
+        }
+        #endregion
+
+        #region Canales
+        public IEnumerable<tbCanales> ListarCanales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _canalRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCanales> canales = null;
+                return canales;
+            }
+        }
+
+        public ServiceResult InsertarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _canalRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _canalRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarCanal(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var delete = _canalRepository.Delete(id);
+                if (delete.code_Status == 1)
+                {
+                    return result.Ok(delete.message_Status);
+                }
+                else
+                {
+                    return result.Error(delete.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbCanales BuscarCanal(int? id)
+        {
+            try
+            {
+                var canal = _canalRepository.Find(id);
+                return canal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar canal: {ex.Message}");
             }
         }
         #endregion

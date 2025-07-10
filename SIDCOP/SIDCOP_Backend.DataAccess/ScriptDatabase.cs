@@ -109,5 +109,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string Cai_Editar = "[].[]";
         public static string Cai_Filtrar = "[].[]";
         #endregion
+
+        #region Canales
+            public static string Canales_Listar     = "[Gral].[SP_Canales_Listar]";
+            public static string Canales_Insertar   = "[Gral].[SP_Canal_Insertar]";
+            public static string Canales_Actualizar = "[Gral].[SP_Canal_Actualizar]";
+            public static string Canales_Eliminar   = "[Gral].[SP_Canal_Eliminar]";
+            public static string Canales_Buscar     = "[Gral].[SP_Canal_Buscar]";
+        #endregion
+
+
     }
 }
