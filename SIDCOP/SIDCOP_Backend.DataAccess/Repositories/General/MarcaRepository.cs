@@ -71,7 +71,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var result = db.Execute(ScriptDatabase.Marca_Actualizar, parameter, commandType: CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error al actualizar la Marca" : "Marca actualizada correctamente";
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public RequestStatus EliminarMarca(tbMarcas item)
@@ -83,7 +83,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var result = db.Execute(ScriptDatabase.Marca_Eliminar, parameters, commandType: CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error al eliminar la Marca" : "Marca eliminada correctamente";
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
 

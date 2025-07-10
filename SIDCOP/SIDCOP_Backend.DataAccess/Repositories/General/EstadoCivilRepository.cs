@@ -64,7 +64,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var result = db.Execute(ScriptDatabase.EstadoCivil_Actualizar, parameter, commandType: CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error al actualizar el Estado Civil" : "Estado Civil actualizado correctamente";
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public RequestStatus EliminarEsCi(tbEstadosCiviles item)
@@ -76,7 +76,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var result = db.Execute(ScriptDatabase.EstadoCivil_Eliminar, parameters, commandType: CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error al eliminar el Estado Civil" : "Estado Civil correctamente";
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public tbEstadosCiviles BuscarEsCi(tbEstadosCiviles item)
