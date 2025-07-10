@@ -21,14 +21,14 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
-        [HttpGet("ListarSucursales")]
+        [HttpGet("Listar")]
         public IActionResult Listar()
         {
             var list = _generalServices.ListSucursales();
             return Ok(list);
         }
 
-        [HttpPost("InsertarSucursal")]
+        [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
         {
             if (SucursalesViewModel == null)
@@ -49,7 +49,7 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
-        [HttpPut("ActualizarSucursal")]
+        [HttpPut("Actualizar")]
         public IActionResult Actualizar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
         {
             if (SucursalesViewModel == null)
@@ -68,7 +68,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-        [HttpPut("EliminarSucursal")]
+        [HttpPut("Eliminar")]
         public IActionResult Eliminar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
         {
             if (SucursalesViewModel.Sucu_Id <= 0)
@@ -87,7 +87,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-        [HttpGet("BuscarSucursal/{id}")]
+        [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
             if (id <= 0)

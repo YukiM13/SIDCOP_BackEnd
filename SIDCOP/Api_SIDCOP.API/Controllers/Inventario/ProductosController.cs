@@ -20,14 +20,14 @@ namespace Api_SIDCOP.API.Controllers.Inventario
 
         }
 
-        [HttpGet("ListarProductos")]
+        [HttpGet("Listar")]
         public IActionResult Listar()
         {
             var list = _inventarioServices.ListarProductos();
             return Ok(list);
         }
 
-        [HttpPut("EliminarProducto")]
+        [HttpPut("Eliminar")]
         public IActionResult Eliminar([FromBody] Models.Inventario.ProductosViewModel productosViewModel)
         {
             if (productosViewModel.Prod_Id <= 0)
@@ -46,7 +46,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
-        [HttpGet("BuscarProducto/{id}")]
+        [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
             if (id <= 0)
@@ -64,7 +64,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
-        [HttpPost("InsertarProducto")]
+        [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] Models.Inventario.ProductosViewModel productosViewModel)
         {
             if (productosViewModel == null)
@@ -84,7 +84,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
-        [HttpPut("ActualizarProducto")]
+        [HttpPut("Actualizar")]
         public IActionResult Actualizar([FromBody] Models.Inventario.ProductosViewModel productosViewModel)
         {
             if (productosViewModel == null)
