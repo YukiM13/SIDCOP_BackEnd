@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,18 @@ namespace SIDCOP_Backend.DataAccess
 
 
         #region EstadosCiviles
-           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
+        public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
+        public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
+        public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
+        #endregion
+
+
+
+        #region Marcas
+        public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";
+        public static string Marca_Insertar = "[Gral].[SP_Marca_Insertar]";
         #endregion
     }
 }
