@@ -56,10 +56,10 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalida.");
             }
-            var sucursal = _generalServices.BuscarCliente(id);
-            if (sucursal != null)
+            var cliente = _generalServices.BuscarCliente(id);
+            if (cliente != null)
             {
-                return Ok(sucursal);
+                return Ok(cliente);
             }
             else
             {
