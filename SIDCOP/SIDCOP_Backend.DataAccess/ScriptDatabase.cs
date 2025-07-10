@@ -43,7 +43,7 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region Colonias
-        public static string Colonias_Listar = "[Gral].[SP_Colonia_Listar]";
+        public static string Colonias_Listar = "[Gral].[SP_Colonias_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar= "[Gral].[SP_Colonia_Insertar]";
@@ -64,6 +64,9 @@ namespace SIDCOP_Backend.DataAccess
         #region Clientes
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
+        public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
+        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
         #endregion
 
 
