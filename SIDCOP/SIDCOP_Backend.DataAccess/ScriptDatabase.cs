@@ -135,5 +135,14 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
+
+        #region RegistrosCaiS
+        public static string RegistrosCaiSInsertar = "[Vnta].[SP_RegistroCAI_Insertar]";
+        public static string RegistrosCaiSListar = "[Vnta].[SP_RegistrosCAI_Listar]";
+        public static string RegistrosCaiSFiltrar = "[Vnta].[SP_RegistrosCAI_Buscar]";
+        public static string RegistrosCaiSEditar = "[Vnta].[SP_RegistroCAI_Actualizar]";
+        public static string RegistrosCaiSEliminar = "[Vnta].[]";
+        #endregion
+
     }
 }
