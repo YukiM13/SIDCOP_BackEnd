@@ -16,6 +16,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             throw new NotImplementedException();
         }
 
+        public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public tbUsuarios Find(int? id)
         {
             throw new NotImplementedException();

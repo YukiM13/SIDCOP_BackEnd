@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -43,15 +44,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-        public RequestStatus Delete(tbDepartamentos item)
+        public RequestStatus DeleteConCodigo(string? id)
         {
-            if (item == null)
-            {
-                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
-            }
             var parameter = new DynamicParameters();
-            parameter.Add("@Depa_Codigo", item.Depa_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-
+            parameter.Add("@Depa_Codigo", id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -68,20 +64,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-
-
-
-        public IEnumerable<tbDepartamentos> Find(tbDepartamentos? item)
-        {
-            var parameter = new DynamicParameters();
-            parameter.Add("@Depa_Codigo", item.Depa_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbDepartamentos>(ScriptDatabase.Departamento_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
-
-
-            return result;
-        }
 
 
         public RequestStatus Insert(tbDepartamentos item)
@@ -122,6 +104,33 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
 
             return result;
+        }
+
+        public tbDepartamentos FindConCodigo(string? id)
+        {
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameter = new DynamicParameters();
+                parameter.Add("@Depa_Codigo", id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+                var result = db.QueryFirstOrDefault<tbDepartamentos>(ScriptDatabase.Departamento_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    throw new Exception("Departamento no encontrada");
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error");
+            }
+          
+        }
+
+        public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
         }
 
         public tbDepartamentos Find(int? id)

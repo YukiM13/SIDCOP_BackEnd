@@ -11,22 +11,22 @@ namespace Api_SIDCOP.API.Controllers.General
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
-    public class DepartamentosController: Controller
+    public class MarcasVehiculosController: Controller
     {
         private readonly GeneralServices _generalServices;
         private readonly IMapper _mapper;
 
-        public DepartamentosController(GeneralServices generalServices, IMapper mapper)
+        public MarcasVehiculosController(GeneralServices generalServices, IMapper mapper)
         {
             _generalServices = generalServices;
             _mapper = mapper;
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] DepartamentoViewModel item)
+        public IActionResult Insertar([FromBody] MarcaVehiculoViewModel item)
         {
-            var mapped = _mapper.Map<tbDepartamentos>(item);
-            var result = _generalServices.InsertarDepartamento(mapped);
+            var mapped = _mapper.Map<tbMarcasVehiculos>(item);
+            var result = _generalServices.InsertarMarcaVehiculo(mapped);
             return Ok(result);
         }
 
@@ -34,21 +34,20 @@ namespace Api_SIDCOP.API.Controllers.General
         public IActionResult Listar()
         {
 
-            var result = _generalServices.ListarDepartamentos();
+            var result = _generalServices.ListarMarcaVehiculo();
             return Ok(result);
         }
 
 
-
         [HttpPost("Buscar/{id}")]
-        public IActionResult Buscar(string id)
+        public IActionResult Buscar(int id)
         {
-            if (string.IsNullOrEmpty(id))
+            if ( id <= 0 )
             {
                 return BadRequest("Id Invalida.");
             }
 
-            var deparatemnto = _generalServices.BuscarDepartamento(id);
+            var deparatemnto = _generalServices.BuscarMarcaVehiculo(id);
             if (deparatemnto != null)
             {
                 return Ok(deparatemnto);
@@ -59,16 +58,15 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-
         [HttpPost("Eliminar/{id}")]
-        public IActionResult Eliminar(string? id)
+        public IActionResult Eliminar(int id)
         {
-            if (string.IsNullOrEmpty(id) || id.Length < 0)
+            if (id <= 0)
             {
-                return BadRequest("Codigo llego mal.");
+                return BadRequest("Id Invalida.");
             }
 
-            var result = _generalServices.EliminarDepartamento(id);
+            var result = _generalServices.EliminarMarcavehiculo(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -80,10 +78,10 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPut("Editar")]
-        public IActionResult Editar([FromBody] DepartamentoViewModel item)
+        public IActionResult Editar([FromBody] MarcaVehiculoViewModel item)
         {
-            var mapped = _mapper.Map<tbDepartamentos>(item);
-            var result = _generalServices.EditarDepartamento(mapped);
+            var mapped = _mapper.Map<tbMarcasVehiculos>(item);
+            var result = _generalServices.EditarMarcaVehiculo(mapped);
             return Ok(result);
         }
 
