@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {

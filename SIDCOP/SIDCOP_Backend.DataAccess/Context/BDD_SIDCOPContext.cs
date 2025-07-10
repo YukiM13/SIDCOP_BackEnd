@@ -880,14 +880,14 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Impu_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.Impu_Valor).HasColumnType("numeric(6, 2)");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbImpuestosUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Vnta_tbImpuestos_Usua_Creacion_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            ////entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbImpuestosUsua_CreacionNavigation)
+            ////    .HasForeignKey(d => d.Usua_Creacion)
+            ////    .OnDelete(DeleteBehavior.ClientSetNull)
+            ////    .HasConstraintName("FK_Vnta_tbImpuestos_Usua_Creacion_U
+            ////entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbImpuestosUsua_ModificacionNavigation)
+            ////    .HasForeignKey(d => d.Usua_Modificacion)sua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbImpuestosUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Vnta_tbImpuestos_Usua_Modificacion_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            ////    .HasConstraintName("FK_Vnta_tbImpuestos_Usua_Modificacion_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbInventarioBodegas>(entity =>
@@ -1246,10 +1246,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsFixedLength();
             entity.Property(e => e.Prod_PrecioUnitario).HasColumnType("decimal(10, 2)");
 
-            entity.HasOne(d => d.Impu).WithMany(p => p.tbProductos)
-                .HasForeignKey(d => d.Impu_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbProductos_Vnta_tbImpuestos_Impu_Id");
+            //entity.HasOne(d => d.Impu).WithMany(p => p.tbProductos)
+            //    .HasForeignKey(d => d.Impu_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbProductos_Vnta_tbImpuestos_Impu_Id");
 
             entity.HasOne(d => d.Marc).WithMany(p => p.tbProductos)
                 .HasForeignKey(d => d.Marc_Id)
@@ -1381,19 +1381,19 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(17)
                 .IsUnicode(false);
 
-            //entity.HasOne(d => d.Colo).WithMany(p => p.tbProveedores)
-            //    .HasForeignKey(d => d.Colo_Id)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("FK_Gral_tbProveedores_Gral_tbColonias_Colo_Id");
+            ////entity.HasOne(d => d.Colo).WithMany(p => p.tbProveedores)
+            ////    .HasForeignKey(d => d.Colo_Id)
+            ////    .OnDelete(DeleteBehavior.ClientSetNull)
+            ////    .HasConstraintName("FK_Gral_tbProveedores_Gral_tbColonias_Colo_Id");
 
-            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbProveedoresUsua_CreacionNavigation)
-            //    .HasForeignKey(d => d.Usua_Creacion)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("FK_Gral_tbProveedores_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            ////entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbProveedoresUsua_CreacionNavigation)
+            ////    .HasForeignKey(d => d.Usua_Creacion)
+            ////    .OnDelete(DeleteBehavior.ClientSetNull)
+            ////    .HasConstraintName("FK_Gral_tbProveedores_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            ////entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbProveedoresUsua_ModificacionNavigation)
-            ////    .HasForeignKey(d => d.Usua_Modificacion)
-            ////    .HasConstraintName("FK_Gral_tbProveedores_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbProveedoresUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Gral_tbProveedores_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbPuntosEmision>(entity =>

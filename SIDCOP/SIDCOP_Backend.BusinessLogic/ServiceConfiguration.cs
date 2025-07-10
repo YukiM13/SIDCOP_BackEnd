@@ -5,6 +5,7 @@ using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Inventario;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<EstadoCivilRepository>();
             services.AddScoped<CategoriasRepository>();
             services.AddScoped<SubcategoriasRepository>();
+            services.AddScoped<ImpuestosRepository>();
             services.AddScoped<ProveedoresRepository>();
         }
 
@@ -36,6 +38,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<AccesoServices>();
             services.AddScoped<GeneralServices>();
             services.AddScoped<InventarioServices>();
+            services.AddScoped<VentaServices>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
         }

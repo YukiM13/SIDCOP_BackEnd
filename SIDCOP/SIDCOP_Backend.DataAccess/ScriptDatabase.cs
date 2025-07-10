@@ -60,5 +60,10 @@ namespace SIDCOP_Backend.DataAccess
         public const string Proveedores_Buscar = "[Gral].[SP_Proveedor_Buscar]";
         public const string Proveedores_Eliminar = "[Gral].[SP_Proveedor_Eliminar]";
         #endregion
+
+        #region  Impuestos 
+        public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
+        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
+        #endregion
     }
 }
