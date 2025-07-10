@@ -68,7 +68,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-        [HttpPut("Eliminar/{id}")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
             if (id <= 0)
