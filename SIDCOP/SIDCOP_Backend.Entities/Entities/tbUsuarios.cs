@@ -33,6 +33,19 @@ public partial class tbUsuarios
 
     public bool Usua_Estado { get; set; }
 
+    /* Pantallas, Roles y Acciones */
+    public string Role_Descripcion { get; set; }
+    public int Pant_Id { get; set; }
+
+    public string Pant_Descripcion { get; set; }
+
+    public string Pant_Icono { get; set; }
+
+    public int Acci_Id { get; set; }
+    public string Acci_Descripcion { get; set; }
+
+    public DateTime Perm_FechaCreacion { get; set; }
+
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_ModificacionNavigation { get; set; } = new List<tbBodegas>();

@@ -7,6 +7,7 @@ using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
 using System.Drawing;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
@@ -29,8 +30,48 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _accesoServices.ListUsuario();
+            var list = _accesoServices.ListUsuarios();
             return Ok(list);
+        }
+
+        [HttpPost("Insertar")]
+        public IActionResult Insert([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var insert = _accesoServices.InsertUsuario(mapped);
+            return Ok(insert);
+        }
+
+        [HttpPut("Actualizar")]
+        public IActionResult Update([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var update = _accesoServices.UpdateUsuario(mapped);
+            return Ok(update);
+        }
+
+        [HttpPost("CambiarEstado")]
+        public IActionResult Delete([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var delete = _accesoServices.CambiarEstadoUsuario(mapped);
+            return Ok(delete);
+        }
+
+        [HttpPost("Buscar")]
+        public IActionResult Find([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var list = _accesoServices.BuscarUsuario(mapped);
+            return Ok(list);
+        }
+
+        [HttpPost("RestablecerClave")]
+        public IActionResult RestablecerClave([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var result = _accesoServices.RestablecerContrasena(mapped);
+            return Ok(result);
         }
 
         [HttpPost("EnviarCorreo")]
