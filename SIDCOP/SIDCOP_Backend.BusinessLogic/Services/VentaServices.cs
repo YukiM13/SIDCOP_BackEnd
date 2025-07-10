@@ -1,4 +1,6 @@
-﻿using Microsoft.Identity.Client;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
@@ -19,28 +21,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
         #region CaiS
-
-        public IEnumerable<tbCAIs> BuscarCAiS(tbCAIs item)
+        public tbCAIs BuscarCaiS(int? id)
         {
-            var result = new ServiceResult();
-
-            try
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@NCai_Codigo", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
             {
-                var list = _CaiSrepository.Find2(item.NCai_Codigo);
-                return list;
+                throw new Exception("Cais no encontrada");
             }
-            catch (Exception ex)
-            {
-                IEnumerable<tbCAIs> CaiS = null;
-                return CaiS;
-            }
+            return result;
         }
+
         public IEnumerable<tbCAIs> ListarCaiS()
         {
-
             try
             {
-                var list = _CaiSrepository.Listar();
+                var list = _CaiSrepository.List();
                 return list;
             }
             catch (Exception ex)
@@ -49,12 +47,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return lista;
             }
         }
+
+
         public int InsertarCaiS(tbCAIs item)
         {
             try
             {
                 var list = _CaiSrepository.Insert(item);
-                return list;
+                return list.code_Status;
             }
             catch (Exception ex)
             {
@@ -62,18 +62,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarCaiS(tbCAIs item)
+
+        public ServiceResult EliminarCai(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _CaiSrepository.Delete(item);
-
-                return result.Ok(list);
+                var deleteResult = _CaiSrepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error($"Error al eliminar Cai: {ex.Message}");
             }
         }
         #endregion

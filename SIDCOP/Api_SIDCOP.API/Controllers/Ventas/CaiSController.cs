@@ -25,12 +25,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
-        [HttpPost("Buscar")]
-        public IActionResult Find([FromBody] CaiSViewModel item)
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
         {
-            var mapped = _mapper.Map<tbCAIs>(item);
-            var list = _ventaServices.BuscarCAiS(mapped);
-            return Ok(list);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _ventaServices.BuscarCaiS(id);
+            if (sucursal != null)
+            {
+                return Ok(sucursal);
+            }
+            else
+            {
+                return NotFound("Cai not found.");
+            }
         }
 
         [HttpGet("Listar")]
@@ -50,13 +60,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(result);
         }
 
-
-        [HttpPost("Eliminar")]
-        public IActionResult Delete([FromBody] CaiSViewModel item)
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            var mapped = _mapper.Map<tbCAIs>(item);
-            var result = _ventaServices.EliminarCaiS(mapped);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var result = _ventaServices.EliminarCai(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
     }
 }

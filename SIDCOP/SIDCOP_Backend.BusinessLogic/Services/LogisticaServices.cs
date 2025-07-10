@@ -1,4 +1,8 @@
-﻿using Microsoft.Identity.Client;
+﻿using Azure.Core;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
+using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -19,29 +23,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         {
             _rutasRepository = rutasRepository;
         }
-
-
-        public IEnumerable<tbRutas> BuscarRuta(tbRutas item)
+        public tbRutas BuscarRuta(int? id)
         {
-            var result = new ServiceResult();
-
-            try
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Ruta_id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbRutas>(ScriptDatabase.Rutas_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
             {
-                var list = _rutasRepository.Find2(item.Ruta_Codigo);
-                return list;
+                throw new Exception("Ruta no encontrada");
             }
-            catch (Exception ex)
-            {
-                IEnumerable<tbRutas> ruta = null;
-                return ruta;
-            }
+            return result;
         }
-        public IEnumerable<tbRutas> ListRutas()
+ 
+        public IEnumerable<tbRutas> ListarRutas()
         {
 
             try
             {
-                var list = _rutasRepository.Listar();
+                var list = _rutasRepository.List();
                 return list;
             }
             catch (Exception ex)
@@ -52,18 +52,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
         public int InsertarRuta(tbRutas item)
         {
-            //var result = new ServiceResult();
             try
             {
                 var list = _rutasRepository.Insert(item);
-                return list;
+                return list.code_Status;
             }
             catch (Exception ex)
             {
                 return 0;
             }
         }
-
 
         public ServiceResult ModificarRuta(tbRutas item)
         {
@@ -80,19 +78,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
-        public ServiceResult EliminarRuta(tbRutas item)
+        public ServiceResult EliminarRuta(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _rutasRepository.Delete(item);
-
-                return result.Ok(list);
+                var deleteResult = _rutasRepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error($"Error al eliminar ruta: {ex.Message}");
             }
         }
         #endregion

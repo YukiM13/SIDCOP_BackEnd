@@ -24,19 +24,28 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             _mapper = mapper;
         }
 
-
-        [HttpPost("Buscar")]
-        public IActionResult Find([FromBody] RutasViewModel item)
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
         {
-            var mapped = _mapper.Map<tbRutas>(item);
-            var list = _logisticaServices.BuscarRuta(mapped);
-            return Ok(list);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _logisticaServices.BuscarRuta(id);
+            if (sucursal != null)
+            {
+                return Ok(sucursal);
+            }
+            else
+            {
+                return NotFound("Ruta not found.");
+            }
         }
-
+  
         [HttpGet("Listar")]
         public IActionResult listar()
         {
-            var list = _logisticaServices.ListRutas();
+            var list = _logisticaServices.ListarRutas();
             list = _mapper.Map<IEnumerable<tbRutas>>(list);
             return Ok(list);
         }
@@ -60,12 +69,22 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
-        [HttpPost("Eliminar")]
-        public IActionResult Delete([FromBody] RutasViewModel item)
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            var mapped = _mapper.Map<tbRutas>(item);
-            var result = _logisticaServices.EliminarRuta(mapped);
-            return Ok(result);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var result = _logisticaServices.EliminarRuta(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
         }
     }
 }

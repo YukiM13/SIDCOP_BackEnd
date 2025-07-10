@@ -8,8 +8,10 @@ namespace SIDCOP_Backend.DataAccess
 {
     public class RequestStatus
     {
+        internal int codeStatus;
 
         public int code_Status { get; set; }
         public string message_Status { get; set; }
+
     }
 }
