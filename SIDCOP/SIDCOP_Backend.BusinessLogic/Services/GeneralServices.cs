@@ -18,12 +18,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ColoniaRepository _coloniaRepository;
         private readonly EstadoCivilRepository _estadocivilRepository;
         private readonly ModeloRepository _modeloRepository;
+        private readonly ProveedoresRepository _proveedoresRepository;
 
-        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, ModeloRepository modeloRepository)
+        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository)
         {
             _coloniaRepository = coloniaRepository;
             _estadocivilRepository = estadoCivilRepository;
             _modeloRepository = modeloRepository;
+            _proveedoresRepository = proveedoresRepository;
 
         }
 
@@ -130,6 +132,80 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var resultado = _modeloRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region Proveedores
+
+        public IEnumerable<tbProveedores> ListProveedores()
+        {
+            try
+            {
+                var list = _proveedoresRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbProveedores> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult InsertarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Delete(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.FindCodigo(item);
                 return result.Ok(resultado);
             }
             catch (Exception ex)

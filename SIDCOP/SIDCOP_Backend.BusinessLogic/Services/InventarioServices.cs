@@ -11,10 +11,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     public class InventarioServices
     {
         private readonly CategoriasRepository _categoriasRepository;
+        private readonly SubcategoriasRepository _subcategoriasRepository;
 
-        public InventarioServices(CategoriasRepository categoriasRepository)
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository)
         {
             _categoriasRepository = categoriasRepository;
+            _subcategoriasRepository = subcategoriasRepository;
         }
 
         #region Categorias
@@ -89,6 +91,78 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        #endregion
+
+        #region Subcategorias
+        public IEnumerable<tbSubcategorias> ListarSubCategorias()
+        {
+            try
+            {
+                var list = _subcategoriasRepository.List();
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbSubcategorias> subcategorias = null;
+                return subcategorias;
+            }
+        }
+
+        public ServiceResult InsertarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Delete(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
         #endregion
     }
 }

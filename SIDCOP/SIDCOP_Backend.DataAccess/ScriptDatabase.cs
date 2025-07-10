@@ -43,5 +43,22 @@ namespace SIDCOP_Backend.DataAccess
         public const string Modelos_Actualizar = "[Gral].[SP_Modelo_Actualizar]";
         public const string Modelos_Buscar = "[Gral].[SP_Modelo_Buscar]";
         #endregion
+
+        #region Subcategorias
+
+        public const string Subcategorias_Listar = "[Inve].[SP_Subcategoria_Listar]";
+        public const string Subcategorias_Insertar = "[Inve].[SP_Subcategoria_Insertar]";
+        public const string Subcategorias_Eliminar = "[Inve].[SP_Subcategoria_Eliminar]";
+        public const string Subcategorias_Buscar = "[Inve].[SP_Subcategoria_Buscar]";
+        public const string Subcategorias_Actualizar = "[Inve].[SP_Subcategoria_Actualizar]";
+        #endregion
+
+        #region Proveedores
+        public const string Proveedores_Listar = "[Gral].[SP_Proveedores_Listar]";
+        public const string Proveedores_Insertar = "[Gral].[SP_Proveedor_Insertar]";
+        public const string Proveedores_Actualizar = "[Gral].[SP_Proveedor_Actualizar]";
+        public const string Proveedores_Buscar = "[Gral].[SP_Proveedor_Buscar]";
+        public const string Proveedores_Eliminar = "[Gral].[SP_Proveedor_Eliminar]";
+        #endregion
     }
 }

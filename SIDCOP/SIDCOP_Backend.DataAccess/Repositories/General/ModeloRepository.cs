@@ -49,7 +49,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 parameter.Add("@MaVe_Id", item.MaVe_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
                 parameter.Add("@Mode_Descripcion", item.Mode_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
                 parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-                parameter.Add("@Mode_FechaCeacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+                parameter.Add("@Mode_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.Execute(ScriptDatabase.Modelos_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
@@ -75,8 +75,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Mode_Id", item.Mode_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@MaVe_Id", item.MaVe_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Mode_Descripcion", item.Mode_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Mode_FechaCeacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Mode_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);

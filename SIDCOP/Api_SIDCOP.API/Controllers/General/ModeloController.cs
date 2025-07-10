@@ -7,7 +7,7 @@ using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.General
 {
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class ModeloController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace Api_SIDCOP.API.Controllers.General
             _mapper = mapper;
         }
 
-        [HttpGet("ListarModelos")]
+        [HttpGet("Listar")]
         public IActionResult Listar()
         {
             var list = _generalServices.ListModelos();
@@ -30,7 +30,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-        [HttpPost("InsertarModelo")]
+        [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] ModeloViewModel item)
         {
             var mapped = _mapper.Map<tbModelos>(item);
@@ -38,7 +38,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-        [HttpPut("ActualizarModelo")]
+        [HttpPut("Actualizar")]
         public IActionResult Actualizar([FromBody] ModeloViewModel item)
         {
             var mapped = _mapper.Map<tbModelos>(item);
@@ -46,7 +46,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-        [HttpPost("EliminarModelo")]
+        [HttpPost("Eliminar")]
         public IActionResult Eliminar([FromBody] ModeloViewModel item)
         {
             var mapped = _mapper.Map<tbModelos>(item);
@@ -54,7 +54,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-        [HttpPost("BuscarModelo")]
+        [HttpPost("Buscar")]
         public IActionResult Find([FromBody] ModeloViewModel item)
         {
             var mapped = _mapper.Map<tbModelos>(item);

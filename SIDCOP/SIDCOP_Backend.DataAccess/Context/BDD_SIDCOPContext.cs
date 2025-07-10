@@ -1256,15 +1256,15 @@ public partial class BDD_SIDCOPContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Inve_tbProductos_Gral_tbMarcas_Marc_Id");
 
-            entity.HasOne(d => d.Prov).WithMany(p => p.tbProductos)
-                .HasForeignKey(d => d.Prov_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbProductos_Gral_tbProveedores_Prov_Id");
+            //entity.HasOne(d => d.Prov).WithMany(p => p.tbProductos)
+            //    .HasForeignKey(d => d.Prov_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbProductos_Gral_tbProveedores_Prov_Id");
 
-            entity.HasOne(d => d.Subc).WithMany(p => p.tbProductos)
-                .HasForeignKey(d => d.Subc_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbProductos_Inve_tbSubcategorias_Subc_Id");
+            //entity.HasOne(d => d.Subc).WithMany(p => p.tbProductos)
+            //    .HasForeignKey(d => d.Subc_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbProductos_Inve_tbSubcategorias_Subc_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbProductosUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
@@ -1381,19 +1381,19 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(17)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Colo).WithMany(p => p.tbProveedores)
-                .HasForeignKey(d => d.Colo_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbProveedores_Gral_tbColonias_Colo_Id");
+            //entity.HasOne(d => d.Colo).WithMany(p => p.tbProveedores)
+            //    .HasForeignKey(d => d.Colo_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbProveedores_Gral_tbColonias_Colo_Id");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbProveedoresUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbProveedores_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbProveedoresUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbProveedores_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbProveedoresUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Gral_tbProveedores_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            ////entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbProveedoresUsua_ModificacionNavigation)
+            ////    .HasForeignKey(d => d.Usua_Modificacion)
+            ////    .HasConstraintName("FK_Gral_tbProveedores_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbPuntosEmision>(entity =>
@@ -1623,14 +1623,14 @@ public partial class BDD_SIDCOPContext : DbContext
             //    .OnDelete(DeleteBehavior.ClientSetNull)
             //    .HasConstraintName("FK_Inve_tbSubcategorias_tbCategorias_Cate_Id");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbSubcategoriasUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbSubcategorias_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbSubcategoriasUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbSubcategorias_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbSubcategoriasUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Inve_tbSubcategorias_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbSubcategoriasUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Inve_tbSubcategorias_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbSucursales>(entity =>

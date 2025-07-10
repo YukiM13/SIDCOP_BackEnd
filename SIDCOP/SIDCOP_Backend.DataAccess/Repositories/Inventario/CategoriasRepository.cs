@@ -47,7 +47,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             var parameter = new DynamicParameters();
             parameter.Add("@Cate_Descripcion", item.Cate_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Cate_FechaCeacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Cate_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Execute(ScriptDatabase.Categoria_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
@@ -71,8 +71,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             var parameter = new DynamicParameters();
             parameter.Add("@Cate_Id", item.Cate_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Cate_Descripcion", item.Cate_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Cate_FechaCeacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Cate_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);

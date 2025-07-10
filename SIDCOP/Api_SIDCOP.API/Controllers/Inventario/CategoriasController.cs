@@ -8,7 +8,7 @@ using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Inventario
 {
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class CategoriasController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             _mapper = mapper;
         }
 
-        [HttpGet("ListarCategorias")]
+        [HttpGet("Listar")]
         public IActionResult Listar()
         {
             var list = _inventarioServices.ListarCategorias();
@@ -30,7 +30,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPost("InsertarCategorias")]
+        [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] CategoriaViewModel item)
         {
             var mapped = _mapper.Map<tbCategorias>(item);
@@ -38,7 +38,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPut("ActualizarCategorias")]
+        [HttpPut("Actualizar")]
         public IActionResult Actualizar([FromBody] CategoriaViewModel item)
         {
             var mapped = _mapper.Map<tbCategorias>(item);
@@ -46,7 +46,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPost("EliminarCategorias")]
+        [HttpPost("Eliminar")]
         public IActionResult Eliminar([FromBody] CategoriaViewModel item)
         {
             var mapped = _mapper.Map<tbCategorias>(item);
@@ -54,7 +54,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPost("BuscarCategorias")]
+        [HttpPost("Buscar")]
         public IActionResult Find([FromBody] CategoriaViewModel item)
         {
             var mapped = _mapper.Map<tbCategorias>(item);
