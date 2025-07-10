@@ -103,7 +103,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         public IEnumerable<tbClientes> List()
         {
-            throw new NotImplementedException();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbClientes>(ScriptDatabase.Clientes_Listar, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
         }
 
         public RequestStatus Update(tbClientes item)

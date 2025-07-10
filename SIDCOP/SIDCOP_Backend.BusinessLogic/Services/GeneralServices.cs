@@ -233,6 +233,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
+
+        public IEnumerable<tbClientes> ListClientes()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clienteRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientes> clientes = null;
+                return clientes;
+            }
+        }
         #endregion
 
     }

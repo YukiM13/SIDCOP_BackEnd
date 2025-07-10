@@ -25,8 +25,13 @@ namespace Api_SIDCOP.API.Controllers.General
             _mapper = mapper;
 
         }
-      
 
+        [HttpGet("Listar")]
+        public IActionResult ListarCliente()
+        {
+            var list = _generalServices.ListClientes();
+            return Ok(list);
+        }
 
         [HttpPost("Insertar")]
         public IActionResult InsertarCliente([FromBody] ClienteViewModel item)
@@ -36,7 +41,7 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(insert);
         }
 
-        [HttpPost("Actualizar")]
+        [HttpPut("Actualizar")]
         public IActionResult ActualizarCliente([FromBody] ClienteViewModel item)
         {
             var mapped = _mapper.Map<tbClientes>(item);
