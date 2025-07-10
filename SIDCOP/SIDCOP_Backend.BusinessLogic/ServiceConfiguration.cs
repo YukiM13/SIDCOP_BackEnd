@@ -4,6 +4,7 @@ using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,14 @@ namespace SIDCOP_Backend.BusinessLogic
             SIDCOP_Context.BuildConnectionString(connectionString);
 
             services.AddScoped<UsuarioRepository>();
+
+            services.AddScoped<SucursalesRepository>();
+
             services.AddScoped<ColoniaRepository>(); 
 
             services.AddScoped<EstadoCivilRepository>();
+
+            services.AddScoped<ProductosRepository>();
             services.AddScoped<ClienteRepository>();
         }
 
@@ -31,6 +37,7 @@ namespace SIDCOP_Backend.BusinessLogic
           
             services.AddScoped<GeneralServices>();
             services.AddScoped<AccesoServices>();
+            services.AddScoped<InventarioServices>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
         }
