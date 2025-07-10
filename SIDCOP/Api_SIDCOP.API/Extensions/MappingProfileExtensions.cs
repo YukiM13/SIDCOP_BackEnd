@@ -1,5 +1,6 @@
 ﻿using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.Inventario;
 using AutoMapper;
 using SIDCOP_Backend.Entities.Entities;
 
@@ -17,6 +18,9 @@ namespace Api_SIDCOP.API.Extensions
             // CreateMap<tbDepartamentos, DepartamentosViewModel>().ReverseMap();
             CreateMap<tbColonias, ColoniaViewModel>().ReverseMap();
             CreateMap<tbMarcas, MarcaViewModel>().ReverseMap();
+            CreateMap<tbSucursales, SucursalesViewModel>().ReverseMap();
+            CreateMap<tbProductos, ProductosViewModel>().ReverseMap();
+
             CreateMap<tbClientes, ClienteViewModel>().ReverseMap();
 
         }
