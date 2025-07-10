@@ -1,4 +1,5 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
+﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
@@ -31,10 +32,62 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] tbMarcas item)
+        public IActionResult Insertar([FromBody] MarcaViewModel item)
         {
-            var result = _generalServices.InsertMarca(item);
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.InsertMarca(mapped);
             return Ok(result);
+        }
+
+        [HttpPut("Actualizar")]
+        public IActionResult Actualizar([FromBody] MarcaViewModel item)
+        {
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.ActualizarMarca(mapped);
+            return Ok(result);
+        }
+
+        //[HttpPost("Eliminar")]
+        //public IActionResult Eliminar([FromBody] tbMarcas item)
+        //{
+        //    var result = _generalServices.EliminarMarca(item);
+        //    return Ok(result);
+        //}
+
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var result = _generalServices.EliminarMarca(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
+
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalido.");
+            }
+            var marca = _generalServices.BuscarMarca(id);
+            if (marca != null)
+            {
+                return Ok(marca);
+            }
+            else
+            {
+                return NotFound("Marca not found.");
+            }
         }
 
     }

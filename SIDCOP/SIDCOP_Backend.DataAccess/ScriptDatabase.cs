@@ -74,7 +74,12 @@ namespace SIDCOP_Backend.DataAccess
         #region Marcas
         public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";
         public static string Marca_Insertar = "[Gral].[SP_Marca_Insertar]";
+        public static string Marca_Actualizar = "[Gral].[SP_Marca_Actualizar]";
+        public static string Marca_Eliminar = "[Gral].[SP_Marca_Eliminar]";
+        public static string Marca_Buscar = "[Gral].[SP_Marca_Buscar]";
+
         #endregion
+
 
 
 
