@@ -25,7 +25,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
-        [HttpPost("BuscarCai")]
+        [HttpPost("Buscar")]
         public IActionResult Find([FromBody] CaiSViewModel item)
         {
             var mapped = _mapper.Map<tbCAIs>(item);
@@ -33,7 +33,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(list);
         }
 
-        [HttpGet("ListarCais")]
+        [HttpGet("Listar")]
         public IActionResult listar()
         {
             var list = _ventaServices.ListarCaiS();
@@ -42,7 +42,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
-        [HttpPost("CrearCai")]
+        [HttpPost("Crear")]
         public IActionResult Insert([FromBody] CaiSViewModel item)
         {
             var mapped = _mapper.Map<tbCAIs>(item);
@@ -51,7 +51,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
-        [HttpPost("EliminarCai")]
+        [HttpPost("Eliminar")]
         public IActionResult Delete([FromBody] CaiSViewModel item)
         {
             var mapped = _mapper.Map<tbCAIs>(item);
