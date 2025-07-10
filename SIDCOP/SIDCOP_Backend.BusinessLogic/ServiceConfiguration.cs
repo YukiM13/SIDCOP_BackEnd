@@ -21,6 +21,9 @@ namespace SIDCOP_Backend.BusinessLogic
             SIDCOP_Context.BuildConnectionString(connectionString);
 
             services.AddScoped<UsuarioRepository>();
+            services.AddScoped<DepartamentoRepository>();
+            services.AddScoped<MarcaVehiculoRepository>();
+
             services.AddScoped<ColoniaRepository>();
             services.AddScoped<MarcaRepository>();
 
@@ -38,7 +41,7 @@ namespace SIDCOP_Backend.BusinessLogic
 
         public static void BusinessLogic(this IServiceCollection services)
         {
-          
+
             services.AddScoped<GeneralServices>();
             services.AddScoped<AccesoServices>();
             services.AddScoped<InventarioServices>();
