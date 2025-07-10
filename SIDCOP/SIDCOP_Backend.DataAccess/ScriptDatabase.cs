@@ -27,5 +27,23 @@ namespace SIDCOP_Backend.DataAccess
         #region EstadosCiviles
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
         #endregion
+
+
+        #region ConfiguracionFacturas
+        public static string ConfiguracionFacturas_Listar       = "[Vnta].[SP_ConfiguracionFacturas_Listar]";
+        public static string ConfiguracionFactura_Insertar      = "[Vnta].[SP_ConfiguracionFactura_Insertar]";
+        public static string ConfiguracionFactura_Actualizar    = "[Vnta].[SP_ConfiguracionFactura_Actualizar]";
+        public static string ConfiguracionFactura_Buscar        = "[Vnta].[SP_ConfiguracionFactura_Buscar]";
+        public static string ConfiguracionFactura_Eliminar      = "[Vnta].[SP_ConfiguracionFactura_Eliminar]";
+        #endregion
+
+
+        #region Bodegas
+        public static string Bodegas_Listar       = "[Logi].[SP_Bodegas_Listar]";
+        public static string Bodega_Insertar      = "[Logi].[SP_Bodega_Insertar]";
+        public static string Bodega_Actualizar    = "[Logi].[SP_Bodega_Actualizar]";
+        public static string Bodega_Buscar        = "[Logi].[SP_Bodega_Buscar]";
+        public static string Bodega_Eliminar      = "[Logi].[SP_Bodega_Eliminar]";
+        #endregion
     }
 }
