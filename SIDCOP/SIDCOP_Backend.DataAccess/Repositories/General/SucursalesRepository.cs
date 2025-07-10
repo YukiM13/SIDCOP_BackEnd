@@ -13,12 +13,35 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
     {
         public RequestStatus Delete(tbSucursales item)
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+            parameter.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public tbSucursales Find(int? id)
         {
-            throw new NotImplementedException();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbSucursales>(ScriptDatabase.Sucursal_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Sucursal no encontrada");
+            }
+            return result;
         }
 
         public RequestStatus Insert(tbSucursales item)
@@ -56,7 +79,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         public IEnumerable<tbSucursales> List()
         {
             var parameter = new DynamicParameters();
-
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbSucursales>(ScriptDatabase.Sucursales_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();

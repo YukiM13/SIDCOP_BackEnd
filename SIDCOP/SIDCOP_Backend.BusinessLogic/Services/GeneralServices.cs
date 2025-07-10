@@ -7,9 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess;
-using SIDCOP_Backend.DataAccess.Repositories.Acceso;
-using SIDCOP_Backend.DataAccess.Repositories.General;
-using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -132,6 +129,40 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error($"Error al actualizar sucursal: {ex.Message}");
+            }
+        }
+
+        public ServiceResult EliminarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _sucursalesRepository.Delete(sucursal);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbSucursales BuscarSucursal(int? id)
+        {
+            try
+            {
+                var sucursal = _sucursalesRepository.Find(id);
+                return sucursal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar sucursal: {ex.Message}");
             }
         }
 

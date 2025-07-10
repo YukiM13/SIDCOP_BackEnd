@@ -33,7 +33,7 @@ namespace Api_SIDCOP.API.Controllers.General
         {
             if (SucursalesViewModel == null)
             {
-                return BadRequest("Invalid data.");
+                return BadRequest("Informacion invalida.");
             }
             var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
             var result = _generalServices.InsertarSucursal(sucursal);
@@ -54,7 +54,7 @@ namespace Api_SIDCOP.API.Controllers.General
         {
             if (SucursalesViewModel == null)
             {
-                return BadRequest("Invalid data.");
+                return BadRequest("Informacion invalida.");
             }
             var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
             var result = _generalServices.ActualizarSucursal(sucursal);
@@ -68,5 +68,41 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
+        [HttpPut("EliminarSucursal")]
+        public IActionResult Eliminar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
+        {
+            if (SucursalesViewModel.Sucu_Id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
+            var result = _generalServices.EliminarSucursal(sucursal);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
+
+        [HttpGet("BuscarSucursal/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _generalServices.BuscarSucursal(id);
+            if (sucursal != null)
+            {
+                return Ok(sucursal);
+            }
+            else
+            {
+                return NotFound("Sucursal not found.");
+            }
+        }
     }
 }
