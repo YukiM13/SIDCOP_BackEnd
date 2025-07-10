@@ -80,6 +80,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult UpdateCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clienteRepository.Update(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
         #endregion
     }
 }

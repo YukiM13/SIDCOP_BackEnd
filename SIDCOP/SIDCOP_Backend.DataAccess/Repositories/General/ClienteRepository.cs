@@ -84,6 +84,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
             var parameter = new DynamicParameters();
+            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Codigo", item.Clie_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_DNI", item.Clie_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_RTN", item.Clie_RTN, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -107,13 +108,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Saldo", item.Clie_Saldo, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Observaciones", item.Clie_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_ObservacionRetiro", item.Clie_ObservacionRetiro, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Clie_FechaCreacion", item.Clie_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_FechaModificacion", item.Clie_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };

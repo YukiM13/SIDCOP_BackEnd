@@ -35,6 +35,14 @@ namespace Api_SIDCOP.API.Controllers.General
             var insert = _generalServices.InsertCliente(mapped);
             return Ok(insert);
         }
-        
+
+        [HttpPost("Actualizar")]
+        public IActionResult ActualizarCliente([FromBody] ClienteViewModel item)
+        {
+            var mapped = _mapper.Map<tbClientes>(item);
+            var insert = _generalServices. UpdateCliente(mapped);
+            return Ok(insert);
+        }
+
     }
 }
