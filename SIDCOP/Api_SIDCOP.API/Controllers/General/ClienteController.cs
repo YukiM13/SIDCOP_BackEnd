@@ -62,5 +62,24 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
+
+        [HttpPut("CambioEstado")]
+        public IActionResult CambioEstado(int? id, DateTime? fecha)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
+            var result = _generalServices.CambioEstadoCliente(id, fecha);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+        }
     }
 }

@@ -212,6 +212,27 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 throw new Exception($"Error al buscar cliente: {ex.Message}");
             }
         }
+
+        public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _clienteRepository.ChangeState(id, fecha);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
         #endregion
 
     }
