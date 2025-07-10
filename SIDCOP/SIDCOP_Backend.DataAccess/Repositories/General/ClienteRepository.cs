@@ -19,7 +19,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         public tbClientes Find(int? id)
         {
-            throw new NotImplementedException();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbClientes>(ScriptDatabase.Cliente_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Cliente no encontrado");
+            }
+            return result;
         }
 
         public RequestStatus Insert(tbClientes item)

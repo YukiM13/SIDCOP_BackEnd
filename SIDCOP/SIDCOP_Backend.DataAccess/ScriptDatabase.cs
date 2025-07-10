@@ -58,6 +58,9 @@ namespace SIDCOP_Backend.DataAccess
         #region Clientes
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
+        public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
+        public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
+        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
         #endregion
     }
 }

@@ -198,6 +198,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
+
+        public tbClientes BuscarCliente(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.Find(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cliente: {ex.Message}");
+            }
+        }
         #endregion
 
     }

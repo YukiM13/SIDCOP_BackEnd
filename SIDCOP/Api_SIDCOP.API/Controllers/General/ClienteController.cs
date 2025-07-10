@@ -44,5 +44,23 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(insert);
         }
 
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _generalServices.BuscarCliente(id);
+            if (sucursal != null)
+            {
+                return Ok(sucursal);
+            }
+            else
+            {
+                return NotFound("Cliente not found.");
+            }
+        }
+
     }
 }
