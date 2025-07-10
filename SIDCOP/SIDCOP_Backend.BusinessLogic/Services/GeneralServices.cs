@@ -12,38 +12,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class GeneralServices
     {
-
-    private readonly DepartamentoRepository _departamentoRepository;
+        private readonly DepartamentoRepository _departamentoRepository;
         private readonly MarcaVehiculoRepository _marcaVehiculoRepository;
-        private readonly ColoniaRepository _coloniaRepository;
-        private readonly EstadoCivilRepository _estadocivilRepository; 
-        private readonly MarcaRepository _marcaRepository;
-        private readonly ClienteRepository _clienteRepository;
-        private readonly EmpleadoRepository _empleadoRepository;
+        private readonly EstadoCivilRepository _estadocivilRepository;
         private readonly SucursalesRepository _sucursalesRepository;
+        private readonly ColoniaRepository _coloniaRepository;
+        private readonly ClienteRepository _clienteRepository;
+        private readonly CanalRepository _canalRepository;
+        private readonly MarcaRepository _marcaRepository;
+        private readonly EmpleadoRepository _empleadoRepository;
 
-
-        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository,
-            MarcaRepository marcaRepository, ClienteRepository clienteRepository,
-             EmpleadoRepository empleadoRepository, SucursalesRepository sucursalesRepository,
-             DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
+        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
+        ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
         {
-            _estadocivilRepository = estadoCivilRepository;
+            _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
 
             _marcaRepository = marcaRepository;
             _clienteRepository = clienteRepository;
-            _empleadoRepository = empleadoRepository; 
-            
+            _canalRepository = canalRepository;
+
+            _empleadoRepository = empleadoRepository;
              _departamentoRepository = departamentoRepository;
             _marcaVehiculoRepository = marcaVehiculoRepository;
+       
 
         }
 
-
-
-         #region Departamentos
+        #region Departamentos
         public ServiceResult InsertarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
@@ -196,6 +195,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
+
 
         #region Empleados
         public IEnumerable<tbEmpleados> ListarEmpleado()
@@ -362,7 +362,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion
 
-
         #region Estados Civiles
         public IEnumerable<tbEstadosCiviles> ListEsCi()
         {
@@ -391,6 +390,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarEsCi(tbEstadosCiviles item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.ActualizarEsCi(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarEsCi(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+            }
+        }
+
+        public tbEstadosCiviles BuscarEsCi(int? id)
+        {
+            try
+            {
+                var EsCi = _estadocivilRepository.BuscarEsCi(id);
+                return EsCi;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
             }
         }
 
@@ -426,6 +473,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarMarca(tbMarcas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _marcaRepository.ActualizarMarca(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarMarca(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _marcaRepository.EliminarMarca(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+            }
+        }
+
+        public tbMarcas BuscarMarca(int? id)
+        {
+            try
+            {
+                var marca = _marcaRepository.BuscarMarca(id);
+                return marca;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar marca: {ex.Message}");
             }
         }
 
@@ -612,6 +707,85 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 IEnumerable<tbClientes> clientes = null;
                 return clientes;
+            }
+        }
+        #endregion
+
+        #region Canales
+        public IEnumerable<tbCanales> ListarCanales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _canalRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCanales> canales = null;
+                return canales;
+            }
+        }
+
+        public ServiceResult InsertarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _canalRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCanal(tbCanales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _canalRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarCanal(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var delete = _canalRepository.Delete(id);
+                if (delete.code_Status == 1)
+                {
+                    return result.Ok(delete.message_Status);
+                }
+                else
+                {
+                    return result.Error(delete.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbCanales BuscarCanal(int? id)
+        {
+            try
+            {
+                var canal = _canalRepository.Find(id);
+                return canal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar canal: {ex.Message}");
             }
         }
         #endregion

@@ -26,10 +26,16 @@ namespace SIDCOP_Backend.BusinessLogic
 
             services.AddScoped<ColoniaRepository>();
             services.AddScoped<MarcaRepository>();
+
             services.AddScoped<SucursalesRepository>();
+
+            services.AddScoped<ColoniaRepository>(); 
+
             services.AddScoped<EstadoCivilRepository>();
             services.AddScoped<ProductosRepository>();
+
             services.AddScoped<ClienteRepository>();
+            services.AddScoped<CanalRepository>();
             services.AddScoped<EmpleadoRepository>();
         }
 

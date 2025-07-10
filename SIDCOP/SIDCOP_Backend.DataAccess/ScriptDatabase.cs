@@ -91,7 +91,12 @@ namespace SIDCOP_Backend.DataAccess
         #region Marcas
         public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";
         public static string Marca_Insertar = "[Gral].[SP_Marca_Insertar]";
+        public static string Marca_Actualizar = "[Gral].[SP_Marca_Actualizar]";
+        public static string Marca_Eliminar = "[Gral].[SP_Marca_Eliminar]";
+        public static string Marca_Buscar = "[Gral].[SP_Marca_Buscar]";
+
         #endregion
+
 
 
 
@@ -121,5 +126,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string Cai_Editar = "[].[]";
         public static string Cai_Filtrar = "[].[]";
         #endregion
+
+        #region Canales
+            public static string Canales_Listar     = "[Gral].[SP_Canales_Listar]";
+            public static string Canales_Insertar   = "[Gral].[SP_Canal_Insertar]";
+            public static string Canales_Actualizar = "[Gral].[SP_Canal_Actualizar]";
+            public static string Canales_Eliminar   = "[Gral].[SP_Canal_Eliminar]";
+            public static string Canales_Buscar     = "[Gral].[SP_Canal_Buscar]";
+        #endregion
+
+
     }
 }
