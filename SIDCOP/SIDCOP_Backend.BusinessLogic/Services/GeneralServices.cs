@@ -25,12 +25,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
-<<<<<<< Updated upstream
-        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
-=======
-        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository)
->>>>>>> Stashed changes
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
@@ -41,17 +37,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _canalRepository = canalRepository;
 
             _empleadoRepository = empleadoRepository;
-<<<<<<< Updated upstream
              _departamentoRepository = departamentoRepository;
             _marcaVehiculoRepository = marcaVehiculoRepository;
        
 
-=======
             _clienteRepository = clienteRepository;
             _marcaRepository = marcaRepository;
             _empleadoRepository = empleadoRepository;
             _cargoRepository = cargoRepository;
->>>>>>> Stashed changes
         }
 
         #region Departamentos
