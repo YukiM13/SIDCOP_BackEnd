@@ -16,12 +16,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     {
 
         private readonly ColoniaRepository _coloniaRepository;
-        private readonly EstadoCivilRepository _estadocivilRepository; 
+        private readonly EstadoCivilRepository _estadocivilRepository;
+        private readonly ModeloRepository _modeloRepository;
 
-        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository)
+        public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, ModeloRepository modeloRepository)
         {
             _coloniaRepository = coloniaRepository;
-            _estadocivilRepository = estadoCivilRepository; 
+            _estadocivilRepository = estadoCivilRepository;
+            _modeloRepository = modeloRepository;
 
         }
 
@@ -62,6 +64,80 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return esci;
             }
         }
+        #endregion
+
+        #region Modelos
+
+        public IEnumerable<tbModelos> ListModelos()
+        {
+            try
+            {
+                var list = _modeloRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbModelos> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult InsertarModelo(tbModelos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _modeloRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarModelo(tbModelos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _modeloRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarModelo(tbModelos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _modeloRepository.Delete(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarModelo(tbModelos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _modeloRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         #endregion
     }
 }

@@ -155,10 +155,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Mode).WithMany(p => p.tbBodegas)
-                .HasForeignKey(d => d.Mode_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Logi_tbBodegas_Gral_tbModelos_Mode_Id");
+            //entity.HasOne(d => d.Mode).WithMany(p => p.tbBodegas)
+            //    .HasForeignKey(d => d.Mode_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Logi_tbBodegas_Gral_tbModelos_Mode_Id");
 
             entity.HasOne(d => d.RegC).WithMany(p => p.tbBodegas)
                 .HasForeignKey(d => d.RegC_Id)
@@ -1012,19 +1012,19 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Mode_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Mode_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.MaVe).WithMany(p => p.tbModelos)
-                .HasForeignKey(d => d.MaVe_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbModelos_Gral_tbMarcasVehiculos_MaVe_Id");
+            //entity.HasOne(d => d.MaVe).WithMany(p => p.tbModelos)
+            //    .HasForeignKey(d => d.MaVe_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbModelos_Gral_tbMarcasVehiculos_MaVe_Id");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbModelosUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbModelos_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbModelosUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Gral_tbModelos_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbModelosUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Gral_tbModelos_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbModelosUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Gral_tbModelos_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbMunicipios>(entity =>

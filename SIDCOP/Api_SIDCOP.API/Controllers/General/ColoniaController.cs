@@ -37,9 +37,5 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
 
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
