@@ -1,9 +1,13 @@
-﻿using AutoMapper;
+﻿using Api_Sistema_Reportes.API.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 
 namespace Api_SIDCOP.API.Controllers.Inventario
 {
+    [ApiController]
+    [Route("[controller]")]
+    [ApiKey]
     public class ProductosController : Controller
     {
         public readonly InventarioServices _inventarioServices;

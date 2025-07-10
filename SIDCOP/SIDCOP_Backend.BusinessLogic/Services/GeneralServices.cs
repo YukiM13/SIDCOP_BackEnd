@@ -15,7 +15,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly EstadoCivilRepository _estadocivilRepository;
         private readonly SucursalesRepository _sucursalesRepository;
         private readonly ColoniaRepository _coloniaRepository;
-        private readonly EstadoCivilRepository _estadocivilRepository;
         private readonly ClienteRepository _clienteRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository, ColoniaRepository coloniaRepository, ClienteRepository clienteRepository)
