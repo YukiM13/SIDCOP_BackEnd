@@ -389,6 +389,70 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
+        public ServiceResult UpdateCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clienteRepository.Update(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+
+        public tbClientes BuscarCliente(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.Find(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cliente: {ex.Message}");
+            }
+        }
+
+        public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _clienteRepository.ChangeState(id, fecha);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public IEnumerable<tbClientes> ListClientes()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clienteRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientes> clientes = null;
+                return clientes;
+            }
+        }
         #endregion
 
     }
