@@ -7,6 +7,8 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
+using SIDCOP_Backend.Entities.Entities;
+using Api_SIDCOP.API.Models.General;
 
 namespace Api_SIDCOP.API.Controllers.General
 {
@@ -29,11 +31,30 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
-        [HttpGet("ListarColonia")]
+        [HttpGet("Listar")]
         public IActionResult ListarColonia()
         {
             var list = _generalServices.ListarColonia();
             return Ok(list);
         }
+
+    
+        [HttpPost("Insertar")]
+        public IActionResult Insert([FromBody] ColoniaViewModel item)
+        {
+            var mapped = _mapper.Map<tbColonias>(item);
+            var result = _generalServices.InsertarColonia(mapped);
+            return Ok(result);
+        }
+
+
+        [HttpPut("Actualizar")]
+        public IActionResult Update([FromBody] ColoniaViewModel item)
+        {
+            var mapped = _mapper.Map<tbColonias>(item);
+            var result = _generalServices.UpdateColonia(mapped);
+            return Ok(result);
+        }
+
     }
 }
