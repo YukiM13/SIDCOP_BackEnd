@@ -23,6 +23,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository)
+
+        private readonly ColoniaRepository _coloniaRepository;
+        private readonly ClienteRepository _clienteRepository;
+        private readonly MarcaRepository _marcaRepository;
+         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly SucursalesRepository _sucursalesRepository;
+         private readonly EstadoCivilRepository _estadocivilRepository; 
+
+        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
+         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, MarcaRepository marcaRepository,EmpleadoRepository empleadoRepository
+         
+         )
+
+               
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
@@ -32,6 +46,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _clienteRepository = clienteRepository;
             _canalRepository = canalRepository;
             _empleadoRepository = empleadoRepository;
+            _clienteRepository = clienteRepository;
+            _marcaRepository = marcaRepository;
+                _empleadoRepository = empleadoRepository; 
 
         }
 
@@ -201,7 +218,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion
 
-
         #region Estados Civiles
         public IEnumerable<tbEstadosCiviles> ListEsCi()
         {
@@ -230,6 +246,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarEsCi(tbEstadosCiviles item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.ActualizarEsCi(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarEsCi(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+            }
+        }
+
+        public tbEstadosCiviles BuscarEsCi(int? id)
+        {
+            try
+            {
+                var EsCi = _estadocivilRepository.BuscarEsCi(id);
+                return EsCi;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
             }
         }
 
@@ -265,6 +329,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarMarca(tbMarcas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _marcaRepository.ActualizarMarca(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarMarca(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _marcaRepository.EliminarMarca(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+            }
+        }
+
+        public tbMarcas BuscarMarca(int? id)
+        {
+            try
+            {
+                var marca = _marcaRepository.BuscarMarca(id);
+                return marca;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar marca: {ex.Message}");
             }
         }
 
