@@ -17,11 +17,13 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbEstadosCiviles, EstadoCivilViewModel>().ReverseMap();
             // CreateMap<tbDepartamentos, DepartamentosViewModel>().ReverseMap();
             CreateMap<tbColonias, ColoniaViewModel>().ReverseMap();
+            CreateMap<tbMarcas, MarcaViewModel>().ReverseMap();
             CreateMap<tbSucursales, SucursalesViewModel>().ReverseMap();
             CreateMap<tbProductos, ProductosViewModel>().ReverseMap();
 
             CreateMap<tbClientes, ClienteViewModel>().ReverseMap();
             CreateMap<tbCanales, CanalViewModel>().ReverseMap();
+            CreateMap<tbEmpleados, EmpleadoViewModel>().ReverseMap(); 
 
         }
     }

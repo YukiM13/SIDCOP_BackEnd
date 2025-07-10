@@ -21,18 +21,15 @@ namespace SIDCOP_Backend.BusinessLogic
             SIDCOP_Context.BuildConnectionString(connectionString);
 
             services.AddScoped<UsuarioRepository>();
-
+            services.AddScoped<ColoniaRepository>();
+            services.AddScoped<MarcaRepository>();
             services.AddScoped<SucursalesRepository>();
-
-            services.AddScoped<ColoniaRepository>(); 
-
             services.AddScoped<EstadoCivilRepository>();
-
             services.AddScoped<ProductosRepository>();
 
             services.AddScoped<ClienteRepository>();
-
             services.AddScoped<CanalRepository>();
+            services.AddScoped<EmpleadoRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
