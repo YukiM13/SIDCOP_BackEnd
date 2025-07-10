@@ -18,7 +18,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly MarcaRepository _marcaRepository;
          private readonly EmpleadoRepository _empleadoRepository;
         private readonly SucursalesRepository _sucursalesRepository;
-              private readonly EstadoCivilRepository _estadocivilRepository; 
+         private readonly EstadoCivilRepository _estadocivilRepository; 
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
          ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, MarcaRepository marcaRepository,EmpleadoRepository empleadoRepository
@@ -27,7 +27,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
                
         {
-            _estadocivilRepository = estadoCivilRepository;
+            _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
             _clienteRepository = clienteRepository;

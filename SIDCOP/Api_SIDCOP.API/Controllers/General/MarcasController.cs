@@ -1,4 +1,5 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
+﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
@@ -31,16 +32,18 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] tbMarcas item)
+        public IActionResult Insertar([FromBody] MarcaViewModel item)
         {
-            var result = _generalServices.InsertMarca(item);
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.InsertMarca(mapped);
             return Ok(result);
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] tbMarcas item)
+        public IActionResult Actualizar([FromBody] MarcaViewModel item)
         {
-            var result = _generalServices.ActualizarMarca(item);
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.ActualizarMarca(mapped);
             return Ok(result);
         }
 

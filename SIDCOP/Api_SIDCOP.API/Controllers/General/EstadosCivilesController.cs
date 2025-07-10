@@ -7,6 +7,7 @@ using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
 using SIDCOP_Backend.Entities.Entities;
+using Api_SIDCOP.API.Models.General;
 
 
 namespace Api_SIDCOP.API.Controllers.General
@@ -35,16 +36,18 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] tbEstadosCiviles item)
+        public IActionResult Insertar([FromBody] EstadoCivilViewModel item)
         {
-            var result = _generalServices.InsertEsCi(item);
+            var mapped = _mapper.Map<tbEstadosCiviles>(item);
+            var result = _generalServices.InsertEsCi(mapped);
             return Ok(result);
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] tbEstadosCiviles item)
+        public IActionResult Actualizar([FromBody] EstadoCivilViewModel item)
         {
-            var result = _generalServices.ActualizarEsCi(item);
+            var mapped = _mapper.Map<tbEstadosCiviles>(item);
+            var result = _generalServices.ActualizarEsCi(mapped);
             return Ok(result);
         }
 
