@@ -23,20 +23,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository)
-
-        private readonly ColoniaRepository _coloniaRepository;
-        private readonly ClienteRepository _clienteRepository;
-        private readonly MarcaRepository _marcaRepository;
-         private readonly EmpleadoRepository _empleadoRepository;
-        private readonly SucursalesRepository _sucursalesRepository;
-         private readonly EstadoCivilRepository _estadocivilRepository; 
-
-        public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
-         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, MarcaRepository marcaRepository,EmpleadoRepository empleadoRepository
-         
-         )
-
-               
         {
             _estadocivilRepository = estadocivilRepository;
             _sucursalesRepository = sucursalesRepository;
@@ -48,10 +34,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _empleadoRepository = empleadoRepository;
             _clienteRepository = clienteRepository;
             _marcaRepository = marcaRepository;
-                _empleadoRepository = empleadoRepository; 
-
+            _empleadoRepository = empleadoRepository; 
         }
-
 
         #region Empleados
         public IEnumerable<tbEmpleados> ListarEmpleado()
