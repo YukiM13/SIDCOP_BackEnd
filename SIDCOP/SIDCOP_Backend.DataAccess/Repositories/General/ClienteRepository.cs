@@ -12,7 +12,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ClienteRepository : IRepository<tbClientes>
     {
-        public RequestStatus Delete(tbClientes item)
+        public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
