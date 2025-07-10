@@ -12,14 +12,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ColoniaRepository : IRepository<tbColonias>
     {
+
+
         public RequestStatus Delete(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        public RequestStatus Delete2(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Colo_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);

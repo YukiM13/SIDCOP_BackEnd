@@ -19,12 +19,13 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ClienteRepository _clienteRepository;
         private readonly EmpleadoRepository _empleadoRepository;
         private readonly SucursalesRepository _sucursalesRepository;
+      
 
         public GeneralServices(ColoniaRepository coloniaRepository, EstadoCivilRepository estadoCivilRepository, 
             MarcaRepository marcaRepository , ClienteRepository clienteRepository,
              EmpleadoRepository empleadoRepository,  SucursalesRepository sucursalesRepository)
-           {
-            _estadocivilRepository = estadocivilRepository;
+        {
+            _estadocivilRepository = estadoCivilRepository;
             _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
        
@@ -83,7 +84,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _empleadoRepository.Delete2(id);
+                var deleteResult = _empleadoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
                     return result.Ok(deleteResult.message_Status);
@@ -168,7 +169,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _coloniaRepository.Delete2(id);
+                var deleteResult = _coloniaRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
                     return result.Ok(deleteResult.message_Status);
@@ -183,7 +184,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar : {ex.Message}");
             }
         }
-        public tbColonias BuscarSucursal(int? id)
+        public tbColonias BuscarColonia(int? id)
         {
             try
             {
