@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,44 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             );
 
             return result; // Puede ser 1 (éxito), -1 (DNI duplicado), o 0 (error interno)
+        }
+
+        public RequestStatus ActualizarEsCi(tbEstadosCiviles item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@EsCv_Descripcion", item.EsCv_Descripcion, DbType.String, ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@EsCv_FechaModificacion", DateTime.Now, DbType.DateTime, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Execute(ScriptDatabase.EstadoCivil_Actualizar, parameter, commandType: CommandType.StoredProcedure);
+
+            string mensaje = (result == 0) ? "Error al actualizar el Estado Civil" : "Estado Civil actualizado correctamente";
+            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+        }
+
+        public RequestStatus EliminarEsCi(tbEstadosCiviles item)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Execute(ScriptDatabase.EstadoCivil_Eliminar, parameters, commandType: CommandType.StoredProcedure);
+
+            string mensaje = (result == 0) ? "Error al eliminar el Estado Civil" : "Estado Civil correctamente";
+            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+        }
+
+        public tbEstadosCiviles BuscarEsCi(tbEstadosCiviles item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.QueryFirstOrDefault<tbEstadosCiviles>(ScriptDatabase.EstadoCivil_Buscar, parameter, commandType: CommandType.StoredProcedure);
+
+            return result;
         }
 
         public RequestStatus Update(tbEstadosCiviles item)

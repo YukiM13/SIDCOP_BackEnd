@@ -41,5 +41,26 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(result);
         }
 
+        [HttpPut("Actualizar")]
+        public IActionResult Actualizar([FromBody] tbEstadosCiviles item)
+        {
+            var result = _generalServices.ActualizarEsCi(item);
+            return Ok(result);
+        }
+
+        [HttpPost("Eliminar")]
+        public IActionResult Eliminar([FromBody] tbEstadosCiviles item)
+        {
+            var result = _generalServices.EliminarEsCi(item);
+            return Ok(result);
+        }
+
+        [HttpPost("Buscar")]
+        public IActionResult Buscar([FromBody] tbEstadosCiviles item)
+        {
+            var result = _generalServices.BuscarEsCi(item);
+            return Ok(result);
+        }
+
     }
 }

@@ -37,5 +37,26 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(result);
         }
 
+        [HttpPut("Actualizar")]
+        public IActionResult Actualizar([FromBody] tbMarcas item)
+        {
+            var result = _generalServices.ActualizarMarca(item);
+            return Ok(result);
+        }
+
+        [HttpPost("Eliminar")]
+        public IActionResult Eliminar([FromBody] tbMarcas item)
+        {
+            var result = _generalServices.EliminarMarca(item);
+            return Ok(result);
+        }
+
+        [HttpPost("Buscar")]
+        public IActionResult Buscar([FromBody] tbMarcas item)
+        {
+            var result = _generalServices.BuscarMarca(item);
+            return Ok(result);
+        }
+
     }
 }

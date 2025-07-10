@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,46 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             );
 
             return result; // Puede ser 1 (éxito), -1 (DNI duplicado), o 0 (error interno)
+        }
+
+
+        public RequestStatus ActualizarMarca(tbMarcas item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@Marc_Descripcion", item.Marc_Descripcion, DbType.String, ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@Marc_FechaModificacion", DateTime.Now, DbType.DateTime, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Execute(ScriptDatabase.Marca_Actualizar, parameter, commandType: CommandType.StoredProcedure);
+
+            string mensaje = (result == 0) ? "Error al actualizar la Marca" : "Marca actualizada correctamente";
+            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+        }
+
+        public RequestStatus EliminarMarca(tbMarcas item)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Execute(ScriptDatabase.Marca_Eliminar, parameters, commandType: CommandType.StoredProcedure);
+
+            string mensaje = (result == 0) ? "Error al eliminar la Marca" : "Marca eliminada correctamente";
+            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+        }
+
+
+        public tbMarcas BuscarMarca(tbMarcas item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.QueryFirstOrDefault<tbMarcas>(ScriptDatabase.Marca_Buscar, parameter, commandType: CommandType.StoredProcedure);
+
+            return result;
         }
 
         public RequestStatus Update(tbMarcas item)

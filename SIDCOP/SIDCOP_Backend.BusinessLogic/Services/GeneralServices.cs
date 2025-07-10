@@ -76,6 +76,48 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ActualizarEsCi(tbEstadosCiviles item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.ActualizarEsCi(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarEsCi(tbEstadosCiviles item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.EliminarEsCi(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarEsCi(tbEstadosCiviles item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadocivilRepository.BuscarEsCi(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
 
         #endregion
 
@@ -103,6 +145,48 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var list = _marcaRepository.InsertMarca(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarMarca(tbMarcas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _marcaRepository.ActualizarMarca(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarMarca(tbMarcas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _marcaRepository.EliminarMarca(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarMarca(tbMarcas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _marcaRepository.BuscarMarca(item);
                 return result.Ok(list);
             }
             catch (Exception ex)
