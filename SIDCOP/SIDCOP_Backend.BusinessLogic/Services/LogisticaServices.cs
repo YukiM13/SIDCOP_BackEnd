@@ -95,7 +95,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         #endregion
     }
 }

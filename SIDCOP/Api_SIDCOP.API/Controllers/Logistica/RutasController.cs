@@ -32,10 +32,6 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             var list = _logisticaServices.BuscarRuta(mapped);
             return Ok(list);
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
 
         [HttpGet("ListarRuta")]
         public IActionResult listar()
@@ -46,7 +42,7 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
-        [HttpPost("CreateRuta")]
+        [HttpPost("CrearRuta")]
         public IActionResult Insert([FromBody] RutasViewModel item)
         {
             var mapped = _mapper.Map<tbRutas>(item);
@@ -64,7 +60,7 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
-        [HttpPost("DeleteRuta")]
+        [HttpPost("EliminarRuta")]
         public IActionResult Delete([FromBody] RutasViewModel item)
         {
             var mapped = _mapper.Map<tbRutas>(item);
