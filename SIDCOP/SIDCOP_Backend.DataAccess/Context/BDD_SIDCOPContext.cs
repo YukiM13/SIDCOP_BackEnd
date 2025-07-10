@@ -280,14 +280,14 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Cate_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Cate_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbCategoriasUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbCategorias_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbCategoriasUsua_CreacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Creacion)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbCategorias_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbCategoriasUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Inve_tbCategorias_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+            //entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbCategoriasUsua_ModificacionNavigation)
+            //    .HasForeignKey(d => d.Usua_Modificacion)
+            //    .HasConstraintName("FK_Inve_tbCategorias_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbClientes>(entity =>
@@ -1618,10 +1618,10 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Subc_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Subc_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Cate).WithMany(p => p.tbSubcategorias)
-                .HasForeignKey(d => d.Cate_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbSubcategorias_tbCategorias_Cate_Id");
+            //entity.HasOne(d => d.Cate).WithMany(p => p.tbSubcategorias)
+            //    .HasForeignKey(d => d.Cate_Id)
+            //    .OnDelete(DeleteBehavior.ClientSetNull)
+            //    .HasConstraintName("FK_Inve_tbSubcategorias_tbCategorias_Cate_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbSubcategoriasUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)

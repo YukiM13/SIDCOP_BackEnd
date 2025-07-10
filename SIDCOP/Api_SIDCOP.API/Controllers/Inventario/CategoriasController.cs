@@ -1,0 +1,65 @@
+﻿using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.Inventario;
+using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SIDCOP_Backend.BusinessLogic.Services;
+using SIDCOP_Backend.Entities.Entities;
+
+namespace Api_SIDCOP.API.Controllers.Inventario
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CategoriasController : ControllerBase
+    {
+        private readonly InventarioServices _inventarioServices;
+        private readonly IMapper _mapper;
+
+
+        public CategoriasController(InventarioServices deporteservice, IMapper mapper)
+        {
+            _inventarioServices = deporteservice;
+            _mapper = mapper;
+        }
+
+        [HttpGet("ListarCategorias")]
+        public IActionResult Listar()
+        {
+            var list = _inventarioServices.ListarCategorias();
+            list = _mapper.Map<IEnumerable<tbCategorias>>(list);
+            return Ok(list);
+        }
+
+        [HttpPost("InsertarCategorias")]
+        public IActionResult Insertar([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.InsertarCategoria(mapped);
+            return Ok(list);
+        }
+
+        [HttpPut("ActualizarCategorias")]
+        public IActionResult Actualizar([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.ActualizarCategoria(mapped);
+            return Ok(list);
+        }
+
+        [HttpPost("EliminarCategorias")]
+        public IActionResult Eliminar([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.EliminarCategoria(mapped);
+            return Ok(list);
+        }
+
+        [HttpPost("BuscarCategorias")]
+        public IActionResult Find([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.BuscarCategoria(mapped);
+            return Ok(list);
+        }
+    }
+}
