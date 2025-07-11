@@ -11,17 +11,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ModeloRepository : IRepository<tbModelos>
     {
-        public RequestStatus Delete(tbModelos item)
+        public RequestStatus Delete(int?  id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Mode_Id", item.Mode_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Mode_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
             var result = db.Execute(ScriptDatabase.Modelos_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public tbModelos Find(int? id)
@@ -55,7 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 var result = db.Execute(ScriptDatabase.Modelos_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-                return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+                return new RequestStatus { code_Status = result, message_Status = mensaje };
             }
         }
 
@@ -85,7 +85,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
 

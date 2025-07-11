@@ -11,17 +11,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ProveedoresRepository : IRepository<tbProveedores>
     {
-        public RequestStatus Delete(tbProveedores item)
+        public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prov_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
             var result = db.Execute(ScriptDatabase.Proveedores_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
         public tbProveedores Find(int? id)
@@ -61,7 +61,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var result = db.Execute(ScriptDatabase.Proveedores_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
         public IEnumerable<tbProveedores> List()
@@ -96,7 +96,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
     }
 }

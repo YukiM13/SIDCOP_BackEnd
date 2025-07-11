@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class ImpuestosRepository : IRepository<tbImpuestos>
     {
-        public RequestStatus Delete(tbImpuestos item)
+        public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +52,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
     }
 }

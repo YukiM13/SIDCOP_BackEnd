@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ namespace Api_SIDCOP.API.Controllers.General
 {
     [Route("/[controller]")]
     [ApiController]
+    [ApiKey]
+
     public class ModeloController : ControllerBase
     {
 
@@ -47,10 +50,10 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Eliminar")]
-        public IActionResult Eliminar([FromBody] ModeloViewModel item)
+        public IActionResult Eliminar(int? id)
         {
-            var mapped = _mapper.Map<tbModelos>(item);
-            var list = _generalServices.EliminarModelo(mapped);
+           
+            var list = _generalServices.EliminarModelo(id);
             return Ok(list);
         }
 

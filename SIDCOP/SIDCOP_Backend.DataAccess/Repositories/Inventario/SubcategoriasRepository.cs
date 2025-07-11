@@ -11,17 +11,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class SubcategoriasRepository: IRepository<tbSubcategorias>
     {
-        public RequestStatus Delete(tbSubcategorias item)
+        public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Subc_Id", item.Subc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Subc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
             var result = db.Execute(ScriptDatabase.Subcategorias_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
         public tbSubcategorias Find(int? id)
@@ -54,7 +54,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             var result = db.Execute(ScriptDatabase.Subcategorias_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
         public IEnumerable<tbSubcategorias> List()
@@ -83,7 +83,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
     }
 }

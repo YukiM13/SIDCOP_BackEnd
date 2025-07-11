@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.Inventario;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ namespace Api_SIDCOP.API.Controllers.Inventario
 {
     [Route("/[controller]")]
     [ApiController]
+    [ApiKey]
+
     public class SubcategoriaController : ControllerBase
     {
         private readonly InventarioServices _inventarioServices;
@@ -46,10 +49,10 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
         [HttpPost("Eliminar")]
-        public IActionResult Eliminar([FromBody] SubcategoriaViewModel item)
+        public IActionResult Eliminar(int? id)
         {
-            var mapped = _mapper.Map<tbSubcategorias>(item);
-            var list = _inventarioServices.EliminarSubCategoria(mapped);
+         
+            var list = _inventarioServices.EliminarSubCategoria(id);
             return Ok(list);
         }
 

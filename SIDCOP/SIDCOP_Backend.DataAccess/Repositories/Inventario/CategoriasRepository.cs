@@ -11,17 +11,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class CategoriasRepository : IRepository<tbCategorias>
     {
-        public RequestStatus Delete(tbCategorias item)
+        public RequestStatus Delete(int?  id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Cate_Id", item.Cate_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Cate_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
             var result = db.Execute(ScriptDatabase.Categoria_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public tbCategorias Find(int? id)
@@ -53,7 +53,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             var result = db.Execute(ScriptDatabase.Categoria_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
         public IEnumerable<tbCategorias> List()
@@ -81,7 +81,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
             string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
     }
 }
