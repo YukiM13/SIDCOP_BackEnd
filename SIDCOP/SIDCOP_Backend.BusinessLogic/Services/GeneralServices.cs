@@ -21,10 +21,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly CargoRepository _cargoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
-        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
         {
             _estadocivilRepository = estadocivilRepository;
@@ -40,6 +41,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _marcaVehiculoRepository = marcaVehiculoRepository;
        
 
+            _clienteRepository = clienteRepository;
+            _marcaRepository = marcaRepository;
+            _empleadoRepository = empleadoRepository;
+            _cargoRepository = cargoRepository;
         }
 
         #region Departamentos
@@ -412,19 +417,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _estadocivilRepository.EliminarEsCi(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -495,19 +493,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _marcaRepository.EliminarMarca(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _marcaRepository.EliminarMarca(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -787,6 +778,85 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        #endregion
+
+        #region Cargos
+        public IEnumerable<tbCargos> ListarCargos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _cargoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCargos> cargos = null;
+                return cargos;
+            }
+        }
+
+        public ServiceResult InsertarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _cargoRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _cargoRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarCargo(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var delete = _cargoRepository.Delete(id);
+                if (delete.code_Status == 1)
+                {
+                    return result.Ok(delete.message_Status);
+                }
+                else
+                {
+                    return result.Error(delete.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar cargo: {ex.Message}");
+            }
+        }
+
+        public tbCargos BuscarCargo(int? id)
+        {
+            try
+            {
+                var cargo = _cargoRepository.Find(id);
+                return cargo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cargo: {ex.Message}");
             }
         }
         #endregion
