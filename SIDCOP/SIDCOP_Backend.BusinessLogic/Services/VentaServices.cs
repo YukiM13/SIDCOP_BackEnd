@@ -21,8 +21,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly RegistrosCaiSRepository _registrosCaiSRepository;
         private readonly VendedorRepository _vendedorRepository;
 
-        public VentaServices(CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository
-                              ,VendedorRepository vendedorRepository
+        public VentaServices(
+            CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository
+            ,VendedorRepository vendedorRepository
     
         )
         {

@@ -75,9 +75,6 @@ namespace SIDCOP_Backend.DataAccess
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
-        
-
-        public static string EstadosCiviles_Listar = "[Gral].[SP_EstadosCiviles_Listar]";
 
         #endregion EstadosCiviles
 
