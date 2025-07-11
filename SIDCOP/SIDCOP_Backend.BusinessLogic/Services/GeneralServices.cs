@@ -607,7 +607,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion
 
         #region Clientes
-
+        public ServiceResult InsertCliente(tbClientes item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clienteRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
         public ServiceResult UpdateCliente(tbClientes item)
         {
             var result = new ServiceResult();
