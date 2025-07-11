@@ -211,7 +211,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar producto: {ex.Message}");
+                return null;
             }
         }
 

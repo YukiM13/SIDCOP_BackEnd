@@ -24,14 +24,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
-         private readonly ModeloRepository _modeloRepository;
+        private readonly ModeloRepository _modeloRepository;
+        
         private readonly ProveedoresRepository _proveedoresRepository;
+        
+        private readonly CargoRepository _cargoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
-        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
-        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,
-        ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository)
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository)
         {
             _coloniaRepository = coloniaRepository;
 
@@ -46,6 +48,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _proveedoresRepository = proveedoresRepository;
        
 
+            _clienteRepository = clienteRepository;
+            _marcaRepository = marcaRepository;
+            _empleadoRepository = empleadoRepository;
+            _cargoRepository = cargoRepository;
         }
 
         #region Departamentos
@@ -418,19 +424,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _estadocivilRepository.EliminarEsCi(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -443,7 +442,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
+                return null;
             }
         }
 
@@ -501,19 +500,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _marcaRepository.EliminarMarca(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _marcaRepository.EliminarMarca(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
