@@ -14,9 +14,19 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+        #region Roles
+
+            public static string Roles_Listar = "Acce.SP_Roles_Listar";
+            public static string Rol_Insertar = "Acce.SP_Rol_Insertar";
+            public static string Rol_Actualizar = "Acce.SP_Rol_Actualizar";
+            public static string Rol_Eliminar = "Acce.SP_Rol_Eliminar";
+            public static string Rol_Buscar = "Acce.SP_Rol_Buscar";
+        
+        #endregion
+
 
         #region Departamentos
-            public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
+        public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
             public const string Departamentos_Insertar = "[Gral].[SP_Departamento_Insertar]";
             public const string Departamento_Actualizar = "[Gral].[SP_Departamento_Actualizar]";
             public const string Departamento_Eliminar = "[Gral].[SP_Departamento_Eliminar]";
