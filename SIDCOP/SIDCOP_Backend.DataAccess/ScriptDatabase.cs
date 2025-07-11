@@ -72,6 +72,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #region EstadosCiviles
            public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+        public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
+        public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
+        public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
+        public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
         #endregion
 
         #region Categorias
@@ -110,11 +114,8 @@ namespace SIDCOP_Backend.DataAccess
         #region  Impuestos 
         public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
         public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
-        public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
-        public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
-        public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
-        public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
-        public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
+      
+        
         
 
         #endregion
