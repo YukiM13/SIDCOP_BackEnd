@@ -17,5 +17,9 @@
         public DateTime? Cana_FechaModificacion { get; set; }
 
         public bool Cana_Estado { get; set; }
+
+        public string UsuaC_Nombre { get; set; }
+
+        public string UsuaM_Nombre { get; set; }
     }
 }

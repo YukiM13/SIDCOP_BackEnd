@@ -15,5 +15,9 @@
         public DateTime? Carg_FechaModificacion { get; set; }
 
         public bool Carg_Estado { get; set; }
+        
+        public string UsuaC_Nombre { get; set; }
+
+        public string UsuaM_Nombre { get; set; }
     }
 }
