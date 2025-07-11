@@ -122,7 +122,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Cais
         public static string Cai_Agregar = "[Vnta].[SP_CAI_Insertar]";
         public static string Cai_Listar = "[Vnta].[SP_CAIs_Listar]";
-        public static string Cai_Eliminar = "[Vnta].[]";
+        public static string Cai_Eliminar = "[Vnta].[SP_CAI_CambiarEstado]";
         public static string Cai_Filtrar = "[Vnta].[SP_CAI_Buscar]";
         #endregion
 
@@ -141,7 +141,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string RegistrosCaiSListar = "[Vnta].[SP_RegistrosCAI_Listar]";
         public static string RegistrosCaiSFiltrar = "[Vnta].[SP_RegistrosCAI_Buscar]";
         public static string RegistrosCaiSEditar = "[Vnta].[SP_RegistroCAI_Actualizar]";
-        public static string RegistrosCaiSEliminar = "[Vnta].[]";
+        public static string RegistrosCaiSEliminar = "[Vnta].[SP_RegistroCAI_CambiarEstado]";
         #endregion
 
     }

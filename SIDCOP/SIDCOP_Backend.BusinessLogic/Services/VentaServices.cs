@@ -27,18 +27,29 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #region CaiS
-        public tbCAIs BuscarCaiS(int? id)
+
+        public ServiceResult BuscarCaiS(int? id)
         {
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var parameter = new DynamicParameters();
-            parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-            if (result == null)
+            var result = new ServiceResult();
+            try
             {
-                throw new Exception("Cais no encontrada");
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameter = new DynamicParameters();
+                parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+                var cai = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+                if (cai == null)
+                    return result.Error("Cai no encontrado");
+
+                return result.Ok(cai);
             }
-            return result;
+            catch (Exception ex)
+            {
+                return result.Error($"Error al buscar Cai: {ex.Message}");
+            }
         }
+
 
         public IEnumerable<tbCAIs> ListarCaiS()
         {
@@ -54,52 +65,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public int CrearCai(tbCAIs item)
+        public ServiceResult CrearCai(tbCAIs item)
         {
+
+            var result = new ServiceResult();
+
             try
             {
                 var list = _caiSRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
-        //public int InsertarCaiS(tbCAIs item)
-        //{
-        //    try
-        //    {
-        //        var list = _CaiSrepository.Insert(item);
-        //        return list.code_Status;
-        //    }
-        //    catch (Exception ex)
-        //    {   
-        //        return 0;
-        //    }
-        //}
 
-
-        public ServiceResult EliminarCai(int? id)
+        public ServiceResult EliminarCai(tbCAIs item)
         {
+
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _caiSRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _caiSRepository.Delete(item);
+
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar Cai: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
+
         #endregion
 
 
@@ -113,7 +111,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbRegistrosCAI>(ScriptDatabase.RegistrosCaiSFiltrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Cais no encontrada");
+                throw new Exception("Registro Cai no encontrado");
             }
             return result;
         }
@@ -160,26 +158,42 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarRegistroCai(int? id)
+
+        public ServiceResult EliminarRegistroCai(tbRegistrosCAI item)
         {
+
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _registrosCaiSRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _registrosCaiSRepository.Delete(item);
+
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar Registro Cai: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+        //public ServiceResult EliminarRegistroCai(int? id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var deleteResult = _registrosCaiSRepository.Delete(id);
+        //        if (deleteResult.code_Status == 1)
+        //        {
+        //            return result.Ok(deleteResult.message_Status);
+        //        }
+        //        else
+        //        {
+        //            return result.Error(deleteResult.message_Status);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error($"Error al eliminar Registro Cai: {ex.Message}");
+        //    }
+        //}
         #endregion
     }
 }
