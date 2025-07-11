@@ -625,7 +625,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+                return null;
             }
         }
 

@@ -17,6 +17,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         {
             _productosRepository = productosRepository;
         }
+
+        #region Productos
         public IEnumerable<tbProductos> ListarProductos()
         {
             try
@@ -58,9 +60,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-               
                 return null;
-                //throw new Exception($"Error al buscar producto: {ex.Message}");
             }
         }
 
@@ -105,6 +105,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al actualizar producto: {ex.Message}");
             }
         }
+        #endregion
 
     }
 }
