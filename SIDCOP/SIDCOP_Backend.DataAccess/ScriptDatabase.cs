@@ -149,11 +149,20 @@ namespace SIDCOP_Backend.DataAccess
         public static string Canales_Actualizar = "[Gral].[SP_Canal_Actualizar]";
         public static string Canales_Eliminar = "[Gral].[SP_Canal_Eliminar]";
         public static string Canales_Buscar = "[Gral].[SP_Canal_Buscar]";
+        
+         #endregion Canales
 
-        #endregion Canales
+        #region Cargos
+        public static string Cargos_Listar = "[Gral].[SP_Cargos_Listar]";
+        public static string Cargos_Insertar    = "[Gral].[SP_Cargo_Insertar]";
+        public static string Cargos_Actualizar  = "[Gral].[SP_Cargo_Actualizar]";
+        public static string Cargos_Eliminar    = "[Gral].[SP_Cargo_Eliminar]";
+        public static string Cargos_Buscar      = "[Gral].[SP_Cargo_Buscar]";
+        #endregion
+
+       
 
         #region RegistrosCaiS
-
         public static string RegistrosCaiSInsertar = "[Vnta].[SP_RegistroCAI_Insertar]";
         public static string RegistrosCaiSListar = "[Vnta].[SP_RegistrosCAI_Listar]";
         public static string RegistrosCaiSFiltrar = "[Vnta].[SP_RegistrosCAI_Buscar]";
@@ -161,5 +170,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string RegistrosCaiSEliminar = "[Vnta].[]";
 
         #endregion RegistrosCaiS
+        
+        #region Vendedores
+        public static string Vendedores_Listar = "[Vnta].[SP_Vendedores_Listar]";
+        public static string Vendedor_Buscar = "[Vnta].[SP_Vendedor_Buscar]";
+        public static string Vendedor_Eliminar = "[Vnta].[SP_Vendedor_Eliminar]";
+        public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
+        public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
+
+        #endregion Vendedores
+
     }
 }

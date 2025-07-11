@@ -27,7 +27,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(list);
         }
 
-        [HttpPut("Eliminar/{id}")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
             if (id <= 0)
