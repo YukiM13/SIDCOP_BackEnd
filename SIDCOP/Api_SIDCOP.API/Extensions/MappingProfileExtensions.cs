@@ -31,6 +31,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbCargos, CargoViewModel>().ReverseMap();
             CreateMap<tbEmpleados, EmpleadoViewModel>().ReverseMap(); 
             CreateMap<tbRegistrosCAI, RegistrosCaiSViewModel>().ReverseMap();
+            CreateMap<tbVendedores, VendedoresViewModel>().ReverseMap();
 
         }
     }

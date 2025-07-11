@@ -530,7 +530,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 IEnumerable<tbSucursales> sucursales = null;
-                return sucursales;
+                throw new Exception("Error al listar vendedores: " + ex.Message);
             }
         }
 
@@ -616,7 +616,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+                return null;
             }
         }
 

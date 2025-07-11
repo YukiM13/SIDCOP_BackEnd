@@ -10,9 +10,10 @@ namespace SIDCOP_Backend.DataAccess
     public static class ScriptDatabase
     {
         #region Usuarios
+
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
 
-        #endregion
+        #endregion Usuarios
 
 
         #region Departamentos
@@ -43,7 +44,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_Buscar = "Inve.SP_Producto_Buscar";
 
-        #endregion
+        #endregion Productos
 
         #region Sucursales
 
@@ -57,16 +58,16 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Sucursal_Buscar = "Gral.SP_Sucursal_Buscar";
 
-        #endregion
+        #endregion Sucursales
 
         #region Colonias
         public static string Colonias_Listar = "[Gral].[SP_Colonias_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
-        public static string Colonias_Insertar= "[Gral].[SP_Colonia_Insertar]";
+        public static string Colonias_Insertar = "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
 
-        #endregion
+        #endregion Colonias
 
         #region EstadosCiviles
         public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
@@ -74,11 +75,11 @@ namespace SIDCOP_Backend.DataAccess
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
-        
 
-        #endregion
+        #endregion EstadosCiviles
 
         #region Clientes
+
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
@@ -150,6 +151,16 @@ namespace SIDCOP_Backend.DataAccess
         public static string RegistrosCaiSEditar = "[Vnta].[SP_RegistroCAI_Actualizar]";
         public static string RegistrosCaiSEliminar = "[Vnta].[]";
         #endregion
+
+        #region Vendedores
+
+        public static string Vendedores_Listar = "[Vnta].[SP_Vendedores_Listar]";
+        public static string Vendedor_Buscar = "[Vnta].[SP_Vendedor_Buscar]";
+        public static string Vendedor_Eliminar = "[Vnta].[SP_Vendedor_Eliminar]";
+        public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
+        public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
+
+        #endregion Vendedores
 
     }
 }

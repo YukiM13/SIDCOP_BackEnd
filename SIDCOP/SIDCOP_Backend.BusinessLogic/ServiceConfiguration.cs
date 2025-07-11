@@ -37,6 +37,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ProductosRepository>();
 
             services.AddScoped<ClienteRepository>();
+            services.AddScoped<VendedorRepository>();
 
             services.AddScoped<RutasRepository>();
             services.AddScoped<CaiSRepository>();
