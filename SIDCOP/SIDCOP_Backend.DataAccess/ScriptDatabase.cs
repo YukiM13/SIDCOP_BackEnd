@@ -69,12 +69,55 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Colonias
 
+
+
         #region EstadosCiviles
-        public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+
         public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
+        #endregion
+
+        #region Categorias
+        public const string Categoria_Listar = "[Inve].[SP_Categorias_Listar]";
+        public const string Categoria_Insertar = "[Inve].[SP_Categoria_Insertar]";
+        public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
+        public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
+        public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        #endregion
+
+        #region Modelos
+        public const string Modelos_Listar = "[Gral].[SP_Modelos_Listar]";
+        public const string Modelos_Insertar = "[Gral].[SP_Modelo_Insertar]";
+        public const string Modelos_Eliminar = "[Gral].[SP_Modelo_Eliminar]";
+        public const string Modelos_Actualizar = "[Gral].[SP_Modelo_Actualizar]";
+        public const string Modelos_Buscar = "[Gral].[SP_Modelo_Buscar]";
+        #endregion
+
+        #region Subcategorias
+
+        public const string Subcategorias_Listar = "[Inve].[SP_Subcategoria_Listar]";
+        public const string Subcategorias_Insertar = "[Inve].[SP_Subcategoria_Insertar]";
+        public const string Subcategorias_Eliminar = "[Inve].[SP_Subcategoria_Eliminar]";
+        public const string Subcategorias_Buscar = "[Inve].[SP_Subcategoria_Buscar]";
+        public const string Subcategorias_Actualizar = "[Inve].[SP_Subcategoria_Actualizar]";
+        #endregion
+
+        #region Proveedores
+        public const string Proveedores_Listar = "[Gral].[SP_Proveedores_Listar]";
+        public const string Proveedores_Insertar = "[Gral].[SP_Proveedor_Insertar]";
+        public const string Proveedores_Actualizar = "[Gral].[SP_Proveedor_Actualizar]";
+        public const string Proveedores_Buscar = "[Gral].[SP_Proveedor_Buscar]";
+        public const string Proveedores_Eliminar = "[Gral].[SP_Proveedor_Eliminar]";
+        #endregion
+
+        #region  Impuestos 
+        public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
+        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
+        
+        
 
         #endregion EstadosCiviles
 

@@ -1,3 +1,4 @@
+﻿using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
@@ -17,20 +18,31 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class VentaServices
     {
+
+
+        private readonly ImpuestosRepository _impuestosRepository;
         private readonly CaiSRepository _caiSRepository;
         private readonly RegistrosCaiSRepository _registrosCaiSRepository;
         private readonly VendedorRepository _vendedorRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository
-            ,VendedorRepository vendedorRepository
+            ,VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository
     
         )
         {
+
+
+            _impuestosRepository = impuestosRepository;
             _caiSRepository = caiSrepository;
             _registrosCaiSRepository = registrosCaiSRepository;
             _vendedorRepository = vendedorRepository;
         }
+
+
+
+
+
 
         #region CaiS
         public tbCAIs BuscarCaiS(int? id)
@@ -187,6 +199,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
+                #region Impuestos
+
+        public IEnumerable<tbImpuestos> ListImpuestos()
+        {
+            try
+            {
+                var list = _impuestosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbImpuestos> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult ActualizarImpuestos(tbImpuestos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _impuestosRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
 
         #region Vendedores
 
