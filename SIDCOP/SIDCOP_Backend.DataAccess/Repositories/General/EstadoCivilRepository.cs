@@ -69,7 +69,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         public RequestStatus EliminarEsCi(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Id", id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@EsCv_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
