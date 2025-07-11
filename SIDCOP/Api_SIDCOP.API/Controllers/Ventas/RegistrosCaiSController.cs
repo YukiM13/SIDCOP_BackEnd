@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
+using System.Runtime.CompilerServices;
 
 namespace Api_SIDCOP.API.Controllers.Ventas
 {
@@ -12,19 +13,15 @@ namespace Api_SIDCOP.API.Controllers.Ventas
     [Route("[controller]")]
     [ApiKey]
 
-    public class CaiSController : Controller
+    public class RegistrosCaiSController : Controller
     {
         private readonly VentaServices _ventaServices;
         private readonly IMapper _mapper;
 
-
-        public CaiSController(VentaServices ventaServices, IMapper mapper)
-        {
+        public RegistrosCaiSController(VentaServices ventaServices, IMapper mapper) { 
             _ventaServices = ventaServices;
             _mapper = mapper;
         }
-
-
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
@@ -32,7 +29,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Id Invalida.");
             }
-            var sucursal = _ventaServices.BuscarCaiS(id);
+            var sucursal = _ventaServices.BuscarRegistroCaiS(id);
             if (sucursal != null)
             {
                 return Ok(sucursal);
@@ -46,18 +43,26 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         [HttpGet("Listar")]
         public IActionResult listar()
         {
-            var list = _ventaServices.ListarCaiS();
-            list = _mapper.Map<IEnumerable<tbCAIs>>(list);
+            var list = _ventaServices.ListarRegistrosCaiS();
+            list = _mapper.Map<IEnumerable<tbRegistrosCAI>>(list);
             return Ok(list);
         }
 
-
         [HttpPost("Crear")]
-        public IActionResult Insert([FromBody] CaiSViewModel item)
+        public IActionResult Insert([FromBody] RegistrosCaiSViewModel item)
         {
-            var mapped = _mapper.Map<tbCAIs>(item);
-            var result = _ventaServices.CrearCai(mapped);
+            var mapped = _mapper.Map<tbRegistrosCAI>(item);
+            var result = _ventaServices.CrearRegistroCAi(mapped);
             return Ok(result);
+        }
+
+
+        [HttpPut("Modificar")]
+        public IActionResult Modificar([FromBody] RegistrosCaiSViewModel item)
+        {
+            var mapped = _mapper.Map<tbRegistrosCAI>(item);
+            var update = _ventaServices.ModificarRegistroCai(mapped);
+            return Ok(update);
         }
 
         [HttpPost("Eliminar/{id}")]
@@ -67,7 +72,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Id Invalida.");
             }
-            var result = _ventaServices.EliminarCai(id);
+            var result = _ventaServices.EliminarRegistroCai(id);
             if (result.Success)
             {
                 return Ok(result);
