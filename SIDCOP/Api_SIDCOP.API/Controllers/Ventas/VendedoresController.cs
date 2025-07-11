@@ -3,40 +3,39 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 
-namespace Api_SIDCOP.API.Controllers.General
+namespace Api_SIDCOP.API.Controllers.Ventas
 {
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
-
-    public class SucursalesController : Controller
+    public class VendedoresController : Controller
     {
-        public readonly GeneralServices _generalServices;
+        public readonly VentaServices _ventaServices;
         public readonly IMapper _mapper;
 
-        public SucursalesController(GeneralServices generalServices, IMapper mapper)
+        public VendedoresController(VentaServices ventaServices, IMapper mapper)
         {
-            _generalServices = generalServices;
+            _ventaServices = ventaServices;
             _mapper = mapper;
-
         }
 
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _generalServices.ListSucursales();
+            var list = _ventaServices.ListarVendedores();
             return Ok(list);
         }
 
+
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
+        public IActionResult Insertar([FromBody] Models.Ventas.VendedoresViewModel vendedoresViewModel)
         {
-            if (SucursalesViewModel == null)
+            if (vendedoresViewModel == null)
             {
                 return BadRequest("Informacion invalida.");
             }
-            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
-            var result = _generalServices.InsertarSucursal(sucursal);
+            var vendedor = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbVendedores>(vendedoresViewModel);
+            var result = _ventaServices.InsertarVendedor(vendedor);
 
             if (result.Success)
             {
@@ -46,18 +45,17 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest(result.Message);
             }
-
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] Models.General.SucursalesViewModel SucursalesViewModel)
+        public IActionResult Actualizar([FromBody] Models.Ventas.VendedoresViewModel vendedoresViewModel)
         {
-            if (SucursalesViewModel == null)
+            if (vendedoresViewModel == null)
             {
                 return BadRequest("Informacion invalida.");
             }
-            var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(SucursalesViewModel);
-            var result = _generalServices.ActualizarSucursal(sucursal);
+            var vendedor = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbVendedores>(vendedoresViewModel);
+            var result = _ventaServices.ActualizarVendedor(vendedor);
             if (result.Success)
             {
                 return Ok(result);
@@ -76,7 +74,7 @@ namespace Api_SIDCOP.API.Controllers.General
                 return BadRequest("Id Invalida.");
             }
             //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
-            var result = _generalServices.EliminarSucursal(id);
+            var result = _ventaServices.EliminarVendedor(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -94,15 +92,21 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalida.");
             }
-            var sucursal = _generalServices.BuscarSucursal(id);
+            var sucursal = _ventaServices.BuscarVendedor(id);
             if (sucursal != null)
             {
                 return Ok(sucursal);
             }
             else
             {
-                return NotFound("Sucursal no encontrada.");
+                return NotFound("Vendedor no encontrado.");
             }
         }
+
+
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
     }
 }

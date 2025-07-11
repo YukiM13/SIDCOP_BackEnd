@@ -1,3 +1,4 @@
+﻿using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
@@ -17,14 +18,31 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class VentaServices
     {
+
+
+        private readonly ImpuestosRepository _impuestosRepository;
         private readonly CaiSRepository _caiSRepository;
         private readonly RegistrosCaiSRepository _registrosCaiSRepository;
+        private readonly VendedorRepository _vendedorRepository;
 
-        public VentaServices(CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository)
+        public VentaServices(
+            CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository
+            ,VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository
+    
+        )
         {
+
+
+            _impuestosRepository = impuestosRepository;
             _caiSRepository = caiSrepository;
             _registrosCaiSRepository = registrosCaiSRepository;
+            _vendedorRepository = vendedorRepository;
         }
+
+
+
+
+
 
         #region CaiS
 
@@ -195,5 +213,138 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         //    }
         //}
         #endregion
+                #region Impuestos
+
+        public IEnumerable<tbImpuestos> ListImpuestos()
+        {
+            try
+            {
+                var list = _impuestosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbImpuestos> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult ActualizarImpuestos(tbImpuestos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _impuestosRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
+
+        #region Vendedores
+
+         public IEnumerable<tbVendedores> ListarVendedores()
+         {
+             try
+             {
+                 var list = _vendedorRepository.List();
+                 return list;
+             }
+             catch (Exception ex)
+             {
+                 // Log the exception or handle it as needed
+                 //throw new Exception("Error al listar vendedores: " + ex.Message);
+                 return null;
+             }
+         }
+
+         public ServiceResult InsertarVendedor(tbVendedores vendedores)
+         {
+             var result = new ServiceResult();
+             try
+             {
+                 var insertResult = _vendedorRepository.Insert(vendedores);
+
+                 if (insertResult.code_Status == 1)
+                 {
+                     return result.Ok(insertResult.message_Status);;
+                 }
+                 else
+                 {
+                     return result.Error(insertResult.message_Status);
+                 }
+
+             }
+             catch (Exception ex)
+             {
+                 return result.Error($"Error al insertar sucursal: {ex.Message}");
+             }
+         }
+
+         public ServiceResult ActualizarVendedor(tbVendedores vendedor)
+         {
+             var result = new ServiceResult();
+             try
+             {
+                 var updateResult = _vendedorRepository.Update(vendedor);
+                 if (updateResult.code_Status == 1)
+                 {
+                     return result.Ok(updateResult.message_Status);
+                 }
+                 else
+                 {
+                     return result.Error(updateResult.message_Status);
+                 }
+             }
+             catch (Exception ex)
+             {
+                 return result.Error($"Error al actualizar vendedor: {ex.Message}");
+             }
+         }
+
+         public ServiceResult EliminarVendedor(int? id)
+         {
+             var result = new ServiceResult();
+             try
+             {
+                 var deleteResult = _vendedorRepository.Delete(id);
+                 if (deleteResult.code_Status == 1)
+                 {
+                     return result.Ok(deleteResult.message_Status);
+                 }
+                 else
+                 {
+                     return result.Error(deleteResult.message_Status);
+                 }
+             }
+             catch (Exception ex)
+             {
+                 return result.Error($"Error al eliminar sucursal: {ex.Message}");
+             }
+         }
+
+         public tbVendedores BuscarVendedor(int? id)
+         {
+             try
+             {
+                 var vendedor = _vendedorRepository.Find(id);
+                 return vendedor;
+             }
+             catch (Exception ex)
+             {
+                return null;
+            }
+         }
+
+
+ #endregion
+
+
     }
 }
