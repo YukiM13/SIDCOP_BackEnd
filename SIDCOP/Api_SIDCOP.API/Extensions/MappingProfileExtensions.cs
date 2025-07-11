@@ -1,5 +1,6 @@
 ﻿using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_SIDCOP.API.Models.Venta;
 using AutoMapper;
 using SIDCOP_Backend.Entities.Entities;
@@ -21,6 +22,7 @@ namespace Api_SIDCOP.API.Extensions
 
 
             CreateMap<tbConfiguracionFacturas, ConfiguracionFacturaViewModel>().ReverseMap();
+            CreateMap<tbBodegas, BodegaViewModel>().ReverseMap();
 
         }
     }

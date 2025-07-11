@@ -4,6 +4,7 @@ using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -27,6 +28,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<EstadoCivilRepository>();
 
             services.AddScoped<ConfiguracionFacturaRepository>();
+            services.AddScoped<BodegaRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
@@ -38,6 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic
             //services.AddScoped<DashboardServices>();
 
             services.AddScoped<VentaServices>();
+            services.AddScoped<LogisticaServices>();
         }
     }
 }

@@ -140,17 +140,17 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Bode_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Bode_FechaModificacion).HasColumnType("datetime");
-            entity.Property(e => e.Vehi_Capacidad).HasColumnType("numeric(8, 2)");
-            entity.Property(e => e.Vehi_Placa)
+            entity.Property(e => e.Bode_Capacidad).HasColumnType("numeric(8, 2)");
+            entity.Property(e => e.Bode_Placa)
                 .IsRequired()
                 .HasMaxLength(15)
                 .IsUnicode(false);
-            entity.Property(e => e.Vehi_TipoCamion)
+            entity.Property(e => e.Bode_TipoCamion)
                 .IsRequired()
                 .HasMaxLength(1)
                 .IsUnicode(false)
                 .IsFixedLength();
-            entity.Property(e => e.Vehi_VIN)
+            entity.Property(e => e.Bode_VIN)
                 .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);

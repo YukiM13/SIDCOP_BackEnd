@@ -16,13 +16,13 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public int Mode_Id { get; set; }
 
-        public string Vehi_VIN { get; set; }
+        public string Bode_VIN { get; set; }
 
-        public string Vehi_Placa { get; set; }
+        public string Bode_Placa { get; set; }
 
-        public decimal Vehi_Capacidad { get; set; }
+        public decimal Bode_Capacidad { get; set; }
 
-        public string Vehi_TipoCamion { get; set; }
+        public string Bode_TipoCamion { get; set; }
 
         public int Usua_Creacion { get; set; }
 
@@ -31,23 +31,5 @@ namespace Api_SIDCOP.API.Models.Logistica
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? Bode_FechaModificacion { get; set; }
-
-        public virtual tbModelos Mode { get; set; }
-
-        public virtual tbRegistrosCAI RegC { get; set; }
-
-        public virtual tbSucursales Sucu { get; set; }
-
-        public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-        public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-        public virtual tbVendedores Vend { get; set; }
-
-        public virtual ICollection<tbInventarioBodegas> tbInventarioBodegas { get; set; } = new List<tbInventarioBodegas>();
-
-        public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
-
-        public virtual ICollection<tbTraslados> tbTraslados { get; set; } = new List<tbTraslados>();
     }
 }

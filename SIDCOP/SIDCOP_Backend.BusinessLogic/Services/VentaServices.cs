@@ -19,7 +19,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         }
 
-        #region Usuarios 
+        #region ConfiguracionFacturas 
 
         public IEnumerable<tbConfiguracionFacturas> ListConfiguracionFactura()
         {
