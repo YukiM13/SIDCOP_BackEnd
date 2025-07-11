@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
 {
     [Route("/[controller]")]
     [ApiController]
+    [ApiKey]
     public class ImpuestosController : ControllerBase
     {
 
