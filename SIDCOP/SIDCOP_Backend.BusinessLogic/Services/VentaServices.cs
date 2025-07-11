@@ -29,7 +29,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 // Log the exception or handle it as needed
-                throw new Exception("Error al listar vendedores: " + ex.Message);
+                //throw new Exception("Error al listar vendedores: " + ex.Message);
+                return null;
             }
         }
 

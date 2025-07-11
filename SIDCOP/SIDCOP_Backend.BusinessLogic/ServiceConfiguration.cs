@@ -40,6 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<GeneralServices>();
             services.AddScoped<AccesoServices>();
             services.AddScoped<InventarioServices>();
+            services.AddScoped<VentaServices>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
         }

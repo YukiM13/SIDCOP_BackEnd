@@ -67,11 +67,11 @@ namespace SIDCOP_Backend.DataAccess
 
         #region Vendedores
 
-        public static string Vendedores_Listar = "[Gral].[SP_Vendedores_Listar]";
-        public static string Vendedor_Buscar = "[Gral].[SP_Vendedor_Buscar]";
-        public static string Vendedor_Eliminar = "[Gral].[SP_Vendedor_Eliminar]";
-        public static string Vendedor_Insertar = "[Gral].[SP_Vendedor_Insertar]";
-        public static string Vendedor_Actualizar = "[Gral].[SP_Vendedor_Actualizar]";
+        public static string Vendedores_Listar = "[Vnta].[SP_Vendedores_Listar]";
+        public static string Vendedor_Buscar = "[Vnta].[SP_Vendedor_Buscar]";
+        public static string Vendedor_Eliminar = "[Vnta].[SP_Vendedor_Eliminar]";
+        public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
+        public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
 
         #endregion Vendedores
     }
