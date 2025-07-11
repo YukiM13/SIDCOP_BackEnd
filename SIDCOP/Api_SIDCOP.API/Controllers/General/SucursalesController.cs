@@ -75,7 +75,6 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalida.");
             }
-            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
             var result = _generalServices.EliminarSucursal(id);
             if (result.Success)
             {
@@ -83,7 +82,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 

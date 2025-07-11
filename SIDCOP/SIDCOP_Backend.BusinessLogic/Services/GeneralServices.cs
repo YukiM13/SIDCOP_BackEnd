@@ -96,7 +96,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar departamento: {ex.Message}");
+                return null;
             }
         }
 
@@ -176,7 +176,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar marca del vehiculo: {ex.Message}");
+                return null;
             }
         }
 
@@ -270,7 +270,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar : {ex.Message}");
+                return null;
             }
         }
 
@@ -354,7 +354,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar : {ex.Message}");
+                return null;
             }
         }
 
@@ -437,7 +437,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
+                return null;
             }
         }
 
@@ -520,7 +520,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar marca: {ex.Message}");
+                return null;
             }
         }
 
@@ -670,7 +670,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar cliente: {ex.Message}");
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
 
@@ -785,7 +786,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar canal: {ex.Message}");
+                return null;
             }
         }
         #endregion

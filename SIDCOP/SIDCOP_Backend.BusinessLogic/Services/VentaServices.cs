@@ -41,7 +41,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Cais no encontrada");
+                return null;
             }
             return result;
         }
@@ -119,7 +119,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbRegistrosCAI>(ScriptDatabase.RegistrosCaiSFiltrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Cais no encontrada");
+                return null;
             }
             return result;
         }
