@@ -65,22 +65,33 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(update);
         }
 
-        [HttpPost("Eliminar/{id}")]
-        public IActionResult Eliminar(int? id)
+
+        [HttpPut("Eliminar")]
+        public IActionResult Eliminar([FromBody] RegistrosCaiSViewModel item)
         {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalida.");
-            }
-            var result = _ventaServices.EliminarRegistroCai(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
+            var mapped = _mapper.Map<tbRegistrosCAI>(item);
+            var update = _ventaServices.EliminarRegistroCai(mapped);
+            return Ok(update);
         }
+
+
+
+        //[HttpPost("Eliminar/{id}")]
+        //public IActionResult Eliminar(int? id)
+        //{
+        //    if (id <= 0)
+        //    {
+        //        return BadRequest("Id Invalida.");
+        //    }
+        //    var result = _ventaServices.EliminarRegistroCai(id);
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    else
+        //    {
+        //        return BadRequest(result.Message);
+        //    }
+        //}
     }
 }
