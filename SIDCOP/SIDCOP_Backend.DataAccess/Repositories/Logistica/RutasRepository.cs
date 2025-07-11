@@ -28,7 +28,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameter.Add("@Ruta_Observaciones", item.Ruta_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_FechaCreacion", item.Ruta_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameter.Add("@Ruta_Estado", item.Ruta_Estado, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             try
             {
@@ -62,7 +61,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
-            parameter.Add("@Ruta_codigo", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Ruta_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.QueryFirstOrDefault<tbRutas>(ScriptDatabase.Rutas_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
@@ -78,6 +77,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
             var parameter = new DynamicParameters();
+            parameter.Add("@Ruta_Id", item.Ruta_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Codigo", item.Ruta_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Descripcion", item.Ruta_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Observaciones", item.Ruta_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -103,7 +103,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Ruta_Codigo", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Ruta_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
