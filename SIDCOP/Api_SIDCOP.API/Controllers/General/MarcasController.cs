@@ -1,14 +1,9 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
+﻿using Api_SIDCOP.API.Models.General;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
-using MailKit.Net.Smtp;
 using SIDCOP_Backend.BusinessLogic.Services;
-using Api_SIDCOP.API.Models.Acceso;
-using MailKit.Security;
 using SIDCOP_Backend.Entities.Entities;
-using Api_SIDCOP.API.Models.General;
-
 
 namespace Api_SIDCOP.API.Controllers.General
 {
@@ -16,12 +11,13 @@ namespace Api_SIDCOP.API.Controllers.General
     [Route("[controller]")]
     [ApiKey]
 
-    public class EstadosCivilesController :  Controller
+    public class MarcasController : Controller
     {
         public readonly GeneralServices _generalServices;
         public readonly IMapper _mapper;
 
-        public EstadosCivilesController(GeneralServices generalServices, IMapper mapper)
+
+        public MarcasController(GeneralServices generalServices, IMapper mapper)
         {
             _generalServices = generalServices;
             _mapper = mapper;
@@ -31,25 +27,32 @@ namespace Api_SIDCOP.API.Controllers.General
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _generalServices.ListEsCi();
+            var list = _generalServices.ListMarcas();
             return Ok(list);
         }
 
         [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] EstadoCivilViewModel item)
+        public IActionResult Insertar([FromBody] MarcaViewModel item)
         {
-            var mapped = _mapper.Map<tbEstadosCiviles>(item);
-            var result = _generalServices.InsertEsCi(mapped);
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.InsertMarca(mapped);
             return Ok(result);
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] EstadoCivilViewModel item)
+        public IActionResult Actualizar([FromBody] MarcaViewModel item)
         {
-            var mapped = _mapper.Map<tbEstadosCiviles>(item);
-            var result = _generalServices.ActualizarEsCi(mapped);
+            var mapped = _mapper.Map<tbMarcas>(item);
+            var result = _generalServices.ActualizarMarca(mapped);
             return Ok(result);
         }
+
+        //[HttpPost("Eliminar")]
+        //public IActionResult Eliminar([FromBody] tbMarcas item)
+        //{
+        //    var result = _generalServices.EliminarMarca(item);
+        //    return Ok(result);
+        //}
 
         [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
@@ -58,7 +61,7 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalido.");
             }
-            var result = _generalServices.EliminarEsCi(id);
+            var result = _generalServices.EliminarMarca(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -76,14 +79,14 @@ namespace Api_SIDCOP.API.Controllers.General
             {
                 return BadRequest("Id Invalido.");
             }
-            var marca = _generalServices.BuscarEsCi(id);
+            var marca = _generalServices.BuscarMarca(id);
             if (marca != null)
             {
                 return Ok(marca);
             }
             else
             {
-                return NotFound("Estado Civil not found.");
+                return NotFound("Marca not found.");
             }
         }
 

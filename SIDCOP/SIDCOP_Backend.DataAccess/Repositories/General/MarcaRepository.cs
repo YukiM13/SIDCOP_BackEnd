@@ -6,45 +6,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
-    public class EstadoCivilRepository : IRepository<tbEstadosCiviles>
+     public class MarcaRepository: IRepository<tbMarcas>
     {
-        public RequestStatus Delete(tbEstadosCiviles item)
+        public tbMarcas Find(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public tbEstadosCiviles Find(int? id)
+        public RequestStatus Insert(tbMarcas item)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbEstadosCiviles> List()
+        public IEnumerable<tbMarcas> List()
         {
             var parameter = new DynamicParameters();
 
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbEstadosCiviles>(ScriptDatabase.EstadosCiviles_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+            var result = db.Query<tbMarcas>(ScriptDatabase.Marcas_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
 
             return result;
         }
 
-        public int InsertEsCi(tbEstadosCiviles item)
+
+        public int InsertMarca(tbMarcas item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Descripcion", item.EsCv_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Marc_Descripcion", item.Marc_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@EsCv_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Marc_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.QueryFirstOrDefault<int>(
-                ScriptDatabase.EstadoCivil_Insertar,
+                ScriptDatabase.Marca_Insertar,
                 parameter,
                 commandType: System.Data.CommandType.StoredProcedure
             );
@@ -52,28 +52,30 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result; // Puede ser 1 (éxito), -1 (DNI duplicado), o 0 (error interno)
         }
 
-        public RequestStatus ActualizarEsCi(tbEstadosCiviles item)
+
+        public RequestStatus ActualizarMarca(tbMarcas item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Id", item.EsCv_Id, DbType.Int32, ParameterDirection.Input);
-            parameter.Add("@EsCv_Descripcion", item.EsCv_Descripcion, DbType.String, ParameterDirection.Input);
+            parameter.Add("@Marc_Id", item.Marc_Id, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@Marc_Descripcion", item.Marc_Descripcion, DbType.String, ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, DbType.Int32, ParameterDirection.Input);
-            parameter.Add("@EsCv_FechaModificacion", DateTime.Now, DbType.DateTime, ParameterDirection.Input);
+            parameter.Add("@Marc_FechaModificacion", DateTime.Now, DbType.DateTime, ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.EstadoCivil_Actualizar, parameter, commandType: CommandType.StoredProcedure);
+            var result = db.Execute(ScriptDatabase.Marca_Actualizar, parameter, commandType: CommandType.StoredProcedure);
 
-            string mensaje = (result == 0) ? "Error al actualizar el Estado Civil" : "Estado Civil actualizado correctamente";
+            string mensaje = (result == 0) ? "Error al actualizar la Marca" : "Marca actualizada correctamente";
             return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
-        public RequestStatus EliminarEsCi(int? id)
+
+        public RequestStatus EliminarMarca(int? id)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Marc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.EstadoCivil_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Marca_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
@@ -85,26 +87,24 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
-
-        public tbEstadosCiviles BuscarEsCi(int? id)
+        public tbMarcas BuscarMarca(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
-            parameter.Add("@EsCv_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbEstadosCiviles>(ScriptDatabase.EstadoCivil_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            parameter.Add("@Marc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbMarcas>(ScriptDatabase.Marca_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Estado Civil no encontrada");
+                throw new Exception("Marca no encontrada");
             }
             return result;
         }
-
-        public RequestStatus Update(tbEstadosCiviles item)
+        public RequestStatus Update(tbMarcas item)
         {
             throw new NotImplementedException();
         }
 
-        RequestStatus IRepository<tbEstadosCiviles>.Insert(tbEstadosCiviles item)
+        public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
