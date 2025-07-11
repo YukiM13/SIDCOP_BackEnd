@@ -11,9 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 {
     public class UsuarioRepository : IRepository<tbUsuarios>
     {
-      
-
-        public RequestStatus Delete(int? id)
+        public RequestStatus Delete(tbUsuarios item)
         {
             throw new NotImplementedException();
         }

@@ -5,7 +5,6 @@ using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Inventario;
-using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using System;
 using System.Collections.Generic;
@@ -30,39 +29,16 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<SubcategoriasRepository>();
             services.AddScoped<ImpuestosRepository>();
             services.AddScoped<ProveedoresRepository>();
-            services.AddScoped<DepartamentoRepository>();
-            services.AddScoped<MarcaVehiculoRepository>();
-
-            services.AddScoped<ColoniaRepository>();
-            services.AddScoped<MarcaRepository>();
-
-            services.AddScoped<SucursalesRepository>();
-
-            services.AddScoped<ColoniaRepository>(); 
-
-            services.AddScoped<EstadoCivilRepository>();
-            services.AddScoped<ProductosRepository>();
-
-            services.AddScoped<ClienteRepository>();
-
-            services.AddScoped<RutasRepository>();
-            services.AddScoped<CaiSRepository>();
-
-            services.AddScoped<CanalRepository>();
-            services.AddScoped<EmpleadoRepository>();
-            services.AddScoped<RegistrosCaiSRepository>();
-
         }
 
         public static void BusinessLogic(this IServiceCollection services)
         {
-
+          
             services.AddScoped<GeneralServices>();
             services.AddScoped<AccesoServices>();
             services.AddScoped<GeneralServices>();
             services.AddScoped<InventarioServices>();
             services.AddScoped<VentaServices>();
-            services.AddScoped<LogisticaServices>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
         }

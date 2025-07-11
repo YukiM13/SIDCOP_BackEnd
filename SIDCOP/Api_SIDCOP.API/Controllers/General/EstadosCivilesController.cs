@@ -6,8 +6,6 @@ using MailKit.Net.Smtp;
 using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
-using SIDCOP_Backend.Entities.Entities;
-using Api_SIDCOP.API.Models.General;
 
 
 namespace Api_SIDCOP.API.Controllers.General
@@ -28,63 +26,11 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
-        [HttpGet("Listar")]
+        [HttpGet("ListarEstadosCiviles")]
         public IActionResult Listar()
         {
             var list = _generalServices.ListEsCi();
             return Ok(list);
-        }
-
-        [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] EstadoCivilViewModel item)
-        {
-            var mapped = _mapper.Map<tbEstadosCiviles>(item);
-            var result = _generalServices.InsertEsCi(mapped);
-            return Ok(result);
-        }
-
-        [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] EstadoCivilViewModel item)
-        {
-            var mapped = _mapper.Map<tbEstadosCiviles>(item);
-            var result = _generalServices.ActualizarEsCi(mapped);
-            return Ok(result);
-        }
-
-        [HttpPost("Eliminar/{id}")]
-        public IActionResult Eliminar(int? id)
-        {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalido.");
-            }
-            var result = _generalServices.EliminarEsCi(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
-        }
-
-        [HttpGet("Buscar/{id}")]
-        public IActionResult Buscar(int id)
-        {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalido.");
-            }
-            var marca = _generalServices.BuscarEsCi(id);
-            if (marca != null)
-            {
-                return Ok(marca);
-            }
-            else
-            {
-                return NotFound("Estado Civil not found.");
-            }
         }
 
     }
