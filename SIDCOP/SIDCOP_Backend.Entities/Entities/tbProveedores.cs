@@ -35,11 +35,11 @@ public partial class tbProveedores
 
     public bool Prov_Estado { get; set; }
 
-    //public virtual tbColonias Colo { get; set; }
+    public virtual tbColonias Colo { get; set; }
 
-    //public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
-    //public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    //public virtual ICollection<tbProductos> tbProductos { get; set; } = new List<tbProductos>();
+    public virtual ICollection<tbProductos> tbProductos { get; set; } = new List<tbProductos>();
 }

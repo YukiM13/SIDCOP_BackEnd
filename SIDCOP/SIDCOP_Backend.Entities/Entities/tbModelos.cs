@@ -23,11 +23,11 @@ public partial class tbModelos
 
     public bool Mode_Estado { get; set; }
 
-    //public virtual tbMarcasVehiculos MaVe { get; set; }
+    public virtual tbMarcasVehiculos MaVe { get; set; }
 
-    //public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
-    //public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    //public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
+    public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
 }
