@@ -17,9 +17,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
         public const string Usuario_IniciarSesion = "Acce.SP_Usuario_Login";
         public const string Usuario_MostrarContrasena = "Acce.SP_Usuario_MostrarContrasena";
-        public const string Usuario_RestablecerContrasena = "Acce.SP_Usuario_RestablecerContrasena";
+        public const string Usuario_RestablecerContrasena = "Acce.SP_Usuario_RestablecerClave";
         public const string Usuario_VerificarUsuarioExistente = "Acce.SP_Usuario_VerificarUsuarioExistente";
-
         #endregion
 
         #region Permisos

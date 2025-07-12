@@ -52,7 +52,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             string mensaje = (result == 0) ? "Error al insertar" : "Insertado correctamente";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public RequestStatus Update(tbUsuarios item)
@@ -73,7 +73,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             string mensaje = (result == 0) ? "Error al actualizar" : "Actualizado correctamente";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public RequestStatus ChangeUserState(tbUsuarios? item)
@@ -86,13 +86,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             if (result == null)
             {
-                return new RequestStatus { CodeStatus = 0, MessageStatus = "No se pudo cambiar el estado del usuario." };
+                return new RequestStatus { code_Status = 0, message_Status = "No se pudo cambiar el estado del usuario." };
             }
 
             return new RequestStatus
             {
-                CodeStatus = result.code_Status,
-                MessageStatus = result.message_Status
+                code_Status = result.code_Status,
+                message_Status = result.message_Status
             };
         }
 
@@ -118,13 +118,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             if (result == null)
             {
-                return new RequestStatus { CodeStatus = -1, MessageStatus = "El usuario no existe." };
+                return new RequestStatus { code_Status = -1, message_Status = "El usuario no existe." };
             }
 
             return new RequestStatus
             {
-                CodeStatus = result.code_Status,
-                MessageStatus = result.message_Status,
+                code_Status = result.code_Status,
+                message_Status = result.message_Status,
                 //Data = new
                 //{
                 //    Usua_Id = result.Usua_Id,
@@ -156,22 +156,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             if (result == null)
             {
-                return new RequestStatus { CodeStatus = 0, MessageStatus = "Error al obtener la contraseña." };
+                return new RequestStatus { code_Status = 0, message_Status = "Error al obtener la contraseña." };
             }
 
             if (result.code_Status == -1 || result.code_Status == 0)
             {
                 return new RequestStatus
                 {
-                    CodeStatus = result.code_Status,
-                    MessageStatus = result.message_Status
+                    code_Status = result.code_Status,
+                    message_Status = result.message_Status
                 };
             }
 
             return new RequestStatus
             {
-                CodeStatus = result.code_Status,
-                MessageStatus = result.message_Status,
+                code_Status = result.code_Status,
+                message_Status = result.message_Status,
                 //Data = result.Contrasena
             };
         }
@@ -190,7 +190,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             string mensaje = (result == 0) ? "Error al restablecer" : "Restablecer correctamente";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
     }
 }

@@ -9,9 +9,20 @@ using System.Threading.Tasks;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 {
-    class PermisoRepository
+    public class PermisoRepository
     {
-        public RequestStatus Insert(tbUsuarios item)
+        public IEnumerable<tbPermisos> List()
+        {
+            var parameter = new DynamicParameters();
+
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbPermisos>(ScriptDatabase.Permisos_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+
+            return result;
+        }
+        public RequestStatus Insert(tbPermisos item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -25,28 +36,56 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             string mensaje = (result == 0) ? "Error al insertar" : "Insertado correctamente";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
-        public RequestStatus Update(tbUsuarios item)
+        public RequestStatus Update(tbPermisos item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Perm_Id", item.Perm_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_IdPersona", item.Usua_IdPersona, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_EsVendedor", item.Usua_EsVendedor, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_EsAdmin", item.Usua_EsAdmin, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Imagen", item.Usua_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pant_Id", item.Pant_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Acci_Id", item.Acci_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_FechaModificacion", item.Usua_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Perm_FechaModificacion", item.Perm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.Usuario_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.Execute(ScriptDatabase.Permiso_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             string mensaje = (result == 0) ? "Error al actualizar" : "Actualizado correctamente";
 
-            return new RequestStatus { CodeStatus = result, MessageStatus = mensaje };
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
+        }
+
+        public IEnumerable<tbPermisos> FindPermission(tbPermisos? item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbPermisos>(ScriptDatabase.Permiso_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public RequestStatus Delete(tbPermisos? item)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Perm_Id", item.Perm_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Permiso_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
     }
 }

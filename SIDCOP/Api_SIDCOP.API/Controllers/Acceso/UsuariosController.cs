@@ -27,6 +27,30 @@ namespace Api_SIDCOP.API.Controllers.Acceso
            
         }
 
+        [HttpPost("IniciarSesion")]
+        public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var result = _accesoServices.IniciarSesion(mapped);
+
+            if (result == null)
+            {
+                return BadRequest(new
+                {
+                    code_Status = -1,
+                    message_Status = "Usuario o contraseña incorrectos."
+                });
+            }
+
+            return Ok(new
+            {
+                code_Status = 1,
+                message_Status = "Sesión iniciada correctamente",
+                data = result
+            });
+        }
+
+
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
