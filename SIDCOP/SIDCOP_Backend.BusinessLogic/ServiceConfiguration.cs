@@ -23,6 +23,11 @@ namespace SIDCOP_Backend.BusinessLogic
             SIDCOP_Context.BuildConnectionString(connectionString);
 
             services.AddScoped<UsuarioRepository>();
+            services.AddScoped<ModeloRepository>();
+            services.AddScoped<CategoriasRepository>();
+            services.AddScoped<SubcategoriasRepository>();
+            services.AddScoped<ImpuestosRepository>();
+            services.AddScoped<ProveedoresRepository>();
             services.AddScoped<DepartamentoRepository>();
             services.AddScoped<MarcaVehiculoRepository>();
 
@@ -31,17 +36,19 @@ namespace SIDCOP_Backend.BusinessLogic
 
             services.AddScoped<SucursalesRepository>();
 
-            services.AddScoped<ColoniaRepository>(); 
+            services.AddScoped<ColoniaRepository>();
 
             services.AddScoped<EstadoCivilRepository>();
             services.AddScoped<ProductosRepository>();
 
             services.AddScoped<ClienteRepository>();
+            services.AddScoped<VendedorRepository>();
 
             services.AddScoped<RutasRepository>();
             services.AddScoped<CaiSRepository>();
 
             services.AddScoped<CanalRepository>();
+            services.AddScoped<CargoRepository>();
             services.AddScoped<EmpleadoRepository>();
             services.AddScoped<RegistrosCaiSRepository>();
 
@@ -53,6 +60,7 @@ namespace SIDCOP_Backend.BusinessLogic
 
             services.AddScoped<GeneralServices>();
             services.AddScoped<AccesoServices>();
+            services.AddScoped<GeneralServices>();
             services.AddScoped<InventarioServices>();
             services.AddScoped<VentaServices>();
             services.AddScoped<LogisticaServices>();

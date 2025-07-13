@@ -21,6 +21,11 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbEstadosCiviles, EstadoCivilViewModel>().ReverseMap();
             // CreateMap<tbDepartamentos, DepartamentosViewModel>().ReverseMap();
             CreateMap<tbColonias, ColoniaViewModel>().ReverseMap();
+            CreateMap<tbModelos, ModeloViewModel>().ReverseMap();
+            CreateMap<tbCategorias, CategoriaViewModel>().ReverseMap();
+            CreateMap<tbSubcategorias, SubcategoriaViewModel>().ReverseMap();
+            CreateMap<tbProveedores, ProveedorViewModel>().ReverseMap();
+            CreateMap<tbImpuestos, ImpuestosViewModel>().ReverseMap();
             CreateMap<tbMarcas, MarcaViewModel>().ReverseMap();
             CreateMap<tbSucursales, SucursalesViewModel>().ReverseMap();
             CreateMap<tbProductos, ProductosViewModel>().ReverseMap();
@@ -28,9 +33,11 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbRutas, RutasViewModel>().ReverseMap();
             CreateMap<tbCAIs, CaiSViewModel>().ReverseMap();
             CreateMap<tbCanales, CanalViewModel>().ReverseMap();
+            CreateMap<tbCargos, CargoViewModel>().ReverseMap();
             CreateMap<tbEmpleados, EmpleadoViewModel>().ReverseMap(); 
             CreateMap<tbRegistrosCAI, RegistrosCaiSViewModel>().ReverseMap();
             CreateMap<tbRoles, RolViewModel>().ReverseMap();
+            CreateMap<tbVendedores, VendedoresViewModel>().ReverseMap();
         }
     }
 }
