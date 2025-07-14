@@ -59,6 +59,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<EmpleadoRepository>();
             services.AddScoped<RegistrosCaiSRepository>();
 
+            services.AddScoped<RolRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
@@ -70,6 +71,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<InventarioServices>();
             services.AddScoped<VentaServices>();
             services.AddScoped<LogisticaServices>();
+            services.AddScoped<RolRepository>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
 
