@@ -31,7 +31,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbRutas>(ScriptDatabase.Rutas_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Ruta no encontrada");
+                return null;
             }
             return result;
         }
