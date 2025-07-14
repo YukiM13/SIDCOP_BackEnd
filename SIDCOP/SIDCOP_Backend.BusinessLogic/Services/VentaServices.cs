@@ -1,3 +1,4 @@
+﻿using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
@@ -17,34 +18,56 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class VentaServices
     {
+
+
+        private readonly ImpuestosRepository _impuestosRepository;
         private readonly CaiSRepository _caiSRepository;
         private readonly RegistrosCaiSRepository _registrosCaiSRepository;
         private readonly VendedorRepository _vendedorRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository
-            ,VendedorRepository vendedorRepository
+            ,VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository
     
         )
         {
+
+
+            _impuestosRepository = impuestosRepository;
             _caiSRepository = caiSrepository;
             _registrosCaiSRepository = registrosCaiSRepository;
             _vendedorRepository = vendedorRepository;
         }
 
+
+
+
+
+
         #region CaiS
-        public tbCAIs BuscarCaiS(int? id)
+
+        public ServiceResult BuscarCaiS(int? id)
         {
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var parameter = new DynamicParameters();
-            parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-            if (result == null)
+            var result = new ServiceResult();
+            try
             {
-                return null;
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameter = new DynamicParameters();
+                parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+                var cai = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+                if (cai == null)
+                    return result.Error("Cai no encontrado");
+
+                return result.Ok(cai);
             }
-            return result;
+            catch (Exception ex)
+            {
+                return result.Error($"Error al buscar Cai: {ex.Message}");
+            }
         }
+
 
         public IEnumerable<tbCAIs> ListarCaiS()
         {
@@ -60,52 +83,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public int CrearCai(tbCAIs item)
+        public ServiceResult CrearCai(tbCAIs item)
         {
+
+            var result = new ServiceResult();
+
             try
             {
                 var list = _caiSRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
-        //public int InsertarCaiS(tbCAIs item)
-        //{
-        //    try
-        //    {
-        //        var list = _CaiSrepository.Insert(item);
-        //        return list.code_Status;
-        //    }
-        //    catch (Exception ex)
-        //    {   
-        //        return 0;
-        //    }
-        //}
 
-
-        public ServiceResult EliminarCai(int? id)
+        public ServiceResult EliminarCai(tbCAIs item)
         {
+
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _caiSRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _caiSRepository.Delete(item);
+
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar Cai: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
+
         #endregion
 
 
@@ -166,27 +176,76 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarRegistroCai(int? id)
+
+        public ServiceResult EliminarRegistroCai(tbRegistrosCAI item)
+        {
+
+            var result = new ServiceResult();
+            try
+            {
+                var list = _registrosCaiSRepository.Delete(item);
+
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        //public ServiceResult EliminarRegistroCai(int? id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var deleteResult = _registrosCaiSRepository.Delete(id);
+        //        if (deleteResult.code_Status == 1)
+        //        {
+        //            return result.Ok(deleteResult.message_Status);
+        //        }
+        //        else
+        //        {
+        //            return result.Error(deleteResult.message_Status);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error($"Error al eliminar Registro Cai: {ex.Message}");
+        //    }
+        //}
+        #endregion
+                #region Impuestos
+
+        public IEnumerable<tbImpuestos> ListImpuestos()
+        {
+            try
+            {
+                var list = _impuestosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbImpuestos> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult ActualizarImpuestos(tbImpuestos item)
         {
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _registrosCaiSRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var resultado = _impuestosRepository.Update(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar Registro Cai: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
         #endregion
+
+
 
         #region Vendedores
 
