@@ -865,24 +865,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
                 if (insertResult.code_Status == 1)
                 {
-                    //result.Ok = true;
-                    //result.Message = ;
-                    return result.Ok(insertResult.message_Status);
-                    //return result.Ok(insertResult.message_Status);
+                    return result.Ok(insertResult);
                 }
                 else
                 {
-                    //result.IsSuccess = false;
-                    //result.Message = insertResult.message_Status;
-                    //return result.Error(insertResult.message_Status);
-                    return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult);
                 }
 
             }
             catch (Exception ex)
             {
-                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
-                //return result.Error($"Error al insertar carro: {ex.Message}");
                 return result.Error($"Error al insertar sucursal: {ex.Message}");
             }
         }
@@ -895,11 +887,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var updateResult = _sucursalesRepository.Update(sucursal);
                 if (updateResult.code_Status == 1)
                 {
-                    return result.Ok(updateResult.message_Status);
+                    return result.Ok(updateResult);
                 }
                 else
                 {
-                    return result.Error(updateResult.message_Status);
+                    return result.Error(updateResult);
                 }
             }
             catch (Exception ex)
@@ -916,11 +908,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _sucursalesRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
