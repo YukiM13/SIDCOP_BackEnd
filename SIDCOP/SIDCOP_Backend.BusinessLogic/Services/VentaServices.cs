@@ -394,12 +394,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult DeleteConfiguracionFactura(tbConfiguracionFacturas item)
+        public ServiceResult DeleteConfiguracionFactura(int id)
         {
             var result = new ServiceResult();
             try
             {
-                var response = _configuracionFacturaRepository.Delete(item);
+                var response = _configuracionFacturaRepository.Delete(id);
                 return result.Ok(response);
             }
             catch (Exception ex)

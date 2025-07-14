@@ -12,19 +12,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
     public class BodegaRepository : IRepository<tbBodegas>
     {
 
-        public RequestStatus Delete(tbBodegas item)
+        public RequestStatus Delete(int? id)
         {
             var parameters = new DynamicParameters();
 
-            parameters.Add("@Bode_Id", item.Bode_Id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
-            parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
-            parameters.Add("@Bode_FechaModificacion", item.Bode_FechaModificacion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Bode_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Execute(ScriptDatabase.Bodega_Eliminar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var status = new RequestStatus();
-            status.CodeStatus = result;
+            status.code_Status = result;
 
             return status;
         }
@@ -97,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             var result = db.Execute(ScriptDatabase.Bodega_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var status = new RequestStatus();
-            status.CodeStatus = result;
+            status.code_Status = result;
 
             return status;
         }

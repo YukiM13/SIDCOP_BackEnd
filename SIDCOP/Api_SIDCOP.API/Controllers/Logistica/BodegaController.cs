@@ -54,17 +54,17 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
-        [HttpPost("Eliminar")]
-        public IActionResult Eliminar(BodegaViewModel item)
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int id)
         {
-            var mapped = _mapper.Map<tbBodegas>(item);
-            var result = _logisticaServices.DeleteBodega(mapped);
+
+            var result = _logisticaServices.DeleteBodega(id);
 
             return Ok(result);
         }
 
 
-        [HttpGet("Buscar")]
+        [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
             var result = _logisticaServices.FindBodega(id);

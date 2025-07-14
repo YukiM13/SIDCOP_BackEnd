@@ -2,6 +2,7 @@
 using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Inventario;
 using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Venta;
 using Api_SIDCOP.API.Models.Ventas;
 using AutoMapper;
 using SIDCOP_Backend.Entities.Entities;

@@ -106,6 +106,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
         #endregion
 
+
+
         #region Bodegas 
 
         public IEnumerable<tbBodegas> ListBodegas()
@@ -151,12 +153,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult DeleteBodega(tbBodegas item)
+        public ServiceResult DeleteBodega(int id)
         {
             var result = new ServiceResult();
             try
             {
-                var response = _bodegaRepository.Delete(item);
+                var response = _bodegaRepository.Delete(id);
                 return result.Ok(response);
             }
             catch (Exception ex)

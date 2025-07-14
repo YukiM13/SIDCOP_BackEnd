@@ -53,10 +53,10 @@ namespace Api_SIDCOP.API.Controllers.Venta
 
 
         [HttpPost("Eliminar")]
-        public IActionResult Eliminar(ConfiguracionFacturaViewModel item)
+        public IActionResult Eliminar(int id)
         {
-            var mapped = _mapper.Map<tbConfiguracionFacturas>(item);
-            var result = _ventaServices.DeleteConfiguracionFactura(mapped);
+            
+            var result = _ventaServices.DeleteConfiguracionFactura(id);
 
             return Ok(result);
         }

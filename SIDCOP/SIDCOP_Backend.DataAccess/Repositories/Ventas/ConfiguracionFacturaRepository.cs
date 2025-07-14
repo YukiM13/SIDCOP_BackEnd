@@ -11,17 +11,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class ConfiguracionFacturaRepository : IRepository<tbConfiguracionFacturas>
     {
-        public RequestStatus Delete(tbConfiguracionFacturas item)
+        public RequestStatus Delete(int? id)
         {
             var parameters = new DynamicParameters();
 
-            parameters.Add("@CoFa_Id", item.CoFa_Id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@CoFa_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Execute(ScriptDatabase.ConfiguracionFactura_Eliminar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var status = new RequestStatus();
-            status.CodeStatus = result;
+            status.code_Status = result;
 
             return status;
         }
@@ -58,7 +58,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var result = db.Execute(ScriptDatabase.ConfiguracionFactura_Insertar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var status = new RequestStatus();
-            status.CodeStatus = result;
+            status.code_Status = result;
 
             return status;
         }
@@ -92,7 +92,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var result = db.Execute(ScriptDatabase.ConfiguracionFactura_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             var status = new RequestStatus();
-            status.CodeStatus = result;
+            status.code_Status = result;
 
             return status;
         }
