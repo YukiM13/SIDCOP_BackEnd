@@ -4,6 +4,7 @@ using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
 using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.Entities.Entities;
 using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
@@ -42,6 +43,9 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ColoniaRepository>();
 
             services.AddScoped<EstadoCivilRepository>();
+
+            services.AddScoped<ConfiguracionFacturaRepository>();
+            services.AddScoped<BodegaRepository>();
             services.AddScoped<ProductosRepository>();
 
             services.AddScoped<ClienteRepository>();
@@ -70,6 +74,9 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<RolRepository>();
             //services.AddScoped<ReporteServices>();
             //services.AddScoped<DashboardServices>();
+
+            services.AddScoped<VentaServices>();
+            services.AddScoped<LogisticaServices>();
         }
     }
 }
