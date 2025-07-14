@@ -1031,15 +1031,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var muni = _municipioRepository.Insert(item);
-                if (muni.code_Status == 1)
-                {
-                    return result.Ok(muni.message_Status);
-                }
-                else
-                {
-                    return result.Error(muni.message_Status);
-
-                }
+               
+                    return result.Ok(muni);
+              
             }
             catch (Exception ex)
             {
@@ -1047,22 +1041,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult ActualizarMunicipios(tbMunicipios item)
+     
+
+public ServiceResult ActualizarMunicipios(tbMunicipios item)
         {
             var result = new ServiceResult();
             try
             {
                 var muni = _municipioRepository.Update(item);
-                if (muni.code_Status == 1)
-                {
-                    return result.Ok(muni.message_Status);
+              
+                    return result.Ok(muni);
 
-                }
-                else
-                {
-                    return result.Error(muni.message_Status);
-
-                }
+                
+              
             }
             catch (Exception ex)
             {
@@ -1092,16 +1083,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
               
                     var list = _municipioRepository.DeleteConCodigo(id);
-                if (list.code_Status == 1)
-                {
-                    return result.Ok(list.message_Status);
+                
+                    return result.Ok(list);
 
-                }
-                else
-                {
-                    return result.Error(list.message_Status);
-
-                }
+   
+              
             }
             catch (Exception ex)
             {
