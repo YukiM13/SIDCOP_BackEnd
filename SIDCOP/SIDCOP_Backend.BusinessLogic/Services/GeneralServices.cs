@@ -40,6 +40,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _marcaRepository = marcaRepository;
             _clienteRepository = clienteRepository;
             _canalRepository = canalRepository;
+            _sucursalesRepository = sucursalesRepository;
+            _estadocivilRepository = estadocivilRepository;
 
             _empleadoRepository = empleadoRepository;
              _departamentoRepository = departamentoRepository;
