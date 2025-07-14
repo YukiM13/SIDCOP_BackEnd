@@ -1,7 +1,17 @@
-﻿namespace Api_SIDCOP.API.Models.Acceso
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SIDCOP_Backend.Entities.Entities
 {
-    public class UsuarioViewModel
+    public class LoginResponse
     {
+        public int code_Status { get; set; }
+        public string message_Status { get; set; }
+
+
         public int Usua_Id { get; set; }
 
         public string Usua_Usuario { get; set; }

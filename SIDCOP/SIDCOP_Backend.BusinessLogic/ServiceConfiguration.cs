@@ -25,6 +25,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<MunicipioRepository>();
 
             services.AddScoped<UsuarioRepository>();
+            services.AddScoped<PermisoRepository>();
             services.AddScoped<ModeloRepository>();
             services.AddScoped<CategoriasRepository>();
             services.AddScoped<SubcategoriasRepository>();
