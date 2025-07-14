@@ -63,7 +63,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return NotFound("Cliente not found.");
+                return NotFound("Cliente no encontrado.");
             }
         }
 
