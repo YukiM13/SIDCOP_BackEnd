@@ -14,9 +14,15 @@ namespace Api_SIDCOP.API.Models.General
 
         public int? Usua_Modificacion { get; set; }
 
+        public int? Secuencia { get; set; }
+
         public DateTime? EsCv_FechaModificacion { get; set; }
 
- 
+        public string UsuarioCreacion { get; set; }
+
+        public string UsuarioModificacion { get; set; }
+
+
     }
 
 }

@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class MarcaViewModel
     {
@@ -15,6 +17,9 @@
         public DateTime? Marc_FechaModificacion { get; set; }
 
         public bool Marc_Estado { get; set; }
+
+        public string UsuarioCreacion { get; set; }
+        public string UsuarioModificacion { get; set; }
 
 
     }

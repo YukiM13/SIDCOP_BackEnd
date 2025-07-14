@@ -25,21 +25,36 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
+
+
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
-            if (id <= 0)
+            var result = _ventaServices.BuscarCaiS(id);
+
+            if (result == null)
             {
-                return BadRequest("Id Invalida.");
-            }
-            var sucursal = _ventaServices.BuscarCaiS(id);
-            if (sucursal != null)
-            {
-                return Ok(sucursal);
+                var notFoundResponse = new
+                {
+                    code = 200,
+                    success = false,
+                    message = "Cai no encontrado.",
+                    data = (object)null
+                };
+
+                return Ok(notFoundResponse);
             }
             else
             {
-                return NotFound("Cai not found.");
+                var successResponse = new
+                {
+                    code = 200,
+                    success = true,
+                    message = "Operación completada exitosamente.",
+                    data = result
+                };
+                return Ok(successResponse);
+
             }
         }
 
@@ -56,26 +71,36 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         public IActionResult Insert([FromBody] CaiSViewModel item)
         {
             var mapped = _mapper.Map<tbCAIs>(item);
-            var result = _ventaServices.InsertarCaiS(mapped);
+            var result = _ventaServices.CrearCai(mapped);
             return Ok(result);
         }
 
-        [HttpPost("Eliminar/{id}")]
-        public IActionResult Eliminar(int? id)
+        [HttpPut("Eliminar")]
+        public IActionResult Modificar([FromBody] CaiSViewModel item)
         {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalida.");
-            }
-            var result = _ventaServices.EliminarCai(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
+            var mapped = _mapper.Map<tbCAIs>(item);
+            var update = _ventaServices.EliminarCai(mapped);
+            return Ok(update);
         }
+
+
+
+        //[HttpPut("Eliminar/{id}")]
+        //public IActionResult Eliminar(int? id)
+        //{
+        //    if (id <= 0)
+        //    {
+        //        return BadRequest("Id Invalida.");
+        //    }
+        //    var result = _ventaServices.EliminarCai(id);
+        //    if (result.Success)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    else
+        //    {
+        //        return BadRequest(result.Message);
+        //    }
+        //}
     }
 }
