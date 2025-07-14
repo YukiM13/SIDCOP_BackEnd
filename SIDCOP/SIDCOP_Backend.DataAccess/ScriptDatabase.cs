@@ -21,9 +21,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuario_VerificarUsuarioExistente = "Acce.SP_Usuario_VerificarUsuarioExistente";
         #endregion
 
-        #region Municipios
-
-        #region Roles
+         #region Roles
 
             public static string Roles_Listar = "Acce.SP_Roles_Listar";
             public static string Rol_Insertar = "Acce.SP_Rol_Insertar";
@@ -33,6 +31,7 @@ namespace SIDCOP_Backend.DataAccess
         
         #endregion
 
+        #region Municipios
 
         #region Departamentos
         public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
