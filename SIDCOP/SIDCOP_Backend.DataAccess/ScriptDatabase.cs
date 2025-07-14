@@ -10,9 +10,10 @@ namespace SIDCOP_Backend.DataAccess
     public static class ScriptDatabase
     {
         #region Usuarios
+
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
 
-        #endregion
+        #endregion Usuarios
 
 
         #region Departamentos
@@ -43,7 +44,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_Buscar = "Inve.SP_Producto_Buscar";
 
-        #endregion
+        #endregion Productos
 
         #region Sucursales
 
@@ -57,28 +58,71 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Sucursal_Buscar = "Gral.SP_Sucursal_Buscar";
 
-        #endregion
+        #endregion Sucursales
 
         #region Colonias
         public static string Colonias_Listar = "[Gral].[SP_Colonias_Listar]";
         public static string Colonias_Buscar = "[Gral].[SP_Colonia_Buscar]";
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
-        public static string Colonias_Insertar= "[Gral].[SP_Colonia_Insertar]";
+        public static string Colonias_Insertar = "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
 
-        #endregion
+        #endregion Colonias
+
+
 
         #region EstadosCiviles
-        public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+           public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
+
         public static string EstadoCivil_Insertar = "[Gral].[SP_EstadoCivil_Insertar]";
         public static string EstadoCivil_Actualizar = "[Gral].[SP_EstadoCivil_Actualizar]";
         public static string EstadoCivil_Buscar = "[Gral].[SP_EstadoCivil_Buscar]";
         public static string EstadoCivil_Eliminar = "[Gral].[SP_EstadoCivil_Eliminar]";
-        
-
         #endregion
 
+        #region Categorias
+        public const string Categoria_Listar = "[Inve].[SP_Categorias_Listar]";
+        public const string Categoria_Insertar = "[Inve].[SP_Categoria_Insertar]";
+        public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
+        public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
+        public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        #endregion
+
+        #region Modelos
+        public const string Modelos_Listar = "[Gral].[SP_Modelos_Listar]";
+        public const string Modelos_Insertar = "[Gral].[SP_Modelo_Insertar]";
+        public const string Modelos_Eliminar = "[Gral].[SP_Modelo_Eliminar]";
+        public const string Modelos_Actualizar = "[Gral].[SP_Modelo_Actualizar]";
+        public const string Modelos_Buscar = "[Gral].[SP_Modelo_Buscar]";
+        #endregion
+
+        #region Subcategorias
+
+        public const string Subcategorias_Listar = "[Inve].[SP_Subcategoria_Listar]";
+        public const string Subcategorias_Insertar = "[Inve].[SP_Subcategoria_Insertar]";
+        public const string Subcategorias_Eliminar = "[Inve].[SP_Subcategoria_Eliminar]";
+        public const string Subcategorias_Buscar = "[Inve].[SP_Subcategoria_Buscar]";
+        public const string Subcategorias_Actualizar = "[Inve].[SP_Subcategoria_Actualizar]";
+        #endregion
+
+        #region Proveedores
+        public const string Proveedores_Listar = "[Gral].[SP_Proveedores_Listar]";
+        public const string Proveedores_Insertar = "[Gral].[SP_Proveedor_Insertar]";
+        public const string Proveedores_Actualizar = "[Gral].[SP_Proveedor_Actualizar]";
+        public const string Proveedores_Buscar = "[Gral].[SP_Proveedor_Buscar]";
+        public const string Proveedores_Eliminar = "[Gral].[SP_Proveedor_Eliminar]";
+        #endregion
+
+        #region  Impuestos 
+        public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
+        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
+        
+        
+
+        #endregion EstadosCiviles
+
         #region Clientes
+
         public const string Cliente_Insertar = "Gral.SP_Cliente_Insertar";
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
@@ -122,7 +166,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Cais
         public static string Cai_Agregar = "[Vnta].[SP_CAI_Insertar]";
         public static string Cai_Listar = "[Vnta].[SP_CAIs_Listar]";
-        public static string Cai_Eliminar = "[Vnta].[]";
+        public static string Cai_Eliminar = "[Vnta].[SP_CAI_CambiarEstado]";
         public static string Cai_Filtrar = "[Vnta].[SP_CAI_Buscar]";
         #endregion
 
@@ -148,8 +192,18 @@ namespace SIDCOP_Backend.DataAccess
         public static string RegistrosCaiSListar = "[Vnta].[SP_RegistrosCAI_Listar]";
         public static string RegistrosCaiSFiltrar = "[Vnta].[SP_RegistrosCAI_Buscar]";
         public static string RegistrosCaiSEditar = "[Vnta].[SP_RegistroCAI_Actualizar]";
-        public static string RegistrosCaiSEliminar = "[Vnta].[]";
+        public static string RegistrosCaiSEliminar = "[Vnta].[SP_RegistroCAI_CambiarEstado]";
         #endregion
+
+        #region Vendedores
+
+        public static string Vendedores_Listar = "[Vnta].[SP_Vendedores_Listar]";
+        public static string Vendedor_Buscar = "[Vnta].[SP_Vendedor_Buscar]";
+        public static string Vendedor_Eliminar = "[Vnta].[SP_Vendedor_Eliminar]";
+        public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
+        public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
+
+        #endregion Vendedores
 
     }
 }

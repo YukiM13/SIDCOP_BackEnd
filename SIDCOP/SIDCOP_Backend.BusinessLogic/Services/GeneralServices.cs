@@ -6,7 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -21,15 +24,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly ModeloRepository _modeloRepository;
+        
+        private readonly ProveedoresRepository _proveedoresRepository;
+        
         private readonly CargoRepository _cargoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
-        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository)
         {
-            _estadocivilRepository = estadocivilRepository;
-            _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
 
             _marcaRepository = marcaRepository;
@@ -39,6 +44,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _empleadoRepository = empleadoRepository;
              _departamentoRepository = departamentoRepository;
             _marcaVehiculoRepository = marcaVehiculoRepository;
+              _modeloRepository = modeloRepository;
+            _proveedoresRepository = proveedoresRepository;
        
 
             _clienteRepository = clienteRepository;
@@ -417,19 +424,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _estadocivilRepository.EliminarEsCi(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -442,7 +442,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
+                return null;
             }
         }
 
@@ -500,19 +500,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _marcaRepository.EliminarMarca(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _marcaRepository.EliminarMarca(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -531,106 +524,75 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion
 
-        #region Sucursales
+        #region Modelos
 
-        public IEnumerable<tbSucursales> ListSucursales()
+        public IEnumerable<tbModelos> ListModelos()
         {
-            var result = new ServiceResult();
             try
             {
-                var list = _sucursalesRepository.List();
+                var list = _modeloRepository.List();
                 return list;
             }
             catch (Exception ex)
             {
-                IEnumerable<tbSucursales> sucursales = null;
-                return sucursales;
+                List<tbModelos> lista = null;
+                return lista;
             }
         }
 
-        public ServiceResult InsertarSucursal(tbSucursales sucursal)
+        public ServiceResult InsertarModelo(tbModelos item)
         {
             var result = new ServiceResult();
             try
             {
-                var insertResult = _sucursalesRepository.Insert(sucursal);
-
-                if (insertResult.code_Status == 1)
-                {
-                    //result.Ok = true;
-                    //result.Message = ;
-                    return result.Ok(insertResult.message_Status);
-                    //return result.Ok(insertResult.message_Status);
-                }
-                else
-                {
-                    //result.IsSuccess = false;
-                    //result.Message = insertResult.message_Status;
-                    //return result.Error(insertResult.message_Status);
-                    return result.Error(insertResult.message_Status);
-                }
-
+                var resultado = _modeloRepository.Insert(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
-                //return result.Error($"Error al insertar carro: {ex.Message}");
-                return result.Error($"Error al insertar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public ServiceResult ActualizarSucursal(tbSucursales sucursal)
+        public ServiceResult ActualizarModelo(tbModelos item)
         {
             var result = new ServiceResult();
             try
             {
-                var updateResult = _sucursalesRepository.Update(sucursal);
-                if (updateResult.code_Status == 1)
-                {
-                    return result.Ok(updateResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(updateResult.message_Status);
-                }
+                var resultado = _modeloRepository.Update(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al actualizar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public ServiceResult EliminarSucursal(int? id)
+        public ServiceResult EliminarModelo(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _sucursalesRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var resultado = _modeloRepository.Delete(id);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public tbSucursales BuscarSucursal(int? id)
+        public ServiceResult BuscarModelo(tbModelos item)
         {
+            var result = new ServiceResult();
             try
             {
-                var sucursal = _sucursalesRepository.Find(id);
-                return sucursal;
+                var resultado = _modeloRepository.FindCodigo(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -650,7 +612,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult UpdateCliente(tbClientes item)
         {
             var result = new ServiceResult();
@@ -795,6 +756,186 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
         #endregion
 
+        #region Proveedores
+
+        public IEnumerable<tbProveedores> ListProveedores()
+        {
+            try
+            {
+                var list = _proveedoresRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbProveedores> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult InsertarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarProveedor(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
+        #region Sucursales
+
+        public IEnumerable<tbSucursales> ListSucursales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _sucursalesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbSucursales> sucursales = null;
+                return sucursales;
+            }
+        }
+
+        public ServiceResult InsertarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _sucursalesRepository.Insert(sucursal);
+
+                if (insertResult.code_Status == 1)
+                {
+                    //result.Ok = true;
+                    //result.Message = ;
+                    return result.Ok(insertResult.message_Status);
+                    //return result.Ok(insertResult.message_Status);
+                }
+                else
+                {
+                    //result.IsSuccess = false;
+                    //result.Message = insertResult.message_Status;
+                    //return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult.message_Status);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+                //return result.Error($"Error al insertar carro: {ex.Message}");
+                return result.Error($"Error al insertar sucursal: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ActualizarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var updateResult = _sucursalesRepository.Update(sucursal);
+                if (updateResult.code_Status == 1)
+                {
+                    return result.Ok(updateResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(updateResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al actualizar sucursal: {ex.Message}");
+            }
+        }
+
+        public ServiceResult EliminarSucursal(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _sucursalesRepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbSucursales BuscarSucursal(int? id)
+        {
+            try
+            {
+                var sucursal = _sucursalesRepository.Find(id);
+                return sucursal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+            }
+        }
+
+        #endregion
+
         #region Cargos
         public IEnumerable<tbCargos> ListarCargos()
         {
@@ -873,6 +1014,5 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
-
     }
 }
