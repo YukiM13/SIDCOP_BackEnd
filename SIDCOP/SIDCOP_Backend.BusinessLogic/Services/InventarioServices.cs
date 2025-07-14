@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,252 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class InventarioServices
     {
+        private readonly CategoriasRepository _categoriasRepository;
+        private readonly SubcategoriasRepository _subcategoriasRepository;
+        private readonly ProductosRepository _productosRepository;
+
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository)
+        {
+            _categoriasRepository = categoriasRepository;
+            _subcategoriasRepository = subcategoriasRepository;
+            _productosRepository = productosRepository;
+        }
+
+        #region Categorias
+
+        public IEnumerable<tbCategorias> ListarCategorias()
+        {
+            try
+            {
+                var list = _categoriasRepository.List();
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbCategorias> categorias = null;
+                return categorias;
+            }
+        }
+
+        public ServiceResult InsertarCategoria(tbCategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCategoria(tbCategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarCategoria(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarCategoria(tbCategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region Subcategorias
+        public IEnumerable<tbSubcategorias> ListarSubCategorias()
+        {
+            try
+            {
+                var list = _subcategoriasRepository.List();
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbSubcategorias> subcategorias = null;
+                return subcategorias;
+            }
+        }
+
+        public ServiceResult InsertarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarSubCategoria(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarSubCategoria(tbSubcategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _subcategoriasRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        #endregion
+
+
+        #region Productos
+
+        public IEnumerable<tbProductos> ListarProductos()
+        {
+            try
+            {
+                var list = _productosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbProductos>();
+            }
+        }
+        public ServiceResult EliminarProducto(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _productosRepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(deleteResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+        public tbProductos BuscarProducto(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.Find(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public ServiceResult InsertarProducto(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _productosRepository.Insert(producto);
+                if (insertResult.code_Status == 1)
+                {
+                    return result.Ok(insertResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(insertResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ActualizarProducto(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var updateResult = _productosRepository.Update(producto);
+                if (updateResult.code_Status == 1)
+                {
+                    return result.Ok(updateResult.message_Status);
+                }
+                else
+                {
+                    return result.Error(updateResult.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al actualizar producto: {ex.Message}");
+            }
+        }
+        #endregion
     }
 }

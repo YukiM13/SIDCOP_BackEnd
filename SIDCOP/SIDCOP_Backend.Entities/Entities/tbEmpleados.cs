@@ -19,7 +19,7 @@ public partial class tbEmpleados
 
     public string Empl_Sexo { get; set; }
 
-    public DateOnly Empl_FechaNacimiento { get; set; }
+    public DateTime Empl_FechaNacimiento { get; set; }
 
     public string Empl_Correo { get; set; }
 
