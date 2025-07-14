@@ -22,7 +22,10 @@ namespace SIDCOP_Backend.BusinessLogic
             // Initialize the connection string for repositories that use Dapper
             SIDCOP_Context.BuildConnectionString(connectionString);
 
+            services.AddScoped<MunicipioRepository>();
+
             services.AddScoped<UsuarioRepository>();
+            services.AddScoped<PermisoRepository>();
             services.AddScoped<ModeloRepository>();
             services.AddScoped<CategoriasRepository>();
             services.AddScoped<SubcategoriasRepository>();

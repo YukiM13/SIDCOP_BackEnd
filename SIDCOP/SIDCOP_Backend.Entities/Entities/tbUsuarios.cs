@@ -11,7 +11,7 @@ public partial class tbUsuarios
 
     public string Usua_Usuario { get; set; }
 
-    public byte[] Usua_Clave { get; set; }
+    public string Usua_Clave { get; set; }
 
     public int Role_Id { get; set; }
 
@@ -32,6 +32,19 @@ public partial class tbUsuarios
     public DateTime? Usua_FechaModificacion { get; set; }
 
     public bool Usua_Estado { get; set; }
+
+    /* Pantallas, Roles y Acciones */
+    public string Role_Descripcion { get; set; }
+    public int Pant_Id { get; set; }
+
+    public string Pant_Descripcion { get; set; }
+
+    public string Pant_Icono { get; set; }
+
+    public int Acci_Id { get; set; }
+    public string Acci_Descripcion { get; set; }
+
+    public DateTime Perm_FechaCreacion { get; set; }
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 

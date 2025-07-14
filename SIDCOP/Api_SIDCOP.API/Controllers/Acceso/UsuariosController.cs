@@ -7,6 +7,7 @@ using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
 using MailKit.Security;
 using System.Drawing;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
@@ -26,11 +27,97 @@ namespace Api_SIDCOP.API.Controllers.Acceso
            
         }
 
+        //[HttpPost("IniciarSesion")]
+        //public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
+        //{
+        //    var mapped = _mapper.Map<tbUsuarios>(item);
+        //    var result = _accesoServices.IniciarSesion(mapped);
+
+        //    if (result == null || !result.Any()) // <-- aquí está la clave
+        //    {
+        //        return BadRequest(new
+        //        {
+        //            code_Status = -1,
+        //            message_Status = "Usuario o contraseña incorrectos."
+        //        });
+        //    }
+
+        //    return Ok(new
+        //    {
+        //        code_Status = 1,
+        //        message_Status = "Sesión iniciada correctamente",
+        //        data = result
+        //    });
+        //}
+
+        [HttpPost("IniciarSesion")]
+        public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var result = _accesoServices.IniciarSesion(mapped);
+
+            if (result == null || result.code_Status != 1)
+            {
+                return BadRequest(new
+                {
+                    code_Status = result?.code_Status ?? -1,
+                    message_Status = result?.message_Status ?? "Usuario o contraseña incorrectos."
+                });
+            }
+
+            return Ok(new
+            {
+                data = result
+            });
+        }
+
+
+
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _accesoServices.ListUsuario();
+            var list = _accesoServices.ListUsuarios();
             return Ok(list);
+        }
+
+        [HttpPost("Insertar")]
+        public IActionResult Insert([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var insert = _accesoServices.InsertUsuario(mapped);
+            return Ok(insert);
+        }
+
+        [HttpPut("Actualizar")]
+        public IActionResult Update([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var update = _accesoServices.UpdateUsuario(mapped);
+            return Ok(update);
+        }
+
+        [HttpPost("CambiarEstado")]
+        public IActionResult Delete([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var delete = _accesoServices.CambiarEstadoUsuario(mapped);
+            return Ok(delete);
+        }
+
+        [HttpPost("Buscar")]
+        public IActionResult Find([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var list = _accesoServices.BuscarUsuario(mapped);
+            return Ok(list);
+        }
+
+        [HttpPost("RestablecerClave")]
+        public IActionResult RestablecerClave([FromBody] UsuarioViewModel item)
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var result = _accesoServices.RestablecerContrasena(mapped);
+            return Ok(result);
         }
 
         [HttpPost("EnviarCorreo")]

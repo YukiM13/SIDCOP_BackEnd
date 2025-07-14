@@ -129,7 +129,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbRegistrosCAI>(ScriptDatabase.RegistrosCaiSFiltrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Registro Cai no encontrado");
+                return null;
             }
             return result;
         }
