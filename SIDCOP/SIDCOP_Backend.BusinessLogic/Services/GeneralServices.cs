@@ -34,7 +34,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
-        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository)
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  
+        ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
+        MunicipioRepository municipioRepository
+        )
         {
             _coloniaRepository = coloniaRepository;
 
@@ -48,7 +51,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _marcaVehiculoRepository = marcaVehiculoRepository;
             _modeloRepository = modeloRepository;
             _proveedoresRepository = proveedoresRepository;
-       
+            _sucursalesRepository = sucursalesRepository;
+
 
             _clienteRepository = clienteRepository;
             _marcaRepository = marcaRepository;
