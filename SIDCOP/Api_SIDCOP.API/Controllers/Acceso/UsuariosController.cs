@@ -27,28 +27,50 @@ namespace Api_SIDCOP.API.Controllers.Acceso
            
         }
 
+        //[HttpPost("IniciarSesion")]
+        //public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
+        //{
+        //    var mapped = _mapper.Map<tbUsuarios>(item);
+        //    var result = _accesoServices.IniciarSesion(mapped);
+
+        //    if (result == null || !result.Any()) // <-- aquí está la clave
+        //    {
+        //        return BadRequest(new
+        //        {
+        //            code_Status = -1,
+        //            message_Status = "Usuario o contraseña incorrectos."
+        //        });
+        //    }
+
+        //    return Ok(new
+        //    {
+        //        code_Status = 1,
+        //        message_Status = "Sesión iniciada correctamente",
+        //        data = result
+        //    });
+        //}
+
         [HttpPost("IniciarSesion")]
         public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
         {
             var mapped = _mapper.Map<tbUsuarios>(item);
             var result = _accesoServices.IniciarSesion(mapped);
 
-            if (result == null)
+            if (result == null || result.code_Status != 1)
             {
                 return BadRequest(new
                 {
-                    code_Status = -1,
-                    message_Status = "Usuario o contraseña incorrectos."
+                    code_Status = result?.code_Status ?? -1,
+                    message_Status = result?.message_Status ?? "Usuario o contraseña incorrectos."
                 });
             }
 
             return Ok(new
             {
-                code_Status = 1,
-                message_Status = "Sesión iniciada correctamente",
                 data = result
             });
         }
+
 
 
         [HttpGet("Listar")]

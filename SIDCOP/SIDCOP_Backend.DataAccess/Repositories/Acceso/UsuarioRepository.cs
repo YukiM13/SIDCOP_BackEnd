@@ -133,17 +133,35 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-        public IEnumerable<tbUsuarios> Login(tbUsuarios? item)
+        //public IEnumerable<tbUsuarios> Login(tbUsuarios? item)
+        //{
+        //    var parameter = new DynamicParameters();
+        //    parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+        //    parameter.Add("@Usua_Contrasena", item.Usua_Clave, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
+        //    using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+        //    var result = db.Query<tbUsuarios>(ScriptDatabase.Usuario_IniciarSesion, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+        //    return result;
+        //}
+
+        public LoginResponse Login(tbUsuarios item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Contrasena", item.Usua_Clave, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Usuario", item.Usua_Usuario);
+            parameter.Add("@Usua_Contrasena", item.Usua_Clave);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbUsuarios>(ScriptDatabase.Usuario_IniciarSesion, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.QueryFirstOrDefault<LoginResponse>(
+                ScriptDatabase.Usuario_IniciarSesion,
+                parameter,
+                commandType: CommandType.StoredProcedure
+            );
 
             return result;
         }
+
+
 
         public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
         {

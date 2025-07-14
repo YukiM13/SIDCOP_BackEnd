@@ -111,21 +111,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
-        public IEnumerable<tbUsuarios> IniciarSesion(tbUsuarios item)
+        //public IEnumerable<tbUsuarios> IniciarSesion(tbUsuarios item)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var list = _usuarioRepository.Login(item);
+        //        return list;
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        IEnumerable<tbUsuarios> usua = null;
+        //        return usua;
+        //    }
+        //}
+
+        public LoginResponse IniciarSesion(tbUsuarios item)
         {
-            var result = new ServiceResult();
             try
             {
-                var list = _usuarioRepository.Login(item);
-                return list;
+                return _usuarioRepository.Login(item);
             }
-            catch (Exception ex)
+            catch
             {
-
-                IEnumerable<tbUsuarios> usua = null;
-                return usua;
+                return new LoginResponse
+                {
+                    code_Status = 0,
+                    message_Status = "Error al iniciar sesión"
+                };
             }
         }
+
+
 
         public ServiceResult MostrarContrasena(int usuaId, string claveSeguridad)
         {
