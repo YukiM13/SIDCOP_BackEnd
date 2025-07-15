@@ -1,8 +1,10 @@
-﻿using Azure.Core;
+
+using Azure.Core;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -17,12 +19,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     public class LogisticaServices
     {
         private readonly RutasRepository _rutasRepository;
+        private readonly BodegaRepository _bodegaRepository;
 
-        #region Rutas
-        public LogisticaServices(RutasRepository rutasRepository)
+        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository)
         {
             _rutasRepository = rutasRepository;
+            _bodegaRepository = bodegaRepository;
         }
+
+        #region Rutas
+
         public tbRutas BuscarRuta(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -31,7 +37,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = db.QueryFirstOrDefault<tbRutas>(ScriptDatabase.Rutas_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Ruta no encontrada");
+                return null;
             }
             return result;
         }
@@ -98,6 +104,83 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar ruta: {ex.Message}");
             }
         }
+        #endregion
+
+
+
+        #region Bodegas 
+
+        public IEnumerable<tbBodegas> ListBodegas()
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _bodegaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbBodegas> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult InsertBodega(tbBodegas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _bodegaRepository.Insert(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdateBodega(tbBodegas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _bodegaRepository.Update(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult DeleteBodega(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _bodegaRepository.Delete(id);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult FindBodega(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _bodegaRepository.Find(id);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         #endregion
     }
 }
