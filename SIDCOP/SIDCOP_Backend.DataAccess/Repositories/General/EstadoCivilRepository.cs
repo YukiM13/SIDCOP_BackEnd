@@ -35,21 +35,48 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-        public int InsertEsCi(tbEstadosCiviles item)
+        //public int InsertEsCi(tbEstadosCiviles item)
+        //{
+        //    var parameter = new DynamicParameters();
+        //    parameter.Add("@EsCv_Descripcion", item.EsCv_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+        //    parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+        //    parameter.Add("@EsCv_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+        //    using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+        //    var result = db.QueryFirstOrDefault<int>(
+        //        ScriptDatabase.EstadoCivil_Insertar,
+        //        parameter,
+        //        commandType: System.Data.CommandType.StoredProcedure
+        //    );
+
+        //    return result; // Puede ser 1 (éxito), -1 (DNI duplicado), o 0 (error interno)
+        //}
+
+        public RequestStatus InsertEsCi(tbEstadosCiviles item)
         {
+            if (item == null)
+            {
+                return new RequestStatus { codeStatus = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@EsCv_Descripcion", item.EsCv_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@EsCv_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@EsCv_FechaCreacion", item.EsCv_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.QueryFirstOrDefault<int>(
-                ScriptDatabase.EstadoCivil_Insertar,
-                parameter,
-                commandType: System.Data.CommandType.StoredProcedure
-            );
-
-            return result; // Puede ser 1 (éxito), -1 (DNI duplicado), o 0 (error interno)
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.EstadoCivil_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { codeStatus = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { codeStatus = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public RequestStatus ActualizarEsCi(tbEstadosCiviles item)
