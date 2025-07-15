@@ -16,7 +16,7 @@
 
         public bool Usua_EsAdmin { get; set; }
 
-        public string Usua_Imagen { get; set; }
+        public string? Usua_Imagen { get; set; }
 
         public int Usua_Creacion { get; set; }
 
@@ -27,5 +27,7 @@
         public DateTime? Usua_FechaModificacion { get; set; }
 
         public bool Usua_Estado { get; set; }
+
+        public string? PermisosJson { get; set; }
     }
 }
