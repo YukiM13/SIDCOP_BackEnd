@@ -14,7 +14,13 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string Prod_DescripcionCorta { get; set; }
 
+        
+        public int Cate_Id { get; set; }
+        
+        public string Cate_Descripcion { get; set; }
+
         public int Subc_Id { get; set; }
+
 
         public int Marc_Id { get; set; }
 
@@ -42,16 +48,22 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public DateTime? Prod_FechaModificacion { get; set; }
 
+
         public string? Marc_Descripcion { get; set; }
 
+        
         public string? Prov_NombreEmpresa { get; set; }
 
+        
         public string? Subc_Descripcion { get; set; }
 
+        
         public string? Impu_Descripcion { get; set; }
 
+        
         public string? UsuarioCreacion { get; set; }
 
+        
         public string? UsuarioModificacion { get; set; }
     }
 }
