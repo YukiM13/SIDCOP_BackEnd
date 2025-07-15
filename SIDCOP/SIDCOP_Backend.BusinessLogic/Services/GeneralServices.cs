@@ -865,24 +865,16 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
                 if (insertResult.code_Status == 1)
                 {
-                    //result.Ok = true;
-                    //result.Message = ;
-                    return result.Ok(insertResult.message_Status);
-                    //return result.Ok(insertResult.message_Status);
+                    return result.Ok(insertResult);
                 }
                 else
                 {
-                    //result.IsSuccess = false;
-                    //result.Message = insertResult.message_Status;
-                    //return result.Error(insertResult.message_Status);
-                    return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult);
                 }
 
             }
             catch (Exception ex)
             {
-                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
-                //return result.Error($"Error al insertar carro: {ex.Message}");
                 return result.Error($"Error al insertar sucursal: {ex.Message}");
             }
         }
@@ -895,11 +887,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var updateResult = _sucursalesRepository.Update(sucursal);
                 if (updateResult.code_Status == 1)
                 {
-                    return result.Ok(updateResult.message_Status);
+                    return result.Ok(updateResult);
                 }
                 else
                 {
-                    return result.Error(updateResult.message_Status);
+                    return result.Error(updateResult);
                 }
             }
             catch (Exception ex)
@@ -916,11 +908,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _sucursalesRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
@@ -1031,15 +1023,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var muni = _municipioRepository.Insert(item);
-                if (muni.code_Status == 1)
-                {
-                    return result.Ok(muni.message_Status);
-                }
-                else
-                {
-                    return result.Error(muni.message_Status);
-
-                }
+               
+                    return result.Ok(muni);
+              
             }
             catch (Exception ex)
             {
@@ -1047,22 +1033,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult ActualizarMunicipios(tbMunicipios item)
+     
+
+public ServiceResult ActualizarMunicipios(tbMunicipios item)
         {
             var result = new ServiceResult();
             try
             {
                 var muni = _municipioRepository.Update(item);
-                if (muni.code_Status == 1)
-                {
-                    return result.Ok(muni.message_Status);
+              
+                    return result.Ok(muni);
 
-                }
-                else
-                {
-                    return result.Error(muni.message_Status);
-
-                }
+                
+              
             }
             catch (Exception ex)
             {
@@ -1092,16 +1075,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
               
                     var list = _municipioRepository.DeleteConCodigo(id);
-                if (list.code_Status == 1)
-                {
-                    return result.Ok(list.message_Status);
+                
+                    return result.Ok(list);
 
-                }
-                else
-                {
-                    return result.Error(list.message_Status);
-
-                }
+   
+              
             }
             catch (Exception ex)
             {
