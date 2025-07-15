@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Ventas
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Ventas
 {
     public class VendedoresViewModel
     {
@@ -41,5 +43,37 @@
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? Vend_FechaModificacion { get; set; }
+
+        public string? Sucu_Descripcion { get; set; }
+
+        
+        public string? Sucu_DireccionExacta { get; set; }
+
+        
+        public string? Colo_Descripcion { get; set; }
+
+        
+        public string? Muni_Codigo { get; set; }
+
+        
+        public string? Muni_Descripcion { get; set; }
+
+        
+        public string? Depa_Codigo { get; set; }
+
+        
+        public string? Depa_Descripcion { get; set; }
+
+        
+        public string? Empl_Nombres { get; set; }
+
+        
+        public string? Empl_Apellidos { get; set; }
+
+        
+        public string? UsuarioCreacion { get; set; }
+
+        
+        public string? UsuarioModificacion { get; set; }
     }
 }
