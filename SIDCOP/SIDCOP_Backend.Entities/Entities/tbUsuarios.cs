@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -21,7 +22,7 @@ public partial class tbUsuarios
 
     public bool Usua_EsAdmin { get; set; }
 
-    public string Usua_Imagen { get; set; }
+    public string? Usua_Imagen { get; set; }
 
     public int Usua_Creacion { get; set; }
 
@@ -45,6 +46,9 @@ public partial class tbUsuarios
     public string Acci_Descripcion { get; set; }
 
     public DateTime Perm_FechaCreacion { get; set; }
+
+    [NotMapped]
+    public string? PermisosJson { get; set; }
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
