@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Inventario
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Inventario
 {
     public class ProductosViewModel
     {
@@ -39,5 +41,17 @@
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? Prod_FechaModificacion { get; set; }
+
+        public string? Marc_Descripcion { get; set; }
+
+        public string? Prov_NombreEmpresa { get; set; }
+
+        public string? Subc_Descripcion { get; set; }
+
+        public string? Impu_Descripcion { get; set; }
+
+        public string? UsuarioCreacion { get; set; }
+
+        public string? UsuarioModificacion { get; set; }
     }
 }

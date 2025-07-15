@@ -88,8 +88,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameters.Add("@Bode_Placa", item.Bode_Placa, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Bode_Capacidad", item.Bode_Capacidad, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
             parameters.Add("@Bode_TipoCamion", item.Bode_TipoCamion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameters.Add("@Usua_Creacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
-            parameters.Add("@Bode_FechaCreacion", item.Bode_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@Bode_FechaModificacion", item.Bode_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Execute(ScriptDatabase.Bodega_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
