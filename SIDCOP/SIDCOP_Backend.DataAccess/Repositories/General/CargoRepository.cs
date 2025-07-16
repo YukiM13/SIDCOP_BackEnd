@@ -43,7 +43,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             string mensaje;
 
-            switch (result)
+            switch (result) 
             {
                 case 1:
                     mensaje = "Cargo eliminado correctamente.";

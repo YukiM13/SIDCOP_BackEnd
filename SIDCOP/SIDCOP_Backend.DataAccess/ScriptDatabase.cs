@@ -58,6 +58,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string MarcasVehiculos_Actualizar = "[Gral].[SP_MarcaVehiculo_Actualizar]";
         public const string MarcasVehiculos_Eliminar = "[Gral].[SP_MarcaVehiculo_Eliminar]";
         public const string MarcasVehiculos_Buscar = "[Gral].[SP_MarcaVehiculo_Buscar]";
+        public const string MarcasVehiculos_ListarModelos = "[Gral].[SP_MarcaVehiculo_ListarModelos]";
 
         #endregion Marcas Vehiculos
 
