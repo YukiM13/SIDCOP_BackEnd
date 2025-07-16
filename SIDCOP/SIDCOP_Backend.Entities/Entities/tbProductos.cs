@@ -18,7 +18,13 @@ public partial class tbProductos
 
     public string Prod_DescripcionCorta { get; set; }
 
+    [NotMapped]
+    public int Cate_Id { get; set; }
+    [NotMapped]
+    public string Cate_Descripcion { get; set; }
+
     public int Subc_Id { get; set; }
+
 
     public int Marc_Id { get; set; }
 

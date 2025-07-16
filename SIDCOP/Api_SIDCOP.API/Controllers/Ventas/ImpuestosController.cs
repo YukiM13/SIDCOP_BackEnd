@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -35,7 +36,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
 
 
         [HttpPut("Actualizar")]
-        public IActionResult Actualizar([FromBody] ModeloViewModel item)
+        public IActionResult Actualizar([FromBody] ImpuestosViewModel item)
         {
             var mapped = _mapper.Map<tbImpuestos>(item);
             var list = _ventaServices.ActualizarImpuestos(mapped);
