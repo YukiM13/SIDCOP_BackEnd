@@ -52,28 +52,24 @@ namespace Api_SIDCOP.API.Models.Ventas
         
         public string? Colo_Descripcion { get; set; }
 
-        
         public string? Muni_Codigo { get; set; }
-
-        
+ 
         public string? Muni_Descripcion { get; set; }
 
-        
         public string? Depa_Codigo { get; set; }
 
-        
         public string? Depa_Descripcion { get; set; }
 
-        
-        public string? Empl_Nombres { get; set; }
+        public string? NombreSupervisor { get; set; }
 
-        
-        public string? Empl_Apellidos { get; set; }
+        public string? ApellidoSupervisor { get; set; }
 
-        
+        public string? NombreAyudante { get; set; }
+
+        public string? ApellidoAyudante { get; set; }
+
         public string? UsuarioCreacion { get; set; }
 
-        
         public string? UsuarioModificacion { get; set; }
     }
 }

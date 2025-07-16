@@ -53,6 +53,9 @@ public partial class tbSucursales
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }

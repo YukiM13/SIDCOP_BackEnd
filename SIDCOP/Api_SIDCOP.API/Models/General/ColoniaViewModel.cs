@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class ColoniaViewModel
     {
@@ -15,5 +17,13 @@
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? Colo_FechaModificacion { get; set; }
+
+        public int? Secuencia { get; set; }
+
+        public int? Muni_Descripción { get; set; }
+
+        public int? Depa_Codigo { get; set; }
+
+        public int? Depa_Descripción { get; set; }
     }
 }
