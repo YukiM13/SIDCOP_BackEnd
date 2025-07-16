@@ -8,6 +8,9 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbCanales
 {
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public int Cana_Id { get; set; }
 
     public string Cana_Descripcion { get; set; }
