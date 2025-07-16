@@ -25,5 +25,9 @@ namespace Api_SIDCOP.API.Models.General
         public string? Depa_Codigo { get; set; }
 
         public string? Depa_Descripción { get; set; }
+
+        public string? UsuarioCreacion { get; set; }
+
+        public string? UsuarioModificacion { get; set; }
     }
 }

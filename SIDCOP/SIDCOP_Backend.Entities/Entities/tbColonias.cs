@@ -32,6 +32,12 @@ public partial class tbColonias
     [NotMapped]
     public string? Depa_Descripcion { get; set; }
 
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+
     public DateTime? Colo_FechaModificacion { get; set; }
 
     public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
