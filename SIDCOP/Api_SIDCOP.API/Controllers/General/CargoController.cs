@@ -62,22 +62,32 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
+        //[HttpPut("Eliminar/{id}")]
+        //public IActionResult EliminarCargo(int? id)
+        //{
+        //    if (id <= 0)
+        //    {
+        //        return BadRequest("Id Invalida.");
+        //    }
+        //    var delete = _generalServices.EliminarCargo(id);
+        //    if (delete.Success)
+        //    {
+        //        return Ok(delete);
+        //    }
+        //    else
+        //    {
+        //        return NotFound(delete);
+        //    }
+        //}
+
+
         [HttpPut("Eliminar/{id}")]
-        public IActionResult EliminarCargo(int? id)
+        public IActionResult Eliminar(int? id)
         {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalida.");
-            }
-            var delete = _generalServices.EliminarCargo(id);
-            if (delete.Success)
-            {
-                return Ok(delete);
-            }
-            else
-            {
-                return NotFound(delete);
-            }
+
+            var list = _generalServices.EliminarCargo(id);
+            return Ok(list);
         }
+
     }
 }

@@ -10,6 +10,7 @@ using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -193,6 +194,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Find(id);
+                return marcavehiculo;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public tbMarcasVehiculos BuscarModeloDeMarca(int id)
+        {
+            try
+            {
+                var marcavehiculo = _marcaVehiculoRepository.Modelos(id);
                 return marcavehiculo;
             }
             catch (Exception ex)
@@ -979,27 +993,40 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult EliminarCargo(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var delete = _cargoRepository.Delete(id);
-                if (delete.code_Status == 1)
-                {
-                    return result.Ok(delete.message_Status);
-                }
-                else
-                {
-                    return result.Error(delete.message_Status);
-                }
+                var resultado = _cargoRepository.Delete(id);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar cargo: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
+        //public ServiceResult EliminarCargo(int? id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var delete = _cargoRepository.Delete(id);
+        //        if (delete.code_Status == 1)
+        //        {
+        //            return result.Ok(delete.message_Status);
+        //        }
+        //        else
+        //        {
+        //            return result.Error(delete.message_Status);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error($"Error al eliminar cargo: {ex.Message}");
+        //    }
+        //}
 
         public tbCargos BuscarCargo(int? id)
         {

@@ -15,6 +15,8 @@
 
         public int? Usua_Modificacion { get; set; }
 
+        public int? Secuencia { get; set; }
+
         public DateTime? Mode_FechaModificacion { get; set; }
 
         public bool Mode_Estado { get; set; }
