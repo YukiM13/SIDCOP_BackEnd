@@ -1115,6 +1115,21 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             }
         }
 
+        public IEnumerable<tbSucursales> Municipio_ListarSucursales(string id)
+        {
+            //  var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.SucursalesPorMunicipio(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbSucursales> muni = null;
+                return muni;
+            }
+        }
+
         #endregion Municipios
 
     }

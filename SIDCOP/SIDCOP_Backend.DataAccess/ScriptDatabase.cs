@@ -38,6 +38,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Municipios_Listar = "[Gral].[SP_Municipios_Listar]";
         public const string Municipios_Buscar = "[Gral].[SP_Municipio_Buscar]";
         public static string Municipios_Eliminar = "[Gral].[SP_Municipio_Eliminar]";
+        public static string Municipio_ListarSucursales = "[Gral].[SP_Municipio_ListarSucursales]";
 
         #endregion Municipios
 
