@@ -82,6 +82,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, DbType.Int32, ParameterDirection.Input);
+            parameter.Add("@Usua_FechaModificacion", item.Usua_FechaModificacion, DbType.DateTime, ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.QueryFirstOrDefault<dynamic>(ScriptDatabase.Usuario_CambiarEstado, parameter, commandType: CommandType.StoredProcedure);
