@@ -20,13 +20,13 @@ public partial class tbBodegas
 
     public int Mode_Id { get; set; }
 
-    public string Vehi_VIN { get; set; }
+    public string Bode_VIN { get; set; }
 
-    public string Vehi_Placa { get; set; }
+    public string Bode_Placa { get; set; }
 
-    public decimal Vehi_Capacidad { get; set; }
+    public decimal Bode_Capacidad { get; set; }
 
-    public string Vehi_TipoCamion { get; set; }
+    public string Bode_TipoCamion { get; set; }
 
     public int Usua_Creacion { get; set; }
 

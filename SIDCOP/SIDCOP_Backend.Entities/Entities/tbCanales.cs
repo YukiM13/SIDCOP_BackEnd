@@ -2,11 +2,15 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbCanales
 {
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public int Cana_Id { get; set; }
 
     public string Cana_Descripcion { get; set; }
@@ -22,6 +26,12 @@ public partial class tbCanales
     public DateTime? Cana_FechaModificacion { get; set; }
 
     public bool Cana_Estado { get; set; }
+    
+    [NotMapped]
+    public string UsuaC_Nombre { get; set; }
+
+    [NotMapped]
+    public string UsuaM_Nombre { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

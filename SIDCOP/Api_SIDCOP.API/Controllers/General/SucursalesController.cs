@@ -44,7 +44,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
 
         }
@@ -64,18 +64,17 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
-        [HttpPut("Eliminar/{id}")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
             if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
             var result = _generalServices.EliminarSucursal(id);
             if (result.Success)
             {
@@ -83,7 +82,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
@@ -101,7 +100,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return NotFound("Sucursal not found.");
+                return NotFound("Sucursal no encontrada.");
             }
         }
     }

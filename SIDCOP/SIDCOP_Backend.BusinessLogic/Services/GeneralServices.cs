@@ -6,12 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class GeneralServices
     {
+        private readonly MunicipioRepository _municipioRepository;
         private readonly DepartamentoRepository _departamentoRepository;
         private readonly MarcaVehiculoRepository _marcaVehiculoRepository;
         private readonly EstadoCivilRepository _estadocivilRepository;
@@ -21,28 +26,45 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CanalRepository _canalRepository;
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
+        private readonly ModeloRepository _modeloRepository;
+        
+        private readonly ProveedoresRepository _proveedoresRepository;
+        
+        private readonly CargoRepository _cargoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
-        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository,
-        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository)
+        EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  
+        ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
+        MunicipioRepository municipioRepository
+        )
         {
-            _estadocivilRepository = estadocivilRepository;
-            _sucursalesRepository = sucursalesRepository;
             _coloniaRepository = coloniaRepository;
 
             _marcaRepository = marcaRepository;
             _clienteRepository = clienteRepository;
+            _municipioRepository = municipioRepository;
             _canalRepository = canalRepository;
+            _sucursalesRepository = sucursalesRepository;
+            _estadocivilRepository = estadocivilRepository;
 
             _empleadoRepository = empleadoRepository;
-             _departamentoRepository = departamentoRepository;
+            _departamentoRepository = departamentoRepository;
             _marcaVehiculoRepository = marcaVehiculoRepository;
-       
+            _modeloRepository = modeloRepository;
+            _proveedoresRepository = proveedoresRepository;
+            _sucursalesRepository = sucursalesRepository;
 
+
+            _clienteRepository = clienteRepository;
+            _marcaRepository = marcaRepository;
+            _empleadoRepository = empleadoRepository;
+            _cargoRepository = cargoRepository;
         }
 
         #region Departamentos
+
         public ServiceResult InsertarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
@@ -85,10 +107,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
         public tbDepartamentos BuscarDepartamento(string id)
         {
-          //  var result = new ServiceResult();
+            //  var result = new ServiceResult();
             try
             {
                 var list = _departamentoRepository.FindConCodigo(id);
@@ -96,7 +117,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar departamento: {ex.Message}");
+                return null;
             }
         }
 
@@ -114,9 +135,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return usua;
             }
         }
-        #endregion
+
+        #endregion Departamentos
 
         #region MarcasVehiculos
+
         public ServiceResult InsertarMarcaVehiculo(tbMarcasVehiculos item)
         {
             var result = new ServiceResult();
@@ -166,7 +189,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
         public tbMarcasVehiculos BuscarMarcaVehiculo(int id)
         {
             try
@@ -176,7 +198,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar marca del vehiculo: {ex.Message}");
+                return null;
             }
         }
 
@@ -194,10 +216,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return usua;
             }
         }
-        #endregion
 
+        #endregion MarcasVehiculos
 
         #region Empleados
+
         public IEnumerable<tbEmpleados> ListarEmpleado()
         {
             var result = new ServiceResult();
@@ -208,11 +231,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbEmpleados> empleados = null;
                 return empleados;
             }
         }
+
         public ServiceResult InsertarEmpleados(tbEmpleados item)
         {
             var result = new ServiceResult();
@@ -226,6 +249,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult UpdateEmpleados(tbEmpleados empleados)
         {
             var result = new ServiceResult();
@@ -270,15 +294,13 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar : {ex.Message}");
+                return null;
             }
         }
 
+        #endregion Empleados
 
-        #endregion
-
-
-        #region Colonias 
+        #region Colonias
 
         public IEnumerable<tbColonias> ListarColonia()
         {
@@ -290,12 +312,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbColonias> colonia = null;
                 return colonia;
             }
         }
-
 
         public ServiceResult InsertarColonia(tbColonias item)
         {
@@ -310,7 +330,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-   
+
         public ServiceResult UpdateColonia(tbColonias colonia)
         {
             var result = new ServiceResult();
@@ -345,6 +365,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar : {ex.Message}");
             }
         }
+
         public tbColonias BuscarColonia(int? id)
         {
             try
@@ -354,15 +375,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar : {ex.Message}");
+                return null;
             }
         }
 
-
-
-        #endregion
+        #endregion Colonias
 
         #region Estados Civiles
+
         public IEnumerable<tbEstadosCiviles> ListEsCi()
         {
             var result = new ServiceResult();
@@ -373,7 +393,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbEstadosCiviles> esci = null;
                 return esci;
             }
@@ -412,19 +431,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _estadocivilRepository.EliminarEsCi(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _estadocivilRepository.EliminarEsCi(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar el Estado Civil: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -437,12 +449,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar el Estado Civil: {ex.Message}");
+                return null;
             }
         }
 
-
-        #endregion
+        #endregion Estados Civiles
 
         #region Marcas
 
@@ -456,7 +467,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbMarcas> marc = null;
                 return marc;
             }
@@ -495,19 +505,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _marcaRepository.EliminarMarca(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _marcaRepository.EliminarMarca(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar la Marca: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
@@ -520,118 +523,88 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar marca: {ex.Message}");
+                return null;
             }
         }
 
-        #endregion
+        #endregion Marcas
 
-        #region Sucursales
+        #region Modelos
 
-        public IEnumerable<tbSucursales> ListSucursales()
+        public IEnumerable<tbModelos> ListModelos()
         {
-            var result = new ServiceResult();
             try
             {
-                var list = _sucursalesRepository.List();
+                var list = _modeloRepository.List();
                 return list;
             }
             catch (Exception ex)
             {
-                IEnumerable<tbSucursales> sucursales = null;
-                return sucursales;
+                List<tbModelos> lista = null;
+                return lista;
             }
         }
 
-        public ServiceResult InsertarSucursal(tbSucursales sucursal)
+        public ServiceResult InsertarModelo(tbModelos item)
         {
             var result = new ServiceResult();
             try
             {
-                var insertResult = _sucursalesRepository.Insert(sucursal);
-
-                if (insertResult.code_Status == 1)
-                {
-                    //result.Ok = true;
-                    //result.Message = ;
-                    return result.Ok(insertResult.message_Status);
-                    //return result.Ok(insertResult.message_Status);
-                }
-                else
-                {
-                    //result.IsSuccess = false;
-                    //result.Message = insertResult.message_Status;
-                    //return result.Error(insertResult.message_Status);
-                    return result.Error(insertResult.message_Status);
-                }
-
+                var resultado = _modeloRepository.Insert(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                //return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
-                //return result.Error($"Error al insertar carro: {ex.Message}");
-                return result.Error($"Error al insertar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public ServiceResult ActualizarSucursal(tbSucursales sucursal)
+        public ServiceResult ActualizarModelo(tbModelos item)
         {
             var result = new ServiceResult();
             try
             {
-                var updateResult = _sucursalesRepository.Update(sucursal);
-                if (updateResult.code_Status == 1)
-                {
-                    return result.Ok(updateResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(updateResult.message_Status);
-                }
+                var resultado = _modeloRepository.Update(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al actualizar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public ServiceResult EliminarSucursal(int? id)
+        public ServiceResult EliminarModelo(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _sucursalesRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var resultado = _modeloRepository.Delete(id);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        public tbSucursales BuscarSucursal(int? id)
+        public ServiceResult BuscarModelo(tbModelos item)
         {
+            var result = new ServiceResult();
             try
             {
-                var sucursal = _sucursalesRepository.Find(id);
-                return sucursal;
+                var resultado = _modeloRepository.FindCodigo(item);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 
-        #endregion
+        #endregion Sucursales
 
         #region Clientes
+
         public ServiceResult InsertCliente(tbClientes item)
         {
             var result = new ServiceResult();
@@ -645,7 +618,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult UpdateCliente(tbClientes item)
         {
             var result = new ServiceResult();
@@ -660,7 +632,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
         public tbClientes BuscarCliente(int? id)
         {
             try
@@ -670,7 +641,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar cliente: {ex.Message}");
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
 
@@ -709,9 +681,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return clientes;
             }
         }
-        #endregion
+
+        #endregion Clientes
 
         #region Canales
+
         public IEnumerable<tbCanales> ListarCanales()
         {
             var result = new ServiceResult();
@@ -785,10 +759,363 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al buscar canal: {ex.Message}");
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region Proveedores
+
+        public IEnumerable<tbProveedores> ListProveedores()
+        {
+            try
+            {
+                var list = _proveedoresRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbProveedores> lista = null;
+                return lista;
+            }
+        }
+
+        public ServiceResult InsertarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Insert(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Update(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarProveedor(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarProveedor(tbProveedores item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _proveedoresRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
+        #region Sucursales
+
+        public IEnumerable<tbSucursales> ListSucursales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _sucursalesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbSucursales> sucursales = null;
+                return sucursales;
+            }
+        }
+
+        public ServiceResult InsertarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _sucursalesRepository.Insert(sucursal);
+
+                if (insertResult.code_Status == 1)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar sucursal: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ActualizarSucursal(tbSucursales sucursal)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var updateResult = _sucursalesRepository.Update(sucursal);
+                if (updateResult.code_Status == 1)
+                {
+                    return result.Ok(updateResult);
+                }
+                else
+                {
+                    return result.Error(updateResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al actualizar sucursal: {ex.Message}");
+            }
+        }
+
+        public ServiceResult EliminarSucursal(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _sucursalesRepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult);
+                }
+                else
+                {
+                    return result.Error(deleteResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public tbSucursales BuscarSucursal(int? id)
+        {
+            try
+            {
+                var sucursal = _sucursalesRepository.Find(id);
+                return sucursal;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar sucursal: {ex.Message}");
+            }
+        }
+
+        #endregion
+
+        #region Cargos
+        public IEnumerable<tbCargos> ListarCargos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _cargoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCargos> cargos = null;
+                return cargos;
+            }
+        }
+
+        public ServiceResult InsertarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _cargoRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarCargo(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _cargoRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public ServiceResult EliminarCargo(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _cargoRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        //public ServiceResult EliminarCargo(int? id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var delete = _cargoRepository.Delete(id);
+        //        if (delete.code_Status == 1)
+        //        {
+        //            return result.Ok(delete.message_Status);
+        //        }
+        //        else
+        //        {
+        //            return result.Error(delete.message_Status);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error($"Error al eliminar cargo: {ex.Message}");
+        //    }
+        //}
+
+        public tbCargos BuscarCargo(int? id)
+        {
+            try
+            {
+                var cargo = _cargoRepository.Find(id);
+                return cargo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cargo: {ex.Message}");
             }
         }
         #endregion
+        
+        #region Municipios
+
+        public ServiceResult InsertarMunicipios(tbMunicipios item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var muni = _municipioRepository.Insert(item);
+               
+                    return result.Ok(muni);
+              
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+     
+
+public ServiceResult ActualizarMunicipios(tbMunicipios item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var muni = _municipioRepository.Update(item);
+              
+                    return result.Ok(muni);
+
+                
+              
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public IEnumerable<tbMunicipios> ListarMunicipios()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbMunicipios> muni = null;
+                return muni;
+            }
+        }
+
+        public ServiceResult EliminarMunicipio(string id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+              
+                    var list = _municipioRepository.DeleteConCodigo(id);
+                
+                    return result.Ok(list);
+
+   
+              
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public tbMunicipios BuscarMunicipio(string id)
+        {
+            //  var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.FindConCodigo(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar departamento: {ex.Message}");
+            }
+        }
+
+        #endregion Municipios
 
     }
 }

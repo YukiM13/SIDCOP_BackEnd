@@ -14,4 +14,5 @@ namespace SIDCOP_Backend.DataAccess
         public string message_Status { get; set; }
 
     }
+
 }
