@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -28,4 +29,7 @@ public partial class tbImpuestos
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbProductos> tbProductos { get; set; } = new List<tbProductos>();
+    [NotMapped]
+
+    public int? Secuencia { get; set; }
 }
