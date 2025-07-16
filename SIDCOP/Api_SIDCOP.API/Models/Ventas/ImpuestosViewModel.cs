@@ -18,6 +18,7 @@
         public DateTime? Impu_FechaModificacion { get; set; }
 
         public bool Impu_Estado { get; set; }
+        public int? Secuencia { get; set; }
 
     }
 }

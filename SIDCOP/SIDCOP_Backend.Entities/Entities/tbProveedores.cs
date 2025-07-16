@@ -43,7 +43,10 @@ public partial class tbProveedores
 
     [NotMapped]
     public string Depa_Descripcion { get; set; }
-
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
