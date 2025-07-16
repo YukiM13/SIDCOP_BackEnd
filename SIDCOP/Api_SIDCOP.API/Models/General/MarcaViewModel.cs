@@ -16,6 +16,8 @@ namespace Api_SIDCOP.API.Models.General
 
         public DateTime? Marc_FechaModificacion { get; set; }
 
+        public int? Secuencia { get; set; }
+
         public bool Marc_Estado { get; set; }
 
         public string UsuarioCreacion { get; set; }
