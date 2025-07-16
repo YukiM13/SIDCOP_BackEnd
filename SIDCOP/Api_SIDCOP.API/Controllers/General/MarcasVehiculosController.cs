@@ -54,9 +54,30 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return NotFound("Sucursal no encontrada con el ID proporcionado.");
+                return NotFound("Marca no encontrada con el ID proporcionado.");
             }
         }
+
+
+        [HttpPost("BuscarModelo/{id}")]
+        public IActionResult BuscarModelo(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+
+            var modelo = _generalServices.BuscarModeloDeMarca(id);
+            if (modelo != null)
+            {
+                return Ok(modelo);
+            }
+            else
+            {
+                return NotFound("Modelo no encontrado con el ID proporcionado.");
+            }
+        }
+
 
         [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int id)
