@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -34,6 +35,14 @@ public partial class tbProveedores
     public DateTime? FechaModificacion { get; set; }
 
     public bool Prov_Estado { get; set; }
+
+    [NotMapped]
+    public string Colo_Descripcion { get; set; }
+    [NotMapped]
+    public string Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Depa_Descripcion { get; set; }
 
     public virtual tbColonias Colo { get; set; }
 
