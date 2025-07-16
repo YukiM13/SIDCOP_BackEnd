@@ -8,6 +8,9 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbCargos
 {
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public int Carg_Id { get; set; }
 
     public string Carg_Descripcion { get; set; }
