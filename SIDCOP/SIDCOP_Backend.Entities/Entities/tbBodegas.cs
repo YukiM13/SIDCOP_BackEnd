@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -34,6 +35,10 @@ public partial class tbBodegas
     public int? Usua_Modificacion { get; set; }
 
     public DateTime? Bode_FechaModificacion { get; set; }
+
+    [NotMapped]
+
+    public string? Sucu_Descripcion { get; set; }
 
     public virtual tbModelos Mode { get; set; }
 
