@@ -8,6 +8,8 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbUsuarios
 {
+    public int Secuencia { get; set; }
+
     public int Usua_Id { get; set; }
 
     public string Usua_Usuario { get; set; }
@@ -36,6 +38,7 @@ public partial class tbUsuarios
 
     /* Pantallas, Roles y Acciones */
     public string Role_Descripcion { get; set; }
+    
     public int Pant_Id { get; set; }
 
     public string Pant_Descripcion { get; set; }
@@ -43,12 +46,16 @@ public partial class tbUsuarios
     public string Pant_Icono { get; set; }
 
     public int Acci_Id { get; set; }
+
     public string Acci_Descripcion { get; set; }
 
     public DateTime Perm_FechaCreacion { get; set; }
 
     [NotMapped]
     public string? PermisosJson { get; set; }
+
+    [NotMapped]
+    public string? NombreCompleto { get; set; }
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
