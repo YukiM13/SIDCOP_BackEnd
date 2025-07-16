@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -16,6 +17,9 @@ public partial class tbEmpleados
     public string Empl_Nombres { get; set; }
 
     public string Empl_Apellidos { get; set; }
+
+    [NotMapped]
+    public string NombreCompleto { get; set; }
 
     public string Empl_Sexo { get; set; }
 
