@@ -172,8 +172,8 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region  Impuestos 
-        public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
-        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
+        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuesto_Actualizar]";
+        public const string  Impuestos_Listar= "[Vnta].[SP_Impuestos_Listar]";
         
         
 
@@ -266,6 +266,16 @@ namespace SIDCOP_Backend.DataAccess
         public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
 
         #endregion Vendedores
+
+
+        #region PuntosEmision
+        public static string PuntosEmision_Listar     = "[Vnta].[SP_PuntosEmisiones_Listar]";
+        public static string PuntoEmision_Insertar    = "[Vnta].[SP_PuntoEmision_Insertar]";
+        public static string PuntoEmision_Actualizar  = "[Vnta].[SP_PuntoEmision_Actualizar]";
+        public static string PuntoEmision_Buscar      = "[Vnta].[SP_PuntoEmision_Buscar]";
+        public static string PuntoEmision_Eliminar    = "[Vnta].[SP_PuntoEmision_Eliminar]";
+        #endregion
+
 
     }
 }

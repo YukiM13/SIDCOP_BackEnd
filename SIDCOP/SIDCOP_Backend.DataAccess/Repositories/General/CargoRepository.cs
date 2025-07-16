@@ -11,26 +11,54 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class CargoRepository : IRepository<tbCargos>
     {
+        //public RequestStatus Delete(int? id)
+        //{
+        //    var parameter = new DynamicParameters();
+        //    parameter.Add("@Carg_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+        //    try
+        //    {
+        //        using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+        //        var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cargos_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+        //        if (result == null)
+        //        {
+        //            return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+        //        }
+        //        return result;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+        //    }
+        //}
+
+
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Carg_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
-            try
+            var result = db.Execute(ScriptDatabase.Cargos_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+            string mensaje;
+
+            switch (result)
             {
-                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cargos_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-                if (result == null)
-                {
-                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
-                }
-                return result;
+                case 1:
+                    mensaje = "Cargo eliminado correctamente.";
+                    break;
+                case -1:
+                    mensaje = "El cargo está siendo utilizado.";
+                    break;
+                default:
+                    mensaje = "Error al eliminar el cargo.";
+                    break;
             }
-            catch (Exception ex)
-            {
-                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
-            }
+
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
+
 
         public tbCargos Find(int? id)
         {

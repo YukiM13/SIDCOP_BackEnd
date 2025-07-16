@@ -25,11 +25,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly RegistrosCaiSRepository _registrosCaiSRepository;
         private readonly VendedorRepository _vendedorRepository;
         private readonly ConfiguracionFacturaRepository _configuracionFacturaRepository;
+        private readonly PuntoEmisionRepository _puntoEmisionRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
-            ConfiguracionFacturaRepository configuracionFacturaRepository
+            ConfiguracionFacturaRepository configuracionFacturaRepository,
+            PuntoEmisionRepository puntoEmisionRepository
+            
 
         )
         {
@@ -40,6 +43,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _registrosCaiSRepository = registrosCaiSRepository;
             _vendedorRepository = vendedorRepository;
             _configuracionFacturaRepository = configuracionFacturaRepository;
+            _puntoEmisionRepository = puntoEmisionRepository;
         }
 
 
@@ -424,6 +428,82 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion
 
+
+
+        #region puntosEmision
+
+        public IEnumerable<tbPuntosEmision> ListPuntosEmision()
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _puntoEmisionRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbPuntosEmision> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult InsertPuntoEmision(tbPuntosEmision item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _puntoEmisionRepository.Insert(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdatePuntoEmision(tbPuntosEmision item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _puntoEmisionRepository.Update(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult DeletePuntoEmision(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _puntoEmisionRepository.Delete(id);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult FindPuntoEmision(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _puntoEmisionRepository.Find(id);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
 
     }
 }

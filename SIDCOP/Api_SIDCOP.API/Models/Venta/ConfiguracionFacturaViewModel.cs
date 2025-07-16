@@ -1,4 +1,5 @@
 ﻿using SIDCOP_Backend.Entities.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Venta
 {
@@ -29,6 +30,22 @@ namespace Api_SIDCOP.API.Models.Venta
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? CoFa_FechaModificacion { get; set; }
+          
+        public string? Colo_Descripcion { get; set; }
+
+       public string? Muni_Codigo { get; set; }
+          
+        public string? Muni_Descripcion { get; set; }
+
+        public string? Depa_Codigo { get; set; }
+
+        public string? Depa_Descripcion { get; set; }
+
+        public string? UsuarioCreacion { get; set; }
+
+        public string? UsuarioModificacion { get; set; }
+
+        public int? Secuencia { get; set; }
 
 
     }
