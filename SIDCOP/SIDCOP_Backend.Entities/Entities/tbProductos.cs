@@ -73,6 +73,9 @@ public partial class tbProductos
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual tbImpuestos Impu { get; set; }
 
     public virtual tbMarcas Marc { get; set; }
