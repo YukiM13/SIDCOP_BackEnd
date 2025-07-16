@@ -59,4 +59,8 @@ public partial class tbConfiguracionFacturas
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
+    [NotMapped]
+
+    public int? Secuencia { get; set; }
+
 }
