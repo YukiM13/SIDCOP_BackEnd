@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class ProveedorViewModel
     {
@@ -22,6 +24,14 @@
         public string Prov_Observaciones { get; set; }
 
         public int Usua_Creacion { get; set; }
+
+        [NotMapped]
+        public string Colo_Descripcion { get; set; }
+        [NotMapped]
+        public string Muni_Descripcion { get; set; }
+
+        [NotMapped]
+        public string Depa_Descripcion { get; set; }
 
         public DateTime FechaCreacion { get; set; }
 
