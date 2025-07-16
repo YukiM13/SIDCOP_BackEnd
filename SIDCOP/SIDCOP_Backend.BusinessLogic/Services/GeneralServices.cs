@@ -202,6 +202,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public tbMarcasVehiculos BuscarModeloDeMarca(int id)
+        {
+            try
+            {
+                var marcavehiculo = _marcaVehiculoRepository.Modelos(id);
+                return marcavehiculo;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<tbMarcasVehiculos> ListarMarcaVehiculo()
         {
             var result = new ServiceResult();
