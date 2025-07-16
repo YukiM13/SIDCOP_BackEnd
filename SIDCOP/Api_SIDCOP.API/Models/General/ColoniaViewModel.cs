@@ -20,10 +20,10 @@ namespace Api_SIDCOP.API.Models.General
 
         public int? Secuencia { get; set; }
 
-        public int? Muni_Descripción { get; set; }
+        public string? Muni_Descripción { get; set; }
 
-        public int? Depa_Codigo { get; set; }
+        public string? Depa_Codigo { get; set; }
 
-        public int? Depa_Descripción { get; set; }
+        public string? Depa_Descripción { get; set; }
     }
 }

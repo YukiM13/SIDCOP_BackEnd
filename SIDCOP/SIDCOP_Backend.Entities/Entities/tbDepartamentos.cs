@@ -26,6 +26,9 @@ public partial class tbDepartamentos
     [NotMapped]
     public string UsuarioModificacion { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

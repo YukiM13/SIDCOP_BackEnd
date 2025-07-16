@@ -24,13 +24,13 @@ public partial class tbColonias
     public int? Secuencia { get; set; }
 
     [NotMapped]
-    public int? Muni_Descripción { get; set; }
+    public string? Muni_Descripcion { get; set; }
 
     [NotMapped]
-    public int? Depa_Codigo { get; set; }
+    public string Depa_Codigo { get; set; }
 
     [NotMapped]
-    public int? Depa_Descripción { get; set; }
+    public string? Depa_Descripcion { get; set; }
 
     public DateTime? Colo_FechaModificacion { get; set; }
 
