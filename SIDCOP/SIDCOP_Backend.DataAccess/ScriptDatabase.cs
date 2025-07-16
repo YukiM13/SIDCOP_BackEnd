@@ -172,8 +172,8 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region  Impuestos 
-        public const string Impuestos_Listar = "[Vnta].[SP_Impuesto_Actualizar]";
-        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuestos_Listar]";
+        public const string Impuestos_Actualizar = "[Vnta].[SP_Impuesto_Actualizar]";
+        public const string  Impuestos_Listar= "[Vnta].[SP_Impuestos_Listar]";
         
         
 
