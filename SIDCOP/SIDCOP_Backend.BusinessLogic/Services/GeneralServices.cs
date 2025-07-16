@@ -176,11 +176,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _marcaVehiculoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)

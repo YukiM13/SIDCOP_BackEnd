@@ -94,7 +94,7 @@ namespace Api_SIDCOP.API.Controllers.General
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
