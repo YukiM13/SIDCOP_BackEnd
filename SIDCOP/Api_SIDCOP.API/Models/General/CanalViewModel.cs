@@ -18,8 +18,9 @@
 
         public bool Cana_Estado { get; set; }
 
-        public string UsuaC_Nombre { get; set; }
 
-        public string UsuaM_Nombre { get; set; }
+        public string? UsuarioModificacion { get; set; }
+
+        public string? UsuarioCreacion { get; set; }
     }
 }
