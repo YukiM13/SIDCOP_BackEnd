@@ -15,8 +15,9 @@ public partial class BDD_SIDCOPContext : DbContext
     }
 
     public BDD_SIDCOPContext()
-    {
+    { 
     }
+
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 

@@ -5,35 +5,35 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbPedidos
+public partial class tbDireccionesPorCliente
 {
-    public int Pedi_Id { get; set; }
+    public int DiCl_Id { get; set; }
 
     public int Clie_Id { get; set; }
 
-    public int Empl_Id { get; set; }
+    public int Colo_Id { get; set; }
 
-    public DateTime Pedi_FechaPedido { get; set; }
+    public string DiCl_DireccionExacta { get; set; }
 
-    public DateTime? Pedi_FechaEntrega { get; set; }
+    public string DiCl_Observaciones { get; set; }
+
+    public decimal DiCl_Latitud { get; set; }
+
+    public decimal DiCl_Longitud { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Pedi_FechaCreacion { get; set; }
+    public DateTime DiCl_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Pedi_FechaModificacion { get; set; }
-
-    public bool Pedi_Estado { get; set; }
+    public DateTime? DiCl_FechaModificacion { get; set; }
 
     public virtual tbClientes Clie { get; set; }
 
-    public virtual tbEmpleados Empl { get; set; }
+    public virtual tbColonias Colo { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
 }
