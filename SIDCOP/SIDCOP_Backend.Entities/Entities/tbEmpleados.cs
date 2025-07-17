@@ -45,6 +45,8 @@ public partial class tbEmpleados
 
     public bool Empl_Estado { get; set; }
 
+    public string Empl_Imagen { get; set; }
+
     public virtual tbCargos Carg { get; set; }
 
     public virtual tbColonias Colo { get; set; }

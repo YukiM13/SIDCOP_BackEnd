@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -24,8 +23,6 @@ public partial class tbClientes
 
     public string Clie_ImagenDelNegocio { get; set; }
 
-    public string Clie_DireccionExacta { get; set; }
-
     public string Clie_Telefono { get; set; }
 
     public string Clie_Correo { get; set; }
@@ -36,13 +33,7 @@ public partial class tbClientes
 
     public int Cana_Id { get; set; }
 
-    public int Colo_Id { get; set; }
-
     public int? EsCv_Id { get; set; }
-
-    public decimal Clie_Latitud { get; set; }
-
-    public decimal Clie_Longitud { get; set; }
 
     public int? Ruta_Id { get; set; }
 
@@ -70,27 +61,7 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
-    [NotMapped]
-    public string? UsuaC_Nombre { get; set; }
-    [NotMapped]
-
-    public string? UsuaM_Nombre { get; set; }
-    [NotMapped]
-
-    public string? Cana_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Colo_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? EsCv_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Ruta_Descripcion { get; set; }
-
     public virtual tbCanales Cana { get; set; }
-
-    public virtual tbColonias Colo { get; set; }
 
     public virtual tbEstadosCiviles EsCv { get; set; }
 
@@ -101,6 +72,8 @@ public partial class tbClientes
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 

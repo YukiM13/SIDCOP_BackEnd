@@ -11,5 +11,5 @@ public partial class tbAcciones
 
     public string Acci_Descripcion { get; set; }
 
-    public virtual ICollection<tbPermisos> tbPermisos { get; set; } = new List<tbPermisos>();
+    public virtual ICollection<tbAccionesPorPantalla> tbAccionesPorPantalla { get; set; } = new List<tbAccionesPorPantalla>();
 }

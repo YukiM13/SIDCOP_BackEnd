@@ -10,6 +10,7 @@ using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -175,11 +176,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _marcaVehiculoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
@@ -193,6 +194,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Find(id);
+                return marcavehiculo;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public tbMarcasVehiculos BuscarModeloDeMarca(int id)
+        {
+            try
+            {
+                var marcavehiculo = _marcaVehiculoRepository.Modelos(id);
                 return marcavehiculo;
             }
             catch (Exception ex)
@@ -352,11 +366,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _coloniaRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
@@ -438,6 +452,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
 
         public tbEstadosCiviles BuscarEsCi(int? id)
         {
@@ -727,21 +742,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult EliminarCanal(int? id)
         {
             var result = new ServiceResult();
             try
             {
                 var delete = _canalRepository.Delete(id);
-                if (delete.code_Status == 1)
-                {
-                    return result.Ok(delete.message_Status);
-                }
-                else
-                {
-                    return result.Error(delete.message_Status);
-                }
+                return result.Ok(delete);
+
             }
             catch (Exception ex)
             {
@@ -905,15 +913,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _sucursalesRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult);
-                }
-                else
-                {
-                    return result.Error(deleteResult);
-                }
+                var list = _sucursalesRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
@@ -979,27 +980,40 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult EliminarCargo(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var delete = _cargoRepository.Delete(id);
-                if (delete.code_Status == 1)
-                {
-                    return result.Ok(delete.message_Status);
-                }
-                else
-                {
-                    return result.Error(delete.message_Status);
-                }
+                var resultado = _cargoRepository.Delete(id);
+                return result.Ok(resultado);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar cargo: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
+        //public ServiceResult EliminarCargo(int? id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var delete = _cargoRepository.Delete(id);
+        //        if (delete.code_Status == 1)
+        //        {
+        //            return result.Ok(delete.message_Status);
+        //        }
+        //        else
+        //        {
+        //            return result.Error(delete.message_Status);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error($"Error al eliminar cargo: {ex.Message}");
+        //    }
+        //}
 
         public tbCargos BuscarCargo(int? id)
         {
@@ -1098,6 +1112,21 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             catch (Exception ex)
             {
                 throw new Exception($"Error al buscar departamento: {ex.Message}");
+            }
+        }
+
+        public IEnumerable<tbSucursales> Municipio_ListarSucursales(string id)
+        {
+            //  var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.SucursalesPorMunicipio(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbSucursales> muni = null;
+                return muni;
             }
         }
 

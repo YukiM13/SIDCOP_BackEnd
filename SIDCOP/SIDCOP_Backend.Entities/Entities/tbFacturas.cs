@@ -77,6 +77,8 @@ public partial class tbFacturas
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual tbVendedores Vend { get; set; }
+
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
     public virtual ICollection<tbDevoluciones> tbDevolucionesClie { get; set; } = new List<tbDevoluciones>();

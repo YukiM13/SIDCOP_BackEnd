@@ -35,6 +35,8 @@ public partial class tbBodegas
 
     public DateTime? Bode_FechaModificacion { get; set; }
 
+    public bool? Bode_Estado { get; set; }
+
     public virtual tbModelos Mode { get; set; }
 
     public virtual tbRegistrosCAI RegC { get; set; }

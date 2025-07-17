@@ -133,5 +133,26 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 throw new Exception("Error");
             }
         }
+
+        public IEnumerable<tbSucursales> SucursalesPorMunicipio(string? id)
+        {
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameter = new DynamicParameters();
+                parameter.Add("@Muni_Codigo", id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+                var result = db.Query<tbSucursales>(ScriptDatabase.Municipio_ListarSucursales, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+                if (result == null)
+                {
+                    throw new Exception("Municipio no encontrada");
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error");
+            }
+        }
     }
 }

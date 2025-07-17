@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Acceso
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Acceso
 {
     public class MunicipioViewModel
     {
@@ -15,5 +17,7 @@
         public int? Usua_Modificacion { get; set; }
 
         public DateTime? Muni_FechaModificacion { get; set; }
+
+        public int? Secuencia { get; set; }
     }
 }

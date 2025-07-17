@@ -97,6 +97,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
+        public tbMarcasVehiculos Modelos(int? id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@MaVe_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbMarcasVehiculos>(ScriptDatabase.MarcasVehiculos_ListarModelos, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Modelo no encontrado");
+            }
+            return result;
+        }
+
+
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();

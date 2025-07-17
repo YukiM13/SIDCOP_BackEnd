@@ -84,5 +84,25 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                 return BadRequest(result.Message);
             }
         }
+
+
+        [HttpPost("SucursalPorMunicipio/{id}")]
+        public IActionResult BuscarSucursal(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return BadRequest("Id Invalida.");
+            }
+
+            var municipio = _generalServices.Municipio_ListarSucursales(id);
+            if (municipio != null)
+            {
+                return Ok(municipio);
+            }
+            else
+            {
+                return NotFound("municipio no encontrada con el ID proporcionado.");
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@ public partial class tbPedidosDetalle
 
     public DateTime? PeDe_FechaModificacion { get; set; }
 
-    public bool PreP_Estado { get; set; }
+    public bool PeDe_Estado { get; set; }
 
     public virtual tbPedidos Pedi { get; set; }
 

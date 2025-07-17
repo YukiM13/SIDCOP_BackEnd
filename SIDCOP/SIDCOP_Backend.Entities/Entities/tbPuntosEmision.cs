@@ -23,6 +23,10 @@ public partial class tbPuntosEmision
 
     public bool PuEm_Estado { get; set; }
 
+    public int? Sucu_Id { get; set; }
+
+    public virtual tbSucursales Sucu { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

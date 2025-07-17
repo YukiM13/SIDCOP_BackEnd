@@ -27,9 +27,9 @@ public partial class tbColonias
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
-
     public virtual ICollection<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; } = new List<tbConfiguracionFacturas>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 

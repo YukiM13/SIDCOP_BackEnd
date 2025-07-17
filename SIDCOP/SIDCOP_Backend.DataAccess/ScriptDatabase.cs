@@ -21,8 +21,6 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuario_VerificarUsuarioExistente = "Acce.SP_Usuario_VerificarUsuarioExistente";
         #endregion
 
-        #region Municipios
-
         #region Roles
 
             public static string Roles_Listar = "Acce.SP_Roles_Listar";
@@ -33,6 +31,16 @@ namespace SIDCOP_Backend.DataAccess
         
         #endregion
 
+        #region Municipios
+
+        public const string Municipios_Insertar = "[Gral].[SP_Municipio_Insertar]";
+        public const string Municipios_Actualizar = "[Gral].[SP_Municipio_Actualizar]";
+        public const string Municipios_Listar = "[Gral].[SP_Municipios_Listar]";
+        public const string Municipios_Buscar = "[Gral].[SP_Municipio_Buscar]";
+        public static string Municipios_Eliminar = "[Gral].[SP_Municipio_Eliminar]";
+        public static string Municipio_ListarSucursales = "[Gral].[SP_Municipio_ListarSucursales]";
+
+        #endregion Municipios
 
         #region Departamentos
         public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
@@ -49,6 +57,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string MarcasVehiculos_Actualizar = "[Gral].[SP_MarcaVehiculo_Actualizar]";
         public const string MarcasVehiculos_Eliminar = "[Gral].[SP_MarcaVehiculo_Eliminar]";
         public const string MarcasVehiculos_Buscar = "[Gral].[SP_MarcaVehiculo_Buscar]";
+        public const string MarcasVehiculos_ListarModelos = "[Gral].[SP_MarcaVehiculo_ListarModelos]";
 
         #endregion Marcas Vehiculos
 

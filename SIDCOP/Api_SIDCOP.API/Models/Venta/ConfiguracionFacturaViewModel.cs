@@ -45,6 +45,8 @@ namespace Api_SIDCOP.API.Models.Venta
 
         public string? UsuarioModificacion { get; set; }
 
+        public int? Secuencia { get; set; }
+
 
     }
 }
