@@ -11,9 +11,7 @@ public partial class tbPermisos
 
     public int Role_Id { get; set; }
 
-    public int Pant_Id { get; set; }
-
-    public int Acci_Id { get; set; }
+    public int AcPa_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
 
@@ -23,9 +21,7 @@ public partial class tbPermisos
 
     public DateTime? Perm_FechaModificacion { get; set; }
 
-    public virtual tbAcciones Acci { get; set; }
-
-    public virtual tbPantallas Pant { get; set; }
+    public virtual tbAccionesPorPantalla AcPa { get; set; }
 
     public virtual tbRoles Role { get; set; }
 
