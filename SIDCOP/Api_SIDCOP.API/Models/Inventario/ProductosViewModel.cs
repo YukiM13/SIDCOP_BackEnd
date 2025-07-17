@@ -67,5 +67,6 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         
         public string? UsuarioModificacion { get; set; }
+
     }
 }

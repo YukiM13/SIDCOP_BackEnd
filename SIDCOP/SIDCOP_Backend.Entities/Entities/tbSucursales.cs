@@ -31,6 +31,30 @@ public partial class tbSucursales
 
     public bool Sucu_Estado { get; set; }
 
+    [NotMapped]
+    public string? Colo_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Muni_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Depa_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Depa_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
