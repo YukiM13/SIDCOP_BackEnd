@@ -453,6 +453,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
         public tbEstadosCiviles BuscarEsCi(int? id)
         {
             try
@@ -919,15 +920,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _sucursalesRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult);
-                }
-                else
-                {
-                    return result.Error(deleteResult);
-                }
+                var list = _sucursalesRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
