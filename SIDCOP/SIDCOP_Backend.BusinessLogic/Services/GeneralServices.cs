@@ -742,21 +742,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-
         public ServiceResult EliminarCanal(int? id)
         {
             var result = new ServiceResult();
             try
             {
                 var delete = _canalRepository.Delete(id);
-                if (delete.code_Status == 1)
-                {
-                    return result.Ok(delete.message_Status);
-                }
-                else
-                {
-                    return result.Error(delete.message_Status);
-                }
+                return result.Ok(delete);
+
             }
             catch (Exception ex)
             {
