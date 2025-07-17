@@ -26,8 +26,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Pant_Id", item.Pant_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Acci_Id", item.Acci_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Pant_Id", item.Pant_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Acci_Id", item.Acci_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Perm_FechaCreacion", item.Perm_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -44,8 +44,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             var parameter = new DynamicParameters();
             parameter.Add("@Perm_Id", item.Perm_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Pant_Id", item.Pant_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Acci_Id", item.Acci_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Pant_Id", item.Pant_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Acci_Id", item.Acci_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Perm_FechaModificacion", item.Perm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
