@@ -12,6 +12,12 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int Usua_Creacion { get; set; }
 
+        public int? Secuencia { get; set; }
+
+        public string UsuarioCreacion { get; set; }
+
+        public string UsuarioModificacion { get; set; }
+
         public DateTime NCai_FechaCreacion { get; set; }
 
         public int? Usua_Modificacion { get; set; }

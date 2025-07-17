@@ -6,6 +6,8 @@ namespace Api_SIDCOP.API.Models.Inventario
     {
         public int Prod_Id { get; set; }
 
+        public int? Secuencia { get; set; }
+
         public string Prod_Codigo { get; set; }
 
         public string Prod_CodigoBarra { get; set; }
@@ -65,5 +67,6 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         
         public string? UsuarioModificacion { get; set; }
+
     }
 }

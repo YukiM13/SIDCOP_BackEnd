@@ -26,10 +26,10 @@ public partial class tbCargos
     public bool Carg_Estado { get; set; }
 
     [NotMapped]
-    public string UsuaC_Nombre { get; set; }
+    public string UsuarioCreacion { get; set; }
 
     [NotMapped]
-    public string UsuaM_Nombre { get; set; }
+    public string UsuarioModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

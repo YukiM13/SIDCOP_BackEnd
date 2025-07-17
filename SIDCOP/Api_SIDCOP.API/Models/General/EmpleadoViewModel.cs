@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class EmpleadoViewModel
     {
@@ -40,5 +42,26 @@
         public DateTime? Empl_FechaModificacion { get; set; }
 
         public bool Empl_Estado { get; set; }
+
+        
+        public string? Sucu_Descripcion { get; set; }
+
+        
+        public string? EsCv_Descripcion { get; set; }
+
+        
+        public string? Carg_Descripcion { get; set; }
+
+        
+        public string? Colo_Descripcion { get; set; }
+
+        
+        public string? UsuarioCreacion { get; set; }
+
+        
+        public string? UsuarioModificacion { get; set; }
+
+        
+        public string? Usua_Imagen { get; set; }
     }
 }

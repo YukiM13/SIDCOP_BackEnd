@@ -10,6 +10,9 @@ public partial class tbProductos
 {
     public int Prod_Id { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public string Prod_Codigo { get; set; }
 
     public string Prod_CodigoBarra { get; set; }
@@ -69,6 +72,8 @@ public partial class tbProductos
 
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
+
+   
 
     public virtual tbImpuestos Impu { get; set; }
 

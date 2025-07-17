@@ -19,5 +19,7 @@ namespace Api_SIDCOP.API.Models.General
         public string UsuarioCreacion { get; set; }
 
         public string UsuarioModificacion { get; set; }
+
+        public int? Secuencia { get; set; }
     }
 }
