@@ -27,6 +27,12 @@ public partial class tbSubcategorias
     [NotMapped]
     public string Cate_Descripcion { get; set; }
 
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
     public virtual tbCategorias Cate { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
