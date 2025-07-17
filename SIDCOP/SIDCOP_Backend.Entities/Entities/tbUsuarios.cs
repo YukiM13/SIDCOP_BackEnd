@@ -11,7 +11,7 @@ public partial class tbUsuarios
 
     public string Usua_Usuario { get; set; }
 
-    public byte[] Usua_Clave { get; set; }
+    public string Usua_Clave { get; set; }
 
     public int Role_Id { get; set; }
 
@@ -21,7 +21,7 @@ public partial class tbUsuarios
 
     public bool Usua_EsAdmin { get; set; }
 
-    public string Usua_Imagen { get; set; }
+    public string? Usua_Imagen { get; set; }
 
     public int Usua_Creacion { get; set; }
 
