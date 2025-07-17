@@ -176,11 +176,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _marcaVehiculoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
@@ -366,11 +366,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _coloniaRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult.message_Status);
+                    return result.Ok(deleteResult);
                 }
                 else
                 {
-                    return result.Error(deleteResult.message_Status);
+                    return result.Error(deleteResult);
                 }
             }
             catch (Exception ex)
@@ -1125,6 +1125,21 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             catch (Exception ex)
             {
                 throw new Exception($"Error al buscar departamento: {ex.Message}");
+            }
+        }
+
+        public IEnumerable<tbSucursales> Municipio_ListarSucursales(string id)
+        {
+            //  var result = new ServiceResult();
+            try
+            {
+                var list = _municipioRepository.SucursalesPorMunicipio(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbSucursales> muni = null;
+                return muni;
             }
         }
 

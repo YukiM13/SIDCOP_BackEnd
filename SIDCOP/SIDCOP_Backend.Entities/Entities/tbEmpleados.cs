@@ -49,6 +49,27 @@ public partial class tbEmpleados
 
     public bool Empl_Estado { get; set; }
 
+    [NotMapped]
+    public string? Sucu_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? EsCv_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Carg_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Colo_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string? Usua_Imagen { get; set; }
+
     public virtual tbCargos Carg { get; set; }
 
     public virtual tbColonias Colo { get; set; }

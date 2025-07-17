@@ -70,10 +70,16 @@ public partial class tbVendedores
     public string? Depa_Descripcion { get; set; }
 
     [NotMapped]
-    public string? Empl_Nombres { get; set; }
+    public string? NombreSupervisor { get; set; }
 
     [NotMapped]
-    public string? Empl_Apellidos { get; set; }
+    public string? ApellidoSupervisor { get; set; }
+
+    [NotMapped]
+    public string? NombreAyudante { get; set; }
+
+    [NotMapped]
+    public string? ApellidoAyudante { get; set; }
 
     [NotMapped]
     public string? UsuarioCreacion { get; set; }
