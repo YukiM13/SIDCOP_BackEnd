@@ -13,10 +13,9 @@ public partial class BDD_SIDCOPContext : DbContext
         : base(options)
     {
     }
-
     public BDD_SIDCOPContext()
-    { 
-    }
+    {
+    }   
 
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
@@ -1156,16 +1155,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Perm_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Perm_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Acci).WithMany(p => p.tbPermisos)
-                .HasForeignKey(d => d.Acci_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Acce_tbPermisos_Acce_tbAcciones_Acci_Id");
-
-            entity.HasOne(d => d.Pant).WithMany(p => p.tbPermisos)
-                .HasForeignKey(d => d.Pant_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Acce_tbPermisos_Acce_tbPantallas_Pant_Id");
-
             entity.HasOne(d => d.Role).WithMany(p => p.tbPermisos)
                 .HasForeignKey(d => d.Role_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -1812,6 +1801,7 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Vend_Estado).HasDefaultValue(true);
             entity.Property(e => e.Vend_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Vend_FechaModificacion).HasColumnType("datetime");
+            entity.Property(e => e.Vend_Imagen).IsUnicode(false);
             entity.Property(e => e.Vend_Nombres)
                 .IsRequired()
                 .HasMaxLength(40)

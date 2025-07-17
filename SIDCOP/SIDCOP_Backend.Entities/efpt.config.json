@@ -19,6 +19,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Acce].[tbAccionesPorPantalla]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Acce].[tbPantallas]",
          "ObjectType": 0
       },
