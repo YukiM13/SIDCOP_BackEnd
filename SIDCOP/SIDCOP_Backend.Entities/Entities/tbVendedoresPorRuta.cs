@@ -32,4 +32,6 @@ public partial class tbVendedoresPorRuta
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual tbVendedores Vend { get; set; }
+
+
 }
