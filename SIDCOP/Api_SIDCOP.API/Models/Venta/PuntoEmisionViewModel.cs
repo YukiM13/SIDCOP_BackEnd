@@ -8,7 +8,7 @@ namespace Api_SIDCOP.API.Models.Venta
 
         public String Estado { get; set; }
 
-       
+
 
         public int PuEm_Id { get; set; }
 
@@ -25,6 +25,8 @@ namespace Api_SIDCOP.API.Models.Venta
         public DateTime? PuEm_FechaModificacion { get; set; }
 
         public bool PuEm_Estado { get; set; }
+
+        public int? Sucu_Id { get; set; }
 
         public String UsuarioCreacion { get; set; }
 
