@@ -167,6 +167,37 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
 
 
+        //public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
+        //{
+        //    var parameter = new DynamicParameters();
+        //    parameter.Add("@Usua_Id", usuaId, DbType.Int32, ParameterDirection.Input);
+        //    parameter.Add("@Contrasena", claveSeguridad, DbType.String, ParameterDirection.Input);
+
+        //    using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+        //    var result = db.QueryFirstOrDefault<dynamic>(ScriptDatabase.Usuario_MostrarContrasena, parameter, commandType: CommandType.StoredProcedure);
+
+        //    if (result == null)
+        //    {
+        //        return new RequestStatus { code_Status = 0, message_Status = "Error al obtener la contraseña." };
+        //    }
+
+        //    if (result.code_Status == -1 || result.code_Status == 0)
+        //    {
+        //        return new RequestStatus
+        //        {
+        //            code_Status = result.code_Status,
+        //            message_Status = result.message_Status
+        //        };
+        //    }
+
+        //    return new RequestStatus
+        //    {
+        //        code_Status = result.code_Status,
+        //        message_Status = result.message_Status,
+        //        //Data = result.Contrasena
+        //    };
+        //}
+
         public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
         {
             var parameter = new DynamicParameters();
@@ -174,7 +205,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Contrasena", claveSeguridad, DbType.String, ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.QueryFirstOrDefault<dynamic>(ScriptDatabase.Usuario_MostrarContrasena, parameter, commandType: CommandType.StoredProcedure);
+            var result = db.QueryFirstOrDefault<dynamic>(
+                ScriptDatabase.Usuario_MostrarContrasena,
+                parameter,
+                commandType: CommandType.StoredProcedure
+            );
 
             if (result == null)
             {
@@ -194,9 +229,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             {
                 code_Status = result.code_Status,
                 message_Status = result.message_Status,
-                //Data = result.Contrasena
+                data = result.Contrasena 
             };
         }
+
 
 
         public RequestStatus RestorePassword(tbUsuarios item)

@@ -112,6 +112,13 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
+        [HttpGet("MostrarContrasena")]
+        public IActionResult MostrarContrasena(int usuaId, string claveSeguridad)
+        {
+            var list = _accesoServices.MostrarContrasena(usuaId, claveSeguridad);
+            return Ok(list);
+        }
+
         [HttpPost("RestablecerClave")]
         public IActionResult RestablecerClave([FromBody] UsuarioViewModel item)
         {
