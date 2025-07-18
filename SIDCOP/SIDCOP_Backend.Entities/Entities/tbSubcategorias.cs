@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -22,6 +23,15 @@ public partial class tbSubcategorias
     public DateTime? Subc_FechaModificacion { get; set; }
 
     public bool Subc_Estado { get; set; }
+
+    [NotMapped]
+    public string Cate_Descripcion { get; set; }
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 
     public virtual tbCategorias Cate { get; set; }
 

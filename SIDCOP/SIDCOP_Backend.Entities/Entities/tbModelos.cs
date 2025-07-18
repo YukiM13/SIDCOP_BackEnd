@@ -23,6 +23,14 @@ public partial class tbModelos
 
     public bool Mode_Estado { get; set; }
 
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual tbMarcasVehiculos MaVe { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }

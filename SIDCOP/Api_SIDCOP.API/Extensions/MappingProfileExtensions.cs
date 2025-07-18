@@ -45,10 +45,10 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbPermisos, PermisoViewModel>().ReverseMap();
 
 
-
             CreateMap<tbConfiguracionFacturas, ConfiguracionFacturaViewModel>().ReverseMap();
             CreateMap<tbBodegas, BodegaViewModel>().ReverseMap();
             CreateMap<tbPuntosEmision, PuntoEmisionViewModel>().ReverseMap();
+            CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();
 
 
         }

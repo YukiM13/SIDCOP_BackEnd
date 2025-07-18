@@ -26,4 +26,11 @@ public partial class tbCargos
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
 }

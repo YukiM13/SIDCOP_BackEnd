@@ -13,10 +13,10 @@ public partial class BDD_SIDCOPContext : DbContext
         : base(options)
     {
     }
-
     public BDD_SIDCOPContext()
     {
-    }
+    }   
+
 
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }

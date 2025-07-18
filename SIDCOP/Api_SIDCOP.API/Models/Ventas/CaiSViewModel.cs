@@ -26,5 +26,7 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public bool NCai_Estado { get; set; }
 
+        public string Estado { get; set; }
+
     }
 }

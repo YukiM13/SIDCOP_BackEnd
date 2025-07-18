@@ -34,6 +34,17 @@ public partial class tbProveedores
     public DateTime? Prov_FechaModificacion { get; set; }
 
     public bool Prov_Estado { get; set; }
+    [NotMapped]
+    public string Colo_Descripcion { get; set; }
+    [NotMapped]
+    public string Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Depa_Descripcion { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 
     public virtual tbColonias Colo { get; set; }
 

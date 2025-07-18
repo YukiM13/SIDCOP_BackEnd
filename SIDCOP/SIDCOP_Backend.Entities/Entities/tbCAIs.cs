@@ -23,6 +23,9 @@ public partial class tbCAIs
 
     public bool NCai_Estado { get; set; }
 
+    [NotMapped]
+    public string Estado { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

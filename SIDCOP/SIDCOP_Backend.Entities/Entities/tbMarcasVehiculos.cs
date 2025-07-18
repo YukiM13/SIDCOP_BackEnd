@@ -20,6 +20,12 @@ public partial class tbMarcasVehiculos
     public DateTime? MaVe_FechaModificacion { get; set; }
 
     public bool MaVe_Estado { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
