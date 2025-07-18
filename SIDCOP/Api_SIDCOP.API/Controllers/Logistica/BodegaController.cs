@@ -18,11 +18,13 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         // Servicios necesarios inyectados por dependencia
         public readonly LogisticaServices _logisticaServices;
         public readonly IMapper _mapper;
-        
 
+
+        // Constructor que recibe los servicios y el mapeador
         public BodegaController(LogisticaServices logisticaServices, IMapper mapper)
         {
-            _logisticaServices  = logisticaServices;
+            // Asignación de servicios a las variables de instancia
+            _logisticaServices = logisticaServices;
             _mapper = mapper;
         }
 
@@ -74,6 +76,8 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
+        // GET: /Bodega/Buscar/{id}
+        // Busca una bodega por ID
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
