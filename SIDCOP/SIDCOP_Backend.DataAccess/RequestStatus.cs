@@ -13,6 +13,7 @@ namespace SIDCOP_Backend.DataAccess
         public int code_Status { get; set; }
         public string message_Status { get; set; }
 
+        public string data { get; set; }
     }
 
 }
