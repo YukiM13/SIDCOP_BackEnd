@@ -18,7 +18,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuario_IniciarSesion = "Acce.SP_Usuario_Login";
         public const string Usuario_MostrarContrasena = "Acce.SP_Usuario_MostrarContrasena";
         public const string Usuario_RestablecerContrasena = "Acce.SP_Usuario_RestablecerClave";
-        public const string Usuario_VerificarUsuarioExistente = "Acce.SP_Usuario_VerificarUsuarioExistente";
+        public const string Usuario_VerificarUsuarioExistente = "[Acce].[SP_Usuario_VerificarUsuarioExistente]";
         #endregion
 
          #region Roles
@@ -278,6 +278,14 @@ namespace SIDCOP_Backend.DataAccess
         public static string PuntoEmision_Eliminar    = "[Vnta].[SP_PuntoEmision_Eliminar]";
         #endregion
 
+
+        #region DireccionesPorCliente
+        public static string DireccionPorCliente_Insertar = "[Gral].[SP_DireccionPorCliente_Insertar]";
+        public static string DireccionPorCliente_Modificar = "[Gral].[SP_DireccionPorCliente_Actualizar]";
+        public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
+        public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
 
     }
 }
