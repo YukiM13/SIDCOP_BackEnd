@@ -1165,6 +1165,48 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
                 return result.Error(ex.Message);
             }
         }
+
+        public tbDireccionesPorCliente DireccionesPorCliente_Buscar(int? id)
+        {
+            try
+            {
+                var direccionesPorCliente = _direccionesPorClienteRepository.Find(id);
+                return direccionesPorCliente;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cargo: {ex.Message}");
+            }
+        }
+        public IEnumerable<tbDireccionesPorCliente> ListarDireccionesPorCliente()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _direccionesPorClienteRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbDireccionesPorCliente> direccionesPorCliente = null;
+                return direccionesPorCliente;
+            }
+        }
+
+
+        public ServiceResult EliminarDireccionesPorCliente(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _direccionesPorClienteRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
         #endregion
 
     }

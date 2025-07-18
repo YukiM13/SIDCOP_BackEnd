@@ -11,6 +11,58 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class DireccionesPorClienteRepository : IRepository<tbDireccionesPorCliente>
     {
+
+        public tbDireccionesPorCliente Find(int? id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.QueryFirstOrDefault<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_ListarPorCliente, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new KeyNotFoundException("Cargo no encontrado.");
+            }
+            return result;
+        }
+
+
+        public RequestStatus Delete(int? id)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@DiCl_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var result = db.Execute(ScriptDatabase.DireccionPorCliente_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+            string mensaje;
+
+            switch (result)
+            {
+                case 1:
+                    mensaje = "Direccion eliminada correctamente.";
+                    break;
+                case -1:
+                    mensaje = "La dirección está siendo utilizada.";
+                    break;
+                default:
+                    mensaje = "Error al eliminar la dirección.";
+                    break;
+            }
+
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
+        }
+        public IEnumerable<tbDireccionesPorCliente> List()
+        {
+            var parameter = new DynamicParameters();
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+            return result;
+        }
+
+
+
         public RequestStatus Insert(tbDireccionesPorCliente item)
         {
             if (item == null)
@@ -75,19 +127,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             {
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
-        }
-        public RequestStatus Delete(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public tbDireccionesPorCliente Find(int? id)
-        {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<tbDireccionesPorCliente> List()
-        {
-            throw new NotImplementedException();
         }
 
     }
