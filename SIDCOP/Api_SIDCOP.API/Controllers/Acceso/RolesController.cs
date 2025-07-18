@@ -29,6 +29,20 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
+        [HttpGet("ListarPantallas")]
+        public IActionResult ListarPantallas()
+        {
+            var json = _accesoServices.ListarPantallasJson();
+
+            if (json.StartsWith("{\"error\""))
+                return StatusCode(500, json);
+
+            // Devolver tal cual, en una sola línea
+            return Content(json, "application/json");
+        }
+
+
+
         [HttpPost("Insertar")]
         public IActionResult InsertarRol([FromBody] RolViewModel item)
         {

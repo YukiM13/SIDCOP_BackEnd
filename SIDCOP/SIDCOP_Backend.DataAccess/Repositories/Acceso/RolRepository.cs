@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbRoles>(ScriptDatabase.Roles_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             return result.ToList();
+        }
+
+        public string ListarPantallasJson()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.QueryFirstOrDefault<string>("Acce.SP_Pantallas_Listar", commandType: CommandType.StoredProcedure);
+            return result;
         }
 
         public RequestStatus Update(tbRoles item)

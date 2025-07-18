@@ -12,12 +12,13 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     {
         private readonly UsuarioRepository _usuarioRepository;
         private readonly RolRepository _rolRepository;
+        private readonly PermisoRepository _permisoRepository;
 
-
-        public AccesoServices(UsuarioRepository usuarioRepository, RolRepository rolRepository)
+        public AccesoServices(UsuarioRepository usuarioRepository, RolRepository rolRepository, PermisoRepository permisoRepository)
         {
             _usuarioRepository = usuarioRepository;
             _rolRepository = rolRepository;
+            _permisoRepository = permisoRepository;
         }
 
         #region Usuarios 
@@ -266,6 +267,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return roles;
             }
         }
+
+        public string ListarPantallasJson()
+        {
+            try
+            {
+                return _rolRepository.ListarPantallasJson();
+            }
+            catch (Exception ex)
+            {
+                return $"Error al listar pantallas: {ex.Message}";
+            }
+        }
+
 
         public ServiceResult InsertarRol(tbRoles item)
         {

@@ -28,7 +28,10 @@ namespace SIDCOP_Backend.DataAccess
             public static string Rol_Actualizar = "Acce.SP_Rol_Actualizar";
             public static string Rol_Eliminar = "Acce.SP_Rol_Eliminar";
             public static string Rol_Buscar = "Acce.SP_Rol_Buscar";
-        
+
+            //PARA LAS PANTALLAS CON SUS ACCIONES
+            public static string Pantallas_Listar = "Acce.SP_Pantallas_Listar";
+
         #endregion
 
         #region Municipios
