@@ -62,6 +62,8 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<RolRepository>();
 
             services.AddScoped<PuntoEmisionRepository>();
+
+            services.AddScoped<DireccionesPorClienteRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)

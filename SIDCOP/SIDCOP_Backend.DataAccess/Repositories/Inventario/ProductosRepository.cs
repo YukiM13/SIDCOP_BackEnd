@@ -55,6 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Descripcion", item.Prod_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_DescripcionCorta", item.Prod_DescripcionCorta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_Imagen", item.Prod_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Subc_Id", item.Subc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Marc_Id", item.Marc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -106,6 +107,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Descripcion", item.Prod_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_DescripcionCorta", item.Prod_DescripcionCorta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_Imagen", item.Prod_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Subc_Id", item.Subc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Marc_Id", item.Marc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);

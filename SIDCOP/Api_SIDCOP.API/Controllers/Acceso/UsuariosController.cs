@@ -111,6 +111,14 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             var list = _accesoServices.BuscarUsuario(mapped);
             return Ok(list);
         }
+        [HttpPost("VerificarUsuario")]
+        public IActionResult VerificarUsuario([FromBody] UsuarioViewModel item) 
+        {
+            var mapped = _mapper.Map<tbUsuarios>(item);
+            var list = _accesoServices.VerificarUsuarioExistente(mapped);
+            return Ok(list);
+        }
+
 
         [HttpGet("MostrarContrasena")]
         public IActionResult MostrarContrasena(int usuaId, string claveSeguridad)
