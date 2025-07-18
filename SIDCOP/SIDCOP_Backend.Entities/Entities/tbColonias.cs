@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -20,24 +19,6 @@ public partial class tbColonias
 
     public int? Usua_Modificacion { get; set; }
 
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
-    [NotMapped]
-    public string? Muni_Descripcion { get; set; }
-
-    [NotMapped]
-    public string Depa_Codigo { get; set; }
-
-    [NotMapped]
-    public string? Depa_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
-
     public DateTime? Colo_FechaModificacion { get; set; }
 
     public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
@@ -46,9 +27,9 @@ public partial class tbColonias
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
-
     public virtual ICollection<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; } = new List<tbConfiguracionFacturas>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 

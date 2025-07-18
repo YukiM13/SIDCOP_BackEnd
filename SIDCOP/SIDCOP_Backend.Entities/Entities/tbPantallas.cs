@@ -23,5 +23,5 @@ public partial class tbPantallas
 
     public virtual tbPantallas Pant_PadreNavigation { get; set; }
 
-    public virtual ICollection<tbPermisos> tbPermisos { get; set; } = new List<tbPermisos>();
+    public virtual ICollection<tbAccionesPorPantalla> tbAccionesPorPantalla { get; set; } = new List<tbAccionesPorPantalla>();
 }
