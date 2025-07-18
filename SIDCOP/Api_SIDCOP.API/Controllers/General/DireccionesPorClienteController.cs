@@ -30,18 +30,18 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult InsertarCargo([FromBody] CargoViewModel item)
+        public IActionResult InsertarDireccionPorCliente([FromBody] DireccionesPorClienteViewModel item)
         {
-            var mapped = _mapper.Map<tbCargos>(item);
-            var insert = _generalServices.InsertarCargo(mapped);
+            var mapped = _mapper.Map<tbDireccionesPorCliente>(item);
+            var insert = _generalServices.InsertarDireccionPorCliente(mapped);
             return Ok(insert);
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult ActualizarCargo([FromBody] CargoViewModel item)
+        public IActionResult ActualizarCargo([FromBody] DireccionesPorClienteViewModel item)
         {
-            var mapped = _mapper.Map<tbCargos>(item);
-            var update = _generalServices.ActualizarCargo(mapped);
+            var mapped = _mapper.Map<tbDireccionesPorCliente>(item);
+            var update = _generalServices.ActualizarDireccionPorCliente(mapped);
             return Ok(update);
         }
 

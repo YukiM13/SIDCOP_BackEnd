@@ -32,14 +32,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         
         private readonly CargoRepository _cargoRepository;
 
+        private readonly DireccionesPorClienteRepository _direccionesPorClienteRepository;
+
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
-        MunicipioRepository municipioRepository
+        MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository
         )
         {
+            _direccionesPorClienteRepository = direccionesPorClienteRepository;
             _coloniaRepository = coloniaRepository;
 
             _marcaRepository = marcaRepository;
@@ -1135,12 +1138,12 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
         #region DireccionesPorCliente
 
 
-        public ServiceResult InsertarDireccionPorCliente(tbCargos item)
+        public ServiceResult InsertarDireccionPorCliente(tbDireccionesPorCliente item)
         {
             var result = new ServiceResult();
             try
             {
-                var insert = _cargoRepository.Insert(item);
+                var insert = _direccionesPorClienteRepository.Insert(item);
                 return result.Ok(insert);
             }
             catch (Exception ex)
@@ -1149,12 +1152,12 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             }
         }
 
-        public ServiceResult ActualizarDireccionPorCliente(tbCargos item)
+        public ServiceResult ActualizarDireccionPorCliente(tbDireccionesPorCliente item)
         {
             var result = new ServiceResult();
             try
             {
-                var update = _cargoRepository.Update(item);
+                var update = _direccionesPorClienteRepository.Update(item);
                 return result.Ok(update);
             }
             catch (Exception ex)
