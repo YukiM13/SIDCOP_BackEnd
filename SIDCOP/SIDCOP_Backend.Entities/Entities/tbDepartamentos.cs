@@ -23,15 +23,5 @@ public partial class tbDepartamentos
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
-
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
-
     public virtual ICollection<tbMunicipios> tbMunicipios { get; set; } = new List<tbMunicipios>();
 }

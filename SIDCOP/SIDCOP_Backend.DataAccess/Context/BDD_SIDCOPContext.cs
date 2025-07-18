@@ -15,9 +15,7 @@ public partial class BDD_SIDCOPContext : DbContext
     }
     public BDD_SIDCOPContext()
     {
-    }   
-
-
+    }
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 
@@ -1299,12 +1297,19 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.PreP_PrecioContado).HasColumnType("numeric(8, 2)");
             entity.Property(e => e.PreP_PrecioCredito).HasColumnType("numeric(8, 2)");
 
+            entity.HasOne(d => d.Clie).WithMany(p => p.tbPreciosPorProducto)
+                .HasForeignKey(d => d.Clie_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Vnta_tbPreciosPorProducto_Gral_tbClientes_Clie_Id");
+
             entity.HasOne(d => d.Prod).WithMany(p => p.tbPreciosPorProducto)
                 .HasForeignKey(d => d.Prod_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbPreciosPorProducto_Inve_tbProductos_Prod_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbPreciosPorProductoUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbPreciosPorProducto_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPreciosPorProductoUsua_ModificacionNavigation)

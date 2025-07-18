@@ -42,26 +42,6 @@ public partial class tbUsuarios
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-    [NotMapped]
-    public string? Correo { get; set; }
-
-
-    [NotMapped]
-    public string? PermisosJson { get; set; }
-
-    [NotMapped]
-    public string? NombreCompleto { get; set; }
-
-
-    public virtual ICollection<tbUsuarios> InverseUsua_CreacionNavigation { get; set; } = new List<tbUsuarios>();
-
-    public virtual ICollection<tbUsuarios> InverseUsua_ModificacionNavigation { get; set; } = new List<tbUsuarios>();
-
-    public virtual tbRoles Role { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
@@ -256,6 +236,4 @@ public partial class tbUsuarios
     public virtual ICollection<tbVendedores> tbVendedoresUsua_CreacionNavigation { get; set; } = new List<tbVendedores>();
 
     public virtual ICollection<tbVendedores> tbVendedoresUsua_ModificacionNavigation { get; set; } = new List<tbVendedores>();
-
-
 }

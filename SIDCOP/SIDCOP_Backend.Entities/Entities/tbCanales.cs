@@ -28,17 +28,4 @@ public partial class tbCanales
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
-
-    public virtual ICollection<tbDescuentos> tbDescuentos { get; set; } = new List<tbDescuentos>();
-
-
-    [NotMapped]
-
-    public string? UsuarioModificacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    
-        
 }
