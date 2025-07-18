@@ -1132,5 +1132,37 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
 
         #endregion Municipios
 
+        #region DireccionesPorCliente
+
+
+        public ServiceResult InsertarDireccionPorCliente(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _cargoRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarDireccionPorCliente(tbCargos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _cargoRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        #endregion
+
     }
 }
