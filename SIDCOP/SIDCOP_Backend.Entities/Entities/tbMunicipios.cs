@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -14,7 +15,8 @@ public partial class tbMunicipios
     public string Depa_Codigo { get; set; }
 
     public int Usua_Creacion { get; set; }
-
+    [NotMapped]
+    public int? Secuencia { get; set; }
     public DateTime Muni_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }

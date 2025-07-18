@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -22,6 +23,15 @@ public partial class tbModelos
     public DateTime? Mode_FechaModificacion { get; set; }
 
     public bool Mode_Estado { get; set; }
+    [NotMapped]
+    public string MaVe_Marca { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+    [NotMapped]
+    public int? Secuencia { get; set; }
 
     public virtual tbMarcasVehiculos MaVe { get; set; }
 

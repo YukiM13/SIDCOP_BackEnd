@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -22,7 +23,26 @@ public partial class tbEmpleados
     public DateTime Empl_FechaNacimiento { get; set; }
 
     public string Empl_Correo { get; set; }
+    [NotMapped]
+    public string? Sucu_Descripcion { get; set; }
 
+    [NotMapped]
+    public string? EsCv_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Carg_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Colo_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string? Usua_Imagen { get; set; }
     public string Empl_Telefono { get; set; }
 
     public int Sucu_Id { get; set; }
