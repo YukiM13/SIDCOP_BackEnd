@@ -26,10 +26,14 @@ public partial class tbModelos
     public DateTime? Mode_FechaModificacion { get; set; }
 
     public bool Mode_Estado { get; set; }
+
     [NotMapped]
     public string UsuarioCreacion { get; set; }
+
     [NotMapped]
     public string UsuarioModificacion { get; set; }
+    [NotMapped]
+    public int? Secuencia { get; set; }
 
     public virtual tbMarcasVehiculos MaVe { get; set; }
 

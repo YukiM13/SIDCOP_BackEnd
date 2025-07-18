@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -30,4 +31,15 @@ public partial class tbCanales
     public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
 
     public virtual ICollection<tbDescuentos> tbDescuentos { get; set; } = new List<tbDescuentos>();
+
+
+    [NotMapped]
+
+    public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    
+        
 }

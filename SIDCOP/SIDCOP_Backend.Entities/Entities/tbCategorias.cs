@@ -33,4 +33,5 @@ public partial class tbCategorias
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbSubcategorias> tbSubcategorias { get; set; } = new List<tbSubcategorias>();
+
 }

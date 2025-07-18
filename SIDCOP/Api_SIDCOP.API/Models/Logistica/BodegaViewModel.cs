@@ -30,6 +30,7 @@ namespace Api_SIDCOP.API.Models.Logistica
         public DateTime Bode_FechaCreacion { get; set; }
 
         public int? Usua_Modificacion { get; set; }
+        public int? Secuencia { get; set; }
 
         public DateTime? Bode_FechaModificacion { get; set; }
 
