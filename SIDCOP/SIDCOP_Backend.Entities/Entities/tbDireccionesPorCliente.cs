@@ -17,9 +17,9 @@ public partial class tbDireccionesPorCliente
 
     public string DiCl_Observaciones { get; set; }
 
-    public decimal DiCl_Latitud { get; set; }
+    public decimal? DiCl_Latitud { get; set; }
 
-    public decimal DiCl_Longitud { get; set; }
+    public decimal? DiCl_Longitud { get; set; }
 
     public int Usua_Creacion { get; set; }
 

@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using MailKit.Search;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class DireccionesPorClienteViewModel
     {
@@ -12,9 +14,9 @@
 
         public string DiCl_Observaciones { get; set; }
 
-        public decimal DiCl_Latitud { get; set; }
+        public decimal? DiCl_Latitud { get; set; }
 
-        public decimal DiCl_Longitud { get; set; }
+        public decimal? DiCl_Longitud { get; set; }
 
         public int Usua_Creacion { get; set; }
 
