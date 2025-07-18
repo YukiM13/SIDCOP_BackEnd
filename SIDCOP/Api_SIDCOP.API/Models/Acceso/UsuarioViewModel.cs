@@ -1,10 +1,16 @@
-﻿namespace Api_SIDCOP.API.Models.Acceso
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Acceso
 {
     public class UsuarioViewModel
     {
         public int Usua_Id { get; set; }
 
         public string Usua_Usuario { get; set; }
+
+        [NotMapped]
+        public string? Correo { get; set; }
+
 
         public string Usua_Clave { get; set; }
 
@@ -29,5 +35,8 @@
         public bool Usua_Estado { get; set; }
 
         public string? PermisosJson { get; set; }
+
+
+
     }
 }

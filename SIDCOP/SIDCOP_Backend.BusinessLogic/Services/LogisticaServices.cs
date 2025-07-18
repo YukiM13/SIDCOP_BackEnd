@@ -18,11 +18,15 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 {
     public class LogisticaServices
     {
+
+        // Repositorios para manejar las operaciones de acceso a datos
         private readonly RutasRepository _rutasRepository;
         private readonly BodegaRepository _bodegaRepository;
 
+        // Constructor que recibe los repositorios necesarios
         public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository)
         {
+            // Asignación de los repositorios a las variables de instancia
             _rutasRepository = rutasRepository;
             _bodegaRepository = bodegaRepository;
         }
@@ -110,74 +114,80 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Bodegas 
 
+        
         public IEnumerable<tbBodegas> ListBodegas()
         {
-            //var result = new ServiceResult();
+   
             try
             {
                 var list = _bodegaRepository.List();
-                return list;
+                return list; //Retorna el listado 
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 IEnumerable<tbBodegas> result = null;
                 return result;
             }
         }
 
+        
         public ServiceResult InsertBodega(tbBodegas item)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _bodegaRepository.Insert(item);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
-            {
-                return result.Error(ex.Message);
+            { 
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+      
         public ServiceResult UpdateBodega(tbBodegas item)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _bodegaRepository.Update(item);
-                return result.Ok(response);
+                return result.Ok(response);  // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
             }
         }
 
+  
         public ServiceResult DeleteBodega(int id)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _bodegaRepository.Delete(id);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
             }
         }
 
+     
         public ServiceResult FindBodega(int id)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _bodegaRepository.Find(id);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
             }
         }
 
