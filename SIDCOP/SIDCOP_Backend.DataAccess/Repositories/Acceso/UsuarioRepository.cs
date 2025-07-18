@@ -112,29 +112,16 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus VerificateExistingUser(tbUsuarios? item)
+        public IEnumerable<tbUsuarios> VerificateExistingUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, DbType.String, ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.QueryFirstOrDefault<dynamic>(ScriptDatabase.Usuario_VerificarUsuarioExistente, parameter, commandType: CommandType.StoredProcedure);
+            var result = db.Query<tbUsuarios>(ScriptDatabase.Usuario_VerificarUsuarioExistente, parameter, commandType: CommandType.StoredProcedure);
 
-            if (result == null)
-            {
-                return new RequestStatus { code_Status = -1, message_Status = "El usuario no existe." };
-            }
 
-            return new RequestStatus
-            {
-                code_Status = result.code_Status,
-                message_Status = result.message_Status,
-                //Data = new
-                //{
-                //    Usua_Id = result.Usua_Id,
-                //    Correo = result.Correo
-                //}
-            };
+            return result;
         }
 
         //public IEnumerable<tbUsuarios> Login(tbUsuarios? item)
