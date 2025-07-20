@@ -26,4 +26,6 @@ public partial class tbRoles
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbPermisos> tbPermisos { get; set; } = new List<tbPermisos>();
+
+    public virtual ICollection<tbUsuarios> tbUsuarios { get; set; } = new List<tbUsuarios>();
 }

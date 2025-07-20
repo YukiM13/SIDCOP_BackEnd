@@ -19,12 +19,6 @@ public partial class tbModelos
 
     public int Usua_Creacion { get; set; }
 
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
-
     public DateTime Mode_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
@@ -33,6 +27,11 @@ public partial class tbModelos
 
     public bool Mode_Estado { get; set; }
 
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
     [NotMapped]
     public int? Secuencia { get; set; }
 

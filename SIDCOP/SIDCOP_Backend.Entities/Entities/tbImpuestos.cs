@@ -23,13 +23,12 @@ public partial class tbImpuestos
     public DateTime? Impu_FechaModificacion { get; set; }
 
     public bool Impu_Estado { get; set; }
+    [NotMapped]
 
+    public int? Secuencia { get; set; }
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbProductos> tbProductos { get; set; } = new List<tbProductos>();
-    [NotMapped]
-
-    public int? Secuencia { get; set; }
 }

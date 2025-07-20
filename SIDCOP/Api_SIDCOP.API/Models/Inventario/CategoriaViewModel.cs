@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Inventario
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Inventario
 {
     public class CategoriaViewModel
     {
@@ -16,6 +18,12 @@
         public DateTime? Cate_FechaModificacion { get; set; }
 
         public bool Cate_Estado { get; set; }
+
+        
+        public string UsuarioCreacion { get; set; }
+
+        
+        public string UsuarioModificacion { get; set; }
 
     }
 }

@@ -36,19 +36,6 @@ public partial class tbEmpleados
     public int Carg_Id { get; set; }
 
     public int Colo_Id { get; set; }
-
-    public string Empl_DireccionExacta { get; set; }
-
-    public int Usua_Creacion { get; set; }
-
-    public DateTime Empl_FechaCreacion { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Empl_FechaModificacion { get; set; }
-
-    public bool Empl_Estado { get; set; }
-
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
@@ -69,6 +56,21 @@ public partial class tbEmpleados
 
     [NotMapped]
     public string? Usua_Imagen { get; set; }
+
+
+    public string Empl_DireccionExacta { get; set; }
+
+    public int Usua_Creacion { get; set; }
+
+    public DateTime Empl_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? Empl_FechaModificacion { get; set; }
+
+    public bool Empl_Estado { get; set; }
+
+    public string Empl_Imagen { get; set; }
 
     public virtual tbCargos Carg { get; set; }
 

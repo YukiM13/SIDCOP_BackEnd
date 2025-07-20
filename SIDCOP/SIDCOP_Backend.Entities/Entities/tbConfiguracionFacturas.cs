@@ -28,18 +28,6 @@ public partial class tbConfiguracionFacturas
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime CoFa_FechaCreacion { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? CoFa_FechaModificacion { get; set; }
-
-    public virtual tbColonias Colo { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
 
     [NotMapped]
     public string? Colo_Descripcion { get; set; }
@@ -63,4 +51,16 @@ public partial class tbConfiguracionFacturas
 
     public int? Secuencia { get; set; }
 
+
+    public DateTime CoFa_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? CoFa_FechaModificacion { get; set; }
+
+    public virtual tbColonias Colo { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 }

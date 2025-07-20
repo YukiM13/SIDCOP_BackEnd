@@ -19,11 +19,9 @@ public partial class tbMunicipios
     public DateTime Muni_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Muni_FechaModificacion { get; set; }
-
     [NotMapped]
     public int? Secuencia { get; set; }
+    public DateTime? Muni_FechaModificacion { get; set; }
 
     public virtual tbDepartamentos Depa_CodigoNavigation { get; set; }
 

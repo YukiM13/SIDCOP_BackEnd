@@ -20,6 +20,10 @@ public partial class tbDepartamentos
 
     public DateTime? Depa_FechaModificacion { get; set; }
 
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
     [NotMapped]
     public string UsuarioCreacion { get; set; }
 
@@ -29,9 +33,6 @@ public partial class tbDepartamentos
     [NotMapped]
     public int? Secuencia { get; set; }
 
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbMunicipios> tbMunicipios { get; set; } = new List<tbMunicipios>();
 }

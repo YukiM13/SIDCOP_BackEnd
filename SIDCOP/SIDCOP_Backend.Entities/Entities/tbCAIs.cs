@@ -25,13 +25,7 @@ public partial class tbCAIs
     public bool NCai_Estado { get; set; }
 
     [NotMapped]
-    public int? Secuencia { get; set; }
-
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
+    public string Estado { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

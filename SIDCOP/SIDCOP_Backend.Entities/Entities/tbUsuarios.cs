@@ -8,8 +8,6 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbUsuarios
 {
-    public int Secuencia { get; set; }
-
     public int Usua_Id { get; set; }
 
     public string Usua_Usuario { get; set; }
@@ -24,7 +22,7 @@ public partial class tbUsuarios
 
     public bool Usua_EsAdmin { get; set; }
 
-    public string? Usua_Imagen { get; set; }
+    public string Usua_Imagen { get; set; }
 
     public int Usua_Creacion { get; set; }
 
@@ -36,26 +34,26 @@ public partial class tbUsuarios
 
     public bool Usua_Estado { get; set; }
 
-    /* Pantallas, Roles y Acciones */
-    public string Role_Descripcion { get; set; }
-    
-    public int Pant_Id { get; set; }
+    [NotMapped]
+    public string? Correo { get; set; }
 
-    public string Pant_Descripcion { get; set; }
-
-    public string Pant_Icono { get; set; }
-
-    public int Acci_Id { get; set; }
-
-    public string Acci_Descripcion { get; set; }
-
-    public DateTime Perm_FechaCreacion { get; set; }
 
     [NotMapped]
     public string? PermisosJson { get; set; }
 
     [NotMapped]
     public string? NombreCompleto { get; set; }
+
+
+    public virtual ICollection<tbUsuarios> InverseUsua_CreacionNavigation { get; set; } = new List<tbUsuarios>();
+
+    public virtual ICollection<tbUsuarios> InverseUsua_ModificacionNavigation { get; set; } = new List<tbUsuarios>();
+
+    public virtual tbRoles Role { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
@@ -112,6 +110,10 @@ public partial class tbUsuarios
     public virtual ICollection<tbDevoluciones> tbDevolucionesUsua_CreacionNavigation { get; set; } = new List<tbDevoluciones>();
 
     public virtual ICollection<tbDevoluciones> tbDevolucionesUsua_ModificacionNavigation { get; set; } = new List<tbDevoluciones>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorClienteUsua_CreacionNavigation { get; set; } = new List<tbDireccionesPorCliente>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorClienteUsua_ModificacionNavigation { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbEmpleados> tbEmpleadosUsua_CreacionNavigation { get; set; } = new List<tbEmpleados>();
 
@@ -238,4 +240,6 @@ public partial class tbUsuarios
     public virtual ICollection<tbVendedores> tbVendedoresUsua_CreacionNavigation { get; set; } = new List<tbVendedores>();
 
     public virtual ICollection<tbVendedores> tbVendedoresUsua_ModificacionNavigation { get; set; } = new List<tbVendedores>();
+
+
 }

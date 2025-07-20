@@ -10,9 +10,6 @@ public partial class tbProductos
 {
     public int Prod_Id { get; set; }
 
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
     public string Prod_Codigo { get; set; }
 
     public string Prod_CodigoBarra { get; set; }
@@ -21,13 +18,9 @@ public partial class tbProductos
 
     public string Prod_DescripcionCorta { get; set; }
 
-    [NotMapped]
-    public int Cate_Id { get; set; }
-    [NotMapped]
-    public string Cate_Descripcion { get; set; }
+    public string Prod_Imagen { get; set; }
 
     public int Subc_Id { get; set; }
-
 
     public int Marc_Id { get; set; }
 
@@ -56,6 +49,15 @@ public partial class tbProductos
     public DateTime? Prod_FechaModificacion { get; set; }
 
     [NotMapped]
+    public int? Secuencia { get; set; }
+
+    [NotMapped]
+    public int Cate_Id { get; set; }
+    [NotMapped]
+    public string Cate_Descripcion { get; set; }
+
+
+    [NotMapped]
     public string? Marc_Descripcion { get; set; }
 
     [NotMapped]
@@ -73,7 +75,7 @@ public partial class tbProductos
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
-   
+
 
     public virtual tbImpuestos Impu { get; set; }
 
