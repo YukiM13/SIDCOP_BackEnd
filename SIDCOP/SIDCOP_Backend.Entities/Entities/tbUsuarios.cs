@@ -34,6 +34,8 @@ public partial class tbUsuarios
 
     public bool Usua_Estado { get; set; }
 
+    [NotMapped]
+    public string? Correo { get; set; }
 
 
     [NotMapped]

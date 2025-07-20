@@ -18,7 +18,7 @@
 
         public string Clie_ImagenDelNegocio { get; set; }
 
-        public string Clie_DireccionExacta { get; set; }
+        //public string Clie_DireccionExacta { get; set; }
 
         public string Clie_Telefono { get; set; }
 
@@ -30,13 +30,13 @@
 
         public int Cana_Id { get; set; }
 
-        public int Colo_Id { get; set; }
+        //public int Colo_Id { get; set; }
 
         public int? EsCv_Id { get; set; }
 
-        public decimal Clie_Latitud { get; set; }
+        //public decimal Clie_Latitud { get; set; }
 
-        public decimal Clie_Longitud { get; set; }
+        //public decimal Clie_Longitud { get; set; }
 
         public int? Ruta_Id { get; set; }
 

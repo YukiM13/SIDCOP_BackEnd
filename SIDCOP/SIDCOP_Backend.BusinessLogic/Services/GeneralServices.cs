@@ -32,14 +32,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         
         private readonly CargoRepository _cargoRepository;
 
+        private readonly DireccionesPorClienteRepository _direccionesPorClienteRepository;
+
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
-        MunicipioRepository municipioRepository
+        MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository
         )
         {
+            _direccionesPorClienteRepository = direccionesPorClienteRepository;
             _coloniaRepository = coloniaRepository;
 
             _marcaRepository = marcaRepository;
@@ -1131,6 +1134,80 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
         }
 
         #endregion Municipios
+
+        #region DireccionesPorCliente
+
+
+        public ServiceResult InsertarDireccionPorCliente(tbDireccionesPorCliente item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _direccionesPorClienteRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarDireccionPorCliente(tbDireccionesPorCliente item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _direccionesPorClienteRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public tbDireccionesPorCliente DireccionesPorCliente_Buscar(int? id)
+        {
+            try
+            {
+                var direccionesPorCliente = _direccionesPorClienteRepository.Find(id);
+                return direccionesPorCliente;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al buscar cargo: {ex.Message}");
+            }
+        }
+        public IEnumerable<tbDireccionesPorCliente> ListarDireccionesPorCliente()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _direccionesPorClienteRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbDireccionesPorCliente> direccionesPorCliente = null;
+                return direccionesPorCliente;
+            }
+        }
+
+
+        public ServiceResult EliminarDireccionesPorCliente(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _direccionesPorClienteRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        #endregion
 
     }
 }
