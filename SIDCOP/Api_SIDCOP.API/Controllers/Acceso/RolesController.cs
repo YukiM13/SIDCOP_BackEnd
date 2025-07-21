@@ -29,6 +29,20 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
+        [HttpGet("ListarPantallas")]
+        public IActionResult ListarPantallas()
+        {
+            var json = _accesoServices.ListarPantallasJson();
+
+            if (json.StartsWith("{\"error\""))
+                return StatusCode(500, json);
+
+            // Devolver tal cual, en una sola línea
+            return Content(json, "application/json");
+        }
+
+
+
         [HttpPost("Insertar")]
         public IActionResult InsertarRol([FromBody] RolViewModel item)
         {
@@ -68,16 +82,16 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         {
             if (id <= 0)
             {
-                return BadRequest("Id Invalida.");
+                return BadRequest("Id Invalido.");
             }
-            var delete = _accesoServices.EliminarRol(id);
-            if (delete.Success)
+            var result = _accesoServices.EliminarRol(id);
+            if (result.Success)
             {
-                return Ok(delete);
+                return Ok(result);
             }
             else
             {
-                return BadRequest(delete);
+                return BadRequest(result.Message);
             }
         }
     }
