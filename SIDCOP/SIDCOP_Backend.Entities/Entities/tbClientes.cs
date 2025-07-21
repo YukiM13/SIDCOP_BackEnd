@@ -15,22 +15,6 @@ public partial class tbClientes
     public string Clie_DNI { get; set; }
 
     public string Clie_RTN { get; set; }
-
-    public string Clie_Nombres { get; set; }
-
-    public string Clie_Apellidos { get; set; }
-
-    public string Clie_NombreNegocio { get; set; }
-
-    public string Clie_ImagenDelNegocio { get; set; }
-
-    public string Clie_Telefono { get; set; }
-
-    public string Clie_Correo { get; set; }
-
-    public string Clie_Sexo { get; set; }
-
-
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
@@ -49,6 +33,19 @@ public partial class tbClientes
 
     public string? Ruta_Descripcion { get; set; }
 
+    public string Clie_Nombres { get; set; }
+
+    public string Clie_Apellidos { get; set; }
+
+    public string Clie_NombreNegocio { get; set; }
+
+    public string Clie_ImagenDelNegocio { get; set; }
+
+    public string Clie_Telefono { get; set; }
+
+    public string Clie_Correo { get; set; }
+
+    public string Clie_Sexo { get; set; }
 
     public DateTime? Clie_FechaNacimiento { get; set; }
 
@@ -94,9 +91,13 @@ public partial class tbClientes
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
+    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
+
     public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
+
+    public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
 }

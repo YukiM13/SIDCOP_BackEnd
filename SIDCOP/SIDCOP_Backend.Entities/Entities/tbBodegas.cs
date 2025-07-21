@@ -37,7 +37,23 @@ public partial class tbBodegas
     public DateTime? Bode_FechaModificacion { get; set; }
 
     public bool? Bode_Estado { get; set; }
+    [NotMapped]
+    public string? RegC_Descripcion { get; set; }
+    [NotMapped]
+    public string? Sucu_Descripcion { get; set; }
+    [NotMapped]
+    public string? Vend_Nombres { get; set; }
+    [NotMapped]
+    public string? Vend_Apellidos { get; set; }
+    [NotMapped]
+    public string? Mode_Descripcion { get; set; }
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
 
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+    [NotMapped]
+    public int? Secuencia { get; set; }
     public virtual tbModelos Mode { get; set; }
 
     public virtual tbRegistrosCAI RegC { get; set; }
@@ -55,25 +71,4 @@ public partial class tbBodegas
     public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 
     public virtual ICollection<tbTraslados> tbTraslados { get; set; } = new List<tbTraslados>();
-
-    [NotMapped]
-    public string? RegC_Descripcion { get; set; }    
-    [NotMapped]
-    public string? Sucu_Descripcion { get; set; }
-    [NotMapped]
-    public string? Vend_Nombres { get; set; }
-    [NotMapped]
-    public string? Vend_Apellidos { get; set; }
-    [NotMapped]
-    public string? Mode_Descripcion { get; set; }
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
-
-
 }
