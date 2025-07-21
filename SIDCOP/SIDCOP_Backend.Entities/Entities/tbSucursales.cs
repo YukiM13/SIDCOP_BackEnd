@@ -33,7 +33,6 @@ public partial class tbSucursales
     public bool Sucu_Estado { get; set; }
 
 
-
     [NotMapped]
     public string? Colo_Descripcion { get; set; }
 
@@ -57,7 +56,6 @@ public partial class tbSucursales
 
     [NotMapped]
     public int? Secuencia { get; set; }
-
 
     public virtual tbColonias Colo { get; set; }
 

@@ -68,6 +68,7 @@ public partial class tbVendedores
 
     public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; } = new List<tbVendedoresPorRuta>();
 
+
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 

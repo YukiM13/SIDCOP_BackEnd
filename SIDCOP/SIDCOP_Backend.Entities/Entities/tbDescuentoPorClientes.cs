@@ -5,27 +5,29 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbCanales
+public partial class tbDescuentoPorClientes
 {
-    public int Cana_Id { get; set; }
+    public int DeCl_Id { get; set; }
 
-    public string Cana_Descripcion { get; set; }
+    public int Desc_Id { get; set; }
 
-    public string Cana_Observaciones { get; set; }
+    public int Clie_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Cana_FechaCreacion { get; set; }
+    public DateTime DeEs_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Cana_FechaModificacion { get; set; }
+    public DateTime? DeEs_FechaModificacion { get; set; }
 
-    public bool Cana_Estado { get; set; }
+    public bool DeCl_Estado { get; set; }
+
+    public virtual tbClientes Clie { get; set; }
+
+    public virtual tbDescuentos Desc { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
 }

@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -11,7 +12,13 @@ public partial class tbTraslados
 
     public int Tras_Origen { get; set; }
 
+    [NotMapped]
+    public string Origen { get; set; }
+
     public int Tras_Destino { get; set; }
+
+    [NotMapped]
+    public string Destino { get; set; }
 
     public DateTime Tras_Fecha { get; set; }
 

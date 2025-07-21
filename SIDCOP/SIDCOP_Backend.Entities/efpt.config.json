@@ -99,11 +99,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbDescuentoPorClientes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbDescuentos]",
          "ObjectType": 0
       },
       {
          "Name": "[Inve].[tbDescuentosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentosPorEscala]",
          "ObjectType": 0
       },
       {
