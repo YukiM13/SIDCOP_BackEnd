@@ -287,5 +287,14 @@ namespace SIDCOP_Backend.DataAccess
         public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
 
+        #region Recargas
+        public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
+        //public static string DireccionPorCliente_Modificar = "[Gral].[SP_DireccionPorCliente_Actualizar]";
+        //public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
+        //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
+
+
     }
 }

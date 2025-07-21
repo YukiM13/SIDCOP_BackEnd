@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -32,6 +33,24 @@ public partial class tbRecargas
     public DateTime? Reca_FechaModificacion { get; set; }
 
     public bool Reca_Estado { get; set; }
+
+    [NotMapped]
+    public string? Bode_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Prod_DescripcionCorta { get; set; }
+
+    [NotMapped]
+    public string? Prod_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+
+    [NotMapped]
+    public string? ReDe_Observaciones { get; set; }
+
+    [NotMapped]
+    public string? ReDe_Cantidad { get; set; }
 
     public virtual tbBodegas Bode { get; set; }
 
