@@ -14,6 +14,8 @@ public partial class tbCAIs
 
     public string NCai_Descripcion { get; set; }
 
+    [NotMapped]
+    public string Estado { get; set; }
     public int Usua_Creacion { get; set; }
 
     public DateTime NCai_FechaCreacion { get; set; }
@@ -23,9 +25,6 @@ public partial class tbCAIs
     public DateTime? NCai_FechaModificacion { get; set; }
 
     public bool NCai_Estado { get; set; }
-
-    [NotMapped]
-    public string Estado { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

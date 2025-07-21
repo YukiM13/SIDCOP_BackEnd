@@ -13,11 +13,7 @@ public partial class tbDescuentos
 
     public bool Desc_Tipo { get; set; }
 
-    public int Cana_Id { get; set; }
-
     public string Desc_Aplicar { get; set; }
-
-    public decimal Desc_Valor { get; set; }
 
     public DateTime Desc_FechaInicio { get; set; }
 
@@ -35,11 +31,13 @@ public partial class tbDescuentos
 
     public bool Desc_Estado { get; set; }
 
-    public virtual tbCanales Cana { get; set; }
-
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
+
     public virtual ICollection<tbDescuentosDetalle> tbDescuentosDetalle { get; set; } = new List<tbDescuentosDetalle>();
+
+    public virtual ICollection<tbDescuentosPorEscala> tbDescuentosPorEscala { get; set; } = new List<tbDescuentosPorEscala>();
 }

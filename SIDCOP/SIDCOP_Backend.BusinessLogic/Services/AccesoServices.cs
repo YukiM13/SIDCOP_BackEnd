@@ -1,4 +1,5 @@
 ﻿using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     public class AccesoServices
     {
         private readonly UsuarioRepository _usuarioRepository;
+        private readonly RolRepository _rolRepository;
         private readonly PermisoRepository _permisoRepository;
-         private readonly RolRepository _rolRepository;
 
-        public AccesoServices(UsuarioRepository usuarioRepository, PermisoRepository permisoRepository,
-            RolRepository rolRepository
-        )
+        public AccesoServices(UsuarioRepository usuarioRepository, RolRepository rolRepository, PermisoRepository permisoRepository)
         {
             _usuarioRepository = usuarioRepository;
+            _rolRepository = rolRepository;
             _permisoRepository = permisoRepository;
-             _rolRepository = rolRepository;
-            
         }
 
         #region Usuarios 
@@ -271,6 +269,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public string ListarPantallasJson()
+        {
+            try
+            {
+                return _rolRepository.ListarPantallasJson();
+            }
+            catch (Exception ex)
+            {
+                return $"Error al listar pantallas: {ex.Message}";
+            }
+        }
+
+
         public ServiceResult InsertarRol(tbRoles item)
         {
             var result = new ServiceResult();
@@ -304,19 +315,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var delete = _rolRepository.Delete(id);
-                if (delete.code_Status == 1)
-                {
-                    return result.Ok(delete.message_Status);
-                }
-                else
-                {
-                    return result.Error(delete.message_Status);
-                }
+                var list = _rolRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar el rol: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
 

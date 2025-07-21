@@ -12,7 +12,7 @@ public partial class tbUsuarios
 
     public string Usua_Usuario { get; set; }
 
-    public string Usua_Clave { get; set; }
+    public byte[] Usua_Clave { get; set; }
 
     public int Role_Id { get; set; }
 
@@ -55,6 +55,7 @@ public partial class tbUsuarios
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_ModificacionNavigation { get; set; } = new List<tbBodegas>();
@@ -95,9 +96,17 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbDepartamentos> tbDepartamentosUsua_ModificacionNavigation { get; set; } = new List<tbDepartamentos>();
 
+    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientesUsua_CreacionNavigation { get; set; } = new List<tbDescuentoPorClientes>();
+
+    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientesUsua_ModificacionNavigation { get; set; } = new List<tbDescuentoPorClientes>();
+
     public virtual ICollection<tbDescuentosDetalle> tbDescuentosDetalleUsua_CreacionNavigation { get; set; } = new List<tbDescuentosDetalle>();
 
     public virtual ICollection<tbDescuentosDetalle> tbDescuentosDetalleUsua_ModificacionNavigation { get; set; } = new List<tbDescuentosDetalle>();
+
+    public virtual ICollection<tbDescuentosPorEscala> tbDescuentosPorEscalaUsua_CreacionNavigation { get; set; } = new List<tbDescuentosPorEscala>();
+
+    public virtual ICollection<tbDescuentosPorEscala> tbDescuentosPorEscalaUsua_ModificacionNavigation { get; set; } = new List<tbDescuentosPorEscala>();
 
     public virtual ICollection<tbDescuentos> tbDescuentosUsua_CreacionNavigation { get; set; } = new List<tbDescuentos>();
 
@@ -240,6 +249,4 @@ public partial class tbUsuarios
     public virtual ICollection<tbVendedores> tbVendedoresUsua_CreacionNavigation { get; set; } = new List<tbVendedores>();
 
     public virtual ICollection<tbVendedores> tbVendedoresUsua_ModificacionNavigation { get; set; } = new List<tbVendedores>();
-
-
 }

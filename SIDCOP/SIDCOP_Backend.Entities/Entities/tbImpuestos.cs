@@ -26,6 +26,7 @@ public partial class tbImpuestos
     [NotMapped]
 
     public int? Secuencia { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
