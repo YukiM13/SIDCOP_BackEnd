@@ -22,13 +22,15 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         // Repositorios para manejar las operaciones de acceso a datos
         private readonly RutasRepository _rutasRepository;
         private readonly BodegaRepository _bodegaRepository;
+        private readonly TrasladoRepository _trasladoRepository;
 
         // Constructor que recibe los repositorios necesarios
-        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository)
+        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository, TrasladoRepository trasladoRepository)
         {
             // Asignación de los repositorios a las variables de instancia
             _rutasRepository = rutasRepository;
             _bodegaRepository = bodegaRepository;
+            _trasladoRepository = trasladoRepository;
         }
 
         #region Rutas
@@ -192,5 +194,87 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion
+
+
+        #region Traslados
+
+        public IEnumerable<tbTraslados> ListTraslados()
+        {
+
+            try
+            {
+                var list = _trasladoRepository.ListTraslados();
+                return list; //Retorna el listado 
+            }
+            catch (Exception ex)
+            {
+                // En caso de error, retorna null
+                IEnumerable<tbTraslados> result = null;
+                return result;
+            }
+        }
+
+
+        public ServiceResult InsertTraslado(tbTraslados item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.Insert(item);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
+            }
+        }
+
+
+        public ServiceResult UpdateTraslado(tbTraslados item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.Update(item);
+                return result.Ok(response);  // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+
+        public ServiceResult DeleteTraslado(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.Delete(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+
+        public ServiceResult FindTraslado(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.Find(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+        #endregion
+
     }
 }
