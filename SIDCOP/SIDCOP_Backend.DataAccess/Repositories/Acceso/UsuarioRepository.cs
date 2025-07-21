@@ -40,7 +40,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         {
             if (item == null)
             {
-                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacíos o datos erróneos."}
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacíos o datos erróneos." };
             }
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
