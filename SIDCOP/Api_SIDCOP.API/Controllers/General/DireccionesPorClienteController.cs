@@ -23,9 +23,9 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpGet("Listar")]
-        public IActionResult ListarCargos()
+        public IActionResult ListarDireccionesPorCLiente()
         {
-            var list = _generalServices.ListarCargos();
+            var list = _generalServices.ListarDireccionesPorCliente();
             return Ok(list);
         }
 
@@ -46,13 +46,13 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpGet("Buscar/{id}")]
-        public IActionResult BuscarCargo(int? id)
+        public IActionResult BuscarDireccionesPorCliente(int? id)
         {
             if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            var cargo = _generalServices.BuscarCargo(id);
+            var cargo = _generalServices.DireccionesPorCliente_Buscar(id);
             if (cargo != null)
             {
                 return Ok(cargo);
@@ -63,11 +63,11 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-        [HttpPut("Eliminar/{id}")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
 
-            var list = _generalServices.EliminarCargo(id);
+            var list = _generalServices.EliminarDireccionesPorCliente(id);
             return Ok(list);
         }
     }
