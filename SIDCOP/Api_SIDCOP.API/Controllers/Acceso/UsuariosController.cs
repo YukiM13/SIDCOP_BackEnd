@@ -226,6 +226,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                 mensaje.Body = builder.ToMessageBody();
 
                 using var smtp = new SmtpClient();
+                smtp.ServerCertificateValidationCallback = (s, c, h, e) => true;
                 await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
                 await smtp.AuthenticateAsync("sidcop.soporte@gmail.com", "pbpg xsqp otkj eqdx");
                 await smtp.SendAsync(mensaje);
