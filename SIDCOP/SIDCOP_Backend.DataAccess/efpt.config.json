@@ -19,6 +19,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Acce].[tbAccionesPorPantalla]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Acce].[tbPantallas]",
          "ObjectType": 0
       },
@@ -52,6 +56,10 @@
       },
       {
          "Name": "[Gral].[tbDepartamentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbDireccionesPorCliente]",
          "ObjectType": 0
       },
       {
@@ -91,11 +99,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbDescuentoPorClientes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbDescuentos]",
          "ObjectType": 0
       },
       {
          "Name": "[Inve].[tbDescuentosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentosPorEscala]",
          "ObjectType": 0
       },
       {

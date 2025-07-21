@@ -13,6 +13,11 @@ public partial class tbCargos
     public string Carg_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 
     public DateTime Carg_FechaCreacion { get; set; }
 
@@ -27,11 +32,4 @@ public partial class tbCargos
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
-
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
-
 }
