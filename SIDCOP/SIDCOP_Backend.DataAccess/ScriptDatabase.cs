@@ -270,6 +270,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Vendedores
 
+        #region CuentasPorCobrar
+        
+               public static string CuentasPorCobrar_Listar = "[Vnta].[SP_CuentasPorCobrar_Listar]";
+        #endregion
 
         #region PuntosEmision
         public static string PuntosEmision_Listar     = "[Vnta].[SP_PuntosEmisiones_Listar]";
@@ -286,6 +290,14 @@ namespace SIDCOP_Backend.DataAccess
         public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
         public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
+
+        #region Traslados
+
+        public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
+        public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
+        public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
+
         #endregion
 
     }
