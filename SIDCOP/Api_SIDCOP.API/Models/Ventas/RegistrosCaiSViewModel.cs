@@ -1,4 +1,5 @@
 ﻿using SIDCOP_Backend.Entities.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Ventas
 {
@@ -31,6 +32,27 @@ namespace Api_SIDCOP.API.Models.Ventas
         public DateTime? RegC_FechaModificacion { get; set; }
 
         public bool RegC_Estado { get; set; }
+
+        
+        public int Secuencia { get; set; }
+
+        
+        public String Estado { get; set; }
+
+        
+        public String UsuarioCreacion { get; set; }
+
+        
+        public String UsuarioModificacion { get; set; }
+
+        
+        public String Sucu_Descripcion { get; set; }
+
+        
+        public String PuEm_Descripcion { get; set; }
+
+        
+        public String NCai_Descripcion { get; set; }
 
         //public virtual tbCAIs NCai { get; set; }
 

@@ -16,6 +16,9 @@ public partial class tbUsuarios
 
     public int Role_Id { get; set; }
 
+    [NotMapped]
+    public string Role_Descripcion { get; set; }
+
     public int Usua_IdPersona { get; set; }
 
     public bool Usua_EsVendedor { get; set; }

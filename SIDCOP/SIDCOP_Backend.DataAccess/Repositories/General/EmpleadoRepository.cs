@@ -67,6 +67,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Carg_Id", item.Carg_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_DireccionExacta", item.Empl_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Empl_Imagen", item.Empl_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -116,6 +117,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Carg_Id", item.Carg_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_DireccionExacta", item.Empl_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Empl_Imagen", item.Empl_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Empl_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
