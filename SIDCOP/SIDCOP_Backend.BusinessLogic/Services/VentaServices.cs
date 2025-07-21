@@ -27,12 +27,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ConfiguracionFacturaRepository _configuracionFacturaRepository;
         private readonly PuntoEmisionRepository _puntoEmisionRepository;
 
+        private readonly CuentasPorCobrarRepository _cuentasporcobrarRepository;
+
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
             ConfiguracionFacturaRepository configuracionFacturaRepository,
-            PuntoEmisionRepository puntoEmisionRepository
-            
+            PuntoEmisionRepository puntoEmisionRepository,
+            CuentasPorCobrarRepository cuentaporcobrarRepository
 
         )
         {
@@ -44,6 +46,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _vendedorRepository = vendedorRepository;
             _configuracionFacturaRepository = configuracionFacturaRepository;
             _puntoEmisionRepository = puntoEmisionRepository;
+            _cuentasporcobrarRepository = cuentaporcobrarRepository;
+
         }
 
 
@@ -500,6 +504,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region CuentasPorCobrar
+        public IEnumerable<tbCuentasPorCobrar> ListCuentasPorCobrar()
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _cuentasporcobrarRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbCuentasPorCobrar> result = null;
+                return result;
             }
         }
 

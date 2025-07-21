@@ -47,6 +47,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ConfiguracionFacturaRepository>();
             services.AddScoped<BodegaRepository>();
             services.AddScoped<ProductosRepository>();
+            services.AddScoped<CuentasPorCobrarRepository>();
 
             services.AddScoped<ClienteRepository>();
             services.AddScoped<VendedorRepository>();

@@ -269,6 +269,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Vendedores
 
+        #region CuentasPorCobrar
+        
+               public static string CuentasPorCobrar_Listar = "[Vnta].[SP_CuentasPorCobrar_Listar]";
+        #endregion
 
         #region PuntosEmision
         public static string PuntosEmision_Listar     = "[Vnta].[SP_PuntosEmisiones_Listar]";
