@@ -29,7 +29,6 @@ namespace Api_SIDCOP.API.Models.General
         public string Colo_Descripcion { get; set; }
         [NotMapped]
         public string Muni_Descripcion { get; set; }
-
         [NotMapped]
         public string Depa_Descripcion { get; set; }
 
