@@ -82,16 +82,16 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         {
             if (id <= 0)
             {
-                return BadRequest("Id Invalida.");
+                return BadRequest("Id Invalido.");
             }
-            var delete = _accesoServices.EliminarRol(id);
-            if (delete.Success)
+            var result = _accesoServices.EliminarRol(id);
+            if (result.Success)
             {
-                return Ok(delete);
+                return Ok(result);
             }
             else
             {
-                return BadRequest(delete);
+                return BadRequest(result.Message);
             }
         }
     }

@@ -16,7 +16,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Role_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
