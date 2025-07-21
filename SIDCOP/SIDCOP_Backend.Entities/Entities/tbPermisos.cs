@@ -10,17 +10,10 @@ public partial class tbPermisos
 {
     public int Perm_Id { get; set; }
 
-    public int Role_Id { get; set; }
-
     public int AcPa_Id { get; set; }
 
-    public int Usua_Creacion { get; set; }
+    public int Role_Id { get; set; }
 
-    public DateTime Perm_FechaCreacion { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Perm_FechaModificacion { get; set; }
     [NotMapped]
     public string Role_Descripcion { get; set; }
 
@@ -35,6 +28,14 @@ public partial class tbPermisos
 
     [NotMapped]
     public string Acci_Descripcion { get; set; }
+
+    public int Usua_Creacion { get; set; }
+
+    public DateTime Perm_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? Perm_FechaModificacion { get; set; }
 
     public virtual tbAccionesPorPantalla AcPa { get; set; }
 
