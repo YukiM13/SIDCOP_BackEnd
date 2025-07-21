@@ -26,16 +26,6 @@ public partial class tbEmpleados
     public DateTime Empl_FechaNacimiento { get; set; }
 
     public string Empl_Correo { get; set; }
-
-    public string Empl_Telefono { get; set; }
-
-    public int Sucu_Id { get; set; }
-
-    public int EsCv_Id { get; set; }
-
-    public int Carg_Id { get; set; }
-
-    public int Colo_Id { get; set; }
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
@@ -56,7 +46,15 @@ public partial class tbEmpleados
 
     [NotMapped]
     public string? Usua_Imagen { get; set; }
+    public string Empl_Telefono { get; set; }
 
+    public int Sucu_Id { get; set; }
+
+    public int EsCv_Id { get; set; }
+
+    public int Carg_Id { get; set; }
+
+    public int Colo_Id { get; set; }
 
     public string Empl_DireccionExacta { get; set; }
 
