@@ -38,6 +38,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
         public RequestStatus Insert(tbUsuarios item)
         {
+            if (item == null)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacíos o datos erróneos."}
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Clave", item.Usua_Clave, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -49,16 +53,31 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaCreacion", item.Usua_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.Usuario_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Usuario_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
-            string mensaje = (result == 0) ? "Error al insertar" : "Insertado correctamente";
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido." };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
 
-            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public RequestStatus Update(tbUsuarios item)
         {
+            if (item == null)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
+            }
+
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -70,12 +89,21 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaModificacion", item.Usua_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.Usuario_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Usuario_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
-            string mensaje = (result == 0) ? "Error al actualizar" : "Actualizado correctamente";
-
-            return new RequestStatus { code_Status = result, message_Status = mensaje };
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido." };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public RequestStatus ChangeUserState(tbUsuarios? item)
@@ -151,39 +179,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             return result;
         }
-
-
-
-        //public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
-        //{
-        //    var parameter = new DynamicParameters();
-        //    parameter.Add("@Usua_Id", usuaId, DbType.Int32, ParameterDirection.Input);
-        //    parameter.Add("@Contrasena", claveSeguridad, DbType.String, ParameterDirection.Input);
-
-        //    using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-        //    var result = db.QueryFirstOrDefault<dynamic>(ScriptDatabase.Usuario_MostrarContrasena, parameter, commandType: CommandType.StoredProcedure);
-
-        //    if (result == null)
-        //    {
-        //        return new RequestStatus { code_Status = 0, message_Status = "Error al obtener la contraseña." };
-        //    }
-
-        //    if (result.code_Status == -1 || result.code_Status == 0)
-        //    {
-        //        return new RequestStatus
-        //        {
-        //            code_Status = result.code_Status,
-        //            message_Status = result.message_Status
-        //        };
-        //    }
-
-        //    return new RequestStatus
-        //    {
-        //        code_Status = result.code_Status,
-        //        message_Status = result.message_Status,
-        //        //Data = result.Contrasena
-        //    };
-        //}
 
         public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
         {
