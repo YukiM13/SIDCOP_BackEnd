@@ -15,20 +15,23 @@ namespace SIDCOP_Backend.DataAccess
         public const string Usuario_CambiarEstado = "Acce.SP_Usuario_Estado";
         public const string Usuario_Buscar = "Acce.SP_Usuario_Buscar";
         public const string Usuarios_Listar = "Acce.SP_Usuarios_Listar";
-        public const string Usuario_IniciarSesion = "Acce.SP_Usuario_Login";
+        public const string Usuario_IniciarSesion = "Acce.SP_Usuario_IniciarSesion";
         public const string Usuario_MostrarContrasena = "Acce.SP_Usuario_MostrarContrasena";
         public const string Usuario_RestablecerContrasena = "Acce.SP_Usuario_RestablecerClave";
         public const string Usuario_VerificarUsuarioExistente = "[Acce].[SP_Usuario_VerificarUsuarioExistente]";
         #endregion
 
-         #region Roles
+        #region Roles
 
             public static string Roles_Listar = "Acce.SP_Roles_Listar";
             public static string Rol_Insertar = "Acce.SP_Rol_Insertar";
             public static string Rol_Actualizar = "Acce.SP_Rol_Actualizar";
             public static string Rol_Eliminar = "Acce.SP_Rol_Eliminar";
             public static string Rol_Buscar = "Acce.SP_Rol_Buscar";
-        
+
+            //PARA LAS PANTALLAS CON SUS ACCIONES
+            public static string Pantallas_Listar = "Acce.SP_Pantallas_Listar";
+
         #endregion
 
         #region Municipios
@@ -43,14 +46,12 @@ namespace SIDCOP_Backend.DataAccess
         #endregion Municipios
 
         #region Departamentos
-
         public const string Departamentos_Listar = "[Gral].[SP_Departamentos_Listar]";
-        public const string Departamentos_Insertar = "[Gral].[SP_Departamento_Insertar]";
-        public const string Departamento_Actualizar = "[Gral].[SP_Departamento_Actualizar]";
-        public const string Departamento_Eliminar = "[Gral].[SP_Departamento_Eliminar]";
-        public const string Departamento_Buscar = "[Gral].[SP_Departamento_Buscar]";
-
-        #endregion Departamentos
+            public const string Departamentos_Insertar = "[Gral].[SP_Departamento_Insertar]";
+            public const string Departamento_Actualizar = "[Gral].[SP_Departamento_Actualizar]";
+            public const string Departamento_Eliminar = "[Gral].[SP_Departamento_Eliminar]";
+            public const string Departamento_Buscar = "[Gral].[SP_Departamento_Buscar]";
+        #endregion
 
         #region Marcas Vehiculos
 
@@ -269,6 +270,10 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Vendedores
 
+        #region CuentasPorCobrar
+        
+               public static string CuentasPorCobrar_Listar = "[Vnta].[SP_CuentasPorCobrar_Listar]";
+        #endregion
 
         #region PuntosEmision
         public static string PuntosEmision_Listar     = "[Vnta].[SP_PuntosEmisiones_Listar]";
@@ -292,6 +297,13 @@ namespace SIDCOP_Backend.DataAccess
         public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
         public static string DescuentosPorEscala_Insertar = "[Inve].[SP_DescuentoPorEscala_Insertar]";
         public static string DescuentosPorCliente_Insertar = "[Inve].[SP_DescuentoPorCliente_Insertar]";
+        #endregion
+
+        #region Traslados
+
+        public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
+        public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
+        public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
 
         #endregion
 

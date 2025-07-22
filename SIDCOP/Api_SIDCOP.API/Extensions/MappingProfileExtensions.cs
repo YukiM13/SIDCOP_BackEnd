@@ -53,6 +53,10 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbDescuentosDetalle, DescuentoDetalleViewModel>().ReverseMap();
             CreateMap<tbDescuentoPorClientes, DescuentoPorClienteViewModel>().ReverseMap();
             CreateMap<tbDescuentosPorEscala, DescuentoPorEscalaViewModel>().ReverseMap();
+            CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();
+            CreateMap<tbTraslados, TrasladoViewModel>().ReverseMap();
+
+            CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
 
 
         }

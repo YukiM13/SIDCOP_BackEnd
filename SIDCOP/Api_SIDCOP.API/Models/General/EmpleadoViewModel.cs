@@ -32,6 +32,7 @@ namespace Api_SIDCOP.API.Models.General
         public int Colo_Id { get; set; }
 
         public string Empl_DireccionExacta { get; set; }
+        public string Empl_Imagen { get; set; }
 
         public int Usua_Creacion { get; set; }
 

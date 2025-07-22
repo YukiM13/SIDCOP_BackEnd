@@ -2,11 +2,24 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbPuntosEmision
 {
+    [NotMapped]
+    public int Secuencia { get; set; }
+
+    [NotMapped]
+    public String Estado { get; set; }
+
+    [NotMapped]
+    public String UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public String UsuarioModificacion { get; set; }
+
     public int PuEm_Id { get; set; }
 
     public string PuEm_Codigo { get; set; }
