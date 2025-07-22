@@ -11,10 +11,6 @@ using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
-    [ApiController]
-    [Route("[controller]")]
-    [ApiKey]
-
     public class PermisosController : Controller
     {
         public readonly AccesoServices _accesoServices;
