@@ -13,11 +13,6 @@ public partial class tbCategorias
     public string Cate_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
 
     public DateTime Cate_FechaCreacion { get; set; }
 
@@ -32,4 +27,13 @@ public partial class tbCategorias
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbSubcategorias> tbSubcategorias { get; set; } = new List<tbSubcategorias>();
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+    [NotMapped]
+    public int Secuencia { get; set; }
+
 }
