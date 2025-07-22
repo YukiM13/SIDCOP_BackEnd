@@ -16,6 +16,8 @@ namespace Api_SIDCOP.API.Models.Acceso
 
         public int Role_Id { get; set; }
 
+        public string Role_Descripcion { get; set; }
+
         public int Usua_IdPersona { get; set; }
 
         public bool Usua_EsVendedor { get; set; }

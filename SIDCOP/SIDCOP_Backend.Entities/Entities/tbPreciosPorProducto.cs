@@ -9,23 +9,31 @@ public partial class tbPreciosPorProducto
 {
     public int PreP_Id { get; set; }
 
-    public int? Prod_Id { get; set; }
+    public int Prod_Id { get; set; }
 
-    public decimal? PreP_PrecioContado { get; set; }
+    public int Clie_Id { get; set; }
 
-    public decimal? PreP_PrecioCredito { get; set; }
+    public decimal PreP_PrecioContado { get; set; }
 
-    public int? PreP_Secuencia { get; set; }
+    public decimal PreP_PrecioCredito { get; set; }
+
+    public int PreP_InicioEscala { get; set; }
+
+    public int PreP_FinEscala { get; set; }
+
+    public int PreP_ListaPrecios { get; set; }
+
+    public int Usua_Creacion { get; set; }
+
+    public DateTime PreP_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public int? Usua_Creacion { get; set; }
-
-    public DateTime? PreP_FechaCreacion { get; set; }
-
     public DateTime? PreP_FechaModificacion { get; set; }
 
-    public bool PreP_Estado { get; set; }
+    public bool? PreP_Estado { get; set; }
+
+    public virtual tbClientes Clie { get; set; }
 
     public virtual tbProductos Prod { get; set; }
 

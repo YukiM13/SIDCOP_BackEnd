@@ -1,5 +1,10 @@
 ﻿using Api_SIDCOP.API.Models.Acceso;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
+using MimeKit;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
@@ -10,17 +15,12 @@ namespace Api_SIDCOP.API.Controllers.Acceso
     {
         public readonly AccesoServices _accesoServices;
         public readonly IMapper _mapper;
-        //private readonly EmailService _emailService;
 
         public PermisosController(AccesoServices accesoServices, IMapper mapper)
         {
             _accesoServices = accesoServices;
             _mapper = mapper;
 
-        }
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [HttpGet("Listar")]
