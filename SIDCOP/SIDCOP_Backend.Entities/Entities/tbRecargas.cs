@@ -20,8 +20,6 @@ public partial class tbRecargas
 
     public string Reca_Observaciones { get; set; }
 
-    public bool Reca_Confirmacion { get; set; }
-
     public int? Usua_Confirmacion { get; set; }
 
     public int Usua_Creacion { get; set; }
@@ -33,6 +31,8 @@ public partial class tbRecargas
     public DateTime? Reca_FechaModificacion { get; set; }
 
     public bool Reca_Estado { get; set; }
+
+    public string Reca_Confirmacion { get; set; }
 
     [NotMapped]
     public string? Bode_Descripcion { get; set; }
