@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -28,4 +29,11 @@ public partial class tbCAIs
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbRegistrosCAI> tbRegistrosCAI { get; set; } = new List<tbRegistrosCAI>();
+
+    [NotMapped]
+    public string Estado { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
 }

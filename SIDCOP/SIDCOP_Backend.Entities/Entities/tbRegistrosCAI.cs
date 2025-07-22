@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -34,6 +35,27 @@ public partial class tbRegistrosCAI
     public DateTime? RegC_FechaModificacion { get; set; }
 
     public bool RegC_Estado { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
+    [NotMapped]
+    public String Estado { get; set; }
+
+    [NotMapped]
+    public String Sucu_Descripcion { get; set; }
+
+    [NotMapped]
+    public String PuEm_Descripcion { get; set; }
+
+    [NotMapped]
+    public String NCai_Descripcion { get; set; }
+
+    [NotMapped]
+    public String UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public String UsuarioModificacion { get; set; }
 
     public virtual tbCAIs NCai { get; set; }
 

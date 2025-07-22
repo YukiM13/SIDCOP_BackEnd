@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -80,4 +81,25 @@ public partial class tbClientes
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
+
+    [NotMapped]
+    public string? UsuaC_Nombre { get; set; }
+    [NotMapped]
+
+    public string? UsuaM_Nombre { get; set; }
+    [NotMapped]
+
+    public string? Cana_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Colo_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? EsCv_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Ruta_Descripcion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
 }
