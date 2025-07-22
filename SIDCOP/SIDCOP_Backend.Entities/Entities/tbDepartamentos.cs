@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -15,15 +14,6 @@ public partial class tbDepartamentos
     public int Usua_Creacion { get; set; }
 
     public DateTime Depa_FechaCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
-
-    [NotMapped]
-    public int? Secuencia { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 

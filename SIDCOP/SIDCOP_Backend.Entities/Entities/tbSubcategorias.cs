@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -26,14 +25,6 @@ public partial class tbSubcategorias
 
     public virtual tbCategorias Cate { get; set; }
 
-    [NotMapped]
-    public string Cate_Descripcion { get; set; }
-
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

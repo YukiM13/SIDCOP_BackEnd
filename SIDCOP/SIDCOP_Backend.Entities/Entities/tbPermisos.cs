@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -10,24 +9,9 @@ public partial class tbPermisos
 {
     public int Perm_Id { get; set; }
 
-    public int AcPa_Id { get; set; }
-
     public int Role_Id { get; set; }
 
-    [NotMapped]
-    public string Role_Descripcion { get; set; }
-
-    [NotMapped]
-    public int Pant_Id { get; set; }
-
-    [NotMapped]
-    public string Pant_Descripcion { get; set; }
-
-    [NotMapped]
-    public int Acci_Id { get; set; }
-
-    [NotMapped]
-    public string Acci_Descripcion { get; set; }
+    public int AcPa_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
 
