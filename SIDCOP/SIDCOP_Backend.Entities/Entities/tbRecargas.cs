@@ -50,7 +50,7 @@ public partial class tbRecargas
     public string? ReDe_Observaciones { get; set; }
 
     [NotMapped]
-    public string? ReDe_Cantidad { get; set; }
+    public int? ReDe_Cantidad { get; set; }
 
     public virtual tbBodegas Bode { get; set; }
 

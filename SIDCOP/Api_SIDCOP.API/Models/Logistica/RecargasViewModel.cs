@@ -40,6 +40,6 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public string? ReDe_Observaciones { get; set; }
 
-        public string? ReDe_Cantidad { get; set; }
+        public int? ReDe_Cantidad { get; set; }
     }
 }
