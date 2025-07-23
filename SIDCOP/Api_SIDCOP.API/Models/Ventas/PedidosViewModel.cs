@@ -78,5 +78,6 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int? PeDe_Cantidad { get; set; }
         public List<PedidoDetalleDTO> Detalles { get; set; }
+
     }
 }
