@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaCreacion", item.Pedi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
+            string detallesXml = item.Detalles != null && item.Detalles.Any()
+            ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
+                $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad><PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio></Deta>"))
+                + "</Detalles>"
+            : "<Detalles></Detalles>";
+
+            parameter.Add("@Detalles", detallesXml, DbType.Xml);
+
+
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -91,6 +101,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Pedi_FechaEntrega", item.Pedi_FechaEntrega, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaModificacion", item.Pedi_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            string detallesXml = item.Detalles != null && item.Detalles.Any()
+         ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
+             $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad><PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio></Deta>"))
+             + "</Detalles>"
+         : "<Detalles></Detalles>";
+
+            parameter.Add("@Detalles", detallesXml, DbType.Xml);
 
             try
             {

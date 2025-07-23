@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using SIDCOP_Backend.Entities.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Ventas
 {
@@ -76,5 +77,6 @@ namespace Api_SIDCOP.API.Models.Ventas
 
 
         public int? PeDe_Cantidad { get; set; }
+        public List<PedidoDetalleDTO> Detalles { get; set; }
     }
 }

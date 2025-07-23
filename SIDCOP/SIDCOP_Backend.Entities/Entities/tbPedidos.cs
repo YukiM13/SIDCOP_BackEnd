@@ -82,6 +82,10 @@ public partial class tbPedidos
     [NotMapped]
     public int? PeDe_Cantidad { get; set; }
 
+
+    [NotMapped]
+    public List<PedidoDetalleDTO> Detalles { get; set; }
+
     public virtual tbDireccionesPorCliente DiCl { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
@@ -91,4 +95,11 @@ public partial class tbPedidos
     public virtual tbVendedores Vend { get; set; }
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
+}
+
+public class PedidoDetalleDTO
+{
+    public int Prod_Id { get; set; }
+    public int PeDe_Cantidad { get; set; }
+    public decimal PeDe_ProdPrecio { get; set; }
 }
