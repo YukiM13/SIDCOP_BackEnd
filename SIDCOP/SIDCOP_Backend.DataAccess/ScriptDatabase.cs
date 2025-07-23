@@ -314,7 +314,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioBodega_Insertar      = "";
         public static string InventarioBodega_Actualizar    = ""; 
         public static string InventarioBodega_Eliminar      = "";
-        public static string InventarioBodega_Buscar        = "";
+        public static string InventarioAsgnadoPorVendedor   = "Inve.SP_InventarioAsignadoPorVendedor_Listar ";
 
         #endregion
 

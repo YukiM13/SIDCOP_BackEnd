@@ -20,5 +20,23 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             _mapper = mapper;
         }
 
+
+        [HttpGet("Buscar/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var invent = _inventarioServices.BuscarInventarioPorVendedor(id);
+            if (invent != null)
+            {
+                return Ok(invent);
+            }
+            else
+            {
+                return NotFound("Inventario No encontrados.");
+            }
+        }
     }
 }
