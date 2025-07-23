@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,29 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public string Usua_Clave { get; set; }
 
+        [NotMapped]
+        public string? Role_Descripcion { get; set; }
+
+        [NotMapped]
+        public string? Cargo { get; set; }
+
+        [NotMapped]
+        public string? DNI { get; set; }
+
+        [NotMapped]
+        public string? Correo { get; set; }
+
+        [NotMapped]
+        public string? Telefono { get; set; }
+
+        [NotMapped]
+        public string? Nombres { get; set; }
+
+        [NotMapped]
+        public string? Apellidos { get; set; }
+
+        [NotMapped]
+        public string? Sucursal { get; set; }
         public int Role_Id { get; set; }
 
         public int Usua_IdPersona { get; set; }

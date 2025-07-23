@@ -17,7 +17,10 @@ public partial class tbUsuarios
     public int Role_Id { get; set; }
 
     [NotMapped]
-    public string Role_Descripcion { get; set; }
+    public string? Role_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Correo { get; set; }
 
     public int Usua_IdPersona { get; set; }
 
@@ -36,10 +39,6 @@ public partial class tbUsuarios
     public DateTime? Usua_FechaModificacion { get; set; }
 
     public bool Usua_Estado { get; set; }
-
-    [NotMapped]
-    public string? Correo { get; set; }
-
 
     [NotMapped]
     public string? PermisosJson { get; set; }
