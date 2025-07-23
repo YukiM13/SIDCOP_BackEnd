@@ -52,6 +52,9 @@ public partial class tbRecargas
     [NotMapped]
     public int? ReDe_Cantidad { get; set; }
 
+    [NotMapped]
+    public List<RecargaDetalleDTO> Detalles { get; set; }
+
     public virtual tbBodegas Bode { get; set; }
 
     public virtual tbEmpleados Empl { get; set; }
@@ -65,4 +68,11 @@ public partial class tbRecargas
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
+}
+
+public class RecargaDetalleDTO
+{
+    public int Prod_Id { get; set; }
+    public int ReDe_Cantidad { get; set; }
+    public string ReDe_Observaciones { get; set; }
 }

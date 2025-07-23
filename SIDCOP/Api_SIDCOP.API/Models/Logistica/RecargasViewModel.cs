@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using SIDCOP_Backend.Entities.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Logistica
 {
@@ -41,5 +42,7 @@ namespace Api_SIDCOP.API.Models.Logistica
         public string? ReDe_Observaciones { get; set; }
 
         public int? ReDe_Cantidad { get; set; }
+
+        public List<RecargaDetalleDTO> Detalles { get; set; }
     }
 }

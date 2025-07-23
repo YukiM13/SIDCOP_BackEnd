@@ -305,11 +305,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _recargasRepository.Insert(item);
-                return result.Ok(response); // Retorna el resultado exitoso
+
+                if (response.code_Status == 1)
+                {
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response);
+                }
+
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message); // Retorna el mensaje de error si falla
+                return result.Error($"Error al insertar sucursal: {ex.Message}");
             }
         }
 
