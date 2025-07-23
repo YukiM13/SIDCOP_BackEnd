@@ -16,6 +16,10 @@ public partial class tbDepartamentos
 
     public DateTime Depa_FechaCreacion { get; set; }
 
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? Depa_FechaModificacion { get; set; }
+
     [NotMapped]
     public string UsuarioCreacion { get; set; }
 
@@ -24,10 +28,6 @@ public partial class tbDepartamentos
 
     [NotMapped]
     public int? Secuencia { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Depa_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

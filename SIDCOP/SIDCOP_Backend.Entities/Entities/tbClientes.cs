@@ -15,23 +15,6 @@ public partial class tbClientes
     public string Clie_DNI { get; set; }
 
     public string Clie_RTN { get; set; }
-    [NotMapped]
-    public string? UsuaC_Nombre { get; set; }
-    [NotMapped]
-
-    public string? UsuaM_Nombre { get; set; }
-    [NotMapped]
-
-    public string? Cana_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Colo_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? EsCv_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Ruta_Descripcion { get; set; }
 
     public string Clie_Nombres { get; set; }
 
@@ -97,7 +80,26 @@ public partial class tbClientes
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
-    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
-
     public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
+
+    [NotMapped]
+    public string? UsuaC_Nombre { get; set; }
+    [NotMapped]
+
+    public string? UsuaM_Nombre { get; set; }
+    [NotMapped]
+
+    public string? Cana_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Colo_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? EsCv_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Ruta_Descripcion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
 }
