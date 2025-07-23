@@ -12,12 +12,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
     public class DireccionesPorClienteRepository : IRepository<tbDireccionesPorCliente>
     {
 
-        public tbDireccionesPorCliente Find(int? id)
+        public IEnumerable<tbDireccionesPorCliente> Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_ListarPorCliente, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.Query<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_ListarPorCliente, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new KeyNotFoundException("Cargo no encontrado.");
@@ -129,5 +129,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+        tbDireccionesPorCliente IRepository<tbDireccionesPorCliente>.Find(int? id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
