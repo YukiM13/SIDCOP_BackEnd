@@ -38,7 +38,7 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult ActualizarCargo([FromBody] DireccionesPorClienteViewModel item)
+        public IActionResult ActualizarDireccionPorCliente([FromBody] DireccionesPorClienteViewModel item)
         {
             var mapped = _mapper.Map<tbDireccionesPorCliente>(item);
             var update = _generalServices.ActualizarDireccionPorCliente(mapped);
