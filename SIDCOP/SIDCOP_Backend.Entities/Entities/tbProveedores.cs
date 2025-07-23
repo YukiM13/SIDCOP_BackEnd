@@ -27,6 +27,15 @@ public partial class tbProveedores
     public string Prov_Observaciones { get; set; }
 
     public int Usua_Creacion { get; set; }
+
+    public DateTime Prov_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? Prov_FechaModificacion { get; set; }
+
+    public bool Prov_Estado { get; set; }
+
     [NotMapped]
     public string Colo_Descripcion { get; set; }
     [NotMapped]
@@ -38,13 +47,9 @@ public partial class tbProveedores
     public string UsuarioCreacion { get; set; }
     [NotMapped]
     public string UsuarioModificacion { get; set; }
-    public DateTime Prov_FechaCreacion { get; set; }
 
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Prov_FechaModificacion { get; set; }
-
-    public bool Prov_Estado { get; set; }
+    [NotMapped]
+    public int Secuencia { get; set; }
 
     public virtual tbColonias Colo { get; set; }
 

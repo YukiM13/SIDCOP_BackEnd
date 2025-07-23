@@ -13,10 +13,11 @@ public partial class BDD_SIDCOPContext : DbContext
         : base(options)
     {
     }
-    public BDD_SIDCOPContext()
-    {
-    }
 
+    public BDD_SIDCOPContext()
+    { 
+    }    
+    
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 
     public virtual DbSet<tbAccionesPorPantalla> tbAccionesPorPantalla { get; set; }
@@ -335,7 +336,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(40)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_DNI)
-                .IsRequired()
                 .HasMaxLength(15)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Estado).HasDefaultValue(true);
@@ -360,7 +360,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(200)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_RTN)
-                .IsRequired()
                 .HasMaxLength(16)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Saldo).HasColumnType("decimal(12, 2)");
@@ -1181,7 +1180,7 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Pant_Icon)
                 .IsRequired()
-                .HasMaxLength(20)
+                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Pant_Ruta)
                 .IsRequired()
@@ -1205,15 +1204,10 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Pedi_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.Pedi_FechaPedido).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Clie).WithMany(p => p.tbPedidos)
-                .HasForeignKey(d => d.Clie_Id)
+            entity.HasOne(d => d.DiCl).WithMany(p => p.tbPedidos)
+                .HasForeignKey(d => d.DiCl_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Vnta_tbPedidos_Gral_tbClientes_Clie_Id");
-
-            entity.HasOne(d => d.Empl).WithMany(p => p.tbPedidos)
-                .HasForeignKey(d => d.Empl_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Vnta_tbPedidos_Gral_tbEmpleados_Empl_Id");
+                .HasConstraintName("FK_Vnta_tbPedidos_Gral_tbDireccionesPorCliente_Clie_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbPedidosUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
@@ -1223,6 +1217,11 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPedidosUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Vnta_tbPedidos_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Vend).WithMany(p => p.tbPedidos)
+                .HasForeignKey(d => d.Vend_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Vnta_tbPedidos_Vnta_tbVendedores_Vend_Id");
         });
 
         modelBuilder.Entity<tbPedidosDetalle>(entity =>
@@ -1546,6 +1545,10 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbRecargas", "Logi");
 
+            entity.Property(e => e.Reca_Confirmacion)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .IsFixedLength();
             entity.Property(e => e.Reca_Estado).HasDefaultValue(true);
             entity.Property(e => e.Reca_Fecha).HasColumnType("datetime");
             entity.Property(e => e.Reca_FechaCreacion).HasColumnType("datetime");
@@ -1829,7 +1832,7 @@ public partial class BDD_SIDCOPContext : DbContext
         {
             entity.HasKey(e => e.TrDe_Id).HasName("PK_Logi_TrasladosDetalle_ProT_Id");
 
-            entity.ToTable("tbTrasladosDetalle", "Logi", tb => tb.HasTrigger("TRG_Productos_Traslado_Salida"));
+            entity.ToTable("tbTrasladosDetalle", "Logi");
 
             entity.Property(e => e.TrDe_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.TrDe_FechaModificacion).HasColumnType("datetime");
