@@ -12,6 +12,8 @@ public partial class tbClientes
 
     public string Clie_Codigo { get; set; }
 
+    public string Clie_Nacionalidad { get; set; }
+
     public string Clie_DNI { get; set; }
 
     public string Clie_RTN { get; set; }
@@ -31,6 +33,8 @@ public partial class tbClientes
     public string Clie_Sexo { get; set; }
 
     public DateTime? Clie_FechaNacimiento { get; set; }
+
+    public int? TiVi_Id { get; set; }
 
     public int Cana_Id { get; set; }
 
@@ -62,26 +66,6 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
-    public virtual tbCanales Cana { get; set; }
-
-    public virtual tbEstadosCiviles EsCv { get; set; }
-
-    public virtual tbRutas Ruta { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
-
-    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
-
-    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
-
-    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
-
-    public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
-
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
@@ -102,4 +86,16 @@ public partial class tbClientes
 
     [NotMapped]
     public int Secuencia { get; set; }
+
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
+
+    public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
+
+    public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
+
+    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
+
+    public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
 }
