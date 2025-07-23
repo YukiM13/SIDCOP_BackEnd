@@ -1166,7 +1166,7 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             }
         }
 
-        public tbDireccionesPorCliente DireccionesPorCliente_Buscar(int? id)
+        public IEnumerable<tbDireccionesPorCliente> DireccionesPorCliente_Buscar(int? id)
         {
             try
             {
