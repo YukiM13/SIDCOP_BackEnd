@@ -13,12 +13,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CategoriasRepository _categoriasRepository;
         private readonly SubcategoriasRepository _subcategoriasRepository;
         private readonly ProductosRepository _productosRepository;
+        private readonly DescuentosRepository _descuentosRepository;
 
-        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository)
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository, DescuentosRepository descuentosRepository)
         {
             _categoriasRepository = categoriasRepository;
             _subcategoriasRepository = subcategoriasRepository;
             _productosRepository = productosRepository;
+            _descuentosRepository = descuentosRepository;
         }
 
         #region Categorias
@@ -254,6 +256,92 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error($"Error al actualizar producto: {ex.Message}");
+            }
+        }
+        #endregion
+
+        #region Descuentos
+        public ServiceResult Insertar(tbDescuentos descuento)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _descuentosRepository.Insert(descuento);
+                if (insertResult.code_Status > 0)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+        public ServiceResult InsertarDescuentoDetalle(tbDescuentosDetalle descuento)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _descuentosRepository.InsertDetails(descuento);
+                if (insertResult.code_Status == 1)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+
+        public ServiceResult InsertarDescuentoPorCliente(tbDescuentoPorClientes descuento)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _descuentosRepository.InsertDetailsClientes(descuento);
+                if (insertResult.code_Status == 1)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult InsertarDescuentoPorEscala(tbDescuentosPorEscala descuento)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _descuentosRepository.InsertDetallesEscala(descuento);
+                if (insertResult.code_Status == 1)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
             }
         }
         #endregion
