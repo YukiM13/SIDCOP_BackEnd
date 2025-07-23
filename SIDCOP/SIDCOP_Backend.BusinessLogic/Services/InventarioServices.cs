@@ -266,19 +266,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Inventario Bodega
 
-        public tbInventarioBodegas BuscarInventarioPorVendedor(int? id)
+ 
+        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
         {
             try
             {
-                var invent = _inventarioBodegaRepository.Find(id);
-                return invent;
+                var list = _inventarioBodegaRepository.Listprodvend(id);
+                return list;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return null;
+                IEnumerable<tbInventarioBodegas> resultado = null;
+                return resultado;
             }
         }
-
         #endregion
     }
 }
