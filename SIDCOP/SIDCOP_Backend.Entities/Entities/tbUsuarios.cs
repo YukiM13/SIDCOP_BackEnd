@@ -26,6 +26,15 @@ public partial class tbUsuarios
 
     public int Usua_Creacion { get; set; }
 
+    [NotMapped]
+    public string? PersonaId { get; set; }
+
+    [NotMapped]
+    public string? nombres { get; set; }
+
+    [NotMapped]
+    public string? apellidos { get; set; }
+
     public DateTime Usua_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }

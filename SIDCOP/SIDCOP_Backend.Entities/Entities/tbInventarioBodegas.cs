@@ -28,6 +28,8 @@ public partial class tbInventarioBodegas
     [NotMapped]
       public string? Prod_Imagen { get; set; }  
     [NotMapped]
+      public string? NombreProducto { get; set; }  
+    [NotMapped]
       public string? CantidadActual { get; set; } 
 
     public int Usua_Creacion { get; set; }
