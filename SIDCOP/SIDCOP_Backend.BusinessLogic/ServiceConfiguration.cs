@@ -66,6 +66,7 @@ namespace SIDCOP_Backend.BusinessLogic
 
             services.AddScoped<DireccionesPorClienteRepository>();
             services.AddScoped<TrasladoRepository>();
+            services.AddScoped<PedidoRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
