@@ -23,6 +23,7 @@ public partial class tbImpuestos
     public DateTime? Impu_FechaModificacion { get; set; }
 
     public bool Impu_Estado { get; set; }
+
     [NotMapped]
 
     public int? Secuencia { get; set; }

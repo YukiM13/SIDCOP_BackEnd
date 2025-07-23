@@ -23,9 +23,6 @@ public partial class tbSubcategorias
     public DateTime? Subc_FechaModificacion { get; set; }
 
     public bool Subc_Estado { get; set; }
-
-    public virtual tbCategorias Cate { get; set; }
-
     [NotMapped]
     public string Cate_Descripcion { get; set; }
 
@@ -34,6 +31,13 @@ public partial class tbSubcategorias
 
     [NotMapped]
     public string UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
+
+    public virtual tbCategorias Cate { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
