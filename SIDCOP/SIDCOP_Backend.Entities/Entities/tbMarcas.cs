@@ -21,6 +21,7 @@ public partial class tbMarcas
     public DateTime? Marc_FechaModificacion { get; set; }
 
     public bool Marc_Estado { get; set; }
+
     [NotMapped]
     public string UsuarioCreacion { get; set; }
     [NotMapped]
@@ -28,6 +29,7 @@ public partial class tbMarcas
 
     [NotMapped]
     public int? Secuencia { get; set; }
+
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

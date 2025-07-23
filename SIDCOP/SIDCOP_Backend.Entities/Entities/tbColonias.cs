@@ -13,23 +13,7 @@ public partial class tbColonias
     public string Colo_Descripcion { get; set; }
 
     public string Muni_Codigo { get; set; }
-    [NotMapped]
-    public int? Secuencia { get; set; }
 
-    [NotMapped]
-    public string? Muni_Descripcion { get; set; }
-
-    [NotMapped]
-    public string Depa_Codigo { get; set; }
-
-    [NotMapped]
-    public string? Depa_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
     public int Usua_Creacion { get; set; }
 
     public DateTime Colo_FechaCreacion { get; set; }
@@ -55,4 +39,22 @@ public partial class tbColonias
     public virtual ICollection<tbSucursales> tbSucursales { get; set; } = new List<tbSucursales>();
 
     public virtual ICollection<tbVendedores> tbVendedores { get; set; } = new List<tbVendedores>();
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
+    [NotMapped]
+    public string? Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Depa_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Depa_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 }
