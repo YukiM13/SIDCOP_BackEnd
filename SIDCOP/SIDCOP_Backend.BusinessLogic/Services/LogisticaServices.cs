@@ -220,7 +220,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var response = _trasladoRepository.Insert(item);
+                var response = _trasladoRepository.InsertTraslado(item);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
