@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
+using System.Xml.Linq;
 
 namespace Api_SIDCOP.API.Controllers.Inventario
 {
@@ -52,7 +53,17 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         public IActionResult InsertarDetalleEscala([FromBody] DescuentoPorEscalaViewModel item)
         {
             // Convertir la lista a JSON
-            item.Escala_JSON = JsonConvert.SerializeObject(item.Escalas);
+            var xml = new XElement("Escalas",
+                item.Escalas.Select(e =>
+                    new XElement("Escala",
+                        new XElement("Inicio", e.deEs_InicioEscala),
+                        new XElement("Fin", e.deEs_FinEscala),
+                        new XElement("Valor", e.deEs_Valor)
+                    )
+                )
+            );
+
+            item.Escala_JSON = xml.ToString();
 
             // Mapear a entidad del dominio
             var mapped = _mapper.Map<tbDescuentosPorEscala>(item);
