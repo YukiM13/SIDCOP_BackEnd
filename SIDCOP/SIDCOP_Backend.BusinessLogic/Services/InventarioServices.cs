@@ -13,12 +13,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CategoriasRepository _categoriasRepository;
         private readonly SubcategoriasRepository _subcategoriasRepository;
         private readonly ProductosRepository _productosRepository;
+        private readonly InventarioBodegaRepository _inventarioBodegaRepository;
+        private readonly InventarioSucursalRepository _inventarioSucursalRepository;
 
-        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository)
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, 
+            ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository, InventarioBodegaRepository inventarioBodegaRepository)
         {
             _categoriasRepository = categoriasRepository;
             _subcategoriasRepository = subcategoriasRepository;
             _productosRepository = productosRepository;
+            _inventarioSucursalRepository = inventarioSucursalRepository;
+            _inventarioBodegaRepository = inventarioBodegaRepository;
         }
 
         #region Categorias
@@ -256,6 +261,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al actualizar producto: {ex.Message}");
             }
         }
+        #endregion
+
+
+        #region Inventario Bodega
+
+        public IEnumerable<tbInventarioBodegas> ListarInventarioBodegas()
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbInventarioBodegas>();
+            }
+        }
+
         #endregion
     }
 }
