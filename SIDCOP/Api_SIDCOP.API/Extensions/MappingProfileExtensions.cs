@@ -58,6 +58,7 @@ namespace Api_SIDCOP.API.Extensions
 
             CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
             CreateMap<tbPedidos, PedidosViewModel>().ReverseMap();
+            CreateMap<tbRecargas, RecargasViewModel>().ReverseMap();
 
 
         }
