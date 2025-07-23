@@ -56,7 +56,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Usuario_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Usuario_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
                 if (result == null)
                 {
