@@ -512,7 +512,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #region CuentasPorCobrar
         public IEnumerable<tbCuentasPorCobrar> ListCuentasPorCobrar()
         {
-            //var result = new ServiceResult();
+           
             try
             {
                 var list = _cuentasporcobrarRepository.List();
@@ -524,6 +524,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result;
             }
         }
+
+
+
 
         #endregion
 
