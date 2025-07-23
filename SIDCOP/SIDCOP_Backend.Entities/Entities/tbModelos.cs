@@ -23,6 +23,7 @@ public partial class tbModelos
     public DateTime? Mode_FechaModificacion { get; set; }
 
     public bool Mode_Estado { get; set; }
+
     [NotMapped]
     public string MaVe_Marca { get; set; }
     [NotMapped]

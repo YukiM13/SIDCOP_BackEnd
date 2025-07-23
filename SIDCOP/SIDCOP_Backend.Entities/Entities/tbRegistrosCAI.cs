@@ -8,8 +8,6 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbRegistrosCAI
 {
-   
-
     public int RegC_Id { get; set; }
 
     public string RegC_Descripcion { get; set; }
@@ -38,20 +36,6 @@ public partial class tbRegistrosCAI
 
     public bool RegC_Estado { get; set; }
 
-    public virtual tbCAIs NCai { get; set; }
-
-    public virtual tbPuntosEmision PuEm { get; set; }
-
-    public virtual tbSucursales Sucu { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
-
-    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
-
     [NotMapped]
     public int Secuencia { get; set; }
 
@@ -72,4 +56,18 @@ public partial class tbRegistrosCAI
 
     [NotMapped]
     public String UsuarioModificacion { get; set; }
+
+    public virtual tbCAIs NCai { get; set; }
+
+    public virtual tbPuntosEmision PuEm { get; set; }
+
+    public virtual tbSucursales Sucu { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
+
+    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 }

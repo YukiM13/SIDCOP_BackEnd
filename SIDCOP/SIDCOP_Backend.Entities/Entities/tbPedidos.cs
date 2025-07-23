@@ -9,9 +9,9 @@ public partial class tbPedidos
 {
     public int Pedi_Id { get; set; }
 
-    public int Clie_Id { get; set; }
+    public int DiCl_Id { get; set; }
 
-    public int Empl_Id { get; set; }
+    public int Vend_Id { get; set; }
 
     public DateTime Pedi_FechaPedido { get; set; }
 
@@ -27,13 +27,13 @@ public partial class tbPedidos
 
     public bool Pedi_Estado { get; set; }
 
-    public virtual tbClientes Clie { get; set; }
-
-    public virtual tbEmpleados Empl { get; set; }
+    public virtual tbDireccionesPorCliente DiCl { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual tbVendedores Vend { get; set; }
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
 }

@@ -27,6 +27,21 @@ public partial class tbProductos
     public int Prov_Id { get; set; }
 
     public int Impu_Id { get; set; }
+
+    public decimal? Prod_PrecioUnitario { get; set; }
+
+    public decimal? Prod_CostoTotal { get; set; }
+
+    public string Prod_PagaImpuesto { get; set; }
+
+    public int? Prod_PromODesc { get; set; }
+
+    public string Prod_EsPromo { get; set; }
+
+    public bool Prod_Estado { get; set; }
+
+    public int Usua_Creacion { get; set; }
+
     [NotMapped]
     public int? Secuencia { get; set; }
 
@@ -54,19 +69,7 @@ public partial class tbProductos
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
-    public decimal? Prod_PrecioUnitario { get; set; }
-
-    public decimal? Prod_CostoTotal { get; set; }
-
-    public string Prod_PagaImpuesto { get; set; }
-
-    public int? Prod_PromODesc { get; set; }
-
-    public string Prod_EsPromo { get; set; }
-
-    public bool Prod_Estado { get; set; }
-
-    public int Usua_Creacion { get; set; }
+   
 
     public DateTime Prod_FechaCreacion { get; set; }
 
