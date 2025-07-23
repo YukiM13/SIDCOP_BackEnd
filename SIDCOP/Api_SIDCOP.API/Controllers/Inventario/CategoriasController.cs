@@ -19,9 +19,9 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         private readonly IMapper _mapper;
 
 
-        public CategoriasController(InventarioServices deporteservice, IMapper mapper)
+        public CategoriasController(InventarioServices inventarioServices, IMapper mapper)
         {
-            _inventarioServices = deporteservice;
+            _inventarioServices = inventarioServices;
             _mapper = mapper;
         }
 

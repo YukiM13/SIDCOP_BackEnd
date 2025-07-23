@@ -18,6 +18,9 @@ public partial class tbEmpleados
 
     public string Empl_Apellidos { get; set; }
 
+    [NotMapped]
+    public string NombreCompleto { get; set; }
+
     public string Empl_Sexo { get; set; }
 
     public DateTime Empl_FechaNacimiento { get; set; }
