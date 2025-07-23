@@ -316,5 +316,27 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+
+        #region Inventario
+
+        public static string InventarioSucursal_Listar      = "";
+        public static string InventarioSucursal_Insertar    = "";
+        public static string InventarioSucursal_Actualizar  = ""; 
+        public static string InventarioSucursal_Eliminar    = "";
+        public static string InventarioSucursal_Buscar      = "";
+
+        
+        public static string InventarioBodega_Listar        = "";
+        public static string InventarioBodega_Insertar      = "";
+        public static string InventarioBodega_Actualizar    = ""; 
+        public static string InventarioBodega_Eliminar      = "";
+        public static string InventarioAsgnadoPorVendedor   = "Inve.SP_InventarioAsignadoPorVendedor_Listar ";
+
+        #endregion
+
+
+
+
+
     }
 }
