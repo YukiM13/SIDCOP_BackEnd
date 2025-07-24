@@ -155,7 +155,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
         public IEnumerable<tbDescuentos> List()
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbDescuentos>(ScriptDatabase.Descuentos_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
         }
 
         public RequestStatus Update(tbDescuentos item)

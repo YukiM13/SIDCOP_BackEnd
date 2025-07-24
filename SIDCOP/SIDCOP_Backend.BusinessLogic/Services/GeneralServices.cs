@@ -684,12 +684,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<tbClientes> ListClientes()
+        public IEnumerable<tbClientes> ListClientesConfirmados()
         {
             var result = new ServiceResult();
             try
             {
-                var list = _clienteRepository.List();
+                var list = _clienteRepository.ListConfirmados();
                 return list;
             }
             catch (Exception ex)
@@ -699,6 +699,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> ListClientesSinConfirmacion()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clienteRepository.ListSinConfirmacion();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientes> clientes = null;
+                return clientes;
+            }
+        }
         #endregion Clientes
 
         #region Canales
@@ -1166,7 +1180,7 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             }
         }
 
-        public tbDireccionesPorCliente DireccionesPorCliente_Buscar(int? id)
+        public IEnumerable<tbDireccionesPorCliente> DireccionesPorCliente_Buscar(int? id)
         {
             try
             {

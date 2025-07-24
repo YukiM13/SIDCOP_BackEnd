@@ -33,13 +33,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public IEnumerable<tbCuentasPorCobrar> List()
         {
-            var parameter = new DynamicParameters();
+           
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_Listar,  commandType: System.Data.CommandType.StoredProcedure).ToList();
 
 
             return result;
+
+
         }
 
 
