@@ -6,6 +6,8 @@
 
         public string Clie_Codigo { get; set; }
 
+        public string Clie_Nacionalidad { get; set; }
+
         public string Clie_DNI { get; set; }
 
         public string Clie_RTN { get; set; }
@@ -27,6 +29,8 @@
         public string Clie_Sexo { get; set; }
 
         public DateTime? Clie_FechaNacimiento { get; set; }
+
+        public int? TiVi_Id { get; set; }
 
         public int Cana_Id { get; set; }
 
@@ -66,6 +70,8 @@
 
         public string? UsuaC_Nombre { get; set; }
         public string? UsuaM_Nombre { get; set; }
+
+        public string? TiVi_Descripcion { get; set; }
         public string? Cana_Descripcion { get; set; }
         public string? Colo_Descripcion { get; set; }
         public string? EsCv_Descripcion { get; set; }

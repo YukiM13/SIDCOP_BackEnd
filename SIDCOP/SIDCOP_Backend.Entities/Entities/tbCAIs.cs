@@ -14,8 +14,6 @@ public partial class tbCAIs
 
     public string NCai_Descripcion { get; set; }
 
-    [NotMapped]
-    public string Estado { get; set; }
     public int Usua_Creacion { get; set; }
 
     public DateTime NCai_FechaCreacion { get; set; }
@@ -31,4 +29,11 @@ public partial class tbCAIs
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbRegistrosCAI> tbRegistrosCAI { get; set; } = new List<tbRegistrosCAI>();
+
+    [NotMapped]
+    public string Estado { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
 }

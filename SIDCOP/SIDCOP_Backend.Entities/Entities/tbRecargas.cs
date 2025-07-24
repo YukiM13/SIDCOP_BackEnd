@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -9,7 +10,7 @@ public partial class tbRecargas
 {
     public int Reca_Id { get; set; }
 
-    public int Empl_Id { get; set; }
+    public int Vend_Id { get; set; }
 
     public int Bode_Id { get; set; }
 
@@ -18,8 +19,6 @@ public partial class tbRecargas
     public DateTime Reca_Fecha { get; set; }
 
     public string Reca_Observaciones { get; set; }
-
-    public bool Reca_Confirmacion { get; set; }
 
     public int? Usua_Confirmacion { get; set; }
 
@@ -33,9 +32,30 @@ public partial class tbRecargas
 
     public bool Reca_Estado { get; set; }
 
-    public virtual tbBodegas Bode { get; set; }
+    public string Reca_Confirmacion { get; set; }
 
-    public virtual tbEmpleados Empl { get; set; }
+    [NotMapped]
+    public string? Bode_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Prod_DescripcionCorta { get; set; }
+
+    [NotMapped]
+    public string? Prod_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+
+    [NotMapped]
+    public string? ReDe_Observaciones { get; set; }
+
+    [NotMapped]
+    public int? ReDe_Cantidad { get; set; }
+
+    [NotMapped]
+    public List<RecargaDetalleDTO> Detalles { get; set; }
+
+    public virtual tbBodegas Bode { get; set; }
 
     public virtual tbTraslados Tras { get; set; }
 
@@ -45,5 +65,15 @@ public partial class tbRecargas
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual tbVendedores Vend { get; set; }
+
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
+}
+
+public class RecargaDetalleDTO
+{
+    public int Prod_Id { get; set; }
+    public int ReDe_Cantidad { get; set; }
+    public string ReDe_Observaciones { get; set; }
+
 }

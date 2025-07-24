@@ -12,26 +12,11 @@ public partial class tbClientes
 
     public string Clie_Codigo { get; set; }
 
+    public string Clie_Nacionalidad { get; set; }
+
     public string Clie_DNI { get; set; }
 
     public string Clie_RTN { get; set; }
-    [NotMapped]
-    public string? UsuaC_Nombre { get; set; }
-    [NotMapped]
-
-    public string? UsuaM_Nombre { get; set; }
-    [NotMapped]
-
-    public string? Cana_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Colo_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? EsCv_Descripcion { get; set; }
-    [NotMapped]
-
-    public string? Ruta_Descripcion { get; set; }
 
     public string Clie_Nombres { get; set; }
 
@@ -48,6 +33,8 @@ public partial class tbClientes
     public string Clie_Sexo { get; set; }
 
     public DateTime? Clie_FechaNacimiento { get; set; }
+
+    public int? TiVi_Id { get; set; }
 
     public int Cana_Id { get; set; }
 
@@ -79,6 +66,31 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
+    [NotMapped]
+    public string? UsuaC_Nombre { get; set; }
+    [NotMapped]
+
+    public string? UsuaM_Nombre { get; set; }
+
+    [NotMapped]
+    public string? TiVi_Descripcion { get; set; }
+
+    [NotMapped]
+
+    public string? Cana_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Colo_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? EsCv_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Ruta_Descripcion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
     public virtual tbCanales Cana { get; set; }
 
     public virtual tbEstadosCiviles EsCv { get; set; }
@@ -89,6 +101,8 @@ public partial class tbClientes
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
+
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
     public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
@@ -96,8 +110,6 @@ public partial class tbClientes
     public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
-
-    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 
     public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
 }

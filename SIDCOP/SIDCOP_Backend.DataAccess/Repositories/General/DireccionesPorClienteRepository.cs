@@ -12,19 +12,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
     public class DireccionesPorClienteRepository : IRepository<tbDireccionesPorCliente>
     {
 
-        public tbDireccionesPorCliente Find(int? id)
+        public IEnumerable<tbDireccionesPorCliente> Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_ListarPorCliente, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.Query<tbDireccionesPorCliente>(ScriptDatabase.DireccionesPorCliente_ListarPorCliente, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new KeyNotFoundException("Cargo no encontrado.");
+                throw new KeyNotFoundException("Cliente no encontrado.");   
             }
             return result;
         }
-
 
         public RequestStatus Delete(int? id)
         {
@@ -67,7 +66,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         {
             if (item == null)
             {
-                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos." };
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erróneos." };
             }
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -129,5 +128,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+        tbDireccionesPorCliente IRepository<tbDireccionesPorCliente>.Find(int? id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
