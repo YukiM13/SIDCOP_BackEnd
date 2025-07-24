@@ -49,6 +49,24 @@ namespace Api_SIDCOP.API.Controllers.Logistica
 
         }
 
+        [HttpGet("ListarVendedor/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var sucursal = _logisticaServices.FindRecargas(id);
+            if (sucursal != null)
+            {
+                return Ok(sucursal);
+            }
+            else
+            {
+                return NotFound("Sucursal no encontrada.");
+            }
+        }
+
 
     }
 }
