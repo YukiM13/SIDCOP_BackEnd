@@ -689,7 +689,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var list = _clienteRepository.List();
+                var list = _clienteRepository.ListConfirmados();
                 return list;
             }
             catch (Exception ex)
