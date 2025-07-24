@@ -188,7 +188,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
-        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
+        public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
+        public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
 
         #endregion Clientes
 
