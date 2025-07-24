@@ -261,6 +261,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion
 
         #region Descuentos
+
+
+        public IEnumerable<tbDescuentos> ListarDescuentos()
+        {
+            try
+            {
+                var list = _descuentosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbDescuentos>();
+            }
+        }
         public ServiceResult Insertar(tbDescuentos descuento)
         {
             var result = new ServiceResult();

@@ -293,6 +293,7 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
         #region Descuentos
+        public static string Descuentos_Listar = "Inve.SP_Descuentos_Listar";
         public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
         public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
         public static string DescuentosPorEscala_Insertar = "[Inve].[SP_DescuentoPorEscala_Insertar]";
