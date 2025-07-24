@@ -4,8 +4,9 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 using SIDCOP_Backend.DataAccess;
-using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -358,7 +359,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var response = _recargasRepository.Find(id);
+                var response = _recargasRepository.Find2(id);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
@@ -368,6 +369,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion
-        
+
     }
 }
