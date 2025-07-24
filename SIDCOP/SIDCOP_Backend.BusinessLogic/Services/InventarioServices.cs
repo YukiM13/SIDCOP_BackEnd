@@ -382,6 +382,27 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al insertar producto: {ex.Message}");
             }
         }
+
+        public ServiceResult ActualizarDescuentos(tbDescuentos descuento)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _descuentosRepository.Update(descuento);
+                if (insertResult.code_Status > 0)
+                {
+                    return result.Ok(insertResult);
+                }
+                else
+                {
+                    return result.Error(insertResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al actualizar descuento: {ex.Message}");
+            }
+        }
         #endregion
     }
 }

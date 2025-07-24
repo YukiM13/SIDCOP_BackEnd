@@ -307,6 +307,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
         public static string DescuentosPorEscala_Insertar = "[Inve].[SP_DescuentoPorEscala_Insertar]";
         public static string DescuentosPorCliente_Insertar = "[Inve].[SP_DescuentoPorCliente_Insertar]";
+        public static string Descuento_Actualizar = "Inve.SP_Descuento_Actualizar";
         #endregion
 
         #region Traslados
