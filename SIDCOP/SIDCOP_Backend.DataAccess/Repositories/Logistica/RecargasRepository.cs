@@ -27,7 +27,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         {
             var parameter = new DynamicParameters();
 
-            parameter.Add("@Empl_Id", item.Empl_Id);
+           // parameter.Add("@Empl_Id", item.Empl_Id);
             parameter.Add("@Bode_Id", item.Bode_Id);
             parameter.Add("@Reca_Fecha", item.Reca_Fecha);
             parameter.Add("@Reca_Observaciones", item.Reca_Observaciones);

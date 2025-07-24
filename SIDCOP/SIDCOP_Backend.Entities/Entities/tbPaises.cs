@@ -5,33 +5,23 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbVendedoresPorRuta
+public partial class tbPaises
 {
-    public int VeRu_Id { get; set; }
+    public string Pais_Codigo { get; set; }
 
-    public int Vend_Id { get; set; }
-
-    public int Ruta_Id { get; set; }
-
-    public string VeRu_Dias { get; set; }
-
-    public bool Vend_Estado { get; set; }
+    public string Pais_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Vend_FechaCreacion { get; set; }
+    public DateTime Pais_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Vend_FechaModificacion { get; set; }
-
-    public virtual tbRutas Ruta { get; set; }
+    public DateTime? Pais_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual tbVendedores Vend { get; set; }
-
-
+    public virtual ICollection<tbDepartamentos> tbDepartamentos { get; set; } = new List<tbDepartamentos>();
 }

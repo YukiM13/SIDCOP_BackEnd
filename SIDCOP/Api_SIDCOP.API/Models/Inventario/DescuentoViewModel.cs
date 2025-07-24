@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Inventario
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Inventario
 {
     public class DescuentoViewModel
     {
@@ -25,5 +27,12 @@
         public DateTime? Desc_FechaModificacion { get; set; }
 
         public bool Desc_Estado { get; set; }
+
+        public string? clientes { get; set; }
+
+        public string? referencias { get; set; }
+
+        public string? escalas { get; set; }
+
     }
 }

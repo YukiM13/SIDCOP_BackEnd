@@ -22,24 +22,6 @@ public partial class tbColonias
 
     public DateTime? Colo_FechaModificacion { get; set; }
 
-    public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; } = new List<tbConfiguracionFacturas>();
-
-    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
-
-    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
-
-    public virtual ICollection<tbProveedores> tbProveedores { get; set; } = new List<tbProveedores>();
-
-    public virtual ICollection<tbSucursales> tbSucursales { get; set; } = new List<tbSucursales>();
-
-    public virtual ICollection<tbVendedores> tbVendedores { get; set; } = new List<tbVendedores>();
-
     [NotMapped]
     public int? Secuencia { get; set; }
 
@@ -57,4 +39,24 @@ public partial class tbColonias
 
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
+
+    public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
+
+    public virtual ICollection<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; } = new List<tbConfiguracionFacturas>();
+
+    public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
+
+    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
+
+    public virtual ICollection<tbProveedores> tbProveedores { get; set; } = new List<tbProveedores>();
+
+    public virtual ICollection<tbSucursales> tbSucursales { get; set; } = new List<tbSucursales>();
+
+    public virtual ICollection<tbVendedores> tbVendedores { get; set; } = new List<tbVendedores>();
 }

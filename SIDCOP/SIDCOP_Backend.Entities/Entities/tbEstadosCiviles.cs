@@ -18,8 +18,6 @@ public partial class tbEstadosCiviles
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? EsCv_FechaModificacion { get; set; }
-
     [NotMapped]
     public string UsuarioCreacion { get; set; }
     [NotMapped]
@@ -28,11 +26,15 @@ public partial class tbEstadosCiviles
     [NotMapped]
     public int? Secuencia { get; set; }
 
+    public DateTime? EsCv_FechaModificacion { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
 }
