@@ -19,6 +19,21 @@ namespace SIDCOP_Backend.Entities.Entities
         public string Usua_Clave { get; set; }
 
         [NotMapped]
+
+        public string? Role_Descripcion { get; set; }
+
+        [NotMapped]
+        public string? Cargo { get; set; }
+
+        [NotMapped]
+        public string? DNI { get; set; }
+
+        [NotMapped]
+        public string? Correo { get; set; }
+
+        [NotMapped]
+        public string? Telefono { get; set; }
+
         public int? PersonaId { get; set; }
 
         [NotMapped]
@@ -26,6 +41,9 @@ namespace SIDCOP_Backend.Entities.Entities
 
         [NotMapped]
         public string? Apellidos { get; set; }
+
+        [NotMapped]
+        public string? Sucursal { get; set; }
 
         public int Role_Id { get; set; }
 
