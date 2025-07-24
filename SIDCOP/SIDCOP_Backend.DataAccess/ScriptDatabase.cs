@@ -296,7 +296,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Recargas
         public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
-        //public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
