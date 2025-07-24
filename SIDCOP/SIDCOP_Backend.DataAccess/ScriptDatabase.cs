@@ -188,7 +188,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
-        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
+        public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
+        public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
 
         #endregion Clientes
 
@@ -295,7 +296,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Recargas
         public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
-        //public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
