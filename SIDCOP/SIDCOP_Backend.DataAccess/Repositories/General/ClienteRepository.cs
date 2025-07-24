@@ -88,6 +88,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                
+
+                
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
@@ -157,5 +160,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
+
+
     }
 }
+
+
