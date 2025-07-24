@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbAvales]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbCanales]",
          "ObjectType": 0
       },
@@ -87,11 +91,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbPaises]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbProveedores]",
          "ObjectType": 0
       },
       {
          "Name": "[Gral].[tbSucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbTiposDeVivienda]",
          "ObjectType": 0
       },
       {

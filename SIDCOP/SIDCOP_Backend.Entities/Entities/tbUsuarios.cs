@@ -16,6 +16,12 @@ public partial class tbUsuarios
 
     public int Role_Id { get; set; }
 
+    [NotMapped]
+    public string? Role_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Correo { get; set; }
+
     public int Usua_IdPersona { get; set; }
 
     public bool Usua_EsVendedor { get; set; }
@@ -34,14 +40,17 @@ public partial class tbUsuarios
 
     public bool Usua_Estado { get; set; }
 
+    [NotMapped]
+    public string? PersonaId { get; set; }
 
     [NotMapped]
-    public string Role_Descripcion { get; set; }
-
+    public string? nombres { get; set; }
 
     [NotMapped]
-    public string? Correo { get; set; }
+    public string? apellidos { get; set; }
 
+    [NotMapped]
+    public string? Telefono { get; set; }
 
     [NotMapped]
     public string? PermisosJson { get; set; }
@@ -58,6 +67,10 @@ public partial class tbUsuarios
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbAvales> tbAvalesUsua_CreacionNavigation { get; set; } = new List<tbAvales>();
+
+    public virtual ICollection<tbAvales> tbAvalesUsua_ModificacionNavigation { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbBodegas> tbBodegasUsua_CreacionNavigation { get; set; } = new List<tbBodegas>();
 
@@ -80,8 +93,8 @@ public partial class tbUsuarios
     public virtual ICollection<tbCategorias> tbCategoriasUsua_ModificacionNavigation { get; set; } = new List<tbCategorias>();
 
     public virtual ICollection<tbClientes> tbClientesUsua_CreacionNavigation { get; set; } = new List<tbClientes>();
-
     public virtual ICollection<tbClientes> tbClientesUsua_ModificacionNavigation { get; set; } = new List<tbClientes>();
+
 
     public virtual ICollection<tbColonias> tbColoniasUsua_CreacionNavigation { get; set; } = new List<tbColonias>();
 
@@ -171,6 +184,10 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbMunicipios> tbMunicipiosUsua_ModificacionNavigation { get; set; } = new List<tbMunicipios>();
 
+    public virtual ICollection<tbPaises> tbPaisesUsua_CreacionNavigation { get; set; } = new List<tbPaises>();
+
+    public virtual ICollection<tbPaises> tbPaisesUsua_ModificacionNavigation { get; set; } = new List<tbPaises>();
+
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalleUsua_CreacionNavigation { get; set; } = new List<tbPedidosDetalle>();
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalleUsua_ModificacionNavigation { get; set; } = new List<tbPedidosDetalle>();
@@ -236,6 +253,10 @@ public partial class tbUsuarios
     public virtual ICollection<tbSucursales> tbSucursalesUsua_CreacionNavigation { get; set; } = new List<tbSucursales>();
 
     public virtual ICollection<tbSucursales> tbSucursalesUsua_ModificacionNavigation { get; set; } = new List<tbSucursales>();
+
+    public virtual ICollection<tbTiposDeVivienda> tbTiposDeViviendaUsua_CreacionNavigation { get; set; } = new List<tbTiposDeVivienda>();
+
+    public virtual ICollection<tbTiposDeVivienda> tbTiposDeViviendaUsua_ModificacionNavigation { get; set; } = new List<tbTiposDeVivienda>();
 
     public virtual ICollection<tbTrasladosDetalle> tbTrasladosDetalleUsua_CreacionNavigation { get; set; } = new List<tbTrasladosDetalle>();
 

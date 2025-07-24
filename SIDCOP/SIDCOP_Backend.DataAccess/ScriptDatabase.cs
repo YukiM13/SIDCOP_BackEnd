@@ -188,7 +188,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
-        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
+        public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
+        public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
 
         #endregion Clientes
 
@@ -292,6 +293,23 @@ namespace SIDCOP_Backend.DataAccess
         public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
 
+        #region Recargas
+        public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
+        public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
+        public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
+        //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
+        //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
+
+
+        #region Descuentos
+        public static string Descuentos_Listar = "Inve.SP_Descuentos_Listar";
+        public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
+        public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
+        public static string DescuentosPorEscala_Insertar = "[Inve].[SP_DescuentoPorEscala_Insertar]";
+        public static string DescuentosPorCliente_Insertar = "[Inve].[SP_DescuentoPorCliente_Insertar]";
+        #endregion
+
         #region Traslados
 
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
@@ -299,6 +317,37 @@ namespace SIDCOP_Backend.DataAccess
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
 
         #endregion
+
+        #region Pedidos y Pedidos Detalles
+
+        public static string Pedidos_Listar = "[Vnta].[SP_Pedidos_Listar]";
+        public static string Pedidos_Insertar = "[Vnta].[SP_Pedido_Insertar]";
+        public static string Pedidos_Actualizar = "[Vnta].[SP_Pedido_Actualizar]";
+        public static string Pedidos_Eliminar = "[Vnta].[SP_Pedido_Eliminar]";
+
+        #endregion
+
+
+        #region Inventario
+
+        public static string InventarioSucursal_Listar      = "";
+        public static string InventarioSucursal_Insertar    = "";
+        public static string InventarioSucursal_Actualizar  = ""; 
+        public static string InventarioSucursal_Eliminar    = "";
+        public static string InventarioSucursal_Buscar      = "";
+
+        
+        public static string InventarioBodega_Listar        = "";
+        public static string InventarioBodega_Insertar      = "";
+        public static string InventarioBodega_Actualizar    = ""; 
+        public static string InventarioBodega_Eliminar      = "";
+        public static string InventarioAsgnadoPorVendedor   = "Inve.SP_InventarioAsignadoPorVendedor_Listar ";
+
+        #endregion
+
+
+
+
 
     }
 }

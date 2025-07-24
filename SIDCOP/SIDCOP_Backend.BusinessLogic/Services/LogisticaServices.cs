@@ -4,8 +4,9 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 using SIDCOP_Backend.DataAccess;
-using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -23,14 +24,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly RutasRepository _rutasRepository;
         private readonly BodegaRepository _bodegaRepository;
         private readonly TrasladoRepository _trasladoRepository;
+        private readonly RecargasRepository _recargasRepository;
 
         // Constructor que recibe los repositorios necesarios
-        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository, TrasladoRepository trasladoRepository)
+        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository, 
+        TrasladoRepository trasladoRepository, RecargasRepository recargasRepository)
         {
-            // Asignación de los repositorios a las variables de instancia
+            // Asignaciï¿½n de los repositorios a las variables de instancia
             _rutasRepository = rutasRepository;
             _bodegaRepository = bodegaRepository;
             _trasladoRepository = trasladoRepository;
+            _recargasRepository = recargasRepository;
         }
 
         #region Rutas
@@ -280,6 +284,96 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _trasladoRepository.Find(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+        #endregion
+
+        #region Recargas 
+
+
+        public IEnumerable<tbRecargas> ListRecargas()
+        {
+
+            try
+            {
+                var list = _recargasRepository.List();
+                return list; //Retorna el listado 
+            }
+            catch (Exception ex)
+            {
+                // En caso de error, retorna null
+                IEnumerable<tbRecargas> result = null;
+                return result;
+            }
+        }
+
+
+        public ServiceResult InsertRecargas(tbRecargas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.Insert(item);
+
+                if (response.code_Status == 1)
+                {
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar sucursal: {ex.Message}");
+            }
+        }
+
+
+        public ServiceResult UpdateRecargas(tbRecargas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.Update(item);
+                return result.Ok(response);  // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+
+        public ServiceResult DeleteRecargas(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.Delete(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+
+        public ServiceResult FindRecargas(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.Find2(id);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
