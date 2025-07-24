@@ -87,6 +87,16 @@ public partial class tbClientes
     [NotMapped]
     public int Secuencia { get; set; }
 
+    public virtual tbCanales Cana { get; set; }
+
+    public virtual tbEstadosCiviles EsCv { get; set; }
+
+    public virtual tbRutas Ruta { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
     public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
