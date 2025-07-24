@@ -35,7 +35,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameters.Add("@Tras_Origen", item.Tras_Origen, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Destino", item.Tras_Destino, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Fecha", item.Tras_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameters.Add("@Tras_Observaciones", "fgergreger", System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Tras_Observaciones", item.Tras_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -58,7 +58,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameters.Add("@Tras_Id", item.Tras_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@TrDe_Cantidad", item.TrDe_Cantidad, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameters.Add("@TrDe_Observaciones", item.TrDe_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@TrDe_Observaciones", "XDDD", System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@TrDe_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
