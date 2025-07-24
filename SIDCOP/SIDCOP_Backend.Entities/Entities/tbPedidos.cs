@@ -2,11 +2,17 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbPedidos
 {
+
+    [NotMapped]
+
+    public int? Secuencia { get; set; }
+
     public int Pedi_Id { get; set; }
 
     public int DiCl_Id { get; set; }
@@ -27,6 +33,59 @@ public partial class tbPedidos
 
     public bool Pedi_Estado { get; set; }
 
+    [NotMapped]
+    public string? Clie_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Clie_NombreNegocio { get; set; }
+
+    [NotMapped]
+    public string? Clie_Nombres { get; set; }
+
+    [NotMapped]
+    public string? Clie_Apellidos { get; set; }
+
+    [NotMapped]
+    public string? Colo_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Depa_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? DiCl_DireccionExacta { get; set; }
+
+
+    [NotMapped]
+    public string? Vend_Nombres { get; set; }
+
+    [NotMapped]
+    public string? Vend_Apellidos { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string? Prod_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Prod_Descripcion { get; set; }
+
+    [NotMapped]
+    public decimal? PeDe_ProdPrecio { get; set; }
+
+    [NotMapped]
+    public int? PeDe_Cantidad { get; set; }
+
+
+    [NotMapped]
+    public List<PedidoDetalleDTO> Detalles { get; set; }
+
     public virtual tbDireccionesPorCliente DiCl { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
@@ -36,4 +95,11 @@ public partial class tbPedidos
     public virtual tbVendedores Vend { get; set; }
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
+}
+
+public class PedidoDetalleDTO
+{
+    public int Prod_Id { get; set; }
+    public int PeDe_Cantidad { get; set; }
+    public decimal PeDe_ProdPrecio { get; set; }
 }

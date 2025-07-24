@@ -20,6 +20,8 @@ public partial class tbDepartamentos
 
     public DateTime? Depa_FechaModificacion { get; set; }
 
+    public string Pais_Codigo { get; set; }
+
     [NotMapped]
     public string UsuarioCreacion { get; set; }
 
@@ -28,6 +30,8 @@ public partial class tbDepartamentos
 
     [NotMapped]
     public int? Secuencia { get; set; }
+
+    public virtual tbPaises Pais_CodigoNavigation { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

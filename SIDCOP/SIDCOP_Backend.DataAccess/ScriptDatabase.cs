@@ -292,6 +292,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
 
+        #region Recargas
+        public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
+        public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
+        //public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
+        //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
+
+
         #region Descuentos
         public static string Descuentos_Listar = "Inve.SP_Descuentos_Listar";
         public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
@@ -307,6 +316,37 @@ namespace SIDCOP_Backend.DataAccess
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
 
         #endregion
+
+        #region Pedidos y Pedidos Detalles
+
+        public static string Pedidos_Listar = "[Vnta].[SP_Pedidos_Listar]";
+        public static string Pedidos_Insertar = "[Vnta].[SP_Pedido_Insertar]";
+        public static string Pedidos_Actualizar = "[Vnta].[SP_Pedido_Actualizar]";
+        public static string Pedidos_Eliminar = "[Vnta].[SP_Pedido_Eliminar]";
+
+        #endregion
+
+
+        #region Inventario
+
+        public static string InventarioSucursal_Listar      = "";
+        public static string InventarioSucursal_Insertar    = "";
+        public static string InventarioSucursal_Actualizar  = ""; 
+        public static string InventarioSucursal_Eliminar    = "";
+        public static string InventarioSucursal_Buscar      = "";
+
+        
+        public static string InventarioBodega_Listar        = "";
+        public static string InventarioBodega_Insertar      = "";
+        public static string InventarioBodega_Actualizar    = ""; 
+        public static string InventarioBodega_Eliminar      = "";
+        public static string InventarioAsgnadoPorVendedor   = "Inve.SP_InventarioAsignadoPorVendedor_Listar ";
+
+        #endregion
+
+
+
+
 
     }
 }

@@ -13,15 +13,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CategoriasRepository _categoriasRepository;
         private readonly SubcategoriasRepository _subcategoriasRepository;
         private readonly ProductosRepository _productosRepository;
-        private readonly DescuentosRepository _descuentosRepository;
-
-        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository, DescuentosRepository descuentosRepository)
-        {
-            _categoriasRepository = categoriasRepository;
-            _subcategoriasRepository = subcategoriasRepository;
-            _productosRepository = productosRepository;
-            _descuentosRepository = descuentosRepository;
-        }
+        private readonly InventarioBodegaRepository _inventarioBodegaRepository;
+        private readonly InventarioSucursalRepository _inventarioSucursalRepository;
+     private readonly DescuentosRepository _descuentosRepository;
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
+       ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
+       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
+       {
+           _categoriasRepository = categoriasRepository;
+           _subcategoriasRepository = subcategoriasRepository;
+           _productosRepository = productosRepository;
+           _inventarioSucursalRepository = inventarioSucursalRepository;
+           _inventarioBodegaRepository = inventarioBodegaRepository;
+           _descuentosRepository = descuentosRepository;
+       }
 
         #region Categorias
 
@@ -259,6 +264,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
+
+
+        #region Inventario Bodega
+
+ 
+        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.Listprodvend(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioBodegas> resultado = null;
+                return resultado;
+            }
+        }
+#endregion
 
         #region Descuentos
 

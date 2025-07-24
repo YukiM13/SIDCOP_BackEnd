@@ -49,6 +49,9 @@ public partial class tbEmpleados
     public string Empl_Imagen { get; set; }
 
     [NotMapped]
+    public string NombreCompleto { get; set; }
+
+    [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
     [NotMapped]
@@ -83,8 +86,6 @@ public partial class tbEmpleados
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 
     public virtual ICollection<tbVendedores> tbVendedoresVend_AyudanteNavigation { get; set; } = new List<tbVendedores>();
 
