@@ -23,7 +23,7 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpGet("Listar")]
-        public IActionResult ListarDireccionesPorCLiente()
+        public IActionResult ListarDireccionesPorCliente()
         {
             var list = _generalServices.ListarDireccionesPorCliente();
             return Ok(list);
