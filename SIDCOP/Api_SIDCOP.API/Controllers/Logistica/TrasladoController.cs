@@ -45,5 +45,14 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             return Ok(result); // Retorna resultado
         }
 
+        // POST: /TrasladoDetalle/Insertar
+        // Inserta un nuevo detalle de traslado
+        [HttpPost("InsertarDetalle")]
+        public IActionResult InsertarDetalle(TrasladoDetalleViewModel item)
+        {
+            var mapped = _mapper.Map<tbTrasladosDetalle>(item);  // Convierte de ViewModel a entidad
+            var result = _logisticaServices.InsertTrasladoDetalle(mapped); // Ejecuta inserción
+            return Ok(result); // Retorna resultado
+        }
     }
 }

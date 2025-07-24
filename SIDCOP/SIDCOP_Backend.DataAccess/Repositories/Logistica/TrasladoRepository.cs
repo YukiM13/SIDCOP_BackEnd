@@ -35,7 +35,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameters.Add("@Tras_Origen", item.Tras_Origen, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Destino", item.Tras_Destino, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Fecha", item.Tras_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameters.Add("@Tras_Observaciones", item.Tras_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Tras_Observaciones", "fgergreger", System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -50,6 +50,31 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             //Retorna el status del procedimiento para saber si se realizo
             return status;
         }
+
+        public RequestStatus InsertTrasladoDetalle(tbTrasladosDetalle item)
+        {
+            var parameters = new DynamicParameters();
+            //Declaracion de parametros
+            parameters.Add("@Tras_Id", item.Tras_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameters.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameters.Add("@TrDe_Cantidad", item.TrDe_Cantidad, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameters.Add("@TrDe_Observaciones", item.TrDe_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@TrDe_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            //Se llama el ConnectionString para conectarse a la base de datos
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            //Ejecuta el procedimiento con los parametros y trae lista de RequestStatus
+            var result = db.Query<RequestStatus>(ScriptDatabase.TrasladoDetalle_Insertar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            var status = new RequestStatus();
+            status = result.First();
+
+            //Retorna el status del procedimiento para saber si se realizo
+            return status;
+        }
+
+
 
         public tbTraslados Find(int? id)
         {

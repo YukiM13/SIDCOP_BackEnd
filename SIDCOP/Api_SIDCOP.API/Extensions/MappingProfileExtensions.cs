@@ -50,6 +50,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbPuntosEmision, PuntoEmisionViewModel>().ReverseMap();
             CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();
             CreateMap<tbTraslados, TrasladoViewModel>().ReverseMap();
+            CreateMap<tbTrasladosDetalle, TrasladoDetalleViewModel>().ReverseMap();
 
             CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
 

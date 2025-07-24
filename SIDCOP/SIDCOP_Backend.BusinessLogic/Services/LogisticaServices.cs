@@ -229,6 +229,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult InsertTrasladoDetalle(tbTrasladosDetalle item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.InsertTrasladoDetalle(item);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
+            }
+        }
+
 
         public ServiceResult UpdateTraslado(tbTraslados item)
         {
