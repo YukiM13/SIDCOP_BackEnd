@@ -302,6 +302,7 @@ namespace SIDCOP_Backend.DataAccess
 
 
         #region Descuentos
+        public static string Descuentos_Listar = "Inve.SP_Descuentos_Listar";
         public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
         public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
         public static string DescuentosPorEscala_Insertar = "[Inve].[SP_DescuentoPorEscala_Insertar]";
@@ -313,6 +314,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
         public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
+
+        #endregion
+
+        #region Pedidos y Pedidos Detalles
+
+        public static string Pedidos_Listar = "[Vnta].[SP_Pedidos_Listar]";
+        public static string Pedidos_Insertar = "[Vnta].[SP_Pedido_Insertar]";
+        public static string Pedidos_Actualizar = "[Vnta].[SP_Pedido_Actualizar]";
+        public static string Pedidos_Eliminar = "[Vnta].[SP_Pedido_Eliminar]";
 
         #endregion
 

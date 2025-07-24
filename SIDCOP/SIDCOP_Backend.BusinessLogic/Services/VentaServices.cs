@@ -13,6 +13,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Org.BouncyCastle.Crypto.Utilities;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -28,13 +30,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PuntoEmisionRepository _puntoEmisionRepository;
 
         private readonly CuentasPorCobrarRepository _cuentasporcobrarRepository;
+        private readonly PedidoRepository _pedidoRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
             ConfiguracionFacturaRepository configuracionFacturaRepository,
             PuntoEmisionRepository puntoEmisionRepository,
-            CuentasPorCobrarRepository cuentaporcobrarRepository
+            CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository
 
         )
         {
@@ -47,11 +50,76 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _configuracionFacturaRepository = configuracionFacturaRepository;
             _puntoEmisionRepository = puntoEmisionRepository;
             _cuentasporcobrarRepository = cuentaporcobrarRepository;
+            _pedidoRepository = pedidoRepository;
 
         }
 
 
+        #region Pedidos
+        public ServiceResult InsertarPedido(tbPedidos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _pedidoRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
 
+        public ServiceResult EditarPedido(tbPedidos item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _pedidoRepository.Update(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarPedido(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _pedidoRepository.Delete(id);
+                if (deleteResult.code_Status == 1)
+                {
+                    return result.Ok(deleteResult);
+                }
+                else
+                {
+                    return result.Error(deleteResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        public IEnumerable<tbPedidos> ListarPedidos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _pedidoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbPedidos> usua = null;
+                return usua;
+            }
+        }
+        #endregion
 
 
 
@@ -224,7 +292,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         //    }
         //}
         #endregion
-                #region Impuestos
+
+        #region Impuestos
 
         public IEnumerable<tbImpuestos> ListImpuestos()
         {
