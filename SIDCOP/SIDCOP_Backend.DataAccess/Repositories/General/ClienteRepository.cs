@@ -59,6 +59,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Codigo", item.Clie_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_Nacionalidad", item.Clie_Nacionalidad, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_DNI", item.Clie_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_RTN", item.Clie_RTN, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Nombres", item.Clie_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -69,6 +70,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Correo", item.Clie_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Sexo", item.Clie_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_FechaNacimiento", item.Clie_FechaNacimiento, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@TiVi_Id", item.TiVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Cana_Id", item.Cana_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@EsCv_Id", item.EsCv_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Id", item.Ruta_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -84,6 +86,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                
+
+                
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
@@ -149,5 +154,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
+
+
     }
 }
+
+
