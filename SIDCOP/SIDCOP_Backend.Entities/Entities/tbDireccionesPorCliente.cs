@@ -36,4 +36,6 @@ public partial class tbDireccionesPorCliente
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 }

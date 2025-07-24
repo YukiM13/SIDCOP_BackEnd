@@ -50,24 +50,6 @@ public partial class tbVendedores
 
     public string Vend_Imagen { get; set; }
 
-    public virtual tbColonias Colo { get; set; }
-
-    public virtual tbSucursales Sucu { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual tbEmpleados Vend_AyudanteNavigation { get; set; }
-
-    public virtual tbEmpleados Vend_SupervisorNavigation { get; set; }
-
-    public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
-
-    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
-
-    public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; } = new List<tbVendedoresPorRuta>();
-
 
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
@@ -107,4 +89,29 @@ public partial class tbVendedores
 
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
+    public virtual tbColonias Colo { get; set; }
+
+    public virtual tbSucursales Sucu { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual tbEmpleados Vend_AyudanteNavigation { get; set; }
+
+    public virtual tbEmpleados Vend_SupervisorNavigation { get; set; }
+
+    public virtual ICollection<tbBodegas> tbBodegas { get; set; } = new List<tbBodegas>();
+
+    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
+
+    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
+
+    public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
+
+    public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; } = new List<tbVendedoresPorRuta>();
 }

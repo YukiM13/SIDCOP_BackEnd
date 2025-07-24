@@ -13,6 +13,15 @@ public partial class tbColonias
     public string Colo_Descripcion { get; set; }
 
     public string Muni_Codigo { get; set; }
+
+    public int Usua_Creacion { get; set; }
+
+    public DateTime Colo_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? Colo_FechaModificacion { get; set; }
+
     [NotMapped]
     public int? Secuencia { get; set; }
 
@@ -30,19 +39,14 @@ public partial class tbColonias
 
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
-    public int Usua_Creacion { get; set; }
-
-    public DateTime Colo_FechaCreacion { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Colo_FechaModificacion { get; set; }
 
     public virtual tbMunicipios Muni_CodigoNavigation { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; } = new List<tbConfiguracionFacturas>();
 
