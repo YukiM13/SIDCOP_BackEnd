@@ -10,7 +10,7 @@ public partial class tbRecargas
 {
     public int Reca_Id { get; set; }
 
-    public int Empl_Id { get; set; }
+    public int Vend_Id { get; set; }
 
     public int Bode_Id { get; set; }
 
@@ -57,8 +57,6 @@ public partial class tbRecargas
 
     public virtual tbBodegas Bode { get; set; }
 
-    public virtual tbEmpleados Empl { get; set; }
-
     public virtual tbTraslados Tras { get; set; }
 
     public virtual tbUsuarios Usua_ConfirmacionNavigation { get; set; }
@@ -66,6 +64,8 @@ public partial class tbRecargas
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual tbVendedores Vend { get; set; }
 
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
 }
@@ -75,4 +75,5 @@ public class RecargaDetalleDTO
     public int Prod_Id { get; set; }
     public int ReDe_Cantidad { get; set; }
     public string ReDe_Observaciones { get; set; }
+
 }

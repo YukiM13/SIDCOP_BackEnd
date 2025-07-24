@@ -316,6 +316,15 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+        #region Pedidos y Pedidos Detalles
+
+        public static string Pedidos_Listar = "[Vnta].[SP_Pedidos_Listar]";
+        public static string Pedidos_Insertar = "[Vnta].[SP_Pedido_Insertar]";
+        public static string Pedidos_Actualizar = "[Vnta].[SP_Pedido_Actualizar]";
+        public static string Pedidos_Eliminar = "[Vnta].[SP_Pedido_Eliminar]";
+
+        #endregion
+
 
         #region Inventario
 
