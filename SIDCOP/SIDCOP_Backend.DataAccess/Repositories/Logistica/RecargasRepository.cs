@@ -23,6 +23,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             throw new NotImplementedException();
         }
 
+        public IEnumerable<tbRecargas> Find2(int? id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Vend_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<tbRecargas>(ScriptDatabase.Recargas_Listar_Vendedor, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Vendedor sin recargas no encontrada");
+            }
+            return result;
+        }
+
         public RequestStatus Insert(tbRecargas item)
         {
             var parameter = new DynamicParameters();
