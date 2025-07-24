@@ -30,4 +30,6 @@ public partial class tbRutas
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; } = new List<tbVendedoresPorRuta>();
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
 }

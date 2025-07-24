@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.Inventario;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,15 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             _inventarioServices = deporteservice;
             _mapper = mapper;
         }
+
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            var list = _inventarioServices.ListarDescuentos(); // Obtiene lista desde la capa de lógica
+            var mapped = _mapper.Map<IEnumerable<DescuentoViewModel>>(list); // Mapea a ViewModel
+            return Ok(mapped); // Retorna lista
+        }
+
 
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] DescuentoViewModel item)

@@ -91,6 +91,10 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbCategorias> tbCategoriasUsua_ModificacionNavigation { get; set; } = new List<tbCategorias>();
 
+    public virtual ICollection<tbClientes> tbClientesUsua_CreacionNavigation { get; set; } = new List<tbClientes>();
+    public virtual ICollection<tbClientes> tbClientesUsua_ModificacionNavigation { get; set; } = new List<tbClientes>();
+
+
     public virtual ICollection<tbColonias> tbColoniasUsua_CreacionNavigation { get; set; } = new List<tbColonias>();
 
     public virtual ICollection<tbColonias> tbColoniasUsua_ModificacionNavigation { get; set; } = new List<tbColonias>();
