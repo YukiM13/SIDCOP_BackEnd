@@ -452,6 +452,27 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(17)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Vencido).HasDefaultValue(false);
+        entity.HasOne(d => d.Cana).WithMany(p => p.tbClientes)
+                .HasForeignKey(d => d.Cana_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbClientes_tbCanales_Cana_Id");
+
+            entity.HasOne(d => d.EsCv).WithMany(p => p.tbClientes)
+                .HasForeignKey(d => d.EsCv_Id)
+                .HasConstraintName("FK_Gral_tbClientes_tbEstadosCiviles_EsCv_Id");
+
+            entity.HasOne(d => d.Ruta).WithMany(p => p.tbClientes)
+                .HasForeignKey(d => d.Ruta_Id)
+                .HasConstraintName("FK_Gral_tbClientes_tbRutas_Ruta_Id");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbClientesUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbClientes_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbClientesUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Modificacion)
+                .HasConstraintName("FK_Gral_tbClientes_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbColonias>(entity =>
