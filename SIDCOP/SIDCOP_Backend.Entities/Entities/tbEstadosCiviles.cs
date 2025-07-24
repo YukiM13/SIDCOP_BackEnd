@@ -35,4 +35,6 @@ public partial class tbEstadosCiviles
     public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
 }
