@@ -684,7 +684,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<tbClientes> ListClientes()
+        public IEnumerable<tbClientes> ListClientesConfirmados()
         {
             var result = new ServiceResult();
             try
@@ -699,6 +699,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> ListClientesSinConfirmacion()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clienteRepository.ListSinConfirmacion();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientes> clientes = null;
+                return clientes;
+            }
+        }
         #endregion Clientes
 
         #region Canales
