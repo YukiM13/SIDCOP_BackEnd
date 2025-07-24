@@ -31,5 +31,8 @@ public partial class tbCanales
     [NotMapped]
     public int Secuencia { get; set; }
 
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
+
 
 }
