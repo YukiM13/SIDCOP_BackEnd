@@ -168,8 +168,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-
-
+        public IEnumerable<tbClientes> List()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

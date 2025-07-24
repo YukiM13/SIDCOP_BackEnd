@@ -50,13 +50,6 @@ public partial class tbUsuarios
     public string? apellidos { get; set; }
 
     [NotMapped]
-    public string Role_Descripcion { get; set; }
-
-
-    [NotMapped]
-    public string? Correo { get; set; }
-
-    [NotMapped]
     public string? Telefono { get; set; }
 
     [NotMapped]
