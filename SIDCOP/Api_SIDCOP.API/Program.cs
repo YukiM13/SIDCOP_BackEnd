@@ -73,6 +73,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
 builder.Services.AddSingleton<ApiKeyAuthorizationFilter>();
 builder.Services.AddSingleton<IApiKeyValidator, ApiKeyValidator>();
 
