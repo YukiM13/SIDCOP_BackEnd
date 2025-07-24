@@ -53,7 +53,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         [HttpPost("IniciarSesion")]
         public IActionResult IniciarSesion([FromBody] UsuarioViewModel item)
         {
-            var mapped = _mapper.Map<tbUsuarios>(item);
+            var mapped = _mapper.Map<LoginResponse>(item);
             var result = _accesoServices.IniciarSesion(mapped);
 
             if (result == null || result.code_Status != 1)
