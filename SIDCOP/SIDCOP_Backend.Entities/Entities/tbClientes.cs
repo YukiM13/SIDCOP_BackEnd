@@ -71,6 +71,10 @@ public partial class tbClientes
     [NotMapped]
 
     public string? UsuaM_Nombre { get; set; }
+
+    [NotMapped]
+    public string? TiVi_Descripcion { get; set; }
+
     [NotMapped]
 
     public string? Cana_Descripcion { get; set; }
