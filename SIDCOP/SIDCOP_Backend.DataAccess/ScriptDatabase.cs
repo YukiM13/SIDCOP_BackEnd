@@ -359,5 +359,11 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
+        #region
+        
+        public const string PreciosPorProducto_InsertarLista = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
+        public const string PreciosPorProductoListar_PorProducto = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
+
+        #endregion
     }
 }

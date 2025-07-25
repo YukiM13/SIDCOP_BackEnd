@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -32,6 +33,27 @@ public partial class tbPreciosPorProducto
     public DateTime? PreP_FechaModificacion { get; set; }
 
     public bool? PreP_Estado { get; set; }
+
+    [NotMapped]
+    public int Cana_Id { get; set; }
+
+    [NotMapped]
+    public string ClientesXml { get; set; }
+
+    [NotMapped]
+    public string Clie_Nombres { get; set; }
+
+    [NotMapped]
+    public string Clie_Apellidos { get; set; }
+
+    [NotMapped]
+    public string Clie_NombreNegocio { get; set; }
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 
     public virtual tbClientes Clie { get; set; }
 
