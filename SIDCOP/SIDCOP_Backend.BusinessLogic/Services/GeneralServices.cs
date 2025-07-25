@@ -32,6 +32,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly DireccionesPorClienteRepository _direccionesPorClienteRepository;
         private readonly PaisRepository _paisRepository;
         private readonly TipoDeViviendaRepository _tipoDeViviendaRepository;
+        private readonly AvalRepository _avalRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -39,7 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
-        PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository
+        PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -58,7 +59,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _modeloRepository = modeloRepository;
             _proveedoresRepository = proveedoresRepository;
             _sucursalesRepository = sucursalesRepository;
-
+            _avalRepository = avalRepository;
 
             _clienteRepository = clienteRepository;
             _marcaRepository = marcaRepository;
@@ -866,6 +867,65 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion
 
+        #region Avales
+
+        public IEnumerable<tbAvales> ListarAvales()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _avalRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbAvales> aval = null;
+                return aval;
+            }
+        }
+        public ServiceResult InsertarAval(tbAvales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _avalRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarAval(tbAvales item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var update = _avalRepository.Update(item);
+                return result.Ok(update);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarAval(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _avalRepository.Delete(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion Avales
 
         #region Sucursales
 

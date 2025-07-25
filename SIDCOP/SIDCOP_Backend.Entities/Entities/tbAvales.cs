@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -30,6 +31,9 @@ public partial class tbAvales
     public DateTime? Aval_FechaNacimiento { get; set; }
 
     public int? EsCv_Id { get; set; }
+
+    [NotMapped]
+    public string? Aval_Sexo { get; set; } 
 
     public int Usua_Creacion { get; set; }
 

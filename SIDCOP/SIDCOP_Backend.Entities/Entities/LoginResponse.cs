@@ -37,6 +37,9 @@ namespace SIDCOP_Backend.Entities.Entities
         public int? PersonaId { get; set; }
 
         [NotMapped]
+        public string? Imagen { get; set; }
+
+        [NotMapped]
         public string? Nombres { get; set; }
 
         [NotMapped]
