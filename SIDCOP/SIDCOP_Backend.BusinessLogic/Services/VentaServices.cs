@@ -620,5 +620,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion PagosCuentasPorCobrar
+
+        #region CuentasPorCobrar
+
+        public ServiceResult ListCuentasPorCobrar()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.List();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion CuentasPorCobrar
     }
 }

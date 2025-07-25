@@ -28,7 +28,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
 
 
         [HttpGet("Listar")]
-        public IActionResult listar([FromQuery] int? clienteId = null, [FromQuery] bool soloActivas = true, [FromQuery] bool soloVencidas = false)
+        public IActionResult Listar()
+        {
+            var result = _ventaServices.ListCuentasPorCobrar();
+            
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpGet("ListarConFiltro")]
+        public IActionResult ListarConFiltro([FromQuery] int? clienteId = null, [FromQuery] bool soloActivas = true, [FromQuery] bool soloVencidas = false)
         {
             var result = _ventaServices.ListarCuentasPorCobrar(clienteId, soloActivas, soloVencidas);
             
