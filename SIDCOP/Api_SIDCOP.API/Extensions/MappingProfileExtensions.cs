@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Acceso;
+using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Inventario;
 using Api_SIDCOP.API.Models.Logistica;
@@ -57,6 +57,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbTraslados, TrasladoViewModel>().ReverseMap();
 
             CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
+            CreateMap<tbPagosCuentasPorCobrar, PagosCuentasPorCobrarViewModel>().ReverseMap();
             CreateMap<tbPedidos, PedidosViewModel>().ReverseMap();
             CreateMap<tbRecargas, RecargasViewModel>().ReverseMap();
             CreateMap<tbPaises, PaisViewModel>().ReverseMap();
