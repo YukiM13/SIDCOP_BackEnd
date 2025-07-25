@@ -31,18 +31,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PedidoRepository _pedidoRepository;
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
 
-
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
-            ConfiguracionFacturaRepository configuracionFacturaRepository,
-            PuntoEmisionRepository puntoEmisionRepository,
+            ConfiguracionFacturaRepository configuracionFacturaRepository, PuntoEmisionRepository puntoEmisionRepository,
             CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository,
-
-            PreciosPorProductoRepository preciosPorProductoRepository
-
-
-            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
+            PreciosPorProductoRepository preciosPorProductoRepository, PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
                             )
 
         {
@@ -56,7 +50,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _pagosCuentasPorCobrarRepository = pagosCuentasPorCobrarRepository;
             _pedidoRepository = pedidoRepository;
             _preciosPorProductoRepository = preciosPorProductoRepository;
-
         }
 
         #region Pedidos
@@ -648,10 +641,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion CuentasPorCobrar
 
-
-
-
-        #region ConfiguracionFacturas 
+        #region ConfiguracionFacturas
 
         public IEnumerable<tbPreciosPorProducto> ListPreciosPorProducto_PorProducto(int? id)
         {
@@ -682,8 +672,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion
-
-
+        #endregion ConfiguracionFacturas
     }
 }
