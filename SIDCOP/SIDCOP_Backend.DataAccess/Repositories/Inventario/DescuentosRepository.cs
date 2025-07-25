@@ -171,7 +171,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
 
             var parameter = new DynamicParameters();
-
+            parameter.Add("@desc_Id", item.Desc_Id, DbType.Int32, ParameterDirection.Input);
             parameter.Add("@desc_Descripcion", item.Desc_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_Tipo", item.Desc_Tipo, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_Aplicar", item.Desc_Aplicar, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -180,14 +180,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@desc_Observaciones", item.Desc_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameter.Add("@clientes", item.clientes, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@referencias", item.referencias, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@clientes", item.IdClientes, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@referencias", item.IdReferencias, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@escalas", item.escalas, System.Data.DbType.String, System.Data.ParameterDirection.Input);
 
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Descuentos_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Descuento_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };

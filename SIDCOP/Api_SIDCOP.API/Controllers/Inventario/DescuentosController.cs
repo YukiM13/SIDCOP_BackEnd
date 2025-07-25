@@ -85,7 +85,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
-        [HttpPut("Actualizar")]
+        [HttpPost("Actualizar")]
         public IActionResult Actualizar([FromBody] DescuentoViewModel item)
         {
             // Convertir la lista a JSON

@@ -41,6 +41,13 @@ public partial class tbDescuentos
     [NotMapped]
     public string? escalas { get; set; }
 
+    [NotMapped]
+    public List<int>? IdClientes { get; set; }
+
+    [NotMapped]
+
+    public List<int>? IdReferencias { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

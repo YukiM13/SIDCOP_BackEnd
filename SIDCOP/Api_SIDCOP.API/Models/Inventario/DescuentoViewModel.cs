@@ -32,6 +32,11 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string? referencias { get; set; }
         public string? escalas { get; set; }
+        public List<int>? IdClientes { get; set; }
+
+        public List<int>? IdReferencias { get; set; }
+
+
 
         public List<EscalaDetalleViewModel> escalas_Json { get; set; }
     }
