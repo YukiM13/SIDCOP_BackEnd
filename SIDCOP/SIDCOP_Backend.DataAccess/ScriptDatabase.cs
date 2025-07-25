@@ -147,6 +147,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
         public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
         public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        public const string Categoria_FiltrarSubcategorias = "[Inve].[SP_Categoria_ListarSubcategorias]";
         #endregion
 
         #region Modelos
@@ -188,7 +189,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_Actualizar = "Gral.SP_Cliente_Actualizar";
         public const string Cliente_Buscar = "Gral.SP_Cliente_Buscar";
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
-        public const string Clientes_Listar = "Gral.SP_Clientes_Listar";
+        public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
+        public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
 
         #endregion Clientes
 
@@ -345,7 +347,16 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
+        #region Paises
 
+        public const string Paises_Listar = "Gral.SP_Paises_Listar";
+        public const string Paises_ListarDepartamentos = "Gral.SP_Paises_ListarDepartamentos";
+        #endregion
+
+
+        #region TipiosDeVivienda
+        public const string TiposDeVivienda_Listar = "Gral.SP_TiposDeVivienda_Listar";
+        #endregion
 
 
     }

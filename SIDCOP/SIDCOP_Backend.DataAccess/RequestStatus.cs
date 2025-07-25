@@ -14,6 +14,8 @@ namespace SIDCOP_Backend.DataAccess
         public string message_Status { get; set; }
 
         public string data { get; set; }
+
+        public int? Tras_Id { get; set; }
     }
 
 }

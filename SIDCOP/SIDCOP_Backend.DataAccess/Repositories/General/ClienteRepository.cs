@@ -104,10 +104,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         
         }
 
-        public IEnumerable<tbClientes> List()
+        public IEnumerable<tbClientes> ListConfirmados()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbClientes>(ScriptDatabase.Clientes_Listar, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarConfirmados, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
+        }
+
+        public IEnumerable<tbClientes> ListSinConfirmacion()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarSinConfirmacion, commandType: System.Data.CommandType.StoredProcedure);
             return result;
         }
 
@@ -161,8 +168,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-
-
+        public IEnumerable<tbClientes> List()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
