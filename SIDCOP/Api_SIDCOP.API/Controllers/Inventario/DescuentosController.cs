@@ -85,7 +85,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
-        [HttpPost("Actualizar")]
+        [HttpPut("Actualizar")]
         public IActionResult Actualizar([FromBody] DescuentoViewModel item)
         {
             // Convertir la lista a JSON
@@ -106,6 +106,15 @@ namespace Api_SIDCOP.API.Controllers.Inventario
 
             // Enviar a capa de lógica de negocio
             var result = _inventarioServices.ActualizarDescuentos(mapped);
+
+            return Ok(result);
+        }
+
+        [HttpPost("Eliminar")]
+        public IActionResult Eliminar(int id)
+        {
+
+            var result = _inventarioServices.EliminarDescuento(id);
 
             return Ok(result);
         }

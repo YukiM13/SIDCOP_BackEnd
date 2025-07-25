@@ -16,7 +16,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
     {
         public RequestStatus Delete(int? id)
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+            parameter.Add("@desc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Descuento_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public tbDescuentos Find(int? id)
@@ -170,6 +185,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
 
+            var jsonIds = JsonConvert.SerializeObject(item.IdClientes);
+            var jsonIds2 = JsonConvert.SerializeObject(item.IdReferencias);
+
+
             var parameter = new DynamicParameters();
             parameter.Add("@desc_Id", item.Desc_Id, DbType.Int32, ParameterDirection.Input);
             parameter.Add("@desc_Descripcion", item.Desc_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -180,8 +199,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@desc_Observaciones", item.Desc_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameter.Add("@clientes", item.IdClientes, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@referencias", item.IdReferencias, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@clientes", jsonIds, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@referencias", jsonIds2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@escalas", item.escalas, System.Data.DbType.String, System.Data.ParameterDirection.Input);
 
             try

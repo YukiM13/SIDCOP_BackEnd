@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -401,6 +402,28 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error($"Error al actualizar descuento: {ex.Message}");
+            }
+        }
+
+
+        public ServiceResult EliminarDescuento(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _descuentosRepository.Delete(id);
+                if (deleteResult.code_Status > 0)
+                {
+                    return result.Ok(deleteResult);
+                }
+                else
+                {
+                    return result.Error(deleteResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar descuento: {ex.Message}");
             }
         }
         #endregion
