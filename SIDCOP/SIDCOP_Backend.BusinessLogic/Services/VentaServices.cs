@@ -29,6 +29,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CuentasPorCobrarRepository _cuentasporcobrarRepository;
         private readonly PagosCuentasPorCobrarRepository _pagosCuentasPorCobrarRepository;
         private readonly PedidoRepository _pedidoRepository;
+        private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
+
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
@@ -36,8 +38,13 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             ConfiguracionFacturaRepository configuracionFacturaRepository,
             PuntoEmisionRepository puntoEmisionRepository,
             CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository,
+
+            PreciosPorProductoRepository preciosPorProductoRepository
+
+
             PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
                             )
+
         {
             _impuestosRepository = impuestosRepository;
             _caiSRepository = caiSrepository;
@@ -48,6 +55,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _cuentasporcobrarRepository = cuentaporcobrarRepository;
             _pagosCuentasPorCobrarRepository = pagosCuentasPorCobrarRepository;
             _pedidoRepository = pedidoRepository;
+            _preciosPorProductoRepository = preciosPorProductoRepository;
+
         }
 
         #region Pedidos
@@ -638,5 +647,43 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion CuentasPorCobrar
+
+
+
+
+        #region ConfiguracionFacturas 
+
+        public IEnumerable<tbPreciosPorProducto> ListPreciosPorProducto_PorProducto(int? id)
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _preciosPorProductoRepository.ListPorProducto(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbPreciosPorProducto> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult InsertPreciosPorProductoLista(tbPreciosPorProducto item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _preciosPorProductoRepository.InsertLista(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
+
+
     }
 }
