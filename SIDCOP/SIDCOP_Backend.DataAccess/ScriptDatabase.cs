@@ -347,7 +347,16 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
+        #region Paises
 
+        public const string Paises_Listar = "Gral.SP_Paises_Listar";
+        public const string Paises_ListarDepartamentos = "Gral.SP_Paises_ListarDepartamentos";
+        #endregion
+
+
+        #region TipiosDeVivienda
+        public const string TiposDeVivienda_Listar = "Gral.SP_TiposDeVivienda_Listar";
+        #endregion
 
 
     }
