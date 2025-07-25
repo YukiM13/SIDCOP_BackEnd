@@ -111,7 +111,14 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Colonias
 
+        #region Avales
 
+        public static string Avales_Listar = "[Gral].[SP_Avales_Listar]";
+        public static string Avales_Insertar = "[Gral].[SP_Aval_Insertar]";
+        public static string Avales_Actualizar = "[Gral].[SP_Aval_Actualizar]";
+        public static string Avales_Eliminar = "[Gral].[SP_Aval_Eliminar]";
+
+        #endregion Avales
 
         #region EstadosCiviles
         public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
