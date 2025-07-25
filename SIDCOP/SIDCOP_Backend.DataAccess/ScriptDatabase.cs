@@ -111,7 +111,14 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Colonias
 
+        #region Avales
 
+        public static string Avales_Listar = "[Gral].[SP_Avales_Listar]";
+        public static string Avales_Insertar = "[Gral].[SP_Aval_Insertar]";
+        public static string Avales_Actualizar = "[Gral].[SP_Aval_Actualizar]";
+        public static string Avales_Eliminar = "[Gral].[SP_Aval_Eliminar]";
+
+        #endregion Avales
 
         #region EstadosCiviles
         public static string EstadosCiviles_Listar =  "[Gral].[SP_EstadosCiviles_Listar]";
@@ -147,6 +154,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
         public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
         public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        public const string Categoria_FiltrarSubcategorias = "[Inve].[SP_Categoria_ListarSubcategorias]";
         #endregion
 
         #region Modelos
@@ -316,6 +324,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
         public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
+        public static string Traslado_Buscar = "Logi.SP_Traslado_Buscar";
+        public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
 
         #endregion

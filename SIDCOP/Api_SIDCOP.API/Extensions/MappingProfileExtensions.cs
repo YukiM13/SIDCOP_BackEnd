@@ -17,6 +17,7 @@ namespace Api_SIDCOP.API.Extensions
         public MappingProfileExtensions()
         {
             CreateMap<tbUsuarios, UsuarioViewModel>().ReverseMap();
+            CreateMap<LoginResponse, UsuarioViewModel>().ReverseMap();
 
             CreateMap<tbMunicipios, MunicipioViewModel>().ReverseMap();
             CreateMap<tbDepartamentos, DepartamentoViewModel>().ReverseMap();
@@ -63,7 +64,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbPaises, PaisViewModel>().ReverseMap();
             CreateMap<tbTiposDeVivienda, TipoDeViviendaViewModel>().ReverseMap();
 
-
+            CreateMap<tbAvales, AvalViewModel>().ReverseMap();
         }
     }
 }

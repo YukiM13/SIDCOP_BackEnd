@@ -101,6 +101,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult FiltrarSubcategorias(tbCategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.ListarSubcategorias(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         #endregion
 
         #region Subcategorias
