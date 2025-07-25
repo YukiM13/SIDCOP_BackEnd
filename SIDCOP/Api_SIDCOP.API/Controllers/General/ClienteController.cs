@@ -27,9 +27,16 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpGet("Listar")]
-        public IActionResult ListarCliente()
+        public IActionResult ListarClientesConfirmados()
         {
-            var list = _generalServices.ListClientes();
+            var list = _generalServices.ListClientesConfirmados();
+            return Ok(list);
+        }
+
+        [HttpGet("ListarSinConfirmacion")]
+        public IActionResult ListarClienteSinConfirmacion()
+        {
+            var list = _generalServices.ListClientesSinConfirmacion();
             return Ok(list);
         }
 

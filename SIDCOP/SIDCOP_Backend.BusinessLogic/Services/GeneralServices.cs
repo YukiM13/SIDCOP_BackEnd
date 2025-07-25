@@ -27,19 +27,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly MarcaRepository _marcaRepository;
         private readonly EmpleadoRepository _empleadoRepository;
         private readonly ModeloRepository _modeloRepository;
-        
         private readonly ProveedoresRepository _proveedoresRepository;
-        
         private readonly CargoRepository _cargoRepository;
-
         private readonly DireccionesPorClienteRepository _direccionesPorClienteRepository;
+        private readonly PaisRepository _paisRepository;
+        private readonly TipoDeViviendaRepository _tipoDeViviendaRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
         EmpleadoRepository empleadoRepository, MarcaRepository marcaRepository, CargoRepository cargoRepository,
-        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,  
+        DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
-        MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository
+        MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
+        PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -64,6 +64,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _marcaRepository = marcaRepository;
             _empleadoRepository = empleadoRepository;
             _cargoRepository = cargoRepository;
+
+            _paisRepository = paisRepository;
+            _tipoDeViviendaRepository = tipoDeViviendaRepository;
         }
 
         #region Departamentos
@@ -684,12 +687,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<tbClientes> ListClientes()
+        public IEnumerable<tbClientes> ListClientesConfirmados()
         {
             var result = new ServiceResult();
             try
             {
-                var list = _clienteRepository.List();
+                var list = _clienteRepository.ListConfirmados();
                 return list;
             }
             catch (Exception ex)
@@ -699,6 +702,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> ListClientesSinConfirmacion()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clienteRepository.ListSinConfirmacion();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientes> clientes = null;
+                return clientes;
+            }
+        }
         #endregion Clientes
 
         #region Canales
@@ -1209,5 +1226,57 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
         }
         #endregion
 
+
+        #region Paises
+
+        public IEnumerable<tbPaises> ListarPaises()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _paisRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbPaises> pais = null;
+                return pais;
+            }
+        }
+
+
+        //public IEnumerable<tbSucursales> Pais_ListarDepartamentos(string codigo)
+        //{
+        //    //  var result = new ServiceResult();
+        //    try
+        //    {
+        //        var list = _municipioRepository.SucursalesPorMunicipio(codigo);
+        //        return list;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        IEnumerable<tbSucursales> muni = null;
+        //        return muni;
+        //    }
+        //}
+
+        #endregion Paises
+
+        #region TiposDeVivienda
+        public IEnumerable<tbTiposDeVivienda> ListarTiposDeVivienda()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _tipoDeViviendaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbTiposDeVivienda> pais = null;
+                return pais;
+            }
+        }
+        #endregion TiposDeVivienda
     }
 }
