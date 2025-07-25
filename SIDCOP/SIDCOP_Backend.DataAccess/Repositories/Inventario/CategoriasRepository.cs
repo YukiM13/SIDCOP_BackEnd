@@ -42,6 +42,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
         }
 
+        public IEnumerable<tbCategorias> ListarSubcategorias(tbCategorias? item)
+        {
+
+            var parameter = new DynamicParameters();
+            parameter.Add("@Cate_Id", item.Cate_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbCategorias>(ScriptDatabase.Categoria_FiltrarSubcategorias, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+
+        }
+
         public RequestStatus Insert(tbCategorias item)
         {
             var parameter = new DynamicParameters();
