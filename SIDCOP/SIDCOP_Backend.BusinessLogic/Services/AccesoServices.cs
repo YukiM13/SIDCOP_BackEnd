@@ -128,7 +128,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         //    }
         //}
 
-        public LoginResponse IniciarSesion(tbUsuarios item)
+        public LoginResponse IniciarSesion(LoginResponse item)
         {
             try
             {
