@@ -30,7 +30,10 @@ public partial class tbCategorias
 
     [NotMapped]
     public string UsuarioCreacion { get; set; }
-
+    [NotMapped]
+    public int Subc_Id { get; set; }
+    [NotMapped]
+    public string SubC_Descripcion { get; set; }
     [NotMapped]
     public string UsuarioModificacion { get; set; }
     [NotMapped]
