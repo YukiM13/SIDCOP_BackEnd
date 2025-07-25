@@ -32,6 +32,9 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public string? Clie_Codigo { get; set; }
 
+      
+        public int? Clie_Id { get; set; }
+
 
         public string? Clie_NombreNegocio { get; set; }
 
