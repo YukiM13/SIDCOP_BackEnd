@@ -64,5 +64,13 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             var list = _inventarioServices.BuscarCategoria(mapped);
             return Ok(list);
         }
+
+        [HttpPost("FiltrarSubcategorias")]
+        public IActionResult FilterSubcategorias([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.FiltrarSubcategorias(mapped);
+            return Ok(list);
+        }
     }
 }

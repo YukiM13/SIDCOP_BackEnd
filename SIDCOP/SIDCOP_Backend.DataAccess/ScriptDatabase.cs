@@ -154,6 +154,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Categoria_Eliminar = "[Inve].[SP_Categoria_Eliminar]";
         public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
         public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
+        public const string Categoria_FiltrarSubcategorias = "[Inve].[SP_Categoria_ListarSubcategorias]";
         #endregion
 
         #region Modelos
