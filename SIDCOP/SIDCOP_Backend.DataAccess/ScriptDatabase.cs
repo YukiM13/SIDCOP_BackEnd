@@ -292,6 +292,15 @@ namespace SIDCOP_Backend.DataAccess
         public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
         #endregion
 
+        #region Recargas
+        public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
+        public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
+        //public static string DireccionesPorCliente_Listar = "[Gral].[SP_DireccionesPorCliente_Listar]";
+        //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
+        //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
+        #endregion
+
+
         #region Descuentos
         public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
         public static string DescuentosDetalle_Insertar = "[Inve].[SP_DescuentoDetalle_Insertar]";
