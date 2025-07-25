@@ -110,7 +110,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(result);
         }
 
-        [HttpPost("Eliminar")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int id)
         {
 
