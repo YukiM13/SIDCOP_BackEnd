@@ -19,9 +19,9 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         private readonly IMapper _mapper;
 
 
-        public CategoriasController(InventarioServices deporteservice, IMapper mapper)
+        public CategoriasController(InventarioServices inventarioServices, IMapper mapper)
         {
-            _inventarioServices = deporteservice;
+            _inventarioServices = inventarioServices;
             _mapper = mapper;
         }
 
@@ -62,6 +62,14 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         {
             var mapped = _mapper.Map<tbCategorias>(item);
             var list = _inventarioServices.BuscarCategoria(mapped);
+            return Ok(list);
+        }
+
+        [HttpPost("FiltrarSubcategorias")]
+        public IActionResult FilterSubcategorias([FromBody] CategoriaViewModel item)
+        {
+            var mapped = _mapper.Map<tbCategorias>(item);
+            var list = _inventarioServices.FiltrarSubcategorias(mapped);
             return Ok(list);
         }
     }

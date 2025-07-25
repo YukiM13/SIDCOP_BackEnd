@@ -13,15 +13,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly CategoriasRepository _categoriasRepository;
         private readonly SubcategoriasRepository _subcategoriasRepository;
         private readonly ProductosRepository _productosRepository;
-        private readonly DescuentosRepository _descuentosRepository;
-
-        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository, ProductosRepository productosRepository, DescuentosRepository descuentosRepository)
-        {
-            _categoriasRepository = categoriasRepository;
-            _subcategoriasRepository = subcategoriasRepository;
-            _productosRepository = productosRepository;
-            _descuentosRepository = descuentosRepository;
-        }
+        private readonly InventarioBodegaRepository _inventarioBodegaRepository;
+        private readonly InventarioSucursalRepository _inventarioSucursalRepository;
+     private readonly DescuentosRepository _descuentosRepository;
+        public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
+       ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
+       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
+       {
+           _categoriasRepository = categoriasRepository;
+           _subcategoriasRepository = subcategoriasRepository;
+           _productosRepository = productosRepository;
+           _inventarioSucursalRepository = inventarioSucursalRepository;
+           _inventarioBodegaRepository = inventarioBodegaRepository;
+           _descuentosRepository = descuentosRepository;
+       }
 
         #region Categorias
 
@@ -87,6 +92,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var resultado = _categoriasRepository.FindCodigo(item);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult FiltrarSubcategorias(tbCategorias item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _categoriasRepository.ListarSubcategorias(item);
                 return result.Ok(resultado);
             }
             catch (Exception ex)
@@ -260,7 +279,40 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
         #endregion
 
+
+        #region Inventario Bodega
+
+ 
+        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.Listprodvend(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioBodegas> resultado = null;
+                return resultado;
+            }
+        }
+#endregion
+
         #region Descuentos
+
+
+        public IEnumerable<tbDescuentos> ListarDescuentos()
+        {
+            try
+            {
+                var list = _descuentosRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbDescuentos>();
+            }
+        }
         public ServiceResult Insertar(tbDescuentos descuento)
         {
             var result = new ServiceResult();

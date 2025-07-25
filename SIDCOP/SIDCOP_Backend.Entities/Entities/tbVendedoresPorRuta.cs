@@ -13,7 +13,7 @@ public partial class tbVendedoresPorRuta
 
     public int Ruta_Id { get; set; }
 
-    public string VeRu_Dia { get; set; }
+    public string VeRu_Dias { get; set; }
 
     public bool Vend_Estado { get; set; }
 

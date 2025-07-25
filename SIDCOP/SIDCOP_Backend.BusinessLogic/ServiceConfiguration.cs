@@ -39,7 +39,6 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<MarcaRepository>();
 
             services.AddScoped<SucursalesRepository>();
-
             services.AddScoped<ColoniaRepository>();
 
             services.AddScoped<EstadoCivilRepository>();
@@ -61,13 +60,20 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<RegistrosCaiSRepository>();
 
             services.AddScoped<RolRepository>();
-
             services.AddScoped<PuntoEmisionRepository>();
 
             services.AddScoped<DireccionesPorClienteRepository>();
             services.AddScoped<DescuentosRepository>();
             services.AddScoped<TrasladoRepository>();
+            services.AddScoped<PedidoRepository>();
+            services.AddScoped<InventarioSucursalRepository>();
+            services.AddScoped<InventarioBodegaRepository>();
+
             services.AddScoped<RecargasRepository>();
+            services.AddScoped<PaisRepository>();
+            services.AddScoped<TipoDeViviendaRepository>();
+
+            services.AddScoped<AvalRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
