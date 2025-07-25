@@ -224,7 +224,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var response = _trasladoRepository.Insert(item);
+                var response = _trasladoRepository.InsertTraslado(item);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
+            }
+        }
+
+        public ServiceResult InsertTrasladoDetalle(tbTrasladosDetalle item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.InsertTrasladoDetalle(item);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
@@ -249,12 +263,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
-        public ServiceResult DeleteTraslado(int id)
+        public ServiceResult EliminarTraslado(int id)
         {
             var result = new ServiceResult();
             try
             {
-                var response = _trasladoRepository.Delete(id);
+                var response = _trasladoRepository.EliminarTraslado(id);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
@@ -264,12 +278,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
-        public ServiceResult FindTraslado(int id)
+        public ServiceResult BuscarTraslado(int id)
         {
             var result = new ServiceResult();
             try
             {
-                var response = _trasladoRepository.Find(id);
+                var response = _trasladoRepository.BuscarTraslado(id);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)

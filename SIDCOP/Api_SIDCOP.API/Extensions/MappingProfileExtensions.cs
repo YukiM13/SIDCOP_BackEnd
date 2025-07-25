@@ -55,6 +55,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbDescuentosPorEscala, DescuentoPorEscalaViewModel>().ReverseMap();
             CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();
             CreateMap<tbTraslados, TrasladoViewModel>().ReverseMap();
+            CreateMap<tbTrasladosDetalle, TrasladoDetalleViewModel>().ReverseMap();
 
             CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
             CreateMap<tbPagosCuentasPorCobrar, PagosCuentasPorCobrarViewModel>().ReverseMap();
@@ -63,7 +64,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbPaises, PaisViewModel>().ReverseMap();
             CreateMap<tbTiposDeVivienda, TipoDeViviendaViewModel>().ReverseMap();
 
-
+            CreateMap<tbAvales, AvalViewModel>().ReverseMap();
         }
     }
 }
