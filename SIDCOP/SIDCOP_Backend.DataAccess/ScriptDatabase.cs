@@ -314,6 +314,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
         public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
+        public static string Traslado_Buscar = "Logi.SP_Traslado_Buscar";
+        public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
 
         #endregion
