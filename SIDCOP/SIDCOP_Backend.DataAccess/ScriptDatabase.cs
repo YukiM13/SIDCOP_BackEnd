@@ -395,7 +395,15 @@ namespace SIDCOP_Backend.DataAccess
         public const string PagosCuentasPorCobrar_ListarPorCxC = "[Vnta].[SP_PagosCuentasPorCobrar_ListarPorCxC]";
         public const string PagosCuentasPorCobrar_Listar = "[Vnta].[SP_PagosCuentasPorCobrar_Listar]";
         public const string PagosCuentasPorCobrar_Anular = "[Vnta].[SP_PagoCuentaPorCobrar_Anular]";
-
         #endregion PagosCuentasPorCobrar
+        
+
+        #region
+        
+        public const string PreciosPorProducto_InsertarLista = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
+        public const string PreciosPorProductoListar_PorProducto = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
+
+        #endregion
+
     }
 }

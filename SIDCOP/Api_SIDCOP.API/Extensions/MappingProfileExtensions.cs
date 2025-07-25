@@ -65,6 +65,8 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbPaises, PaisViewModel>().ReverseMap();
             CreateMap<tbTiposDeVivienda, TipoDeViviendaViewModel>().ReverseMap();
 
+            CreateMap<tbPreciosPorProducto, PreciosPorProductoViewModel>().ReverseMap();
+
             CreateMap<tbAvales, AvalViewModel>().ReverseMap();
         }
     }
