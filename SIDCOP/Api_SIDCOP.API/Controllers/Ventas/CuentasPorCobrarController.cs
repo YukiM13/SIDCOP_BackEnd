@@ -28,9 +28,44 @@ namespace Api_SIDCOP.API.Controllers.Ventas
 
 
         [HttpGet("Listar")]
-        public IActionResult listar([FromQuery] int? clienteId = null, [FromQuery] bool soloActivas = true, [FromQuery] bool soloVencidas = false)
+        public IActionResult Listar()
+        {
+            var result = _ventaServices.ListCuentasPorCobrar();
+            
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpGet("ListarConFiltro")]
+        public IActionResult ListarConFiltro([FromQuery] int? clienteId = null, [FromQuery] bool soloActivas = true, [FromQuery] bool soloVencidas = false)
         {
             var result = _ventaServices.ListarCuentasPorCobrar(clienteId, soloActivas, soloVencidas);
+            
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+        
+        [HttpGet("Detalle/{id}")]
+        public IActionResult ObtenerDetalle(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("El ID de la cuenta por cobrar debe ser mayor a cero.");
+            }
+            
+            var result = _ventaServices.ObtenerDetalleCuentaPorCobrar(id);
             
             if (result.Success)
             {
