@@ -34,6 +34,14 @@ public partial class tbPedidos
     public bool Pedi_Estado { get; set; }
 
     [NotMapped]
+    public string? DetallesJson { get; set; }
+
+
+    [NotMapped]
+    public int? Clie_Id { get; set; }
+
+
+    [NotMapped]
     public string? Clie_Codigo { get; set; }
 
     [NotMapped]

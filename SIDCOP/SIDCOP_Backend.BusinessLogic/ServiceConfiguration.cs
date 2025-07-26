@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
@@ -47,6 +47,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<BodegaRepository>();
             services.AddScoped<ProductosRepository>();
             services.AddScoped<CuentasPorCobrarRepository>();
+            services.AddScoped<PagosCuentasPorCobrarRepository>();
 
             services.AddScoped<ClienteRepository>();
             services.AddScoped<VendedorRepository>();
@@ -72,6 +73,8 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<RecargasRepository>();
             services.AddScoped<PaisRepository>();
             services.AddScoped<TipoDeViviendaRepository>();
+
+            services.AddScoped<PreciosPorProductoRepository>();
 
             services.AddScoped<AvalRepository>();
         }
