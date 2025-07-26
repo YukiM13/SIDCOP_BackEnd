@@ -32,6 +32,11 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 return BadRequest("Información inválida.");
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var pago = _mapper.Map<tbPagosCuentasPorCobrar>(pagoViewModel);
             var result = _ventasServices.InsertarPagoCuentaPorCobrar(pago);
 
@@ -95,6 +100,11 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             if (anularViewModel == null)
             {
                 return BadRequest("Información inválida.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
             }
 
             var result = _ventasServices.AnularPagoCuentaPorCobrar(

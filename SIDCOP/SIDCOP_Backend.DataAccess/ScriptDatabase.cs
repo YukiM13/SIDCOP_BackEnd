@@ -395,6 +395,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string PagosCuentasPorCobrar_ListarPorCxC = "[Vnta].[SP_PagosCuentasPorCobrar_ListarPorCxC]";
         public const string PagosCuentasPorCobrar_Listar = "[Vnta].[SP_PagosCuentasPorCobrar_Listar]";
         public const string PagosCuentasPorCobrar_Anular = "[Vnta].[SP_PagoCuentaPorCobrar_Anular]";
+        public const string CuentaPorCobrar_Detalle = "[Vnta].[SP_CuentaPorCobrar_Detalle]";
         #endregion PagosCuentasPorCobrar
         
 
