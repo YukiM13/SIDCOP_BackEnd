@@ -39,7 +39,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             PuntoEmisionRepository puntoEmisionRepository,
             CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository,
 
-            PreciosPorProductoRepository preciosPorProductoRepository
+            PreciosPorProductoRepository preciosPorProductoRepository,
 
 
             PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
