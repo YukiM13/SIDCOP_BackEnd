@@ -24,15 +24,12 @@ public partial class tbCanales
 
     public bool Cana_Estado { get; set; }
 
+    [NotMapped]
+    public int Secuencia { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    [NotMapped]
-    public int Secuencia { get; set; }
-
     public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
-
-
-
 }

@@ -95,6 +95,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbParentescos]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbProveedores]",
          "ObjectType": 0
       },
@@ -204,6 +208,10 @@
       },
       {
          "Name": "[Vnta].[tbImpuestos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPagosCuentasPorCobrar]",
          "ObjectType": 0
       },
       {

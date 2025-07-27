@@ -22,12 +22,6 @@ public partial class tbCargos
 
     public bool Carg_Estado { get; set; }
 
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
-
     [NotMapped]
     public string UsuarioCreacion { get; set; }
 
@@ -36,4 +30,10 @@ public partial class tbCargos
 
     [NotMapped]
     public int Secuencia { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 }

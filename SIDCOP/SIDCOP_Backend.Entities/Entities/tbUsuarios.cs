@@ -16,12 +16,6 @@ public partial class tbUsuarios
 
     public int Role_Id { get; set; }
 
-    [NotMapped]
-    public string? Role_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? Correo { get; set; }
-
     public int Usua_IdPersona { get; set; }
 
     public bool Usua_EsVendedor { get; set; }
@@ -39,6 +33,12 @@ public partial class tbUsuarios
     public DateTime? Usua_FechaModificacion { get; set; }
 
     public bool Usua_Estado { get; set; }
+
+    [NotMapped]
+    public string? Role_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Correo { get; set; }
 
     [NotMapped]
     public string? PersonaId { get; set; }
@@ -93,8 +93,8 @@ public partial class tbUsuarios
     public virtual ICollection<tbCategorias> tbCategoriasUsua_ModificacionNavigation { get; set; } = new List<tbCategorias>();
 
     public virtual ICollection<tbClientes> tbClientesUsua_CreacionNavigation { get; set; } = new List<tbClientes>();
-    public virtual ICollection<tbClientes> tbClientesUsua_ModificacionNavigation { get; set; } = new List<tbClientes>();
 
+    public virtual ICollection<tbClientes> tbClientesUsua_ModificacionNavigation { get; set; } = new List<tbClientes>();
 
     public virtual ICollection<tbColonias> tbColoniasUsua_CreacionNavigation { get; set; } = new List<tbColonias>();
 
@@ -187,6 +187,10 @@ public partial class tbUsuarios
     public virtual ICollection<tbPaises> tbPaisesUsua_CreacionNavigation { get; set; } = new List<tbPaises>();
 
     public virtual ICollection<tbPaises> tbPaisesUsua_ModificacionNavigation { get; set; } = new List<tbPaises>();
+
+    public virtual ICollection<tbParentescos> tbParentescosUsua_CreacionNavigation { get; set; } = new List<tbParentescos>();
+
+    public virtual ICollection<tbParentescos> tbParentescosUsua_ModificacionNavigation { get; set; } = new List<tbParentescos>();
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalleUsua_CreacionNavigation { get; set; } = new List<tbPedidosDetalle>();
 
