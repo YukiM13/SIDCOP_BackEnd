@@ -8,18 +8,6 @@ namespace Api_SIDCOP.API.Models.Acceso
 
         public string Usua_Usuario { get; set; }
 
-        [NotMapped]
-        public string? Correo { get; set; }
-        
-        [NotMapped]
-        public string? PersonaId { get; set; }
-
-        [NotMapped]
-        public string? Nombres { get; set; }
-
-        [NotMapped]
-        public string? Apellidos { get; set; }
-
 
         public string Usua_Clave { get; set; }
 
