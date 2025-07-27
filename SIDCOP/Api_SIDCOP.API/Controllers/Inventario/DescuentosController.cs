@@ -83,5 +83,40 @@ namespace Api_SIDCOP.API.Controllers.Inventario
 
             return Ok(result);
         }
+
+
+        [HttpPut("Actualizar")]
+        public IActionResult Actualizar([FromBody] DescuentoViewModel item)
+        {
+            // Convertir la lista a JSON
+            var xml = new XElement("Escalas",
+                item.escalas_Json.Select(e =>
+                    new XElement("Escala",
+                        new XElement("Inicio", e.deEs_InicioEscala),
+                        new XElement("Fin", e.deEs_FinEscala),
+                        new XElement("Valor", e.deEs_Valor)
+                    )
+                )
+            );
+
+            item.escalas = xml.ToString();
+
+            // Mapear a entidad del dominio
+            var mapped = _mapper.Map<tbDescuentos>(item);
+
+            // Enviar a capa de lógica de negocio
+            var result = _inventarioServices.ActualizarDescuentos(mapped);
+
+            return Ok(result);
+        }
+
+        [HttpPost("Eliminar/{id}")]
+        public IActionResult Eliminar(int id)
+        {
+
+            var result = _inventarioServices.EliminarDescuento(id);
+
+            return Ok(result);
+        }
     }
 }

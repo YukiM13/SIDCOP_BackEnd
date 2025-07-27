@@ -33,13 +33,29 @@ public partial class tbDescuentos
     public bool Desc_Estado { get; set; }
 
     [NotMapped]
-    public string? clientes {  get; set; }
+    public string? clientes { get; set; }
 
     [NotMapped]
     public string? referencias { get; set; }
 
     [NotMapped]
     public string? escalas { get; set; }
+
+    [NotMapped]
+    public List<int>? IdClientes { get; set; }
+
+    [NotMapped]
+
+    public List<int>? IdReferencias { get; set; }
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

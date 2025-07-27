@@ -8,11 +8,6 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbPedidos
 {
-
-    [NotMapped]
-
-    public int? Secuencia { get; set; }
-
     public int Pedi_Id { get; set; }
 
     public int DiCl_Id { get; set; }
@@ -32,6 +27,19 @@ public partial class tbPedidos
     public DateTime? Pedi_FechaModificacion { get; set; }
 
     public bool Pedi_Estado { get; set; }
+
+    [NotMapped]
+
+    public int? Secuencia { get; set; }
+
+
+    [NotMapped]
+    public string? DetallesJson { get; set; }
+
+
+    [NotMapped]
+    public int? Clie_Id { get; set; }
+
 
     [NotMapped]
     public string? Clie_Codigo { get; set; }

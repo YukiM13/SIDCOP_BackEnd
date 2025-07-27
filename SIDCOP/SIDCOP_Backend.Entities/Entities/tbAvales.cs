@@ -15,8 +15,6 @@ public partial class tbAvales
 
     public string Aval_Apellidos { get; set; }
 
-    public string Aval_ParentescoConCliente { get; set; }
-
     public string Aval_DNI { get; set; }
 
     public string Aval_Telefono { get; set; }
@@ -41,11 +39,19 @@ public partial class tbAvales
 
     public bool Aval_Estado { get; set; }
 
+    public string Aval_Sexo { get; set; }
+
+    public string Aval_Observaciones { get; set; }
+
+    public int? Pare_Id { get; set; }
+
     public virtual tbClientes Clie { get; set; }
 
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbEstadosCiviles EsCv { get; set; }
+
+    public virtual tbParentescos Pare { get; set; }
 
     public virtual tbTiposDeVivienda TiVi { get; set; }
 

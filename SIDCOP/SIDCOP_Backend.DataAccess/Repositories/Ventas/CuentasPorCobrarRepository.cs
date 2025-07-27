@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -55,6 +55,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-       
+        public tbCuentasPorCobrar GetDetalle(int cuentaPorCobrarId)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@CPCo_Id", cuentaPorCobrarId);
+            
+            var result = db.QueryFirstOrDefault<tbCuentasPorCobrar>(
+                ScriptDatabase.CuentaPorCobrar_Detalle,
+                parameters,
+                commandType: System.Data.CommandType.StoredProcedure);
+                
+            return result;
+        }
     }
 }

@@ -28,6 +28,7 @@ public partial class tbTraslados
 
     public bool Tras_Estado { get; set; }
 
+
     [NotMapped]
     public string Origen { get; set; }
 

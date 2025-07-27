@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Acceso;
+using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Inventario;
 using Api_SIDCOP.API.Models.Logistica;
@@ -17,6 +17,7 @@ namespace Api_SIDCOP.API.Extensions
         public MappingProfileExtensions()
         {
             CreateMap<tbUsuarios, UsuarioViewModel>().ReverseMap();
+            CreateMap<LoginResponse, UsuarioViewModel>().ReverseMap();
 
             CreateMap<tbMunicipios, MunicipioViewModel>().ReverseMap();
             CreateMap<tbDepartamentos, DepartamentoViewModel>().ReverseMap();
@@ -58,12 +59,15 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbTrasladosDetalle, TrasladoDetalleViewModel>().ReverseMap();
 
             CreateMap<tbCuentasPorCobrar, CuentasPorCobrarViewModel>().ReverseMap();
+            CreateMap<tbPagosCuentasPorCobrar, PagosCuentasPorCobrarViewModel>().ReverseMap();
             CreateMap<tbPedidos, PedidosViewModel>().ReverseMap();
             CreateMap<tbRecargas, RecargasViewModel>().ReverseMap();
             CreateMap<tbPaises, PaisViewModel>().ReverseMap();
             CreateMap<tbTiposDeVivienda, TipoDeViviendaViewModel>().ReverseMap();
 
+            CreateMap<tbPreciosPorProducto, PreciosPorProductoViewModel>().ReverseMap();
 
+            CreateMap<tbAvales, AvalViewModel>().ReverseMap();
         }
     }
 }

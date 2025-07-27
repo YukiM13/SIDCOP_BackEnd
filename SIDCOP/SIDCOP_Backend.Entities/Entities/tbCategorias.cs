@@ -22,18 +22,20 @@ public partial class tbCategorias
 
     public bool Cate_Estado { get; set; }
 
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbSubcategorias> tbSubcategorias { get; set; } = new List<tbSubcategorias>();
-
     [NotMapped]
     public string UsuarioCreacion { get; set; }
-
+    [NotMapped]
+    public int Subc_Id { get; set; }
+    [NotMapped]
+    public string SubC_Descripcion { get; set; }
     [NotMapped]
     public string UsuarioModificacion { get; set; }
     [NotMapped]
     public int Secuencia { get; set; }
 
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbSubcategorias> tbSubcategorias { get; set; } = new List<tbSubcategorias>();
 }
