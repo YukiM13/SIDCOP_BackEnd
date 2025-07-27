@@ -383,11 +383,13 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Paises
 
-        #region TipiosDeVivienda
-
+        #region TiposDeVivienda
         public const string TiposDeVivienda_Listar = "Gral.SP_TiposDeVivienda_Listar";
+        #endregion TiposDeVivienda
 
-        #endregion TipiosDeVivienda
+        #region Parentescos
+        public const string Parentescos_Listar = "Gral.SP_Parentescos_Listar";
+        #endregion Parentescos
 
         #region PagosCuentasPorCobrar
 
