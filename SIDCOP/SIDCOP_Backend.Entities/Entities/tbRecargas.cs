@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -33,6 +34,27 @@ public partial class tbRecargas
 
     public string Reca_Confirmacion { get; set; }
 
+    [NotMapped]
+    public string? Bode_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Prod_DescripcionCorta { get; set; }
+
+    [NotMapped]
+    public string? Prod_Codigo { get; set; }
+
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+
+    [NotMapped]
+    public string? ReDe_Observaciones { get; set; }
+
+    [NotMapped]
+    public int? ReDe_Cantidad { get; set; }
+
+    [NotMapped]
+    public List<RecargaDetalleDTO> Detalles { get; set; }
+
     public virtual tbBodegas Bode { get; set; }
 
     public virtual tbTraslados Tras { get; set; }
@@ -46,4 +68,12 @@ public partial class tbRecargas
     public virtual tbVendedores Vend { get; set; }
 
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
+}
+
+public class RecargaDetalleDTO
+{
+    public int Prod_Id { get; set; }
+    public int ReDe_Cantidad { get; set; }
+    public string ReDe_Observaciones { get; set; }
+
 }

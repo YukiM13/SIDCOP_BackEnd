@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -24,6 +25,21 @@ public partial class tbInventarioBodegas
     public DateTime? InBo_FechaModificacion { get; set; }
 
     public bool InBo_Estado { get; set; }
+
+    [NotMapped]
+    public int? CantidadAsignada { get; set; }
+    [NotMapped]
+    public double? Precio { get; set; }
+    [NotMapped]
+    public string? CodigoProducto { get; set; }
+    [NotMapped]
+    public string? Subc_Descripcion { get; set; }
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+    [NotMapped]
+    public string? NombreProducto { get; set; }
+    [NotMapped]
+    public string? CantidadActual { get; set; }
 
     public virtual tbBodegas Bode { get; set; }
 

@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -24,6 +25,18 @@ public partial class tbPuntosEmision
     public bool PuEm_Estado { get; set; }
 
     public int? Sucu_Id { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
+
+    [NotMapped]
+    public String Estado { get; set; }
+
+    [NotMapped]
+    public String UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public String UsuarioModificacion { get; set; }
 
     public virtual tbSucursales Sucu { get; set; }
 

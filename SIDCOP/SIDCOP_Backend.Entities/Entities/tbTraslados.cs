@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -26,6 +27,16 @@ public partial class tbTraslados
     public DateTime? Tras_FechaModificacion { get; set; }
 
     public bool Tras_Estado { get; set; }
+
+
+    [NotMapped]
+    public string Origen { get; set; }
+
+    [NotMapped]
+    public string Destino { get; set; }
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
 
     public virtual tbBodegas Tras_DestinoNavigation { get; set; }
 

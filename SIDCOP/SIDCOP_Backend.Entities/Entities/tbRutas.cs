@@ -25,6 +25,8 @@ public partial class tbRutas
 
     public bool Ruta_Estado { get; set; }
 
+
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }

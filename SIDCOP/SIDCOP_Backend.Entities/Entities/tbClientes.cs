@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -64,6 +65,33 @@ public partial class tbClientes
     public DateTime? Clie_FechaModificacion { get; set; }
 
     public bool Clie_Estado { get; set; }
+
+
+
+    [NotMapped]
+    public string? UsuaC_Nombre { get; set; }
+    [NotMapped]
+
+    public string? UsuaM_Nombre { get; set; }
+
+    [NotMapped]
+    public string? TiVi_Descripcion { get; set; }
+
+    [NotMapped]
+
+    public string? Cana_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Colo_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? EsCv_Descripcion { get; set; }
+    [NotMapped]
+
+    public string? Ruta_Descripcion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
 
     public virtual tbCanales Cana { get; set; }
 

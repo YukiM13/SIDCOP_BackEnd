@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -13,9 +14,9 @@ public partial class tbCuentasPorCobrar
 
     public int Fact_Id { get; set; }
 
-    public DateOnly CPCo_FechaEmision { get; set; }
+    public DateTime CPCo_FechaEmision { get; set; }
 
-    public DateOnly? CPCo_FechaVencimiento { get; set; }
+    public DateTime? CPCo_FechaVencimiento { get; set; }
 
     public decimal CPCo_Valor { get; set; }
 
@@ -36,6 +37,28 @@ public partial class tbCuentasPorCobrar
     public DateTime? CPCo_FechaModificacion { get; set; }
 
     public bool CPCo_Estado { get; set; }
+
+    [NotMapped]
+    public string Clie_Codigo { get; set; }
+    [NotMapped]
+    public string Clie_Nombres { get; set; }
+    [NotMapped]
+    public string Clie_Apellidos { get; set; }
+    [NotMapped]
+    public string Clie_NombreNegocio { get; set; }
+    [NotMapped]
+    public string Clie_Telefono { get; set; }
+    [NotMapped]
+    public decimal Clie_LimiteCredito { get; set; }
+    [NotMapped]
+    public decimal Clie_Saldo { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+    [NotMapped]
+    public string UsuarioModificacion
+    {
+        get; set;
+    }
 
     public virtual tbClientes Clie { get; set; }
 
