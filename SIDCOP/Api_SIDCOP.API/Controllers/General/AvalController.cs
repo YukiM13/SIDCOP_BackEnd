@@ -29,7 +29,8 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult InsertarRol([FromBody] AvalViewModel item)
+        public IActionResult InsertarRol([FromBody] AvalViewModel
+            item)
         {
             var mapped = _mapper.Map<tbAvales>(item);
             var insert = _generalServices.InsertarAval(mapped);
