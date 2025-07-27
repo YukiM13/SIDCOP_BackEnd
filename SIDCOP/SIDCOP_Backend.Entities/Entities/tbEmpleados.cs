@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -47,33 +46,6 @@ public partial class tbEmpleados
     public bool Empl_Estado { get; set; }
 
     public string Empl_Imagen { get; set; }
-
-    [NotMapped]
-    public string NombreCompleto { get; set; }
-
-    [NotMapped]
-    public string? Sucu_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? EsCv_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? Carg_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? Colo_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
-
-    [NotMapped]
-    public string? Usua_Imagen { get; set; }
-
-    [NotMapped]
-    public int Secuencia { get; set; }
 
     public virtual tbCargos Carg { get; set; }
 

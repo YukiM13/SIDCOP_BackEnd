@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -23,9 +22,6 @@ public partial class tbDescuentoPorClientes
     public DateTime? DeEs_FechaModificacion { get; set; }
 
     public bool DeCl_Estado { get; set; }
-
-    [NotMapped]
-    public List<int>? IdClientes { get; set; }
 
     public virtual tbClientes Clie { get; set; }
 

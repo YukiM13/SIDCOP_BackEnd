@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -18,14 +17,6 @@ public partial class tbEstadosCiviles
 
     public int? Usua_Modificacion { get; set; }
 
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-    [NotMapped]
-    public string UsuarioModificacion { get; set; }
-
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
     public DateTime? EsCv_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
@@ -34,7 +25,7 @@ public partial class tbEstadosCiviles
 
     public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 
-    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
     public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
 
+    public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 }

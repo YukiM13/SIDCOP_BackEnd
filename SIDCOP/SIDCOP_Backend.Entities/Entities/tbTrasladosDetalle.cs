@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -13,9 +12,6 @@ public partial class tbTrasladosDetalle
     public int Tras_Id { get; set; }
 
     public int Prod_Id { get; set; }
-
-    [NotMapped]
-    public string? Producto { get; set; }
 
     public int TrDe_Cantidad { get; set; }
 

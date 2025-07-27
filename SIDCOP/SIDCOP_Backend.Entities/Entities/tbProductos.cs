@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -26,7 +25,7 @@ public partial class tbProductos
 
     public int Prov_Id { get; set; }
 
-    public int Impu_Id { get; set; }
+    public int? Impu_Id { get; set; }
 
     public decimal? Prod_PrecioUnitario { get; set; }
 
@@ -41,35 +40,6 @@ public partial class tbProductos
     public bool Prod_Estado { get; set; }
 
     public int Usua_Creacion { get; set; }
-
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
-    [NotMapped]
-    public int Cate_Id { get; set; }
-    [NotMapped]
-    public string Cate_Descripcion { get; set; }
-
-
-    [NotMapped]
-    public string? Marc_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? Prov_NombreEmpresa { get; set; }
-
-    [NotMapped]
-    public string? Subc_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? Impu_Descripcion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
-
-   
 
     public DateTime Prod_FechaCreacion { get; set; }
 

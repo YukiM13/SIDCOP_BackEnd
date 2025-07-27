@@ -23,5 +23,7 @@ public partial class tbPaises
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
+
     public virtual ICollection<tbDepartamentos> tbDepartamentos { get; set; } = new List<tbDepartamentos>();
 }

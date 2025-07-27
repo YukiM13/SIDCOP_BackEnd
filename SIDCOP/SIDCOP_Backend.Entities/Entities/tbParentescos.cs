@@ -5,25 +5,23 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbMarcas
+public partial class tbParentescos
 {
-    public int Marc_Id { get; set; }
+    public int Pare_Id { get; set; }
 
-    public string Marc_Descripcion { get; set; }
+    public string Pare_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Marc_FechaCreacion { get; set; }
+    public DateTime Pare_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Marc_FechaModificacion { get; set; }
-
-    public bool Marc_Estado { get; set; }
+    public DateTime? Pare_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbProductos> tbProductos { get; set; } = new List<tbProductos>();
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 }
