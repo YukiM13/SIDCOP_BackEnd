@@ -209,15 +209,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _productosRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult);
-                }
-                else
-                {
-                    return result.Error(deleteResult);
-                }
+                //var deleteResult = _productosRepository.Delete(id);
+                //if (deleteResult.code_Status == 1)
+                //{
+                //    return result.Ok(deleteResult);
+                //}
+                //else
+                //{
+                //    return result.Error(deleteResult);
+                //}
+                var list = _productosRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {

@@ -119,6 +119,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbDescuentoPorClientesHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbDescuentos]",
          "ObjectType": 0
       },
@@ -127,7 +131,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbDescuentosDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentosHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbDescuentosPorEscala]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbDescuentosPorEscalaHistorial]",
          "ObjectType": 0
       },
       {
@@ -135,7 +151,15 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbInventarioBodegasHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbInventarioSucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbInventarioSucursalesHistorial]",
          "ObjectType": 0
       },
       {
@@ -143,11 +167,15 @@
          "ObjectType": 0
       },
       {
-         "Name": "[Inve].[tbPromociones]",
+         "Name": "[Inve].[tbProductosHistorial]",
          "ObjectType": 0
       },
       {
          "Name": "[Inve].[tbPromocionesDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Inve].[tbPromocionesDetalleHistorial]",
          "ObjectType": 0
       },
       {
@@ -167,6 +195,14 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Logi].[tbRecargasDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbRecargasHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Logi].[tbRutas]",
          "ObjectType": 0
       },
@@ -176,6 +212,14 @@
       },
       {
          "Name": "[Logi].[tbTrasladosDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbTrasladosDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Logi].[tbTrasladosHistorial]",
          "ObjectType": 0
       },
       {
@@ -199,11 +243,27 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Vnta].[tbDevolucionesDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbDevolucionesHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Vnta].[tbFacturas]",
          "ObjectType": 0
       },
       {
          "Name": "[Vnta].[tbFacturasDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbFacturasDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbFacturasHistorial]",
          "ObjectType": 0
       },
       {
@@ -223,7 +283,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Vnta].[tbPedidosDetalleHistorial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPedidosHistorial]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Vnta].[tbPreciosPorProducto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Vnta].[tbPreciosPorProductoHistorial]",
          "ObjectType": 0
       },
       {

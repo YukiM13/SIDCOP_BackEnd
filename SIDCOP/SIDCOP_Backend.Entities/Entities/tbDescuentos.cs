@@ -57,6 +57,8 @@ public partial class tbDescuentos
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
+    public string Desc_TipoFactura { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
