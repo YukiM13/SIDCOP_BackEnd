@@ -537,12 +537,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult DeletePuntoEmision(int id)
+        public ServiceResult DeletePuntoEmision(tbPuntosEmision item)
         {
             var result = new ServiceResult();
             try
             {
-                var response = _puntoEmisionRepository.Delete(id);
+                var response = _puntoEmisionRepository.DeleteEspecial(item);
                 return result.Ok(response);
             }
             catch (Exception ex)
