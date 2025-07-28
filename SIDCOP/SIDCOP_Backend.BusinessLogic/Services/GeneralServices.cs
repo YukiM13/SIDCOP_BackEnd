@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SIDCOP_Backend.DataAccess.Repositories.Acceso;
-using SIDCOP_Backend.DataAccess.Repositories.General;
-using SIDCOP_Backend.Entities.Entities;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
@@ -33,6 +30,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PaisRepository _paisRepository;
         private readonly TipoDeViviendaRepository _tipoDeViviendaRepository;
         private readonly AvalRepository _avalRepository;
+        private readonly ParentescoRepository _parentescoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -40,7 +38,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         DepartamentoRepository departamentoRepository, MarcaVehiculoRepository marcaVehiculoRepository,
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
-        PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository
+        PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
+        ParentescoRepository parentescoRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -68,6 +67,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
             _paisRepository = paisRepository;
             _tipoDeViviendaRepository = tipoDeViviendaRepository;
+            _parentescoRepository = parentescoRepository;
         }
 
         #region Departamentos
@@ -1338,5 +1338,22 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             }
         }
         #endregion TiposDeVivienda
+
+        #region Parentescos
+        public IEnumerable<tbParentescos> ListarParentescos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _parentescoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbParentescos> parentesco = null;
+                return parentesco;
+            }
+        }
+        #endregion
     }
 }

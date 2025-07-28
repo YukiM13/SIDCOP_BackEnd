@@ -16,7 +16,7 @@ public partial class tbCuentasPorCobrar
 
     public DateTime CPCo_FechaEmision { get; set; }
 
-    public DateTime CPCo_FechaVencimiento { get; set; }
+    public DateTime? CPCo_FechaVencimiento { get; set; }
 
     public decimal CPCo_Valor { get; set; }
 
@@ -37,14 +37,6 @@ public partial class tbCuentasPorCobrar
     public DateTime? CPCo_FechaModificacion { get; set; }
 
     public bool CPCo_Estado { get; set; }
-
-    public virtual tbClientes Clie { get; set; }
-
-    public virtual tbFacturas Fact { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     [NotMapped]
     public string Clie_Codigo { get; set; }
@@ -67,4 +59,14 @@ public partial class tbCuentasPorCobrar
     {
         get; set;
     }
-    }
+
+    public virtual tbClientes Clie { get; set; }
+
+    public virtual tbFacturas Fact { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbPagosCuentasPorCobrar> tbPagosCuentasPorCobrar { get; set; } = new List<tbPagosCuentasPorCobrar>();
+}

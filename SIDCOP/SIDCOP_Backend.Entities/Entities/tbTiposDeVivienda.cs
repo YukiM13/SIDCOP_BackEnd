@@ -28,4 +28,6 @@ public partial class tbTiposDeVivienda
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
+
+    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
 }

@@ -33,7 +33,7 @@ public partial class tbDescuentos
     public bool Desc_Estado { get; set; }
 
     [NotMapped]
-    public string? clientes {  get; set; }
+    public string? clientes { get; set; }
 
     [NotMapped]
     public string? referencias { get; set; }

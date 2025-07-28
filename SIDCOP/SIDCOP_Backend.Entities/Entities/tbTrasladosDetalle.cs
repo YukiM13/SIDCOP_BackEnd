@@ -14,9 +14,6 @@ public partial class tbTrasladosDetalle
 
     public int Prod_Id { get; set; }
 
-    [NotMapped]
-    public string? Producto { get; set; }
-
     public int TrDe_Cantidad { get; set; }
 
     public string TrDe_Observaciones { get; set; }
@@ -28,6 +25,9 @@ public partial class tbTrasladosDetalle
     public int? Usua_Modificacion { get; set; }
 
     public DateTime? TrDe_FechaModificacion { get; set; }
+
+    [NotMapped]
+    public string? Producto { get; set; }
 
     public virtual tbProductos Prod { get; set; }
 

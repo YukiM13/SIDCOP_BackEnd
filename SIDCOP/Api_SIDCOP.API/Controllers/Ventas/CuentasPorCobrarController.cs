@@ -56,6 +56,26 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 return BadRequest(result);
             }
         }
+        
+        [HttpGet("Detalle/{id}")]
+        public IActionResult ObtenerDetalle(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("El ID de la cuenta por cobrar debe ser mayor a cero.");
+            }
+            
+            var result = _ventaServices.ObtenerDetalleCuentaPorCobrar(id);
+            
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
 
 
     }

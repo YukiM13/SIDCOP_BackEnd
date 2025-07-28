@@ -38,20 +38,20 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public bool Pago_Anulado { get; set; }
 
-        // Propiedades adicionales para mostrar información relacionada
-        public string UsuarioCreacion { get; set; }
+        // Propiedades adicionales para mostrar información relacionada - estas son opcionales para la inserción
+        public string? UsuarioCreacion { get; set; }
 
-        public string UsuarioModificacion { get; set; }
+        public string? UsuarioModificacion { get; set; }
 
         public int Clie_Id { get; set; }
 
-        public string Clie_NombreCompleto { get; set; }
+        public string? Clie_NombreCompleto { get; set; }
 
-        public string Clie_RTN { get; set; }
+        public string? Clie_RTN { get; set; }
 
         public int Fact_Id { get; set; }
 
-        public string Fact_Numero { get; set; }
+        public string? Fact_Numero { get; set; }
     }
 
     public class AnularPagoViewModel

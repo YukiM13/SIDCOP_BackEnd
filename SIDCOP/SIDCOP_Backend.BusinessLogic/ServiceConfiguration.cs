@@ -75,8 +75,8 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<TipoDeViviendaRepository>();
 
             services.AddScoped<PreciosPorProductoRepository>();
-
             services.AddScoped<AvalRepository>();
+            services.AddScoped<ParentescoRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)

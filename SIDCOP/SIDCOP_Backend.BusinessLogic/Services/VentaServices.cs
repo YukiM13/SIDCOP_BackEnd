@@ -625,6 +625,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region CuentasPorCobrar
 
+        public ServiceResult ObtenerDetalleCuentaPorCobrar(int cuentaPorCobrarId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.GetDetalle(cuentaPorCobrarId);
+                if (response == null)
+                    return result.Error("No se encontró la cuenta por cobrar especificada.");
+                    
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        
         public ServiceResult ListCuentasPorCobrar()
         {
             var result = new ServiceResult();

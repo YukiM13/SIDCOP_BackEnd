@@ -5,25 +5,23 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbPaises
+public partial class tbParentescos
 {
-    public string Pais_Codigo { get; set; }
+    public int Pare_Id { get; set; }
 
-    public string Pais_Descripcion { get; set; }
+    public string Pare_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Pais_FechaCreacion { get; set; }
+    public DateTime Pare_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Pais_FechaModificacion { get; set; }
+    public DateTime? Pare_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbClientes> tbClientes { get; set; } = new List<tbClientes>();
-
-    public virtual ICollection<tbDepartamentos> tbDepartamentos { get; set; } = new List<tbDepartamentos>();
+    public virtual ICollection<tbAvales> tbAvales { get; set; } = new List<tbAvales>();
 }

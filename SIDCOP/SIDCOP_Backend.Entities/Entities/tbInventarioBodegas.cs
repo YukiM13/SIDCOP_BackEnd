@@ -16,22 +16,6 @@ public partial class tbInventarioBodegas
 
     public int InBo_Cantidad { get; set; }
 
-
-    [NotMapped]
-    public int? CantidadAsignada { get; set; }
-    [NotMapped]
-    public double? Precio { get; set; }
-    [NotMapped]
-    public string? CodigoProducto { get; set; } 
-    [NotMapped]
-      public string? Subc_Descripcion { get; set; }
-    [NotMapped]
-      public string? Prod_Imagen { get; set; }  
-    [NotMapped]
-      public string? NombreProducto { get; set; }  
-    [NotMapped]
-      public string? CantidadActual { get; set; } 
-
     public int Usua_Creacion { get; set; }
 
     public DateTime InBo_FechaCreacion { get; set; }
@@ -42,7 +26,20 @@ public partial class tbInventarioBodegas
 
     public bool InBo_Estado { get; set; }
 
-
+    [NotMapped]
+    public int? CantidadAsignada { get; set; }
+    [NotMapped]
+    public double? Precio { get; set; }
+    [NotMapped]
+    public string? CodigoProducto { get; set; }
+    [NotMapped]
+    public string? Subc_Descripcion { get; set; }
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+    [NotMapped]
+    public string? NombreProducto { get; set; }
+    [NotMapped]
+    public string? CantidadActual { get; set; }
 
     public virtual tbBodegas Bode { get; set; }
 
