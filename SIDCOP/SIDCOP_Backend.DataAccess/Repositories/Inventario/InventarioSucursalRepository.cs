@@ -26,6 +26,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             throw new NotImplementedException();
         }
 
+        public IEnumerable<tbInventarioSucursales> ListInve(int id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            var result = db.Query<tbInventarioSucursales>(
+                ScriptDatabase.InventarioSucursal_Filtrado,
+                parameter,
+                commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
         public IEnumerable<tbInventarioSucursales> List()
         {
             throw new NotImplementedException();
@@ -35,5 +49,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         {
             throw new NotImplementedException();
         }
+
+ 
     }
 }
