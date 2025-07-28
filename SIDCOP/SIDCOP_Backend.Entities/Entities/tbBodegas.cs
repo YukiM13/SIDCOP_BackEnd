@@ -50,12 +50,6 @@ public partial class tbBodegas
 
     public virtual tbVendedores Vend { get; set; }
 
-    public virtual ICollection<tbInventarioBodegas> tbInventarioBodegas { get; set; } = new List<tbInventarioBodegas>();
-
-    public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
-
-    public virtual ICollection<tbTraslados> tbTraslados { get; set; } = new List<tbTraslados>();
-
     [NotMapped]
     public string? RegC_Descripcion { get; set; }
     [NotMapped]
@@ -73,4 +67,10 @@ public partial class tbBodegas
     public string? UsuarioModificacion { get; set; }
     [NotMapped]
     public int? Secuencia { get; set; }
+
+    public virtual ICollection<tbInventarioBodegas> tbInventarioBodegas { get; set; } = new List<tbInventarioBodegas>();
+
+    public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
+
+    public virtual ICollection<tbTraslados> tbTraslados { get; set; } = new List<tbTraslados>();
 }

@@ -22,14 +22,14 @@ public partial class tbMunicipios
 
     public DateTime? Muni_FechaModificacion { get; set; }
 
-    [NotMapped]
-    public int? Secuencia { get; set; }
-
     public virtual tbDepartamentos Depa_CodigoNavigation { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
 
     public virtual ICollection<tbColonias> tbColonias { get; set; } = new List<tbColonias>();
 
