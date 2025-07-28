@@ -11,12 +11,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class PuntoEmisionRepository : IRepository<tbPuntosEmision>
     {
-
         public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RequestStatus DeleteEspecial(tbPuntosEmision item)
         {
             var parameters = new DynamicParameters();
 
-            parameters.Add("@PuEm_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@PuEm_Id", item.PuEm_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@PuEm_FechaModificacion", item.PuEm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Execute(ScriptDatabase.PuntoEmision_Eliminar, parameters, commandType: System.Data.CommandType.StoredProcedure);
@@ -45,6 +51,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             parameters.Add("@PuEm_Codigo", item.PuEm_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_Descripcion", item.PuEm_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_FechaCreacion", item.PuEm_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -73,6 +80,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@PuEm_Id", item.PuEm_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_Codigo", item.PuEm_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_Descripcion", item.PuEm_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_FechaModificacion", item.PuEm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 

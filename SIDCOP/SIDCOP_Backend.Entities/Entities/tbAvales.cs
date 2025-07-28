@@ -2,6 +2,8 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -10,7 +12,7 @@ public partial class tbAvales
     public int Aval_Id { get; set; }
 
     public int Clie_Id { get; set; }
-
+    
     public string Aval_Nombres { get; set; }
 
     public string Aval_Apellidos { get; set; }

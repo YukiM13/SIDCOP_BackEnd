@@ -53,7 +53,7 @@ namespace Api_SIDCOP.API.Controllers.Venta
         }
 
 
-        [HttpPost("Eliminar")]
+        [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int id)
         {
 
