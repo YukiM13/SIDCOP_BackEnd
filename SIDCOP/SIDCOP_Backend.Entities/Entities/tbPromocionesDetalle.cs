@@ -11,7 +11,7 @@ public partial class tbPromocionesDetalle
 
     public int Prom_Id { get; set; }
 
-    public int PrDe_IdReferencia { get; set; }
+    public int Prod_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
 
@@ -23,7 +23,9 @@ public partial class tbPromocionesDetalle
 
     public bool PrDe_Estado { get; set; }
 
-    public virtual tbPromociones Prom { get; set; }
+    public virtual tbProductos Prod { get; set; }
+
+    public virtual tbProductos Prom { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
