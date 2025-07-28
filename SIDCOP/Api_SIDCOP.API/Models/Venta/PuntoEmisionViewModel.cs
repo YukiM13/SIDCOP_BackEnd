@@ -8,8 +8,6 @@ namespace Api_SIDCOP.API.Models.Venta
 
         public String Estado { get; set; }
 
-
-
         public int PuEm_Id { get; set; }
 
         public string PuEm_Codigo { get; set; }
@@ -27,6 +25,8 @@ namespace Api_SIDCOP.API.Models.Venta
         public bool PuEm_Estado { get; set; }
 
         public int? Sucu_Id { get; set; }
+
+        public string Sucu_Descripcion { get; set; }
 
         public String UsuarioCreacion { get; set; }
 

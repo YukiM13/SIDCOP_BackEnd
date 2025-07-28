@@ -42,7 +42,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
@@ -99,7 +99,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 

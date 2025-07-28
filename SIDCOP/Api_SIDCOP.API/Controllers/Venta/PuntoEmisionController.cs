@@ -53,11 +53,11 @@ namespace Api_SIDCOP.API.Controllers.Venta
         }
 
 
-        [HttpPost("Eliminar/{id}")]
-        public IActionResult Eliminar(int id)
+        [HttpPut("Eliminar")]
+        public IActionResult Eliminar(PuntoEmisionViewModel item)
         {
-
-            var result = _ventaServices.DeletePuntoEmision(id);
+            var mapped = _mapper.Map<tbPuntosEmision>(item);
+            var result = _ventaServices.DeletePuntoEmision(mapped);
 
             return Ok(result);
         }
