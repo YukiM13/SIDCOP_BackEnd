@@ -366,7 +366,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioSucursal_Insertar = "";
         public static string InventarioSucursal_Actualizar = "";
         public static string InventarioSucursal_Eliminar = "";
-        public static string InventarioSucursal_Filtrado = "Inve.SP_InventarioSucursal_Filtrado";
+        public static string InventarioSucursal_Filtrado = "[Inve].[SP_InventarioSucursal_Filtrado]";
 
         public static string InventarioBodega_Listar = "";
         public static string InventarioBodega_Insertar = "";
