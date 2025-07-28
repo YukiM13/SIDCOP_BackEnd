@@ -209,15 +209,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _productosRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                //var deleteResult = _productosRepository.Delete(id);
+                //if (deleteResult.code_Status == 1)
+                //{
+                //    return result.Ok(deleteResult);
+                //}
+                //else
+                //{
+                //    return result.Error(deleteResult);
+                //}
+                var list = _productosRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
@@ -245,11 +247,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var insertResult = _productosRepository.Insert(producto);
                 if (insertResult.code_Status == 1)
                 {
-                    return result.Ok(insertResult.message_Status);
+                    return result.Ok(insertResult);
                 }
                 else
                 {
-                    return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult);
                 }
             }
             catch (Exception ex)
@@ -266,11 +268,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var updateResult = _productosRepository.Update(producto);
                 if (updateResult.code_Status == 1)
                 {
-                    return result.Ok(updateResult.message_Status);
+                    return result.Ok(updateResult);
                 }
                 else
                 {
-                    return result.Error(updateResult.message_Status);
+                    return result.Error(updateResult);
                 }
             }
             catch (Exception ex)
