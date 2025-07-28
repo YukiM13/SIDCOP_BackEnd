@@ -10,6 +10,7 @@ namespace Api_SIDCOP.API.Controllers.General
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
+
     public class PaisController : Controller
     {
         private readonly GeneralServices _generalServices;
@@ -25,7 +26,6 @@ namespace Api_SIDCOP.API.Controllers.General
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-
             var result = _generalServices.ListarPaises();
             return Ok(result);
         }
