@@ -216,10 +216,6 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesDetalle>();
 
-    public virtual ICollection<tbPromociones> tbPromocionesUsua_CreacionNavigation { get; set; } = new List<tbPromociones>();
-
-    public virtual ICollection<tbPromociones> tbPromocionesUsua_ModificacionNavigation { get; set; } = new List<tbPromociones>();
-
     public virtual ICollection<tbProveedores> tbProveedoresUsua_CreacionNavigation { get; set; } = new List<tbProveedores>();
 
     public virtual ICollection<tbProveedores> tbProveedoresUsua_ModificacionNavigation { get; set; } = new List<tbProveedores>();

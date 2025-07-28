@@ -15,8 +15,8 @@ public partial class BDD_SIDCOPContext : DbContext
     }
 
     public BDD_SIDCOPContext()
-    { }
-
+    {
+    }
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 
@@ -46,15 +46,27 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; }
 
+    public virtual DbSet<tbDescuentoPorClientesHistorial> tbDescuentoPorClientesHistorial { get; set; }
+
     public virtual DbSet<tbDescuentos> tbDescuentos { get; set; }
 
     public virtual DbSet<tbDescuentosDetalle> tbDescuentosDetalle { get; set; }
 
+    public virtual DbSet<tbDescuentosDetalleHistorial> tbDescuentosDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbDescuentosHistorial> tbDescuentosHistorial { get; set; }
+
     public virtual DbSet<tbDescuentosPorEscala> tbDescuentosPorEscala { get; set; }
+
+    public virtual DbSet<tbDescuentosPorEscalaHistorial> tbDescuentosPorEscalaHistorial { get; set; }
 
     public virtual DbSet<tbDevoluciones> tbDevoluciones { get; set; }
 
     public virtual DbSet<tbDevolucionesDetalle> tbDevolucionesDetalle { get; set; }
+
+    public virtual DbSet<tbDevolucionesDetalleHistorial> tbDevolucionesDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbDevolucionesHistorial> tbDevolucionesHistorial { get; set; }
 
     public virtual DbSet<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; }
 
@@ -66,11 +78,19 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbFacturasDetalle> tbFacturasDetalle { get; set; }
 
+    public virtual DbSet<tbFacturasDetalleHistorial> tbFacturasDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbFacturasHistorial> tbFacturasHistorial { get; set; }
+
     public virtual DbSet<tbImpuestos> tbImpuestos { get; set; }
 
     public virtual DbSet<tbInventarioBodegas> tbInventarioBodegas { get; set; }
 
+    public virtual DbSet<tbInventarioBodegasHistorial> tbInventarioBodegasHistorial { get; set; }
+
     public virtual DbSet<tbInventarioSucursales> tbInventarioSucursales { get; set; }
+
+    public virtual DbSet<tbInventarioSucursalesHistorial> tbInventarioSucursalesHistorial { get; set; }
 
     public virtual DbSet<tbMarcas> tbMarcas { get; set; }
 
@@ -92,15 +112,23 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbPedidosDetalle> tbPedidosDetalle { get; set; }
 
+    public virtual DbSet<tbPedidosDetalleHistorial> tbPedidosDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbPedidosHistorial> tbPedidosHistorial { get; set; }
+
     public virtual DbSet<tbPermisos> tbPermisos { get; set; }
 
     public virtual DbSet<tbPreciosPorProducto> tbPreciosPorProducto { get; set; }
 
+    public virtual DbSet<tbPreciosPorProductoHistorial> tbPreciosPorProductoHistorial { get; set; }
+
     public virtual DbSet<tbProductos> tbProductos { get; set; }
 
-    public virtual DbSet<tbPromociones> tbPromociones { get; set; }
+    public virtual DbSet<tbProductosHistorial> tbProductosHistorial { get; set; }
 
     public virtual DbSet<tbPromocionesDetalle> tbPromocionesDetalle { get; set; }
+
+    public virtual DbSet<tbPromocionesDetalleHistorial> tbPromocionesDetalleHistorial { get; set; }
 
     public virtual DbSet<tbProveedores> tbProveedores { get; set; }
 
@@ -109,6 +137,10 @@ public partial class BDD_SIDCOPContext : DbContext
     public virtual DbSet<tbRecargas> tbRecargas { get; set; }
 
     public virtual DbSet<tbRecargasDetalle> tbRecargasDetalle { get; set; }
+
+    public virtual DbSet<tbRecargasDetalleHistorial> tbRecargasDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbRecargasHistorial> tbRecargasHistorial { get; set; }
 
     public virtual DbSet<tbRegistrosCAI> tbRegistrosCAI { get; set; }
 
@@ -125,6 +157,10 @@ public partial class BDD_SIDCOPContext : DbContext
     public virtual DbSet<tbTraslados> tbTraslados { get; set; }
 
     public virtual DbSet<tbTrasladosDetalle> tbTrasladosDetalle { get; set; }
+
+    public virtual DbSet<tbTrasladosDetalleHistorial> tbTrasladosDetalleHistorial { get; set; }
+
+    public virtual DbSet<tbTrasladosHistorial> tbTrasladosHistorial { get; set; }
 
     public virtual DbSet<tbUsuarios> tbUsuarios { get; set; }
 
@@ -677,6 +713,22 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Inve_tbDescuentoPorClientes_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
+        modelBuilder.Entity<tbDescuentoPorClientesHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDescuentoPorClientesHistorial", "Inve");
+
+            entity.Property(e => e.HDeC_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HDeC_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HDeC_Id).ValueGeneratedOnAdd();
+        });
+
         modelBuilder.Entity<tbDescuentos>(entity =>
         {
             entity.HasKey(e => e.Desc_Id).HasName("PK_Inve_tbDescuentos_Desc_Id");
@@ -700,6 +752,10 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Desc_Observaciones)
                 .HasMaxLength(200)
                 .IsUnicode(false);
+            entity.Property(e => e.Desc_TipoFactura)
+                .HasMaxLength(2)
+                .IsUnicode(false)
+                .IsFixedLength();
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbDescuentosUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
@@ -736,6 +792,55 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Inve_tbDescuentosDetalle_Usua_Modificacion_Acce_tbUsuario_Usua_Id");
         });
 
+        modelBuilder.Entity<tbDescuentosDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDescuentosDetalleHistorial", "Inve");
+
+            entity.Property(e => e.HDeD_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HDeD_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HDeD_Id).ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<tbDescuentosHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDescuentosHistorial", "Inve");
+
+            entity.Property(e => e.Desc_Aplicar)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Desc_Descripcion)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Desc_Estado).HasDefaultValue(true);
+            entity.Property(e => e.Desc_FechaFin).HasColumnType("datetime");
+            entity.Property(e => e.Desc_FechaInicio).HasColumnType("datetime");
+            entity.Property(e => e.Desc_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Desc_TipoFactura)
+                .HasMaxLength(2)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.HiDe_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HiDe_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HiDe_Id).ValueGeneratedOnAdd();
+        });
+
         modelBuilder.Entity<tbDescuentosPorEscala>(entity =>
         {
             entity.HasKey(e => e.DeEs_Id).HasName("PK_Inve_tbDescuentosPorEscala_DeEs_Id");
@@ -760,6 +865,23 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbDescuentosPorEscalaUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Inve_tbDescuentosPorEscala_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbDescuentosPorEscalaHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDescuentosPorEscalaHistorial", "Inve");
+
+            entity.Property(e => e.DeEs_Valor).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.HDEs_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HDEs_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HDEs_Id).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<tbDevoluciones>(entity =>
@@ -824,6 +946,42 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbDevolucionesDetalleUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Vnta_tbDevolucionesDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbDevolucionesDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDevolucionesDetalleHistorial", "Vnta");
+
+            entity.Property(e => e.HDDe_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HDDe_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HDDe_Id).ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<tbDevolucionesHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbDevolucionesHistorial", "Vnta");
+
+            entity.Property(e => e.Devo_Fecha).HasColumnType("datetime");
+            entity.Property(e => e.Devo_Motivo)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.HDev_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HDev_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HDev_Id).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<tbDireccionesPorCliente>(entity =>
@@ -1076,6 +1234,80 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Vnta_tbFacturasDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
+        modelBuilder.Entity<tbFacturasDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbFacturasDetalleHistorial", "Vnta");
+
+            entity.Property(e => e.FaDe_Descuento).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.FaDe_Impuesto).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.FaDe_PrecioUnitario).HasColumnType("decimal(13, 6)");
+            entity.Property(e => e.FaDe_Subtotal).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.FaDe_Total).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.HFaD_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HFaD_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HFaD_Id).ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<tbFacturasHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbFacturasHistorial", "Vnta");
+
+            entity.Property(e => e.Fact_AutorizadoPor)
+                .HasMaxLength(40)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_FechaEmision).HasColumnType("datetime");
+            entity.Property(e => e.Fact_FechaLimiteEmision).HasColumnType("datetime");
+            entity.Property(e => e.Fact_ImporteExento).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.Fact_ImporteExonerado).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.Fact_ImporteGravado15).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.Fact_ImporteGravado18).HasColumnType("decimal(12, 2)");
+            entity.Property(e => e.Fact_Latitud).HasColumnType("decimal(9, 6)");
+            entity.Property(e => e.Fact_Longitud).HasColumnType("decimal(9, 6)");
+            entity.Property(e => e.Fact_Numero)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_RangoFinalAutorizado)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_RangoInicialAutorizado)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_Referencia)
+                .HasMaxLength(90)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_Subtotal).HasColumnType("decimal(11, 2)");
+            entity.Property(e => e.Fact_TipoDeDocumento)
+                .HasMaxLength(3)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_TipoVenta)
+                .HasMaxLength(15)
+                .IsUnicode(false);
+            entity.Property(e => e.Fact_Total).HasColumnType("decimal(11, 2)");
+            entity.Property(e => e.Fact_TotalDescuento).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Fact_TotalImpuesto15).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Fact_TotalImpuesto18).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Fact_Usuario)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.HFac_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HFac_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HFac_Id).ValueGeneratedOnAdd();
+        });
+
         modelBuilder.Entity<tbImpuestos>(entity =>
         {
             entity.HasKey(e => e.Impu_Id).HasName("PK_Vnta_tbImpuestos_Impu_Id");
@@ -1131,6 +1363,22 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Inve_tbInventarioBodegas_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
+        modelBuilder.Entity<tbInventarioBodegasHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbInventarioBodegasHistorial", "Inve");
+
+            entity.Property(e => e.HIBo_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HIBo_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HIBo_Id).ValueGeneratedOnAdd();
+        });
+
         modelBuilder.Entity<tbInventarioSucursales>(entity =>
         {
             entity.HasKey(e => e.InSu_Id).HasName("PK_Inve_tbInventarioSucursales_InSu_Id");
@@ -1159,6 +1407,22 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbInventarioSucursalesUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Inve_tbInventarioSucursales_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbInventarioSucursalesHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbInventarioSucursalesHistorial", "Inve");
+
+            entity.Property(e => e.HISu_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HISu_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HISu_Id).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<tbMarcas>(entity =>
@@ -1437,6 +1701,41 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Vnta_tbPedidosDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
+        modelBuilder.Entity<tbPedidosDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbPedidosDetalleHistorial", "Vnta");
+
+            entity.Property(e => e.HPeD_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HPeD_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HPeD_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.PeDe_ProdPrecio).HasColumnType("numeric(8, 2)");
+        });
+
+        modelBuilder.Entity<tbPedidosHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbPedidosHistorial", "Vnta");
+
+            entity.Property(e => e.HiPe_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HiPe_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HiPe_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Pedi_FechaEntrega).HasColumnType("datetime");
+            entity.Property(e => e.Pedi_FechaPedido).HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<tbPermisos>(entity =>
         {
             entity.HasKey(e => e.Perm_Id).HasName("PK_Acce_tbPermisos_Perm_Id");
@@ -1496,6 +1795,24 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPreciosPorProductoUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Vnta_tbPreciosPorProducto_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbPreciosPorProductoHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbPreciosPorProductoHistorial", "Vnta");
+
+            entity.Property(e => e.HiPP_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HiPP_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HiPP_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.PreP_PrecioContado).HasColumnType("numeric(8, 2)");
+            entity.Property(e => e.PreP_PrecioCredito).HasColumnType("numeric(8, 2)");
         });
 
         modelBuilder.Entity<tbProductos>(entity =>
@@ -1566,48 +1883,43 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Inve_tbProductos_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
-        modelBuilder.Entity<tbPromociones>(entity =>
+        modelBuilder.Entity<tbProductosHistorial>(entity =>
         {
-            entity.HasKey(e => e.Prom_Id).HasName("PK_Inve_tbPromociones_Prom_Id");
+            entity
+                .HasNoKey()
+                .ToTable("tbProductosHistorial", "Inve");
 
-            entity.ToTable("tbPromociones", "Inve");
-
-            entity.Property(e => e.Muni_Codigo)
-                .HasMaxLength(4)
-                .IsUnicode(false)
-                .HasDefaultValue("N/A");
-            entity.Property(e => e.Prom_Aplicar)
+            entity.Property(e => e.HPro_Accion)
                 .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HPro_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HPro_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Prod_Codigo)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.Prod_CodigoBarra)
+                .HasMaxLength(40)
+                .IsUnicode(false);
+            entity.Property(e => e.Prod_CostoTotal).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Prod_Descripcion)
+                .HasMaxLength(70)
+                .IsUnicode(false);
+            entity.Property(e => e.Prod_EsPromo)
                 .HasMaxLength(1)
                 .IsUnicode(false)
                 .IsFixedLength();
-            entity.Property(e => e.Prom_Descripcion)
-                .IsRequired()
-                .HasMaxLength(100)
+            entity.Property(e => e.Prod_Imagen).IsUnicode(false);
+            entity.Property(e => e.Prod_PagaImpuesto)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .IsFixedLength();
+            entity.Property(e => e.Prod_PrecioUnitario).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Prom_DescripcionCorta)
+                .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Prom_Estado).HasDefaultValue(true);
-            entity.Property(e => e.Prom_FechaCreacion).HasColumnType("datetime");
-            entity.Property(e => e.Prom_FechaFin).HasColumnType("datetime");
-            entity.Property(e => e.Prom_FechaInicio).HasColumnType("datetime");
-            entity.Property(e => e.Prom_FechaModificacion).HasColumnType("datetime");
-            entity.Property(e => e.Prom_Valor).HasColumnType("decimal(18, 2)");
-
-            entity.HasOne(d => d.Muni_CodigoNavigation).WithMany(p => p.tbPromociones)
-                .HasForeignKey(d => d.Muni_Codigo)
-                .HasConstraintName("FK_Inve_tbPromociones_Gral_tbMunicipios_Muni_Codigo");
-
-            entity.HasOne(d => d.Sucu).WithMany(p => p.tbPromociones)
-                .HasForeignKey(d => d.Sucu_Id)
-                .HasConstraintName("FK_Inve_tbPromociones_Gral_tbSucursales_Sucu_Id");
-
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbPromocionesUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbPromociones_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
-
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPromocionesUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Inve_tbPromociones_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbPromocionesDetalle>(entity =>
@@ -1620,10 +1932,15 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.PrDe_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.PrDe_FechaModificacion).HasColumnType("datetime");
 
-            entity.HasOne(d => d.Prom).WithMany(p => p.tbPromocionesDetalle)
+            entity.HasOne(d => d.Prod).WithMany(p => p.tbPromocionesDetalleProd)
+                .HasForeignKey(d => d.Prod_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Inve_tbPromocionesDetalle_Inve_tbProductos_Prod_Id");
+
+            entity.HasOne(d => d.Prom).WithMany(p => p.tbPromocionesDetalleProm)
                 .HasForeignKey(d => d.Prom_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbPromocionesDetalle_Inve_tbPromociones_Prom_Id");
+                .HasConstraintName("FK_Inve_tbPromocionesDetalle_Prom_Id_Inve_tbProductos_Prod_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbPromocionesDetalleUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
@@ -1633,6 +1950,22 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPromocionesDetalleUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Inve_tbPromocionesDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbPromocionesDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbPromocionesDetalleHistorial", "Inve");
+
+            entity.Property(e => e.HPrD_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HPrD_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HPrD_Id).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<tbProveedores>(entity =>
@@ -1796,6 +2129,45 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbRecargasDetalleUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Logi_tbRecargasDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbRecargasDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbRecargasDetalleHistorial", "Logi");
+
+            entity.Property(e => e.HReD_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HReD_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HReD_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.ReDe_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tbRecargasHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbRecargasHistorial", "Logi");
+
+            entity.Property(e => e.HRec_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HRec_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HRec_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Reca_Fecha).HasColumnType("datetime");
+            entity.Property(e => e.Reca_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<tbRegistrosCAI>(entity =>
@@ -2066,6 +2438,45 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbTrasladosDetalleUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Logi_TrasladosDetalle_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbTrasladosDetalleHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbTrasladosDetalleHistorial", "Logi");
+
+            entity.Property(e => e.HTDe_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HTDe_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HTDe_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.TrDe_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tbTrasladosHistorial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbTrasladosHistorial", "Logi");
+
+            entity.Property(e => e.HTra_Accion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.HTra_FechaAccion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.HTra_Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.Tras_Fecha).HasColumnType("datetime");
+            entity.Property(e => e.Tras_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<tbUsuarios>(entity =>
