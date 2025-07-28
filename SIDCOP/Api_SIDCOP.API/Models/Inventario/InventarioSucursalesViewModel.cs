@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Inventario
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Inventario
 {
     public class InventarioSucursalesViewModel
     {
@@ -8,6 +10,10 @@
         public int Sucu_Id { get; set; }
 
         public int Prod_Id { get; set; }
+
+        public string? Sucu_Descripcion { get; set; }
+
+        public string? Prod_Descripcion { get; set; }
 
         public int InSu_Cantidad { get; set; }
 

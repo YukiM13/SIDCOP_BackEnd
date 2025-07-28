@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -11,7 +12,12 @@ public partial class tbInventarioSucursales
 
     public int Sucu_Id { get; set; }
 
+    [NotMapped]
+    public string? Sucu_Descripcion { get; set; }
+
     public int Prod_Id { get; set; }
+    [NotMapped]
+    public string? Prod_Descripcion { get; set; }
 
     public int InSu_Cantidad { get; set; }
 

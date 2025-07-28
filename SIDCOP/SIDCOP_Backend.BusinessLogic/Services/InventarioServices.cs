@@ -16,7 +16,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ProductosRepository _productosRepository;
         private readonly InventarioBodegaRepository _inventarioBodegaRepository;
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
-     private readonly DescuentosRepository _descuentosRepository;
+        private readonly DescuentosRepository _descuentosRepository;
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
        InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
@@ -440,6 +440,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar descuento: {ex.Message}");
             }
         }
+        #endregion
+
+        #region Inventario Sucursal
+
+        public IEnumerable<tbInventarioSucursales> ListInve(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListInve(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
         #endregion
     }
 }
