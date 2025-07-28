@@ -91,6 +91,9 @@ public partial class tbClientes
     public string? Ruta_Descripcion { get; set; }
 
     [NotMapped]
+    public string? Pais_Descripcion { get; set; }
+
+    [NotMapped]
     public int Secuencia { get; set; }
 
     public virtual tbCanales Cana { get; set; }

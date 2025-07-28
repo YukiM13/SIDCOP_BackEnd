@@ -76,5 +76,7 @@
         public string? Colo_Descripcion { get; set; }
         public string? EsCv_Descripcion { get; set; }
         public string? Ruta_Descripcion { get; set; }
+
+        public string? Pais_Descripcion { get; set; }
     }
 }
