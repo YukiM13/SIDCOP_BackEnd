@@ -401,10 +401,12 @@ namespace SIDCOP_Backend.DataAccess
         #endregion PagosCuentasPorCobrar
         
 
-        #region
+        #region PreciosPorProducto
         
-        public const string PreciosPorProducto_InsertarLista = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
-        public const string PreciosPorProductoListar_PorProducto = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
+        public const string PreciosPorProducto_InsertarLista        = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
+        public const string PreciosPorProductoListar_PorProducto    = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
+        public const string PreciosPorProducto_EliminarLista        = "[Vnta].[SP_PreciosPorProducto_EliminarLista]";
+        public const string PreciosPorProducto_EditarLista          = "[Vnta].[SP_PreciosPorProducto_EditarLista]";
 
         #endregion
 
