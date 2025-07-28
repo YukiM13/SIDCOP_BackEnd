@@ -26,7 +26,7 @@ public partial class tbProductos
 
     public int Prov_Id { get; set; }
 
-    public int Impu_Id { get; set; }
+    public int? Impu_Id { get; set; }
 
     public decimal? Prod_PrecioUnitario { get; set; }
 
