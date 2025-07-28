@@ -32,7 +32,6 @@ public partial class tbSucursales
 
     public bool Sucu_Estado { get; set; }
 
-
     [NotMapped]
     public string? Colo_Descripcion { get; set; }
 
@@ -68,8 +67,6 @@ public partial class tbSucursales
     public virtual ICollection<tbEmpleados> tbEmpleados { get; set; } = new List<tbEmpleados>();
 
     public virtual ICollection<tbInventarioSucursales> tbInventarioSucursales { get; set; } = new List<tbInventarioSucursales>();
-
-    public virtual ICollection<tbPromociones> tbPromociones { get; set; } = new List<tbPromociones>();
 
     public virtual ICollection<tbPuntosEmision> tbPuntosEmision { get; set; } = new List<tbPuntosEmision>();
 
