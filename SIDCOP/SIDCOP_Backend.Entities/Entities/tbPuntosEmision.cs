@@ -30,6 +30,9 @@ public partial class tbPuntosEmision
     public int Secuencia { get; set; }
 
     [NotMapped]
+    public string Sucu_Descripcion { get; set; }
+
+    [NotMapped]
     public String Estado { get; set; }
 
     [NotMapped]

@@ -305,7 +305,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string PuntoEmision_Insertar = "[Vnta].[SP_PuntoEmision_Insertar]";
         public static string PuntoEmision_Actualizar = "[Vnta].[SP_PuntoEmision_Actualizar]";
         public static string PuntoEmision_Buscar = "[Vnta].[SP_PuntoEmision_Buscar]";
-        public static string PuntoEmision_Eliminar = "[Vnta].[SP_PuntoEmision_Eliminar]";
+        public static string PuntoEmision_Eliminar = "[Vnta].[SP_PuntoEmision_CambiarEstado]";
 
         #endregion PuntosEmision
 
@@ -383,11 +383,13 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Paises
 
-        #region TipiosDeVivienda
-
+        #region TiposDeVivienda
         public const string TiposDeVivienda_Listar = "Gral.SP_TiposDeVivienda_Listar";
+        #endregion TiposDeVivienda
 
-        #endregion TipiosDeVivienda
+        #region Parentescos
+        public const string Parentescos_Listar = "Gral.SP_Parentescos_Listar";
+        #endregion Parentescos
 
         #region PagosCuentasPorCobrar
 

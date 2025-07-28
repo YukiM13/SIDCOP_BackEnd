@@ -48,6 +48,18 @@ public partial class tbEmpleados
 
     public string Empl_Imagen { get; set; }
 
+    public virtual tbCargos Carg { get; set; }
+
+    public virtual tbColonias Colo { get; set; }
+
+    public virtual tbEstadosCiviles EsCv { get; set; }
+
+    public virtual tbSucursales Sucu { get; set; }
+
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
     [NotMapped]
     public string NombreCompleto { get; set; }
 
@@ -75,17 +87,6 @@ public partial class tbEmpleados
     [NotMapped]
     public int Secuencia { get; set; }
 
-    public virtual tbCargos Carg { get; set; }
-
-    public virtual tbColonias Colo { get; set; }
-
-    public virtual tbEstadosCiviles EsCv { get; set; }
-
-    public virtual tbSucursales Sucu { get; set; }
-
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
     public virtual ICollection<tbVendedores> tbVendedoresVend_AyudanteNavigation { get; set; } = new List<tbVendedores>();
 

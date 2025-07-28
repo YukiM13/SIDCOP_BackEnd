@@ -66,6 +66,8 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
+
+
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
@@ -89,13 +91,20 @@ public partial class tbClientes
     public string? Ruta_Descripcion { get; set; }
 
     [NotMapped]
+    public string? Pais_Descripcion { get; set; }
+
+    [NotMapped]
     public int Secuencia { get; set; }
 
     public virtual tbCanales Cana { get; set; }
 
+    public virtual tbPaises Clie_NacionalidadNavigation { get; set; }
+
     public virtual tbEstadosCiviles EsCv { get; set; }
 
     public virtual tbRutas Ruta { get; set; }
+
+    public virtual tbTiposDeVivienda TiVi { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

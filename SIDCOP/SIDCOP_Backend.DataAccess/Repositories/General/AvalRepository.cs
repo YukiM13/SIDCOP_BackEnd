@@ -46,15 +46,16 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pare_Id", item.Pare_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DNI", item.Aval_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Telefono", item.Aval_Telefono, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@TiVi_Id", item.TiVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Aval_Observaciones", item.Aval_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DireccionExacta", item.Aval_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_FechaNacimiento", item.Aval_FechaNacimiento, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@EsCv_Id", item.EsCv_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             try
@@ -93,15 +94,16 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pare_Id", item.Pare_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DNI", item.Aval_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Telefono", item.Aval_Telefono, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@TiVi_Id", item.TiVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Aval_Observaciones", item.Aval_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DireccionExacta", item.Aval_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_FechaNacimiento", item.Aval_FechaNacimiento, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@EsCv_Id", item.EsCv_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 

@@ -61,6 +61,4 @@ public partial class tbConfiguracionFacturas
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-
 }

@@ -22,6 +22,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             _ventaServices = ventaServices;
             _mapper = mapper;
         }
+
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
