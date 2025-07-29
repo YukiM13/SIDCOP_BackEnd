@@ -336,69 +336,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al insertar producto: {ex.Message}");
             }
         }
-        public ServiceResult InsertarDescuentoDetalle(tbDescuentosDetalle descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetails(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
-
-
-        public ServiceResult InsertarDescuentoPorCliente(tbDescuentoPorClientes descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetailsClientes(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
-
-        public ServiceResult InsertarDescuentoPorEscala(tbDescuentosPorEscala descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetallesEscala(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
+        
 
         public ServiceResult ActualizarDescuentos(tbDescuentos descuento)
         {
