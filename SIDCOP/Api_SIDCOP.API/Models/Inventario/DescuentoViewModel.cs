@@ -28,6 +28,8 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public bool Desc_Estado { get; set; }
 
+        public string Desc_TipoFactura { get; set; }
+
         public string? clientes { get; set; }
 
         public string? referencias { get; set; }
