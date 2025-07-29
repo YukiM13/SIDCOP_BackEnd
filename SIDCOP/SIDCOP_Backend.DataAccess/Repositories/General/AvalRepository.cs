@@ -46,7 +46,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DNI", item.Aval_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Telefono", item.Aval_Telefono, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@TiVi_Id", item.TiVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -93,7 +93,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Aval_ParentescoConCliente", item.Aval_ParentescoConCliente, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_DNI", item.Aval_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Telefono", item.Aval_Telefono, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@TiVi_Id", item.TiVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);

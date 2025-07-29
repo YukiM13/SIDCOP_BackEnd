@@ -24,16 +24,15 @@ public partial class tbCAIs
 
     public bool NCai_Estado { get; set; }
 
-    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbRegistrosCAI> tbRegistrosCAI { get; set; } = new List<tbRegistrosCAI>();
-
     [NotMapped]
     public string Estado { get; set; }
 
     [NotMapped]
     public int Secuencia { get; set; }
 
+    public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
+    public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbRegistrosCAI> tbRegistrosCAI { get; set; } = new List<tbRegistrosCAI>();
 }

@@ -50,7 +50,6 @@ public partial class tbVendedores
 
     public string Vend_Imagen { get; set; }
 
-
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
