@@ -50,6 +50,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+            if (item.Impu_Id == 0)
+            {
+                item.Impu_Id = null;
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -63,7 +67,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_PromODesc", item.Prod_PromODesc, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_FechaCreacion", item.Prod_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
@@ -115,7 +118,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_PromODesc", item.Prod_PromODesc, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_FechaModificacion", item.Prod_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);

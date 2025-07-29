@@ -34,8 +34,6 @@ public partial class tbProductos
 
     public string Prod_PagaImpuesto { get; set; }
 
-    public int? Prod_PromODesc { get; set; }
-
     public string Prod_EsPromo { get; set; }
 
     public bool Prod_Estado { get; set; }
@@ -98,6 +96,10 @@ public partial class tbProductos
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
 
     public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
+
+    public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleProd { get; set; } = new List<tbPromocionesDetalle>();
+
+    public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleProm { get; set; } = new List<tbPromocionesDetalle>();
 
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
 

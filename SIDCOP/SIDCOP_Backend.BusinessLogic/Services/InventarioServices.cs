@@ -16,7 +16,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ProductosRepository _productosRepository;
         private readonly InventarioBodegaRepository _inventarioBodegaRepository;
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
-     private readonly DescuentosRepository _descuentosRepository;
+        private readonly DescuentosRepository _descuentosRepository;
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
        InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
@@ -209,15 +209,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _productosRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                //var deleteResult = _productosRepository.Delete(id);
+                //if (deleteResult.code_Status == 1)
+                //{
+                //    return result.Ok(deleteResult);
+                //}
+                //else
+                //{
+                //    return result.Error(deleteResult);
+                //}
+                var list = _productosRepository.Delete(id);
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
@@ -245,11 +247,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var insertResult = _productosRepository.Insert(producto);
                 if (insertResult.code_Status == 1)
                 {
-                    return result.Ok(insertResult.message_Status);
+                    return result.Ok(insertResult);
                 }
                 else
                 {
-                    return result.Error(insertResult.message_Status);
+                    return result.Error(insertResult);
                 }
             }
             catch (Exception ex)
@@ -266,11 +268,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var updateResult = _productosRepository.Update(producto);
                 if (updateResult.code_Status == 1)
                 {
-                    return result.Ok(updateResult.message_Status);
+                    return result.Ok(updateResult);
                 }
                 else
                 {
-                    return result.Error(updateResult.message_Status);
+                    return result.Error(updateResult);
                 }
             }
             catch (Exception ex)
@@ -334,69 +336,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al insertar producto: {ex.Message}");
             }
         }
-        public ServiceResult InsertarDescuentoDetalle(tbDescuentosDetalle descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetails(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
-
-
-        public ServiceResult InsertarDescuentoPorCliente(tbDescuentoPorClientes descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetailsClientes(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
-
-        public ServiceResult InsertarDescuentoPorEscala(tbDescuentosPorEscala descuento)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                var insertResult = _descuentosRepository.InsertDetallesEscala(descuento);
-                if (insertResult.code_Status == 1)
-                {
-                    return result.Ok(insertResult);
-                }
-                else
-                {
-                    return result.Error(insertResult);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al insertar producto: {ex.Message}");
-            }
-        }
+        
 
         public ServiceResult ActualizarDescuentos(tbDescuentos descuento)
         {
@@ -440,6 +380,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al eliminar descuento: {ex.Message}");
             }
         }
+        #endregion
+
+        #region Inventario Sucursal
+
+        public IEnumerable<tbInventarioSucursales> ListInve(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListInve(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
         #endregion
     }
 }
