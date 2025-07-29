@@ -46,7 +46,13 @@ public partial class tbRegistrosCAI
     public String Sucu_Descripcion { get; set; }
 
     [NotMapped]
+    public string PuEm_Codigo { get; set; }
+
+    [NotMapped]
     public String PuEm_Descripcion { get; set; }
+
+    [NotMapped]
+    public string NCai_Codigo { get; set; }
 
     [NotMapped]
     public String NCai_Descripcion { get; set; }
