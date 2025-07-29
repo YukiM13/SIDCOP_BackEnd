@@ -69,8 +69,6 @@ public partial class tbSucursales
 
     public virtual ICollection<tbInventarioSucursales> tbInventarioSucursales { get; set; } = new List<tbInventarioSucursales>();
 
-    public virtual ICollection<tbPromociones> tbPromociones { get; set; } = new List<tbPromociones>();
-
     public virtual ICollection<tbPuntosEmision> tbPuntosEmision { get; set; } = new List<tbPuntosEmision>();
 
     public virtual ICollection<tbRegistrosCAI> tbRegistrosCAI { get; set; } = new List<tbRegistrosCAI>();
