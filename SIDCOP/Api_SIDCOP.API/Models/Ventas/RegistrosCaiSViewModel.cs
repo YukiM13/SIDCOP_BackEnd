@@ -54,6 +54,14 @@ namespace Api_SIDCOP.API.Models.Ventas
         
         public String NCai_Descripcion { get; set; }
 
+
+        
+        public string PuEm_Codigo { get; set; }
+
+       
+      
+        public string NCai_Codigo { get; set; }
+
         //public virtual tbCAIs NCai { get; set; }
 
         //public virtual tbPuntosEmision PuEm { get; set; }
