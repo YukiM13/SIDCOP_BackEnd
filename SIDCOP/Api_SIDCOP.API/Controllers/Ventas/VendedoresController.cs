@@ -43,7 +43,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
@@ -62,7 +62,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
@@ -81,7 +81,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
             else
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
         }
 
