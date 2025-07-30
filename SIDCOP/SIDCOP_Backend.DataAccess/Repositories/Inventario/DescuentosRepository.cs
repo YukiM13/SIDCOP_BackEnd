@@ -108,6 +108,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@desc_Descripcion", item.Desc_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_Tipo", item.Desc_Tipo, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_Aplicar", item.Desc_Aplicar, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@desc_TipoFactura", item.Desc_TipoFactura, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
             parameter.Add("@desc_FechaInicio", item.Desc_FechaInicio, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_FechaFin", item.Desc_FechaFin, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@desc_Observaciones", item.Desc_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
