@@ -29,7 +29,7 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult InsertarRol([FromBody] AvalViewModel
+        public IActionResult InsertarAval([FromBody] AvalViewModel
             item)
         {
             var mapped = _mapper.Map<tbAvales>(item);
@@ -38,7 +38,7 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPut("Actualizar")]
-        public IActionResult ActualizarRol([FromBody] AvalViewModel item)
+        public IActionResult ActualizarAval([FromBody] AvalViewModel item)
         {
             var mapped = _mapper.Map<tbAvales>(item);
             var update = _generalServices.ActualizarAval(mapped);

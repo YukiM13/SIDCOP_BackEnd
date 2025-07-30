@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -20,6 +21,21 @@ public partial class tbDireccionesPorCliente
     public decimal? DiCl_Latitud { get; set; }
 
     public decimal? DiCl_Longitud { get; set; }
+
+    [NotMapped]
+    public string Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Depa_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Clie_Codigo { get; set; }
+
+    [NotMapped]
+    public string Clie_Nombres { get; set; }
+
+    [NotMapped]
+    public string Clie_Apellidos { get; set; }
 
     public int Usua_Creacion { get; set; }
 

@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.General
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.General
 {
     public class AvalViewModel
     {
@@ -29,6 +31,21 @@
         public DateTime? Aval_FechaNacimiento { get; set; }
 
         public int? EsCv_Id { get; set; }
+
+        
+        public string Pare_Descripcion { get; set; }
+
+        
+        public string EsCv_Descripcion { get; set; }
+
+        
+        public string Colo_Descripcion { get; set; }
+
+        
+        public string Depa_Descripcion { get; set; }
+
+        
+        public string TiVi_Descripcion { get; set; }
 
         public int Usua_Creacion { get; set; }
 
