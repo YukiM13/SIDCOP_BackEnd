@@ -16,6 +16,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
+        public RequestStatus DeleteLista(tbPreciosPorProducto item)
+        {
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_ListaPrecios", item.PreP_ListaPrecios, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<RequestStatus>(ScriptDatabase.PreciosPorProducto_EliminarLista, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            var status = new RequestStatus();
+            status = result.First();
+
+
+            return status;
+        }
+
         public tbPreciosPorProducto Find(int? id)
         {
             throw new NotImplementedException();
@@ -46,6 +63,30 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var status = new RequestStatus();
             status = result.First();
 
+
+            return status;
+        }
+
+        public RequestStatus UpdateLista(tbPreciosPorProducto item)
+        {
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@PreP_ListaPrecios", item.PreP_ListaPrecios, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@ClientesXml", item.ClientesXml, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_PrecioContado", item.PreP_PrecioContado, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_PrecioCredito", item.PreP_PrecioCredito, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_InicioEscala", item.PreP_InicioEscala, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_FinEscala", item.PreP_FinEscala, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@PreP_FechaCreacion", item.PreP_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<RequestStatus>(ScriptDatabase.PreciosPorProducto_EditarLista, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            var status = new RequestStatus();
+            status = result.First();
 
             return status;
         }

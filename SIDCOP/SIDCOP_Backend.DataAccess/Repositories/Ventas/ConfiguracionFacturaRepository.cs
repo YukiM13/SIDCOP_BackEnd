@@ -89,12 +89,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@CoFa_FechaModificacion", item.CoFa_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.ConfiguracionFactura_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.QueryFirst<RequestStatus>(ScriptDatabase.ConfiguracionFactura_Actualizar,parameters, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
 
-            var status = new RequestStatus();
-            status.code_Status = result;
-
-            return status;
         }
     }
 }
+

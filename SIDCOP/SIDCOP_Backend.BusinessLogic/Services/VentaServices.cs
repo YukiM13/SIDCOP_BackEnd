@@ -662,7 +662,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #endregion CuentasPorCobrar
 
-        #region ConfiguracionFacturas
+        #region PreciosPorProducto
 
         public IEnumerable<tbPreciosPorProducto> ListPreciosPorProducto_PorProducto(int? id)
         {
@@ -685,6 +685,32 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _preciosPorProductoRepository.InsertLista(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public ServiceResult UpdatePreciosPorProductoLista(tbPreciosPorProducto item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _preciosPorProductoRepository.UpdateLista(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _preciosPorProductoRepository.DeleteLista(item);
                 return result.Ok(response);
             }
             catch (Exception ex)

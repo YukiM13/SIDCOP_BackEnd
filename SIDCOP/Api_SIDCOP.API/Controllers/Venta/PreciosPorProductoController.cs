@@ -15,7 +15,6 @@ namespace Api_SIDCOP.API.Controllers.Venta
     {
         public readonly VentaServices _ventaServices;
         public readonly IMapper _mapper;
-        //private readonly EmailService _emailService;
 
         public PreciosPorProductoController(VentaServices ventaServices, IMapper mapper)
         {
@@ -32,11 +31,29 @@ namespace Api_SIDCOP.API.Controllers.Venta
         }
 
 
-        [HttpPost("Insertar")]
-        public IActionResult Insertar(PreciosPorProductoViewModel item)
+        [HttpPost("InsertarLista")]
+        public IActionResult InsertarLista(PreciosPorProductoViewModel item)
         {
             var mapped = _mapper.Map<tbPreciosPorProducto>(item);
             var result = _ventaServices.InsertPreciosPorProductoLista(mapped);
+
+            return Ok(result);
+        }
+
+        [HttpPost("EliminarLista")]
+        public IActionResult EliminarLista(PreciosPorProductoViewModel item)
+        {
+            var mapped = _mapper.Map<tbPreciosPorProducto>(item);
+            var result = _ventaServices.DeletePreciosPorProductoLista(mapped);
+
+            return Ok(result);
+        }
+
+        [HttpPost("ActualizarLista")]
+        public IActionResult ActualizarLista(PreciosPorProductoViewModel item)
+        {
+            var mapped = _mapper.Map<tbPreciosPorProducto>(item);
+            var result = _ventaServices.UpdatePreciosPorProductoLista(mapped);
 
             return Ok(result);
         }
