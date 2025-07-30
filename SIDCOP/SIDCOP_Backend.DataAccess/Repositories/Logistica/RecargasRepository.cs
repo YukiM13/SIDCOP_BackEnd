@@ -36,6 +36,28 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result;
         }
 
+        public IEnumerable<tbRecargas> FindSucu(int id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            var result = db.Query<tbRecargas>(ScriptDatabase.Recargas_Listar_Sucursal,parameter,
+                commandType: System.Data.CommandType.StoredProcedure);
+
+            if (result == null)
+            {
+                throw new Exception("Sucursal sin recargas");
+
+            }
+            
+
+            return result;
+        }
+
+
+
+
         public RequestStatus Insert(tbRecargas item)
         {
             var parameter = new DynamicParameters();

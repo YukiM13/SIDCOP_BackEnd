@@ -66,6 +66,24 @@ namespace Api_SIDCOP.API.Controllers.Logistica
                 return NotFound("Sucursal no encontrada.");
             }
         }
+        [HttpGet("ListarsPorSucursal/{id}")]
+        public IActionResult ListarRecargas(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var canal = _logisticaServices.FindRecargasSucu(id);
+            if (canal != null)
+            {
+                return Ok(canal);
+            }
+            else
+            {
+                return NotFound("Recargas no encontradas.");
+            }
+        }
+
 
 
     }
