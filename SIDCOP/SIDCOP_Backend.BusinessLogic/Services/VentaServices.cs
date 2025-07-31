@@ -382,14 +382,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _vendedorRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+               
+            
+                    return result.Ok(deleteResult);
+              
+            
             }
             catch (Exception ex)
             {
