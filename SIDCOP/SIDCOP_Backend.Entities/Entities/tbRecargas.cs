@@ -51,6 +51,8 @@ public partial class tbRecargas
 
     [NotMapped]
     public int? ReDe_Cantidad { get; set; }
+    [NotMapped]
+    public string? DetalleProductos { get; set; }
 
     [NotMapped]
     public List<RecargaDetalleDTO> Detalles { get; set; }
