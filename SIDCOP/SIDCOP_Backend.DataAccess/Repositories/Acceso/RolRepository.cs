@@ -86,6 +86,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
+        public IEnumerable<tbAccionesPorPantalla> ListAcciones()
+        {
+            var parameter = new DynamicParameters();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbAccionesPorPantalla>(ScriptDatabase.AccionesPorPantalla_Listar, parameter, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
         public RequestStatus Update(tbRoles item)
         {
             if (item == null)
