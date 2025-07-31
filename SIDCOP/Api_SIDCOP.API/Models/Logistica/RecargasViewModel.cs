@@ -44,5 +44,8 @@ namespace Api_SIDCOP.API.Models.Logistica
         public int? ReDe_Cantidad { get; set; }
 
         public List<RecargaDetalleDTO> Detalles { get; set; }
+
+        public string? DetalleProductos { get; set; }
+
     }
 }

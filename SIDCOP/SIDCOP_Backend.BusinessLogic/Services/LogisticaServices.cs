@@ -382,6 +382,36 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        //public tbRecargas FindRecargasSucu(int id)
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        var response = _recargasRepository.FindSucu(id);
+        //        return result.Ok(response); // Retorna el resultado exitoso
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+        //    }
+        //}
+
+
+      
+        // Servicio
+        public IEnumerable<tbRecargas> FindRecargasSucu(int id)
+        {
+            try
+            {
+                var recar = _recargasRepository.FindSucu(id);
+                return recar;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         #endregion
 
     }
