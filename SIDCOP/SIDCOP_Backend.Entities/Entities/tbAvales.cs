@@ -61,6 +61,9 @@ public partial class tbAvales
     public string Depa_Descripcion { get; set; }
 
     [NotMapped]
+    public string Muni_Descripcion { get; set; }
+
+    [NotMapped]
     public string TiVi_Descripcion { get; set; }
     public virtual tbClientes Clie { get; set; }
 

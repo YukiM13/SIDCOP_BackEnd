@@ -113,6 +113,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar = "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
+        public static string Colonias_ListarMunicipiosyDepartamentos = "[Gral].[SP_Colonias_ListarMunicipiosyDepartamentos]";
 
         #endregion Colonias
 
