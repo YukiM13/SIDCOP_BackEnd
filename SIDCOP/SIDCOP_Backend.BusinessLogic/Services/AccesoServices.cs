@@ -281,6 +281,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbAccionesPorPantalla> ListarAccionesPorPantalla()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _rolRepository.ListAcciones();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbAccionesPorPantalla> acciones = null;
+                return acciones;
+            }
+        }
 
         public ServiceResult InsertarRol(tbRoles item)
         {

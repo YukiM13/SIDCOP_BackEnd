@@ -32,5 +32,8 @@ public partial class tbMunicipios
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public virtual ICollection<tbColonias> tbColonias { get; set; } = new List<tbColonias>();
 }

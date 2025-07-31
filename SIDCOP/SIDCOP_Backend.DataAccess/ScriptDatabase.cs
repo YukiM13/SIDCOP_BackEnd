@@ -34,6 +34,8 @@ namespace SIDCOP_Backend.DataAccess
         //PARA LAS PANTALLAS CON SUS ACCIONES
         public static string Pantallas_Listar = "Acce.SP_Pantallas_Listar";
 
+        //PARA LAS ACCIONES DE LAS PANTALLAS
+        public static string AccionesPorPantalla_Listar = "[Acce].[SP_AccionesPorPantallas_Listar]";
         #endregion Roles
 
         #region Municipios
