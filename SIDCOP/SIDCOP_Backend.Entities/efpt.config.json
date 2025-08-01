@@ -179,6 +179,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Inve].[tbPromocionesPorClientes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbSubcategorias]",
          "ObjectType": 0
       },
