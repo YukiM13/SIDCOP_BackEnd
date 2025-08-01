@@ -28,6 +28,9 @@ public partial class tbTraslados
 
     public bool Tras_Estado { get; set; }
 
+    public bool? Tras_EsRecarga { get; set; }
+
+    public int? Reca_Id { get; set; }
 
     [NotMapped]
     public string Origen { get; set; }
@@ -45,8 +48,6 @@ public partial class tbTraslados
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 
     public virtual ICollection<tbTrasladosDetalle> tbTrasladosDetalle { get; set; } = new List<tbTrasladosDetalle>();
 }

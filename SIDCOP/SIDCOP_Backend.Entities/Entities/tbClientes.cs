@@ -66,8 +66,6 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
-
-
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
@@ -121,4 +119,6 @@ public partial class tbClientes
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbPreciosPorProducto> tbPreciosPorProducto { get; set; } = new List<tbPreciosPorProducto>();
+
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientes { get; set; } = new List<tbPromocionesPorClientes>();
 }
