@@ -411,5 +411,11 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+
+
+        #region Reportes 
+        public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+
+        #endregion
     }
 }

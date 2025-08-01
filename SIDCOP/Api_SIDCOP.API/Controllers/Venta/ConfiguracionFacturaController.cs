@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Venta;
+﻿using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;

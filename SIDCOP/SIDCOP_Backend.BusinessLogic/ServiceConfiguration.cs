@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SIDCOP_Backend.DataAccess.Repositories.Reportes;
 
 namespace SIDCOP_Backend.BusinessLogic
 {
@@ -77,6 +78,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<PreciosPorProductoRepository>();
             services.AddScoped<AvalRepository>();
             services.AddScoped<ParentescoRepository>();
+            services.AddScoped<ReporteRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
@@ -89,7 +91,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<VentaServices>();
             services.AddScoped<LogisticaServices>();
             services.AddScoped<RolRepository>();
-            //services.AddScoped<ReporteServices>();
+            services.AddScoped<ReportesServices>();
             //services.AddScoped<DashboardServices>();
 
             services.AddScoped<LogisticaServices>();
