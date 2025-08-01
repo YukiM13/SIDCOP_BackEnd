@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
-namespace Api_SIDCOP.API.Controllers.Venta
+namespace Api_SIDCOP.API.Controllers.Ventas
 {
     [ApiController]
     [Route("[controller]")]
@@ -84,4 +84,3 @@ namespace Api_SIDCOP.API.Controllers.Venta
 
 
 
-    
