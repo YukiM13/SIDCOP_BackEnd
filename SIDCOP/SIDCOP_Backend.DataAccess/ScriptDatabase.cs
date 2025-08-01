@@ -419,5 +419,11 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         #endregion
 
+
+
+        #region Reportes 
+        public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+
+        #endregion
     }
 }

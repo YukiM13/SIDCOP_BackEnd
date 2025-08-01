@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Api_SIDCOP.API.Models.Venta
+namespace Api_SIDCOP.API.Models.Ventas
 {
     public class PuntoEmisionViewModel
     {
         public int Secuencia { get; set; }
 
-        public String Estado { get; set; }
+        public string Estado { get; set; }
 
         public int PuEm_Id { get; set; }
 
@@ -28,9 +28,9 @@ namespace Api_SIDCOP.API.Models.Venta
 
         public string Sucu_Descripcion { get; set; }
 
-        public String UsuarioCreacion { get; set; }
+        public string UsuarioCreacion { get; set; }
 
 
-        public String UsuarioModificacion { get; set; }
+        public string UsuarioModificacion { get; set; }
     }
 }
