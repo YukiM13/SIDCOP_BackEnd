@@ -38,7 +38,14 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-    
+        [HttpGet("ListarMunicipiosyDepartamentos")]
+        public IActionResult ListarColoniasConMunicipiosyDepartamentos()
+        {
+            var list = _generalServices.ListarMunicipiosyDepartamentos();
+            return Ok(list);
+        }
+
+
         [HttpPost("Insertar")]
         public IActionResult Insert([FromBody] ColoniaViewModel item)
         {

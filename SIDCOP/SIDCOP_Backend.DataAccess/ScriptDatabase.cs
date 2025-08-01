@@ -34,6 +34,8 @@ namespace SIDCOP_Backend.DataAccess
         //PARA LAS PANTALLAS CON SUS ACCIONES
         public static string Pantallas_Listar = "Acce.SP_Pantallas_Listar";
 
+        //PARA LAS ACCIONES DE LAS PANTALLAS
+        public static string AccionesPorPantalla_Listar = "[Acce].[SP_AccionesPorPantallas_Listar]";
         #endregion Roles
 
         #region Municipios
@@ -113,6 +115,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar = "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
+        public static string Colonias_ListarMunicipiosyDepartamentos = "[Gral].[SP_Colonias_ListarMunicipiosyDepartamentos]";
 
         #endregion Colonias
 

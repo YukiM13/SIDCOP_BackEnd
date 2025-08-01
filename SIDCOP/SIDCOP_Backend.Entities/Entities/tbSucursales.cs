@@ -32,6 +32,7 @@ public partial class tbSucursales
 
     public bool Sucu_Estado { get; set; }
 
+
     [NotMapped]
     public string? Colo_Descripcion { get; set; }
 

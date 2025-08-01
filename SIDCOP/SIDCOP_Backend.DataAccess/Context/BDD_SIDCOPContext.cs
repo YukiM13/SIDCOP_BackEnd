@@ -18,6 +18,7 @@ public partial class BDD_SIDCOPContext : DbContext
     {
     }
 
+
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 
     public virtual DbSet<tbAccionesPorPantalla> tbAccionesPorPantalla { get; set; }
