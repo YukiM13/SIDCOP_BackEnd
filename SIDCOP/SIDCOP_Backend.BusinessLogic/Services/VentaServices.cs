@@ -30,12 +30,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PagosCuentasPorCobrarRepository _pagosCuentasPorCobrarRepository;
         private readonly PedidoRepository _pedidoRepository;
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
+        private readonly FacturasRepository _facturasRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
             ConfiguracionFacturaRepository configuracionFacturaRepository, PuntoEmisionRepository puntoEmisionRepository,
             CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository,
+            FacturasRepository facturasRepository,
 
             PreciosPorProductoRepository preciosPorProductoRepository,
 
@@ -54,6 +56,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _pagosCuentasPorCobrarRepository = pagosCuentasPorCobrarRepository;
             _pedidoRepository = pedidoRepository;
             _preciosPorProductoRepository = preciosPorProductoRepository;
+            _facturasRepository = facturasRepository;
         }
 
         #region Pedidos
@@ -720,5 +723,31 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion ConfiguracionFacturas
+
+        #region Ventas
+        public ServiceResult InsertVentas(VentaInsertarDTO item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.InsertarVenta(item);
+
+                if (response.code_Status == 1)
+                {
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar venta: {ex.Message}");
+            }
+        }
+
+        #endregion
     }
 }
