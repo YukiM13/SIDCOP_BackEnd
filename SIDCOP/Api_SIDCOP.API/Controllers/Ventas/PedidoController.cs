@@ -1,17 +1,17 @@
-﻿using Api_SIDCOP.API.Models.Venta;
-using Api_SIDCOP.API.Models.Ventas;
+﻿using Api_SIDCOP.API.Models.Ventas;
+
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
-namespace Api_SIDCOP.API.Controllers.Venta
+namespace Api_SIDCOP.API.Controllers.Ventas
 {
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
-    public class PedidoController: Controller
+    public class PedidoController : Controller
     {
         public readonly VentaServices _ventaServices;
         public readonly IMapper _mapper;
@@ -63,6 +63,6 @@ namespace Api_SIDCOP.API.Controllers.Venta
         }
 
 
-     
+
     }
 }

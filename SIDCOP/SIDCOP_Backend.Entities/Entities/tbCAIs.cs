@@ -15,6 +15,11 @@ public partial class tbCAIs
     public string NCai_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 
     public DateTime NCai_FechaCreacion { get; set; }
 

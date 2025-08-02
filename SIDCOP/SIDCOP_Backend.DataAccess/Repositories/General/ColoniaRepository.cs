@@ -89,6 +89,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
              return result;
         }
 
+        public IEnumerable<tbColonias> ListMunicipiosyDepartamentos()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbColonias>(ScriptDatabase.Colonias_ListarMunicipiosyDepartamentos, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
+        }
+
 
 
 

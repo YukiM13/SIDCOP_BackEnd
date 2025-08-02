@@ -126,27 +126,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region CaiS
 
-        public ServiceResult BuscarCaiS(int? id)
-        {
-            var result = new ServiceResult();
-            try
-            {
-                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var parameter = new DynamicParameters();
-                parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
-                var cai = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-
-                if (cai == null)
-                    return result.Error("Cai no encontrado");
-
-                return result.Ok(cai);
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al buscar Cai: {ex.Message}");
-            }
-        }
 
         public IEnumerable<tbCAIs> ListarCaiS()
         {
@@ -177,12 +157,27 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult EliminarCai(tbCAIs item)
+        public ServiceResult EliminarCai(int? id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _caiSRepository.Delete(item);
+                var list = _caiSRepository.EliminarCai(id);
+
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult BuscarCai(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _caiSRepository.BuscarCai(id);
 
                 return result.Ok(list);
             }
@@ -387,14 +382,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _vendedorRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+               
+            
+                    return result.Ok(deleteResult);
+              
+            
             }
             catch (Exception ex)
             {

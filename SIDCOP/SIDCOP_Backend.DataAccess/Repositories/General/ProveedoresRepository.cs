@@ -11,17 +11,26 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ProveedoresRepository : IRepository<tbProveedores>
     {
+
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Prov_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
-            var result = db.Execute(ScriptDatabase.Proveedores_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-
-            string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
-
-            return new RequestStatus {code_Status = result, message_Status = mensaje };
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Proveedores_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public tbProveedores Find(int? id)

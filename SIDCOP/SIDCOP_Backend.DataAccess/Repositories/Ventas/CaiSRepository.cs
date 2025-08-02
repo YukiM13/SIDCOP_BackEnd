@@ -52,7 +52,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         }
 
 
-        public tbCAIs Find(int? id)
+        public tbCAIs BuscarCai(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -66,16 +66,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         }
 
         // Es un update disfrazado de delete
-        public RequestStatus Delete(tbCAIs item)
+        public RequestStatus EliminarCai(int? id)
         {
-            if (item == null)
-            {
-                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
-            }
             var parameter = new DynamicParameters();
-            parameter.Add("@NCai_Id", item.NCai_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Usua_Modificacion", 1, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@NCai_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             try
             {
@@ -83,7 +77,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cai_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
-                    return new RequestStatus { code_Status = 0, message_Status = "Error Desconocido" };
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
                 return result;
             }
@@ -99,6 +93,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         }
 
         public RequestStatus Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public tbCAIs Find(int? id)
         {
             throw new NotImplementedException();
         }
