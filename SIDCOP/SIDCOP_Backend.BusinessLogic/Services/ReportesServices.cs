@@ -25,15 +25,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
 
-        public IEnumerable<ReportesViewModel> ReporteProductos()
+        public IEnumerable<ReportesViewModel> ReporteProductos(
+      DateTime? fechaInicio = null,
+      DateTime? fechaFin = null,
+      int? marcaId = null,
+      int? categoriaId = null)
         {
             try
             {
-                var list = _reporteRepository.ReporteDeProductos();
+                var list = _reporteRepository.ReporteDeProductos(fechaInicio, fechaFin, marcaId, categoriaId);
                 return list;
             }
             catch (Exception ex)
             {
+                // Log del error si tienes sistema de logging
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }
