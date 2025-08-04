@@ -46,6 +46,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_EsVendedor", item.Usua_EsVendedor, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_EsAdmin", item.Usua_EsAdmin, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Imagen", item.Usua_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_TienePermisos", item.Usua_TienePermisos, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaCreacion", item.Usua_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -81,6 +82,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_EsVendedor", item.Usua_EsVendedor, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_EsAdmin", item.Usua_EsAdmin, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Imagen", item.Usua_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_TienePermisos", item.Usua_TienePermisos, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaModificacion", item.Usua_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
