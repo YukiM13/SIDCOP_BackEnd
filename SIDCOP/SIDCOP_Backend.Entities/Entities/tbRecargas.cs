@@ -55,6 +55,9 @@ public partial class tbRecargas
     public string? DetalleProductos { get; set; }
 
     [NotMapped]
+    public int? Prod_Id { get; set; }
+
+    [NotMapped]
     public List<RecargaDetalleDTO> Detalles { get; set; }
 
     public virtual tbBodegas Bode { get; set; }

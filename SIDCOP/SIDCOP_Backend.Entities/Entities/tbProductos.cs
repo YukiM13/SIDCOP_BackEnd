@@ -101,6 +101,8 @@ public partial class tbProductos
 
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleProm { get; set; } = new List<tbPromocionesDetalle>();
 
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientes { get; set; } = new List<tbPromocionesPorClientes>();
+
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
 
     public virtual ICollection<tbTrasladosDetalle> tbTrasladosDetalle { get; set; } = new List<tbTrasladosDetalle>();

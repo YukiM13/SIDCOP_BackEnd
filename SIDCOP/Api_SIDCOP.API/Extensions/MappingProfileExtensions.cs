@@ -2,7 +2,7 @@ using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Inventario;
 using Api_SIDCOP.API.Models.Logistica;
-using Api_SIDCOP.API.Models.Venta;
+using Api_SIDCOP.API.Models.Reportes;
 using Api_SIDCOP.API.Models.Ventas;
 using AutoMapper;
 using SIDCOP_Backend.Entities.Entities;
@@ -71,6 +71,8 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbAvales, AvalViewModel>().ReverseMap();
 
             CreateMap<tbInventarioSucursales, InventarioSucursalesViewModel>().ReverseMap();
+         
+
         }
     }
 }

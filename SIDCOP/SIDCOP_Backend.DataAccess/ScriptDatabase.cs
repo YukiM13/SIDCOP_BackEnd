@@ -328,6 +328,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
         public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         public static string Recargas_Listar_Sucursal = "[Logi].[SP_Recargas_Listar_Sucursal]";
+        public static string Recarga_Actualizar = "Logi.Recarga_Actualizar";
         //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
 
@@ -348,7 +349,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Traslado_Buscar = "Logi.SP_Traslado_Buscar";
         public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
-        
+
 
         #endregion Traslados
 
@@ -400,16 +401,30 @@ namespace SIDCOP_Backend.DataAccess
         public const string PagosCuentasPorCobrar_Anular = "[Vnta].[SP_PagoCuentaPorCobrar_Anular]";
         public const string CuentaPorCobrar_Detalle = "[Vnta].[SP_CuentaPorCobrar_Detalle]";
         #endregion PagosCuentasPorCobrar
-        
+
 
         #region PreciosPorProducto
-        
-        public const string PreciosPorProducto_InsertarLista        = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
-        public const string PreciosPorProductoListar_PorProducto    = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
-        public const string PreciosPorProducto_EliminarLista        = "[Vnta].[SP_PreciosPorProducto_EliminarLista]";
-        public const string PreciosPorProducto_EditarLista          = "[Vnta].[SP_PreciosPorProducto_EditarLista]";
+
+        public const string PreciosPorProducto_InsertarLista = "[Vnta].[SP_PrecioPorProducto_InsertarLista]";
+        public const string PreciosPorProductoListar_PorProducto = "[Vnta].[SP_PreciosPorProductoListar_PorProducto]";
+        public const string PreciosPorProducto_EliminarLista = "[Vnta].[SP_PreciosPorProducto_EliminarLista]";
+        public const string PreciosPorProducto_EditarLista = "[Vnta].[SP_PreciosPorProducto_EditarLista]";
 
         #endregion
 
+
+
+
+        #region Venta
+
+        public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
+        #endregion
+
+
+
+        #region Reportes 
+        public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+
+        #endregion
     }
 }

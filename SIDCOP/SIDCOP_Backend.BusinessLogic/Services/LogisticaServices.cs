@@ -94,26 +94,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult EliminarRuta(int? id)
         {
+
             var result = new ServiceResult();
             try
             {
-                var deleteResult = _rutasRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var list = _rutasRepository.Delete(id);
+
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar ruta: {ex.Message}");
+                return result.Error(ex.Message);
             }
         }
+
+
+ 
         #endregion
 
 
