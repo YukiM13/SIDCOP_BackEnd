@@ -30,16 +30,27 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<ReportesViewModel> ReporteDeProductos()
+        public IEnumerable<ReportesViewModel> ReporteDeProductos(
+            DateTime? fechaInicio = null,
+            DateTime? fechaFin = null,
+            int? marcaId = null,
+            int? categoriaId = null)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            parameters.Add("@MarcaId", marcaId);
+            parameters.Add("@CategoriaId", categoriaId);
+
             var result = db.Query<ReportesViewModel>(
                 ScriptDatabase.ReporteDeProductos,
+                parameters,
                 commandType: CommandType.StoredProcedure
             ).ToList();
 
-            return result; // Retorna lista vacía si no hay datos, no lances excepción
+            return result;
         }
 
         public RequestStatus Update(ReportesViewModel item)
