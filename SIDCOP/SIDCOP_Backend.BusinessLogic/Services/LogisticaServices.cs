@@ -66,18 +66,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return lista;
             }
         }
-        public int InsertarRuta(tbRutas item)
+
+        public ServiceResult InsertarRuta(tbRutas item)
         {
+            var result = new ServiceResult();
             try
             {
                 var list = _rutasRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
+
 
         public ServiceResult ModificarRuta(tbRutas item)
         {
