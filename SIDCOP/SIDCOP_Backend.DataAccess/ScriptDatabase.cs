@@ -328,6 +328,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
         public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         public static string Recargas_Listar_Sucursal = "[Logi].[SP_Recargas_Listar_Sucursal]";
+        public static string Recarga_Actualizar = "Logi.Recarga_Actualizar";
         //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
 
@@ -419,5 +420,11 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         #endregion
 
+
+
+        #region Reportes 
+        public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+
+        #endregion
     }
 }

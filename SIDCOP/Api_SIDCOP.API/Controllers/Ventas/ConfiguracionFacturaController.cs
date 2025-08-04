@@ -1,11 +1,11 @@
-﻿using Api_SIDCOP.API.Models.Venta;
+﻿using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
-namespace Api_SIDCOP.API.Controllers.Venta
+namespace Api_SIDCOP.API.Controllers.Ventas
 {
     [ApiController]
     [Route("[controller]")]
@@ -37,7 +37,7 @@ namespace Api_SIDCOP.API.Controllers.Venta
         {
             var mapped = _mapper.Map<tbConfiguracionFacturas>(item);
             var result = _ventaServices.InsertConfiguracionFactura(mapped);
-            
+
             return Ok(result);
         }
 
@@ -55,7 +55,7 @@ namespace Api_SIDCOP.API.Controllers.Venta
         [HttpPost("Eliminar")]
         public IActionResult Eliminar(int id)
         {
-            
+
             var result = _ventaServices.DeleteConfiguracionFactura(id);
 
             return Ok(result);
@@ -72,7 +72,7 @@ namespace Api_SIDCOP.API.Controllers.Venta
                 result.Data = _mapper.Map<ConfiguracionFacturaViewModel>(result.Data);
             }
             catch (Exception ex) { }
-            
+
 
             return Ok(result);
         }
