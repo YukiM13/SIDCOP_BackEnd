@@ -19,6 +19,7 @@ namespace Api_SIDCOP.API.Models.Reportes
         public string Subc_Descripcion { get; set; }      
         public string Prov_NombreEmpresa { get; set; }
         public string Impu_Descripcion { get; set; }
+        public string UsuarioCreacion { get; set; }
         public DateTime Prod_FechaCreacion { get; set; }
 
 

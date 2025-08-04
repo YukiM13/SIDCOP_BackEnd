@@ -2,6 +2,8 @@
 {
     public class RutasViewModel
     {
+        public int? Secuencia { get; set; }
+
         public int Ruta_Id { get; set; }
 
         public string Ruta_Codigo { get; set; }

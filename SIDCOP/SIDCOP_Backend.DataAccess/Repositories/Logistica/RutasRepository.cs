@@ -120,9 +120,5 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             }
         }
 
-        public RequestStatus Delete(tbRutas item)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
