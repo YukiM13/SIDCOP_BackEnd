@@ -1,11 +1,12 @@
-﻿using SIDCOP_Backend.DataAccess.Repositories.Acceso;
-using SIDCOP_Backend.DataAccess.Repositories.General;
-using SIDCOP_Backend.Entities.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SIDCOP_Backend.DataAccess.Repositories.Acceso;
+using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -22,7 +23,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _permisoRepository = permisoRepository;
         }
 
-        #region Usuarios 
+        #region Usuarios
 
         public IEnumerable<tbUsuarios> ListUsuarios()
         {
@@ -34,7 +35,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbUsuarios> usua = null;
                 return usua;
             }
@@ -111,7 +111,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
         //public IEnumerable<tbUsuarios> IniciarSesion(tbUsuarios item)
         //{
         //    var result = new ServiceResult();
@@ -122,29 +121,34 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         //    }
         //    catch (Exception ex)
         //    {
-
         //        IEnumerable<tbUsuarios> usua = null;
         //        return usua;
         //    }
         //}
 
-        public LoginResponse IniciarSesion(LoginResponse item)
+        public ServiceResult IniciarSesion(LoginResponse item)
         {
+            var result = new ServiceResult();
             try
             {
-                return _usuarioRepository.Login(item);
-            }
-            catch
-            {
-                return new LoginResponse
+                var response = _usuarioRepository.Login(item);
+
+                if (response == null || response.code_Status != 1)
                 {
-                    code_Status = 0,
-                    message_Status = "Error al iniciar sesión"
-                };
+                    return result.Ok(new
+                    {
+                        code_Status = response?.code_Status ?? -1,
+                        message_Status = response?.message_Status ?? "Usuario o contraseña incorrectos."
+                    });
+                }
+
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
             }
         }
-
-
 
         public ServiceResult MostrarContrasena(int usuaId, string claveSeguridad)
         {
@@ -160,7 +164,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
         public ServiceResult RestablecerContrasena(tbUsuarios item)
         {
             var result = new ServiceResult();
@@ -174,10 +177,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        #endregion
 
+        #endregion Usuarios
 
         #region Permisos
+
         public IEnumerable<tbPermisos> ListPermisos()
         {
             var result = new ServiceResult();
@@ -188,7 +192,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-
                 IEnumerable<tbPermisos> usua = null;
                 return usua;
             }
@@ -250,7 +253,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error("Error al eliminar el permiso: " + ex.Message);
             }
         }
-        #endregion
+
+        #endregion Permisos
 
         #region Roles
 
@@ -281,6 +285,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbAccionesPorPantalla> ListarAccionesPorPantalla()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _rolRepository.ListAcciones();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbAccionesPorPantalla> acciones = null;
+                return acciones;
+            }
+        }
 
         public ServiceResult InsertarRol(tbRoles item)
         {
@@ -337,6 +355,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion
+        #endregion Roles
     }
 }

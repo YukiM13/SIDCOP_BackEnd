@@ -14,6 +14,12 @@ public partial class tbTrasladosDetalle
 
     public int Prod_Id { get; set; }
 
+    [NotMapped]
+    public string Prod_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Prod_Imagen { get; set; }
+
     public int TrDe_Cantidad { get; set; }
 
     public string TrDe_Observaciones { get; set; }

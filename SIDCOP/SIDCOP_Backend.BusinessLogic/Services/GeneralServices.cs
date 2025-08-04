@@ -337,6 +337,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbColonias> ListarMunicipiosyDepartamentos()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _coloniaRepository.ListMunicipiosyDepartamentos();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbColonias> colonia = null;
+                return colonia;
+            }
+        }
+
         public ServiceResult InsertarColonia(tbColonias item)
         {
             var result = new ServiceResult();
@@ -371,14 +386,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _coloniaRepository.Delete(id);
-                if (deleteResult.code_Status == 1)
-                {
                     return result.Ok(deleteResult);
-                }
-                else
-                {
-                    return result.Error(deleteResult);
-                }
             }
             catch (Exception ex)
             {

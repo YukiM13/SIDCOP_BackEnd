@@ -41,7 +41,12 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Content(json, "application/json");
         }
 
-
+        [HttpGet("ListarAccionesPorPantalla")]
+        public IActionResult ListarAccionesPorPantalla()
+        {
+            var list = _accesoServices.ListarAccionesPorPantalla();
+            return Ok(list);
+        }
 
         [HttpPost("Insertar")]
         public IActionResult InsertarRol([FromBody] RolViewModel item)

@@ -30,7 +30,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
-            var result = _ventaServices.BuscarCaiS(id);
+            var result = _ventaServices.BuscarCai(id);
 
             if (result == null)
             {
@@ -75,12 +75,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(result);
         }
 
-        [HttpPut("Eliminar")]
-        public IActionResult Modificar([FromBody] CaiSViewModel item)
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
         {
-            var mapped = _mapper.Map<tbCAIs>(item);
-            var update = _ventaServices.EliminarCai(mapped);
-            return Ok(update);
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var delete = _ventaServices.EliminarCai(id);
+            if (delete.Success)
+            {
+                return Ok(delete);
+            }
+            else
+            {
+                return BadRequest(delete);
+            }
         }
 
 

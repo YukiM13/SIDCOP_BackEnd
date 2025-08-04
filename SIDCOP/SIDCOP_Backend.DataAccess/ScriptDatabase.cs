@@ -34,6 +34,8 @@ namespace SIDCOP_Backend.DataAccess
         //PARA LAS PANTALLAS CON SUS ACCIONES
         public static string Pantallas_Listar = "Acce.SP_Pantallas_Listar";
 
+        //PARA LAS ACCIONES DE LAS PANTALLAS
+        public static string AccionesPorPantalla_Listar = "[Acce].[SP_AccionesPorPantallas_Listar]";
         #endregion Roles
 
         #region Municipios
@@ -113,6 +115,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Colonias_Eliminar = "[Gral].[SP_Colonia_Eliminar]";
         public static string Colonias_Insertar = "[Gral].[SP_Colonia_Insertar]";
         public static string Colonias_Actualizar = "[Gral].[SP_Colonia_Actualizar]";
+        public static string Colonias_ListarMunicipiosyDepartamentos = "[Gral].[SP_Colonias_ListarMunicipiosyDepartamentos]";
 
         #endregion Colonias
 
@@ -324,6 +327,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string Recargas_Listar = "Logi.SP_Recargas_Listar";
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
         public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
+        public static string Recargas_Listar_Sucursal = "[Logi].[SP_Recargas_Listar_Sucursal]";
+        public static string Recarga_Actualizar = "Logi.Recarga_Actualizar";
         //public static string DireccionesPorCliente_ListarPorCliente = "[Gral].[SP_DireccionesPorCliente_ListarPorCliente]";
         //public static string DireccionPorCliente_Eliminar = "[Gral].[SP_DireccionPorCliente_Eliminar]";
 
@@ -341,9 +346,10 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
         public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
-        public static string Traslado_Buscar = "Logi.SP_Traslado_Buscar";
+        public static string Traslado_Buscar = "[Logi].[SP_Traslado_Buscar]";
         public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
+        public static string TrasladoDetalle_Buscar = "Logi.SP_TrasladoDetalle_Buscar";
 
 
         #endregion Traslados
@@ -415,5 +421,11 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         #endregion
 
+
+
+        #region Reportes 
+        public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+
+        #endregion
     }
 }

@@ -11,19 +11,21 @@ namespace SIDCOP_Backend.Entities.Entities
     {
         public int code_Status { get; set; }
         public string? message_Status { get; set; }
-
         public int Usua_Id { get; set; }
-
         public string Usua_Usuario { get; set; }
-
         public string Usua_Clave { get; set; }
+        public string? Usua_Imagen { get; set; }
+        public int? PersonaId { get; set; }
+        public int Usua_IdPersona { get; set; }
+        public bool Usua_EsVendedor { get; set; }
+        public bool Usua_EsAdmin { get; set; }
+        public bool Usua_Estado { get; set; }
 
         [NotMapped]
-
-        public string? Role_Descripcion { get; set; }
+        public string? Nombres { get; set; }
 
         [NotMapped]
-        public string? Cargo { get; set; }
+        public string? Apellidos { get; set; }
 
         [NotMapped]
         public string? DNI { get; set; }
@@ -34,40 +36,34 @@ namespace SIDCOP_Backend.Entities.Entities
         [NotMapped]
         public string? Telefono { get; set; }
 
-        public int? PersonaId { get; set; }
-
         [NotMapped]
         public string? Imagen { get; set; }
 
         [NotMapped]
-        public string? Nombres { get; set; }
+        public string? Codigo { get; set; }
+
+        public int Role_Id { get; set; }
 
         [NotMapped]
-        public string? Apellidos { get; set; }
+        public string? Role_Descripcion { get; set; }
+
+        [NotMapped]
+        public int? Carg_Id { get; set; }
+
+        [NotMapped]
+        public string? Cargo { get; set; }
+
+        [NotMapped]
+        public int? Sucu_Id { get; set; }
 
         [NotMapped]
         public string? Sucursal { get; set; }
 
-        public int Role_Id { get; set; }
-
-        public int Usua_IdPersona { get; set; }
-
-        public bool Usua_EsVendedor { get; set; }
-
-        public bool Usua_EsAdmin { get; set; }
-
-        public string? Usua_Imagen { get; set; }
-
-        public int Usua_Creacion { get; set; }
-
-        public DateTime Usua_FechaCreacion { get; set; }
-
-        public int? Usua_Modificacion { get; set; }
-
-        public DateTime? Usua_FechaModificacion { get; set; }
-
-        public bool Usua_Estado { get; set; }
-
         public string? PermisosJson { get; set; }
+        public string? RutasDelDiaJson { get; set; }
+        public int Usua_Creacion { get; set; }
+        public DateTime Usua_FechaCreacion { get; set; }
+        public int? Usua_Modificacion { get; set; }
+        public DateTime? Usua_FechaModificacion { get; set; }
     }
 }

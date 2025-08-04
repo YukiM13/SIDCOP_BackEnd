@@ -1,5 +1,4 @@
 ﻿using Api_SIDCOP.API.Models.Logistica;
-using Api_SIDCOP.API.Models.Venta;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -73,6 +72,22 @@ namespace Api_SIDCOP.API.Controllers.Logistica
 
             return Ok(result); // Retorna el objeto encontrado
         }
+
+        [HttpGet("BuscarDetalle/{id}")]
+        public IActionResult BuscarDetalle(int id)
+        {
+            var result = _logisticaServices.BuscarTrasladoDetalle(id);
+
+            try
+            {
+                // Mapea la lista completa
+                result.Data = _mapper.Map<IEnumerable<TrasladoDetalleViewModel>>(result.Data);
+            }
+            catch (Exception ex) { }
+
+            return Ok(result);
+        }
+
 
         // POST: /Traslado/Eliminar/{id}
         // Elimina un Traslado por ID

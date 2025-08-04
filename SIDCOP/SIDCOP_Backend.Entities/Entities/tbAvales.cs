@@ -27,6 +27,7 @@ public partial class tbAvales
 
     public int Colo_Id { get; set; }
 
+
     public DateTime? Aval_FechaNacimiento { get; set; }
 
     public int? EsCv_Id { get; set; }
@@ -47,6 +48,23 @@ public partial class tbAvales
 
     public int? Pare_Id { get; set; }
 
+    [NotMapped]
+    public string Pare_Descripcion { get; set; }
+
+    [NotMapped]
+    public string EsCv_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Colo_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Depa_Descripcion { get; set; }
+
+    [NotMapped]
+    public string Muni_Descripcion { get; set; }
+
+    [NotMapped]
+    public string TiVi_Descripcion { get; set; }
     public virtual tbClientes Clie { get; set; }
 
     public virtual tbColonias Colo { get; set; }

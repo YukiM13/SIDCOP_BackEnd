@@ -22,4 +22,6 @@ public partial class tbPromocionesDetalleHistorial
     public DateTime HPrD_FechaAccion { get; set; }
 
     public int HPrD_UsuarioAccion { get; set; }
+
+    public int PrDe_Cantidad { get; set; }
 }

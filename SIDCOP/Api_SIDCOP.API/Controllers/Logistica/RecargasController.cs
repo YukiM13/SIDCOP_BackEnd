@@ -1,4 +1,5 @@
 ﻿using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -38,15 +39,17 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             var recarga = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbRecargas>(RecargasViewModel);
             var result = _logisticaServices.InsertRecargas(recarga);
 
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result);
-            }
+            return Ok(result);
 
+        }
+
+        [HttpPut("Actualizar")]
+        public IActionResult Actualizar([FromBody] Models.Logistica.RecargasViewModel RecargasViewModel)
+        {
+            var mapped = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbRecargas>(RecargasViewModel);
+            var result = _logisticaServices.UpdateRecargas(mapped);
+
+            return Ok(result);
         }
 
         [HttpGet("ListarVendedor/{id}")]
@@ -66,6 +69,26 @@ namespace Api_SIDCOP.API.Controllers.Logistica
                 return NotFound("Sucursal no encontrada.");
             }
         }
+        [HttpGet("ListarsPorSucursal/{id}")]
+        public IActionResult ListarRecargas(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var canal = _logisticaServices.FindRecargasSucu(id);
+            if (canal != null)
+            {
+                return Ok(canal);
+            }
+            else
+            {
+                return NotFound("Recargas no encontradas.");
+            }
+        }
+
+        
+
 
 
     }

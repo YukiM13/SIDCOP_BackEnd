@@ -1,4 +1,5 @@
 ﻿using MailKit.Search;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.General
 {
@@ -17,6 +18,10 @@ namespace Api_SIDCOP.API.Models.General
         public decimal? DiCl_Latitud { get; set; }
 
         public decimal? DiCl_Longitud { get; set; }
+
+        public string Muni_Descripcion { get; set; }
+
+        public string Depa_Descripcion { get; set; }
 
         public int Usua_Creacion { get; set; }
 

@@ -5,27 +5,23 @@ using System.Collections.Generic;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbPromocionesDetalle
+public partial class tbPromocionesPorClientes
 {
-    public int PrDe_Id { get; set; }
+    public int PrCl_Id { get; set; }
 
     public int Prom_Id { get; set; }
 
-    public int Prod_Id { get; set; }
+    public int Clie_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime PrDe_FechaCreacion { get; set; }
+    public DateTime PrCl_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? PrDe_FechaModificacion { get; set; }
+    public DateTime? PrCl_FechaModificacion { get; set; }
 
-    public bool PrDe_Estado { get; set; }
-
-    public int PrDe_Cantidad { get; set; }
-
-    public virtual tbProductos Prod { get; set; }
+    public virtual tbClientes Clie { get; set; }
 
     public virtual tbProductos Prom { get; set; }
 
