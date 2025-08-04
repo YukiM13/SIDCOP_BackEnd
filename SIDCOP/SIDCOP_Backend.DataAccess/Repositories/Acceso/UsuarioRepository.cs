@@ -1,19 +1,17 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
-using SIDCOP_Backend.Entities.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using Dapper;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 {
     public class UsuarioRepository : IRepository<tbUsuarios>
     {
-      
-
         public RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
@@ -28,10 +26,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         {
             var parameter = new DynamicParameters();
 
-
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbUsuarios>(ScriptDatabase.Usuarios_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
-
 
             return result;
         }
@@ -50,6 +46,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_EsVendedor", item.Usua_EsVendedor, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_EsAdmin", item.Usua_EsAdmin, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Imagen", item.Usua_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_TienePermisos", item.Usua_TienePermisos, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaCreacion", item.Usua_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -68,7 +65,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             {
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
-
         }
 
         public RequestStatus Update(tbUsuarios item)
@@ -86,6 +82,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             parameter.Add("@Usua_EsVendedor", item.Usua_EsVendedor, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_EsAdmin", item.Usua_EsAdmin, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Imagen", item.Usua_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_TienePermisos", item.Usua_TienePermisos, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_FechaModificacion", item.Usua_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -128,7 +125,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-
         public IEnumerable<tbUsuarios> FindUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
@@ -147,7 +143,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbUsuarios>(ScriptDatabase.Usuario_VerificarUsuarioExistente, parameter, commandType: CommandType.StoredProcedure);
-
 
             return result;
         }
@@ -169,13 +164,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario);
             parameter.Add("@Usua_Contrasena", item.Usua_Clave);
+            parameter.Add("@FechaActual", DateTime.Now);
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.QueryFirstOrDefault<LoginResponse>(
                 ScriptDatabase.Usuario_IniciarSesion,
                 parameter,
                 commandType: CommandType.StoredProcedure
-            );
+                                                              );
 
             return result;
         }
@@ -191,7 +187,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
                 ScriptDatabase.Usuario_MostrarContrasena,
                 parameter,
                 commandType: CommandType.StoredProcedure
-            );
+                                                        );
 
             if (result == null)
             {
@@ -211,11 +207,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             {
                 code_Status = result.code_Status,
                 message_Status = result.message_Status,
-                data = result.Contrasena 
+                data = result.Contrasena
             };
         }
-
-
 
         public RequestStatus RestorePassword(tbUsuarios item)
         {

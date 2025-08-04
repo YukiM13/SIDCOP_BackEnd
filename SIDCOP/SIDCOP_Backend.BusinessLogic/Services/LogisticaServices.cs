@@ -294,6 +294,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult BuscarTrasladoDetalle(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.BuscarTrasladoDetalle(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
         #endregion
 
         #region Recargas 

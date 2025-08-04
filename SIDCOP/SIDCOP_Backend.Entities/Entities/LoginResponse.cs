@@ -60,6 +60,7 @@ namespace SIDCOP_Backend.Entities.Entities
         public string? Sucursal { get; set; }
 
         public string? PermisosJson { get; set; }
+        public string? RutasDelDiaJson { get; set; }
         public int Usua_Creacion { get; set; }
         public DateTime Usua_FechaCreacion { get; set; }
         public int? Usua_Modificacion { get; set; }

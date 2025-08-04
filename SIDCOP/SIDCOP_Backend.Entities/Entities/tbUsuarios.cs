@@ -24,6 +24,8 @@ public partial class tbUsuarios
 
     public string Usua_Imagen { get; set; }
 
+    public bool? Usua_TienePermisos { get; set; }
+
     public int Usua_Creacion { get; set; }
 
     public DateTime Usua_FechaCreacion { get; set; }
@@ -68,6 +70,9 @@ public partial class tbUsuarios
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_CreacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
+
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
     public virtual ICollection<tbAvales> tbAvalesUsua_CreacionNavigation { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbAvales> tbAvalesUsua_ModificacionNavigation { get; set; } = new List<tbAvales>();
@@ -215,10 +220,6 @@ public partial class tbUsuarios
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleUsua_CreacionNavigation { get; set; } = new List<tbPromocionesDetalle>();
 
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesDetalle>();
-
-    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_CreacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
-
-    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
 
     public virtual ICollection<tbProveedores> tbProveedoresUsua_CreacionNavigation { get; set; } = new List<tbProveedores>();
 
