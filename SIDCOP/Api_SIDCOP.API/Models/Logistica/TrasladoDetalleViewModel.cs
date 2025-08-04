@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Logistica
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Logistica
 {
     public class TrasladoDetalleViewModel
     {
@@ -8,6 +10,10 @@
         public int Tras_Id { get; set; }
 
         public int Prod_Id { get; set; }
+
+        public string Prod_Descripcion { get; set; }
+
+        public string Prod_Imagen { get; set; }
 
         public int TrDe_Cantidad { get; set; }
 

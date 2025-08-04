@@ -73,6 +73,22 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             return Ok(result); // Retorna el objeto encontrado
         }
 
+        [HttpGet("BuscarDetalle/{id}")]
+        public IActionResult BuscarDetalle(int id)
+        {
+            var result = _logisticaServices.BuscarTrasladoDetalle(id);
+
+            try
+            {
+                // Mapea la lista completa
+                result.Data = _mapper.Map<IEnumerable<TrasladoDetalleViewModel>>(result.Data);
+            }
+            catch (Exception ex) { }
+
+            return Ok(result);
+        }
+
+
         // POST: /Traslado/Eliminar/{id}
         // Elimina un Traslado por ID
         [HttpPost("Eliminar/{id}")]
