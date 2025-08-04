@@ -126,7 +126,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@Clie_Codigo", item.Clie_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Nacionalidad", item.Clie_Nacionalidad, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_DNI", item.Clie_DNI, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_RTN", item.Clie_RTN, System.Data.DbType.String, System.Data.ParameterDirection.Input);
