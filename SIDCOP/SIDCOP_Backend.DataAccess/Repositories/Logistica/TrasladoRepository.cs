@@ -90,6 +90,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result.First();
         }
 
+        public IEnumerable<tbTrasladosDetalle> BuscarTrasladoDetalle(int? id)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Tras_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var result = db.Query<tbTrasladosDetalle>(ScriptDatabase.TrasladoDetalle_Buscar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            return result.ToList(); // Devuelve todos los registros
+        }
+
         public RequestStatus EliminarTraslado(int? id)
         {
             var parameters = new DynamicParameters();
