@@ -23,6 +23,8 @@ namespace Api_SIDCOP.API.Models.Acceso
 
         public string? Usua_Imagen { get; set; }
 
+        public bool? Usua_TienePermisos { get; set; }
+
         public int Usua_Creacion { get; set; }
 
         public DateTime Usua_FechaCreacion { get; set; }
