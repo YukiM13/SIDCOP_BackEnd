@@ -35,6 +35,12 @@ public partial class tbDevoluciones
     [NotMapped]
     public string Clie_NombreNegocio { get; set; }
 
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
     public virtual tbFacturas Clie { get; set; }
 
     public virtual tbFacturas Fact { get; set; }
