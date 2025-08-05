@@ -17,17 +17,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioBodegaRepository _inventarioBodegaRepository;
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
+        private readonly PromocionesRepository _promocionesRepository;
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
-       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
-       {
-           _categoriasRepository = categoriasRepository;
-           _subcategoriasRepository = subcategoriasRepository;
-           _productosRepository = productosRepository;
-           _inventarioSucursalRepository = inventarioSucursalRepository;
-           _inventarioBodegaRepository = inventarioBodegaRepository;
-           _descuentosRepository = descuentosRepository;
-       }
+       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
+        {
+            _categoriasRepository = categoriasRepository;
+            _subcategoriasRepository = subcategoriasRepository;
+            _productosRepository = productosRepository;
+            _inventarioSucursalRepository = inventarioSucursalRepository;
+            _inventarioBodegaRepository = inventarioBodegaRepository;
+            _descuentosRepository = descuentosRepository;
+            _promocionesRepository = promocionesRepository;
+        }
 
         #region Categorias
 
@@ -412,5 +414,76 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion
+
+
+        #region Promociones
+
+        public IEnumerable<tbProductos> ListarPromociones()
+        {
+            try
+            {
+                var list = _promocionesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbProductos>();
+            }
+        }
+        public ServiceResult InsertarPromocines(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _promocionesRepository.Insert(producto);
+       
+                
+                    return result.Ok(insertResult);
+                
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ActualizarPromocines(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _promocionesRepository.Update(producto);
+
+
+                return result.Ok(insertResult);
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult CambiarEstadoPromociones(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _promocionesRepository.Delete(id);
+                if (deleteResult.code_Status > 0)
+                {
+                    return result.Ok(deleteResult);
+                }
+                else
+                {
+                    return result.Error(deleteResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar descuento: {ex.Message}");
+            }
+        }
+        #endregion Promociones
     }
 }
