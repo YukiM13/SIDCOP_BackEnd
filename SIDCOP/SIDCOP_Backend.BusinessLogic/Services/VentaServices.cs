@@ -25,7 +25,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly VendedorRepository _vendedorRepository;
         private readonly ConfiguracionFacturaRepository _configuracionFacturaRepository;
         private readonly PuntoEmisionRepository _puntoEmisionRepository;
-
+        private readonly DevolucionesRepository _devolucionesRepository;
         private readonly CuentasPorCobrarRepository _cuentasporcobrarRepository;
         private readonly PagosCuentasPorCobrarRepository _pagosCuentasPorCobrarRepository;
         private readonly PedidoRepository _pedidoRepository;
@@ -40,7 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             PreciosPorProductoRepository preciosPorProductoRepository,
 
 
-            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
+            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository
                             )
 
         {
@@ -54,6 +54,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _pagosCuentasPorCobrarRepository = pagosCuentasPorCobrarRepository;
             _pedidoRepository = pedidoRepository;
             _preciosPorProductoRepository = preciosPorProductoRepository;
+            _devolucionesRepository = devolucionesRepository;
         }
 
         #region Pedidos
@@ -712,5 +713,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion ConfiguracionFacturas
+
+        #region Devoluciones
+
+        public IEnumerable<tbDevoluciones> DevolucionesListar()
+        {
+            try
+            {
+                var list = _devolucionesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbDevoluciones> lista = null;
+                return lista;
+            }
+        }
+
+        #endregion
     }
 }

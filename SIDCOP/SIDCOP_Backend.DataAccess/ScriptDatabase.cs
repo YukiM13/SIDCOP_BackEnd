@@ -427,5 +427,12 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
 
         #endregion
+
+        #region Devolucion
+
+        public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
+
+        #endregion
+
     }
 }
