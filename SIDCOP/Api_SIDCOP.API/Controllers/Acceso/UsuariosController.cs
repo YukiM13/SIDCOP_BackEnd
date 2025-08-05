@@ -1,12 +1,12 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
-using AutoMapper;
+﻿using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
-using MailKit.Net.Smtp;
-using SIDCOP_Backend.BusinessLogic.Services;
 using Api_SIDCOP.API.Models.Acceso;
+using Api_Sistema_Reportes.API.Helpers;
+using AutoMapper;
+using MailKit.Net.Smtp;
 using MailKit.Security;
-using System.Drawing;
+using MimeKit;
+using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
@@ -24,7 +24,6 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         {
             _accesoServices = accesoServices;
             _mapper = mapper;
-           
         }
 
         //[HttpPost("IniciarSesion")]
@@ -56,22 +55,15 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             var mapped = _mapper.Map<LoginResponse>(item);
             var result = _accesoServices.IniciarSesion(mapped);
 
-            if (result == null || result.code_Status != 1)
+            if (result.Success)
             {
-                return BadRequest(new
-                {
-                    code_Status = result?.code_Status ?? -1,
-                    message_Status = result?.message_Status ?? "Usuario o contraseña incorrectos."
-                });
+                return Ok(result);
             }
-
-            return Ok(new
+            else
             {
-                data = result
-            });
+                return BadRequest(result);
+            }
         }
-
-
 
         [HttpGet("Listar")]
         public IActionResult Listar()
@@ -111,14 +103,14 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             var list = _accesoServices.BuscarUsuario(mapped);
             return Ok(list);
         }
+
         [HttpPost("VerificarUsuario")]
-        public IActionResult VerificarUsuario([FromBody] UsuarioViewModel item) 
+        public IActionResult VerificarUsuario([FromBody] UsuarioViewModel item)
         {
             var mapped = _mapper.Map<tbUsuarios>(item);
             var list = _accesoServices.VerificarUsuarioExistente(mapped);
             return Ok(list);
         }
-
 
         [HttpGet("MostrarContrasena")]
         public IActionResult MostrarContrasena(int usuaId, string claveSeguridad)
@@ -234,6 +226,4 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             }
         }
     }
-
-
 }

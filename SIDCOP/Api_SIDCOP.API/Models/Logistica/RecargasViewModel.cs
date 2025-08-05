@@ -37,6 +37,8 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public string? Prod_Codigo { get; set; }
 
+        public int? Prod_Id { get; set; }
+
         public string? Prod_Imagen { get; set; }
 
         public string? ReDe_Observaciones { get; set; }

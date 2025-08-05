@@ -72,19 +72,8 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         [HttpPut("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
-            if (id <= 0)
-            {
-                return BadRequest("Id Invalida.");
-            }
-            var result = _logisticaServices.EliminarRuta(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(result.Message);
-            }
+            var list = _logisticaServices.EliminarRuta(id);
+            return Ok(list);
         }
     }
 }
