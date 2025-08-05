@@ -430,6 +430,13 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+        #region Promociones
+            public const string Promociones_Listar = "[Inve].[SP_Promociones_Listar]";
+            public const string Promociones_Insertar = "[Inve].[SP_Promociones_Insertar]";
+           public const string Promociones_Actualizar = "[Inve].[SP_Promociones_Actualizar]";
+            public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
+
+        #endregion Promociones
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
