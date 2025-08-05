@@ -32,7 +32,6 @@ public partial class tbSucursales
 
     public bool Sucu_Estado { get; set; }
 
-
     public string Sucu_Codigo { get; set; }
 
     [NotMapped]
