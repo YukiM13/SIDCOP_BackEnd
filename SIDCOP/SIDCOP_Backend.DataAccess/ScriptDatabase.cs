@@ -426,5 +426,13 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
 
         #endregion
+
+        #region Promociones
+            public const string Promociones_Listar = "[Inve].[SP_Promociones_Listar]";
+            public const string Promociones_Insertar = "[Inve].[SP_Promociones_Insertar]";
+           public const string Promociones_Actualizar = "[Inve].[SP_Promociones_Actualizar]";
+            public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
+
+        #endregion Promociones
     }
 }
