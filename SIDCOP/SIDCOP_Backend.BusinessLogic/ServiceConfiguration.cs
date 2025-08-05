@@ -81,6 +81,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ReporteRepository>();
             services.AddScoped<PromocionesRepository>();
             services.AddScoped<DevolucionesRepository>();
+            services.AddScoped<DashboardsRepository>();
 
         }
 
@@ -95,7 +96,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<LogisticaServices>();
             services.AddScoped<RolRepository>();
             services.AddScoped<ReportesServices>();
-            //services.AddScoped<DashboardServices>();
+            services.AddScoped<DashboardServices>();
 
             services.AddScoped<LogisticaServices>();
         }
