@@ -92,6 +92,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_Buscar = "Inve.SP_Producto_Buscar";
 
+        public const string Producto_BuscarPorFactura = "[Inve].[SP_Producto_BuscarPorFactura]";
+
         #endregion Productos
 
         #region Sucursales
@@ -346,9 +348,10 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string Traslados_Listar = "[Logi].[SP_Traslados_Listar]";
         public static string Traslado_Insertar = "Logi.SP_Traslado_Insertar";
-        public static string Traslado_Buscar = "Logi.SP_Traslado_Buscar";
+        public static string Traslado_Buscar = "[Logi].[SP_Traslado_Buscar]";
         public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
+        public static string TrasladoDetalle_Buscar = "Logi.SP_TrasladoDetalle_Buscar";
 
 
         #endregion Traslados
@@ -434,5 +437,11 @@ namespace SIDCOP_Backend.DataAccess
             public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
 
         #endregion Promociones
+        #region Devolucion
+
+        public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
+
+        #endregion
+
     }
 }

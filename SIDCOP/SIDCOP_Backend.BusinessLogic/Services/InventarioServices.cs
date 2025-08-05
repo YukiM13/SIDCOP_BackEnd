@@ -241,6 +241,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.FindFactura(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public ServiceResult InsertarProducto(tbProductos producto)
         {
             var result = new ServiceResult();

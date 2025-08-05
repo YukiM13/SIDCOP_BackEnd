@@ -66,18 +66,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return lista;
             }
         }
-        public int InsertarRuta(tbRutas item)
+
+        public ServiceResult InsertarRuta(tbRutas item)
         {
+            var result = new ServiceResult();
             try
             {
                 var list = _rutasRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
+
 
         public ServiceResult ModificarRuta(tbRutas item)
         {
@@ -283,6 +286,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _trasladoRepository.BuscarTraslado(id);
+                return result.Ok(response); // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+        public ServiceResult BuscarTrasladoDetalle(int id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _trasladoRepository.BuscarTrasladoDetalle(id);
                 return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)

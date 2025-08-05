@@ -20,9 +20,15 @@ public partial class tbTraslados
 
     public int Usua_Creacion { get; set; }
 
+    [NotMapped]
+    public string UsuaCreacion { get; set; }
+
     public DateTime Tras_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
+
+    [NotMapped]
+    public string UsuaModificacion { get; set; }
 
     public DateTime? Tras_FechaModificacion { get; set; }
 
