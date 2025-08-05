@@ -69,17 +69,20 @@ namespace Api_SIDCOP.API.Controllers.Logistica
                 return NotFound("Sucursal no encontrada.");
             }
         }
-        [HttpGet("ListarsPorSucursal/{id}")]
-        public IActionResult ListarRecargas(int id)
+
+
+        [HttpGet("ListarsPorSucursal/{id}/{esAdmin}")]
+        public IActionResult ListarRecargas(int id, bool esAdmin)
         {
             if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            var canal = _logisticaServices.FindRecargasSucu(id);
-            if (canal != null)
+
+            var recargas = _logisticaServices.FindRecargasSucu(id, esAdmin);
+            if (recargas != null)
             {
-                return Ok(canal);
+                return Ok(recargas);
             }
             else
             {
@@ -87,7 +90,6 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             }
         }
 
-        
 
 
 

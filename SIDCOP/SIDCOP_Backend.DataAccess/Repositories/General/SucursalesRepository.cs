@@ -57,6 +57,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Sucu_Telefono1", item.Sucu_Telefono1, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Telefono2", item.Sucu_Telefono2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Correo", item.Sucu_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Codigo", item.Sucu_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_FechaCreacion", item.Sucu_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -100,6 +101,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Sucu_DireccionExacta", item.Sucu_DireccionExacta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Telefono1", item.Sucu_Telefono1, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Telefono2", item.Sucu_Telefono2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Sucu_Codigo", item.Sucu_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Correo", item.Sucu_Correo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_FechaModificacion", item.Sucu_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
