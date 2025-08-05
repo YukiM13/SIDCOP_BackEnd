@@ -92,6 +92,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_Buscar = "Inve.SP_Producto_Buscar";
 
+        public const string Producto_BuscarPorFactura = "[Inve].[SP_Producto_BuscarPorFactura]";
+
         #endregion Productos
 
         #region Sucursales
@@ -427,5 +429,12 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
 
         #endregion
+
+        #region Devolucion
+
+        public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
+
+        #endregion
+
     }
 }
