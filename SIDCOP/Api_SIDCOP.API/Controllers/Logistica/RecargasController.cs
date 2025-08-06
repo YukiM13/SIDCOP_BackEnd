@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
@@ -79,14 +79,14 @@ namespace Api_SIDCOP.API.Controllers.Logistica
                 return BadRequest("Id Invalida.");
             }
 
-            var recargas = _logisticaServices.FindRecargasSucu(id, esAdmin);
-            if (recargas != null)
+            var result = _logisticaServices.FindRecargasSucu(id, esAdmin);
+            if (result.Success)
             {
-                return Ok(recargas);
+                return Ok(result.Data);
             }
             else
             {
-                return NotFound("Recargas no encontradas.");
+                return BadRequest(result.Message);
             }
         }
 
