@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
+using SIDCOP_Backend.DataAccess.Repositories.Dashboards;
 
 namespace Api_SIDCOP.API.Controllers.Dashboards
 {
@@ -22,7 +23,7 @@ namespace Api_SIDCOP.API.Controllers.Dashboards
         }
 
         [HttpGet("VentasPorMes")]
-        public IActionResult ReporteDeProductos()
+        public IActionResult VentasPorMes()
         {
             try
             {
@@ -31,9 +32,40 @@ namespace Api_SIDCOP.API.Controllers.Dashboards
             }
             catch (Exception ex)
             {
-                // Log del error si tienes sistema de logging
+                
                 return StatusCode(500, "Error interno del servidor");
             }
         }
+
+        [HttpPost("VentasPorMesProductos")]
+        public IActionResult VentasPorMesProductos(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardServices.VentasPorMesProductos(item);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+        [HttpPost("VentasPorMesCategorias")]
+        public IActionResult VentasPorMesCategorias(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardServices.VentasPorMesCategorias(item);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
     }
 }

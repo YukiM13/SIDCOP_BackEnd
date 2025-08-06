@@ -444,11 +444,15 @@ namespace SIDCOP_Backend.DataAccess
         #endregion
 
 
-        #region Reportes 
+        #region Dashboards 
         public const string VentasPorMes = "[Vnta].[SP_VentasPorMes]";
+        public const string VentasPorMesProductos = "[Vnta].[SP_VentasPorMesProductos]";
+        public const string VentasPorMesCategorias = "[Vnta].[SP_VentasPorMesCategorias]";
+
+        
 
         #endregion
 
-        
+
     }
 }
