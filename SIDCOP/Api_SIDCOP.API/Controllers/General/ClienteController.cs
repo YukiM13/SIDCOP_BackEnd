@@ -52,7 +52,7 @@ namespace Api_SIDCOP.API.Controllers.General
         public IActionResult ActualizarCliente([FromBody] ClienteViewModel item)
         {
             var mapped = _mapper.Map<tbClientes>(item);
-            var insert = _generalServices. UpdateCliente(mapped);
+            var insert = _generalServices.UpdateCliente(mapped);
             return Ok(insert);
         }
 
