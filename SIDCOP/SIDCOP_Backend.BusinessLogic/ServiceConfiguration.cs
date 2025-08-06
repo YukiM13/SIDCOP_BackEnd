@@ -81,6 +81,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ReporteRepository>();
             services.AddScoped<PromocionesRepository>();
             services.AddScoped<DevolucionesRepository>();
+            services.AddScoped<DevolucionesDetallesRepository>();
 
         }
 
