@@ -82,7 +82,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_FechaCreacion", item.Prod_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             try
             {
@@ -133,7 +133,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_FechaModificacion", item.Prod_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             try
             {
