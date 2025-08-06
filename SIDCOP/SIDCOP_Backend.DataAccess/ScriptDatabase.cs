@@ -443,5 +443,11 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion
 
+        #region DevolucionesDetalle
+
+        public const string DevolucionDetalle_Listar = "[Vnta].[SP_DevolucionesDetalle_Listar]";
+
+        #endregion
+
     }
 }

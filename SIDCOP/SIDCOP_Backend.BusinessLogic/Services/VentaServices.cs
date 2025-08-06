@@ -14,6 +14,7 @@ using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -30,6 +31,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PagosCuentasPorCobrarRepository _pagosCuentasPorCobrarRepository;
         private readonly PedidoRepository _pedidoRepository;
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
+        private readonly DevolucionesDetallesRepository _devolucionesDetallesRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
@@ -40,7 +42,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             PreciosPorProductoRepository preciosPorProductoRepository,
 
 
-            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository
+            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository,
+            DevolucionesDetallesRepository devolucionesDetallesRepository
                             )
 
         {
@@ -55,6 +58,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _pedidoRepository = pedidoRepository;
             _preciosPorProductoRepository = preciosPorProductoRepository;
             _devolucionesRepository = devolucionesRepository;
+            _devolucionesDetallesRepository = devolucionesDetallesRepository;
         }
 
         #region Pedidos
@@ -730,6 +734,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        #endregion
+
+        #region DevolucionesDetalles
+        public tbDevolucionesDetalle BuscarDevolucionDetalle(int? id)
+        {
+            try
+            {
+                var devolucionesDetalle = _devolucionesDetallesRepository.Find(id);
+                return devolucionesDetalle;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }
