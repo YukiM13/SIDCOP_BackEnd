@@ -737,11 +737,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion
 
         #region DevolucionesDetalles
-        public tbDevolucionesDetalle BuscarDevolucionDetalle(int? id)
+        public IEnumerable<tbDevolucionesDetalle> BuscarDevolucionDetalle(int? id)
         {
             try
             {
-                var devolucionesDetalle = _devolucionesDetallesRepository.Find(id);
+                var devolucionesDetalle = _devolucionesDetallesRepository.FindDetalle(id);
                 return devolucionesDetalle;
             }
             catch (Exception ex)
