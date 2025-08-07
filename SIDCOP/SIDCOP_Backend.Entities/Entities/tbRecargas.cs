@@ -10,11 +10,14 @@ public partial class tbRecargas
 {
     public int Reca_Id { get; set; }
 
+    [NotMapped]
+    public string Recarga { get; set; }
+
     public int Vend_Id { get; set; }
 
     public int Bode_Id { get; set; }
 
-    public int? Tras_Id { get; set; }
+
 
     public DateTime Reca_Fecha { get; set; }
 
@@ -61,8 +64,6 @@ public partial class tbRecargas
     public List<RecargaDetalleDTO> Detalles { get; set; }
 
     public virtual tbBodegas Bode { get; set; }
-
-    public virtual tbTraslados Tras { get; set; }
 
     public virtual tbUsuarios Usua_ConfirmacionNavigation { get; set; }
 
