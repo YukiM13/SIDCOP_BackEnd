@@ -141,5 +141,38 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
+        public RequestStatus RecargasConfirm(tbRecargas item)
+        {
+
+            if (item == null)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
+            }
+            var parameter = new DynamicParameters();
+            parameter.Add("@Reca_Id", item.Reca_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Reca_Confirmacion", item.Reca_Confirmacion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Reca_Observaciones", item.Reca_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Reca_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Recarga_Confirmacion, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+
+        }
+
+
     }
 }

@@ -368,6 +368,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ConfirmRecargas(tbRecargas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.RecargasConfirm(item);
+                return result.Ok(response);  // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
 
         public ServiceResult DeleteRecargas(int id)
         {
