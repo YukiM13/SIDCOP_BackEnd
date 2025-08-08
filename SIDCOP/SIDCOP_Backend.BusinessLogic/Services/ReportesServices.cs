@@ -26,10 +26,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
         public IEnumerable<ReportesViewModel> ReporteProductos(
-      DateTime? fechaInicio = null,
-      DateTime? fechaFin = null,
-      int? marcaId = null,
-      int? categoriaId = null)
+          DateTime? fechaInicio = null,
+          DateTime? fechaFin = null,
+          int? marcaId = null,
+          int? categoriaId = null)
         {
             try
             {
@@ -43,6 +43,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteProductosPorRuta(int? rutaId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteProductosVendidosRutas(rutaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return Enumerable.Empty<ReporteProductosVendidosRuta>();
+            }
+        }
+
         public IEnumerable<ReportesViewModel> ReporteClientesMasFacturados(DateTime? fechaInicio = null, DateTime? fechaFin = null)
         {
             try
@@ -52,6 +66,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
+                // Log del error si tienes sistema de logging
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }

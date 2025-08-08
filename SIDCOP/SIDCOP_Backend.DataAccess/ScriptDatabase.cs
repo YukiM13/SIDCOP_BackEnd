@@ -429,6 +429,7 @@ namespace SIDCOP_Backend.DataAccess
 
         #region Reportes 
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
+        public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
         #endregion
 

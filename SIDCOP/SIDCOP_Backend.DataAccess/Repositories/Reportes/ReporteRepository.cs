@@ -53,6 +53,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteProductosVendidosRutas(int? rutaId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Ruta_Id", rutaId);
+
+            var result = db.Query<ReporteProductosVendidosRuta>(
+                ScriptDatabase.ReporteProductosVendidosRutas,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
         public IEnumerable<ReportesViewModel> ReporteClientesMasFacturados(DateTime? fechaInicio = null, DateTime? fechaFin = null)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
