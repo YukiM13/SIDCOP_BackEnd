@@ -94,6 +94,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_BuscarPorFactura = "[Inve].[SP_Producto_BuscarPorFactura]";
 
+        public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]"; 
+
         #endregion Productos
 
         #region Sucursales

@@ -69,5 +69,12 @@ namespace Api_SIDCOP.API.Models.Inventario
         
         public string? UsuarioModificacion { get; set; }
 
+        [NotMapped]
+        public string? ListasPrecio_JSON { get; set; }
+
+        [NotMapped]
+        public string? DescuentosEscala_JSON { get; set; }
+
+
     }
 }

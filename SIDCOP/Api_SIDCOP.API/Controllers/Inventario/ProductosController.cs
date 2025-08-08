@@ -64,6 +64,24 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
+        [HttpGet("ListaPrecio/{id}")]
+        public IActionResult ListaPrecio(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var productos = _inventarioServices.ListaPrecioClientes(id);
+            if (productos != null)
+            {
+                return Ok(productos);
+            }
+            else
+            {
+                return NotFound("Productos No encontrados.");
+            }
+        }
+
         [HttpGet("BuscarPorFactura/{id}")]
         public IActionResult BuscarPorFactura(int id)
         {
