@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess.Repositories.Dashboards;
+using System.Collections.Generic;
 
 namespace Api_SIDCOP.API.Controllers.Dashboards
 {
@@ -93,6 +94,45 @@ namespace Api_SIDCOP.API.Controllers.Dashboards
             catch (Exception ex)
             {
 
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+        [HttpGet("DashboardTop5MarcasMasVendidas")]
+        public IActionResult DashboardTop5MarcasMasVendidas(
+            [FromQuery] DateTime? fechaInicio = null,
+            [FromQuery] DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _dashboardServices.Top5MarcasMasVendidas(fechaInicio, fechaFin);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+        [HttpGet("ReporteDeProductos")]
+        public IActionResult ReporteDeProductos(
+            [FromQuery] int marcaId,
+            [FromQuery] DateTime? fechaInicio = null,
+            [FromQuery] DateTime? fechaFin = null)
+        {
+            if (marcaId == 0)
+            {
+                return Ok("Ingrese una marca");
+            }
+            try
+            {
+                var list = _dashboardServices.ProductosPorMarcas(marcaId, fechaInicio, fechaFin);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
                 return StatusCode(500, "Error interno del servidor");
             }
         }

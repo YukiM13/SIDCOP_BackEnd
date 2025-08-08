@@ -450,12 +450,10 @@ namespace SIDCOP_Backend.DataAccess
         public const string VentasPorMes = "[Vnta].[SP_VentasPorMes]";
         public const string VentasPorMesProductos = "[Vnta].[SP_VentasPorMesProductos]";
         public const string VentasPorMesCategorias = "[Vnta].[SP_VentasPorMesCategorias]";
-
         public const string Top5VendedoresPorMes = "[Vnta].[SP_Top5VendedoresPorMes]";
         public const string Top5ProductosCategoria = "[Vnta].[SP_Top5ProductosCategoria]";
-
-
-
+        public const string Top5MarcasMasVendidas = "[Gral].[SP_Marcas_DashboardProductosTop5Vendidos]";
+        public const string DashboardPorMarcasVendidas = "[Inve].[SP_Productos_DashboardPorMarcasVendidas]";
         #endregion
 
 

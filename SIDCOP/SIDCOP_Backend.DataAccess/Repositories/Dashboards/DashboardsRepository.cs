@@ -111,6 +111,45 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+        public IEnumerable<DashboardMarcasMasVendidas> Top5MarcasMasVendidas(
+            DateTime? fechaInicio = null,
+            DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+
+            var result = db.Query<DashboardMarcasMasVendidas>(
+                ScriptDatabase.Top5MarcasMasVendidas,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<DashboardMarcasMasVendidas> DashboardProductosPorMarcas(
+            int marcaId,
+            DateTime? fechaInicio = null,
+            DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            parameters.Add("@Marc_Id", marcaId);
+
+            var result = db.Query<DashboardMarcasMasVendidas>(
+                ScriptDatabase.DashboardPorMarcasVendidas,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
 
         public RequestStatus Update(DashboardsViewModel item)
         {
