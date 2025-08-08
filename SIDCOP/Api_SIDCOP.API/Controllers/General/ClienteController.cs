@@ -23,7 +23,6 @@ namespace Api_SIDCOP.API.Controllers.General
         {
             _generalServices = generalServices;
             _mapper = mapper;
-
         }
 
         [HttpGet("Listar")]
