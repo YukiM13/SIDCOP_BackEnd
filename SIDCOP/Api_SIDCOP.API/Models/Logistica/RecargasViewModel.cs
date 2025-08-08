@@ -17,7 +17,7 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public string Reca_Observaciones { get; set; }
 
-        public bool Reca_Confirmacion { get; set; }
+        public string Reca_Confirmacion { get; set; }
 
         public int? Usua_Confirmacion { get; set; }
 

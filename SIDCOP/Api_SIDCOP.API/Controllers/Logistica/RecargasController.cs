@@ -52,6 +52,15 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             return Ok(result);
         }
 
+
+        [HttpPut("Confirmar")]
+        public IActionResult Confirmar([FromBody] RecargasViewModel item)
+        {
+            var mapped = _mapper.Map<tbRecargas>(item);
+            var update = _logisticaServices.ConfirmRecargas(mapped);
+            return Ok(update);
+        }
+
         [HttpGet("ListarVendedor/{id}")]
         public IActionResult Buscar(int id)
         {
