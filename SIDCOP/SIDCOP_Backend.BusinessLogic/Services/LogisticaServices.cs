@@ -368,6 +368,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ConfirmRecargas(tbRecargas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.RecargasConfirm(item);
+                return result.Ok(response);  // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
 
         public ServiceResult DeleteRecargas(int id)
         {
@@ -401,31 +415,47 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
         // Servicio
-        public IEnumerable<tbRecargas> FindRecargasSucu(int id, bool esAdmin)
+        //public IEnumerable<tbRecargas> FindRecargasSucu(int id, bool esAdmin)
+        //{
+        //    try
+        //    {
+        //        var recargas = _recargasRepository.FindSucu(id, esAdmin);
+
+        //        // Debug: Verifica si hay datos
+        //        if (recargas == null)
+        //        {
+        //            throw new Exception("Repository devolvió null");
+        //        }
+
+        //        if (!recargas.Any())
+        //        {
+        //            throw new Exception("Repository devolvió lista vacía");
+        //        }
+
+        //        return recargas;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Debug: Ver el error específico
+        //        throw new Exception($"Error en FindRecargasSucu: {ex.Message}");
+        //    }
+        //}
+
+        public ServiceResult FindRecargasSucu(int id, bool esAdmin)
         {
+            var result = new ServiceResult();
             try
             {
-                var recargas = _recargasRepository.FindSucu(id, esAdmin);
-
-                // Debug: Verifica si hay datos
-                if (recargas == null)
-                {
-                    throw new Exception("Repository devolvió null");
-                }
-
-                if (!recargas.Any())
-                {
-                    throw new Exception("Repository devolvió lista vacía");
-                }
-
-                return recargas;
+                var response = _recargasRepository.FindSucu(id, esAdmin);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                // Debug: Ver el error específico
-                throw new Exception($"Error en FindRecargasSucu: {ex.Message}");
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
             }
         }
+
+
 
         #endregion
 
