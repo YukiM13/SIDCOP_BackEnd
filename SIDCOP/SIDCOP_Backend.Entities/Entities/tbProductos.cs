@@ -90,6 +90,9 @@ public partial class tbProductos
     [NotMapped]
     public string? DescuentosEscala_JSON { get; set; }
 
+    [NotMapped]
+    public string? Desc_EspecificacionesJSON { get; set; }
+
 
 
 

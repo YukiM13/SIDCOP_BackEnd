@@ -73,6 +73,8 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string? DescuentosEscala_JSON { get; set; }
 
+        public string? Desc_EspecificacionesJSON { get; set; }
+
 
     }
 }
