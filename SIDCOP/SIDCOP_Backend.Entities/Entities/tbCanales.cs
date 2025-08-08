@@ -26,6 +26,10 @@ public partial class tbCanales
 
     [NotMapped]
     public int Secuencia { get; set; }
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

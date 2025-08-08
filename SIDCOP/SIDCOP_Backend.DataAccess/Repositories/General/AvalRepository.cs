@@ -43,7 +43,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos." };
             }
             var parameter = new DynamicParameters();
-            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -91,7 +91,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var parameter = new DynamicParameters();
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             parameter.Add("@Aval_Id", item.Aval_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Nombres", item.Aval_Nombres, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Apellidos", item.Aval_Apellidos, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Aval_Sexo", item.Aval_Sexo, System.Data.DbType.String, System.Data.ParameterDirection.Input);

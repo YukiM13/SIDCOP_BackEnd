@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Repositories\Dashboards\" />
+
+    <Folder Include="Repositories\Reportes\" />
+
   </ItemGroup>
 
   <ItemGroup>

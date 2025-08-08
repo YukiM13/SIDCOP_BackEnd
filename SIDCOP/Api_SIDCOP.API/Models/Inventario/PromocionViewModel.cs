@@ -1,8 +1,6 @@
-﻿   using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Api_SIDCOP.API.Models.Inventario
+﻿namespace Api_SIDCOP.API.Models.Inventario
 {
-    public class ProductosViewModel
+    public class PromocionViewModel
     {
         public int Prod_Id { get; set; }
 
@@ -19,7 +17,7 @@ namespace Api_SIDCOP.API.Models.Inventario
         public string Prod_Imagen { get; set; }
 
         public int Cate_Id { get; set; }
-        
+
         public string Cate_Descripcion { get; set; }
 
         public int Subc_Id { get; set; }
@@ -54,27 +52,36 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string? Marc_Descripcion { get; set; }
 
-        
+
         public string? Prov_NombreEmpresa { get; set; }
 
-        
+
         public string? Subc_Descripcion { get; set; }
 
-        
+
         public string? Impu_Descripcion { get; set; }
 
-        
+
         public string? UsuarioCreacion { get; set; }
 
-        
+
         public string? UsuarioModificacion { get; set; }
 
-        public string? ListasPrecio_JSON { get; set; }
+        public string? clientes { get; set; }
 
-        public string? DescuentosEscala_JSON { get; set; }
+        public string? productos { get; set; }
+        public List<int>? IdClientes { get; set; }
 
-        public string? Desc_EspecificacionesJSON { get; set; }
+       
 
+        public List<ProductoDetalleViewModel> productos_Json { get; set; }
 
+    }
+
+    public class ProductoDetalleViewModel
+    {
+        public int prod_Id { get; set; }
+        public int  prDe_Cantidad { get; set; }
+       
     }
 }

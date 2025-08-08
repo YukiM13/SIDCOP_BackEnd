@@ -55,6 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
         }
 
 
+
         #region ReporteClientes
         //public tbClientes ClientePorFecha(DateTime? fechaCreacion)
         //{
@@ -89,6 +90,33 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
         #endregion
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteProductosVendidosRutas(int? rutaId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Ruta_Id", rutaId);
+
+            var result = db.Query<ReporteProductosVendidosRuta>(
+                ScriptDatabase.ReporteProductosVendidosRutas,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<ReportesViewModel> ReporteClientesMasFacturados(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            var result = db.Query<ReportesViewModel>(ScriptDatabase.ReporteDeClientesMasFacturados, parameters,commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
 
         public RequestStatus Update(ReportesViewModel item)
         {

@@ -18,6 +18,10 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public string Tras_Observaciones { get; set; }
 
+        public bool? Tras_EsRecarga { get; set; }
+
+        public int? Reca_Id { get; set; }
+
         public int Usua_Creacion { get; set; }
 
         public string UsuaCreacion { get; set; }

@@ -35,6 +35,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameters.Add("@Tras_Origen", item.Tras_Origen, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Destino", item.Tras_Destino, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Fecha", item.Tras_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameters.Add("@Tras_EsRecarga", item.Tras_EsRecarga, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
+            parameters.Add("@Reca_Id", item.Reca_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_Observaciones", item.Tras_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@Tras_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);

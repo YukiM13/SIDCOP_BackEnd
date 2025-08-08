@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
@@ -52,6 +52,15 @@ namespace Api_SIDCOP.API.Controllers.Logistica
             return Ok(result);
         }
 
+
+        [HttpPut("Confirmar")]
+        public IActionResult Confirmar([FromBody] RecargasViewModel item)
+        {
+            var mapped = _mapper.Map<tbRecargas>(item);
+            var update = _logisticaServices.ConfirmRecargas(mapped);
+            return Ok(update);
+        }
+
         [HttpGet("ListarVendedor/{id}")]
         public IActionResult Buscar(int id)
         {
@@ -69,25 +78,27 @@ namespace Api_SIDCOP.API.Controllers.Logistica
                 return NotFound("Sucursal no encontrada.");
             }
         }
-        [HttpGet("ListarsPorSucursal/{id}")]
-        public IActionResult ListarRecargas(int id)
+
+
+        [HttpGet("ListarsPorSucursal/{id}/{esAdmin}")]
+        public IActionResult ListarRecargas(int id, bool esAdmin)
         {
             if (id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            var canal = _logisticaServices.FindRecargasSucu(id);
-            if (canal != null)
+
+            var result = _logisticaServices.FindRecargasSucu(id, esAdmin);
+            if (result.Success)
             {
-                return Ok(canal);
+                return Ok(result.Data);
             }
             else
             {
-                return NotFound("Recargas no encontradas.");
+                return BadRequest(result.Message);
             }
         }
 
-        
 
 
 
