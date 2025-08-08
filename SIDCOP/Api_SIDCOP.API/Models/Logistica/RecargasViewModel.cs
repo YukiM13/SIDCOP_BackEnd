@@ -7,7 +7,7 @@ namespace Api_SIDCOP.API.Models.Logistica
     {
         public int Reca_Id { get; set; }
 
-        public string Recarga { get; set; }
+        public string? Recarga { get; set; }
 
         public int Vend_Id { get; set; }
 
@@ -17,7 +17,7 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public string Reca_Observaciones { get; set; }
 
-        public string Reca_Confirmacion { get; set; }
+        public string? Reca_Confirmacion { get; set; }
 
         public int? Usua_Confirmacion { get; set; }
 

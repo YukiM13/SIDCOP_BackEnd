@@ -11,7 +11,7 @@ public partial class tbRecargas
     public int Reca_Id { get; set; }
 
     [NotMapped]
-    public string Recarga { get; set; }
+    public string? Recarga { get; set; }
 
     public int Vend_Id { get; set; }
 
@@ -34,7 +34,7 @@ public partial class tbRecargas
 
     public bool Reca_Estado { get; set; }
 
-    public string Reca_Confirmacion { get; set; }
+    public string? Reca_Confirmacion { get; set; }
 
     [NotMapped]
     public string? Bode_Descripcion { get; set; }
