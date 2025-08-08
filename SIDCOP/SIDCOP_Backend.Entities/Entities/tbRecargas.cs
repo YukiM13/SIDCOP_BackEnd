@@ -18,7 +18,6 @@ public partial class tbRecargas
     public int Bode_Id { get; set; }
 
 
-
     public DateTime Reca_Fecha { get; set; }
 
     public string Reca_Observaciones { get; set; }

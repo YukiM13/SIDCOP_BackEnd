@@ -44,6 +44,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
+        public IEnumerable<tbProductos> ListaPrecio(int? id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<tbProductos>(ScriptDatabase.Producto_ClienteDescuentoLista, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Producto no encontrado");
+            }
+            return result;
+        }
+
         public IEnumerable<tbProductos> FindFactura(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
