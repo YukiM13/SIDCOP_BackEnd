@@ -332,7 +332,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
         public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         public static string Recargas_Listar_conParametro = "[Logi].[SP_Recargas_ListarParametro]";
-        public static string Recarga_Actualizar = "Logi.Recarga_Actualizar";
+        public static string Recarga_Actualizar = "Logi.SP_Recarga_Actualizar";
         public static string Recarga_Confirmacion = "Logi.SP_Recarga_Confirmar";
 
         #endregion Recargas
