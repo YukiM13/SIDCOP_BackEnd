@@ -36,6 +36,7 @@ namespace SIDCOP_Backend.DataAccess
 
         //PARA LAS ACCIONES DE LAS PANTALLAS
         public static string AccionesPorPantalla_Listar = "[Acce].[SP_AccionesPorPantallas_Listar]";
+
         #endregion Roles
 
         #region Municipios
@@ -94,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_BuscarPorFactura = "[Inve].[SP_Producto_BuscarPorFactura]";
 
-        public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]"; 
+        public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]";
 
         #endregion Productos
 
@@ -171,7 +172,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Categoria_Actualizar = "[Inve].[SP_Categoria_Actualizar]";
         public const string Categoria_Buscar = "[Inve].[SP_Categoria_Buscar]";
         public const string Categoria_FiltrarSubcategorias = "[Inve].[SP_Categoria_ListarSubcategorias]";
-        #endregion
+
+        #endregion Categorias
 
         #region Modelos
 
@@ -304,6 +306,9 @@ namespace SIDCOP_Backend.DataAccess
         #region CuentasPorCobrar
 
         public static string CuentasPorCobrar_Listar = "[Vnta].[SP_CuentasPorCobrar_Listar]";
+        public static string CuentasPorCobrar_ResumenAntiguedad = "[Vnta].[SP_CuentasPorCobrar_ResumenAntiguedad]";
+        public static string CuentasPorCobrar_ResumenPorCliente = "[Vnta].[SP_CuentasPorCobrar_ResumenPorCliente]";
+        public static string CuentasPorCobrar_TimelineCliente = "[Vnta].[SP_CuentasPorCobrar_TimelineCliente]";
 
         #endregion CuentasPorCobrar
 
@@ -344,6 +349,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Descuentos_Insertar = "[Inve].[SP_Descuento_Insertar]";
         public static string Descuento_Actualizar = "Inve.SP_Descuento_Actualizar";
         public static string Descuento_Eliminar = "Inve.SP_Descuento_Eliminar";
+
         #endregion Descuentos
 
         #region Traslados
@@ -354,7 +360,6 @@ namespace SIDCOP_Backend.DataAccess
         public static string Traslado_Eliminar = "Logi.SP_Traslado_Eliminar";
         public static string TrasladoDetalle_Insertar = "Logi.SP_TrasladoDetalle_Insertar";
         public static string TrasladoDetalle_Buscar = "Logi.SP_TrasladoDetalle_Buscar";
-
 
         #endregion Traslados
 
@@ -391,11 +396,15 @@ namespace SIDCOP_Backend.DataAccess
         #endregion Paises
 
         #region TiposDeVivienda
+
         public const string TiposDeVivienda_Listar = "Gral.SP_TiposDeVivienda_Listar";
+
         #endregion TiposDeVivienda
 
         #region Parentescos
+
         public const string Parentescos_Listar = "Gral.SP_Parentescos_Listar";
+
         #endregion Parentescos
 
         #region PagosCuentasPorCobrar
@@ -405,8 +414,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string PagosCuentasPorCobrar_Listar = "[Vnta].[SP_PagosCuentasPorCobrar_Listar]";
         public const string PagosCuentasPorCobrar_Anular = "[Vnta].[SP_PagoCuentaPorCobrar_Anular]";
         public const string CuentaPorCobrar_Detalle = "[Vnta].[SP_CuentaPorCobrar_Detalle]";
-        #endregion PagosCuentasPorCobrar
 
+        #endregion PagosCuentasPorCobrar
 
         #region PreciosPorProducto
 
@@ -415,36 +424,37 @@ namespace SIDCOP_Backend.DataAccess
         public const string PreciosPorProducto_EliminarLista = "[Vnta].[SP_PreciosPorProducto_EliminarLista]";
         public const string PreciosPorProducto_EditarLista = "[Vnta].[SP_PreciosPorProducto_EditarLista]";
 
-        #endregion
-
-
-
+        #endregion PreciosPorProducto
 
         #region Venta
 
+        //public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
-        #endregion
 
+        #endregion Venta
 
+        #region Reportes
 
-        #region Reportes 
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
         public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
-        #endregion
+
+        #endregion Reportes
 
         #region Promociones
+
         public const string Promociones_Listar = "[Inve].[SP_Promociones_Listar]";
-            public const string Promociones_Insertar = "[Inve].[SP_Promociones_Insertar]";
-           public const string Promociones_Actualizar = "[Inve].[SP_Promociones_Actualizar]";
-            public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
+        public const string Promociones_Insertar = "[Inve].[SP_Promociones_Insertar]";
+        public const string Promociones_Actualizar = "[Inve].[SP_Promociones_Actualizar]";
+        public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
 
         #endregion Promociones
+
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
 
-        #endregion
+        #endregion Devolucion
 
 
         #region Dashboards 
@@ -464,7 +474,6 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string DevolucionDetalle_Listar = "[Vnta].[SP_DevolucionesDetalle_Listar]";
 
-        #endregion
-
+        #endregion DevolucionesDetalle
     }
 }

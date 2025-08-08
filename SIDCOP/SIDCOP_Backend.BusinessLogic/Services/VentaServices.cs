@@ -134,8 +134,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region CaiS
 
-
-
         public IEnumerable<tbCAIs> ListarCaiS()
         {
             try
@@ -390,11 +388,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _vendedorRepository.Delete(id);
-               
-            
-                    return result.Ok(deleteResult);
-              
-            
+
+                return result.Ok(deleteResult);
             }
             catch (Exception ex)
             {
@@ -637,7 +632,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var response = _cuentasporcobrarRepository.GetDetalle(cuentaPorCobrarId);
                 if (response == null)
                     return result.Error("No se encontró la cuenta por cobrar especificada.");
-                    
+
                 return result.Ok(response);
             }
             catch (Exception ex)
@@ -645,13 +640,55 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        
+
         public ServiceResult ListCuentasPorCobrar()
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.List();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ResumenAntiguedad()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.ResumenAntiguedad();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ResumenCliente()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.ResumenCliente();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult timeLineCliente(int clie_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.timeLineCliente(clie_Id);
                 return result.Ok(response);
             }
             catch (Exception ex)
@@ -692,6 +729,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult UpdatePreciosPorProductoLista(tbPreciosPorProducto item)
         {
             var result = new ServiceResult();
@@ -705,6 +743,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
         {
             var result = new ServiceResult();
@@ -719,7 +758,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion ConfiguracionFacturas
+        #endregion PreciosPorProducto
 
         #region Ventas
         public ServiceResult InsertVentas(VentaInsertarDTO item)
