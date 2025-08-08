@@ -36,4 +36,30 @@ public class ReportesController : Controller
             return StatusCode(500, "Error interno del servidor");
         }
     }
+
+
+    #region Clientes
+
+    [HttpGet("ClientePorFecha")]
+    public IActionResult BuscarClientePorFecha(DateTime? fecha)
+    {
+
+        if (fecha == default)
+        {
+            return BadRequest("Fecha inválida.");
+        }
+
+        var cliente = _reportesServices.ClientePorFecha(fecha);
+
+        if (cliente != null)
+        {
+            return Ok(cliente);
+        }
+        else
+        {
+            return NotFound("Cliente no encontrado.");
+        }
+    }
+
+    #endregion
 }

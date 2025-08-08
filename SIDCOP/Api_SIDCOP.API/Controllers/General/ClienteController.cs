@@ -2,6 +2,8 @@
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
+using Org.BouncyCastle.Tls.Crypto.Impl;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
@@ -73,6 +75,39 @@ namespace Api_SIDCOP.API.Controllers.General
                 return NotFound("Cliente no encontrado.");
             }
         }
+
+        //[HttpGet("PorFecha/{fecha}")]
+        //public IActionResult BuscarClientePorFecha(DateTime? fecha)
+        //{
+        //    if (fecha == default)
+        //    {
+        //        return BadRequest("Fecha inválida.");
+        //    }
+
+        //    var cliente = _generalServices.ClientePorFecha(fecha);
+
+        //    if (cliente != null)
+        //    {
+        //        return Ok(cliente);
+        //    }
+        //    else
+        //    {
+        //        return NotFound("Cliente no encontrado.");
+        //    }
+        //}
+
+        //        [HttpGet("PorFecha/{fecha}")]
+        //public IActionResult BuscarPorFecha(string fecha)
+        //{
+        //    if (!DateTime.TryParse(fecha, out DateTime fechaParseada))
+        //        return BadRequest("Fecha inválida");
+
+        //    var resultado = _generalServices.ClientePorFecha(fechaParseada.Date);
+        //    return Ok(resultado);
+        //}
+
+
+
 
 
         [HttpPut("CambioEstado")]

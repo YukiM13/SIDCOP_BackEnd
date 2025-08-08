@@ -42,5 +42,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }
+
+        public IEnumerable<ReportesViewModel> ClientePorFecha(DateTime? fechaCreacion)
+        {
+            try
+            {
+                var cliente = _reporteRepository.ClientePorFecha(fechaCreacion);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+
     }
 }

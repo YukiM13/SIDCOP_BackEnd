@@ -675,6 +675,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
         public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
         {
             var result = new ServiceResult();
