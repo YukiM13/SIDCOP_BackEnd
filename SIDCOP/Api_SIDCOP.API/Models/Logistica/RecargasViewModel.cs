@@ -7,6 +7,8 @@ namespace Api_SIDCOP.API.Models.Logistica
     {
         public int Reca_Id { get; set; }
 
+        public string Recarga { get; set; }
+
         public int Vend_Id { get; set; }
 
         public int Bode_Id { get; set; }
