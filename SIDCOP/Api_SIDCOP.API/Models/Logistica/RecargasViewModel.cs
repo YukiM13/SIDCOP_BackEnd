@@ -13,8 +13,6 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public int Bode_Id { get; set; }
 
-        public int? Tras_Id { get; set; }
-
         public DateTime Reca_Fecha { get; set; }
 
         public string Reca_Observaciones { get; set; }
