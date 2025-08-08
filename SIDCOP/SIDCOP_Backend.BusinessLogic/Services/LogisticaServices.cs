@@ -398,35 +398,50 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        //public tbRecargas FindRecargasSucu(int id)
+
+
+        // Servicio
+        //public IEnumerable<tbRecargas> FindRecargasSucu(int id, bool esAdmin)
         //{
-        //    var result = new ServiceResult();
         //    try
         //    {
-        //        var response = _recargasRepository.FindSucu(id);
-        //        return result.Ok(response); // Retorna el resultado exitoso
+        //        var recargas = _recargasRepository.FindSucu(id, esAdmin);
+
+        //        // Debug: Verifica si hay datos
+        //        if (recargas == null)
+        //        {
+        //            throw new Exception("Repository devolvió null");
+        //        }
+
+        //        if (!recargas.Any())
+        //        {
+        //            throw new Exception("Repository devolvió lista vacía");
+        //        }
+
+        //        return recargas;
         //    }
         //    catch (Exception ex)
         //    {
-        //        return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+        //        // Debug: Ver el error específico
+        //        throw new Exception($"Error en FindRecargasSucu: {ex.Message}");
         //    }
         //}
 
-
-      
-        // Servicio
-        public IEnumerable<tbRecargas> FindRecargasSucu(int id)
+        public ServiceResult FindRecargasSucu(int id, bool esAdmin)
         {
+            var result = new ServiceResult();
             try
             {
-                var recar = _recargasRepository.FindSucu(id);
-                return recar;
+                var response = _recargasRepository.FindSucu(id, esAdmin);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
-            catch
+            catch (Exception ex)
             {
-                return null;
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
             }
         }
+
+
 
         #endregion
 

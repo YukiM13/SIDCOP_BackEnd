@@ -36,4 +36,17 @@ public class ReportesController : Controller
             return StatusCode(500, "Error interno del servidor");
         }
     }
+
+    [HttpGet("ReporteClientesMasFacturados")]
+    public IActionResult ReporteClientesMasFacturados([FromQuery] DateTime? fechaInicio = null,[FromQuery] DateTime? fechaFin = null){
+        try
+        {
+            var list = _reportesServices.ReporteClientesMasFacturados(fechaInicio, fechaFin);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }

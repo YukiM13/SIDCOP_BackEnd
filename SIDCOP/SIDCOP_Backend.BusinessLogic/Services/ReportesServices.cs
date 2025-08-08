@@ -42,5 +42,18 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }
+
+        public IEnumerable<ReportesViewModel> ReporteClientesMasFacturados(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteClientesMasFacturados(fechaInicio, fechaFin);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<ReportesViewModel>();
+            }
+        }
     }
 }

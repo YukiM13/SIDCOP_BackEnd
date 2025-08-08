@@ -10,6 +10,9 @@ public partial class tbRecargas
 {
     public int Reca_Id { get; set; }
 
+    [NotMapped]
+    public string Recarga { get; set; }
+
     public int Vend_Id { get; set; }
 
     public int Bode_Id { get; set; }
