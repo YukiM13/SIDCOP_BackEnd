@@ -81,6 +81,36 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+        public IEnumerable<dynamic> Top5ProductosCategoria(DashboardsViewModel item)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Cate_Id", item.cate_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            var result = db.Query(
+                ScriptDatabase.Top5ProductosCategoria, parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return result;
+        }
+
+        public IEnumerable<dynamic> Top5VendedoresPorMes(DashboardsViewModel item)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Mes", item.Mes, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            var result = db.Query(
+                ScriptDatabase.Top5VendedoresPorMes, parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return result;
+        }
+
 
         public RequestStatus Update(DashboardsViewModel item)
         {

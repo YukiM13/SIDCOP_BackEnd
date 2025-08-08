@@ -65,5 +65,31 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<dynamic> Top5VendedoresPorMes(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardsRepository.Top5VendedoresPorMes(item);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+        public IEnumerable<dynamic> Top5ProductosCategoria(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardsRepository.Top5ProductosCategoria(item);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
     }
 }

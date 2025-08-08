@@ -67,5 +67,34 @@ namespace Api_SIDCOP.API.Controllers.Dashboards
             }
         }
 
+        [HttpPost("TopVendedoresPorMes")]
+        public IActionResult TopVendedoresPorMes(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardServices.Top5VendedoresPorMes(item);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+        [HttpPost("TopProductosPorCategoria")]
+        public IActionResult TopProductosPorCategoria(DashboardsViewModel item)
+        {
+            try
+            {
+                var list = _dashboardServices.Top5ProductosCategoria(item);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
     }
 }
