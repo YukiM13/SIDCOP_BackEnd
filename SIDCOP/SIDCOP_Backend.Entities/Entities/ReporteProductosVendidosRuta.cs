@@ -9,6 +9,7 @@ namespace SIDCOP_Backend.Entities.Entities
     public class ReporteProductosVendidosRuta
     {
         public int Vend_Id { get; set; }
+        public int Secuencia { get; set; }
         public string Vend_DNI { get; set; }
         public string NombreCompleto { get; set; }
         public int Ruta_Id { get; set; }
