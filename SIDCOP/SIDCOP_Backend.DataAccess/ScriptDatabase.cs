@@ -94,6 +94,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_BuscarPorFactura = "[Inve].[SP_Producto_BuscarPorFactura]";
 
+        public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]"; 
+
         #endregion Productos
 
         #region Sucursales
@@ -419,18 +421,19 @@ namespace SIDCOP_Backend.DataAccess
 
         #region Venta
 
-        public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
+        public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
         #endregion
 
 
 
         #region Reportes 
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
-
+        public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
+        public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
         #endregion
 
         #region Promociones
-            public const string Promociones_Listar = "[Inve].[SP_Promociones_Listar]";
+        public const string Promociones_Listar = "[Inve].[SP_Promociones_Listar]";
             public const string Promociones_Insertar = "[Inve].[SP_Promociones_Insertar]";
            public const string Promociones_Actualizar = "[Inve].[SP_Promociones_Actualizar]";
             public const string Promociones_CambiarEstado = "[Inve].[SP_Promocion_CambiarEstado]";
@@ -439,6 +442,12 @@ namespace SIDCOP_Backend.DataAccess
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
+
+        #endregion
+
+        #region DevolucionesDetalle
+
+        public const string DevolucionDetalle_Listar = "[Vnta].[SP_DevolucionesDetalle_Listar]";
 
         #endregion
 

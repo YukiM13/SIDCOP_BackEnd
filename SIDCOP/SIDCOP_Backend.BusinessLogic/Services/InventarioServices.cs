@@ -241,6 +241,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbProductos> ListaPrecioClientes(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.ListaPrecio(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
         {
             try
