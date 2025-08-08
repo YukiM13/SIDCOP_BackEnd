@@ -74,7 +74,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         public IEnumerable<tbCuentasPorCobrar> ResumenCliente()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenAntiguedad, commandType: System.Data.CommandType.StoredProcedure).ToList();
+            var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenPorCliente, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
             return result;
         }
