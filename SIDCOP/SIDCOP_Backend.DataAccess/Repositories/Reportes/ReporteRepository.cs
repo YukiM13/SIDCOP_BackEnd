@@ -69,6 +69,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+        public IEnumerable<ReportesViewModel> ReporteClientesMasFacturados(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            var result = db.Query<ReportesViewModel>(ScriptDatabase.ReporteDeClientesMasFacturados, parameters,commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
         public RequestStatus Update(ReportesViewModel item)
         {
             throw new NotImplementedException();

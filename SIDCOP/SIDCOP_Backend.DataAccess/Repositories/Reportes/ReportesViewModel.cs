@@ -25,6 +25,21 @@ namespace Api_SIDCOP.API.Models.Reportes
 
         #endregion
 
+        #region ReportesClientesMasFacturados
+        public int Clie_Id { get; set; }
 
+        public string Clie_Nombres { get; set; }
+
+        public string Clie_Apellidos { get; set; }
+
+        public string Clie_NombreNegocio { get; set; }
+
+        public string Clie_Telefono { get; set; }
+
+        public string TotalFacturado { get; set; }
+
+        public string CantidadCompras { get; set; }
+
+        #endregion
     }
 }
