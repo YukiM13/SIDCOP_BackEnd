@@ -64,6 +64,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Vend_EsExterno", item.Vend_EsExterno, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@rutas", item.rutas, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
 
             try
             {
@@ -114,6 +116,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Vend_EsExterno", item.Vend_EsExterno, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@rutas", item.rutas, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
 
             try
             {
