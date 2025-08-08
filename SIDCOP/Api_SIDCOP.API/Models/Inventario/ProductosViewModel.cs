@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿   using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Inventario
 {
@@ -69,10 +69,8 @@ namespace Api_SIDCOP.API.Models.Inventario
         
         public string? UsuarioModificacion { get; set; }
 
-        [NotMapped]
         public string? ListasPrecio_JSON { get; set; }
 
-        [NotMapped]
         public string? DescuentosEscala_JSON { get; set; }
 
 
