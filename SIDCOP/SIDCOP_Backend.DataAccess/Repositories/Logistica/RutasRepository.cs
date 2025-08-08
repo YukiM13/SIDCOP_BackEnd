@@ -57,6 +57,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result;
         }
 
+        public IEnumerable<tbRutas> ListDisponibles()
+        {
+
+            var parameter = new DynamicParameters();
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbRutas>(ScriptDatabase.Rutas_listarDisponibles, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+            return result;
+        }
+
         public tbRutas Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
