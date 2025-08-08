@@ -18,7 +18,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         {
             var parameter = new DynamicParameters();
 
-            // Parámetros simples
+            // Parámetros de entrada principales
             parameter.Add("@Fact_Numero", venta.Fact_Numero);
             parameter.Add("@Fact_TipoDeDocumento", venta.Fact_TipoDeDocumento);
             parameter.Add("@RegC_Id", venta.RegC_Id);
@@ -29,44 +29,40 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Fact_FechaLimiteEmision", venta.Fact_FechaLimiteEmision);
             parameter.Add("@Fact_RangoInicialAutorizado", venta.Fact_RangoInicialAutorizado);
             parameter.Add("@Fact_RangoFinalAutorizado", venta.Fact_RangoFinalAutorizado);
-            parameter.Add("@Fact_TotalImpuesto15", venta.Fact_TotalImpuesto15);
-            parameter.Add("@Fact_TotalImpuesto18", venta.Fact_TotalImpuesto18);
-            parameter.Add("@Fact_ImporteExento", venta.Fact_ImporteExento);
-            parameter.Add("@Fact_ImporteGravado15", venta.Fact_ImporteGravado15);
-            parameter.Add("@Fact_ImporteGravado18", venta.Fact_ImporteGravado18);
-            parameter.Add("@Fact_ImporteExonerado", venta.Fact_ImporteExonerado);
-            parameter.Add("@Fact_TotalDescuento", venta.Fact_TotalDescuento);
-            parameter.Add("@Fact_Subtotal", venta.Fact_Subtotal);
-            parameter.Add("@Fact_Total", venta.Fact_Total);
             parameter.Add("@Fact_Latitud", venta.Fact_Latitud);
             parameter.Add("@Fact_Longitud", venta.Fact_Longitud);
             parameter.Add("@Fact_Referencia", venta.Fact_Referencia ?? string.Empty);
             parameter.Add("@Fact_AutorizadoPor", venta.Fact_AutorizadoPor ?? string.Empty);
             parameter.Add("@Usua_Creacion", venta.Usua_Creacion);
 
-            // Convertir lista de detalles a XML
-            string detallesXml = venta.DetallesFactura != null && venta.DetallesFactura.Any()
-                ? "<DetallesFactura>" + string.Join("", venta.DetallesFactura.Select(det =>
-                    $"<Detalle Prod_Id=\"{det.Prod_Id}\" FaDe_Cantidad=\"{det.FaDe_Cantidad}\" FaDe_PrecioUnitario=\"{det.FaDe_PrecioUnitario}\" FaDe_Impuesto=\"{det.FaDe_Impuesto}\" FaDe_Descuento=\"{det.FaDe_Descuento}\" FaDe_Subtotal=\"{det.FaDe_Subtotal}\" FaDe_Total=\"{det.FaDe_Total}\" />"))
+            // Convertir lista de detalles a XML (solo productos y cantidades)
+            string detallesXml = venta.DetallesFacturaInput != null && venta.DetallesFacturaInput.Any()
+                ? "<DetallesFactura>" + string.Join("", venta.DetallesFacturaInput.Select(det =>
+                    $"<Detalle Prod_Id=\"{det.Prod_Id}\" FaDe_Cantidad=\"{det.FaDe_Cantidad}\" />"))
                     + "</DetallesFactura>"
                 : "<DetallesFactura></DetallesFactura>";
 
-            parameter.Add("@DetallesFactura", detallesXml, DbType.Xml);
+            parameter.Add("@DetallesFacturaInput", detallesXml, DbType.Xml);
 
-            // Parámetro de salida
+            // Parámetros de salida
             parameter.Add("@Fact_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            parameter.Add("@Mensaje", dbType: DbType.String, direction: ParameterDirection.Output, size: 500);
+            parameter.Add("@Exitoso", dbType: DbType.Boolean, direction: ParameterDirection.Output);
 
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 db.Execute(ScriptDatabase.Venta_Insertar, parameter, commandType: CommandType.StoredProcedure);
 
+                // Obtener valores de salida
                 var factId = parameter.Get<int>("@Fact_Id");
+                var mensaje = parameter.Get<string>("@Mensaje");
+                var exitoso = parameter.Get<bool>("@Exitoso");
 
                 return new RequestStatus
                 {
-                    code_Status = 1,
-                    message_Status = "Venta insertada correctamente"
+                    code_Status = exitoso ? 1 : 0,
+                    message_Status = exitoso ? $"Venta insertada correctamente. ID: {factId}. {mensaje}" : mensaje
                 };
             }
             catch (Exception ex)

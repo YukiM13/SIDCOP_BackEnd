@@ -71,7 +71,11 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbAvales, AvalViewModel>().ReverseMap();
 
             CreateMap<tbInventarioSucursales, InventarioSucursalesViewModel>().ReverseMap();
-         
+
+            CreateMap<VentaDetalleDTO, VentaDetalleViewModel>().ReverseMap();
+            CreateMap<VentaInsertarDTO, VentaInsertarViewModel>().ReverseMap();
+            CreateMap<tbProductos, PromocionViewModel>().ReverseMap();
+
 
         }
     }

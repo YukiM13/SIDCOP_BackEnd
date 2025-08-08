@@ -14,6 +14,7 @@ using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -25,22 +26,26 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly VendedorRepository _vendedorRepository;
         private readonly ConfiguracionFacturaRepository _configuracionFacturaRepository;
         private readonly PuntoEmisionRepository _puntoEmisionRepository;
-
+        private readonly DevolucionesRepository _devolucionesRepository;
         private readonly CuentasPorCobrarRepository _cuentasporcobrarRepository;
         private readonly PagosCuentasPorCobrarRepository _pagosCuentasPorCobrarRepository;
         private readonly PedidoRepository _pedidoRepository;
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
+        private readonly FacturasRepository _facturasRepository;
+        private readonly DevolucionesDetallesRepository _devolucionesDetallesRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
             VendedorRepository vendedorRepository, ImpuestosRepository impuestosRepository,
             ConfiguracionFacturaRepository configuracionFacturaRepository, PuntoEmisionRepository puntoEmisionRepository,
             CuentasPorCobrarRepository cuentaporcobrarRepository, PedidoRepository pedidoRepository,
+            FacturasRepository facturasRepository,
 
             PreciosPorProductoRepository preciosPorProductoRepository,
 
 
-            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository
+            PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository,
+            DevolucionesDetallesRepository devolucionesDetallesRepository
                             )
 
         {
@@ -54,6 +59,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _pagosCuentasPorCobrarRepository = pagosCuentasPorCobrarRepository;
             _pedidoRepository = pedidoRepository;
             _preciosPorProductoRepository = preciosPorProductoRepository;
+            _facturasRepository = facturasRepository;
+            _devolucionesRepository = devolucionesRepository;
+            _devolucionesDetallesRepository = devolucionesDetallesRepository;
         }
 
         #region Pedidos
@@ -712,5 +720,151 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion ConfiguracionFacturas
+
+        #region Ventas
+        public ServiceResult InsertVentas(VentaInsertarDTO item)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (item == null)
+                {
+                    return result.Error("Los datos de la venta son requeridos");
+                }
+
+                if (string.IsNullOrWhiteSpace(item.Fact_Numero))
+                {
+                    return result.Error("El número de factura es requerido");
+                }
+
+                if (item.DetallesFacturaInput == null || !item.DetallesFacturaInput.Any())
+                {
+                    return result.Error("Debe incluir al menos un producto en la venta");
+                }
+
+                // Validar que todos los detalles tengan datos válidos
+                var detallesInvalidos = item.DetallesFacturaInput
+                    .Where(d => d.Prod_Id <= 0 || d.FaDe_Cantidad <= 0)
+                    .ToList();
+
+                if (detallesInvalidos.Any())
+                {
+                    return result.Error("Todos los productos deben tener ID válido y cantidad mayor a 0");
+                }
+
+                // Llamar al repository para insertar la venta
+                var response = _facturasRepository.InsertarVenta(item);
+
+                if (response.code_Status == 1)
+                {
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // _logger.LogError(ex, "Error al insertar venta para factura {FacturaNumero}", item?.Fact_Numero);
+
+                return result.Error($"Error inesperado al insertar venta: {ex.Message}");
+            }
+        }
+
+        // Método adicional opcional para validar una venta antes de insertarla
+        public ServiceResult ValidarVenta(VentaInsertarDTO item)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones de negocio más específicas
+                var errores = new List<string>();
+
+                // Validar fechas
+                if (item.Fact_FechaEmision > DateTime.Now.AddDays(1))
+                {
+                    errores.Add("La fecha de emisión no puede ser futura");
+                }
+
+                if (item.Fact_FechaLimiteEmision < item.Fact_FechaEmision)
+                {
+                    errores.Add("La fecha límite no puede ser anterior a la fecha de emisión");
+                }
+
+                // Validar tipo de venta
+                if (!new[] { "CONTADO", "CREDITO" }.Contains(item.Fact_TipoVenta?.ToUpper()))
+                {
+                    errores.Add("El tipo de venta debe ser CONTADO o CREDITO");
+                }
+
+                // Validar rangos autorizados
+                if (string.IsNullOrWhiteSpace(item.Fact_RangoInicialAutorizado) ||
+                    string.IsNullOrWhiteSpace(item.Fact_RangoFinalAutorizado))
+                {
+                    errores.Add("Los rangos autorizados son requeridos");
+                }
+
+                // Validar coordenadas geográficas
+                if (item.Fact_Latitud < -90 || item.Fact_Latitud > 90)
+                {
+                    errores.Add("La latitud debe estar entre -90 y 90 grados");
+                }
+
+                if (item.Fact_Longitud < -180 || item.Fact_Longitud > 180)
+                {
+                    errores.Add("La longitud debe estar entre -180 y 180 grados");
+                }
+
+                if (errores.Any())
+                {
+                    return result.Error($"Errores de validación: {string.Join(", ", errores)}");
+                }
+
+                return result.Ok("Validación exitosa");
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al validar venta: {ex.Message}");
+            }
+        }
+        #endregion
+
+        #region Devoluciones
+
+        public IEnumerable<tbDevoluciones> DevolucionesListar()
+        {
+            try
+            {
+                var list = _devolucionesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbDevoluciones> lista = null;
+                return lista;
+            }
+        }
+
+        #endregion
+
+        #region DevolucionesDetalles
+        public IEnumerable<tbDevolucionesDetalle> BuscarDevolucionDetalle(int? id)
+        {
+            try
+            {
+                var devolucionesDetalle = _devolucionesDetallesRepository.FindDetalle(id);
+                return devolucionesDetalle;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }
