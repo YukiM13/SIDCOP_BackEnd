@@ -832,7 +832,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al validar venta: {ex.Message}");
             }
         }
-
+        #endregion
 
         #region Devoluciones
 
