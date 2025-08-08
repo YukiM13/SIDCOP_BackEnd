@@ -245,6 +245,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string Rutas_Agregar = "[Logi].[SP_Ruta_Insertar]";
         public static string Rutas_listar = "[Logi].[SP_Rutas_Listar]";
+        public static string Rutas_listarDisponibles = "Logi.SP_Rutas_Disponibles";
         public static string Rutas_Filtrar = "[Logi].[SP_Ruta_Buscar]";
         public static string Rutas_Eliminar = "[Logi].[SP_Ruta_Eliminar]";
         public static string Rutas_Editar = "[Logi].[SP_Ruta_Actualizar]";
