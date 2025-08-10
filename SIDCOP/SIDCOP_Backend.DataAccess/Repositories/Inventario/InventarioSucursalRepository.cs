@@ -81,6 +81,27 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
+        public IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
+        {
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameters = new DynamicParameters();
+                parameters.Add("@Usua_Id", usua_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+                parameters.Add("@InSu_FechaModificacion", inSu_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+                parameters.Add("@Datos", xmlData, System.Data.DbType.Xml);
+
+                var result = db.Query<tbInventarioSucursales>(ScriptDatabase.InventarioSucursal_ActualizarCantidades, parameters, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
         public IEnumerable<tbInventarioSucursales> List()
         {
             throw new NotImplementedException();

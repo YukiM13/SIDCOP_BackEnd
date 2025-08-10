@@ -65,5 +65,39 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             var actualizar = _inventarioServices.ActualizarInventario(sucu_id, usua_id);
             return Ok(actualizar);
         }
+
+        [HttpPut("ActualizarCantidades/{usua_id}")]
+        public IActionResult ActualizarCantidades(int usua_id, DateTime inSu_FechaModificacion, [FromBody] List<InventarioSucursalesViewModel> lista)
+        {
+            if (lista == null || !lista.Any())
+            {
+                return BadRequest("La lista de inventarios está vacía.");
+            }
+
+            try
+            {
+                var xmlData = ConvertListToXml(lista);
+                var resultado = _inventarioServices.ActualizarCantidadesInventario(usua_id, inSu_FechaModificacion, xmlData);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        private string ConvertListToXml(List<InventarioSucursalesViewModel> lista)
+        {
+            var doc = new System.Xml.Linq.XDocument(new System.Xml.Linq.XElement("Inventarios",
+                lista.Select(item =>
+                    new System.Xml.Linq.XElement("Inventario",
+                    new System.Xml.Linq.XElement("InSu_Id", item.InSu_Id),
+                    new System.Xml.Linq.XElement("InSu_Cantidad", item.InSu_Cantidad)
+                    ))
+                )
+            );
+            return doc.ToString();
+        }
+
     }
 }
