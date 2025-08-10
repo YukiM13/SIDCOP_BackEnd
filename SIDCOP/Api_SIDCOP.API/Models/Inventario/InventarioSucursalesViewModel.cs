@@ -15,7 +15,11 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string? Prod_Descripcion { get; set; }
 
+        public string? Prod_DescripcionCorta { get; set; }
+
         public int InSu_Cantidad { get; set; }
+
+        public string? Cambio { get; set; }
 
         public int Usua_Creacion { get; set; }
 

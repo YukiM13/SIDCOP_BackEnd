@@ -426,6 +426,34 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbInventarioSucursales>ListarPorSucursal(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListadoPorSucursal(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarInventario(int sucu_id, int usua_id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActulizarInventario(sucu_id, usua_id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
         #endregion
 
 

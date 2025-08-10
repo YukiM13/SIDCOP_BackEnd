@@ -40,5 +40,30 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
+        [HttpGet("ListarPorSucursal/{id}")]
+        public IActionResult ListarPorSucursal(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var invent = _inventarioServices.ListarPorSucursal(id);
+            if (invent != null)
+            {
+                var inventarioViewModel = _mapper.Map<IEnumerable<InventarioSucursalesViewModel>>(invent);
+                return Ok(inventarioViewModel);
+            }
+            else
+            {
+                return NotFound("Inventario No encontrados.");
+            }
+        }
+
+        [HttpPost("ActualizarInventario/{sucu_id}/{usua_id}")]
+        public IActionResult ActualizarInventario(int sucu_id, int usua_id)
+        {
+            var actualizar = _inventarioServices.ActualizarInventario(sucu_id, usua_id);
+            return Ok(actualizar);
+        }
     }
 }
