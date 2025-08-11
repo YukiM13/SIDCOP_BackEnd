@@ -43,7 +43,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int bodega)
+        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int? bodega = null)
         {
             try
             {

@@ -79,7 +79,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
 
             return result;
         }
-        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int bodega)
+        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int? bodega)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();

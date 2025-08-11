@@ -52,11 +52,11 @@ public class ReportesController : Controller
         }
     }
     [HttpGet("ReporteRecargasPorBodega")]
-    public IActionResult ReporteRecargasPorBodega([FromQuery] int? bodega = null)
+    public IActionResult ReporteRecargasPorBodega([FromQuery] int? bodega )
     {
         try
         {
-            var list = _reportesServices.ReporteProductosPorRuta(bodega);
+            var list = _reportesServices.ReporteRecargasPorBodega(bodega);
             return Ok(list);
         }
         catch (Exception ex)
