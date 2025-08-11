@@ -224,6 +224,11 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Clientes
 
+        #region ClientesVisitasHistorial
+        public static string ClientesVisitasHistorial_Insertar = "[Gral].[SP_ClientesVisitaHistorial_Insertar]";
+        public static string ClientesVisitasHistorial_Listar = "[Gral].[SP_ClientesVisitaHistorial_Listar]";
+        #endregion ClientesVisitasHistorial
+
         #region Marcas
 
         public static string Marcas_Listar = "[Gral].[SP_Marcas_Listar]";

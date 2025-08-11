@@ -94,7 +94,6 @@ namespace Api_SIDCOP.API.Controllers.General
         [HttpPost("CambiarEstado")]
         public IActionResult CambiarEstado([FromBody] ClienteCambiarEstadoDTO dto)
         {
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(dto));
             if (dto == null || dto.Clie_Id <= 0)
                 return BadRequest("Datos inválidos.");
 
