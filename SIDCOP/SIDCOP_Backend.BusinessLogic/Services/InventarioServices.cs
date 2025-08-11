@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using SIDCOP_Backend.DataAccess;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -17,17 +20,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioBodegaRepository _inventarioBodegaRepository;
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
+        private readonly PromocionesRepository _promocionesRepository;
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
-       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository)
-       {
-           _categoriasRepository = categoriasRepository;
-           _subcategoriasRepository = subcategoriasRepository;
-           _productosRepository = productosRepository;
-           _inventarioSucursalRepository = inventarioSucursalRepository;
-           _inventarioBodegaRepository = inventarioBodegaRepository;
-           _descuentosRepository = descuentosRepository;
-       }
+       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
+        {
+            _categoriasRepository = categoriasRepository;
+            _subcategoriasRepository = subcategoriasRepository;
+            _productosRepository = productosRepository;
+            _inventarioSucursalRepository = inventarioSucursalRepository;
+            _inventarioBodegaRepository = inventarioBodegaRepository;
+            _descuentosRepository = descuentosRepository;
+            _promocionesRepository = promocionesRepository;
+        }
 
         #region Categorias
 
@@ -239,6 +244,32 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbProductos> ListaPrecioClientes(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.ListaPrecio(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.FindFactura(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public ServiceResult InsertarProducto(tbProductos producto)
         {
             var result = new ServiceResult();
@@ -398,6 +429,120 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbInventarioSucursales>ListarPorSucursal(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListadoPorSucursal(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarInventario(int sucu_id, int usua_id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActulizarInventario(sucu_id, usua_id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActualizarCantidadesInventario(usua_id, inSu_FechaModificacion, xmlData);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+
         #endregion
+
+
+        #region Promociones
+
+        public IEnumerable<tbProductos> ListarPromociones()
+        {
+            try
+            {
+                var list = _promocionesRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<tbProductos>();
+            }
+        }
+        public ServiceResult InsertarPromocines(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _promocionesRepository.Insert(producto);
+       
+                
+                    return result.Ok(insertResult);
+                
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ActualizarPromocines(tbProductos producto)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insertResult = _promocionesRepository.Update(producto);
+
+
+                return result.Ok(insertResult);
+
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al insertar producto: {ex.Message}");
+            }
+        }
+
+        public ServiceResult CambiarEstadoPromociones(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _promocionesRepository.Delete(id);
+                if (deleteResult.code_Status > 0)
+                {
+                    return result.Ok(deleteResult);
+                }
+                else
+                {
+                    return result.Error(deleteResult);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar descuento: {ex.Message}");
+            }
+        }
+        #endregion Promociones
     }
 }
