@@ -81,56 +81,55 @@ public partial class tbFacturas
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
-    public virtual ICollection<tbDevoluciones> tbDevolucionesClie { get; set; } = new List<tbDevoluciones>();
-
-    public virtual ICollection<tbDevoluciones> tbDevolucionesFact { get; set; } = new List<tbDevoluciones>();
+    public virtual ICollection<tbDevoluciones> tbDevoluciones { get; set; } = new List<tbDevoluciones>();
 
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalle { get; set; } = new List<tbFacturasDetalle>();
 }
 
-
-
 public class VentaInsertarDTO
 {
+    // Datos básicos de la factura
     public string Fact_Numero { get; set; }
     public string Fact_TipoDeDocumento { get; set; }
     public int RegC_Id { get; set; }
     public int Clie_Id { get; set; }
     public int Vend_Id { get; set; }
-    public string Fact_TipoVenta { get; set; }
+    public string Fact_TipoVenta { get; set; } // CONTADO o CREDITO
     public DateTime Fact_FechaEmision { get; set; }
     public DateTime Fact_FechaLimiteEmision { get; set; }
     public string Fact_RangoInicialAutorizado { get; set; }
     public string Fact_RangoFinalAutorizado { get; set; }
 
-    public decimal Fact_TotalImpuesto15 { get; set; }
-    public decimal Fact_TotalImpuesto18 { get; set; }
-    public decimal Fact_ImporteExento { get; set; }
-    public decimal Fact_ImporteGravado15 { get; set; }
-    public decimal Fact_ImporteGravado18 { get; set; }
-    public decimal Fact_ImporteExonerado { get; set; }
-    public decimal Fact_TotalDescuento { get; set; }
-
-    public decimal Fact_Subtotal { get; set; }
-    public decimal Fact_Total { get; set; }
-
+    // Ubicación geográfica
     public decimal Fact_Latitud { get; set; }
     public decimal Fact_Longitud { get; set; }
 
-    public string Fact_Referencia { get; set; }
-    public string Fact_AutorizadoPor { get; set; }
+    // Información adicional
+    public string? Fact_Referencia { get; set; }
+    public string? Fact_AutorizadoPor { get; set; }
+
+    // Usuario que crea la venta
     public int Usua_Creacion { get; set; }
 
-    public List<VentaDetalleDTO> DetallesFactura { get; set; }
+    // Lista de productos y cantidades (los cálculos los hace el SP)
+    public List<VentaDetalleDTO> DetallesFacturaInput { get; set; } = new List<VentaDetalleDTO>();
 }
 
 public class VentaDetalleDTO
 {
     public int Prod_Id { get; set; }
     public int FaDe_Cantidad { get; set; }
-    public decimal FaDe_PrecioUnitario { get; set; }
-    public decimal FaDe_Impuesto { get; set; }
-    public decimal FaDe_Descuento { get; set; }
-    public decimal FaDe_Subtotal { get; set; }
-    public decimal FaDe_Total { get; set; }
+}
+
+public class VentaRespuestaDTO
+{
+    public int Fact_Id { get; set; }
+    public bool Exitoso { get; set; }
+    public string Mensaje { get; set; }
+
+    // Totales calculados por el SP (opcional, para respuestas detalladas)
+    public decimal? Total { get; set; }
+    public decimal? Subtotal { get; set; }
+    public decimal? TotalDescuento { get; set; }
+    public decimal? TotalImpuestos { get; set; }
 }

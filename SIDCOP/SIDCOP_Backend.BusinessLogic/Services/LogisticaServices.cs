@@ -67,6 +67,22 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+        public IEnumerable<tbRutas> ListarRutasDisponibles()
+        {
+
+            try
+            {
+                var list = _rutasRepository.ListDisponibles();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbRutas> lista = null;
+                return lista;
+            }
+        }
+
         public ServiceResult InsertarRuta(tbRutas item)
         {
             var result = new ServiceResult();
@@ -360,6 +376,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _recargasRepository.Update(item);
+                return result.Ok(response);  // Retorna el resultado exitoso
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);  // Retorna el mensaje de error si falla
+            }
+        }
+
+        public ServiceResult ConfirmRecargas(tbRecargas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _recargasRepository.RecargasConfirm(item);
                 return result.Ok(response);  // Retorna el resultado exitoso
             }
             catch (Exception ex)
