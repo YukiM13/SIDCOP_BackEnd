@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using SIDCOP_Backend.DataAccess;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -241,6 +244,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbProductos> ListaPrecioClientes(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.ListaPrecio(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
         {
             try
@@ -412,6 +428,49 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return resultado;
             }
         }
+
+        public IEnumerable<tbInventarioSucursales>ListarPorSucursal(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListadoPorSucursal(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarInventario(int sucu_id, int usua_id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActulizarInventario(sucu_id, usua_id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActualizarCantidadesInventario(usua_id, inSu_FechaModificacion, xmlData);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
 
         #endregion
 

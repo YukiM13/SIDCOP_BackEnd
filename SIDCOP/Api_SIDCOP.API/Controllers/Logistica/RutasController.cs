@@ -51,6 +51,14 @@ namespace Api_SIDCOP.API.Controllers.Logistica
         }
 
 
+        [HttpGet("ListarDisponibles")]
+        public IActionResult listarDisponibles()
+        {
+            var list = _logisticaServices.ListarRutasDisponibles();
+            return Ok(list);
+        }
+
+
         [HttpPost("Crear")]
         public IActionResult Insert([FromBody] RutasViewModel item)
         {
