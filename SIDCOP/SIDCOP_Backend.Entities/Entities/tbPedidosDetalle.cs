@@ -17,6 +17,8 @@ public partial class tbPedidosDetalle
 
     public decimal PeDe_ProdPrecio { get; set; }
 
+    public decimal? PeDe_ProdPrecioFinal { get; set; }
+
     public int Usua_Creacion { get; set; }
 
     public DateTime PeDe_FechaCreacion { get; set; }

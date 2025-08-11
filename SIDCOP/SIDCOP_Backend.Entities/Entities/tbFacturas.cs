@@ -81,14 +81,10 @@ public partial class tbFacturas
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
-    public virtual ICollection<tbDevoluciones> tbDevolucionesClie { get; set; } = new List<tbDevoluciones>();
-
-    public virtual ICollection<tbDevoluciones> tbDevolucionesFact { get; set; } = new List<tbDevoluciones>();
+    public virtual ICollection<tbDevoluciones> tbDevoluciones { get; set; } = new List<tbDevoluciones>();
 
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalle { get; set; } = new List<tbFacturasDetalle>();
 }
-
-
 
 public class VentaInsertarDTO
 {
@@ -125,7 +121,6 @@ public class VentaDetalleDTO
     public int FaDe_Cantidad { get; set; }
 }
 
-// DTO para respuesta con información completa calculada por el SP
 public class VentaRespuestaDTO
 {
     public int Fact_Id { get; set; }
