@@ -35,7 +35,8 @@ public partial class tbDevolucionesDetalle
 
     [NotMapped]
     public string? Prod_Descripcion { get; set; }
-
+    [NotMapped]
+    public string? Productos_Devueltos { get; set; }
     [NotMapped]
     public string? Prod_DescripcionCorta { get; set; }
 
