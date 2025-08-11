@@ -9,24 +9,34 @@ namespace SIDCOP_Backend.Entities.Entities;
 public partial class tbCuentasPorCobrar
 {
     public int CPCo_Id { get; set; }
+
     public int Clie_Id { get; set; }
+
     public int Fact_Id { get; set; }
 
     public DateTime CPCo_FechaEmision { get; set; }
+
     public DateTime? CPCo_FechaVencimiento { get; set; }
 
     public decimal CPCo_Valor { get; set; }
+
     public decimal CPCo_Saldo { get; set; }
 
     public string CPCo_Observaciones { get; set; }
+
     public bool? CPCo_Anulado { get; set; }
+
     public bool? CPCo_Saldada { get; set; }
-    public bool CPCo_Estado { get; set; }
 
     public int Usua_Creacion { get; set; }
+
     public DateTime CPCo_FechaCreacion { get; set; }
+
     public int? Usua_Modificacion { get; set; }
+
     public DateTime? CPCo_FechaModificacion { get; set; }
+
+    public bool CPCo_Estado { get; set; }
 
     [NotMapped] public string Clie_Codigo { get; set; }
     [NotMapped] public string Clie_Nombres { get; set; }
@@ -44,7 +54,7 @@ public partial class tbCuentasPorCobrar
     [NotMapped] public DateTime Fecha { get; set; }
 
     [NotMapped] public decimal Actual { get; set; }
-    [NotMapped] public decimal _1_30 { get; set; } 
+    [NotMapped] public decimal _1_30 { get; set; }
     [NotMapped] public decimal _31_60 { get; set; }
     [NotMapped] public decimal _61_90 { get; set; }
     [NotMapped] public decimal Mayor90 { get; set; }
@@ -59,11 +69,14 @@ public partial class tbCuentasPorCobrar
     [NotMapped] public string UsuarioCreacion { get; set; }
     [NotMapped] public string UsuarioModificacion { get; set; }
     [NotMapped] public string Secuencia { get; set; }
+
     public virtual tbClientes Clie { get; set; }
+
     public virtual tbFacturas Fact { get; set; }
+
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
+
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
     public virtual ICollection<tbPagosCuentasPorCobrar> tbPagosCuentasPorCobrar { get; set; } = new List<tbPagosCuentasPorCobrar>();
 }
-
-

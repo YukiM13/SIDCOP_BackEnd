@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
@@ -41,7 +40,7 @@ public partial class tbDevoluciones
     [NotMapped]
     public string UsuarioModificacion { get; set; }
 
-    public virtual tbFacturas Clie { get; set; }
+    public virtual tbClientes Clie { get; set; }
 
     public virtual tbFacturas Fact { get; set; }
 

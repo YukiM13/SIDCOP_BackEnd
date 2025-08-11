@@ -871,6 +871,43 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al validar venta: {ex.Message}");
             }
         }
+
+
+
+        public ServiceResult ObtenerFacturaCompleta(int factId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (factId <= 0)
+                {
+                    return result.Error("El ID de la factura debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener la factura completa
+                var facturaCompleta = _facturasRepository.ObtenerFacturaCompleta(factId);
+
+                if (!facturaCompleta.Exitoso)
+                {
+                    return result.Error(facturaCompleta.Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (facturaCompleta.Fact_Id == 0)
+                {
+                    return result.Error("No se encontró la factura especificada");
+                }
+
+                return result.Ok(facturaCompleta);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // *logger.LogError(ex, "Error al obtener factura completa ID: {FactId}", factId);
+                return result.Error($"Error inesperado al obtener la factura: {ex.Message}");
+            }
+        }
         #endregion
 
         #region Devoluciones

@@ -220,8 +220,14 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
         public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
         public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
+        public const string Cliente_ListarVendedor = "Gral.SP_Clientes_Listar_Vendedor";
 
         #endregion Clientes
+
+        #region ClientesVisitasHistorial
+        public static string ClientesVisitasHistorial_Insertar = "[Gral].[SP_ClientesVisitaHistorial_Insertar]";
+        public static string ClientesVisitasHistorial_Listar = "[Gral].[SP_ClientesVisitaHistorial_Listar]";
+        #endregion ClientesVisitasHistorial
 
         #region Marcas
 
@@ -379,6 +385,9 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioSucursal_Actualizar = "";
         public static string InventarioSucursal_Eliminar = "";
         public static string InventarioSucursal_Filtrado = "[Inve].[SP_InventarioSucursal_Filtrado]";
+        public static string InventarioSucursal_ListarPorSucursal = "[Inve].[SP_InventarioSucursal_ListarPorSucursal]";
+        public static string InventarioSucursal_ActualizarPorSucursal = "[Inve].[SP_InventarioSucursal_ActualizarPorSucursal]";
+        public static string InventarioSucursal_ActualizarCantidades = "[Inve].[SP_InventarioSucursal_ActualizarCantidades]";
 
         public static string InventarioBodega_Listar = "";
         public static string InventarioBodega_Insertar = "";
@@ -438,7 +447,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
         public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
-
+        public const string ReporteDevoluciones = "[Vnta].[SP_Reporte_Devoluciones]";
+        public const string ReporteRecargasPorBodegas = "[Logi].[SP_Reporte_RecargasPorBodega]";
         #endregion Reportes
 
         #region Promociones

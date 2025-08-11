@@ -31,6 +31,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly TipoDeViviendaRepository _tipoDeViviendaRepository;
         private readonly AvalRepository _avalRepository;
         private readonly ParentescoRepository _parentescoRepository;
+        private readonly ClientesVisitaHistorialRepository _clientesVisitaHistorialRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -39,7 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
         PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
-        ParentescoRepository parentescoRepository
+        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -68,6 +69,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _paisRepository = paisRepository;
             _tipoDeViviendaRepository = tipoDeViviendaRepository;
             _parentescoRepository = parentescoRepository;
+            _clientesVisitaHistorialRepository = clientesVisitaHistorialRepository;
         }
 
         #region Departamentos
@@ -675,25 +677,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
+        public IEnumerable<ClientesPorVendedorDTO> BuscarVendedor(int vend_Id)
         {
-            var result = new ServiceResult();
             try
             {
-                var deleteResult = _clienteRepository.ChangeState(id, fecha);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
+                var cliente = _clienteRepository.ListarVendedorPorCliente(vend_Id);
+                return cliente;
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
+        }
+
+        public ClienteCambiarEstadoDTO CambiarEstadoCliente(int clie_Id, DateTime fechaActual)
+        {
+            return _clienteRepository.ChangeState(clie_Id, fechaActual);
         }
 
         public IEnumerable<tbClientes> ListClientesConfirmados()
@@ -726,6 +726,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion Clientes
+
+        #region ClientesVisitaHistorial
+        public ServiceResult InsertVisitaCliente(tbClientesVisitaHistorial item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clientesVisitaHistorialRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public IEnumerable<tbClientesVisitaHistorial> ListVisitasClientes()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _clientesVisitaHistorialRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientesVisitaHistorial> visitas = null;
+                return visitas;
+            }
+        }
+
+        #endregion ClientesVisitaHistorial
 
         #region Canales
 
