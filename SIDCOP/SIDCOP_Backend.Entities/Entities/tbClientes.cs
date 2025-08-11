@@ -114,6 +114,8 @@ public partial class tbClientes
 
     public virtual ICollection<tbDescuentoPorClientes> tbDescuentoPorClientes { get; set; } = new List<tbDescuentoPorClientes>();
 
+    public virtual ICollection<tbDevoluciones> tbDevoluciones { get; set; } = new List<tbDevoluciones>();
+
     public virtual ICollection<tbDireccionesPorCliente> tbDireccionesPorCliente { get; set; } = new List<tbDireccionesPorCliente>();
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
