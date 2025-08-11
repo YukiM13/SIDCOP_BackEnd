@@ -79,6 +79,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
 
             return result;
         }
+        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int bodega)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Bode_Id", bodega);
+            var result = db.Query<ReportesViewModel>(ScriptDatabase.ReporteRecargasPorBodegas, parameters, commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+        public IEnumerable<ReportesViewModel> ReporteDevoluciones()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var result = db.Query<ReportesViewModel>(ScriptDatabase.ReporteDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
 
         public RequestStatus Update(ReportesViewModel item)
         {

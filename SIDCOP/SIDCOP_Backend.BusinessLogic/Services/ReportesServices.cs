@@ -43,6 +43,34 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<ReportesViewModel> ReporteRecargasPorBodega(int bodega)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteRecargasPorBodega(bodega);
+                return list;
+            }
+            catch (Exception ex)
+            {
+              
+                return Enumerable.Empty<ReportesViewModel>();
+            }
+        }
+
+        public IEnumerable<ReportesViewModel> ReporteDevoluciones()
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteDevoluciones();
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<ReportesViewModel>();
+            }
+        }
+
         public IEnumerable<ReporteProductosVendidosRuta> ReporteProductosPorRuta(int? rutaId = null)
         {
             try

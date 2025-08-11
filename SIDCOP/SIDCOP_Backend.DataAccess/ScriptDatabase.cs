@@ -441,7 +441,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeProductos = "Inve.SP_ReporteDeProductos";
         public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
-
+        public const string ReporteDevoluciones = "[Vnta].[SP_Reporte_Devoluciones]";
+        public const string ReporteRecargasPorBodegas = "[Logi].[SP_Reporte_RecargasPorBodega]";
         #endregion Reportes
 
         #region Promociones
