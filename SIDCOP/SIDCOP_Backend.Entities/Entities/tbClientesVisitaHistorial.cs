@@ -22,4 +22,9 @@ public partial class tbClientesVisitaHistorial
     public decimal? HCVi_Latitud { get; set; }
 
     public decimal? HCVi_Longitud { get; set; }
-}
+
+    public int Usua_Creacion { get; set; }
+
+    public DateTime HCVi_FechaCreacion { get; set; }
+
+} 

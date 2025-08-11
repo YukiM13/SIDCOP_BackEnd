@@ -220,8 +220,14 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
         public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
         public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
+        public const string Cliente_ListarVendedor = "Gral.SP_Clientes_Listar_Vendedor";
 
         #endregion Clientes
+
+        #region ClientesVisitasHistorial
+        public static string ClientesVisitasHistorial_Insertar = "[Gral].[SP_ClientesVisitaHistorial_Insertar]";
+        public static string ClientesVisitasHistorial_Listar = "[Gral].[SP_ClientesVisitaHistorial_Listar]";
+        #endregion ClientesVisitasHistorial
 
         #region Marcas
 
