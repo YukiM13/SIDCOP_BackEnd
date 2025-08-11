@@ -66,7 +66,7 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             return Ok(actualizar);
         }
 
-        [HttpPut("ActualizarCantidades/{usua_id}")]
+        [HttpPut("ActualizarCantidades/{usua_id}/{inSu_FechaModificacion}")]
         public IActionResult ActualizarCantidades(int usua_id, DateTime inSu_FechaModificacion, [FromBody] List<InventarioSucursalesViewModel> lista)
         {
             if (lista == null || !lista.Any())
