@@ -224,16 +224,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public int CrearRegistroCAi(tbRegistrosCAI item)
+        public ServiceResult CrearRegistroCAi(tbRegistrosCAI item)
         {
+            var result = new ServiceResult();
             try
             {
                 var list = _registrosCaiSRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
 
@@ -869,6 +870,81 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error($"Error al validar venta: {ex.Message}");
+            }
+        }
+
+
+
+        public ServiceResult ObtenerFacturaCompleta(int factId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (factId <= 0)
+                {
+                    return result.Error("El ID de la factura debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener la factura completa
+                var facturaCompleta = _facturasRepository.ObtenerFacturaCompleta(factId);
+
+                if (!facturaCompleta.Exitoso)
+                {
+                    return result.Error(facturaCompleta.Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (facturaCompleta.Fact_Id == 0)
+                {
+                    return result.Error("No se encontró la factura especificada");
+                }
+
+                return result.Ok(facturaCompleta);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // *logger.LogError(ex, "Error al obtener factura completa ID: {FactId}", factId);
+                return result.Error($"Error inesperado al obtener la factura: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ListarFacturasPorVendedor(int vendId)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener las facturas del vendedor
+                var facturas = _facturasRepository.ListarFacturasPorVendedor(vendId);
+
+                // Verificar si hubo error en el repository
+                if (facturas.Any() && !facturas.First().Exitoso)
+                {
+                    return result.Error(facturas.First().Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (!facturas.Any())
+                {
+                    return result.Ok("No se encontraron facturas para el vendedor especificado");
+                }
+
+                return result.Ok(facturas);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // _logger.LogError(ex, "Error al listar facturas para vendedor ID: {VendId}", vendId);
+
+                return result.Error($"Error inesperado al obtener las facturas del vendedor: {ex.Message}");
             }
         }
         #endregion

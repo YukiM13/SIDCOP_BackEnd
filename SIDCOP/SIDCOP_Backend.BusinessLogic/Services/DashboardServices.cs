@@ -1,6 +1,7 @@
 ﻿using Api_SIDCOP.API.Models.Reportes;
 using SIDCOP_Backend.DataAccess.Repositories.Dashboards;
 using SIDCOP_Backend.DataAccess.Repositories.Reportes;
+using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,6 +84,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var list = _dashboardsRepository.Top5ProductosCategoria(item);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+        public IEnumerable<dynamic> Top5MarcasMasVendidas(
+          DateTime? fechaInicio = null,
+          DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _dashboardsRepository.Top5MarcasMasVendidas(fechaInicio, fechaFin);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+        public IEnumerable<dynamic> ProductosPorMarcas(
+          int marcaId,
+          DateTime? fechaInicio = null,
+          DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _dashboardsRepository.DashboardProductosPorMarcas(marcaId, fechaInicio, fechaFin);
                 return list;
             }
             catch (Exception ex)
