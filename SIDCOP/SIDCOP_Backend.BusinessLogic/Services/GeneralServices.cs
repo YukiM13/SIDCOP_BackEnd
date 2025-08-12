@@ -32,6 +32,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly AvalRepository _avalRepository;
         private readonly ParentescoRepository _parentescoRepository;
         private readonly ClientesVisitaHistorialRepository _clientesVisitaHistorialRepository;
+        private readonly EstadoVisitaRepository _estadoVisitaRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -40,7 +41,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
         PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
-        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository
+        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository,
+        EstadoVisitaRepository estadoVisitaRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -70,6 +72,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _tipoDeViviendaRepository = tipoDeViviendaRepository;
             _parentescoRepository = parentescoRepository;
             _clientesVisitaHistorialRepository = clientesVisitaHistorialRepository;
+            _estadoVisitaRepository = estadoVisitaRepository;
         }
 
         #region Departamentos
@@ -1421,6 +1424,82 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return parentesco;
             }
         }
+        #endregion
+
+        #region EstadosVisita
+
+        public IEnumerable<tbEstadosVisita> ListarEstadosVisita()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadoVisitaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbEstadosVisita> esci = new List<tbEstadosVisita>();
+                return esci;
+            }
+        }
+
+        public ServiceResult InsertarEstadoVisita(tbEstadosVisita item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadoVisitaRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarEstadoVisita(tbEstadosVisita item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadoVisitaRepository.Update(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult EliminarEstadoVisita(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _estadoVisitaRepository.Delete(id);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+
+        public tbEstadosVisita BuscarEstadoVisita(int? id)
+        {
+            try
+            {
+                var EsCi = _estadoVisitaRepository.Find(id);
+                return EsCi;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
         #endregion
     }
 }
