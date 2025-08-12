@@ -23,7 +23,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _ventaServices.ListarVendedores();
+             var list = _ventaServices.ListarVendedores();
             return Ok(list);
         }
 

@@ -1,11 +1,18 @@
 ﻿using Microsoft.Data.SqlClient;
 using Dapper;
 using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Context;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class VendedorRepository : IRepository<tbVendedores>
     {
+        private readonly BDD_SIDCOPContext _bddContext;
+        public VendedorRepository(BDD_SIDCOPContext bddContext)
+        {
+            _bddContext = bddContext;
+        }
+
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();

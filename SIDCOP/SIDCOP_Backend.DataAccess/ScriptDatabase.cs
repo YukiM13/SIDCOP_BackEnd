@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -227,6 +228,7 @@ namespace SIDCOP_Backend.DataAccess
         #region ClientesVisitasHistorial
         public static string ClientesVisitasHistorial_Insertar = "[Gral].[SP_ClientesVisitaHistorial_Insertar]";
         public static string ClientesVisitasHistorial_Listar = "[Gral].[SP_ClientesVisitaHistorial_Listar]";
+        public static string VisitasPorVendedor_Listar = "[Gral].[SP_Visitas_Listar_Vendedor]";
         #endregion ClientesVisitasHistorial
 
         #region Marcas
