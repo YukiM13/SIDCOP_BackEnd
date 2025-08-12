@@ -230,5 +230,46 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
+        
+
+        // Método para agregar en FacturasRepository
+        public List<FacturaVendedorDTO> ListarFacturasPorVendedor(int vendId)
+        {
+            var parameter = new DynamicParameters();
+            parameter.Add("@Vend_Id", vendId);
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+                var facturas = db.Query<FacturaVendedorDTO>(
+                    "[Vnta].[SP_ListarFacturasPorVendedor]",
+                    parameter,
+                    commandType: CommandType.StoredProcedure
+                ).ToList();
+
+                // Agregar información de éxito a cada factura (siguiendo el patrón de FacturaCompletaDTO)
+                foreach (var factura in facturas)
+                {
+                    factura.Mensaje = $"Facturas obtenidas correctamente.";
+                    factura.Exitoso = true;
+                }
+
+                return facturas;
+            }
+            catch (Exception ex)
+            {
+                // Retornar una lista con un elemento que contenga el error
+                return new List<FacturaVendedorDTO>
+        {
+            new FacturaVendedorDTO
+            {
+                Mensaje = $"Error al obtener facturas del vendedor: {ex.Message}",
+                Exitoso = false
+            }
+        };
+            }
+        }
+
     }
 }
