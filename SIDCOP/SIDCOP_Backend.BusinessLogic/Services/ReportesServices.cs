@@ -1,13 +1,6 @@
 ﻿using Api_SIDCOP.API.Models.Reportes;
-using SIDCOP_Backend.DataAccess.Repositories.General;
-using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 using SIDCOP_Backend.DataAccess.Repositories.Reportes;
 using SIDCOP_Backend.Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -17,9 +10,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ReporteRepository _reporteRepository;
 
 
-        public  ReportesServices(ReporteRepository reporteRepository)
+        public ReportesServices(ReporteRepository reporteRepository)
         {
-            _reporteRepository = reporteRepository ;
+            _reporteRepository = reporteRepository;
         }
 
 
@@ -70,5 +63,49 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }
+
+
+        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReportePedidosPorFecha(fechaInicio, fechaFin);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+
+        public IEnumerable<dynamic> ReporteVendedoresPorRuta(int? rutaId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteVendedoresPorRuta(rutaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+
+        public IEnumerable<dynamic> ReporteClientesPorCanalesFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null, int? canaId =null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteClientesPorCanalesFecha(fechaInicio, fechaFin, canaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+
+
     }
 }

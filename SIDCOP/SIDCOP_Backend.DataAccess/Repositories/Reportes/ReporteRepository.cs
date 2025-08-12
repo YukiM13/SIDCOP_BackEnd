@@ -80,6 +80,41 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+
+        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            var result = db.Query(ScriptDatabase.Reporte_PedidosPorFecha, parameters, commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<dynamic> ReporteVendedoresPorRuta(int? rutaId)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Ruta_Id", rutaId);
+            
+            var result = db.Query(ScriptDatabase.Reporte_VendedoresPorRuta, parameters, commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<dynamic> ReporteClientesPorCanalesFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null, int? canaId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            parameters.Add("@Cana_Id", canaId);
+            var result = db.Query(ScriptDatabase.Reporte_ClientesPorCanalesFecha, parameters, commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
         public RequestStatus Update(ReportesViewModel item)
         {
             throw new NotImplementedException();

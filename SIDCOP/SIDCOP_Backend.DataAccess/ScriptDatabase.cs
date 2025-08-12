@@ -442,6 +442,11 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteProductosVendidosRutas = "[Vnta].[SP_Reporte_ProductosVendidosPorRutas]";
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
 
+
+        public const string Reporte_PedidosPorFecha = "[Vnta].[SP_Reporte_PedidosPorFecha]";
+        public const string Reporte_VendedoresPorRuta = "[Vnta].[SP_Reporte_VendedoresPorRuta]";
+        public const string Reporte_ClientesPorCanalesFecha = "[Vnta].[SP_Reporte_ClientesPorCanalesFecha]";
+
         #endregion Reportes
 
         #region Promociones
