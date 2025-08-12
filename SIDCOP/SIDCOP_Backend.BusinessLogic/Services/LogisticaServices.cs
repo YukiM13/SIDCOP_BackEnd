@@ -67,6 +67,22 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+        public IEnumerable<tbRutas> ListarRutasDisponibles()
+        {
+
+            try
+            {
+                var list = _rutasRepository.ListDisponibles();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                List<tbRutas> lista = null;
+                return lista;
+            }
+        }
+
         public ServiceResult InsertarRuta(tbRutas item)
         {
             var result = new ServiceResult();

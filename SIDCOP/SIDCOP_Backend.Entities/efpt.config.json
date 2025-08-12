@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[tbControlMigraciones]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbAvales]",
          "ObjectType": 0
       },
@@ -52,6 +56,10 @@
       },
       {
          "Name": "[Gral].[tbClientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbClientesVisitaHistorial]",
          "ObjectType": 0
       },
       {

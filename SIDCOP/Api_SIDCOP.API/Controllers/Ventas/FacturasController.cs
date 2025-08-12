@@ -21,7 +21,40 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             _ventaServices = ventaServices;
             _mapper = mapper;
         }
-        
+
+        [HttpGet("ObtenerCompleta/{id}")]
+        public IActionResult ObtenerCompleta(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("ID de factura inválido.");
+            }
+
+            try
+            {
+                var result = _ventaServices.ObtenerFacturaCompleta(id);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
+
+
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
         {
@@ -75,6 +108,39 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             try
             {
                 var result = _ventaServices.ValidarVenta(ventaDTO);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
+
+
+        [HttpGet("ListarPorVendedor/{vendId}")]
+        public IActionResult ListarPorVendedor(int vendId)
+        {
+            if (vendId <= 0)
+            {
+                return BadRequest("ID de vendedor inválido.");
+            }
+
+            try
+            {
+                var result = _ventaServices.ListarFacturasPorVendedor(vendId);
 
                 if (result.Success)
                 {
