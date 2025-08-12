@@ -24,15 +24,7 @@ public partial class tbUsuarios
 
     public string Usua_Imagen { get; set; }
 
-    public bool? Usua_TienePermisos { get; set; }
-
     public int Usua_Creacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioCreacion { get; set; }
-
-    [NotMapped]
-    public string? UsuarioModificacion { get; set; }
 
     public DateTime Usua_FechaCreacion { get; set; }
 
@@ -41,6 +33,14 @@ public partial class tbUsuarios
     public DateTime? Usua_FechaModificacion { get; set; }
 
     public bool Usua_Estado { get; set; }
+
+    public bool Usua_TienePermisos { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 
     [NotMapped]
     public string? Role_Descripcion { get; set; }
@@ -76,9 +76,6 @@ public partial class tbUsuarios
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_CreacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
-
-    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
     public virtual ICollection<tbAvales> tbAvalesUsua_CreacionNavigation { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbAvales> tbAvalesUsua_ModificacionNavigation { get; set; } = new List<tbAvales>();
@@ -106,6 +103,8 @@ public partial class tbUsuarios
     public virtual ICollection<tbClientes> tbClientesUsua_CreacionNavigation { get; set; } = new List<tbClientes>();
 
     public virtual ICollection<tbClientes> tbClientesUsua_ModificacionNavigation { get; set; } = new List<tbClientes>();
+
+    public virtual ICollection<tbClientesVisita> tbClientesVisita { get; set; } = new List<tbClientesVisita>();
 
     public virtual ICollection<tbColonias> tbColoniasUsua_CreacionNavigation { get; set; } = new List<tbColonias>();
 
@@ -159,6 +158,10 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbEstadosCiviles> tbEstadosCivilesUsua_ModificacionNavigation { get; set; } = new List<tbEstadosCiviles>();
 
+    public virtual ICollection<tbEstadosVisita> tbEstadosVisitaUsua_CreacionNavigation { get; set; } = new List<tbEstadosVisita>();
+
+    public virtual ICollection<tbEstadosVisita> tbEstadosVisitaUsua_ModificacionNavigation { get; set; } = new List<tbEstadosVisita>();
+
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalleUsua_CreacionNavigation { get; set; } = new List<tbFacturasDetalle>();
 
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalleUsua_ModificacionNavigation { get; set; } = new List<tbFacturasDetalle>();
@@ -166,6 +169,8 @@ public partial class tbUsuarios
     public virtual ICollection<tbFacturas> tbFacturasUsua_CreacionNavigation { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbFacturas> tbFacturasUsua_ModificacionNavigation { get; set; } = new List<tbFacturas>();
+
+    public virtual ICollection<tbImagenesVisita> tbImagenesVisita { get; set; } = new List<tbImagenesVisita>();
 
     public virtual ICollection<tbImpuestos> tbImpuestosUsua_CreacionNavigation { get; set; } = new List<tbImpuestos>();
 
@@ -226,6 +231,10 @@ public partial class tbUsuarios
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleUsua_CreacionNavigation { get; set; } = new List<tbPromocionesDetalle>();
 
     public virtual ICollection<tbPromocionesDetalle> tbPromocionesDetalleUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesDetalle>();
+
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_CreacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
+
+    public virtual ICollection<tbPromocionesPorClientes> tbPromocionesPorClientesUsua_ModificacionNavigation { get; set; } = new List<tbPromocionesPorClientes>();
 
     public virtual ICollection<tbProveedores> tbProveedoresUsua_CreacionNavigation { get; set; } = new List<tbProveedores>();
 
