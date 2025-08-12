@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Api_SIDCOP.API.Models;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
@@ -17,7 +18,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
-        public RequestStatus ChangeState(int? id, DateTime? fecha)
+        public ClienteCambiarEstadoDTO ChangeState(int? id, DateTime? fecha)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -25,16 +26,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_CambiarEstado, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<ClienteCambiarEstadoDTO>(
+                    ScriptDatabase.Cliente_CambiarEstado,
+                    parameter,
+                    commandType: System.Data.CommandType.StoredProcedure
+                );
                 if (result == null)
                 {
-                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                    return new ClienteCambiarEstadoDTO { code_Status = 0, message_Status = "Error desconocido" };
                 }
                 return result;
             }
             catch (Exception ex)
             {
-                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+                return new ClienteCambiarEstadoDTO { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
 
@@ -48,6 +53,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             {
                 throw new Exception("Cliente no encontrado");
             }
+            return result;
+        }
+
+        public IEnumerable<ClientesPorVendedorDTO> ListarVendedorPorCliente(int vend_Id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Vend_Id", vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<ClientesPorVendedorDTO>(ScriptDatabase.Cliente_ListarVendedor, parameter, commandType: System.Data.CommandType.StoredProcedure);
             return result;
         }
 

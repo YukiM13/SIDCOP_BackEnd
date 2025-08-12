@@ -16,10 +16,17 @@ public partial class tbInventarioSucursales
     public string? Sucu_Descripcion { get; set; }
 
     public int Prod_Id { get; set; }
+
     [NotMapped]
     public string? Prod_Descripcion { get; set; }
 
+    [NotMapped]
+    public string? Prod_DescripcionCorta { get; set; }
+
     public int InSu_Cantidad { get; set; }
+
+    [NotMapped]
+    public string? Cambio { get; set; }
 
     public int Usua_Creacion { get; set; }
 

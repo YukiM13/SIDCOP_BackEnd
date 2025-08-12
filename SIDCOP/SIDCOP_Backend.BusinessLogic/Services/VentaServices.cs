@@ -134,8 +134,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region CaiS
 
-
-
         public IEnumerable<tbCAIs> ListarCaiS()
         {
             try
@@ -226,16 +224,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public int CrearRegistroCAi(tbRegistrosCAI item)
+        public ServiceResult CrearRegistroCAi(tbRegistrosCAI item)
         {
+            var result = new ServiceResult();
             try
             {
                 var list = _registrosCaiSRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
 
@@ -390,11 +389,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _vendedorRepository.Delete(id);
-               
-            
-                    return result.Ok(deleteResult);
-              
-            
+
+                return result.Ok(deleteResult);
             }
             catch (Exception ex)
             {
@@ -637,7 +633,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var response = _cuentasporcobrarRepository.GetDetalle(cuentaPorCobrarId);
                 if (response == null)
                     return result.Error("No se encontró la cuenta por cobrar especificada.");
-                    
+
                 return result.Ok(response);
             }
             catch (Exception ex)
@@ -645,13 +641,55 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        
+
         public ServiceResult ListCuentasPorCobrar()
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.List();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ResumenAntiguedad()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.ResumenAntiguedad();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ResumenCliente()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.ResumenCliente();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult timeLineCliente(int clie_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.timeLineCliente(clie_Id);
                 return result.Ok(response);
             }
             catch (Exception ex)
@@ -692,6 +730,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult UpdatePreciosPorProductoLista(tbPreciosPorProducto item)
         {
             var result = new ServiceResult();
@@ -705,6 +744,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+
         public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
         {
             var result = new ServiceResult();
@@ -719,7 +759,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion ConfiguracionFacturas
+        #endregion PreciosPorProducto
 
         #region Ventas
         public ServiceResult InsertVentas(VentaInsertarDTO item)
@@ -830,6 +870,81 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return result.Error($"Error al validar venta: {ex.Message}");
+            }
+        }
+
+
+
+        public ServiceResult ObtenerFacturaCompleta(int factId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (factId <= 0)
+                {
+                    return result.Error("El ID de la factura debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener la factura completa
+                var facturaCompleta = _facturasRepository.ObtenerFacturaCompleta(factId);
+
+                if (!facturaCompleta.Exitoso)
+                {
+                    return result.Error(facturaCompleta.Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (facturaCompleta.Fact_Id == 0)
+                {
+                    return result.Error("No se encontró la factura especificada");
+                }
+
+                return result.Ok(facturaCompleta);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // *logger.LogError(ex, "Error al obtener factura completa ID: {FactId}", factId);
+                return result.Error($"Error inesperado al obtener la factura: {ex.Message}");
+            }
+        }
+
+        public ServiceResult ListarFacturasPorVendedor(int vendId)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener las facturas del vendedor
+                var facturas = _facturasRepository.ListarFacturasPorVendedor(vendId);
+
+                // Verificar si hubo error en el repository
+                if (facturas.Any() && !facturas.First().Exitoso)
+                {
+                    return result.Error(facturas.First().Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (!facturas.Any())
+                {
+                    return result.Ok("No se encontraron facturas para el vendedor especificado");
+                }
+
+                return result.Ok(facturas);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // _logger.LogError(ex, "Error al listar facturas para vendedor ID: {VendId}", vendId);
+
+                return result.Error($"Error inesperado al obtener las facturas del vendedor: {ex.Message}");
             }
         }
         #endregion

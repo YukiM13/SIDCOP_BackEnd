@@ -71,5 +71,16 @@ namespace Api_SIDCOP.API.Models.Ventas
         public string? UsuarioCreacion { get; set; }
 
         public string? UsuarioModificacion { get; set; }
+        public string? rutas { get; set; }
+
+        public List<VendedoreRutasViewModel> rutas_Json { get; set; }
+
+    }
+
+    public class VendedoreRutasViewModel
+    {
+        public int ruta_Id { get; set; }
+        public string veRu_Dias { get; set; }
+
     }
 }

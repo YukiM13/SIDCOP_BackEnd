@@ -23,6 +23,9 @@ public partial class tbDireccionesPorCliente
     public decimal? DiCl_Longitud { get; set; }
 
     [NotMapped]
+    public string Colo_Descripcion { get; set; }
+
+    [NotMapped]
     public string Muni_Descripcion { get; set; }
 
     [NotMapped]

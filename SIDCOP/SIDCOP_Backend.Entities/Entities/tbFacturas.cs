@@ -81,14 +81,10 @@ public partial class tbFacturas
 
     public virtual ICollection<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; } = new List<tbCuentasPorCobrar>();
 
-    public virtual ICollection<tbDevoluciones> tbDevolucionesClie { get; set; } = new List<tbDevoluciones>();
-
-    public virtual ICollection<tbDevoluciones> tbDevolucionesFact { get; set; } = new List<tbDevoluciones>();
+    public virtual ICollection<tbDevoluciones> tbDevoluciones { get; set; } = new List<tbDevoluciones>();
 
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalle { get; set; } = new List<tbFacturasDetalle>();
 }
-
-
 
 public class VentaInsertarDTO
 {
@@ -125,7 +121,6 @@ public class VentaDetalleDTO
     public int FaDe_Cantidad { get; set; }
 }
 
-// DTO para respuesta con información completa calculada por el SP
 public class VentaRespuestaDTO
 {
     public int Fact_Id { get; set; }
@@ -138,3 +133,148 @@ public class VentaRespuestaDTO
     public decimal? TotalDescuento { get; set; }
     public decimal? TotalImpuestos { get; set; }
 }
+
+
+
+public class FacturaCompletaDTO
+{
+    // ===== CONFIGURACIÓN DE FACTURAS =====
+    public string CoFa_NombreEmpresa { get; set; }
+    public string CoFa_DireccionEmpresa { get; set; }
+    public string CoFa_RTN { get; set; }
+    public string CoFa_Correo { get; set; }
+    public string CoFa_Telefono1 { get; set; }
+    public string CoFa_Telefono2 { get; set; }
+    public string CoFa_Logo { get; set; }
+
+    // ===== DATOS DE LA FACTURA =====
+    public int Fact_Id { get; set; }
+    public string Fact_Numero { get; set; }
+    public string Fact_TipoDeDocumento { get; set; }
+    public string Fact_TipoVenta { get; set; }
+    public DateTime Fact_FechaEmision { get; set; }
+    public DateTime Fact_FechaLimiteEmision { get; set; }
+    public string Fact_RangoInicialAutorizado { get; set; }
+    public string Fact_RangoFinalAutorizado { get; set; }
+    public string Fact_Referencia { get; set; }
+    public string Fact_AutorizadoPor { get; set; }
+    public decimal? Fact_Latitud { get; set; }
+    public decimal? Fact_Longitud { get; set; }
+
+    // ===== DATOS DEL CLIENTE =====
+    public int Clie_Id { get; set; }
+    public string Cliente { get; set; }
+    public string Clie_RTN { get; set; }
+    public string Clie_Telefono { get; set; }
+    public string DiCl_DireccionExacta { get; set; }
+
+    // ===== DATOS DEL VENDEDOR =====
+    public int Vend_Id { get; set; }
+    public string Vendedor { get; set; }
+    public string Vend_Telefono { get; set; }
+
+    // ===== DATOS DE LA SUCURSAL =====
+    public int Sucu_Id { get; set; }
+    public string Sucu_Descripcion { get; set; }
+    public string Sucu_DireccionExacta { get; set; }
+
+    // ===== DATOS DEL REGISTRO CAI =====
+    public string RegC_Descripcion { get; set; }
+    public DateTime RegC_FechaInicialEmision { get; set; }
+    public DateTime RegC_FechaFinalEmision { get; set; }
+    public string RegC_RangoInicial { get; set; }
+    public string RegC_RangoFinal { get; set; }
+
+    // ===== TOTALES DE LA FACTURA =====
+    public decimal Fact_TotalImpuesto15 { get; set; }
+    public decimal Fact_TotalImpuesto18 { get; set; }
+    public decimal Fact_ImporteExento { get; set; }
+    public decimal Fact_ImporteGravado15 { get; set; }
+    public decimal Fact_ImporteGravado18 { get; set; }
+    public decimal Fact_ImporteExonerado { get; set; }
+    public decimal Fact_TotalDescuento { get; set; }
+    public decimal Fact_Subtotal { get; set; }
+    public decimal Fact_Total { get; set; }
+
+    // ===== DETALLE DE LA FACTURA =====
+    public List<DetalleItem> DetalleFactura { get; set; }
+
+    // ===== CUENTAS POR COBRAR =====
+    public List<CuentaPorCobrarItem> CuentasPorCobrar { get; set; }
+
+    // ===== PARÁMETROS DE SALIDA DEL SP =====
+    public string Mensaje { get; set; }
+    public bool Exitoso { get; set; }
+
+    public FacturaCompletaDTO()
+    {
+        DetalleFactura = new List<DetalleItem>();
+        CuentasPorCobrar = new List<CuentaPorCobrarItem>();
+    }
+
+    // ===== CLASES INTERNAS PARA LAS LISTAS =====
+    public class DetalleItem
+    {
+        // Datos del detalle
+        public int FaDe_Id { get; set; }
+        public int Prod_Id { get; set; }
+        public int FaDe_Cantidad { get; set; }
+        public decimal FaDe_PrecioUnitario { get; set; }
+        public decimal FaDe_Subtotal { get; set; }
+        public decimal FaDe_Descuento { get; set; }
+        public decimal FaDe_Impuesto { get; set; }
+        public decimal FaDe_Total { get; set; }
+
+        // Datos del producto
+        public string Prod_Descripcion { get; set; }
+        public string Prod_CodigoBarra { get; set; }
+        public string Prod_PagaImpuesto { get; set; }
+
+        // Datos del impuesto
+        public int? Impu_Id { get; set; }
+        public string Impu_Descripcion { get; set; }
+        public decimal PorcentajeImpuesto { get; set; }
+
+        // Cálculos adicionales
+        public decimal DescuentoUnitario { get; set; }
+        public decimal PorcentajeDescuento { get; set; }
+    }
+
+    public class CuentaPorCobrarItem
+    {
+        public int CPCo_Id { get; set; }
+        public DateTime CPCo_FechaEmision { get; set; }
+        public DateTime CPCo_FechaVencimiento { get; set; }
+        public decimal CPCo_Valor { get; set; }
+        public decimal CPCo_Saldo { get; set; }
+        public string CPCo_Observaciones { get; set; }
+        public bool CPCo_Saldada { get; set; }
+        public int DiasParaVencimiento { get; set; }
+        public string EstadoCuenta { get; set; }
+    }
+}
+
+
+
+// DTO para listar facturas por vendedor
+public class FacturaVendedorDTO
+{
+    public int Fact_Id { get; set; }
+    public string Fact_Numero { get; set; }
+    public string Fact_TipoDeDocumento { get; set; }
+    public int Clie_Id { get; set; }
+    public string Cliente { get; set; }
+    public string Fact_TipoVenta { get; set; }
+    public DateTime Fact_FechaEmision { get; set; }
+    public decimal Fact_Total { get; set; }
+    public bool Fact_Anulado { get; set; }
+    public string Fact_Estado { get; set; }
+
+    // Propiedades para el status (siguiendo el patrón de FacturaCompletaDTO)
+    public string Mensaje { get; set; }
+    public bool Exitoso { get; set; }
+}
+
+
+
+
