@@ -110,5 +110,6 @@ public class PedidoDetalleDTO
     public int Prod_Id { get; set; }
     public int PeDe_Cantidad { get; set; }
     public decimal PeDe_ProdPrecio { get; set; }
+    public decimal PeDe_ProdPrecioFinal { get; set; }
     public string Prod_Imagen { get; set; }
 }

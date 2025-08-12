@@ -38,27 +38,37 @@ public partial class tbCuentasPorCobrar
 
     public bool CPCo_Estado { get; set; }
 
-    [NotMapped]
-    public string Clie_Codigo { get; set; }
-    [NotMapped]
-    public string Clie_Nombres { get; set; }
-    [NotMapped]
-    public string Clie_Apellidos { get; set; }
-    [NotMapped]
-    public string Clie_NombreNegocio { get; set; }
-    [NotMapped]
-    public string Clie_Telefono { get; set; }
-    [NotMapped]
-    public decimal Clie_LimiteCredito { get; set; }
-    [NotMapped]
-    public decimal Clie_Saldo { get; set; }
-    [NotMapped]
-    public string UsuarioCreacion { get; set; }
-    [NotMapped]
-    public string UsuarioModificacion
-    {
-        get; set;
-    }
+    [NotMapped] public string Clie_Codigo { get; set; }
+    [NotMapped] public string Clie_Nombres { get; set; }
+    [NotMapped] public string Clie_Apellidos { get; set; }
+    [NotMapped] public string Cliente { get; set; }
+    [NotMapped] public string Clie_NombreNegocio { get; set; }
+    [NotMapped] public string Clie_Telefono { get; set; }
+    [NotMapped] public string FormaPago { get; set; }
+    [NotMapped] public decimal Clie_LimiteCredito { get; set; }
+    [NotMapped] public decimal Clie_Saldo { get; set; }
+
+    [NotMapped] public string Tipo { get; set; }
+    [NotMapped] public string Referencia { get; set; }
+    [NotMapped] public decimal Monto { get; set; }
+    [NotMapped] public DateTime Fecha { get; set; }
+
+    [NotMapped] public decimal Actual { get; set; }
+    [NotMapped] public decimal _1_30 { get; set; }
+    [NotMapped] public decimal _31_60 { get; set; }
+    [NotMapped] public decimal _61_90 { get; set; }
+    [NotMapped] public decimal Mayor90 { get; set; }
+
+    [NotMapped] public int FacturasPendientes { get; set; }
+    [NotMapped] public decimal TotalFacturado { get; set; }
+    [NotMapped] public decimal Total { get; set; }
+    [NotMapped] public decimal TotalPendiente { get; set; }
+    [NotMapped] public decimal TotalVencido { get; set; }
+    [NotMapped] public DateTime UltimoPago { get; set; }
+
+    [NotMapped] public string UsuarioCreacion { get; set; }
+    [NotMapped] public string UsuarioModificacion { get; set; }
+    [NotMapped] public string Secuencia { get; set; }
 
     public virtual tbClientes Clie { get; set; }
 

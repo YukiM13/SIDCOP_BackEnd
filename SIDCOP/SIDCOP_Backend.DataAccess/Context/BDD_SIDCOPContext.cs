@@ -13,6 +13,7 @@ public partial class BDD_SIDCOPContext : DbContext
         : base(options)
     {
     }
+
     public BDD_SIDCOPContext()
     {
     }
@@ -35,9 +36,13 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbClientes> tbClientes { get; set; }
 
+    public virtual DbSet<tbClientesVisita> tbClientesVisita { get; set; }
+
     public virtual DbSet<tbColonias> tbColonias { get; set; }
 
     public virtual DbSet<tbConfiguracionFacturas> tbConfiguracionFacturas { get; set; }
+
+    public virtual DbSet<tbControlMigraciones> tbControlMigraciones { get; set; }
 
     public virtual DbSet<tbCuentasPorCobrar> tbCuentasPorCobrar { get; set; }
 
@@ -73,6 +78,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbEstadosCiviles> tbEstadosCiviles { get; set; }
 
+    public virtual DbSet<tbEstadosVisita> tbEstadosVisita { get; set; }
+
     public virtual DbSet<tbFacturas> tbFacturas { get; set; }
 
     public virtual DbSet<tbFacturasDetalle> tbFacturasDetalle { get; set; }
@@ -80,6 +87,8 @@ public partial class BDD_SIDCOPContext : DbContext
     public virtual DbSet<tbFacturasDetalleHistorial> tbFacturasDetalleHistorial { get; set; }
 
     public virtual DbSet<tbFacturasHistorial> tbFacturasHistorial { get; set; }
+
+    public virtual DbSet<tbImagenesVisita> tbImagenesVisita { get; set; }
 
     public virtual DbSet<tbImpuestos> tbImpuestos { get; set; }
 
@@ -450,7 +459,7 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Codigo)
                 .IsRequired()
-                .HasMaxLength(10)
+                .HasMaxLength(20)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Confirmacion).HasDefaultValue(false);
             entity.Property(e => e.Clie_Correo)
@@ -468,6 +477,7 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Clie_LimiteCredito).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Clie_Nacionalidad)
+                .IsRequired()
                 .HasMaxLength(3)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_NombreNegocio)
@@ -507,6 +517,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.HasOne(d => d.Clie_NacionalidadNavigation).WithMany(p => p.tbClientes)
                 .HasForeignKey(d => d.Clie_Nacionalidad)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Gral_tbClientes_Clie_Nacionalidad_Gral_tbPaises_Pais_Codigo");
 
             entity.HasOne(d => d.EsCv).WithMany(p => p.tbClientes)
@@ -529,6 +540,35 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbClientesUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Gral_tbClientes_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbClientesVisita>(entity =>
+        {
+            entity.HasKey(e => e.ClVi_Id).HasName("PK_Gral_tbClientesVisitaHistorial_HCVi_Id");
+
+            entity.ToTable("tbClientesVisita", "Gral");
+
+            entity.Property(e => e.ClVi_Fecha).HasColumnType("datetime");
+            entity.Property(e => e.ClVi_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.ClVi_Observaciones)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.DiCl).WithMany(p => p.tbClientesVisita)
+                .HasForeignKey(d => d.DiCl_Id)
+                .HasConstraintName("FK_Gral_tbClientesVisita_Gral_tbDireccionesPorCliente_DiCl_Id");
+
+            entity.HasOne(d => d.EsVi).WithMany(p => p.tbClientesVisita)
+                .HasForeignKey(d => d.EsVi_Id)
+                .HasConstraintName("FK_Gral_tbClientesVisita_Gral_tbEstadosVisita_EsVi_Id");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbClientesVisita)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .HasConstraintName("FK_Gral_tbClientesVisita_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.VeRu).WithMany(p => p.tbClientesVisita)
+                .HasForeignKey(d => d.VeRu_Id)
+                .HasConstraintName("FK_Gral_tbClientesVisita_Vnta_tbVendedoresPorRuta_VeRu_Id");
         });
 
         modelBuilder.Entity<tbColonias>(entity =>
@@ -612,6 +652,14 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbConfiguracionFacturasUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Vnta_tbConfiguracionFacturas_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbControlMigraciones>(entity =>
+        {
+            entity.HasNoKey();
+
+            entity.Property(e => e.CoMi_Tabla).HasMaxLength(100);
+            entity.Property(e => e.CoMi_UltimaFechaMigracion).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<tbCuentasPorCobrar>(entity =>
@@ -900,12 +948,12 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(200)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Clie).WithMany(p => p.tbDevolucionesClie)
+            entity.HasOne(d => d.Clie).WithMany(p => p.tbDevoluciones)
                 .HasForeignKey(d => d.Clie_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbDevoluciones_Gral_tbClientes_Clie_Id");
 
-            entity.HasOne(d => d.Fact).WithMany(p => p.tbDevolucionesFact)
+            entity.HasOne(d => d.Fact).WithMany(p => p.tbDevoluciones)
                 .HasForeignKey(d => d.Fact_Id)
                 .HasConstraintName("FK_Vnta_tbDevoluciones_Vnta_tbFacturas_Fact_Id");
 
@@ -1123,6 +1171,27 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasConstraintName("FK_Gral_tbEstadosCiviles_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
+        modelBuilder.Entity<tbEstadosVisita>(entity =>
+        {
+            entity.HasKey(e => e.EsVi_Id).HasName("PK_Gral_tbEstadosVisita_EsVi_Id");
+
+            entity.ToTable("tbEstadosVisita", "Gral");
+
+            entity.Property(e => e.EsVi_Descripcion)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.EsVi_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.EsVi_FechaModificacion).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbEstadosVisitaUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .HasConstraintName("FK_Gral_tbEstadosVisita_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbEstadosVisitaUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Modificacion)
+                .HasConstraintName("FK_Gral_tbEstadosVisita_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
         modelBuilder.Entity<tbFacturas>(entity =>
         {
             entity.HasKey(e => e.Fact_Id).HasName("PK_Vnta_tbFacturas_Fact_Id");
@@ -1307,6 +1376,28 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.HFac_Id).ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<tbImagenesVisita>(entity =>
+        {
+            entity.HasKey(e => e.ImVi_Id).HasName("PK_Gral_tbImagenesVisitas_ImVi_Id");
+
+            entity.ToTable("tbImagenesVisita", "Gral");
+
+            entity.Property(e => e.ImVi_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.ImVi_Imagen)
+                .IsRequired()
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.ClVi).WithMany(p => p.tbImagenesVisita)
+                .HasForeignKey(d => d.ClVi_Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbImagenesVisita_Gral_tbClientesVisita_ClVi_Id");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbImagenesVisita)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbImagenesVisitas_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbImpuestos>(entity =>
@@ -1681,6 +1772,7 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.PeDe_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.PeDe_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.PeDe_ProdPrecio).HasColumnType("numeric(8, 2)");
+            entity.Property(e => e.PeDe_ProdPrecioFinal).HasColumnType("numeric(8, 2)");
 
             entity.HasOne(d => d.Pedi).WithMany(p => p.tbPedidosDetalle)
                 .HasForeignKey(d => d.Pedi_Id)
@@ -1823,8 +1915,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.ToTable("tbProductos", "Inve");
 
             entity.HasIndex(e => e.Prod_Codigo, "UQ_tbProductos_Prod_Codigo").IsUnique();
-
-            entity.HasIndex(e => e.Prod_CodigoBarra, "UQ_tbProductos_Prod_CodigoBarra").IsUnique();
 
             entity.Property(e => e.Prod_Codigo)
                 .IsRequired()
@@ -1981,21 +2071,21 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Clie).WithMany(p => p.tbPromocionesPorClientes)
                 .HasForeignKey(d => d.Clie_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbPromocionesPorCliente_Gral_tbClientes_Clie_Id");
+                .HasConstraintName("FK_Inve_tbPromocionesPorClientes_Gral_tbClientes_Clie_Id");
 
             entity.HasOne(d => d.Prom).WithMany(p => p.tbPromocionesPorClientes)
                 .HasForeignKey(d => d.Prom_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbPromocionesPorCliente_Prom_Id_Inve_tbProductos_Prod_Id");
+                .HasConstraintName("FK_Inve_tbPromocionesPorClientes_Prom_Id_Inve_tbProductos_Prod_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbPromocionesPorClientesUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Inve_tbPromocionesPorCliente_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+                .HasConstraintName("FK_Inve_tbPromocionesPorClientes_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbPromocionesPorClientesUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Inve_tbPromocionesPorCliente_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+                .HasConstraintName("FK_Inve_tbPromocionesPorClientes_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbProveedores>(entity =>
@@ -2335,6 +2425,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbSucursales", "Gral");
 
+            entity.HasIndex(e => e.Sucu_Codigo, "UQ_Gral_tbSucursales_Sucu_Codigo").IsUnique();
+
             entity.Property(e => e.Sucu_Codigo)
                 .HasMaxLength(3)
                 .IsUnicode(false);
@@ -2409,6 +2501,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbTraslados", "Logi");
 
+            entity.Property(e => e.Tras_EsRecarga).HasDefaultValue(false);
             entity.Property(e => e.Tras_Estado).HasDefaultValue(true);
             entity.Property(e => e.Tras_Fecha).HasColumnType("datetime");
             entity.Property(e => e.Tras_FechaCreacion).HasColumnType("datetime");
@@ -2441,7 +2534,7 @@ public partial class BDD_SIDCOPContext : DbContext
         {
             entity.HasKey(e => e.TrDe_Id).HasName("PK_Logi_TrasladosDetalle_ProT_Id");
 
-            entity.ToTable("tbTrasladosDetalle", "Logi");
+            entity.ToTable("tbTrasladosDetalle", "Logi", tb => tb.HasTrigger("TG_TrasladosDetalles_InsertarInventarioPorTraslado"));
 
             entity.Property(e => e.TrDe_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.TrDe_FechaModificacion).HasColumnType("datetime");
@@ -2522,7 +2615,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Usua_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Usua_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.Usua_Imagen).IsUnicode(false);
-            entity.Property(e => e.Usua_TienePermisos).HasDefaultValue(false);
             entity.Property(e => e.Usua_Usuario)
                 .IsRequired()
                 .HasMaxLength(50)

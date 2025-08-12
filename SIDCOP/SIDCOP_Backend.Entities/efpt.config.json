@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[tbControlMigraciones]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbAvales]",
          "ObjectType": 0
       },
@@ -52,6 +56,10 @@
       },
       {
          "Name": "[Gral].[tbClientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbClientesVisita]",
          "ObjectType": 0
       },
       {
@@ -72,6 +80,14 @@
       },
       {
          "Name": "[Gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEstadosVisita]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbImagenesVisita]",
          "ObjectType": 0
       },
       {

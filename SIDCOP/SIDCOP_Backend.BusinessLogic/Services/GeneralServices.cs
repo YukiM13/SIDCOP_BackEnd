@@ -31,6 +31,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly TipoDeViviendaRepository _tipoDeViviendaRepository;
         private readonly AvalRepository _avalRepository;
         private readonly ParentescoRepository _parentescoRepository;
+        private readonly ClientesVisitaHistorialRepository _clientesVisitaHistorialRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -39,7 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
         PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
-        ParentescoRepository parentescoRepository
+        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -68,6 +69,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _paisRepository = paisRepository;
             _tipoDeViviendaRepository = tipoDeViviendaRepository;
             _parentescoRepository = parentescoRepository;
+            _clientesVisitaHistorialRepository = clientesVisitaHistorialRepository;
         }
 
         #region Departamentos
@@ -386,7 +388,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _coloniaRepository.Delete(id);
-                    return result.Ok(deleteResult);
+                return result.Ok(deleteResult);
             }
             catch (Exception ex)
             {
@@ -675,11 +677,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<tbClientes> BuscarClientePorVendedor(int? id)
+        public IEnumerable<ClientesPorVendedorDTO> BuscarVendedor(int vend_Id)
         {
             try
             {
-                var cliente = _clienteRepository.FindPorVendedor(id);
+                var cliente = _clienteRepository.ListarVendedorPorCliente(vend_Id);
                 return cliente;
             }
             catch (Exception ex)
@@ -689,25 +691,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
+        public ClienteCambiarEstadoDTO CambiarEstadoCliente(int clie_Id, DateTime fechaActual)
         {
-            var result = new ServiceResult();
-            try
-            {
-                var deleteResult = _clienteRepository.ChangeState(id, fecha);
-                if (deleteResult.code_Status == 1)
-                {
-                    return result.Ok(deleteResult.message_Status);
-                }
-                else
-                {
-                    return result.Error(deleteResult.message_Status);
-                }
-            }
-            catch (Exception ex)
-            {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
-            }
+            return _clienteRepository.ChangeState(clie_Id, fechaActual);
         }
 
         public IEnumerable<tbClientes> ListClientesConfirmados()
@@ -715,7 +701,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var list = _clienteRepository.ListConfirmados();
+                var list = _clienteRepository.ListConfirmados().OrderByDescending(x => x.Clie_Estado);
                 return list;
             }
             catch (Exception ex)
@@ -740,6 +726,65 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion Clientes
+
+        #region ClientesVisitaHistorial
+        public ServiceResult InsertVisitaCliente(tbClientesVisita item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _clientesVisitaHistorialRepository.Insert(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+        public IEnumerable<tbClientesVisita> ListVisitasClientes()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                return _clientesVisitaHistorialRepository.List();
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientesVisita> visitas = null;
+                return visitas;
+            }
+        }
+
+        public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lista = _clientesVisitaHistorialRepository.VisitasPorVendedor(vend_Id);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<VisitaClientePorVendedorDTO> visitas = null;
+                return visitas;
+            }
+        }
+
+        public tbClientesVisita BuscarVisitaPorVendedor(int? id)
+        {
+            try
+            {
+                var cliente = _clientesVisitaHistorialRepository.FindByVendedor(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+        #endregion ClientesVisitaHistorial
 
         #region Canales
 
@@ -1130,7 +1175,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
-        
+
         #region Municipios
 
         public ServiceResult InsertarMunicipios(tbMunicipios item)
@@ -1139,9 +1184,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var muni = _municipioRepository.Insert(item);
-               
-                    return result.Ok(muni);
-              
+
+                return result.Ok(muni);
+
             }
             catch (Exception ex)
             {
@@ -1149,19 +1194,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-     
 
-public ServiceResult ActualizarMunicipios(tbMunicipios item)
+
+        public ServiceResult ActualizarMunicipios(tbMunicipios item)
         {
             var result = new ServiceResult();
             try
             {
                 var muni = _municipioRepository.Update(item);
-              
-                    return result.Ok(muni);
 
-                
-              
+                return result.Ok(muni);
+
+
+
             }
             catch (Exception ex)
             {
@@ -1189,13 +1234,13 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             var result = new ServiceResult();
             try
             {
-              
-                    var list = _municipioRepository.DeleteConCodigo(id);
-                
-                    return result.Ok(list);
 
-   
-              
+                var list = _municipioRepository.DeleteConCodigo(id);
+
+                return result.Ok(list);
+
+
+
             }
             catch (Exception ex)
             {
