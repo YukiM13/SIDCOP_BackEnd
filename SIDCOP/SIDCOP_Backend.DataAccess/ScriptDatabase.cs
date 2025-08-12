@@ -451,6 +451,14 @@ namespace SIDCOP_Backend.DataAccess
         public const string ReporteDeClientesMasFacturados = "Vnta.SP_ReporteClientesMasFacturados";
         public const string ReporteDevoluciones = "[Vnta].[SP_Reporte_Devoluciones]";
         public const string ReporteRecargasPorBodegas = "[Logi].[SP_Reporte_RecargasPorBodega]";
+        public const string ReporteProductosVendidos = "[Inve].[SP_Reporte_ProductosVendidos]";
+        public const string ReporteVendedoresVentas = "[Vnta].[SP_ReporteVendedores_VentasTotales]";
+        public const string ReporteCuentasPorCliente = "[Vnta].[SP_Reporte_ClientesCuentasPorCobrar]";
+
+        public const string Reporte_PedidosPorFecha = "[Vnta].[SP_Reporte_PedidosPorFecha]";
+        public const string Reporte_VendedoresPorRuta = "[Vnta].[SP_Reporte_VendedoresPorRuta]";
+        public const string Reporte_ClientesPorCanalesFecha = "[Vnta].[SP_Reporte_ClientesPorCanalesFecha]";
+
         #endregion Reportes
 
         #region Promociones
@@ -473,12 +481,10 @@ namespace SIDCOP_Backend.DataAccess
         public const string VentasPorMes = "[Vnta].[SP_VentasPorMes]";
         public const string VentasPorMesProductos = "[Vnta].[SP_VentasPorMesProductos]";
         public const string VentasPorMesCategorias = "[Vnta].[SP_VentasPorMesCategorias]";
-
         public const string Top5VendedoresPorMes = "[Vnta].[SP_Top5VendedoresPorMes]";
         public const string Top5ProductosCategoria = "[Vnta].[SP_Top5ProductosCategoria]";
-
-
-
+        public const string Top5MarcasMasVendidas = "[Gral].[SP_Marcas_DashboardProductosTop5Vendidos]";
+        public const string DashboardPorMarcasVendidas = "[Inve].[SP_Productos_DashboardPorMarcasVendidas]";
         #endregion
 
 
