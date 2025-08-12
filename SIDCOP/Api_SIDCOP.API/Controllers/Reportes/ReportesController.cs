@@ -51,6 +51,19 @@ public class ReportesController : Controller
             return StatusCode(500, "Error interno del servidor");
         }
     }
+    [HttpGet("ReporteRecargasPorBodega")]
+    public IActionResult ReporteRecargasPorBodega([FromQuery] int? bodega )
+    {
+        try
+        {
+            var list = _reportesServices.ReporteRecargasPorBodega(bodega);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
 
     [HttpGet("ReporteClientesMasFacturados")]
     public IActionResult ReporteClientesMasFacturados([FromQuery] DateTime? fechaInicio = null,[FromQuery] DateTime? fechaFin = null){
@@ -66,14 +79,29 @@ public class ReportesController : Controller
         }
     }
 
-
-
-    [HttpGet("ReportePedidosPorFecha")]
-    public IActionResult ReportePedidosPorFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null)
+    [HttpGet("ReporteDevoluciones")]
+    public IActionResult ReporteDevoluciones()
     {
         try
         {
-            var list = _reportesServices.ReportePedidosPorFecha(fechaInicio, fechaFin);
+            var list = _reportesServices.ReporteDevoluciones();
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
+    [HttpGet("ReporteProductosVendidos")]
+    public IActionResult ReporteProductosVendidos(
+        [FromQuery] int? categoriaId = null,
+        [FromQuery] int? subcategoriaId = null,
+        [FromQuery] int? marcaId = null)
+    {
+        try
+        {
+            var list = _reportesServices.ReporteProductosVendidos(categoriaId, subcategoriaId, marcaId);
             return Ok(list);
         }
         catch (Exception ex)
@@ -83,12 +111,12 @@ public class ReportesController : Controller
         }
     }
 
-    [HttpGet("ReporteVendedoresPorRuta")]
-    public IActionResult ReporteVendedoresPorRuta([FromQuery] int? rutaId = null)
+    [HttpGet("ReporteVendedoresTotalVentas")]
+    public IActionResult ReporteVendedoresTotalVentas([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null)
     {
         try
         {
-            var list = _reportesServices.ReporteVendedoresPorRuta(rutaId);
+            var list = _reportesServices.ReporteVendedoresVentas(fechaInicio, fechaFin);
             return Ok(list);
         }
         catch (Exception ex)
@@ -98,12 +126,12 @@ public class ReportesController : Controller
         }
     }
 
-    [HttpGet("ReporteClientesPorCanalesFecha")]
-    public IActionResult ReporteClientesPorCanalesFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null, [FromQuery] int? canaId = null)
+    [HttpGet("ReporteCuentasPorCliente")]
+    public IActionResult ReporteCuentasPorCliente([FromQuery] int? clienteId = null)
     {
         try
         {
-            var list = _reportesServices.ReporteClientesPorCanalesFecha(fechaInicio, fechaFin, canaId);
+            var list = _reportesServices.ReporteClienteCuentas(clienteId);
             return Ok(list);
         }
         catch (Exception ex)

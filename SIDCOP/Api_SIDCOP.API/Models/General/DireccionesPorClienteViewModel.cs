@@ -19,6 +19,8 @@ namespace Api_SIDCOP.API.Models.General
 
         public decimal? DiCl_Longitud { get; set; }
 
+        public string Colo_Descripcion { get; set; }
+
         public string Muni_Descripcion { get; set; }
 
         public string Depa_Descripcion { get; set; }
