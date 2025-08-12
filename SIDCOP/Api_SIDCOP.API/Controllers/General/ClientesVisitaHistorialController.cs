@@ -64,9 +64,9 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
         [HttpPost("Insertar")]
-        public IActionResult InsertarCliente([FromBody] ClientesVisitaHistorialViewModel item)
+        public IActionResult InsertarCliente([FromBody] VisitaClientePorVendedorDTO item)
         {
-            var mapped = _mapper.Map<tbClientesVisita>(item);
+            var mapped = _mapper.Map<VisitaClientePorVendedorDTO>(item);
             var insert = _generalServices.InsertVisitaCliente(mapped);
             return Ok(insert);
         }
