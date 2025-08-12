@@ -129,6 +129,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                                                                  join rv in rutasPorVendedor on cv.VeRu_Id equals rv.VeRu_Id
                                                                  join v in _bddContext.tbVendedores on rv.Vend_Id equals v.Vend_Id
                                                                  join c in _bddContext.tbClientes on cv.Clie_Id equals c.Clie_Id
+                                                                 join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
                                                                  select new VisitaClientePorVendedorDTO
                                                                  {
                                                                      HCVi_Id = cv.HCVi_Id,
@@ -140,6 +141,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                                                                      Vend_Tipo = v.Vend_Tipo,
                                                                      Vend_Telefono = v.Vend_Telefono,
                                                                      VeRu_Dias = rv.VeRu_Dias,
+                                                                     Ruta_Id = r.Ruta_Id,
+                                                                     Ruta_Descripcion = r.Ruta_Descripcion,
                                                                      Clie_Id = cv.Clie_Id,
                                                                      Clie_Codigo = c.Clie_Codigo,
                                                                      Clie_Nombres = c.Clie_Nombres,

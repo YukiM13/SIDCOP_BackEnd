@@ -26,6 +26,10 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public int? VeRu_Id { get; set; }
 
+        public int Ruta_Id { get; set; }
+
+        public string Ruta_Descripcion { get; set; }
+
         public string VeRu_Dias { get; set; }
 
         public int? Clie_Id { get; set; }
