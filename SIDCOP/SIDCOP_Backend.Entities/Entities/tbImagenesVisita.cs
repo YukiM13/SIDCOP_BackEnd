@@ -2,11 +2,15 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbImagenesVisita
 {
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public int ImVi_Id { get; set; }
 
     public string ImVi_Imagen { get; set; }
@@ -14,6 +18,9 @@ public partial class tbImagenesVisita
     public int ClVi_Id { get; set; }
 
     public int Usua_Creacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
 
     public DateTime ImVi_FechaCreacion { get; set; }
 
