@@ -26,27 +26,16 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public bool Devo_Estado { get; set; }
 
-        [NotMapped]
         public string Nombre_Completo { get; set; }
 
-        [NotMapped]
+
         public string Clie_NombreNegocio { get; set; }
 
-        [NotMapped]
+
         public string UsuarioCreacion { get; set; }
 
-        [NotMapped]
         public string UsuarioModificacion { get; set; }
 
-        public virtual tbClientes Clie { get; set; }
-
-        public virtual tbFacturas Fact { get; set; }
-
-        public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
-
-        public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-        public virtual ICollection<tbDevolucionesDetalle> tbDevolucionesDetalle { get; set; } = new List<tbDevolucionesDetalle>();
 
 
     }
