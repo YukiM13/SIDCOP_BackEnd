@@ -53,7 +53,8 @@ public partial class tbProductos
     public int Cate_Id { get; set; }
     [NotMapped]
     public string Cate_Descripcion { get; set; }
-
+    [NotMapped]
+    public int CantidadVendida { get; set; }
 
     [NotMapped]
     public string? Marc_Descripcion { get; set; }
