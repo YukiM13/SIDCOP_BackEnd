@@ -98,6 +98,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]";
 
+
         #endregion Productos
 
         #region Sucursales
@@ -221,6 +222,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Cliente_CambiarEstado = "Gral.SP_Cliente_CambiarEstado";
         public const string Clientes_ListarConfirmados = "Gral.SP_Clientes_ListarConfirmados";
         public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
+        public const string Clientes_ListarPorRuta = "[Gral].[SP_Clientes_ListarPorVendedor]";
         public const string Cliente_ListarVendedor = "Gral.SP_Clientes_Listar_Vendedor";
 
         #endregion Clientes
@@ -473,7 +475,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
-
+        public const string Devolucion_Insertar = " [Vnta].[SP_Devolucion_Insertar]";
         #endregion Devolucion
 
 
