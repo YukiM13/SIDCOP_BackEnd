@@ -98,6 +98,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]";
 
+
         #endregion Productos
 
         #region Sucursales
@@ -474,7 +475,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
-
+        public const string Devolucion_Insertar = " [Vnta].[SP_Devolucion_Insertar]";
         #endregion Devolucion
 
 

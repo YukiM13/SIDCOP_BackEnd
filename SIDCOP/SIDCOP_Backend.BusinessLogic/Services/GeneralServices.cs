@@ -673,9 +673,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");BuscarClientePorVendedor
+            }
+        }
+
+        public IEnumerable<tbClientes> BuscarClientePorRuta(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.FindPorVendedor(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
                 //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
+
+
+        public IEnumerable<ClientesPorVendedorDTO> BuscarClientePorVendedor(int id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.ListarVendedorPorCliente(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");BuscarClientePorVendedor
+            }
+        }
+
+        public tbClientes BuscarVendedor(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.Find(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+
 
         public IEnumerable<ClientesPorVendedorDTO> BuscarVendedor(int vend_Id)
         {
