@@ -332,7 +332,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string Recarga_Insertar = "Logi.SP_Recarga_Insertar";
         public static string Recargas_Listar_Vendedor = "[Logi].[SP_Recargas_Listar_Vendedor]";
         public static string Recargas_Listar_conParametro = "[Logi].[SP_Recargas_ListarParametro]";
-        public static string Recarga_Actualizar = "Logi.Recarga_Actualizar";
+        public static string Recarga_Actualizar = "Logi.SP_Recarga_Actualizar";
         public static string Recarga_Confirmacion = "Logi.SP_Recarga_Confirmar";
 
         #endregion Recargas
@@ -444,6 +444,20 @@ namespace SIDCOP_Backend.DataAccess
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
 
         #endregion
+
+
+        #region Dashboards 
+        public const string VentasPorMes = "[Vnta].[SP_VentasPorMes]";
+        public const string VentasPorMesProductos = "[Vnta].[SP_VentasPorMesProductos]";
+        public const string VentasPorMesCategorias = "[Vnta].[SP_VentasPorMesCategorias]";
+
+        public const string Top5VendedoresPorMes = "[Vnta].[SP_Top5VendedoresPorMes]";
+        public const string Top5ProductosCategoria = "[Vnta].[SP_Top5ProductosCategoria]";
+
+
+
+        #endregion
+
 
         #region DevolucionesDetalle
 

@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
+using System.Xml.Linq;
 
 namespace Api_SIDCOP.API.Controllers.Ventas
 {
@@ -34,6 +35,16 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Informacion invalida.");
             }
+            var xml = new XElement("Ruta",
+               vendedoresViewModel.rutas_Json.Select(e =>
+                   new XElement("Ruta",
+                       new XElement("Id", e.ruta_Id),
+                       new XElement("dias", e.veRu_Dias)
+               )
+            )
+            );
+
+            vendedoresViewModel.rutas = xml.ToString();
             var vendedor = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbVendedores>(vendedoresViewModel);
             var result = _ventaServices.InsertarVendedor(vendedor);
 
@@ -54,6 +65,17 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Informacion invalida.");
             }
+
+            var xml = new XElement("Ruta",
+               vendedoresViewModel.rutas_Json.Select(e =>
+                   new XElement("Ruta",
+                       new XElement("Id", e.ruta_Id),
+                       new XElement("dias", e.veRu_Dias)
+               )
+            )
+            );
+
+            vendedoresViewModel.rutas = xml.ToString();
             var vendedor = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbVendedores>(vendedoresViewModel);
             var result = _ventaServices.ActualizarVendedor(vendedor);
             if (result.Success)
