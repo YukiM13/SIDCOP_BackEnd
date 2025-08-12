@@ -128,5 +128,38 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 });
             }
         }
+
+
+        [HttpGet("ListarPorVendedor/{vendId}")]
+        public IActionResult ListarPorVendedor(int vendId)
+        {
+            if (vendId <= 0)
+            {
+                return BadRequest("ID de vendedor inválido.");
+            }
+
+            try
+            {
+                var result = _ventaServices.ListarFacturasPorVendedor(vendId);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
     }
 }
