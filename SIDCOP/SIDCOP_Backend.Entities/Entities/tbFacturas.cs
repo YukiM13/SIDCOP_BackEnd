@@ -261,6 +261,25 @@ public class FacturaCompletaDTO
 
 
 
+// DTO para listar facturas por vendedor
+public class FacturaVendedorDTO
+{
+    public int Fact_Id { get; set; }
+    public string Fact_Numero { get; set; }
+    public string Fact_TipoDeDocumento { get; set; }
+    public int Clie_Id { get; set; }
+    public string Cliente { get; set; }
+    public string Fact_TipoVenta { get; set; }
+    public DateTime Fact_FechaEmision { get; set; }
+    public decimal Fact_Total { get; set; }
+    public bool Fact_Anulado { get; set; }
+    public string Fact_Estado { get; set; }
+
+    // Propiedades para el status (siguiendo el patrón de FacturaCompletaDTO)
+    public string Mensaje { get; set; }
+    public bool Exitoso { get; set; }
+}
+
 
 
 

@@ -908,6 +908,44 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error inesperado al obtener la factura: {ex.Message}");
             }
         }
+
+        public ServiceResult ListarFacturasPorVendedor(int vendId)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas antes de llamar al repository
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // Llamar al repository para obtener las facturas del vendedor
+                var facturas = _facturasRepository.ListarFacturasPorVendedor(vendId);
+
+                // Verificar si hubo error en el repository
+                if (facturas.Any() && !facturas.First().Exitoso)
+                {
+                    return result.Error(facturas.First().Mensaje);
+                }
+
+                // Validaciones adicionales de negocio si es necesario
+                if (!facturas.Any())
+                {
+                    return result.Ok("No se encontraron facturas para el vendedor especificado");
+                }
+
+                return result.Ok(facturas);
+            }
+            catch (Exception ex)
+            {
+                // Log del error para debugging (si tienes un logger)
+                // _logger.LogError(ex, "Error al listar facturas para vendedor ID: {VendId}", vendId);
+
+                return result.Error($"Error inesperado al obtener las facturas del vendedor: {ex.Message}");
+            }
+        }
         #endregion
 
         #region Devoluciones
