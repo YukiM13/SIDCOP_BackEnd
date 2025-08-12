@@ -17,5 +17,9 @@ namespace SIDCOP_Backend.Entities.Entities
         public int Prod_Id { get; set; }
         public string Prod_DescripcionCorta { get; set; }
         public int CantidadVendida { get; set; }
+        public string Vend_Codigo { get; set; }
+        public string Vend_Telefono { get; set; }
+        public string Vend_Correo { get; set; }
+        public int Ventas { get; set; }
     }
 }

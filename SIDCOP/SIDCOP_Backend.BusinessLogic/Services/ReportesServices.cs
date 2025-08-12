@@ -98,5 +98,50 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReportesViewModel>();
             }
         }
+
+        public IEnumerable<tbProductos> ReporteProductosVendidos(
+          int? categoriaId = null,
+          int? subcategoriaId = null,
+          int? marcaId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteProductosVendidos(categoriaId, subcategoriaId, marcaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return Enumerable.Empty<tbProductos>();
+            }
+        }
+
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteVendedoresVentas(fechaInicio, fechaFin);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return Enumerable.Empty<ReporteProductosVendidosRuta>();
+            }
+        }
+
+        public IEnumerable<ReporteCuentasPorCobrar> ReporteClienteCuentas(int? clienteId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteClienteCuentas(clienteId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return Enumerable.Empty<ReporteCuentasPorCobrar>();
+            }
+        }
     }
 }

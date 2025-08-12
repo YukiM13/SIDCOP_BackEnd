@@ -30,6 +30,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
         {
             throw new NotImplementedException();
         }
+
         public IEnumerable<ReportesViewModel> ReporteDeProductos(
             DateTime? fechaInicio = null,
             DateTime? fechaFin = null,
@@ -93,6 +94,54 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
             var result = db.Query<ReportesViewModel>(ScriptDatabase.ReporteDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<tbProductos> ReporteProductosVendidos(
+            int? categoriaId = null,
+            int? subcategoriaId = null,
+            int? marcaId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Cate_Id", categoriaId);
+            parameters.Add("@Subc_Id", subcategoriaId);
+            parameters.Add("@Marc_Id", marcaId);
+
+            var result = db.Query<tbProductos>(
+                ScriptDatabase.ReporteProductosVendidos,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@FechaInicio", fechaInicio);
+            parameters.Add("@FechaFin", fechaFin);
+            var result = db.Query<ReporteProductosVendidosRuta>(ScriptDatabase.ReporteVendedoresVentas, parameters, commandType: CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<ReporteCuentasPorCobrar> ReporteClienteCuentas(int? clienteId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Clie_Id", clienteId);
+
+            var result = db.Query<ReporteCuentasPorCobrar>(
+                ScriptDatabase.ReporteCuentasPorCliente,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
 
             return result;
         }
