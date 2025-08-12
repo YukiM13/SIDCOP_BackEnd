@@ -56,6 +56,26 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(insert);
         }
 
+        [HttpGet("BuscarPorRuta/{id}")]
+        public IActionResult BuscarPorRuta(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var cliente = _generalServices.BuscarClientePorVendedor(id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Cliente no encontrado.");
+            }
+        }
+
+
+
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {

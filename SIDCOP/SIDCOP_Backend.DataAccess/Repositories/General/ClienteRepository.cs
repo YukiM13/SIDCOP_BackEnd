@@ -51,6 +51,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
+        public IEnumerable<tbClientes> FindPorVendedor(int? id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Vend_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarPorRuta, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Cliente no encontrado");
+            }
+            return result;
+        }
+
         public RequestStatus Insert(tbClientes item)
         {
             if (item == null)

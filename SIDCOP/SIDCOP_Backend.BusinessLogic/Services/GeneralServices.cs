@@ -675,6 +675,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> BuscarClientePorVendedor(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.FindPorVendedor(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
         public ServiceResult CambioEstadoCliente(int? id, DateTime? fecha)
         {
             var result = new ServiceResult();
