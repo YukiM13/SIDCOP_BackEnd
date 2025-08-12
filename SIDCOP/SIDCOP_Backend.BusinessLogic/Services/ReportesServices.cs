@@ -143,5 +143,48 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReporteCuentasPorCobrar>();
             }
         }
+
+
+
+        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReportePedidosPorFecha(fechaInicio, fechaFin);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+
+        public IEnumerable<dynamic> ReporteVendedoresPorRuta(int? rutaId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteVendedoresPorRuta(rutaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
+
+        public IEnumerable<dynamic> ReporteClientesPorCanalesFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null, int? canaId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteClientesPorCanalesFecha(fechaInicio, fechaFin, canaId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                return Enumerable.Empty<dynamic>();
+            }
+        }
     }
 }

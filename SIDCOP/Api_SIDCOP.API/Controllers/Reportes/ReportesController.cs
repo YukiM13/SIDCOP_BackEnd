@@ -140,4 +140,50 @@ public class ReportesController : Controller
             return StatusCode(500, "Error interno del servidor");
         }
     }
+
+
+    [HttpGet("ReportePedidosPorFecha")]
+    public IActionResult ReportePedidosPorFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null)
+    {
+        try
+        {
+            var list = _reportesServices.ReportePedidosPorFecha(fechaInicio, fechaFin);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            // Log del error si tienes sistema de logging
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
+    [HttpGet("ReporteVendedoresPorRuta")]
+    public IActionResult ReporteVendedoresPorRuta([FromQuery] int? rutaId = null)
+    {
+        try
+        {
+            var list = _reportesServices.ReporteVendedoresPorRuta(rutaId);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            // Log del error si tienes sistema de logging
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
+
+    [HttpGet("ReporteClientesPorCanalesFecha")]
+    public IActionResult ReporteClientesPorCanalesFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null, [FromQuery] int? canaId = null)
+    {
+        try
+        {
+            var list = _reportesServices.ReporteClientesPorCanalesFecha(fechaInicio, fechaFin, canaId);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            // Log del error si tienes sistema de logging
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }
