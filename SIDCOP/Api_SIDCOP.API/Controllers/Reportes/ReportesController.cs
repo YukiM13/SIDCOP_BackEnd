@@ -125,4 +125,19 @@ public class ReportesController : Controller
             return StatusCode(500, "Error interno del servidor");
         }
     }
+
+    [HttpGet("ReporteCuentasPorCliente")]
+    public IActionResult ReporteCuentasPorCliente([FromQuery] int? clienteId = null)
+    {
+        try
+        {
+            var list = _reportesServices.ReporteClienteCuentas(clienteId);
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            // Log del error si tienes sistema de logging
+            return StatusCode(500, "Error interno del servidor");
+        }
+    }
 }

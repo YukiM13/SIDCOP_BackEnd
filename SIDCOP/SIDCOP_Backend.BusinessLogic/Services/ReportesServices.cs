@@ -129,5 +129,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return Enumerable.Empty<ReporteProductosVendidosRuta>();
             }
         }
+
+        public IEnumerable<ReporteCuentasPorCobrar> ReporteClienteCuentas(int? clienteId = null)
+        {
+            try
+            {
+                var list = _reporteRepository.ReporteClienteCuentas(clienteId);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return Enumerable.Empty<ReporteCuentasPorCobrar>();
+            }
+        }
     }
 }

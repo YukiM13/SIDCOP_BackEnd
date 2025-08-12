@@ -130,6 +130,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
+        public IEnumerable<ReporteCuentasPorCobrar> ReporteClienteCuentas(int? clienteId = null)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Clie_Id", clienteId);
+
+            var result = db.Query<ReporteCuentasPorCobrar>(
+                ScriptDatabase.ReporteCuentasPorCliente,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
         public RequestStatus Update(ReportesViewModel item)
         {
             throw new NotImplementedException();
