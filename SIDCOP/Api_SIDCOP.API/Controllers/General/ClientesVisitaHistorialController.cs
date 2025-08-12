@@ -31,6 +31,38 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
+        [HttpGet("ListarVisitasClientes")]
+        public IActionResult ListVisitasClientes()
+        {
+            var list = _generalServices.ListVisitasClientes();
+            return Ok(list);
+        }
+
+        [HttpGet("ListarVisitasPorVendedor")]
+        public IActionResult ListVisitasPorVendedor([FromQuery]int vend_Id)
+        {
+            var list = _generalServices.VisitasPorVendedor(vend_Id);
+            return Ok(list);
+        }
+
+        [HttpGet("ListarPorVendedor/{id}")]
+        public IActionResult Buscar(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var cliente = _generalServices.BuscarVisitaPorVendedor(id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Cliente no encontrado.");
+            }
+        }
+
         [HttpPost("Insertar")]
         public IActionResult InsertarCliente([FromBody] ClientesVisitaHistorialViewModel item)
         {
