@@ -493,5 +493,13 @@ namespace SIDCOP_Backend.DataAccess
         public const string DevolucionDetalle_Listar = "[Vnta].[SP_DevolucionesDetalle_Listar]";
 
         #endregion DevolucionesDetalle
+
+
+        #region ImagenesVisita
+
+        public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
+        public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+
+        #endregion
     }
 }
