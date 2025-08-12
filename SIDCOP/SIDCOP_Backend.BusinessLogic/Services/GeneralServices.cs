@@ -731,12 +731,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion Clientes
 
         #region ClientesVisitaHistorial
-        public ServiceResult InsertVisitaCliente(tbClientesVisita item)
+        public ServiceResult InsertVisitaCliente(VisitaClientePorVendedorDTO item)
         {
             var result = new ServiceResult();
             try
             {
-                var insert = _clientesVisitaHistorialRepository.Insert(item);
+                var insert = _clientesVisitaHistorialRepository.InsertVisita(item);
                 return result.Ok(insert);
             }
             catch (Exception ex)
