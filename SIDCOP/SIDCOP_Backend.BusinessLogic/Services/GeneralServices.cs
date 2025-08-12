@@ -32,6 +32,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly AvalRepository _avalRepository;
         private readonly ParentescoRepository _parentescoRepository;
         private readonly ClientesVisitaHistorialRepository _clientesVisitaHistorialRepository;
+        private readonly ImagenVisitaRepository _imagenVisitaRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -40,7 +41,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ModeloRepository modeloRepository, ProveedoresRepository proveedoresRepository,
         MunicipioRepository municipioRepository, DireccionesPorClienteRepository direccionesPorClienteRepository,
         PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
-        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository
+        ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository,
+        ImagenVisitaRepository imagenVisitaRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -70,6 +72,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _tipoDeViviendaRepository = tipoDeViviendaRepository;
             _parentescoRepository = parentescoRepository;
             _clientesVisitaHistorialRepository = clientesVisitaHistorialRepository;
+            _imagenVisitaRepository = imagenVisitaRepository;
         }
 
         #region Departamentos
@@ -673,9 +676,54 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");BuscarClientePorVendedor
+            }
+        }
+
+        public IEnumerable<tbClientes> BuscarClientePorRuta(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.FindPorVendedor(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
                 //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
+
+
+        public IEnumerable<ClientesPorVendedorDTO> BuscarClientePorVendedor(int id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.ListarVendedorPorCliente(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");BuscarClientePorVendedor
+            }
+        }
+
+        public tbClientes BuscarVendedor(int? id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.Find(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
+            }
+        }
+
+
 
         public IEnumerable<ClientesPorVendedorDTO> BuscarVendedor(int vend_Id)
         {
@@ -728,12 +776,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion Clientes
 
         #region ClientesVisitaHistorial
-        public ServiceResult InsertVisitaCliente(tbClientesVisitaHistorial item)
+        public ServiceResult InsertVisitaCliente(VisitaClientePorVendedorDTO item)
         {
             var result = new ServiceResult();
             try
             {
-                var insert = _clientesVisitaHistorialRepository.Insert(item);
+                var insert = _clientesVisitaHistorialRepository.InsertVisita(item);
                 return result.Ok(insert);
             }
             catch (Exception ex)
@@ -741,7 +789,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        public IEnumerable<tbClientesVisitaHistorial> ListVisitasClientes()
+        public IEnumerable<tbClientesVisita> ListVisitasClientes()
         {
             var result = new ServiceResult();
             try
@@ -750,7 +798,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                IEnumerable<tbClientesVisitaHistorial> visitas = null;
+                IEnumerable<tbClientesVisita> visitas = null;
                 return visitas;
             }
         }
@@ -770,7 +818,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public tbClientesVisitaHistorial BuscarVisitaPorVendedor(int? id)
+        public tbClientesVisita BuscarVisitaPorVendedor(int? id)
         {
             try
             {
@@ -1421,6 +1469,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return parentesco;
             }
         }
+        #endregion
+
+        #region ImagenesVisita
+
+        public IEnumerable<tbImagenesVisita> ListImVi()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _imagenVisitaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbImagenesVisita> imvi = null;
+                return imvi;
+            }
+        }
+
+        public ServiceResult InsertImVi(tbImagenesVisita item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _imagenVisitaRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         #endregion
     }
 }

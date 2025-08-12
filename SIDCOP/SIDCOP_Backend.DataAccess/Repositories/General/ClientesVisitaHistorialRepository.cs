@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
-    public class ClientesVisitaHistorialRepository : IRepository<tbClientesVisitaHistorial>
+    public class ClientesVisitaHistorialRepository : IRepository<tbClientesVisita>
     {
         private readonly BDD_SIDCOPContext _bddContext;
         public ClientesVisitaHistorialRepository(BDD_SIDCOPContext bddContext)
@@ -24,17 +24,16 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
-        public tbClientesVisitaHistorial Find(int? id)
+        public tbClientesVisita Find(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbClientesVisitaHistorial item)
+        public RequestStatus InsertVisita(VisitaClientePorVendedorDTO item)
         {
 
-            _bddContext.tbClientesVisitaHistorial.Add(item);
-            _bddContext.SaveChanges();
-
+            //_bddContext.tbClientesVisita.Add(item);
+            //_bddContext.SaveChanges();
 
             if (item == null)
             {
@@ -42,19 +41,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
             var parameter = new DynamicParameters();
             parameter.Add("@VeRu_Id", item.VeRu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_Foto", item.HCVi_Foto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_Observaciones", item.HCVi_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_Fecha", item.HCVi_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_Latitud", item.HCVi_Latitud, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_Longitud", item.HCVi_Longitud, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
+            parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@EsVi_Id", item.EsVi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@ClVi_Observaciones", item.ClVi_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@ClVi_Fecha", item.ClVi_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@HCVi_FechaCreacion", item.HCVi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@ClVi_FechaCreacion", item.ClVi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.ClientesVisitasHistorial_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.ClientesVisitas_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error Desconocido" };
@@ -68,36 +65,36 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         }
 
-        public IEnumerable<tbClientesVisitaHistorial> List()
+        public IEnumerable<tbClientesVisita> List()
         {
 
-            IEnumerable<tbClientesVisitaHistorial> clientesVisitaHistorial = (from v in _bddContext.tbClientesVisitaHistorial
-                                                                              select new tbClientesVisitaHistorial
+            IEnumerable<tbClientesVisita> clientesVisitaHistorial = (from v in _bddContext.tbClientesVisita
+                                                                              select new tbClientesVisita
                                                                               {
-                                                                                  HCVi_Id = v.HCVi_Id,
-                                                                                  VeRu_Id = v.VeRu_Id,
-                                                                                  Clie_Id = v.Clie_Id,
-                                                                                  HCVi_Foto = v.HCVi_Foto,
-                                                                                  HCVi_Observaciones = v.HCVi_Observaciones,
-                                                                                  HCVi_Fecha = v.HCVi_Fecha,
-                                                                                  HCVi_Latitud = v.HCVi_Latitud,
-                                                                                  HCVi_Longitud = v.HCVi_Longitud
+                                                                                  //HCVi_Id = v.HCVi_Id,
+                                                                                  //VeRu_Id = v.VeRu_Id,
+                                                                                  //Clie_Id = v.Clie_Id,
+                                                                                  //HCVi_Foto = v.HCVi_Foto,
+                                                                                  //HCVi_Observaciones = v.HCVi_Observaciones,
+                                                                                  //HCVi_Fecha = v.HCVi_Fecha,
+                                                                                  //HCVi_Latitud = v.HCVi_Latitud,
+                                                                                  //HCVi_Longitud = v.HCVi_Longitud
                                                                               });
 
             //var parameter = new DynamicParameters();
 
             //using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            //var result = db.Query<tbClientesVisitaHistorial>(ScriptDatabase.ClientesVisitasHistorial_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            //var result = db.Query<tbClientesVisita>(ScriptDatabase.ClientesVisitasHistorial_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
             return clientesVisitaHistorial;
         }
 
-        public tbClientesVisitaHistorial FindByVendedor(int? id)
+        public tbClientesVisita FindByVendedor(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Vend_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            var result = db.QueryFirstOrDefault<tbClientesVisitaHistorial>(ScriptDatabase.VisitasPorVendedor_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            var result = db.QueryFirstOrDefault<tbClientesVisita>(ScriptDatabase.VisitasPorVendedor_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Cliente no encontrado");
@@ -109,63 +106,69 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         {
             List<tbVendedoresPorRuta> rutasPorVendedor = _bddContext.tbVendedoresPorRuta.AsNoTracking().Where(vpr => vpr.Vend_Id == vend_Id).ToList();
 
-            var historialClientesVisitas = (from cv in _bddContext.tbClientesVisitaHistorial
-                                            where cv.VeRu_Id.HasValue && cv.Clie_Id.HasValue
+            var visitasClientes = (from cv in _bddContext.tbClientesVisita
+                                            where cv.VeRu_Id.HasValue && cv.DiCl_Id.HasValue && cv.EsVi_Id.HasValue && cv.Usua_Creacion.HasValue
                                             select new
                                             {
-                                                cv.HCVi_Id,
+                                                cv.ClVi_Id,
                                                 VeRu_Id = cv.VeRu_Id.Value,
-                                                Clie_Id = cv.Clie_Id.Value,
-                                                cv.HCVi_Foto,
-                                                cv.HCVi_Observaciones,
-                                                cv.HCVi_Fecha,
-                                                cv.HCVi_Latitud,
-                                                cv.HCVi_Longitud,
-                                                cv.Usua_Creacion,
-                                                cv.HCVi_FechaCreacion,
+                                                DiCl_Id = cv.DiCl_Id.Value,
+                                                EsVi_Id = cv.EsVi_Id.Value,
+                                                cv.ClVi_Observaciones,
+                                                cv.ClVi_Fecha,
+                                                Usua_Creacion = cv.Usua_Creacion.Value,
+                                                cv.ClVi_FechaCreacion,
                                             }).ToList();
 
-            IEnumerable<VisitaClientePorVendedorDTO> clientesVisitas = (from cv in historialClientesVisitas
-                                                                 join rv in rutasPorVendedor on cv.VeRu_Id equals rv.VeRu_Id
-                                                                 join v in _bddContext.tbVendedores on rv.Vend_Id equals v.Vend_Id
-                                                                 join c in _bddContext.tbClientes on cv.Clie_Id equals c.Clie_Id
-                                                                 join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
-                                                                 select new VisitaClientePorVendedorDTO
-                                                                 {
-                                                                     HCVi_Id = cv.HCVi_Id,
-                                                                     VeRu_Id = cv.VeRu_Id,
-                                                                     Vend_Id = v.Vend_Id,
-                                                                     Vend_Codigo = v.Vend_Codigo,
-                                                                     Vend_Nombres = v.Vend_Nombres,
-                                                                     Vend_Apellidos = v.Vend_Apellidos,
-                                                                     Vend_Tipo = v.Vend_Tipo,
-                                                                     Vend_Telefono = v.Vend_Telefono,
-                                                                     VeRu_Dias = rv.VeRu_Dias,
-                                                                     Ruta_Id = r.Ruta_Id,
-                                                                     Ruta_Descripcion = r.Ruta_Descripcion,
-                                                                     Clie_Id = cv.Clie_Id,
-                                                                     Clie_Codigo = c.Clie_Codigo,
-                                                                     Clie_Nombres = c.Clie_Nombres,
-                                                                     Clie_Apellidos = c.Clie_Apellidos,
-                                                                     Clie_NombreNegocio = c.Clie_NombreNegocio,
-                                                                     HCVi_Foto = cv.HCVi_Foto,
-                                                                     HCVi_Observaciones = cv.HCVi_Observaciones,
-                                                                     HCVi_Fecha = cv.HCVi_Fecha,
-                                                                     HCVi_Latitud = cv.HCVi_Latitud,
-                                                                     HCVi_Longitud = cv.HCVi_Longitud,
-                                                                     Usua_Creacion = cv.Usua_Creacion,
-                                                                     HCVi_FechaCreacion = cv.HCVi_FechaCreacion,
-                                                                 });
+            IEnumerable<VisitaClientePorVendedorDTO> clientesVisitasPorVendedor = (from cv in visitasClientes
+                                                                        join rv in rutasPorVendedor on cv.VeRu_Id equals rv.VeRu_Id
+                                                                        join v in _bddContext.tbVendedores on rv.Vend_Id equals v.Vend_Id
+                                                                        join dc in _bddContext.tbDireccionesPorCliente on cv.DiCl_Id equals dc.DiCl_Id
+                                                                        join c in _bddContext.tbClientes on dc.Clie_Id equals c.Clie_Id
+                                                                        join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
+                                                                        join esv in _bddContext.tbEstadosVisita on cv.EsVi_Id equals esv.EsVi_Id                                                                   select new VisitaClientePorVendedorDTO
+                                                                        {
+                                                                            ClVi_Id = cv.ClVi_Id,
+                                                                            Vend_Id = v.Vend_Id,
+                                                                            Vend_Codigo = v.Vend_Codigo,
+                                                                            Vend_Nombres = v.Vend_Nombres,
+                                                                            Vend_Apellidos = v.Vend_Apellidos,
+                                                                            Vend_Tipo = v.Vend_Tipo,
+                                                                            Vend_Telefono = v.Vend_Telefono,
+                                                                            Ruta_Id = rv.Ruta_Id,
+                                                                            Ruta_Descripcion = r.Ruta_Descripcion,
+                                                                            VeRu_Id = cv.VeRu_Id,
+                                                                            VeRu_Dias = rv.VeRu_Dias,
+                                                                            Clie_Id = dc.Clie_Id,
+                                                                            Clie_Codigo = c.Clie_Codigo,
+                                                                            Clie_Nombres = c.Clie_Nombres,
+                                                                            Clie_Apellidos = c.Clie_Apellidos,
+                                                                            Clie_NombreNegocio = c.Clie_NombreNegocio,
+                                                                            ClVi_Fecha = cv.ClVi_Fecha,
+                                                                            ClVi_Observaciones = cv.ClVi_Observaciones,
+                                                                            EsVi_Id = cv.EsVi_Id,
+                                                                            EsVi_Descripcion = esv.EsVi_Descripcion,
+                                                                            DiCl_Id = dc.DiCl_Id,
+                                                                            DiCl_Latitud = dc.DiCl_Latitud,
+                                                                            DiCl_Longitud = dc.DiCl_Longitud,
+                                                                            Usua_Creacion = cv.Usua_Creacion,
+                                                                            ClVi_FechaCreacion = (DateTime)cv.ClVi_FechaCreacion,
+                                                                        });
 
-            return clientesVisitas;
+            return clientesVisitasPorVendedor.ToList();
         }
 
-        public RequestStatus Update(tbClientesVisitaHistorial item)
+        public RequestStatus Update(tbClientesVisita item)
         {
-            //var entity = _bddContext.tbClientesVisitaHistorial.Find(item.HCVi_Id);
+            //var entity = _bddContext.tbClientesVisita.Find(item.HCVi_Id);
             //entity.HCVi_Latitud = item.HCVi_Latitud;
             //entity.HCVi_Longitud = item.HCVi_Longitud;
             //_bddContext.SaveChanges();
+            throw new NotImplementedException();
+        }
+
+        public RequestStatus Insert(tbClientesVisita item)
+        {
             throw new NotImplementedException();
         }
     }
