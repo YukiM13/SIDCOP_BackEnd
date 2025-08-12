@@ -25,6 +25,7 @@ public partial class tbVendedoresPorRuta
 
     public DateTime? Vend_FechaModificacion { get; set; }
 
+
     public virtual tbRutas Ruta { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }

@@ -388,7 +388,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var deleteResult = _coloniaRepository.Delete(id);
-                    return result.Ok(deleteResult);
+                return result.Ok(deleteResult);
             }
             catch (Exception ex)
             {
@@ -701,7 +701,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var list = _clienteRepository.ListConfirmados();
+                var list = _clienteRepository.ListConfirmados().OrderByDescending(x => x.Clie_Estado);
                 return list;
             }
             catch (Exception ex)
@@ -746,13 +746,41 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
-                var list = _clientesVisitaHistorialRepository.List();
-                return list;
+                return _clientesVisitaHistorialRepository.List();
             }
             catch (Exception ex)
             {
                 IEnumerable<tbClientesVisitaHistorial> visitas = null;
                 return visitas;
+            }
+        }
+
+        public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lista = _clientesVisitaHistorialRepository.VisitasPorVendedor(vend_Id);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<VisitaClientePorVendedorDTO> visitas = null;
+                return visitas;
+            }
+        }
+
+        public tbClientesVisitaHistorial BuscarVisitaPorVendedor(int? id)
+        {
+            try
+            {
+                var cliente = _clientesVisitaHistorialRepository.FindByVendedor(id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+                //return result.Error($"Error al eliminar sucursal: {ex.Message}");
             }
         }
 
@@ -1147,7 +1175,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
-        
+
         #region Municipios
 
         public ServiceResult InsertarMunicipios(tbMunicipios item)
@@ -1156,9 +1184,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var muni = _municipioRepository.Insert(item);
-               
-                    return result.Ok(muni);
-              
+
+                return result.Ok(muni);
+
             }
             catch (Exception ex)
             {
@@ -1166,19 +1194,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-     
 
-public ServiceResult ActualizarMunicipios(tbMunicipios item)
+
+        public ServiceResult ActualizarMunicipios(tbMunicipios item)
         {
             var result = new ServiceResult();
             try
             {
                 var muni = _municipioRepository.Update(item);
-              
-                    return result.Ok(muni);
 
-                
-              
+                return result.Ok(muni);
+
+
+
             }
             catch (Exception ex)
             {
@@ -1206,13 +1234,13 @@ public ServiceResult ActualizarMunicipios(tbMunicipios item)
             var result = new ServiceResult();
             try
             {
-              
-                    var list = _municipioRepository.DeleteConCodigo(id);
-                
-                    return result.Ok(list);
 
-   
-              
+                var list = _municipioRepository.DeleteConCodigo(id);
+
+                return result.Ok(list);
+
+
+
             }
             catch (Exception ex)
             {

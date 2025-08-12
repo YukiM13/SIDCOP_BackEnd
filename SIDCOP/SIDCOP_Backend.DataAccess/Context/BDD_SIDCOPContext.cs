@@ -170,7 +170,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbUsuarios> tbUsuarios { get; set; }
 
-    public virtual DbSet<tbVendedores> tbVendedores { get; set; }
+    public DbSet<tbVendedores> tbVendedores { get; set; }
 
     public virtual DbSet<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; }
 
