@@ -728,7 +728,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion Clientes
 
         #region ClientesVisitaHistorial
-        public ServiceResult InsertVisitaCliente(tbClientesVisitaHistorial item)
+        public ServiceResult InsertVisitaCliente(tbClientesVisita item)
         {
             var result = new ServiceResult();
             try
@@ -741,7 +741,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        public IEnumerable<tbClientesVisitaHistorial> ListVisitasClientes()
+        public IEnumerable<tbClientesVisita> ListVisitasClientes()
         {
             var result = new ServiceResult();
             try
@@ -750,7 +750,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                IEnumerable<tbClientesVisitaHistorial> visitas = null;
+                IEnumerable<tbClientesVisita> visitas = null;
                 return visitas;
             }
         }
@@ -770,7 +770,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public tbClientesVisitaHistorial BuscarVisitaPorVendedor(int? id)
+        public tbClientesVisita BuscarVisitaPorVendedor(int? id)
         {
             try
             {
