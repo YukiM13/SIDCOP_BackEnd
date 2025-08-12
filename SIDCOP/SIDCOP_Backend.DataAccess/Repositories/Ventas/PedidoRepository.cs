@@ -55,10 +55,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Pedi_FechaCreacion", item.Pedi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             string detallesXml = item.Detalles != null && item.Detalles.Any()
-            ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
-                $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad><PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio></Deta>"))
-                + "</Detalles>"
-            : "<Detalles></Detalles>";
+             ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
+                 $"<Deta>" +
+                     $"<Prod_Id>{d.Prod_Id}</Prod_Id>" +
+                     $"<PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad>" +
+                     $"<PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio>" +
+                     $"<PeDe_ProdPrecioFinal>{d.PeDe_ProdPrecioFinal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecioFinal>" +
+                 $"</Deta>"
+             )) + "</Detalles>"
+             : "<Detalles></Detalles>";
 
             parameter.Add("@Detalles", detallesXml, DbType.Xml);
 
