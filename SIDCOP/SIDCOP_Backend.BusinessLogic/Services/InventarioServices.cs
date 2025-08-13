@@ -257,6 +257,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+
         public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
         {
             try
@@ -311,12 +313,28 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al actualizar producto: {ex.Message}");
             }
         }
+
+
+        public async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
+        {
+            try
+            {
+                var productos = await _productosRepository.ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(clieId, vendId);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                // Loguear la excepción si tienes un sistema de logging
+                // _logger.LogError(ex, "Error al obtener productos con descuento por cliente y vendedor");
+                return Enumerable.Empty<ListasPreciosVendedor>();
+            }
+        }
         #endregion
 
 
         #region Inventario Bodega
 
- 
+
         public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
         {
             try
