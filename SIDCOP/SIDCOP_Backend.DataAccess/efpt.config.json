@@ -59,7 +59,7 @@
          "ObjectType": 0
       },
       {
-         "Name": "[Gral].[tbClientesVisitaHistorial]",
+         "Name": "[Gral].[tbClientesVisita]",
          "ObjectType": 0
       },
       {
@@ -80,6 +80,18 @@
       },
       {
          "Name": "[Gral].[tbEstadosCiviles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbEstadosVisita]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbFormasDePago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[Gral].[tbImagenesVisita]",
          "ObjectType": 0
       },
       {

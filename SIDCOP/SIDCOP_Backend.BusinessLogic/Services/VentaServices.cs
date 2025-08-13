@@ -978,7 +978,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion Devoluciones
+        public ServiceResult InsertarDevolucion(tbDevoluciones item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _devolucionesRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion
 
         #region DevolucionesDetalles
 

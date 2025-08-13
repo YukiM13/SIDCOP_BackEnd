@@ -21,7 +21,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var parameter = new DynamicParameters();
             parameter.Add("@CPCo_Id", item.CPCo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pago_Monto", item.Pago_Monto, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
-            parameter.Add("@Pago_FormaPago", item.Pago_FormaPago, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            //parameter.Add("@Pago_FormaPago", item.Pago_FormaPago, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Pago_NumeroReferencia", item.Pago_NumeroReferencia, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Pago_Observaciones", item.Pago_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);

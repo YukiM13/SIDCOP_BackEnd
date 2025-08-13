@@ -15,8 +15,6 @@ public partial class tbPagosCuentasPorCobrar
 
     public decimal Pago_Monto { get; set; }
 
-    public string Pago_FormaPago { get; set; }
-
     public string Pago_NumeroReferencia { get; set; }
 
     public string Pago_Observaciones { get; set; }
@@ -33,5 +31,9 @@ public partial class tbPagosCuentasPorCobrar
 
     public bool Pago_Anulado { get; set; }
 
+    public int? FoPa_Id { get; set; }
+
     public virtual tbCuentasPorCobrar CPCo { get; set; }
+
+    public virtual tbFormasDePago FoPa { get; set; }
 }
