@@ -50,7 +50,7 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public string Clie_NombreNegocio { get; set; }
 
-        public string ImVi_Imagwn { get; set; }
+        public string ImVi_Imagen { get; set; }
 
         public string Clie_Telefono { get; set; }
         public int EsVi_Id { get; set; }
