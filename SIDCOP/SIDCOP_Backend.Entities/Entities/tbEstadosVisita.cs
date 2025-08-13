@@ -2,36 +2,36 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbVendedoresPorRuta
+public partial class tbEstadosVisita
 {
-    public int VeRu_Id { get; set; }
+    public int EsVi_Id { get; set; }
 
-    public int Vend_Id { get; set; }
+    public string EsVi_Descripcion { get; set; }
 
-    public int Ruta_Id { get; set; }
+    public int? Usua_Creacion { get; set; }
 
-    public string VeRu_Dias { get; set; }
-
-    public bool Vend_Estado { get; set; }
-
-    public int Usua_Creacion { get; set; }
-
-    public DateTime Vend_FechaCreacion { get; set; }
+    public DateTime? EsVi_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
 
-    public DateTime? Vend_FechaModificacion { get; set; }
-
-    public virtual tbRutas Ruta { get; set; }
+    public DateTime? EsVi_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
-    public virtual tbVendedores Vend { get; set; }
-
     public virtual ICollection<tbClientesVisita> tbClientesVisita { get; set; } = new List<tbClientesVisita>();
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
 }

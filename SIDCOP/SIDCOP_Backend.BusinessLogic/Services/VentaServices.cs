@@ -224,16 +224,17 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public int CrearRegistroCAi(tbRegistrosCAI item)
+        public ServiceResult CrearRegistroCAi(tbRegistrosCAI item)
         {
+            var result = new ServiceResult();
             try
             {
                 var list = _registrosCaiSRepository.Insert(item);
-                return list.code_Status;
+                return result.Ok(list);
             }
             catch (Exception ex)
             {
-                return 0;
+                return result.Error(ex.Message);
             }
         }
 
@@ -961,6 +962,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 List<tbDevoluciones> lista = null;
                 return lista;
+            }
+        }
+
+        public ServiceResult InsertarDevolucion(tbDevoluciones item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _devolucionesRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
             }
         }
 
