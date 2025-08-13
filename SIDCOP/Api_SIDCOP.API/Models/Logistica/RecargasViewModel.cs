@@ -48,6 +48,13 @@ namespace Api_SIDCOP.API.Models.Logistica
         public List<RecargaDetalleDTO> Detalles { get; set; }
 
         public string? DetalleProductos { get; set; }
+        public string? UsuarioCreacion { get; set; }
+        public string? UsuarioModificacion { get; set; }
+
+
+
+
+
 
     }
 }
