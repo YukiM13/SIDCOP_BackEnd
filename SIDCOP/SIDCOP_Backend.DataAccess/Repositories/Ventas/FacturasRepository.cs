@@ -1,14 +1,14 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using SIDCOP_Backend.Entities.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Dapper;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
@@ -74,8 +74,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 };
             }
         }
-
-
 
         public FacturaCompletaDTO ObtenerFacturaCompleta(int factId)
         {
@@ -230,8 +228,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        
-
         // Método para agregar en FacturasRepository
         public List<FacturaVendedorDTO> ListarFacturasPorVendedor(int vendId)
         {
@@ -246,7 +242,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     "[Vnta].[SP_ListarFacturasPorVendedor]",
                     parameter,
                     commandType: CommandType.StoredProcedure
-                ).ToList();
+                                                           ).ToList();
 
                 // Agregar información de éxito a cada factura (siguiendo el patrón de FacturaCompletaDTO)
                 foreach (var factura in facturas)
@@ -271,5 +267,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
+        public IEnumerable<tbFacturas> List()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbFacturas>(ScriptDatabase.Facturas_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
     }
 }
