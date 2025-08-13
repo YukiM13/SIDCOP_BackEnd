@@ -152,7 +152,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             var parameter = new DynamicParameters();
             parameter.Add("@Reca_Id", item.Reca_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Reca_Confirmacion", item.Reca_Confirmacion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
             parameter.Add("@Reca_Observaciones", item.Reca_Observaciones, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Confirmacion", item.Usua_Confirmacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Reca_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
