@@ -11,10 +11,10 @@ using Dapper;
 using Org.BouncyCastle.Crypto.Utilities;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Repositories.General;
+using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
-using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -42,7 +42,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             FacturasRepository facturasRepository,
 
             PreciosPorProductoRepository preciosPorProductoRepository,
-
 
             PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository,
             DevolucionesDetallesRepository devolucionesDetallesRepository
@@ -762,6 +761,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion PreciosPorProducto
 
         #region Ventas
+
         public ServiceResult InsertVentas(VentaInsertarDTO item)
         {
             var result = new ServiceResult();
@@ -873,8 +873,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-
-
         public ServiceResult ObtenerFacturaCompleta(int factId)
         {
             var result = new ServiceResult();
@@ -947,7 +945,22 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error inesperado al obtener las facturas del vendedor: {ex.Message}");
             }
         }
-        #endregion
+
+        public ServiceResult ListFacturas()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.List();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        #endregion Ventas
 
         #region Devoluciones
 
@@ -982,6 +995,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         #endregion
 
         #region DevolucionesDetalles
+
         public IEnumerable<tbDevolucionesDetalle> BuscarDevolucionDetalle(int? id)
         {
             try
@@ -994,6 +1008,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return null;
             }
         }
-        #endregion
+
+        #endregion DevolucionesDetalles
     }
 }
