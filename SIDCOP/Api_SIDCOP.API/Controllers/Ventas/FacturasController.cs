@@ -1,8 +1,8 @@
-﻿using Api_SIDCOP.API.Models.Ventas;
+﻿using Microsoft.AspNetCore.Mvc;
+using Api_SIDCOP.API.Models.Ventas;
 using Api_SIDCOP.API.Models.Ventas.DTOs;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
@@ -20,6 +20,21 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         {
             _ventaServices = ventaServices;
             _mapper = mapper;
+        }
+
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            var result = _ventaServices.ListFacturas();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
         }
 
         [HttpGet("ObtenerCompleta/{id}")]
@@ -53,7 +68,6 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 });
             }
         }
-
 
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
@@ -128,7 +142,6 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 });
             }
         }
-
 
         [HttpGet("ListarPorVendedor/{vendId}")]
         public IActionResult ListarPorVendedor(int vendId)

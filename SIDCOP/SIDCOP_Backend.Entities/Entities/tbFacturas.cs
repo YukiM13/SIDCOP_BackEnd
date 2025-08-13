@@ -2,11 +2,14 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbFacturas
 {
+    public int? Secuencia { get; set; }
+
     public int Fact_Id { get; set; }
 
     public string Fact_Numero { get; set; }
@@ -17,7 +20,17 @@ public partial class tbFacturas
 
     public int Clie_Id { get; set; }
 
+    [NotMapped]
+    public string? Clie_NombreCompleto { get; set; }
+
+
+    [NotMapped]
+    public string? Clie_NombreNegocio { get; set; }
+
     public int Vend_Id { get; set; }
+
+    [NotMapped]
+    public string? Vend_NombreCompleto { get; set; }
 
     public string Fact_TipoVenta { get; set; }
 
