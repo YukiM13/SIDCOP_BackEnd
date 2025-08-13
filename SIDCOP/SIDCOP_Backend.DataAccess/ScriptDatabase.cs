@@ -146,6 +146,19 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion EstadosCiviles
 
+
+        #region EstadosVisita
+
+        public static string EstadosVisita_Listar = "[Gral].[SP_EstadosVisita_Listar]";
+
+        public static string EstadoVisita_Insertar      = "[Gral].[SP_EstadoVisita_Insertar]";
+        public static string EstadoVisita_Actualizar    = "[Gral].[SP_EstadoVisita_Actualizar]";
+        public static string EstadoVisita_Buscar        = "[Gral].[SP_EstadoVisita_Buscar]";
+        public static string EstadoVisita_Eliminar      = "[Gral].[SP_EstadoVisita_Eliminar]";
+
+        #endregion EstadosCiviles
+
+
         #region ConfiguracionFacturas
 
         public static string ConfiguracionFacturas_Listar = "[Vnta].[SP_ConfiguracionFacturas_Listar]";
