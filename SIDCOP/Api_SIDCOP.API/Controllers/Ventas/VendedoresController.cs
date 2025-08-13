@@ -27,6 +27,13 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(list);
         }
 
+        [HttpGet("ListarPorRutas")]
+        public IActionResult ListarVeRu()
+        {
+            var list = _ventaServices.ListarVendedoresPorRuta();
+            return Ok(list);
+        }
+
 
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] Models.Ventas.VendedoresViewModel vendedoresViewModel)

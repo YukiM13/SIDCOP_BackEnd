@@ -10,9 +10,9 @@ namespace Api_SIDCOP.API.Models.General
 
         public int? Clie_Id { get; set; }
 
-        public string HCVi_Foto { get; set; }
+        public string? HCVi_Foto { get; set; }
 
-        public string HCVi_Observaciones { get; set; }
+        public string? HCVi_Observaciones { get; set; }
 
         public DateTime? HCVi_Fecha { get; set; }
 
