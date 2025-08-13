@@ -170,6 +170,10 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbFacturas> tbFacturasUsua_ModificacionNavigation { get; set; } = new List<tbFacturas>();
 
+    public virtual ICollection<tbFormasDePago> tbFormasDePagoUsua_CreacionNavigation { get; set; } = new List<tbFormasDePago>();
+
+    public virtual ICollection<tbFormasDePago> tbFormasDePagoUsua_ModificacionNavigation { get; set; } = new List<tbFormasDePago>();
+
     public virtual ICollection<tbImagenesVisita> tbImagenesVisita { get; set; } = new List<tbImagenesVisita>();
 
     public virtual ICollection<tbImpuestos> tbImpuestosUsua_CreacionNavigation { get; set; } = new List<tbImpuestos>();

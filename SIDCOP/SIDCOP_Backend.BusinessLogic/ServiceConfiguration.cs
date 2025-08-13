@@ -89,6 +89,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<EstadoVisitaRepository>();
 
 
+            services.AddScoped<ImagenVisitaRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)

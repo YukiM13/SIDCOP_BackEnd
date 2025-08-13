@@ -88,6 +88,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbFacturasHistorial> tbFacturasHistorial { get; set; }
 
+    public virtual DbSet<tbFormasDePago> tbFormasDePago { get; set; }
+
     public virtual DbSet<tbImagenesVisita> tbImagenesVisita { get; set; }
 
     public virtual DbSet<tbImpuestos> tbImpuestos { get; set; }
@@ -1378,6 +1380,27 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.HFac_Id).ValueGeneratedOnAdd();
         });
 
+        modelBuilder.Entity<tbFormasDePago>(entity =>
+        {
+            entity.HasKey(e => e.FoPa_Id).HasName("PK_Gral_tbFormasDePago_FoPa_Id");
+
+            entity.ToTable("tbFormasDePago", "Gral");
+
+            entity.Property(e => e.FoPa_Descripcion)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.FoPa_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.FoPa_FechaModificacion).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbFormasDePagoUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .HasConstraintName("FK_Gral_tbFormasDePago_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbFormasDePagoUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Modificacion)
+                .HasConstraintName("FK_Gral_tbFormasDePago_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
         modelBuilder.Entity<tbImagenesVisita>(entity =>
         {
             entity.HasKey(e => e.ImVi_Id).HasName("PK_Gral_tbImagenesVisitas_ImVi_Id");
@@ -1639,10 +1662,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Pago_Fecha).HasColumnType("datetime");
             entity.Property(e => e.Pago_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Pago_FechaModificacion).HasColumnType("datetime");
-            entity.Property(e => e.Pago_FormaPago)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsUnicode(false);
             entity.Property(e => e.Pago_Monto).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Pago_NumeroReferencia)
                 .HasMaxLength(50)
@@ -1655,6 +1674,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasForeignKey(d => d.CPCo_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbPagosCuentasPorCobrar_tbCuentasPorCobrar_CPCo_Id");
+
+            entity.HasOne(d => d.FoPa).WithMany(p => p.tbPagosCuentasPorCobrar)
+                .HasForeignKey(d => d.FoPa_Id)
+                .HasConstraintName("FK_Vnta_tbPagosCuentasPorCobrar_Gral_tbFormasDePago_FoPa_Id");
         });
 
         modelBuilder.Entity<tbPaises>(entity =>
