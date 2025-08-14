@@ -79,18 +79,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public tbCuentasPorCobrar timeLineCliente(int Clie_Id)
+        public IEnumerable<tbCuentasPorCobrar> timeLineCliente(int Clie_Id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();
             parameters.Add("@Clie_Id", Clie_Id);
 
-            var result = db.QueryFirstOrDefault<tbCuentasPorCobrar>(
+            var result = db.Query<tbCuentasPorCobrar>(
                 ScriptDatabase.CuentasPorCobrar_TimelineCliente,
                 parameters,
-                commandType: System.Data.CommandType.StoredProcedure);
+                commandType: System.Data.CommandType.StoredProcedure
+            );
 
             return result;
         }
+
     }
 }
