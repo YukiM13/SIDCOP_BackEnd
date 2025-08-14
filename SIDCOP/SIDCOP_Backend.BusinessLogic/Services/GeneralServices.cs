@@ -34,6 +34,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ClientesVisitaHistorialRepository _clientesVisitaHistorialRepository;
         private readonly EstadoVisitaRepository _estadoVisitaRepository;
         private readonly ImagenVisitaRepository _imagenVisitaRepository;
+        private readonly FormasDePagoRepository _formasDePagoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -44,7 +45,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         PaisRepository paisRepository, TipoDeViviendaRepository tipoDeViviendaRepository, AvalRepository avalRepository,
         ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository,
         EstadoVisitaRepository estadoVisitaRepository,
-        ImagenVisitaRepository imagenVisitaRepository
+        ImagenVisitaRepository imagenVisitaRepository,
+        FormasDePagoRepository formasDePagoRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -76,6 +78,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _clientesVisitaHistorialRepository = clientesVisitaHistorialRepository;
             _estadoVisitaRepository = estadoVisitaRepository;
             _imagenVisitaRepository = imagenVisitaRepository;
+            _formasDePagoRepository = formasDePagoRepository;
         }
 
         #region Departamentos
@@ -1582,6 +1585,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
+        #endregion
+
+        #region FormasDePago
+        public IEnumerable<tbFormasDePago> ListarFormasDePago()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _formasDePagoRepository.ListarFormasDePago();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbFormasDePago> FoPa = null;
+                return FoPa;
+            }
+        }
         #endregion
     }
 }
