@@ -180,6 +180,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     Prod_Descripcion = det.Prod_Descripcion,
                     Prod_CodigoBarra = det.Prod_CodigoBarra,
                     Prod_PagaImpuesto = det.Prod_PagaImpuesto,
+                    Prod_Imagen = det.Prod_Imagen,
 
                     // Datos del impuesto
                     Impu_Id = det.Impu_Id,
