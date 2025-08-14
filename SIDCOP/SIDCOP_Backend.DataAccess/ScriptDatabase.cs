@@ -460,6 +460,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
         public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
 
+        public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
 
         #endregion Venta
 

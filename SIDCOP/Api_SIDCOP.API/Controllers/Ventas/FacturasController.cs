@@ -174,5 +174,21 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 });
             }
         }
+
+        [HttpPost("AnularFactura")]
+        public IActionResult AnularFactura([FromBody] FacturaAnularViewModel item)
+        {
+            var mapped = _mapper.Map<tbFacturas>(item);
+            var result = _ventaServices.AnularFactura(mapped);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }

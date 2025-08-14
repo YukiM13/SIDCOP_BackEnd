@@ -975,6 +975,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult AnularFactura(tbFacturas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.AnularFactura(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         #endregion Ventas
 
         #region Devoluciones

@@ -32,6 +32,9 @@ public partial class tbFacturas
     [NotMapped]
     public string? Vend_NombreCompleto { get; set; }
 
+    [NotMapped]
+    public string? Motivo { get; set; }
+
     public string Fact_TipoVenta { get; set; }
 
     public DateTime Fact_FechaEmision { get; set; }
