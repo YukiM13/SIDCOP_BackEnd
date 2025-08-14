@@ -2,16 +2,32 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbVendedoresPorRuta
 {
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
     public int VeRu_Id { get; set; }
 
     public int Vend_Id { get; set; }
 
+    [NotMapped]
+    public string? VendedorNombre { get; set; }
+
+    [NotMapped]
+    public string? VendedorApellido { get; set; }
+
     public int Ruta_Id { get; set; }
+
+    [NotMapped]
+    public string? RutaCodigo { get; set; }
+
+    [NotMapped]
+    public string? RutaDescripcion { get; set; }
 
     public string VeRu_Dias { get; set; }
 
@@ -19,9 +35,15 @@ public partial class tbVendedoresPorRuta
 
     public int Usua_Creacion { get; set; }
 
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
     public DateTime Vend_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 
     public DateTime? Vend_FechaModificacion { get; set; }
 

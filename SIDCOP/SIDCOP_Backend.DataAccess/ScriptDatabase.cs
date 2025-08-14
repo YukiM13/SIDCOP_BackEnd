@@ -324,6 +324,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
         public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
 
+        public static string Vendedores_ListarPorRuta = "[Vnta].[SP_Vendedores_PorRuta_Listar]";
+
         #endregion Vendedores
 
         #region CuentasPorCobrar
