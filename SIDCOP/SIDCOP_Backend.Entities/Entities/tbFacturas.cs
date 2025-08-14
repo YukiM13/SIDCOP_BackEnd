@@ -32,6 +32,9 @@ public partial class tbFacturas
     [NotMapped]
     public string? Vend_NombreCompleto { get; set; }
 
+    [NotMapped]
+    public string? Motivo { get; set; }
+
     public string Fact_TipoVenta { get; set; }
 
     public DateTime Fact_FechaEmision { get; set; }
@@ -242,6 +245,8 @@ public class FacturaCompletaDTO
         public string Prod_Descripcion { get; set; }
         public string Prod_CodigoBarra { get; set; }
         public string Prod_PagaImpuesto { get; set; }
+
+        public string Prod_Imagen { get; set; }
 
         // Datos del impuesto
         public int? Impu_Id { get; set; }

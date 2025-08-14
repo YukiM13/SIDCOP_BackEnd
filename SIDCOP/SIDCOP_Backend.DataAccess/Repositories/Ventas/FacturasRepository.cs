@@ -180,6 +180,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     Prod_Descripcion = det.Prod_Descripcion,
                     Prod_CodigoBarra = det.Prod_CodigoBarra,
                     Prod_PagaImpuesto = det.Prod_PagaImpuesto,
+                    Prod_Imagen = det.Prod_Imagen,
 
                     // Datos del impuesto
                     Impu_Id = det.Impu_Id,
@@ -274,5 +275,38 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             return result;
         }
+
+        public RequestStatus AnularFactura(tbFacturas anular)
+        {
+            var parameter = new DynamicParameters();
+
+            // Parámetros de entrada principales
+            parameter.Add("@Fact_Id", anular.Fact_Id);
+            parameter.Add("@Usua_Modificacion", anular.Usua_Modificacion);
+            parameter.Add("@Motivo", anular.Motivo);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            try
+            {
+                var result = db.Execute(ScriptDatabase.Anular_Factura, parameter, commandType: CommandType.StoredProcedure);
+                return new RequestStatus
+                {
+                    code_Status = 1,
+                    message_Status = $"Factura anulada correctamente {result}"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus
+                {
+                    code_Status = 0,
+                    message_Status = $"Error inesperado: {ex.Message}"
+                };
+            }
+        }
+
+
+
     }
 }
