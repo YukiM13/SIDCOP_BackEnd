@@ -97,6 +97,10 @@ public partial class tbProductos
     [NotMapped]
     public string? InfoPromocion_JSON { get; set; }
 
+    [NotMapped]
+
+    public double? Impu_Valor { get; set; }
+
 
 
 
