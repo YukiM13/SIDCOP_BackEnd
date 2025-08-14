@@ -520,5 +520,10 @@ namespace SIDCOP_Backend.DataAccess
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
 
         #endregion
+
+        #region FormasDePago
+        public const string FormasDePago_Listar = "[Gral].[SP_FormasDePago_Listar]";
+
+        #endregion
     }
 }
