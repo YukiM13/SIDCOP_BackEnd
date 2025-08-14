@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -12,10 +13,17 @@ public partial class tbFormasDePago
     public string FoPa_Descripcion { get; set; }
 
     public int? Usua_Creacion { get; set; }
+    [NotMapped]
+    public string UsuaCreacion { get; set; }
+
+    [NotMapped]
+    public int Secuencia { get; set; }
 
     public DateTime? FoPa_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
+    [NotMapped]
+    public string UsuaModificacion { get; set; }
 
     public DateTime? FoPa_FechaModificacion { get; set; }
 
