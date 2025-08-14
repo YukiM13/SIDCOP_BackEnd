@@ -95,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
-            parameter.Add("@Prod_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Fact_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.Query<tbProductos>(ScriptDatabase.Producto_BuscarPorFactura, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
