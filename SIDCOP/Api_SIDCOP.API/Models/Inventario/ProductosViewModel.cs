@@ -77,6 +77,8 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string? InfoPromocion_JSON { get; set; }
 
+        public double? Impu_Valor { get; set; }
+
 
 
     }
