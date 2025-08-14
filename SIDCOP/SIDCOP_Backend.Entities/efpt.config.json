@@ -87,6 +87,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbFormasDePago]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbImagenesVisita]",
          "ObjectType": 0
       },

@@ -6,17 +6,18 @@ using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.General
+
 {
     [ApiController]
     [Route("[controller]")]
     [ApiKey]
 
-    public class ImagenVisitaController : Controller
+    public class FormaDePagoController: Controller
     {
         public readonly GeneralServices _generalServices;
         public readonly IMapper _mapper;
 
-        public ImagenVisitaController(GeneralServices generalServices, IMapper mapper)
+        public FormaDePagoController(GeneralServices generalServices, IMapper mapper)
         {
             _generalServices = generalServices;
             _mapper = mapper;
@@ -25,15 +26,8 @@ namespace Api_SIDCOP.API.Controllers.General
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _generalServices.ListImVi();
-            return Ok(list);
-        }
 
-        [HttpPost("Insertar")]
-        public IActionResult Insertar([FromBody] ImagenVisitaViewModel item)
-        {
-            var mapped = _mapper.Map<tbImagenesVisita>(item);
-            var result = _generalServices.InsertImVi(mapped);
+            var result = _generalServices.ListarFormasDePago();
             return Ok(result);
         }
     }

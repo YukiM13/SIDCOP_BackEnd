@@ -98,6 +98,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public IEnumerable<tbVendedoresPorRuta> ListVeRu()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbVendedoresPorRuta>(ScriptDatabase.Vendedores_ListarPorRuta, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
+        }
+
         public RequestStatus Update(tbVendedores item)
         {
             if (item == null)

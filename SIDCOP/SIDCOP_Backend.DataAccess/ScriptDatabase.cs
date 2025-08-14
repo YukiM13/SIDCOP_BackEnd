@@ -146,6 +146,19 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion EstadosCiviles
 
+
+        #region EstadosVisita
+
+        public static string EstadosVisita_Listar = "[Gral].[SP_EstadosVisita_Listar]";
+
+        public static string EstadoVisita_Insertar      = "[Gral].[SP_EstadoVisita_Insertar]";
+        public static string EstadoVisita_Actualizar    = "[Gral].[SP_EstadoVisita_Actualizar]";
+        public static string EstadoVisita_Buscar        = "[Gral].[SP_EstadoVisita_Buscar]";
+        public static string EstadoVisita_Eliminar      = "[Gral].[SP_EstadoVisita_Eliminar]";
+
+        #endregion EstadosCiviles
+
+
         #region ConfiguracionFacturas
 
         public static string ConfiguracionFacturas_Listar = "[Vnta].[SP_ConfiguracionFacturas_Listar]";
@@ -311,6 +324,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string Vendedor_Insertar = "[Vnta].[SP_Vendedor_Insertar]";
         public static string Vendedor_Actualizar = "[Vnta].[SP_Vendedor_Actualizar]";
 
+        public static string Vendedores_ListarPorRuta = "[Vnta].[SP_Vendedores_PorRuta_Listar]";
+
         #endregion Vendedores
 
         #region CuentasPorCobrar
@@ -443,6 +458,9 @@ namespace SIDCOP_Backend.DataAccess
 
         //public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
+        public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
+
+        public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
 
         #endregion Venta
 
@@ -501,6 +519,11 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+
+        #endregion
+
+        #region FormasDePago
+        public const string FormasDePago_Listar = "[Gral].[SP_FormasDePago_Listar]";
 
         #endregion
     }

@@ -94,6 +94,13 @@ public partial class tbProductos
     [NotMapped]
     public string? Desc_EspecificacionesJSON { get; set; }
 
+    [NotMapped]
+    public string? InfoPromocion_JSON { get; set; }
+
+    [NotMapped]
+
+    public double? Impu_Valor { get; set; }
+
 
 
 
@@ -130,4 +137,23 @@ public partial class tbProductos
     public virtual ICollection<tbRecargasDetalle> tbRecargasDetalle { get; set; } = new List<tbRecargasDetalle>();
 
     public virtual ICollection<tbTrasladosDetalle> tbTrasladosDetalle { get; set; } = new List<tbTrasladosDetalle>();
+}
+
+
+
+public class ListasPreciosVendedor
+{
+    public int Prod_Id { get; set; }
+    public string Prod_DescripcionCorta { get; set; }
+    public string Prod_Imagen { get; set; }
+    public int Impu_Id { get; set; }
+
+    public decimal Impu_Valor { get; set; }
+    public decimal Prod_PrecioUnitario { get; set; }
+    public decimal Prod_CostoTotal { get; set; }
+    public string Prod_PagaImpuesto { get; set; }
+    public int CantidadDisponible { get; set; }
+    public string ListasPrecio_JSON { get; set; }
+    public string DescuentosEscala_JSON { get; set; }
+
 }

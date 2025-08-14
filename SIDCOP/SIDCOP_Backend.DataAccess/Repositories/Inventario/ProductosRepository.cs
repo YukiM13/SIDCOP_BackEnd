@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,11 +58,44 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
+        public async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Clie_Id", clieId, DbType.Int32, ParameterDirection.Input);
+            parameters.Add("@Vend_Id", vendId, DbType.Int32, ParameterDirection.Input);
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = await db.QueryAsync<ListasPreciosVendedor>(
+                    "[Inve].[SP_ProductosDescuentoPrecioPorCliente_Vendedor]",
+                    parameters,
+                    commandType: CommandType.StoredProcedure,
+                    commandTimeout: 60 // 60 segundos timeout
+                );
+
+                if (result == null)
+                {
+                    throw new Exception("No se pudieron obtener los productos");
+                }
+
+                return result;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception($"Error de base de datos al obtener productos: {ex.Message}", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error inesperado al obtener productos: {ex.Message}", ex);
+            }
+        }
+
         public IEnumerable<tbProductos> FindFactura(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
-            parameter.Add("@Prod_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Fact_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.Query<tbProductos>(ScriptDatabase.Producto_BuscarPorFactura, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {

@@ -1,14 +1,14 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using SIDCOP_Backend.Entities.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Dapper;
+using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
@@ -74,8 +74,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 };
             }
         }
-
-
 
         public FacturaCompletaDTO ObtenerFacturaCompleta(int factId)
         {
@@ -182,6 +180,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     Prod_Descripcion = det.Prod_Descripcion,
                     Prod_CodigoBarra = det.Prod_CodigoBarra,
                     Prod_PagaImpuesto = det.Prod_PagaImpuesto,
+                    Prod_Imagen = det.Prod_Imagen,
 
                     // Datos del impuesto
                     Impu_Id = det.Impu_Id,
@@ -230,8 +229,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        
-
         // Método para agregar en FacturasRepository
         public List<FacturaVendedorDTO> ListarFacturasPorVendedor(int vendId)
         {
@@ -246,7 +243,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     "[Vnta].[SP_ListarFacturasPorVendedor]",
                     parameter,
                     commandType: CommandType.StoredProcedure
-                ).ToList();
+                                                           ).ToList();
 
                 // Agregar información de éxito a cada factura (siguiendo el patrón de FacturaCompletaDTO)
                 foreach (var factura in facturas)
@@ -270,6 +267,46 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         };
             }
         }
+
+        public IEnumerable<tbFacturas> List()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbFacturas>(ScriptDatabase.Facturas_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public RequestStatus AnularFactura(tbFacturas anular)
+        {
+            var parameter = new DynamicParameters();
+
+            // Parámetros de entrada principales
+            parameter.Add("@Fact_Id", anular.Fact_Id);
+            parameter.Add("@Usua_Modificacion", anular.Usua_Modificacion);
+            parameter.Add("@Motivo", anular.Motivo);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            try
+            {
+                var result = db.Execute(ScriptDatabase.Anular_Factura, parameter, commandType: CommandType.StoredProcedure);
+                return new RequestStatus
+                {
+                    code_Status = 1,
+                    message_Status = $"Factura anulada correctamente {result}"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus
+                {
+                    code_Status = 0,
+                    message_Status = $"Error inesperado: {ex.Message}"
+                };
+            }
+        }
+
+
 
     }
 }
