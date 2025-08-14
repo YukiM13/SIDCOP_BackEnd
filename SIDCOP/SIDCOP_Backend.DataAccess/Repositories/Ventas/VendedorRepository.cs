@@ -1,11 +1,18 @@
 ﻿using Microsoft.Data.SqlClient;
 using Dapper;
 using SIDCOP_Backend.Entities.Entities;
+using SIDCOP_Backend.DataAccess.Context;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class VendedorRepository : IRepository<tbVendedores>
     {
+        private readonly BDD_SIDCOPContext _bddContext;
+        public VendedorRepository(BDD_SIDCOPContext bddContext)
+        {
+            _bddContext = bddContext;
+        }
+
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
@@ -62,6 +69,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Vend_Ayudante", item.Vend_Ayudante, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Tipo", item.Vend_Tipo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_EsExterno", item.Vend_EsExterno, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
+            parameter.Add("@Vend_Imagen", item.Vend_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@rutas", item.rutas, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -90,6 +98,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public IEnumerable<tbVendedoresPorRuta> ListVeRu()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbVendedoresPorRuta>(ScriptDatabase.Vendedores_ListarPorRuta, commandType: System.Data.CommandType.StoredProcedure);
+            return result;
+        }
+
         public RequestStatus Update(tbVendedores item)
         {
             if (item == null)
@@ -114,6 +129,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Vend_Ayudante", item.Vend_Ayudante, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Tipo", item.Vend_Tipo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_EsExterno", item.Vend_EsExterno, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
+            parameter.Add("@Vend_Imagen", item.Vend_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@rutas", item.rutas, System.Data.DbType.String, System.Data.ParameterDirection.Input);

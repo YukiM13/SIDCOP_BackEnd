@@ -23,7 +23,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public RequestStatus Insert(tbDevoluciones item)
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+            parameter.Add("@clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@fact_Id", item.Fact_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@devo_Fecha", item.Clie_Id, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@devo_Motivo", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@devoDetalle_XML", item.Clie_Id, System.Data.DbType.Xml, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@devo_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Execute(ScriptDatabase.Devolucion_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
+
+            return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
 
         public IEnumerable<tbDevoluciones> List()
