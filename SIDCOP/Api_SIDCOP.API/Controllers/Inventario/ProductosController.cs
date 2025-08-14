@@ -139,6 +139,25 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
+        [HttpGet("ProductosDescuentoPorClienteVendedor/{clieId}/{vendId}")]
+        public async Task<IActionResult> ProductosDescuentoPorClienteVendedor(int clieId, int vendId)
+        {
+            if (clieId <= 0 || vendId <= 0)
+            {
+                return BadRequest("Id de Cliente o Id de Vendedor inválidos.");
+            }
+
+            var productos = await _inventarioServices.ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(clieId, vendId);
+            if (productos != null && productos.Any())
+            {
+                return Ok(productos);
+            }
+            else
+            {
+                return NotFound("Productos no encontrados para el cliente y vendedor especificados.");
+            }
+        }
+
 
 
         //public IActionResult Index()

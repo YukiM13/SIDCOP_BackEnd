@@ -32,6 +32,26 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
+        [HttpGet("BuscarPorRuta/{id}")]
+        public IActionResult BuscarPorRuta(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var cliente = _generalServices.BuscarClientePorRuta(id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Cliente no encontrado.");
+            }
+        }
+
+
+
         [HttpGet("ListarSinConfirmacion")]
         public IActionResult ListarClienteSinConfirmacion()
         {
@@ -54,6 +74,8 @@ namespace Api_SIDCOP.API.Controllers.General
             var insert = _generalServices.UpdateCliente(mapped);
             return Ok(insert);
         }
+
+
 
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
