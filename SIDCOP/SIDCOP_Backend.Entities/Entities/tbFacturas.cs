@@ -247,9 +247,6 @@ public class FacturaCompletaDTO
         public string Prod_PagaImpuesto { get; set; }
         public string Prod_Imagen { get; set; }
 
-
-        public string Prod_Imagen { get; set; }
-
         // Datos del impuesto
         public int? Impu_Id { get; set; }
         public string Impu_Descripcion { get; set; }
