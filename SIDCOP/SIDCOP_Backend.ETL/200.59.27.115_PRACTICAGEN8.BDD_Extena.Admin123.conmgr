@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123"
+  DTS:DTSID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-SIDCOP_Backend.ETL-{BDF8B56D-683F-4747-96F4-18ECA7C573CE}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWlXuj//YaUSwhkBF4yQ9NgAAAAACAAAAAAAQZgAAAAEAACAAAABwhV4I6NUFpPQY73Z1uQkbmMsLkCfpqQ76jstNJv9XxAAAAAAOgAAAAAIAACAAAAArbi0mGFj6AMUXUjZxXrY4SXmofvSUSxpe1RyEGgS/9YAAAAAEiXsLtyasb3NazbCWxQgiBYS0F5O2/+CCE2SLvtPXEU1JZdnnxIL0quBOWM5Ar1RW/fO0+76cdGyuAZe53+ucM0PhLogSA4B2600luKW8cifKfAeRByowOGmWLS7bsF9rsDbyIjC6/wekCLpB8uhOz7lHwufg7fwhHcebLIzFuEAAAABBIxksRGNM4BD7JRIt1rP/lw/9f/yUR065IhbYopqngnF7evyxWWawBN7/SAE8Huo6mVzOtMruguCxLHCU4qIO</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
