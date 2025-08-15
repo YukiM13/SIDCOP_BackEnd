@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess;
@@ -14,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess.Repositories.Reportes;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SIDCOP_Backend.BusinessLogic
 {
@@ -23,6 +25,28 @@ namespace SIDCOP_Backend.BusinessLogic
         {
             // Initialize the connection string for repositories that use Dapper
             SIDCOP_Context.BuildConnectionString(connectionString);
+            
+            ConfigureRepositories(services);
+        }
+
+        public static void DataAccess(this IServiceCollection services, Func<IServiceProvider, string> connectionStringFactory)
+        {
+            // Registrar el factory como un servicio
+            services.AddSingleton<SIDCOP_Backend.DataAccess.DbContextFactory>(provider => 
+            {
+                var config = provider.GetRequiredService<IConfiguration>();
+                var factory = new SIDCOP_Backend.DataAccess.DbContextFactory(config);
+                // Configurar SIDCOP_Context para usar el factory
+                SIDCOP_Context.SetFactory(factory);
+                return factory;
+            });
+            
+            ConfigureRepositories(services);
+        }
+        
+        [ExcludeFromCodeCoverage]
+        private static void ConfigureRepositories(IServiceCollection services)
+        {
 
             services.AddScoped<MunicipioRepository>();
 
