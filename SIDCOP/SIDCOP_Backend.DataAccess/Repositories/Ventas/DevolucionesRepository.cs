@@ -41,7 +41,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
             catch (Exception)
             {
-                //string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
 
                 return new RequestStatus { code_Status = 0, message_Status = "Error en base de datos" };
 
