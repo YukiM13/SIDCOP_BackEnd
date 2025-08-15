@@ -63,6 +63,9 @@ public partial class tbVendedores
     public string? Muni_Codigo { get; set; }
 
     [NotMapped]
+    public int? RegC_Id { get; set; }
+
+    [NotMapped]
     public string? Muni_Descripcion { get; set; }
 
     [NotMapped]
