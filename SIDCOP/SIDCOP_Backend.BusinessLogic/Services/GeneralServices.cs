@@ -795,17 +795,32 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
+        //public IEnumerable<tbClientesVisita> ListVisitasClientes()
+        //{
+        //    var result = new ServiceResult();
+        //    try
+        //    {
+        //        return _clientesVisitaHistorialRepository.List();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        IEnumerable<tbClientesVisita> visitas = null;
+        //        return visitas;
+        //    }
+        //}
+
         public IEnumerable<tbClientesVisita> ListVisitasClientes()
         {
             var result = new ServiceResult();
             try
             {
-                return _clientesVisitaHistorialRepository.List();
+                var list = _clientesVisitaHistorialRepository.List();
+                return list;
             }
             catch (Exception ex)
             {
-                IEnumerable<tbClientesVisita> visitas = null;
-                return visitas;
+                IEnumerable<tbClientesVisita> clvi = null;
+                return clvi;
             }
         }
 
@@ -1485,6 +1500,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var list = _imagenVisitaRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbImagenesVisita> imvi = null;
+                return imvi;
+            }
+        }
+
+        public IEnumerable<tbImagenesVisita> ListPorVisita(int id)
+        {
+            try
+            {
+                var list = _imagenVisitaRepository.ListPorVisita(id);
                 return list;
             }
             catch (Exception ex)

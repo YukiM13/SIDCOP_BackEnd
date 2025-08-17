@@ -17,6 +17,9 @@ public partial class tbImagenesVisita
 
     public int ClVi_Id { get; set; }
 
+    [NotMapped]
+    public string? ClVi_Observaciones { get; set; }
+
     public int Usua_Creacion { get; set; }
 
     [NotMapped]
