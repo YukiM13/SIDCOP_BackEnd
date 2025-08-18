@@ -24,7 +24,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         public RequestStatus Insert(tbDevoluciones item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@fact_Id", item.Fact_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@devo_Fecha", item.Devo_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@devo_Motivo", item.Devo_Motivo, System.Data.DbType.String, System.Data.ParameterDirection.Input);

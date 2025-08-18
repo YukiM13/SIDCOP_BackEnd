@@ -8,8 +8,6 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int Devo_Id { get; set; }
 
-        public int Clie_Id { get; set; }
-
         public int? Fact_Id { get; set; }
 
         public DateTime Devo_Fecha { get; set; }
