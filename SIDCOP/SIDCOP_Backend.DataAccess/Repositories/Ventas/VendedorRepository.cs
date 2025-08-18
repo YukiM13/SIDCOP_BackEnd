@@ -150,5 +150,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
+        public IEnumerable<VendedorConVisitasDTO> ListarVendedoresConVisitas()
+        {
+            var parameter = new DynamicParameters();
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<VendedorConVisitasDTO>(ScriptDatabase.VendedoresConVisitas_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+            return result;
+        }
     }
 }
