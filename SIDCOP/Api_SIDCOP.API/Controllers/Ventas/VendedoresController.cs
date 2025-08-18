@@ -132,6 +132,14 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+        [HttpGet("ListarConVisitas")]
+        public IActionResult ListarConVisitas()
+        {
+            var list = _ventaServices.ListarVendedoresConVisita();
+            return Ok(list);
+        }
+
+
 
         //public IActionResult Index()
         //{
