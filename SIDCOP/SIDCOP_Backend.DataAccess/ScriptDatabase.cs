@@ -244,6 +244,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string ClientesVisitas_Insertar = "[Gral].[SP_ClientesVisita_Insertar]";
         public static string ClientesVisitas_Listar = "[Gral].[SP_ClientesVisita_Listar]";
         public static string VisitasPorVendedor_Listar = "[Gral].[SP_Visitas_Listar_Vendedor]";
+        public static string VendedoresConVisitas_Listar = "[Gral].[SP_Vendedores_ListarVisitas]";
+
         #endregion ClientesVisitasHistorial
 
         #region Marcas
@@ -519,6 +521,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+        public static string ImagenesVisita_ListarPorVisita = "[Gral].[SP_ImagenesVisita_ListarPorVisita]";
 
         #endregion
 

@@ -425,6 +425,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<VendedorConVisitasDTO> ListarVendedoresConVisita()
+        {
+            try
+            {
+                var list = _vendedorRepository.ListarVendedoresConVisitas();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                //throw new Exception("Error al listar vendedores: " + ex.Message);
+                return null;
+            }
+        }
+
         #endregion Vendedores
 
         #region ConfiguracionFacturas
