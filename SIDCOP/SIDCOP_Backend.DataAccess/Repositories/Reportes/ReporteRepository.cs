@@ -119,12 +119,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
             return result;
         }
 
-        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null, 
+            DateTime? fechaFin = null, int? vendedorId = null, int?  sucursalId = null
+            
+            
+            
+            )
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();
             parameters.Add("@FechaInicio", fechaInicio);
             parameters.Add("@FechaFin", fechaFin);
+            parameters.Add("@VendedorId", vendedorId);
+            parameters.Add("@SucursalId", sucursalId);
             var result = db.Query<ReporteProductosVendidosRuta>(ScriptDatabase.ReporteVendedoresVentas, parameters, commandType: CommandType.StoredProcedure).ToList();
 
             return result;
@@ -147,12 +154,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Reportes
         }
 
 
-        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null,
+
+
+         int? vendedorId = null, int? sucu_Id = null,  int? supervisorId  = null
+            )
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();
             parameters.Add("@FechaInicio", fechaInicio);
-            parameters.Add("@FechaFin", fechaFin);
+            parameters.Add("@FechaFin", fechaFin);  
+            parameters.Add("@VendedorId", vendedorId);
+            parameters.Add("@Sucu_Id", sucu_Id);
+            parameters.Add("@SupervisorId", supervisorId);
             var result = db.Query(ScriptDatabase.Reporte_PedidosPorFecha, parameters, commandType: CommandType.StoredProcedure).ToList();
 
             return result;

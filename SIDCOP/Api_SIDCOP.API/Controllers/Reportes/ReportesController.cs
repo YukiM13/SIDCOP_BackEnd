@@ -112,11 +112,16 @@ public class ReportesController : Controller
     }
 
     [HttpGet("ReporteVendedoresTotalVentas")]
-    public IActionResult ReporteVendedoresTotalVentas([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null)
+    public IActionResult ReporteVendedoresTotalVentas([FromQuery] DateTime? fechaInicio = null,
+        
+        [FromQuery] DateTime? fechaFin = null, 
+          [FromQuery] int? vendedorId = null,   [FromQuery] int? sucursalId = null
+
+        )
     {
         try
         {
-            var list = _reportesServices.ReporteVendedoresVentas(fechaInicio, fechaFin);
+            var list = _reportesServices.ReporteVendedoresVentas(fechaInicio, fechaFin, vendedorId, sucursalId);
             return Ok(list);
         }
         catch (Exception ex)
@@ -143,11 +148,16 @@ public class ReportesController : Controller
 
 
     [HttpGet("ReportePedidosPorFecha")]
-    public IActionResult ReportePedidosPorFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null)
+    public IActionResult ReportePedidosPorFecha([FromQuery] DateTime? fechaInicio = null, [FromQuery] DateTime? fechaFin = null, 
+
+
+       [FromQuery]   int? vendedorId = null, [FromQuery] int? sucu_Id = null, [FromQuery] int? supervisorId = null
+
+        )
     {
         try
         {
-            var list = _reportesServices.ReportePedidosPorFecha(fechaInicio, fechaFin);
+            var list = _reportesServices.ReportePedidosPorFecha(fechaInicio, fechaFin, vendedorId , sucu_Id, supervisorId);
             return Ok(list);
         }
         catch (Exception ex)
