@@ -16,9 +16,6 @@ namespace Api_SIDCOP.API.Models.Ventas
         [Range(0.01, double.MaxValue, ErrorMessage = "El monto debe ser mayor a cero")]
         public decimal Pago_Monto { get; set; }
 
-        [Required(ErrorMessage = "La forma de pago es requerida")]
-        [StringLength(50, ErrorMessage = "La forma de pago no puede exceder los 50 caracteres")]
-        public string Pago_FormaPago { get; set; }
 
         [StringLength(50, ErrorMessage = "El número de referencia no puede exceder los 50 caracteres")]
         public string Pago_NumeroReferencia { get; set; }
