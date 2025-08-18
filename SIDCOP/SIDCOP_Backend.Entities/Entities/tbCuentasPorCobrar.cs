@@ -28,6 +28,7 @@ public partial class tbCuentasPorCobrar
 
     public bool? CPCo_Saldada { get; set; }
 
+
     public int Usua_Creacion { get; set; }
 
     public DateTime CPCo_FechaCreacion { get; set; }
@@ -47,7 +48,7 @@ public partial class tbCuentasPorCobrar
     [NotMapped] public string FormaPago { get; set; }
     [NotMapped] public decimal Clie_LimiteCredito { get; set; }
     [NotMapped] public decimal Clie_Saldo { get; set; }
-
+    [NotMapped] public bool? EstaVencida { get; set; }
     [NotMapped] public string Tipo { get; set; }
     [NotMapped] public string Referencia { get; set; }
     [NotMapped] public decimal Monto { get; set; }
