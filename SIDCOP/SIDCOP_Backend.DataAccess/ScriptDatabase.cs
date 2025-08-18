@@ -519,6 +519,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+        public static string ImagenesVisita_ListarPorVisita = "[Gral].[SP_ImagenesVisita_ListarPorVisita]";
 
         #endregion
 

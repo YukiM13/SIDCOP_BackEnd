@@ -24,19 +24,26 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
 
+        //[HttpGet("Listar")]
+        //public IActionResult ListarVisitas()
+        //{
+        //    var list = _generalServices.ListVisitasClientes();
+        //    return Ok(list);
+        //}
+
         [HttpGet("Listar")]
-        public IActionResult ListarVisitas()
+        public IActionResult ListarVisitasClientes()
         {
             var list = _generalServices.ListVisitasClientes();
             return Ok(list);
         }
 
-        [HttpGet("ListarVisitasClientes")]
-        public IActionResult ListVisitasClientes()
-        {
-            var list = _generalServices.ListVisitasClientes();
-            return Ok(list);
-        }
+        //[HttpGet("ListarVisitasClientes")]
+        //public IActionResult ListVisitasClientes()
+        //{
+        //    var list = _generalServices.ListVisitasClientes();
+        //    return Ok(list);
+        //}
 
         [HttpGet("ListarVisitasPorVendedor")]
         public IActionResult ListVisitasPorVendedor([FromQuery]int vend_Id)
