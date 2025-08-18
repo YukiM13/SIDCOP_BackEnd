@@ -28,6 +28,8 @@ public partial class tbDevoluciones
 
     public bool Devo_Estado { get; set; }
 
+    public bool Devo_EnSucursal { get; set; }
+
     [NotMapped]
     public string Nombre_Completo { get; set; }
 

@@ -26,6 +26,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public bool Devo_Estado { get; set; }
 
+        public bool Devo_EnSucursal { get; set; }
+
         public string Nombre_Completo { get; set; }
 
 
