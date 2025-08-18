@@ -950,11 +950,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(200)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Clie).WithMany(p => p.tbDevoluciones)
-                .HasForeignKey(d => d.Clie_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Vnta_tbDevoluciones_Gral_tbClientes_Clie_Id");
-
             entity.HasOne(d => d.Fact).WithMany(p => p.tbDevoluciones)
                 .HasForeignKey(d => d.Fact_Id)
                 .HasConstraintName("FK_Vnta_tbDevoluciones_Vnta_tbFacturas_Fact_Id");
