@@ -29,6 +29,20 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
+        [HttpPost("ListarPorVisita/{id}")]
+        public IActionResult ListPorVisita(int id)
+        {
+            var imvi = _generalServices.ListPorVisita(id);
+            if (imvi != null)
+            {
+                return Ok(imvi);
+            }
+            else
+            {
+                return NotFound("Visita no encontrada con el ID proporcionado.");
+            }
+        }
+
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] ImagenVisitaViewModel item)
         {

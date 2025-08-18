@@ -80,6 +80,7 @@ namespace Api_SIDCOP.API.Extensions
 
             CreateMap<tbImagenesVisita, ImagenVisitaViewModel>().ReverseMap();
             CreateMap<tbFacturas, FacturaAnularViewModel>().ReverseMap();
+            CreateMap<tbDevoluciones, DevolucionesViewModel>().ReverseMap();
         }
     }
 }
