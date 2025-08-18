@@ -1022,6 +1022,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult DevolucionTrasladar(tbDevoluciones item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _devolucionesRepository.Trasladar(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult InsertarDevolucion(tbDevoluciones item)
         {
             var result = new ServiceResult();

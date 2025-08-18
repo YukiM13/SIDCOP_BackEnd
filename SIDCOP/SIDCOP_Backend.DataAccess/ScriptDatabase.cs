@@ -496,6 +496,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
         public const string Devolucion_Insertar = "[Vnta].[SP_Devolucion_Insertar]";
+        public static string Devolucion_Trasladar = "[Vnta].[SP_Devolucion_Trasladar]";
+
         #endregion Devolucion
 
 
