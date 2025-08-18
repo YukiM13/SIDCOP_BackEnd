@@ -425,6 +425,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<VendedorConVisitasDTO> ListarVendedoresConVisita()
+        {
+            try
+            {
+                var list = _vendedorRepository.ListarVendedoresConVisitas();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                //throw new Exception("Error al listar vendedores: " + ex.Message);
+                return null;
+            }
+        }
+
         #endregion Vendedores
 
         #region ConfiguracionFacturas
@@ -967,6 +982,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             try
             {
                 var response = _facturasRepository.List();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult AnularFactura(tbFacturas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.AnularFactura(item);
                 return result.Ok(response);
             }
             catch (Exception ex)

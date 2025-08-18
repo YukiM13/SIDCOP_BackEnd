@@ -36,6 +36,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public string UsuarioModificacion { get; set; }
 
+        public string devoDetalle_XML { get; set; }
+
 
 
     }

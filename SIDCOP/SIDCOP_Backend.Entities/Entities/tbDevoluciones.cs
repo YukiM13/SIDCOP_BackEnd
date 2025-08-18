@@ -40,6 +40,9 @@ public partial class tbDevoluciones
     [NotMapped]
     public string UsuarioModificacion { get; set; }
 
+    [NotMapped]
+    public string devoDetalle_XML { get; set; }
+
     public virtual tbClientes Clie { get; set; }
 
     public virtual tbFacturas Fact { get; set; }

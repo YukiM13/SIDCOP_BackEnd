@@ -244,6 +244,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string ClientesVisitas_Insertar = "[Gral].[SP_ClientesVisita_Insertar]";
         public static string ClientesVisitas_Listar = "[Gral].[SP_ClientesVisita_Listar]";
         public static string VisitasPorVendedor_Listar = "[Gral].[SP_Visitas_Listar_Vendedor]";
+        public static string VendedoresConVisitas_Listar = "[Gral].[SP_Vendedores_ListarVisitas]";
+
         #endregion ClientesVisitasHistorial
 
         #region Marcas
@@ -460,6 +462,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
         public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
 
+        public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
 
         #endregion Venta
 
@@ -492,7 +495,7 @@ namespace SIDCOP_Backend.DataAccess
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
-        public const string Devolucion_Insertar = " [Vnta].[SP_Devolucion_Insertar]";
+        public const string Devolucion_Insertar = "[Vnta].[SP_Devolucion_Insertar]";
         #endregion Devolucion
 
 
@@ -518,6 +521,7 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+        public static string ImagenesVisita_ListarPorVisita = "[Gral].[SP_ImagenesVisita_ListarPorVisita]";
 
         #endregion
 
