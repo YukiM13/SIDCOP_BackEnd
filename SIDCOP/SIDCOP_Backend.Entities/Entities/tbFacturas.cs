@@ -113,7 +113,7 @@ public class VentaInsertarDTO
     public string Fact_Numero { get; set; }
     public string Fact_TipoDeDocumento { get; set; }
     public int RegC_Id { get; set; }
-    public int Clie_Id { get; set; }
+    public int DiCl_Id { get; set; }
     public int Vend_Id { get; set; }
     public string Fact_TipoVenta { get; set; } // CONTADO o CREDITO
     public DateTime Fact_FechaEmision { get; set; }
@@ -284,7 +284,7 @@ public class FacturaVendedorDTO
     public int Fact_Id { get; set; }
     public string Fact_Numero { get; set; }
     public string Fact_TipoDeDocumento { get; set; }
-    public int Clie_Id { get; set; }
+    public int DiCl_Id { get; set; }
     public string Cliente { get; set; }
     public string Fact_TipoVenta { get; set; }
     public DateTime Fact_FechaEmision { get; set; }
