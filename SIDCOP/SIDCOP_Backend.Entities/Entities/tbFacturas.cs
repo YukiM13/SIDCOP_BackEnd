@@ -117,9 +117,6 @@ public class VentaInsertarDTO
     public int Vend_Id { get; set; }
     public string Fact_TipoVenta { get; set; } // CONTADO o CREDITO
     public DateTime Fact_FechaEmision { get; set; }
-    public DateTime Fact_FechaLimiteEmision { get; set; }
-    public string Fact_RangoInicialAutorizado { get; set; }
-    public string Fact_RangoFinalAutorizado { get; set; }
 
     // Ubicación geográfica
     public decimal Fact_Latitud { get; set; }
