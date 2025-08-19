@@ -47,6 +47,8 @@ public partial class tbDevolucionesDetalle
     public string? UsuarioModificacion { get; set; }
 
 
+    public int? DevD_Cantidad { get; set; }
+
     public virtual tbDevoluciones Devo { get; set; }
 
     public virtual tbProductos Prod { get; set; }

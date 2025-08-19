@@ -42,6 +42,11 @@ public partial class tbClientesVisita
 
     public int? EsVi_Id { get; set; }
 
+    public decimal? ClVi_Latitud { get; set; }
+
+    public decimal? ClVi_Longitud { get; set; }
+
+
     public virtual tbDireccionesPorCliente DiCl { get; set; }
 
     public virtual tbEstadosVisita EsVi { get; set; }
