@@ -174,6 +174,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
     public virtual DbSet<tbTrasladosHistorial> tbTrasladosHistorial { get; set; }
 
+    public virtual DbSet<tbUnidadesDePeso> tbUnidadesDePeso { get; set; }
+
     public virtual DbSet<tbUsuarios> tbUsuarios { get; set; }
 
     public virtual DbSet<tbVendedores> tbVendedores { get; set; }
@@ -2623,6 +2625,29 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Tras_Observaciones)
                 .HasMaxLength(200)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tbUnidadesDePeso>(entity =>
+        {
+            entity.HasKey(e => e.UnPe_Id).HasName("PK_Gral_tbUnidadesDePeso_UnPe_Id");
+
+            entity.ToTable("tbUnidadesDePeso", "Gral");
+
+            entity.Property(e => e.UnPe_Descripcion)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.UnPe_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.UnPe_FechaModificacion).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbUnidadesDePesoUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbUnidadesDePeso_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbUnidadesDePesoUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Modificacion)
+                .HasConstraintName("FK_Gral_tbUnidadesDePeso_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbUsuarios>(entity =>
