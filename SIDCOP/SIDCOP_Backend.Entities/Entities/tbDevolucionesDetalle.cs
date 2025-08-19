@@ -48,7 +48,6 @@ public partial class tbDevolucionesDetalle
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
-
     public virtual tbDevoluciones Devo { get; set; }
 
     public virtual tbProductos Prod { get; set; }

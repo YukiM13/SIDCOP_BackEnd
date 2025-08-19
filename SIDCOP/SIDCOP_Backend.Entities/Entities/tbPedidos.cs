@@ -90,6 +90,15 @@ public partial class tbPedidos
     [NotMapped]
     public int? PeDe_Cantidad { get; set; }
 
+    [NotMapped]
+    public decimal? PeDe_Impuesto { get; set; }
+
+    [NotMapped]
+    public decimal? PeDe_Descuento { get; set; }
+
+    [NotMapped]
+    public decimal? PeDe_Subtotal { get; set; }
+
 
     [NotMapped]
     public List<PedidoDetalleDTO> Detalles { get; set; }
@@ -110,6 +119,11 @@ public class PedidoDetalleDTO
     public int Prod_Id { get; set; }
     public int PeDe_Cantidad { get; set; }
     public decimal PeDe_ProdPrecio { get; set; }
+    public decimal PeDe_Impuesto { get; set; }
+
+    public decimal PeDe_Descuento { get; set; }
+
+    public decimal PeDe_Subtotal { get; set; }
     public decimal PeDe_ProdPrecioFinal { get; set; }
     public string Prod_Imagen { get; set; }
 }

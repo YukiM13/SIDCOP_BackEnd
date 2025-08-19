@@ -552,6 +552,8 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.Property(e => e.ClVi_Fecha).HasColumnType("datetime");
             entity.Property(e => e.ClVi_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.ClVi_Latitud).HasColumnType("decimal(11, 6)");
+            entity.Property(e => e.ClVi_Longitud).HasColumnType("decimal(11, 6)");
             entity.Property(e => e.ClVi_Observaciones)
                 .HasMaxLength(200)
                 .IsUnicode(false);
@@ -941,6 +943,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbDevoluciones", "Vnta");
 
+            entity.Property(e => e.Devo_EnSucursal).HasDefaultValue(false);
             entity.Property(e => e.Devo_Estado).HasDefaultValue(true);
             entity.Property(e => e.Devo_Fecha).HasColumnType("datetime");
             entity.Property(e => e.Devo_FechaCreacion).HasColumnType("datetime");
@@ -1241,10 +1244,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Clie).WithMany(p => p.tbFacturas)
-                .HasForeignKey(d => d.Clie_Id)
+            entity.HasOne(d => d.DiCl).WithMany(p => p.tbFacturas)
+                .HasForeignKey(d => d.DiCl_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Vnta_tbFacturas_Gral_tbClientes_Clie_Id");
+                .HasConstraintName("FK_Vnta_tbFacturas_Gral_tbDireccionesPorCliente_DiCl_Id");
 
             entity.HasOne(d => d.RegC).WithMany(p => p.tbFacturas)
                 .HasForeignKey(d => d.RegC_Id)
@@ -1786,11 +1789,14 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbPedidosDetalle", "Vnta");
 
+            entity.Property(e => e.PeDe_Descuento).HasColumnType("numeric(8, 2)");
             entity.Property(e => e.PeDe_Estado).HasDefaultValue(true);
             entity.Property(e => e.PeDe_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.PeDe_FechaModificacion).HasColumnType("datetime");
+            entity.Property(e => e.PeDe_Impuesto).HasColumnType("numeric(8, 2)");
             entity.Property(e => e.PeDe_ProdPrecio).HasColumnType("numeric(8, 2)");
             entity.Property(e => e.PeDe_ProdPrecioFinal).HasColumnType("numeric(8, 2)");
+            entity.Property(e => e.PeDe_Subtotal).HasColumnType("numeric(8, 2)");
 
             entity.HasOne(d => d.Pedi).WithMany(p => p.tbPedidosDetalle)
                 .HasForeignKey(d => d.Pedi_Id)

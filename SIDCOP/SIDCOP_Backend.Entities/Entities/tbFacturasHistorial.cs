@@ -17,7 +17,7 @@ public partial class tbFacturasHistorial
 
     public int? RegC_Id { get; set; }
 
-    public int? Clie_Id { get; set; }
+    public int? DiCl_Id { get; set; }
 
     public int? Vend_Id { get; set; }
 

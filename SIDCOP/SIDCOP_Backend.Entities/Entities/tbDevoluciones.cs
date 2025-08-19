@@ -26,8 +26,6 @@ public partial class tbDevoluciones
 
     public bool Devo_Estado { get; set; }
 
-    public bool Devo_EnSucursal { get; set; }
-
     [NotMapped]
     public string Nombre_Completo { get; set; }
 
@@ -45,6 +43,8 @@ public partial class tbDevoluciones
 
     [NotMapped]
     public string devoDetalle_XML { get; set; }
+
+    public bool? Devo_EnSucursal { get; set; }
 
     public virtual tbFacturas Fact { get; set; }
 
