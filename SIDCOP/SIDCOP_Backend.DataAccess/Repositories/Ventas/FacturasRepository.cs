@@ -22,7 +22,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Fact_Numero", venta.Fact_Numero);
             parameter.Add("@Fact_TipoDeDocumento", venta.Fact_TipoDeDocumento);
             parameter.Add("@RegC_Id", venta.RegC_Id);
-            parameter.Add("@Clie_Id", venta.Clie_Id);
+            parameter.Add("@DiCl_Id", venta.DiCl_Id);
             parameter.Add("@Vend_Id", venta.Vend_Id);
             parameter.Add("@Fact_TipoVenta", venta.Fact_TipoVenta);
             parameter.Add("@Fact_FechaEmision", venta.Fact_FechaEmision);
