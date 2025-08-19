@@ -60,6 +60,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                      $"<Prod_Id>{d.Prod_Id}</Prod_Id>" +
                      $"<PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad>" +
                      $"<PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio>" +
+                     $"<PeDe_Impuesto>{d.PeDe_Impuesto.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Impuesto>" +
+                     $"<PeDe_Descuento>{d.PeDe_Descuento.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Descuento>" +
+                     $"<PeDe_Subtotal>{d.PeDe_Subtotal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Subtotal>" +
                      $"<PeDe_ProdPrecioFinal>{d.PeDe_ProdPrecioFinal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecioFinal>" +
                  $"</Deta>"
              )) + "</Detalles>"
@@ -113,6 +116,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                      $"<Prod_Id>{d.Prod_Id}</Prod_Id>" +
                      $"<PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad>" +
                      $"<PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio>" +
+                     $"<PeDe_Impuesto>{d.PeDe_Impuesto.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Impuesto>" +
+                     $"<PeDe_Descuento>{d.PeDe_Descuento.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Descuento>" +
+                     $"<PeDe_Subtotal>{d.PeDe_Subtotal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Subtotal>" +
                      $"<PeDe_ProdPrecioFinal>{d.PeDe_ProdPrecioFinal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecioFinal>" +
                  $"</Deta>"
              )) + "</Detalles>"
