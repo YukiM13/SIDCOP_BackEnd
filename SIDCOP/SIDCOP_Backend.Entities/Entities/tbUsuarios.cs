@@ -297,4 +297,8 @@ public partial class tbUsuarios
     public virtual ICollection<tbVendedores> tbVendedoresUsua_CreacionNavigation { get; set; } = new List<tbVendedores>();
 
     public virtual ICollection<tbVendedores> tbVendedoresUsua_ModificacionNavigation { get; set; } = new List<tbVendedores>();
+
+    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_CreacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
+
+    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_ModificacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
 }
