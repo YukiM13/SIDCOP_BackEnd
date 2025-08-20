@@ -33,6 +33,9 @@ public partial class tbDevolucionesDetalle
     public string? Cate_Descripcion { get; set; }
 
     [NotMapped]
+    public string? Subc_Descripcion { get; set; }
+
+    [NotMapped]
     public string? Prod_Imagen { get; set; }
 
     [NotMapped]

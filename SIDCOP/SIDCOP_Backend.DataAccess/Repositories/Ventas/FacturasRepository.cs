@@ -26,9 +26,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Vend_Id", venta.Vend_Id);
             parameter.Add("@Fact_TipoVenta", venta.Fact_TipoVenta);
             parameter.Add("@Fact_FechaEmision", venta.Fact_FechaEmision);
-            parameter.Add("@Fact_FechaLimiteEmision", venta.Fact_FechaLimiteEmision);
-            parameter.Add("@Fact_RangoInicialAutorizado", venta.Fact_RangoInicialAutorizado);
-            parameter.Add("@Fact_RangoFinalAutorizado", venta.Fact_RangoFinalAutorizado);
             parameter.Add("@Fact_Latitud", venta.Fact_Latitud);
             parameter.Add("@Fact_Longitud", venta.Fact_Longitud);
             parameter.Add("@Fact_Referencia", venta.Fact_Referencia ?? string.Empty);
