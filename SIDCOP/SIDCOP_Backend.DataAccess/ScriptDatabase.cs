@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SIDCOP_Backend.DataAccess
 {
     public static class ScriptDatabase
     {
+
+        #region UnidadesDePeso
+        public static string UnPeso_Listar = "[Gral].[SP_UnidadesDePeso_Listar]";
+        public static string UnPeso_Insertar = "[Gral].[SP_UnidadesDePeso_Insertar]";
+        public static string UnPeso_Actualizar = "[Gral].[SP_UnidadesDePeso_Actualizar]";
+        public static string UnPeso_Eliminar = "[Gral].[SP_UnidadesDePeso_Eliminar]";
+        #endregion UnidadesDePeso
+
+
+
         #region Usuarios
 
         public const string Usuario_Insertar = "Acce.SP_Usuario_Insertar";

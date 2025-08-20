@@ -1,12 +1,5 @@
-﻿using Api_SIDCOP.API.Models.Reportes;
-using SIDCOP_Backend.DataAccess.Repositories.Dashboards;
+﻿using SIDCOP_Backend.DataAccess.Repositories.Dashboards;
 using SIDCOP_Backend.DataAccess.Repositories.Reportes;
-using SIDCOP_Backend.Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -33,7 +26,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                
+
                 return Enumerable.Empty<dynamic>();
             }
         }
@@ -47,7 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                
+
                 return Enumerable.Empty<dynamic>();
             }
         }
@@ -61,7 +54,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                
+
                 return Enumerable.Empty<dynamic>();
             }
         }
