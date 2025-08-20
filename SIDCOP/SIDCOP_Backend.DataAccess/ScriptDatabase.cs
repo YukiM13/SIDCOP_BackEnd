@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SIDCOP_Backend.DataAccess
 {
     public static class ScriptDatabase
     {
+
+        #region UnidadesDePeso
+        public static string UnPeso_Listar = "[Gral].[SP_UnidadesDePeso_Listar]";
+        public static string UnPeso_Insertar = "[Gral].[SP_UnidadesDePeso_Insertar]";
+        public static string UnPeso_Actualizar = "[Gral].[SP_UnidadesDePeso_Actualizar]";
+        public static string UnPeso_Eliminar = "[Gral].[SP_UnidadesDePeso_Eliminar]";
+        #endregion UnidadesDePeso
+
+
+
         #region Usuarios
 
         public const string Usuario_Insertar = "Acce.SP_Usuario_Insertar";
@@ -151,10 +153,10 @@ namespace SIDCOP_Backend.DataAccess
 
         public static string EstadosVisita_Listar = "[Gral].[SP_EstadosVisita_Listar]";
 
-        public static string EstadoVisita_Insertar      = "[Gral].[SP_EstadoVisita_Insertar]";
-        public static string EstadoVisita_Actualizar    = "[Gral].[SP_EstadoVisita_Actualizar]";
-        public static string EstadoVisita_Buscar        = "[Gral].[SP_EstadoVisita_Buscar]";
-        public static string EstadoVisita_Eliminar      = "[Gral].[SP_EstadoVisita_Eliminar]";
+        public static string EstadoVisita_Insertar = "[Gral].[SP_EstadoVisita_Insertar]";
+        public static string EstadoVisita_Actualizar = "[Gral].[SP_EstadoVisita_Actualizar]";
+        public static string EstadoVisita_Buscar = "[Gral].[SP_EstadoVisita_Buscar]";
+        public static string EstadoVisita_Eliminar = "[Gral].[SP_EstadoVisita_Eliminar]";
 
         #endregion EstadosCiviles
 
@@ -496,6 +498,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
         public const string Devolucion_Insertar = "[Vnta].[SP_Devolucion_Insertar]";
+        public static string Devolucion_Trasladar = "[Vnta].[SP_Devolucion_Trasladar]";
+
         #endregion Devolucion
 
 

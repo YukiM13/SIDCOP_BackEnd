@@ -24,7 +24,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         public RequestStatus Insert(tbDevoluciones item)
         {
             var parameter = new DynamicParameters();
-            parameter.Add("@clie_Id", item.Clie_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@fact_Id", item.Fact_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@devo_Fecha", item.Devo_Fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@devo_Motivo", item.Devo_Motivo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -50,6 +49,31 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             //return new RequestStatus { code_Status = result, message_Status = mensaje };
 
+        }
+
+        public RequestStatus Trasladar(tbDevoluciones item)
+        {
+            if (item == null)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos." };
+            }
+            var parameter = new DynamicParameters();
+            parameter.Add("@Devo_Id", item.Devo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Devolucion_Trasladar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public IEnumerable<tbDevoluciones> List()

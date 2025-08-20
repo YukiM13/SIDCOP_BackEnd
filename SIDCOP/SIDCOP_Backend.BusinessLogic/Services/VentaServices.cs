@@ -861,10 +861,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                     errores.Add("La fecha de emisión no puede ser futura");
                 }
 
-                if (item.Fact_FechaLimiteEmision < item.Fact_FechaEmision)
-                {
-                    errores.Add("La fecha límite no puede ser anterior a la fecha de emisión");
-                }
 
                 // Validar tipo de venta
                 if (!new[] { "CONTADO", "CREDITO" }.Contains(item.Fact_TipoVenta?.ToUpper()))
@@ -872,12 +868,6 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                     errores.Add("El tipo de venta debe ser CONTADO o CREDITO");
                 }
 
-                // Validar rangos autorizados
-                if (string.IsNullOrWhiteSpace(item.Fact_RangoInicialAutorizado) ||
-                    string.IsNullOrWhiteSpace(item.Fact_RangoFinalAutorizado))
-                {
-                    errores.Add("Los rangos autorizados son requeridos");
-                }
 
                 // Validar coordenadas geográficas
                 if (item.Fact_Latitud < -90 || item.Fact_Latitud > 90)
@@ -1019,6 +1009,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 List<tbDevoluciones> lista = null;
                 return lista;
+            }
+        }
+
+        public ServiceResult DevolucionTrasladar(tbDevoluciones item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _devolucionesRepository.Trasladar(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
             }
         }
 

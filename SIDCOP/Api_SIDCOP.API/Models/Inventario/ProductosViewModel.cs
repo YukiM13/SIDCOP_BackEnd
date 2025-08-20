@@ -41,6 +41,8 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string Prod_EsPromo { get; set; }
 
+        public bool Prod_Impulsado { get; set; }
+
         public bool Prod_Estado { get; set; }
 
         public int Usua_Creacion { get; set; }

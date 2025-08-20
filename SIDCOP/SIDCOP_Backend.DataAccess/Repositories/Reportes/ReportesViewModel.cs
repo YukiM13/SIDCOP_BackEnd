@@ -92,7 +92,7 @@ namespace Api_SIDCOP.API.Models.Reportes
         public DateTime Devo_Fecha { get; set; }
         public string Devo_Motivo { get; set; }
         public string productos_Devueltos { get; set; }
-        public string Nombre_Completo { get; set; }
+        public string Nombre_Completo { get; set; } public string Vendedor { get; set; }
 
 
 

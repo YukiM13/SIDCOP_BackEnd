@@ -24,9 +24,6 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             _mapper = mapper;
         }
 
-
-
-
         [HttpGet("Listar")]
         public IActionResult listar()
         {
@@ -43,6 +40,12 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(result);
         }
 
-
+        [HttpPost("Trasladar")]
+        public IActionResult Trasladar([FromBody] DevolucionesViewModel item)
+        {
+            var mapped = _mapper.Map<tbDevoluciones>(item);
+            var insert = _ventaServices.DevolucionTrasladar(mapped);
+            return Ok(insert);
+        }
     }
 }

@@ -131,6 +131,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbUnidadesDePeso]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Inve].[tbCategorias]",
          "ObjectType": 0
       },
