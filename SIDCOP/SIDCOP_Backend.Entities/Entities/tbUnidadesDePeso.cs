@@ -2,6 +2,8 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -17,6 +19,13 @@ public partial class tbUnidadesDePeso
 
     public int? Usua_Modificacion { get; set; }
 
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string Secuencia { get; set; }
     public DateTime? UnPe_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
