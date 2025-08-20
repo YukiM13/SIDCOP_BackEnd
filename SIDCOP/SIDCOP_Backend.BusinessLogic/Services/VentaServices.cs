@@ -845,6 +845,80 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult InsertVentasSucursal(VentaInsertarDTO item)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas
+                if (item == null)
+                {
+                    return result.Error("Los datos de la venta son requeridos");
+                }
+
+                // ✅ Validar DiCl_Id en lugar de Clie_Id
+                if (item.DiCl_Id <= 0)
+                {
+                    return result.Error("La dirección del cliente (DiCl_Id) es requerida y debe ser válida");
+                }
+
+                // ❌ Eliminado: Validación de Fact_Numero (ahora lo genera el SP)
+
+                if (item.RegC_Id <= 0)
+                {
+                    return result.Error("El registro CAI (RegC_Id) es requerido");
+                }
+
+                if (item.Vend_Id <= 0)
+                {
+                    return result.Error("El vendedor (Vend_Id) es requerido");
+                }
+
+                if (string.IsNullOrWhiteSpace(item.Fact_TipoVenta))
+                {
+                    return result.Error("El tipo de venta (CONTADO/CREDITO) es requerido");
+                }
+
+                if (item.Fact_FechaEmision == default)
+                {
+                    return result.Error("La fecha de emisión es requerida");
+                }
+
+                if (item.DetallesFacturaInput == null || !item.DetallesFacturaInput.Any())
+                {
+                    return result.Error("Debe incluir al menos un producto en la venta");
+                }
+
+                // Validar que todos los detalles tengan datos válidos
+                var detallesInvalidos = item.DetallesFacturaInput
+                    .Where(d => d.Prod_Id <= 0 || d.FaDe_Cantidad <= 0)
+                    .ToList();
+
+                if (detallesInvalidos.Any())
+                {
+                    return result.Error("Todos los productos deben tener ID válido y cantidad mayor a 0");
+                }
+
+                // Llamar al repository para insertar la venta
+                var response = _facturasRepository.InsertarVentaEnSucursal(item);
+
+                if (response.code_Status == 1)
+                {
+                    // ✅ El mensaje de éxito ya incluye el Fact_Numero generado
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al insertar venta: {ex.Message}");
+            }
+        }
+
         // Método adicional opcional para validar una venta antes de insertarla
         public ServiceResult ValidarVenta(VentaInsertarDTO item)
         {
@@ -860,14 +934,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 {
                     errores.Add("La fecha de emisión no puede ser futura");
                 }
-
-
                 // Validar tipo de venta
                 if (!new[] { "CONTADO", "CREDITO" }.Contains(item.Fact_TipoVenta?.ToUpper()))
                 {
                     errores.Add("El tipo de venta debe ser CONTADO o CREDITO");
                 }
-
 
                 // Validar coordenadas geográficas
                 if (item.Fact_Latitud < -90 || item.Fact_Latitud > 90)
@@ -1040,7 +1111,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion
+        #endregion Devoluciones
 
         #region DevolucionesDetalles
 
