@@ -49,6 +49,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Id", item.Vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pedi_Codigo", item.Pedi_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaPedido", item.Pedi_FechaPedido, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaEntrega", item.Pedi_FechaEntrega, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -104,6 +105,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var parameter = new DynamicParameters();
             parameter.Add("@Pedi_Id", item.Pedi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pedi_Codigo", item.Pedi_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Id", item.Vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaPedido", item.Pedi_FechaPedido, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaEntrega", item.Pedi_FechaEntrega, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
