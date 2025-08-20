@@ -8,6 +8,8 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbPedidos
 {
+
+    public string Pedi_Codigo { get; set; }
     public int Pedi_Id { get; set; }
 
     public int DiCl_Id { get; set; }
@@ -117,6 +119,7 @@ public partial class tbPedidos
 public class PedidoDetalleDTO
 {
     public int Prod_Id { get; set; }
+
     public int PeDe_Cantidad { get; set; }
     public decimal PeDe_ProdPrecio { get; set; }
     public decimal PeDe_Impuesto { get; set; }
