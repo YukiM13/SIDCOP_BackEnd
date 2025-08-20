@@ -11,8 +11,8 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="132"
-  DTS:VersionGUID="{93C2DD2C-91F6-4B56-AE1F-71C5E1FC56CD}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{50468944-A18D-4C96-806E-1A3C90A81FFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -239,9 +239,25 @@
           Id="Package\Migrar Bodegas"
           TopLeft="701.041628363441,100.749999299397" />
         <NodeLayout
+          Size="148,41.6"
+          Id="Package\Migrar Clientes"
+          TopLeft="694.791628704925,191.749998666594" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Migrar Cxc"
+          TopLeft="93.7499948777261,186.333332037595" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Migrar Facturas"
+          TopLeft="283.333317852683,188.499998689195" />
+        <NodeLayout
           Size="144.8,41.6"
           Id="Package\Migrar Grupos"
-          TopLeft="99.9999945362411,100.749999299397" />
+          TopLeft="81.6666622045969,101.616665960037" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Migrar Pedidos"
+          TopLeft="489.58330658368,190.666665340795" />
         <NodeLayout
           Size="157.6,41.6"
           Id="Package\Migrar Productos"
@@ -250,36 +266,20 @@
           Size="166.4,41.6"
           Id="Package\Migrar Vendedores"
           TopLeft="501.041639290958,100.749999299397" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Migrar Clientes"
-          TopLeft="694.791628704925,191.749998666594" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Migrar Pedidos"
-          TopLeft="489.58330658368,190.666665340795" />
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Migrar Facturas"
-          TopLeft="283.333317852683,188.499998689195" />
-        <NodeLayout
-          Size="128.8,41.6"
-          Id="Package\Migrar Cxc"
-          TopLeft="93.7499948777261,186.333332037595" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="244.799994536241,121.549999299397">
+          TopLeft="226.466662204597,121.983332629717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.449990096937,0"
+              EndConnector="54.7833224285811,0"
               Start="0,0"
-              End="28.949990096937,0">
+              End="47.2833224285811,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="28.949990096937,0" />
+                    End="47.2833224285811,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
