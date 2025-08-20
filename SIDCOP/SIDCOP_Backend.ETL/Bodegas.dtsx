@@ -1,0 +1,2631 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2025 3:36:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-D1J21EQK"
+  DTS:CreatorName="LAPTOP-D1J21EQK\Sebas"
+  DTS:DTSID="{C2EA13C5-0187-40E5-ADEB-653629B41280}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="18442"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{0082A89F-3B3D-4755-B494-4F3569258DDA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar Ultima Migracion Bodega"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{21d45f6b-7358-4a20-9e51-788856df3782}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar Ultima Migracion Bodega"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Bodega'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Migracion Bodegas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{620b7b4f-f359-47f5-9650-ff0fe5316126}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Migracion Bodegas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Migracion Bodegas\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input].Columns[CodProd]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CodProd"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodProd]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input].Columns[PrLotes]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="PrLotes"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[PrLotes]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[CodProdC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[CodProdC]"
+                      name="CodProdC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodProd]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[PrLotesC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[PrLotesC]"
+                      name="PrLotesC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[PrLotes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[Descdep]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descdep"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Descdep]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[Resdepo]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Resdepo"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Resdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[DepUUsuario]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DepUUsuario"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUUsuario]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[DepTCam]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepTCam"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTCam]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[DepEstado]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepEstado"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepEstado]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input].Columns[DepTipo]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepTipo"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTipo]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DescdepC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DescdepC]"
+                      name="DescdepC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Descdep]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[ResdepoC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[ResdepoC]"
+                      name="ResdepoC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Resdepo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[epUUsuarioC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[epUUsuarioC]"
+                      name="epUUsuarioC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUUsuario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTCamC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTCamC]"
+                      name="DepTCamC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTCam]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepEstadoC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepEstadoC]"
+                      name="DepEstadoC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepEstado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTipoC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTipoC]"
+                      name="DepTipoC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTipo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."ALMACEN"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[CodBod]"
+                      cachedDataType="i2"
+                      cachedName="CodBod"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodBod]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[CodProd]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CodProd"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodProd]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodProd]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[PrLotes]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="PrLotes"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[PrLotes]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[PrLotes]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[CodUnd]"
+                      cachedDataType="i2"
+                      cachedName="CodUnd"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodUnd]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Exisdepo]"
+                      cachedDataType="i4"
+                      cachedName="Exisdepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Exisdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Costdepo]"
+                      cachedDataType="numeric"
+                      cachedName="Costdepo"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Costdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Costdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Exisfdepo]"
+                      cachedDataType="i4"
+                      cachedName="Exisfdepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Exisfdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisfdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cosfdepo]"
+                      cachedDataType="numeric"
+                      cachedName="Cosfdepo"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cosfdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosfdepo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodBod]"
+                      dataType="i2"
+                      name="CodBod" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodProd]"
+                      dataType="wstr"
+                      length="10"
+                      name="CodProd" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[PrLotes]"
+                      dataType="wstr"
+                      length="10"
+                      name="PrLotes" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodUnd]"
+                      dataType="i2"
+                      name="CodUnd" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Exisdepo]"
+                      dataType="numeric"
+                      name="Exisdepo"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Costdepo]"
+                      dataType="numeric"
+                      name="Costdepo"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Exisfdepo]"
+                      dataType="numeric"
+                      name="Exisfdepo"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cosfdepo]"
+                      dataType="numeric"
+                      name="Cosfdepo"
+                      precision="19"
+                      scale="255" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Destino de ADO NET 1"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DEPOSITOS"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Destino de ADO NET 1.Connections[IDbConnection]"
+                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Codepo]"
+                      cachedDataType="i2"
+                      cachedName="Codepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Descdep]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descdep"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descdep]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Descdep]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Resdepo]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Resdepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Resdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Resdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepUFecha]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DepUFecha"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepUFecha]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUFecha]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepUUsuario]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DepUUsuario"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepUUsuario]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUUsuario]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepTipo]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepTipo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTipo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTipo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepTCam]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepTCam"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTCam]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTCam]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepEstado]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DepEstado"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepEstado]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepEstado]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DepCarga]"
+                      cachedDataType="i2"
+                      cachedName="DepCarga"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepCarga]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepCarga]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codepo]"
+                      dataType="i2"
+                      name="Codepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descdep]"
+                      dataType="wstr"
+                      length="40"
+                      name="Descdep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cladep]"
+                      dataType="wstr"
+                      length="40"
+                      name="Cladep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Resdepo]"
+                      dataType="wstr"
+                      length="40"
+                      name="Resdepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepUFecha]"
+                      dataType="dbTimeStamp"
+                      name="DepUFecha" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepUUsuario]"
+                      dataType="wstr"
+                      length="10"
+                      name="DepUUsuario" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTipo]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepTipo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTasa]"
+                      dataType="numeric"
+                      name="DepTasa"
+                      precision="10"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[ImpCEDep]"
+                      dataType="wstr"
+                      length="1"
+                      name="ImpCEDep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepCenCos]"
+                      dataType="i2"
+                      name="DepCenCos" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepNoFinca]"
+                      dataType="i2"
+                      name="DepNoFinca" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTasa2]"
+                      dataType="numeric"
+                      name="DepTasa2"
+                      precision="10"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTCam]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepTCam" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepEstado]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepEstado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepTipo2]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepTipo2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[DepCarga]"
+                      dataType="i2"
+                      name="DepCarga" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Destino de ADO NET 1.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Destino de ADO NET 1.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Destino de ADO NET 1.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Destino de ADO NET 1.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[ALMACEN]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[ALMACEN]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[CodBod] = ? and [refTable].[CodUnd] = ? and [refTable].[CodProd] = ? and [refTable].[PrLotes] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CodBod" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CodProd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PrLotes" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CodUnd" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Exisdepo" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Costdepo" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Exisfdepo" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cosfdepo" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]};#{Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]};#{Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[CodProdC]};#{Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[PrLotesC]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input].Columns[CodUnd]"
+                      cachedDataType="i2"
+                      cachedName="CodUnd"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodUnd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input].Columns[CodBod]"
+                      cachedDataType="i2"
+                      cachedName="CodBod"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodBod</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input].Columns[CodProdC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodProdC"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[CodProdC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodProd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input].Columns[PrLotesC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PrLotesC"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[PrLotesC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PrLotes</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Lookup 1"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 1"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DEPOSITOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DEPOSITOS]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[Codepo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codepo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Descdep" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Cladep" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Resdepo" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepUFecha" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepUUsuario" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepTipo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepTasa" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ImpCEDep" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepCenCos" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepNoFinca" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepTasa2" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DepTCam" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepEstado" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepTipo2" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DepCarga" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Lookup 1.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input].Columns[Codepo]"
+                      cachedDataType="i2"
+                      cachedName="Codepo"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Codepo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.ALMACEN
+SET Exisdepo= ?,
+          Costdepo = ?,
+         Exisfdepo = ?,
+         Cosfdepo = ?
+WHERE Cia= ? AND CodBod = ? 
+AND CodProd = CAST(? AS VARCHAR(10)) 
+AND PrLotes = CAST(? AS VARCHAR(10))
+AND CodUnd = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Exisdepo]"
+                      cachedDataType="i4"
+                      cachedName="Exisdepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Costdepo]"
+                      cachedDataType="numeric"
+                      cachedName="Costdepo"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Costdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Exisfdepo]"
+                      cachedDataType="i4"
+                      cachedName="Exisfdepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisfdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Cosfdepo]"
+                      cachedDataType="numeric"
+                      cachedName="Cosfdepo"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosfdepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[CodBod]"
+                      cachedDataType="i2"
+                      cachedName="CodBod"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[CodUnd]"
+                      cachedDataType="i2"
+                      cachedName="CodUnd"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[PrLotesC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PrLotesC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[PrLotesC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].Columns[CodProdC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodProdC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output].Columns[CodProdC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="cy"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="cy"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="cy"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="cy"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i2"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i2"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i2"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.DEPOSITOS
+
+SET 
+    Descdep    = ?,
+    Resdepo    = ?,
+    DepUFecha  = ?,
+    DepUUsuario = ?,
+    DepTipo    = ?,
+    DepTCam    = ?,
+    DepEstado  = ?,
+    DepCarga   = ?
+WHERE 
+    Cia    = ? 
+    AND Codepo = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DepUFecha]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DepUFecha"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUFecha]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DepCarga]"
+                      cachedDataType="i2"
+                      cachedName="DepCarga"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepCarga]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Codepo]"
+                      cachedDataType="i2"
+                      cachedName="Codepo"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DescdepC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="DescdepC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DescdepC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ResdepoC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="ResdepoC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[ResdepoC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[epUUsuarioC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="epUUsuarioC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[epUUsuarioC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DepTipoC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DepTipoC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTipoC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DepTCamC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DepTCamC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepTCamC]" />
+                    <inputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DepEstadoC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DepEstadoC"
+                      externalMetadataColumnId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output].Columns[DepEstadoC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="dbTimeStamp"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i2"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i2"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i2"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Poblar Bodegas"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Poblar Bodegas"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC Logi.SP_Bodegas_Migrar</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Poblar Bodegas.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      name="Cia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Codepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Codepo]"
+                      name="Codepo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Descdep]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Descdep]"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Descdep]"
+                      name="Descdep"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Resdepo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Resdepo]"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[Resdepo]"
+                      name="Resdepo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUFecha]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepUFecha]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUFecha]"
+                      name="DepUFecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUUsuario]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepUUsuario]"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepUUsuario]"
+                      name="DepUUsuario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTipo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepTipo]"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTipo]"
+                      name="DepTipo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTCam]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepTCam]"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepTCam]"
+                      name="DepTCam"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepEstado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepEstado]"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepEstado]"
+                      name="DepEstado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepCarga]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepCarga]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].Columns[DepCarga]"
+                      name="DepCarga"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Codepo]"
+                      dataType="i2"
+                      name="Codepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Descdep]"
+                      dataType="wstr"
+                      length="40"
+                      name="Descdep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[Resdepo]"
+                      dataType="wstr"
+                      length="40"
+                      name="Resdepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepUFecha]"
+                      dataType="dbTimeStamp"
+                      name="DepUFecha" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepUUsuario]"
+                      dataType="wstr"
+                      length="10"
+                      name="DepUUsuario" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepTipo]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepTipo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepTCam]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepTCam" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepEstado]"
+                      dataType="wstr"
+                      length="1"
+                      name="DepEstado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET].ExternalColumns[DepCarga]"
+                      dataType="i2"
+                      name="DepCarga" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      name="Cia" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Codepo]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Codepo]"
+                      name="Codepo" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Descdep]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Descdep]"
+                      name="Descdep" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Resdepo]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[Resdepo]"
+                      name="Resdepo" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepUFecha]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepUFecha]"
+                      name="DepUFecha" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepUUsuario]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepUUsuario]"
+                      name="DepUUsuario" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepTipo]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepTipo]"
+                      name="DepTipo" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepTCam]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepTCam]"
+                      name="DepTCam" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepEstado]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepEstado]"
+                      name="DepEstado" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepCarga]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[DepCarga]"
+                      name="DepCarga" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Bodegas\Poblar Bodegas Detalle"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Poblar Bodegas Detalle"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC Logi.SP_BodegasDetalle_Migrar</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      name="Cia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodBod]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodBod]"
+                      name="CodBod"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodProd]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodProd]"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodProd]"
+                      name="CodProd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[PrLotes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[PrLotes]"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[PrLotes]"
+                      name="PrLotes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodUnd]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]"
+                      name="CodUnd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisdepo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Exisdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisdepo]"
+                      name="Exisdepo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Costdepo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Costdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Costdepo]"
+                      name="Costdepo"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisfdepo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Exisfdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Exisfdepo]"
+                      name="Exisfdepo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosfdepo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cosfdepo]"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosfdepo]"
+                      name="Cosfdepo"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodBod]"
+                      dataType="i2"
+                      name="CodBod" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodProd]"
+                      dataType="wstr"
+                      length="10"
+                      name="CodProd" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[PrLotes]"
+                      dataType="wstr"
+                      length="10"
+                      name="PrLotes" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[CodUnd]"
+                      dataType="i2"
+                      name="CodUnd" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Exisdepo]"
+                      dataType="i4"
+                      name="Exisdepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Costdepo]"
+                      dataType="numeric"
+                      name="Costdepo"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Exisfdepo]"
+                      dataType="i4"
+                      name="Exisfdepo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cosfdepo]"
+                      dataType="numeric"
+                      name="Cosfdepo"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      name="Cia" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodBod]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodBod]"
+                      name="CodBod" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodProd]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodProd]"
+                      name="CodProd" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[PrLotes]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[PrLotes]"
+                      name="PrLotes" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodUnd]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[CodUnd]"
+                      name="CodUnd" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Exisdepo]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Exisdepo]"
+                      name="Exisdepo" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Costdepo]"
+                      dataType="numeric"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Costdepo]"
+                      name="Costdepo"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Exisfdepo]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Exisfdepo]"
+                      name="Exisfdepo" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cosfdepo]"
+                      dataType="numeric"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cosfdepo]"
+                      name="Cosfdepo"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Migracion Bodegas.Paths[Data Conversion Output]"
+              endId="Package\Migracion Bodegas\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Bodegas\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Data Conversion Output1]"
+              endId="Package\Migracion Bodegas\Lookup 1.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Bodegas\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Lookup Match Output]"
+              endId="Package\Migracion Bodegas\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Bodegas\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Lookup Match Output1]"
+              endId="Package\Migracion Bodegas\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Lookup No Match Output]"
+              endId="Package\Migracion Bodegas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Bodegas\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Lookup No Match Output1]"
+              endId="Package\Migracion Bodegas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Bodegas\Lookup 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Salida de origen de ADO NET]"
+              endId="Package\Migracion Bodegas\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Migracion Bodegas.Paths[Salida de origen de ADO NET1]"
+              endId="Package\Migracion Bodegas\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Migracion Bodegas\Poblar Bodegas.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{776bca6a-9932-478c-9159-4b01f5e81af3}"
+      DTS:From="Package\Migracion Bodegas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Actualizar Ultima Migracion Bodega" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\Actualizar Ultima Migracion Bodega"
+          TopLeft="60,157.933332652317" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Bodegas"
+          TopLeft="92.499998224278,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="178.849999112139,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.333332652317"
+              Start="0,0"
+              End="0,48.833332652317">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.833332652317" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Migracion Bodegas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Bodegas\Data Conversion 1"
+          TopLeft="108.333327414261,183.999998770555" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Migracion Bodegas\Poblar Bodegas Detalle"
+          TopLeft="504.999972408018,111.53333323088" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Migracion Bodegas\Poblar Bodegas"
+          TopLeft="129.166659609311,94.8666665521596" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migracion Bodegas\Destino de ADO NET"
+          TopLeft="398.333311569361,464.199997523029" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migracion Bodegas\Lookup"
+          TopLeft="515.833305149445,313.533331748313" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Bodegas\Destino de ADO NET 1"
+          TopLeft="9.99999945362414,379.533331784474" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Bodegas\OLE DB Command 1"
+          TopLeft="211.66665510171,377.799998463194" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Bodegas\OLE DB Command"
+          TopLeft="624.999965851507,462.66666425599" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Bodegas\Data Conversion"
+          TopLeft="500.833305969008,188.999999258717" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Bodegas\Lookup 1"
+          TopLeft="134.999992623926,268.066664852633" />
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Salida de origen de ADO NET1]"
+          TopLeft="205.166659609311,136.46666655216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.8333321950502,47.5333322183954"
+              Start="0,0"
+              End="-14.8333321950502,40.0333322183954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7666661091977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7666661091977"
+                    Point2="0,23.7666661091977"
+                    Point3="-4,23.7666661091977" />
+                  <mssgle:LineSegment
+                    End="-10.8333321950502,23.7666661091977" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.8333321950502,23.7666661091977"
+                    Point2="-14.8333321950502,23.7666661091977"
+                    Point3="-14.8333321950502,27.7666661091977" />
+                  <mssgle:LineSegment
+                    End="-14.8333321950502,40.0333322183954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Salida de origen de ADO NET]"
+          TopLeft="598.599972408019,153.13333323088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.76666643901,35.866666027837"
+              Start="0,0"
+              End="-19.76666643901,28.366666027837">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9333330139185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9333330139185"
+                    Point2="0,17.9333330139185"
+                    Point3="-4,17.9333330139185" />
+                  <mssgle:LineSegment
+                    End="-15.76666643901,17.9333330139185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.76666643901,17.9333330139185"
+                    Point2="-19.76666643901,17.9333330139185"
+                    Point3="-19.76666643901,21.9333330139185" />
+                  <mssgle:LineSegment
+                    End="-19.76666643901,28.366666027837" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Lookup No Match Output1]"
+          TopLeft="176.599992623926,309.666664852633">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.7999931703014,69.8666669318411"
+              Start="0,0"
+              End="-73.7999931703014,62.3666669318411">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4946406310254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4946406310254"
+                    Point2="0,28.4946406310254"
+                    Point3="-4,28.4946406310254" />
+                  <mssgle:LineSegment
+                    End="-69.7999931703014,28.4946406310254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.7999931703014,28.4946406310254"
+                    Point2="-73.7999931703014,28.4946406310254"
+                    Point3="-73.7999931703014,32.4946406310254" />
+                  <mssgle:LineSegment
+                    End="-73.7999931703014,62.3666669318411" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-92.7063833039007,33.4946406310254,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Lookup No Match Output]"
+          TopLeft="554.766638482778,355.133331748314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.0333269134167,109.066665774716"
+              Start="0,0"
+              End="-68.0333269134167,101.566665774716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5419110576462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5419110576462"
+                    Point2="0,44.5419110576462"
+                    Point3="-4,44.5419110576462" />
+                  <mssgle:LineSegment
+                    End="-64.0333269134167,44.5419110576462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.0333269134167,44.5419110576462"
+                    Point2="-68.0333269134167,44.5419110576462"
+                    Point3="-68.0333269134167,48.5419110576462" />
+                  <mssgle:LineSegment
+                    End="-68.0333269134167,101.566665774716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.8230501754583,49.5419110576462,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Lookup Match Output1]"
+          TopLeft="214.199992623926,309.666664852633">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.466662477785,68.1333336105611"
+              Start="0,0"
+              End="85.466662477785,60.6333336105611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7877125313661" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7877125313661"
+                    Point2="0,27.7877125313661"
+                    Point3="4,27.7877125313661" />
+                  <mssgle:LineSegment
+                    End="81.466662477785,27.7877125313661" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.466662477785,27.7877125313661"
+                    Point2="85.466662477785,27.7877125313661"
+                    Point3="85.466662477785,31.7877125313661" />
+                  <mssgle:LineSegment
+                    End="85.466662477785,60.6333336105611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.45805547985753,32.7877125313661,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Lookup Match Output]"
+          TopLeft="589.699971816112,355.133331748313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.899994035395,107.533332507677"
+              Start="0,0"
+              End="118.899994035395,100.033332507677">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9157106185199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.9157106185199"
+                    Point2="0,43.9157106185199"
+                    Point3="4,43.9157106185199" />
+                  <mssgle:LineSegment
+                    End="114.899994035395,43.9157106185199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.899994035395,43.9157106185199"
+                    Point2="118.899994035395,43.9157106185199"
+                    Point3="118.899994035395,47.9157106185199" />
+                  <mssgle:LineSegment
+                    End="118.899994035395,100.033332507677" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.2586102989477,48.9157106185199,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Data Conversion Output1]"
+          TopLeft="192.866660019093,225.599998770555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4666660820776"
+              Start="0,0"
+              End="0,34.9666660820776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9666660820776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Bodegas.Paths[Data Conversion Output]"
+          TopLeft="577.199972134831,230.599999258717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.9333324895965"
+              Start="0,0"
+              End="0,75.4333324895965">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.4333324895965" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

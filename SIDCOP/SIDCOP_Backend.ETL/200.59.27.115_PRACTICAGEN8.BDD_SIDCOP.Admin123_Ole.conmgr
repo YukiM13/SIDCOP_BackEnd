@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole"
+  DTS:DTSID="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{D8BD17EF-490D-46B4-AB11-477E9E143436}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWlXuj//YaUSwhkBF4yQ9NgAAAAACAAAAAAAQZgAAAAEAACAAAACHyMimsEPdvveopVoFKTCfcRSFgdjhhcvIqTOs1WO7PQAAAAAOgAAAAAIAACAAAAC1MZLvapfEUwBKbd6CuqeoPaJ+8hJn1XeI/EsCYLRSN4AAAAD+xnoP3W69lpOay5ktkNoz9e36JUjuRD5olNu10oWP5mLk4Rg+hqqmYBan9/zEZj5P2Eg+VCijVDBvgt6pOJ0D9/X4Bd2j+jE/VuFQ95vCbD+jwlgQfvXr9cUWxzugjJMkB8ifB+AfjH+ZPzR6Qr8by/gnxkmJHzFwrJXFL81T30AAAACf0jSToyq9ZUDV9zahy/4POEwg96w3c6ubiSTaVmwMXmUk2tWoLsVixY/q3CEGS0aoeR5jM4LcEQ+hNkiLPH1N</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

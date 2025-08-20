@@ -1,0 +1,2465 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2025 3:35:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-D1J21EQK"
+  DTS:CreatorName="LAPTOP-D1J21EQK\Sebas"
+  DTS:DTSID="{A8B70043-C616-473E-9124-A7A96382B8C8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="18442"
+  DTS:ObjectName="Clientes"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{CA97EFC4-CCC8-4898-B227-0849CCC6B2FC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar Ultima Migracion Clientes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{e18fedc9-683e-4d37-90d8-19d93c9f74d5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar Ultima Migracion Clientes"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Clientes'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Migracion Clientes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b80f0b52-1af8-43e4-bdb1-b9e000f12537}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Migracion Clientes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Migracion Clientes\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DatNombre"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatDirec]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="DatDirec"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatTel]"
+                      cachedDataType="wstr"
+                      cachedLength="17"
+                      cachedName="DatTel"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatActivo]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatActivo"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatIdentidad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DatIdentidad"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatEmail]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="DatEmail"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatRNE]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="DatRNE"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatDireAmp]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatDireAmp"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatObserva]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatObserva"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatECivil]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatECivil"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatUUpdate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DatUUpdate"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatGLoca]"
+                      cachedDataType="wstr"
+                      cachedLength="70"
+                      cachedName="DatGLoca"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input].Columns[DatCodigo]"
+                      cachedDataType="i2"
+                      cachedName="DatCodigo"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatNombreC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatNombreC]"
+                      name="DatNombreC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDirecC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="90"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDirecC]"
+                      name="DatDirecC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatTelC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="17"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatTelC]"
+                      name="DatTelC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatActivoC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatActivoC]"
+                      name="DatActivoC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatIdentidadC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatIdentidadC]"
+                      name="DatIdentidadC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatEmailC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatEmailC]"
+                      name="DatEmailC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatRNEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="16"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatRNEC]"
+                      name="DatRNEC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDireAmpC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDireAmpC]"
+                      name="DatDireAmpC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatObservaC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatObservaC]"
+                      name="DatObservaC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatECivilC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatECivilC]"
+                      name="DatECivilC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatUUpdateC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatUUpdateC]"
+                      name="DatUUpdateC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatGLocaC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="90"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatGLocaC]"
+                      name="DatGLocaC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]"
+                      name="DatCodigoC"
+                      precision="10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Clientes\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."CLIENTES"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Clientes\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCodigo]"
+                      cachedDataType="i2"
+                      cachedName="DatCodigo"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DatNombre"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDirec]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="DatDirec"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatTel]"
+                      cachedDataType="wstr"
+                      cachedLength="17"
+                      cachedName="DatTel"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatLimC]"
+                      cachedDataType="cy"
+                      cachedName="DatLimC"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatLimC]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatLimC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatActivo]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatActivo"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatActivo]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatIdentidad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DatIdentidad"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatIdentidad]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCiudad]"
+                      cachedDataType="i2"
+                      cachedName="DatCiudad"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCiudad]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCiudad]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatEmail]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="DatEmail"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatEmail]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatRNE]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="DatRNE"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRNE]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDireAmp]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatDireAmp"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDireAmp]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatObserva]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatObserva"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatObserva]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DiasCred]"
+                      cachedDataType="i2"
+                      cachedName="DiasCred"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DiasCred]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DiasCred]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatECivil]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatECivil"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatECivil]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatFNac]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DatFNac"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFNac]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFNac]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[ColCod]"
+                      cachedDataType="i2"
+                      cachedName="ColCod"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ColCod]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ColCod]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCanal]"
+                      cachedDataType="i2"
+                      cachedName="DatCanal"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCanal]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCanal]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatRuta]"
+                      cachedDataType="i2"
+                      cachedName="DatRuta"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRuta]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRuta]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatFUpdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DatFUpdate"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFUpdate]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatUUpdate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DatUUpdate"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatUUpdate]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatGLoca]"
+                      cachedDataType="wstr"
+                      cachedLength="70"
+                      cachedName="DatGLoca"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatGLoca]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
+                      dataType="numeric"
+                      name="DatCodigo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="DatNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
+                      dataType="wstr"
+                      length="90"
+                      name="DatDirec" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
+                      dataType="wstr"
+                      length="17"
+                      name="DatTel" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatClie]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatClie" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatProv]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatProv" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatLimC]"
+                      dataType="numeric"
+                      name="DatLimC"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatLimP]"
+                      dataType="numeric"
+                      name="DatLimP"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCNiv1]"
+                      dataType="i2"
+                      name="DatCNiv1" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCNiv2]"
+                      dataType="i2"
+                      name="DatCNiv2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCNiv3]"
+                      dataType="i2"
+                      name="DatCNiv3" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCNiv4]"
+                      dataType="i2"
+                      name="DatCNiv4" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatPNiv1]"
+                      dataType="i2"
+                      name="DatPNiv1" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatPNiv2]"
+                      dataType="i2"
+                      name="DatPNiv2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatPNiv3]"
+                      dataType="i2"
+                      name="DatPNiv3" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatPNiv4]"
+                      dataType="i2"
+                      name="DatPNiv4" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatVenCod]"
+                      dataType="i2"
+                      name="DatVenCod" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatActivo]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatActivo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatIdentidad]"
+                      dataType="wstr"
+                      length="15"
+                      name="DatIdentidad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTrabNam]"
+                      dataType="wstr"
+                      length="30"
+                      name="DatTrabNam" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTrabDir]"
+                      dataType="wstr"
+                      length="40"
+                      name="DatTrabDir" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTrabTel]"
+                      dataType="wstr"
+                      length="20"
+                      name="DatTrabTel" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTrabDep]"
+                      dataType="wstr"
+                      length="20"
+                      name="DatTrabDep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCobrador]"
+                      dataType="i2"
+                      name="DatCobrador" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCiudad]"
+                      dataType="i2"
+                      name="DatCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatContacto]"
+                      dataType="wstr"
+                      length="60"
+                      name="DatContacto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatEmail]"
+                      dataType="wstr"
+                      length="40"
+                      name="DatEmail" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatValCuota]"
+                      dataType="numeric"
+                      name="DatValCuota"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCurso]"
+                      dataType="wstr"
+                      length="5"
+                      name="DatCurso" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatSeccion]"
+                      dataType="wstr"
+                      length="5"
+                      name="DatSeccion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCuenta]"
+                      dataType="wstr"
+                      length="18"
+                      name="DatCuenta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRNE]"
+                      dataType="wstr"
+                      length="16"
+                      name="DatRNE" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTipoPr]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatTipoPr" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatPoPr]"
+                      dataType="numeric"
+                      name="DatPoPr"
+                      precision="10"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCMon]"
+                      dataType="i2"
+                      name="DatCMon" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTProv]"
+                      dataType="i2"
+                      name="DatTProv" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodEstatus]"
+                      dataType="i4"
+                      name="CodEstatus" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatEmision]"
+                      dataType="wstr"
+                      length="60"
+                      name="DatEmision" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFecha]"
+                      dataType="dbTimeStamp"
+                      name="DatFecha" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFCorte]"
+                      dataType="dbTimeStamp"
+                      name="DatFCorte" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDireAmp]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="DatDireAmp" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatObserva]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="DatObserva" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatImpuesto]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatImpuesto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCate]"
+                      dataType="i2"
+                      name="DatCate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodR]"
+                      dataType="numeric"
+                      name="DatCodR"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodT]"
+                      dataType="wstr"
+                      length="20"
+                      name="DatCodT" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DiasCred]"
+                      dataType="i2"
+                      name="DiasCred" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNPCon]"
+                      dataType="i2"
+                      name="DatNPCon" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNPCre]"
+                      dataType="i2"
+                      name="DatNPCre" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFSus]"
+                      dataType="dbTimeStamp"
+                      name="DatFSus" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFVen]"
+                      dataType="dbTimeStamp"
+                      name="DatFVen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFEstado]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatFEstado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFRet]"
+                      dataType="dbTimeStamp"
+                      name="DatFRet" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatORet]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="DatORet" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNContrato]"
+                      dataType="wstr"
+                      length="20"
+                      name="DatNContrato" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EmpCod]"
+                      dataType="numeric"
+                      name="EmpCod"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNDep]"
+                      dataType="i2"
+                      name="DatNDep" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNoAfilia]"
+                      dataType="numeric"
+                      name="DatNoAfilia"
+                      precision="13" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatECivil]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatECivil" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFNac]"
+                      dataType="dbTimeStamp"
+                      name="DatFNac" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[ColCod]"
+                      dataType="i2"
+                      name="ColCod" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatVMes]"
+                      dataType="numeric"
+                      name="DatVMes"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFoto]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="DatFoto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNTIni]"
+                      dataType="numeric"
+                      name="DatNTIni"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNTFin]"
+                      dataType="numeric"
+                      name="DatNTFin"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCestas]"
+                      dataType="numeric"
+                      name="DatCestas"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCanal]"
+                      dataType="i2"
+                      name="DatCanal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRuta]"
+                      dataType="i2"
+                      name="DatRuta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFUpdate]"
+                      dataType="dbTimeStamp"
+                      name="DatFUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      name="DatUUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatGLoca]"
+                      dataType="wstr"
+                      length="70"
+                      name="DatGLoca" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCanalOld]"
+                      dataType="i2"
+                      name="DatCanalOld" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCursoOld]"
+                      dataType="wstr"
+                      length="5"
+                      name="DatCursoOld" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatSeccionOld]"
+                      dataType="wstr"
+                      length="5"
+                      name="DatSeccionOld" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Clientes\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Clientes\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CLIENTES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CLIENTES]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCodigo" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNombre" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatDirec" dataType="DT_STR" length="90" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTel" dataType="DT_STR" length="17" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatClie" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatProv" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatLimC" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatLimP" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCNiv1" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCNiv2" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCNiv3" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCNiv4" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatPNiv1" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatPNiv2" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatPNiv3" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatPNiv4" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatVenCod" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatActivo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatIdentidad" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTrabNam" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTrabDir" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTrabTel" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTrabDep" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatCobrador" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCiudad" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatContacto" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatEmail" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatValCuota" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCurso" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatSeccion" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatCuenta" dataType="DT_STR" length="18" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatRNE" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatTipoPr" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatPoPr" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCMon" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatTProv" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CodEstatus" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatEmision" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatFecha" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFCorte" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatDireAmp" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatObserva" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatImpuesto" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatCate" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCodR" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCodT" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DiasCred" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNPCon" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNPCre" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFSus" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFVen" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFEstado" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatFRet" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatORet" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatNContrato" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EmpCod" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNDep" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNoAfilia" dataType="DT_NUMERIC" length="0" precision="13" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatECivil" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatFNac" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ColCod" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatVMes" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFoto" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatNTIni" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatNTFin" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCestas" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCanal" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatRuta" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatGLoca" dataType="DT_STR" length="70" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatCanalOld" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCursoOld" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DatSeccionOld" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Clientes\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input].Columns[DatCodigoC]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigoC"
+                      cachedPrecision="10"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DatCodigo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Clientes\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Clientes\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Clientes\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Clientes\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.CLIENTES
+SET DatNombre   = ?, 
+    DatDirec    = ?, 
+    DatTel      = ?, 
+    DatLimC     = ?, 
+    DatActivo   = ?, 
+    DatIdentidad= ?, 
+    DatCiudad   = ?, 
+    DatEmail    = ?, 
+    DatRNE      = ?, 
+    DatDireAmp  = ?, 
+    DatObserva  = ?, 
+    DiasCred    = ?, 
+    DatECivil   = ?, 
+    DatFNac     = ?, 
+    ColCod      = ?, 
+    DatCanal    = ?, 
+    DatRuta     = ?, 
+    DatFUpdate  = ?, 
+    DatUUpdate  = ?, 
+    DatGLoca    = ?
+WHERE Cia = ? AND DatCodigo = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Clientes\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatNombreC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DatNombreC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatNombreC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatDirecC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="90"
+                      cachedName="DatDirecC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDirecC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatTelC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="DatTelC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatTelC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatLimC]"
+                      cachedDataType="cy"
+                      cachedName="DatLimC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatLimC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatActivoC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DatActivoC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatActivoC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatIdentidadC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DatIdentidadC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatIdentidadC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatCiudad]"
+                      cachedDataType="i2"
+                      cachedName="DatCiudad"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCiudad]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatEmailC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="DatEmailC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatEmailC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatDireAmpC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="DatDireAmpC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDireAmpC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatRNEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="DatRNEC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatRNEC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatECivilC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DatECivilC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatECivilC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatFNac]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DatFNac"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFNac]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[ColCod]"
+                      cachedDataType="i2"
+                      cachedName="ColCod"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ColCod]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatCanal]"
+                      cachedDataType="i2"
+                      cachedName="DatCanal"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCanal]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatRuta]"
+                      cachedDataType="i2"
+                      cachedName="DatRuta"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRuta]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DiasCred]"
+                      cachedDataType="i2"
+                      cachedName="DiasCred"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DiasCred]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatFUpdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DatFUpdate"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatUUpdateC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DatUUpdateC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatUUpdateC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatGLocaC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="90"
+                      cachedName="DatGLocaC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatGLocaC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatObservaC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="DatObservaC"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatObservaC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatCodigoC]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigoC"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="90"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="cy"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i2"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="i2"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      dataType="dbTimeStamp"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="i2"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      dataType="i2"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      dataType="i2"
+                      name="Param_16">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      dataType="dbTimeStamp"
+                      name="Param_17">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_18">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="Param_19">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      dataType="i2"
+                      name="Param_20">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      dataType="numeric"
+                      name="Param_21"
+                      precision="10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Clientes\Origen de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC  Gral.SP_Clientes_Migrar</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Clientes\Origen de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      name="Cia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCodigo]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]"
+                      name="DatCodigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatNombre]"
+                      length="50"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]"
+                      name="DatNombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatDirec]"
+                      length="90"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]"
+                      name="DatDirec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatTel]"
+                      length="17"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]"
+                      name="DatTel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatLimC]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatLimC]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatLimC]"
+                      name="DatLimC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatActivo]"
+                      length="1"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]"
+                      name="DatActivo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatIdentidad]"
+                      length="15"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]"
+                      name="DatIdentidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCiudad]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCiudad]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCiudad]"
+                      name="DatCiudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatEmail]"
+                      length="40"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]"
+                      name="DatEmail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatRNE]"
+                      length="16"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]"
+                      name="DatRNE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatDireAmp]"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]"
+                      name="DatDireAmp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatObserva]"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]"
+                      name="DatObserva"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DiasCred]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DiasCred]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DiasCred]"
+                      name="DiasCred"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatECivil]"
+                      length="1"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]"
+                      name="DatECivil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFNac]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatFNac]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFNac]"
+                      name="DatFNac"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ColCod]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[ColCod]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[ColCod]"
+                      name="ColCod"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCanal]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCanal]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCanal]"
+                      name="DatCanal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRuta]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatRuta]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRuta]"
+                      name="DatRuta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFUpdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatFUpdate]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFUpdate]"
+                      name="DatFUpdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatUUpdate]"
+                      length="10"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]"
+                      name="DatUUpdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatGLoca]"
+                      length="70"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]"
+                      name="DatGLoca"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCodigo]"
+                      dataType="i2"
+                      name="DatCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatNombre]"
+                      dataType="wstr"
+                      length="50"
+                      name="DatNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatDirec]"
+                      dataType="wstr"
+                      length="90"
+                      name="DatDirec" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatTel]"
+                      dataType="wstr"
+                      length="17"
+                      name="DatTel" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatLimC]"
+                      dataType="cy"
+                      name="DatLimC" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatActivo]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatActivo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatIdentidad]"
+                      dataType="wstr"
+                      length="15"
+                      name="DatIdentidad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCiudad]"
+                      dataType="i2"
+                      name="DatCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatEmail]"
+                      dataType="wstr"
+                      length="40"
+                      name="DatEmail" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatRNE]"
+                      dataType="wstr"
+                      length="16"
+                      name="DatRNE" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatDireAmp]"
+                      dataType="wstr"
+                      length="200"
+                      name="DatDireAmp" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatObserva]"
+                      dataType="wstr"
+                      length="200"
+                      name="DatObserva" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DiasCred]"
+                      dataType="i2"
+                      name="DiasCred" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatECivil]"
+                      dataType="wstr"
+                      length="1"
+                      name="DatECivil" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatFNac]"
+                      dataType="dbTimeStamp"
+                      name="DatFNac" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[ColCod]"
+                      dataType="i2"
+                      name="ColCod" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCanal]"
+                      dataType="i2"
+                      name="DatCanal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatRuta]"
+                      dataType="i2"
+                      name="DatRuta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatFUpdate]"
+                      dataType="dbTimeStamp"
+                      name="DatFUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      name="DatUUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatGLoca]"
+                      dataType="wstr"
+                      length="70"
+                      name="DatGLoca" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      name="Cia" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCodigo]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCodigo]"
+                      name="DatCodigo" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatNombre]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatNombre]"
+                      name="DatNombre" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatDirec]"
+                      dataType="wstr"
+                      length="90"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatDirec]"
+                      name="DatDirec" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatTel]"
+                      dataType="wstr"
+                      length="17"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatTel]"
+                      name="DatTel" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatLimC]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatLimC]"
+                      name="DatLimC" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatActivo]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatActivo]"
+                      name="DatActivo" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatIdentidad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatIdentidad]"
+                      name="DatIdentidad" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCiudad]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCiudad]"
+                      name="DatCiudad" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatEmail]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatEmail]"
+                      name="DatEmail" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatRNE]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatRNE]"
+                      name="DatRNE" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatDireAmp]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatDireAmp]"
+                      name="DatDireAmp" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatObserva]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatObserva]"
+                      name="DatObserva" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DiasCred]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DiasCred]"
+                      name="DiasCred" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatECivil]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatECivil]"
+                      name="DatECivil" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatFNac]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatFNac]"
+                      name="DatFNac" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ColCod]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ColCod]"
+                      name="ColCod" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCanal]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCanal]"
+                      name="DatCanal" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatRuta]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatRuta]"
+                      name="DatRuta" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatFUpdate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatFUpdate]"
+                      name="DatFUpdate" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatUUpdate]"
+                      name="DatUUpdate" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatGLoca]"
+                      dataType="wstr"
+                      length="70"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatGLoca]"
+                      name="DatGLoca" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Migracion Clientes.Paths[Data Conversion Output]"
+              endId="Package\Migracion Clientes\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Clientes.Paths[Lookup Match Output]"
+              endId="Package\Migracion Clientes\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Clientes\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Migracion Clientes.Paths[Lookup No Match Output]"
+              endId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Clientes\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Clientes.Paths[Salida de origen de ADO NET]"
+              endId="Package\Migracion Clientes\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{cb83b3d5-7fcb-4a36-b1ff-a45d035d3d41}"
+      DTS:From="Package\Migracion Clientes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Actualizar Ultima Migracion Clientes" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Clientes"
+          TopLeft="98.9583312047437,58.26666667872" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Actualizar Ultima Migracion Clientes"
+          TopLeft="60,137.999999457597" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="181.679165602372,99.86666667872">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1333327788773"
+              Start="0,0"
+              End="0,30.6333327788773">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6333327788773" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Migracion Clientes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Clientes\Data Conversion"
+          TopLeft="287.499984291693,94.4666660097573" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migracion Clientes\Lookup"
+          TopLeft="299.999983608723,168.999998824795" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migracion Clientes\Destino de ADO NET"
+          TopLeft="129.166659609311,279.933331386712" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Clientes\OLE DB Command"
+          TopLeft="441.666642535065,285.066664689912" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Migracion Clientes\Origen de ADO NET"
+          TopLeft="281.666651277079,13.8666665702396" />
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup Match Output]"
+          TopLeft="373.86665027539,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.399992259675,74.4666658651166"
+              Start="0,0"
+              End="151.399992259675,66.9666658651166">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4115614442154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.4115614442154"
+                    Point2="0,30.4115614442154"
+                    Point3="4,30.4115614442154" />
+                  <mssgle:LineSegment
+                    End="147.399992259675,30.4115614442154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147.399992259675,30.4115614442154"
+                    Point2="151.399992259675,30.4115614442154"
+                    Point3="151.399992259675,34.4115614442154" />
+                  <mssgle:LineSegment
+                    End="151.399992259675,66.9666658651166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="27.5086094110874,35.4115614442154,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Salida de origen de ADO NET]"
+          TopLeft="366.783317784386,55.4666665702396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.9999994395177"
+              Start="0,0"
+              End="0,31.4999994395177">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4999994395177" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Data Conversion Output]"
+          TopLeft="365.499984291693,136.066666009757">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.10000068296989,32.9333328150379"
+              Start="0,0"
+              End="-9.10000068296989,25.4333328150379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.466666407519"
+                    Point2="0,16.466666407519"
+                    Point3="-4,16.466666407519" />
+                  <mssgle:LineSegment
+                    End="-5.10000068296989,16.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.10000068296989,16.466666407519"
+                    Point2="-9.10000068296989,16.466666407519"
+                    Point3="-9.10000068296989,20.466666407519" />
+                  <mssgle:LineSegment
+                    End="-9.10000068296989,25.4333328150379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup No Match Output]"
+          TopLeft="356.399983608723,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.833323999412,69.3333325619167"
+              Start="0,0"
+              End="-138.833323999412,61.8333325619167">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6666662809583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6666662809583"
+                    Point2="0,34.6666662809583"
+                    Point3="-4,34.6666662809583" />
+                  <mssgle:LineSegment
+                    End="-134.833323999412,34.6666662809583" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134.833323999412,34.6666662809583"
+                    Point2="-138.833323999412,34.6666662809583"
+                    Point3="-138.833323999412,38.6666662809583" />
+                  <mssgle:LineSegment
+                    End="-138.833323999412,61.8333325619167" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.223048718456,39.6666662809583,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
