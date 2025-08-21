@@ -11,11 +11,21 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{E543BCD8-7303-4904-98F0-4D242AF5FBFC}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{7FF69815-445D-4814-A8C5-CB331F0AF2E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E561AD33-DFD8-4914-9AD4-65FB646D0459}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaFiltro">
+      <DTS:VariableValue
+        DTS:DataType="7">8/20/2025 7:49:27 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Actualizar ultima Migracion Productos"
@@ -530,6 +540,84 @@
                       refId="Package\Migracion Productos\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Migracion Productos\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Productos\Data Conversion 2"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Productos\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Productos\Data Conversion 2.Inputs[Data Conversion Input].Columns[Prod_DescripcionCorta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="Prod_DescripcionCorta"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_DescripcionCorta]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Productos\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Output].Columns[Prod_DescripcionCortaC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Output].Columns[Prod_DescripcionCortaC]"
+                      name="Prod_DescripcionCortaC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_DescripcionCorta]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Productos\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1629,6 +1717,292 @@
               </outputs>
             </component>
             <component
+              refId="Package\Migracion Productos\Destino de ADO NET 2"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Inve"."tbProductos"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Productos\Destino de ADO NET 2.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Prod_Codigo"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Codigo]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Codigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_CodigoBarra]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="Prod_CodigoBarra"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_CodigoBarra]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CodigoBarra]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Prod_Descripcion"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Descripcion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Descripcion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Imagen]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="120"
+                      cachedName="Prod_Imagen"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Imagen]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Imagen]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Subc_Id]"
+                      cachedDataType="i4"
+                      cachedName="Subc_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Subc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Subc_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Marc_Id]"
+                      cachedDataType="i4"
+                      cachedName="Marc_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Marc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Marc_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prov_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prov_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prov_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prov_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_PrecioUnitario]"
+                      cachedDataType="cy"
+                      cachedName="Prod_PrecioUnitario"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_PrecioUnitario]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PrecioUnitario]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_CostoTotal]"
+                      cachedDataType="cy"
+                      cachedName="Prod_CostoTotal"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_CostoTotal]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CostoTotal]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_PagaImpuesto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Prod_PagaImpuesto"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_PagaImpuesto]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PagaImpuesto]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_EsPromo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Prod_EsPromo"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_EsPromo]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_EsPromo]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Prod_FechaModificacion"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_FechaCreacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Usua_Modificacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Modificacion"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_DescripcionCortaC]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Prod_DescripcionCortaC"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_DescripcionCorta]"
+                      lineageId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Output].Columns[Prod_DescripcionCortaC]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Impulsado]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Impulsado"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Impulsado]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Impulsado]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Impu_Id]"
+                      cachedDataType="i4"
+                      cachedName="Impu_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Impu_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Impu_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Id]"
+                      dataType="i4"
+                      name="Prod_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Codigo]"
+                      dataType="wstr"
+                      length="10"
+                      name="Prod_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_CodigoBarra]"
+                      dataType="wstr"
+                      length="40"
+                      name="Prod_CodigoBarra" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Descripcion]"
+                      dataType="wstr"
+                      length="70"
+                      name="Prod_Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_DescripcionCorta]"
+                      dataType="wstr"
+                      length="50"
+                      name="Prod_DescripcionCorta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Imagen]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Prod_Imagen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Subc_Id]"
+                      dataType="i4"
+                      name="Subc_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Marc_Id]"
+                      dataType="i4"
+                      name="Marc_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prov_Id]"
+                      dataType="i4"
+                      name="Prov_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Impu_Id]"
+                      dataType="i4"
+                      name="Impu_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_PrecioUnitario]"
+                      dataType="numeric"
+                      name="Prod_PrecioUnitario"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_CostoTotal]"
+                      dataType="numeric"
+                      name="Prod_CostoTotal"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_PagaImpuesto]"
+                      dataType="wstr"
+                      length="1"
+                      name="Prod_PagaImpuesto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_EsPromo]"
+                      dataType="wstr"
+                      length="1"
+                      name="Prod_EsPromo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Impulsado]"
+                      dataType="bool"
+                      name="Prod_Impulsado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Estado]"
+                      dataType="bool"
+                      name="Prod_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="Prod_FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Prod_FechaModificacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Productos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Migracion Productos\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1973,6 +2347,147 @@ where [refTable].[Cia] = ? and [refTable].[CodProd] = ? and [refTable].[PrLotes]
                       refId="Package\Migracion Productos\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Migracion Productos\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Productos\Lookup 2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Inve].[tbProductos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Inve].[tbProductos]) [refTable]
+where [refTable].[Prod_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Prod_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_Codigo" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_CodigoBarra" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_Descripcion" dataType="DT_STR" length="70" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_DescripcionCorta" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_Imagen" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Subc_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Marc_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prov_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Impu_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_PrecioUnitario" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Prod_CostoTotal" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Prod_PagaImpuesto" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_EsPromo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Prod_Impulsado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Productos\Lookup 2.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input].Columns[Prod_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Id"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Prod_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Productos\Lookup 2.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3120,6 +3635,406 @@ WHERE
               </outputs>
             </component>
             <component
+              refId="Package\Migracion Productos\OLE DB Command 2"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC [Inve].[SP_Producto_Actualizar] ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Productos\OLE DB Command 2.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_Impulsado]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Impulsado"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Impulsado]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Impulsado]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_EsPromo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Prod_EsPromo"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_EsPromo]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_EsPromo]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_PagaImpuesto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Prod_PagaImpuesto"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_PagaImpuesto]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PagaImpuesto]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_CostoTotal]"
+                      cachedDataType="cy"
+                      cachedName="Prod_CostoTotal"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_CostoTotal]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CostoTotal]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_PrecioUnitario]"
+                      cachedDataType="cy"
+                      cachedName="Prod_PrecioUnitario"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_PrecioUnitario]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PrecioUnitario]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Usua_Modificacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Modificacion"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Usua_Modificacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prov_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prov_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prov_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prov_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Subc_Id]"
+                      cachedDataType="i4"
+                      cachedName="Subc_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Subc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Subc_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_Imagen]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="120"
+                      cachedName="Prod_Imagen"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Imagen]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Imagen]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Prod_Descripcion"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Descripcion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Descripcion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_CodigoBarra]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="Prod_CodigoBarra"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_CodigoBarra]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CodigoBarra]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Prod_Codigo"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Codigo]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Codigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Marc_Id]"
+                      cachedDataType="i4"
+                      cachedName="Marc_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Marc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Marc_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Prod_FechaModificacion"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_FechaModificacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Impu_Id]"
+                      cachedDataType="i4"
+                      cachedName="Impu_Id"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Impu_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Impu_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_DescripcionCorta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="Prod_DescripcionCorta"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_DescripcionCorta]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_DescripcionCorta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Id]"
+                      dataType="i4"
+                      name="@Prod_Id">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="@Prod_Codigo">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_CodigoBarra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="@Prod_CodigoBarra">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="@Prod_Descripcion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_DescripcionCorta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@Prod_DescripcionCorta">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Imagen]"
+                      codePage="1252"
+                      dataType="text"
+                      name="@Prod_Imagen">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Subc_Id]"
+                      dataType="i4"
+                      name="@Subc_Id">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Marc_Id]"
+                      dataType="i4"
+                      name="@Marc_Id">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prov_Id]"
+                      dataType="i4"
+                      name="@Prov_Id">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Impu_Id]"
+                      dataType="i4"
+                      name="@Impu_Id">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_PrecioUnitario]"
+                      dataType="numeric"
+                      name="@Prod_PrecioUnitario"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_CostoTotal]"
+                      dataType="numeric"
+                      name="@Prod_CostoTotal"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_PagaImpuesto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="@Prod_PagaImpuesto">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_EsPromo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="@Prod_EsPromo">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_Impulsado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="@Prod_Impulsado">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Usua_Modificacion]"
+                      dataType="i4"
+                      name="@Usua_Modificacion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="@Prod_FechaModificacion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Migracion Productos\Origen de ADO NET"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
@@ -4244,6 +5159,462 @@ WHERE
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Migracion Productos\Poblar Productos externa"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Poblar Productos externa"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  CAST(p.Cia AS INT) AS Prod_Id,
+				 CAST(p.CodProd  AS VARCHAR(10)) AS Prod_Codigo ,
+				 CAST(p.Codigobr AS VARCHAR(13)) AS  Prod_CodigoBarra,
+				 CAST(p.Desprod AS VARCHAR(50)) AS  Prod_Descripcion ,
+				 CAST(p.Desprod2 AS varchar(50)) AS  Prod_DescripcionCorta,
+				 CAST(p.Patimage AS varchar(120)) AS  Prod_Imagen,
+				 CAST(p.Codsub AS INT) AS  Subc_Id,
+				  CAST(p.Codmar AS INT) AS Marc_Id  ,
+				  CAST(p.Codprov AS INT) AS  Prov_Id,
+
+				 CAST(p.cosuni  AS money) AS  Prod_PrecioUnitario,
+				 CAST(p.costotal AS money) AS Prod_CostoTotal ,
+				 p.PagImp AS  Prod_PagaImpuesto,
+				 CAST(p.PACombo AS varchar(1)) AS  Prod_EsPromo,
+                 ISNULL(p.ProFUpdate, GETDATE()) AS  Prod_FechaModificacion,
+				 0 AS Prod_Impulsado,
+				 4 AS Impu_Id,
+				 1 AS Usua_Modificacion
+				--,  u.Usua_Usuario AS ProUUpdate
+		 FROM [BDD_Extena].[dbo].[PRODUCTOS] p
+ WHERE p.ProFUpdate  &gt;= ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parámetro0:Input",{E561AD33-DFD8-4914-9AD4-65FB646D0459};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Productos\Poblar Productos externa.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Id]"
+                      name="Prod_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Codigo]"
+                      length="10"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Codigo]"
+                      name="Prod_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CodigoBarra]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_CodigoBarra]"
+                      length="13"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CodigoBarra]"
+                      name="Prod_CodigoBarra"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Descripcion]"
+                      length="50"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Descripcion]"
+                      name="Prod_Descripcion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_DescripcionCorta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_DescripcionCorta]"
+                      length="70"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_DescripcionCorta]"
+                      name="Prod_DescripcionCorta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Imagen]"
+                      length="120"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Imagen]"
+                      name="Prod_Imagen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Subc_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Subc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Subc_Id]"
+                      name="Subc_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Marc_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Marc_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Marc_Id]"
+                      name="Marc_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prov_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prov_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prov_Id]"
+                      name="Prov_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PrecioUnitario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_PrecioUnitario]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PrecioUnitario]"
+                      name="Prod_PrecioUnitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CostoTotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_CostoTotal]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_CostoTotal]"
+                      name="Prod_CostoTotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PagaImpuesto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_PagaImpuesto]"
+                      length="1"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_PagaImpuesto]"
+                      name="Prod_PagaImpuesto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_EsPromo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_EsPromo]"
+                      length="1"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_EsPromo]"
+                      name="Prod_EsPromo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_FechaModificacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_FechaModificacion]"
+                      name="Prod_FechaModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Impulsado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Impulsado]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_Impulsado]"
+                      name="Prod_Impulsado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Impu_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Impu_Id]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Impu_Id]"
+                      name="Impu_Id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Id]"
+                      dataType="i4"
+                      name="Prod_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Prod_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_CodigoBarra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="Prod_CodigoBarra" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Prod_Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_DescripcionCorta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Prod_DescripcionCorta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      name="Prod_Imagen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Subc_Id]"
+                      dataType="i4"
+                      name="Subc_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Marc_Id]"
+                      dataType="i4"
+                      name="Marc_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prov_Id]"
+                      dataType="i4"
+                      name="Prov_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_PrecioUnitario]"
+                      dataType="cy"
+                      name="Prod_PrecioUnitario" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_CostoTotal]"
+                      dataType="cy"
+                      name="Prod_CostoTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_PagaImpuesto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Prod_PagaImpuesto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_EsPromo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Prod_EsPromo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Prod_FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Prod_Impulsado]"
+                      dataType="i4"
+                      name="Prod_Impulsado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].ExternalColumns[Impu_Id]"
+                      dataType="i4"
+                      name="Impu_Id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Id]"
+                      name="Prod_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Codigo]"
+                      name="Prod_Codigo" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_CodigoBarra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_CodigoBarra]"
+                      name="Prod_CodigoBarra" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Descripcion]"
+                      name="Prod_Descripcion" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_DescripcionCorta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_DescripcionCorta]"
+                      name="Prod_DescripcionCorta" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Imagen]"
+                      name="Prod_Imagen" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Subc_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Subc_Id]"
+                      name="Subc_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Marc_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Marc_Id]"
+                      name="Marc_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prov_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prov_Id]"
+                      name="Prov_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_PrecioUnitario]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_PrecioUnitario]"
+                      name="Prod_PrecioUnitario" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_CostoTotal]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_CostoTotal]"
+                      name="Prod_CostoTotal" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_PagaImpuesto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_PagaImpuesto]"
+                      name="Prod_PagaImpuesto" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_EsPromo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_EsPromo]"
+                      name="Prod_EsPromo" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_FechaModificacion]"
+                      name="Prod_FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Impulsado]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Prod_Impulsado]"
+                      name="Prod_Impulsado" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Impu_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Impu_Id]"
+                      name="Impu_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -4257,6 +5628,11 @@ WHERE
               name="Data Conversion Output"
               startId="Package\Migracion Productos\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\Migracion Productos.Paths[Data Conversion Output2]"
+              endId="Package\Migracion Productos\Lookup 2.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Productos\Data Conversion 2.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Migracion Productos.Paths[Lookup Match Output]"
               endId="Package\Migracion Productos\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
@@ -4267,6 +5643,11 @@ WHERE
               name="Lookup Match Output"
               startId="Package\Migracion Productos\Lookup 1.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Migracion Productos.Paths[Lookup Match Output2]"
+              endId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Productos\Lookup 2.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Migracion Productos.Paths[Lookup No Match Output]"
               endId="Package\Migracion Productos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
@@ -4276,6 +5657,16 @@ WHERE
               endId="Package\Migracion Productos\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
               startId="Package\Migracion Productos\Lookup 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Productos.Paths[Lookup No Match Output2]"
+              endId="Package\Migracion Productos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Productos\Lookup 2.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Productos.Paths[OLE DB Source Output]"
+              endId="Package\Migracion Productos\Data Conversion 2.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Migracion Productos.Paths[Salida de origen de ADO NET]"
               endId="Package\Migracion Productos\Data Conversion.Inputs[Data Conversion Input]"
@@ -4290,8 +5681,38 @@ WHERE
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{FB7F2C23-6CD4-447A-9CCA-E96E197D91F9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Productos';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FechaFiltro" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{260D53D1-5DEB-4714-839B-4B385F5F51BC}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Migracion Productos" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
@@ -4312,18 +5733,18 @@ WHERE
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="252,42.4"
           Id="Package\Actualizar ultima Migracion Productos"
-          TopLeft="60,161.399999294877" />
+          TopLeft="216.666658106778,227.266665503515" />
         <NodeLayout
           Size="172.8,41.6"
           Id="Package\Migracion Productos"
-          TopLeft="93.3333315120799,60" />
+          TopLeft="249.999989618858,125.866666208638" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="182.86666575604,101.6">
+          TopLeft="339.533323862818,167.466666208638">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4343,6 +5764,32 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="249.166653052801,41.5999997107188" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="335.383321335829,83.1999997107188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6666664979193"
+              Start="0,0"
+              End="0,35.1666664979193">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1666664979193" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4352,79 +5799,65 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Productos\OLE DB Command 1"
-          TopLeft="728.999989137053,301.999995499849" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Productos\OLE DB Command"
-          TopLeft="237.999996453523,305.999995440245" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Productos\Destino de ADO NET"
-          TopLeft="25.9999996125695,311.999995350838" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Productos\Lookup 1"
-          TopLeft="624.999990686774,196.999997064471" />
-        <NodeLayout
-          Size="158.4,45.6"
-          Id="Package\Migracion Productos\Poblar Productos"
-          TopLeft="113.999998301268,47.9999992847442" />
+          Size="172.8,41.6"
+          Id="Package\Migracion Productos\Origen de ADO NET"
+          TopLeft="593.99999114871,39.9999994039536" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Productos\Data Conversion 1"
           TopLeft="602.9999910146,115.999998271465" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Productos\Lookup"
-          TopLeft="144.999997839332,222.999996677041" />
+          Size="156,41.6"
+          Id="Package\Migracion Productos\Data Conversion"
+          TopLeft="123.999998152256,139.999997913838" />
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Migracion Productos\Origen de ADO NET"
-          TopLeft="593.99999114871,39.9999994039536" />
+          Size="167.2,41.6"
+          Id="Package\Migracion Productos\OLE DB Command"
+          TopLeft="237.999996453523,305.999995440245" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Migracion Productos\Destino de ADO NET 1"
           TopLeft="501.999992519617,296.999995574355" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Productos\Data Conversion"
-          TopLeft="123.999998152256,139.999997913838" />
+          Size="158.4,45.6"
+          Id="Package\Migracion Productos\Poblar Productos"
+          TopLeft="113.999998301268,47.9999992847442" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Productos\OLE DB Command 1"
+          TopLeft="728.999989137053,301.999995499849" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migracion Productos\Lookup"
+          TopLeft="144.999997839332,222.999996677041" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Productos\Lookup 1"
+          TopLeft="624.999990686774,196.999997064471" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migracion Productos\Destino de ADO NET"
+          TopLeft="25.9999996125695,311.999995350838" />
         <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Lookup No Match Output1]"
-          TopLeft="685.399990686774,238.599997064471">
+          Id="Package\Migracion Productos.Paths[Salida de origen de ADO NET1]"
+          TopLeft="682.699991081655,81.5999994039536">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-90.5999981671573,58.3999985098839"
+              EndConnector="0,34.3999988675118"
               Start="0,0"
-              End="-90.5999981671573,50.8999985098839">
+              End="0,26.8999988675118">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.199999254942" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.199999254942"
-                    Point2="0,29.199999254942"
-                    Point3="-4,29.199999254942" />
-                  <mssgle:LineSegment
-                    End="-86.5999981671573,29.199999254942" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-86.5999981671573,29.199999254942"
-                    Point2="-90.5999981671573,29.199999254942"
-                    Point3="-90.5999981671573,33.199999254942" />
-                  <mssgle:LineSegment
-                    End="-90.5999981671573,50.8999985098839" />
+                    End="0,26.8999988675118" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-101.106385802329,34.199999254942,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4462,6 +5895,42 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup No Match Output1]"
+          TopLeft="685.399990686774,238.599997064471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.5999981671573,58.3999985098839"
+              Start="0,0"
+              End="-90.5999981671573,50.8999985098839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.199999254942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.199999254942"
+                    Point2="0,29.199999254942"
+                    Point3="-4,29.199999254942" />
+                  <mssgle:LineSegment
+                    End="-86.5999981671573,29.199999254942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.5999981671573,29.199999254942"
+                    Point2="-90.5999981671573,29.199999254942"
+                    Point3="-90.5999981671573,33.199999254942" />
+                  <mssgle:LineSegment
+                    End="-90.5999981671573,50.8999985098839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.106385802329,34.199999254942,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Productos.Paths[Lookup No Match Output]"
           TopLeft="201.399997839332,264.599996677041">
           <EdgeLayout.Curve>
@@ -4494,6 +5963,42 @@ WHERE
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-99.3063858321309,28.6999993368984,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup Match Output1]"
+          TopLeft="704.199990686774,238.599997064471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.799998450279,63.399998435378"
+              Start="0,0"
+              End="112.799998450279,55.899998435378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8572542638405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8572542638405"
+                    Point2="0,25.8572542638405"
+                    Point3="4,25.8572542638405" />
+                  <mssgle:LineSegment
+                    End="108.799998450279,25.8572542638405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.799998450279,25.8572542638405"
+                    Point2="112.799998450279,25.8572542638405"
+                    Point3="112.799998450279,29.8572542638405" />
+                  <mssgle:LineSegment
+                    End="112.799998450279,55.899998435378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.20861250638959,30.8572542638405,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4534,28 +6039,6 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Data Conversion Output]"
-          TopLeft="201.699997995794,181.599997913838">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.3999987632036"
-              Start="0,0"
-              End="0,33.8999987632036">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.8999987632036" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Migracion Productos.Paths[Data Conversion Output1]"
           TopLeft="685.199990850687,157.599998271465">
           <EdgeLayout.Curve>
@@ -4578,19 +6061,73 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Salida de origen de ADO NET1]"
-          TopLeft="682.699991081655,81.5999994039536">
+          Id="Package\Migracion Productos.Paths[Data Conversion Output]"
+          TopLeft="201.699997995794,181.599997913838">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.3999988675118"
+              EndConnector="0,41.3999987632036"
               Start="0,0"
-              End="0,26.8999988675118">
+              End="0,33.8999987632036">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8999988675118" />
+                    End="0,33.8999987632036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Migracion Productos\Poblar Productos externa"
+          TopLeft="369.966648681794,377.53333088047" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Productos\Data Conversion 2"
+          TopLeft="367.366648954982,459.466664545271" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Productos\Lookup 2"
+          TopLeft="383.19998142322,523.799997920791" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Productos\Destino de ADO NET 2"
+          TopLeft="234.03332290666,617.46666436447" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Productos\OLE DB Command 2"
+          TopLeft="483.199975959461,618.333331386712" />
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[OLE DB Source Output]"
+          TopLeft="467.566648681794,419.13333088047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.199999726812,40.3333336648015"
+              Start="0,0"
+              End="-18.199999726812,32.8333336648015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1666668324008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1666668324008"
+                    Point2="0,20.1666668324008"
+                    Point3="-4,20.1666668324008" />
+                  <mssgle:LineSegment
+                    End="-14.199999726812,20.1666668324008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.199999726812,20.1666668324008"
+                    Point2="-18.199999726812,20.1666668324008"
+                    Point3="-18.199999726812,24.1666668324008" />
+                  <mssgle:LineSegment
+                    End="-18.199999726812,32.8333336648015" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4600,43 +6137,140 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Lookup Match Output1]"
-          TopLeft="704.199990686774,238.599997064471">
+          Id="Package\Migracion Productos.Paths[Data Conversion Output2]"
+          TopLeft="446.483315189101,501.066664545271">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112.799998450279,63.399998435378"
+              EndConnector="0,22.73333337552"
               Start="0,0"
-              End="112.799998450279,55.899998435378">
+              End="0,15.23333337552">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.8572542638405" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8572542638405"
-                    Point2="0,25.8572542638405"
-                    Point3="4,25.8572542638405" />
+                    End="0,15.23333337552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup No Match Output2]"
+          TopLeft="443.59998142322,565.399997920791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116.76665851656,52.0666664436789"
+              Start="0,0"
+              End="-116.76665851656,44.5666664436789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="108.799998450279,25.8572542638405" />
+                    End="0,22.0333332218394" />
                   <mssgle:CubicBezierSegment
-                    Point1="108.799998450279,25.8572542638405"
-                    Point2="112.799998450279,25.8572542638405"
-                    Point3="112.799998450279,29.8572542638405" />
+                    Point1="0,22.0333332218394"
+                    Point2="0,26.0333332218394"
+                    Point3="-4,26.0333332218394" />
                   <mssgle:LineSegment
-                    End="112.799998450279,55.899998435378" />
+                    End="-112.76665851656,26.0333332218394" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112.76665851656,26.0333332218394"
+                    Point2="-116.76665851656,26.0333332218394"
+                    Point3="-116.76665851656,30.0333332218394" />
+                  <mssgle:LineSegment
+                    End="-116.76665851656,44.5666664436789" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="8.20861250638959,30.8572542638405,96.3827734375,11.609375"
+              BoundingBox="-114.18971597703,31.0333332218394,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup Match Output2]"
+          TopLeft="462.39998142322,565.399997920791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.799994536241,52.9333334659206"
+              Start="0,0"
+              End="108.799994536241,45.4333334659206">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5884967861009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5884967861009"
+                    Point2="0,21.5884967861009"
+                    Point3="4,21.5884967861009" />
+                  <mssgle:LineSegment
+                    End="104.799994536241,21.5884967861009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.799994536241,21.5884967861009"
+                    Point2="108.799994536241,21.5884967861009"
+                    Point3="108.799994536241,25.5884967861009" />
+                  <mssgle:LineSegment
+                    End="108.799994536241,45.4333334659206" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.20861054937053,26.5884967861009,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Poblar Productos externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Inve].[tbProductos]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Destino de ADO NET 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

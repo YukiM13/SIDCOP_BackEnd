@@ -1,7 +1,6 @@
 ﻿using Api_Sistema_Reportes.API.Helpers;
 using Microsoft.AspNetCore.Mvc;
-using static System.Net.Mime.MediaTypeNames;
-using Microsoft.SqlServer.Dts.Runtime;
+using System.Diagnostics;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
 {
@@ -11,37 +10,58 @@ namespace Api_SIDCOP.API.Controllers.Acceso
     [ApiKey]
     public class MigracionController : Controller
     {
-        [HttpPost("Grupos")]
+        [HttpPost("Migrar")]
+    
         public IActionResult EjecutarPaquete(string paquete)
         {
             try
             {
-                // Carpeta base de la app (donde se ejecuta)
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
-                // Subimos niveles hasta llegar a la carpeta donde están los .dtsx
-                string rutaPaquetes = Path.Combine(basePath, @"..\..\..\SIDCOP_Backend.ETL\Paquetes");
+                // Normaliza la ruta completa
+                basePath = Path.GetFullPath(basePath);
+
+                // Buscamos hasta la carpeta raíz del backend
+                string rootPath = basePath.Split(new string[] { "SIDCOP_BackEnd" }, StringSplitOptions.None)[0] + "SIDCOP_BackEnd";
+
+                // Ahora armamos la ruta hacia los paquetes
+                string rutaPaquetes = Path.Combine(rootPath, @"SIDCOP\SIDCOP_Backend.ETL");
 
                 // Ruta final del paquete
                 string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
+                // Argumentos para dtexec
+                string argumentos = $"/F \"{rutaPaquete}\"";
 
-                // Normaliza la ruta para que sea absoluta
-                rutaPaquete = Path.GetFullPath(rutaPaquete);
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "dtexec",
+                    Arguments = argumentos,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
 
-                if (!System.IO.File.Exists(rutaPaquete))
-                    return NotFound($"No se encontró el paquete: {rutaPaquete}");
+                using (Process proceso = new Process { StartInfo = psi })
+                {
+                    proceso.Start();
+                    string salida = proceso.StandardOutput.ReadToEnd();
+                    string error = proceso.StandardError.ReadToEnd();
+                    proceso.WaitForExit();
 
-                // Cargar y ejecutar el paquete
-                Application app = new Application();
-                Package pkg = app.LoadPackage(rutaPaquete, null);
-                DTSExecResult resultado = pkg.Execute();
-
-                return Ok($"Migracion para {paquete} ejecutada con resultado: {resultado}");
+                    if (proceso.ExitCode == 0)
+                        return Ok($"Migracion de {paquete} ejecutada correctamente.\nSalida: {salida}");
+                    else
+                        return BadRequest($"Error al migrar {paquete}.\nError: {error}");
+                }
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error al ejecutar el paquete: {ex.Message}");
+                return StatusCode(500, $"Excepción: {ex.Message}");
             }
         }
+
+
+
     }
 }
