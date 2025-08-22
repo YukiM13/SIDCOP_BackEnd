@@ -11,8 +11,8 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{6C0FEA97-6EB6-4CC3-977C-45716F2A48CB}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{02737F71-B8B9-46B6-A274-FED09AA70407}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -3510,10 +3510,6 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Size="185.6,41.6"
           Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET 3"
           TopLeft="568.999991521239,655.399994680285" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
-          TopLeft="208.999996885657,78.9999988228083" />
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET1]"
           TopLeft="752.799990105629,103.599999076128">
@@ -3550,7 +3546,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET]"
-          TopLeft="288.899996878207,120.599998822808">
+          TopLeft="288.066663590405,120.599998822808">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3567,9 +3563,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,6.94999941140415,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3756,7 +3750,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-122.175037967265,38.1999991953373,129.350078125,16"
+              BoundingBox="-113.306385623515,38.1999991953373,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4001,9 +3995,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,10.9499993517995,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
@@ -4013,6 +4005,10 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Size="28.8,56"
           Id="0545dbe5-8458-4c10-a73e-7db53db6676d"
           TopLeft="581.999991327524,366.799994784594" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
+          TopLeft="208.999996885657,78.9999988228083" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

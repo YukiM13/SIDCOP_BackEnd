@@ -11,8 +11,8 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{D67E2B72-ACC6-4ECF-B2AF-C00A7B782BDA}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{F8407D0F-AD58-4865-9EF7-F389D6CE543C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -123,6 +123,11 @@
                       cachedDataType="i4"
                       cachedName="Mesfac"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Mesfac]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Data Conversion.Inputs[Data Conversion Input].Columns[Totfact]"
+                      cachedDataType="cy"
+                      cachedName="Totfact"
+                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Totfact]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -385,6 +390,27 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Fctime]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TotfactC]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TotfactC]"
+                      name="TotfactC"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Totfact]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -914,6 +940,13 @@
                       cachedPrecision="10"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[numfac]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[TotfactC]"
+                      cachedDataType="numeric"
+                      cachedName="TotfactC"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Totfact]"
+                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TotfactC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2629,12 +2662,6 @@ WHERE Cia       = ?
                       externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[DesFact]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].Columns[Totfact]"
-                      cachedDataType="cy"
-                      cachedName="Totfact"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Totfact]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].Columns[ReffacC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2711,6 +2738,13 @@ WHERE Cia       = ?
                       cachedPrecision="10"
                       externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].Columns[TotfactC]"
+                      cachedDataType="numeric"
+                      cachedName="TotfactC"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TotfactC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3623,6 +3657,657 @@ WHERE Cia       = ?
                       refId="Package\Migracion Facturas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Migracion Facturas\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Facturas\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CAST(Cia AS INT) AS Fact_Id,
+		CAST(DatCodigo AS INT) AS DiCl_Id,
+		CAST(numfac AS varchar(10)) AS Fact_Numero,
+		CASE WHEN Tipfac = 1 then '01' ELSE '02' END AS Fact_TipoDeDocumento,
+		21 AS RegC_Id,
+		CAST(VenCodigo AS INT) AS Vend_Id,
+		CAST(Tpfact AS char(2))  AS Fact_TipoVenta,
+		Fechafac AS Fact_FechaEmision,
+		Fechven AS Fact_FechaLimiteEmision,
+	    '1001' AS Fact_RangoInicialAutorizado,
+	    '1999' AS Fact_RangoFinalAutorizado,
+		ImpFac AS Fact_TotalImpuesto15,
+		0 AS Fact_TotalImpuesto18,
+		Ftonoimp AS Fact_ImporteExento,
+		FTogrimp AS Fact_ImporteGravado15,
+		0 AS Fact_ImporteGravado18,
+		0 AS Fact_ImporteExonerado,
+		DesFact AS Fact_TotalDescuento,
+		SubFac AS Fact_Subtotal,
+		Totfact AS Fact_Total,
+		0 AS Fact_Latitud,
+		0 AS Fact_Longitud,
+		Reffac AS Fact_Referencia,
+		Autfac AS Fact_AutorizadoPor,
+		Anufac AS Fact_Anulado,
+		1 AS Usua_Modificacion,
+		GETDATE() AS Fact_FechaModificacion
+
+	
+FROM BDD_Extena.dbo.FACTURA</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Facturas\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Id]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Id]"
+                      name="Fact_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiCl_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiCl_Id]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiCl_Id]"
+                      name="DiCl_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Numero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Numero]"
+                      length="10"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Numero]"
+                      name="Fact_Numero"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TipoDeDocumento]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TipoDeDocumento]"
+                      length="2"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TipoDeDocumento]"
+                      name="Fact_TipoDeDocumento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegC_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegC_Id]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegC_Id]"
+                      name="RegC_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      name="Vend_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TipoVenta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TipoVenta]"
+                      length="2"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TipoVenta]"
+                      name="Fact_TipoVenta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaEmision]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaEmision]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaEmision]"
+                      name="Fact_FechaEmision"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaLimiteEmision]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaLimiteEmision]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaLimiteEmision]"
+                      name="Fact_FechaLimiteEmision"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_RangoInicialAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_RangoInicialAutorizado]"
+                      length="4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_RangoInicialAutorizado]"
+                      name="Fact_RangoInicialAutorizado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_RangoFinalAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_RangoFinalAutorizado]"
+                      length="4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_RangoFinalAutorizado]"
+                      name="Fact_RangoFinalAutorizado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalImpuesto15]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalImpuesto15]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalImpuesto15]"
+                      name="Fact_TotalImpuesto15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalImpuesto18]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalImpuesto18]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalImpuesto18]"
+                      name="Fact_TotalImpuesto18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteExento]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteExento]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteExento]"
+                      name="Fact_ImporteExento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteGravado15]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteGravado15]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteGravado15]"
+                      name="Fact_ImporteGravado15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteGravado18]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteGravado18]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteGravado18]"
+                      name="Fact_ImporteGravado18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteExonerado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteExonerado]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_ImporteExonerado]"
+                      name="Fact_ImporteExonerado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalDescuento]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalDescuento]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_TotalDescuento]"
+                      name="Fact_TotalDescuento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Subtotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Subtotal]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Subtotal]"
+                      name="Fact_Subtotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Total]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Total]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Total]"
+                      name="Fact_Total"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Latitud]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Latitud]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Latitud]"
+                      name="Fact_Latitud"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Longitud]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Longitud]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Longitud]"
+                      name="Fact_Longitud"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Referencia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Referencia]"
+                      length="90"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Referencia]"
+                      name="Fact_Referencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_AutorizadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_AutorizadoPor]"
+                      length="40"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_AutorizadoPor]"
+                      name="Fact_AutorizadoPor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Anulado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Anulado]"
+                      length="1"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_Anulado]"
+                      name="Fact_Anulado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaModificacion]"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fact_FechaModificacion]"
+                      name="Fact_FechaModificacion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Id]"
+                      dataType="i4"
+                      name="Fact_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiCl_Id]"
+                      dataType="i4"
+                      name="DiCl_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Fact_Numero" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TipoDeDocumento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Fact_TipoDeDocumento" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegC_Id]"
+                      dataType="i4"
+                      name="RegC_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      dataType="i4"
+                      name="Vend_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TipoVenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Fact_TipoVenta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaEmision]"
+                      dataType="dbTimeStamp"
+                      name="Fact_FechaEmision" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaLimiteEmision]"
+                      dataType="dbTimeStamp"
+                      name="Fact_FechaLimiteEmision" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_RangoInicialAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Fact_RangoInicialAutorizado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_RangoFinalAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Fact_RangoFinalAutorizado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalImpuesto15]"
+                      dataType="cy"
+                      name="Fact_TotalImpuesto15" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalImpuesto18]"
+                      dataType="i4"
+                      name="Fact_TotalImpuesto18" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteExento]"
+                      dataType="cy"
+                      name="Fact_ImporteExento" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteGravado15]"
+                      dataType="cy"
+                      name="Fact_ImporteGravado15" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteGravado18]"
+                      dataType="i4"
+                      name="Fact_ImporteGravado18" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_ImporteExonerado]"
+                      dataType="i4"
+                      name="Fact_ImporteExonerado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_TotalDescuento]"
+                      dataType="cy"
+                      name="Fact_TotalDescuento" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Subtotal]"
+                      dataType="cy"
+                      name="Fact_Subtotal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Total]"
+                      dataType="cy"
+                      name="Fact_Total" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Latitud]"
+                      dataType="i4"
+                      name="Fact_Latitud" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Longitud]"
+                      dataType="i4"
+                      name="Fact_Longitud" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Referencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="90"
+                      name="Fact_Referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_AutorizadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Fact_AutorizadoPor" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_Anulado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Fact_Anulado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fact_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Fact_FechaModificacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Id]"
+                      name="Fact_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiCl_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiCl_Id]"
+                      name="DiCl_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Numero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Numero]"
+                      name="Fact_Numero" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TipoDeDocumento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TipoDeDocumento]"
+                      name="Fact_TipoDeDocumento" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegC_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RegC_Id]"
+                      name="RegC_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      name="Vend_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TipoVenta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TipoVenta]"
+                      name="Fact_TipoVenta" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaEmision]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaEmision]"
+                      name="Fact_FechaEmision" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaLimiteEmision]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaLimiteEmision]"
+                      name="Fact_FechaLimiteEmision" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_RangoInicialAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_RangoInicialAutorizado]"
+                      name="Fact_RangoInicialAutorizado" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_RangoFinalAutorizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_RangoFinalAutorizado]"
+                      name="Fact_RangoFinalAutorizado" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalImpuesto15]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalImpuesto15]"
+                      name="Fact_TotalImpuesto15" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalImpuesto18]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalImpuesto18]"
+                      name="Fact_TotalImpuesto18" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteExento]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteExento]"
+                      name="Fact_ImporteExento" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteGravado15]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteGravado15]"
+                      name="Fact_ImporteGravado15" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteGravado18]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteGravado18]"
+                      name="Fact_ImporteGravado18" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteExonerado]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_ImporteExonerado]"
+                      name="Fact_ImporteExonerado" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalDescuento]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_TotalDescuento]"
+                      name="Fact_TotalDescuento" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Subtotal]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Subtotal]"
+                      name="Fact_Subtotal" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Total]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Total]"
+                      name="Fact_Total" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Latitud]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Latitud]"
+                      name="Fact_Latitud" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Longitud]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Longitud]"
+                      name="Fact_Longitud" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Referencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="90"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Referencia]"
+                      name="Fact_Referencia" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_AutorizadoPor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_AutorizadoPor]"
+                      name="Fact_AutorizadoPor" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Anulado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_Anulado]"
+                      name="Fact_Anulado" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fact_FechaModificacion]"
+                      name="Fact_FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Facturas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4855,13 +5540,13 @@ WHERE Cia       = ?
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Facturas"
-          TopLeft="279.166654691928,98.9999997287989" />
-        <NodeLayout
           Size="248,41.6"
           Id="Package\Actualizar Ultima Migracion Facturas"
           TopLeft="233.333323862818,171.583332557397" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Facturas"
+          TopLeft="279.166654691928,98.9999997287989" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 5]"
           TopLeft="360.049989277373,140.599999728799">
@@ -4893,41 +5578,41 @@ WHERE Cia       = ?
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Migracion Facturas\Poblar Factura Detalle"
-          TopLeft="657.999990195036,133.999998003244" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 1"
-          TopLeft="672.999989971518,210.999996855855" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Facturas\Destino de ADO NET"
-          TopLeft="53.9999991953373,378.799994665384" />
-        <NodeLayout
           Size="176,41.6"
           Id="Package\Migracion Facturas\OLE DB Command 1"
           TopLeft="804.999988004565,373.799994680286" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command"
-          TopLeft="297.999995559454,379.999994337559" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Facturas\Data Conversion"
-          TopLeft="219.999996721745,203.999996960163" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Migracion Facturas\Destino de ADO NET 1"
           TopLeft="582.999991312623,374.799994724989" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 1"
-          TopLeft="692.999989673495,284.999995753169" />
+          Size="176.8,41.6"
+          Id="Package\Migracion Facturas\Destino de ADO NET"
+          TopLeft="53.9999991953373,378.799994665384" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Migracion Facturas\Lookup"
           TopLeft="223.99999666214,282.999995782971" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Facturas\Lookup 1"
+          TopLeft="692.999989673495,284.999995753169" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Migracion Facturas\Poblar Factura Detalle"
+          TopLeft="657.999990195036,133.999998003244" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Facturas\OLE DB Command"
+          TopLeft="297.999995559454,379.999994337559" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Facturas\Data Conversion 1"
+          TopLeft="672.999989971518,210.999996855855" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Facturas\Data Conversion"
+          TopLeft="219.999996721745,203.999996960163" />
         <NodeLayout
           Size="152,41.6"
           Id="Package\Migracion Facturas\Poblar Facturas"
@@ -4946,6 +5631,194 @@ WHERE Cia       = ?
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.8999988526106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Salida de origen de ADO NET]"
+          TopLeft="294.999996751547,171.599998062849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.3999988973141"
+              Start="0,0"
+              End="0,24.8999988973141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8999988973141" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
+          TopLeft="753.399989673495,326.599995753169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.5999983608727,48.1999989718199"
+              Start="0,0"
+              End="-77.5999983608727,40.6999989718199">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.09999948591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.09999948591"
+                    Point2="0,24.09999948591"
+                    Point3="-4,24.09999948591" />
+                  <mssgle:LineSegment
+                    End="-73.5999983608727,24.09999948591" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.5999983608727,24.09999948591"
+                    Point2="-77.5999983608727,24.09999948591"
+                    Point3="-77.5999983608727,28.09999948591" />
+                  <mssgle:LineSegment
+                    End="-77.5999983608727,40.6999989718199" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.6063858991863,29.09999948591,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output]"
+          TopLeft="280.39999666214,324.599995782971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137.999997466803,54.199998882413"
+              Start="0,0"
+              End="-137.999997466803,46.699998882413">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.0999994412065"
+                    Point2="0,27.0999994412065"
+                    Point3="-4,27.0999994412065" />
+                  <mssgle:LineSegment
+                    End="-133.999997466803,27.0999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-133.999997466803,27.0999994412065"
+                    Point2="-137.999997466803,27.0999994412065"
+                    Point3="-137.999997466803,31.0999994412065" />
+                  <mssgle:LineSegment
+                    End="-137.999997466803,46.699998882413" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.806385452151,32.0999994412065,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output1]"
+          TopLeft="772.199989673495,326.599995753169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.79999833107,47.1999989271165"
+              Start="0,0"
+              End="120.79999833107,39.6999989271165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2501956408632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2501956408632"
+                    Point2="0,19.2501956408632"
+                    Point3="4,19.2501956408632" />
+                  <mssgle:LineSegment
+                    End="116.79999833107,19.2501956408632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.79999833107,19.2501956408632"
+                    Point2="120.79999833107,19.2501956408632"
+                    Point3="120.79999833107,23.2501956408632" />
+                  <mssgle:LineSegment
+                    End="120.79999833107,39.6999989271165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.208612446785,24.2501956408632,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output]"
+          TopLeft="297.866663328807,324.599995782971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.7333322306474,55.3999985545875"
+              Start="0,0"
+              End="83.7333322306474,47.8999985545875">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6248945146008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6248945146008"
+                    Point2="0,22.6248945146008"
+                    Point3="4,22.6248945146008" />
+                  <mssgle:LineSegment
+                    End="79.7333322306474,22.6248945146008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.7333322306474,22.6248945146008"
+                    Point2="83.7333322306474,22.6248945146008"
+                    Point3="83.7333322306474,26.6248945146008" />
+                  <mssgle:LineSegment
+                    End="83.7333322306474,47.8999985545875" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.3247206034263,27.6248945146008,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
+          TopLeft="754.199989822507,252.599996855855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.3999988973141"
+              Start="0,0"
+              End="0,24.8999988973141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8999988973141" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4988,196 +5861,28 @@ WHERE Cia       = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
-          TopLeft="753.399989673495,326.599995753169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-77.5999983608727,48.1999989718199"
-              Start="0,0"
-              End="-77.5999983608727,40.6999989718199">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.09999948591" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.09999948591"
-                    Point2="0,24.09999948591"
-                    Point3="-4,24.09999948591" />
-                  <mssgle:LineSegment
-                    End="-73.5999983608727,24.09999948591" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-73.5999983608727,24.09999948591"
-                    Point2="-77.5999983608727,24.09999948591"
-                    Point3="-77.5999983608727,28.09999948591" />
-                  <mssgle:LineSegment
-                    End="-77.5999983608727,40.6999989718199" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-94.6063858991864,29.09999948591,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
-          TopLeft="754.199989822507,252.599996855855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.3999988973141"
-              Start="0,0"
-              End="0,24.8999988973141">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8999988973141" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output1]"
-          TopLeft="772.199989673495,326.599995753169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120.79999833107,47.1999989271165"
-              Start="0,0"
-              End="120.79999833107,39.6999989271165">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.2501956408632" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.2501956408632"
-                    Point2="0,19.2501956408632"
-                    Point3="4,19.2501956408632" />
-                  <mssgle:LineSegment
-                    End="116.79999833107,19.2501956408632" />
-                  <mssgle:CubicBezierSegment
-                    Point1="116.79999833107,19.2501956408632"
-                    Point2="120.79999833107,19.2501956408632"
-                    Point3="120.79999833107,23.2501956408632" />
-                  <mssgle:LineSegment
-                    End="120.79999833107,39.6999989271165" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="12.2086124467849,24.2501956408632,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output]"
-          TopLeft="297.866663328807,324.599995782971">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83.7333322306474,55.3999985545875"
-              Start="0,0"
-              End="83.7333322306474,47.8999985545875">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.6248945146008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.6248945146008"
-                    Point2="0,22.6248945146008"
-                    Point3="4,22.6248945146008" />
-                  <mssgle:LineSegment
-                    End="79.7333322306474,22.6248945146008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="79.7333322306474,22.6248945146008"
-                    Point2="83.7333322306474,22.6248945146008"
-                    Point3="83.7333322306474,26.6248945146008" />
-                  <mssgle:LineSegment
-                    End="83.7333322306474,47.8999985545875" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-6.32472060342629,27.6248945146008,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output]"
-          TopLeft="280.39999666214,324.599995782971">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-137.999997466803,54.199998882413"
-              Start="0,0"
-              End="-137.999997466803,46.699998882413">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.0999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.0999994412065"
-                    Point2="0,27.0999994412065"
-                    Point3="-4,27.0999994412065" />
-                  <mssgle:LineSegment
-                    End="-133.999997466803,27.0999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-133.999997466803,27.0999994412065"
-                    Point2="-137.999997466803,27.0999994412065"
-                    Point3="-137.999997466803,31.0999994412065" />
-                  <mssgle:LineSegment
-                    End="-137.999997466803,46.699998882413" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-124.806385452151,32.0999994412065,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Salida de origen de ADO NET]"
-          TopLeft="294.999996751547,171.599998062849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.3999988973141"
-              Start="0,0"
-              End="0,24.8999988973141">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8999988973141" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Migracion Facturas\OLE DB Source"
+          TopLeft="179.166656877432,469.266664020949" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
