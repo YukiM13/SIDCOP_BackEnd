@@ -85,6 +85,22 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
+        [HttpGet("InventarioAsignado")]
+        public IActionResult ObtenerInventarioAsignadoPorVendedor([FromQuery] int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioServices.ObtenerInventarioAsignadoPorVendedor(Vend_Id);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+
 
     }
 }

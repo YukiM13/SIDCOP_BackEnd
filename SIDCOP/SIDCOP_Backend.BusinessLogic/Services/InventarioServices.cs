@@ -401,6 +401,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+
+        public IEnumerable<InventarioAsignadoVendedorDTO> ObtenerInventarioAsignadoPorVendedor(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.ObtenerInventarioAsignadoPorVendedor(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<InventarioAsignadoVendedorDTO> resultado = null;
+                return resultado;
+            }
+        }
+
+
+
         #endregion
 
         #region Descuentos

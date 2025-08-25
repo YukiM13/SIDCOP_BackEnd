@@ -97,3 +97,20 @@ public class ReporteJornadaDto
     public ReporteJornadaHeaderDto Header { get; set; } = new ReporteJornadaHeaderDto();
     public List<ReporteJornadaDetalleDto> Detalle { get; set; } = new List<ReporteJornadaDetalleDto>();
 }
+
+
+
+public class InventarioAsignadoVendedorDTO
+{
+    public int Bode_Id { get; set; }
+    public int Prod_Id { get; set; }
+    public string Prod_Imagen { get; set; } = string.Empty;
+    public string Subc_Descripcion { get; set; } = string.Empty;
+    public string NombreProducto { get; set; } = string.Empty;
+    public string CodigoProducto { get; set; } = string.Empty;
+    public decimal Precio { get; set; }
+    public int CantidadAsignada { get; set; }
+    public int CurrentQuantity { get; set; }
+    public int SoldQuantity { get; set; }
+
+}

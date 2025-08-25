@@ -46,7 +46,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
+        public IEnumerable<InventarioAsignadoVendedorDTO> ObtenerInventarioAsignadoPorVendedor(int Vend_Id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Vend_Id", Vend_Id);
 
+            var result = db.Query<InventarioAsignadoVendedorDTO>(
+                ScriptDatabase.InventarioAsgnadoPorVendedor, // Asume que tienes esta constante en ScriptDatabase
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
 
 
 
