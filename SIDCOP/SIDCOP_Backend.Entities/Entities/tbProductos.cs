@@ -103,7 +103,7 @@ public partial class tbProductos
 
     public double? Impu_Valor { get; set; }
 
-
+    public virtual ICollection<tbMetas> tbMetas { get; set; } = new List<tbMetas>();
 
 
     public virtual tbImpuestos Impu { get; set; }
