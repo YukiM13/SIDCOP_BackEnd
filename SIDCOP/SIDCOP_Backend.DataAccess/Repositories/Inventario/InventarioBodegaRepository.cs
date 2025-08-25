@@ -23,7 +23,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
 
                 using var multi = db.QueryMultiple(
-                    "[Logi].[SP_ReporteJornada_Detallado]",
+                    ScriptDatabase.ReporteJornada,
                     parameter,
                     commandType: CommandType.StoredProcedure
                 );
