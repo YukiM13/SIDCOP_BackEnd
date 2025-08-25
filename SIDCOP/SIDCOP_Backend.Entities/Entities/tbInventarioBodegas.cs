@@ -69,9 +69,31 @@ public class ReporteJornadaDetalleDto
     public decimal SubTotal { get; set; }
 }
 
+
+public class IniciarJornada
+{
+    public int JornadaId { get; set; }
+}
+
+public class CerrarJornada
+{
+    public int JorV_Id { get; set; }
+    public DateTime JorV_HoraInicio { get; set; }
+    public DateTime? JorV_HoraFin { get; set; }
+    public int TotalProductos { get; set; }
+    public int TotalInicial { get; set; }
+    public int TotalFinal { get; set; }
+    public int TotalVendido { get; set; }
+    public decimal MontoTotal { get; set; }
+}
+
+
+
 // DTO del reporte completo (header + lista de detalle)
 public class ReporteJornadaDto
 {
+
+
     public ReporteJornadaHeaderDto Header { get; set; } = new ReporteJornadaHeaderDto();
     public List<ReporteJornadaDetalleDto> Detalle { get; set; } = new List<ReporteJornadaDetalleDto>();
 }

@@ -22,6 +22,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
         private readonly PromocionesRepository _promocionesRepository;
+    
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
        InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
@@ -334,6 +335,35 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
         #region Inventario Bodega
+
+        public IEnumerable<IniciarJornada> IniciarJornada(int Usua_Creacion, int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.InicioJornada( Usua_Creacion, Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<IniciarJornada> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<CerrarJornada> CierreJornada(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.CierreJornada(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<CerrarJornada> resultado = null;
+                return resultado;
+            }
+        }
+
 
         public ServiceResult ObtenerReporteJornadaDetallado(int vendId, DateTime? fecha = null)
         {
