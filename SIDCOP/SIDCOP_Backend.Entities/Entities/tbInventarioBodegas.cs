@@ -49,3 +49,29 @@ public partial class tbInventarioBodegas
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 }
+
+
+// DTO del encabezado
+public class ReporteJornadaHeaderDto
+{
+    public string RutaDescripcion { get; set; } = string.Empty;
+    public string Vendedor { get; set; } = string.Empty;
+}
+
+// DTO del detalle de productos
+public class ReporteJornadaDetalleDto
+{
+    public string Producto { get; set; } = string.Empty;
+    public string Codigo { get; set; } = string.Empty;
+    public int Inicial { get; set; }
+    public int Final { get; set; }
+    public int Vendido { get; set; }
+    public decimal SubTotal { get; set; }
+}
+
+// DTO del reporte completo (header + lista de detalle)
+public class ReporteJornadaDto
+{
+    public ReporteJornadaHeaderDto Header { get; set; } = new ReporteJornadaHeaderDto();
+    public List<ReporteJornadaDetalleDto> Detalle { get; set; } = new List<ReporteJornadaDetalleDto>();
+}

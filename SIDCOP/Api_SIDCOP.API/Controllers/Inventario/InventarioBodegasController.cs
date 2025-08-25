@@ -21,21 +21,35 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
-        [HttpGet("Buscar/{id}")]
-        public IActionResult Buscar(int id)
+        [HttpGet("JornadaDetallada/{vendId}")]
+        public IActionResult ObtenerReporteJornadaDetallado(int vendId, [FromQuery] DateTime? fecha = null)
         {
-            if (id <= 0)
+            if (vendId <= 0)
             {
-                return BadRequest("Id Invalida.");
+                return BadRequest("ID de vendedor inválido.");
             }
-            var invent = _inventarioServices.BuscarInventarioPorVendedor(id);
-            if (invent != null)
+
+            try
             {
-                return Ok(invent);
+                var result = _inventarioServices.ObtenerReporteJornadaDetallado(vendId, fecha);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound("Inventario No encontrados.");
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
             }
         }
     }

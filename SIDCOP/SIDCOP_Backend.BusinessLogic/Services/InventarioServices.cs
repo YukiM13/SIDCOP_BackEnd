@@ -9,6 +9,7 @@ using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Reportes;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -334,21 +335,43 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Inventario Bodega
 
-
-        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
+        public ServiceResult ObtenerReporteJornadaDetallado(int vendId, DateTime? fecha = null)
         {
+            var result = new ServiceResult();
+
             try
             {
-                var list = _inventarioBodegaRepository.Listprodvend(id);
-                return list;
+                // 🔹 Validación básica
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // 🔹 Llamar al repository
+                var reporte = _inventarioBodegaRepository.ObtenerReporteJornadaDetallado(vendId, fecha);
+
+                // 🔹 Verificar si hay error (en este caso lo detectamos por si en el detalle viene un "Error: ...")
+                if (reporte.Detalle.Any() && reporte.Detalle.First().Producto.StartsWith("Error:"))
+                {
+                    return result.Error(reporte.Detalle.First().Producto);
+                }
+
+                // 🔹 Validación adicional: si no hay datos en el detalle
+                if (!reporte.Detalle.Any())
+                {
+                    return result.Ok("No se encontraron registros de jornada para el vendedor especificado.");
+                }
+
+                // 🔹 Respuesta exitosa
+                return result.Ok(reporte);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                IEnumerable<tbInventarioBodegas> resultado = null;
-                return resultado;
+                return result.Error($"Error inesperado al obtener el reporte de jornada: {ex.Message}");
             }
         }
-#endregion
+
+        #endregion
 
         #region Descuentos
 
