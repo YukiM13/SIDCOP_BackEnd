@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using Api_SIDCOP.API.Models.Reportes;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -12,6 +13,43 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class InventarioBodegaRepository 
     {
+
+
+        public IEnumerable<IniciarJornada> InicioJornada(int Usua_Creacion, int Vend_Id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Vend_Id", Vend_Id);
+            parameters.Add("@Usua_Creacion", Usua_Creacion);
+
+            var result = db.Query<IniciarJornada>(
+                ScriptDatabase.IniciarJornadaVendedor,
+                parameters,
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<CerrarJornada> CierreJornada( int Vend_Id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Vend_Id", Vend_Id);
+        
+            var result = db.Query<CerrarJornada>(
+                ScriptDatabase.CerrarJornadaVendedor, parameters, commandType: CommandType.StoredProcedure
+            ).ToList();
+
+            return result;
+        }
+
+
+
+
+
         public ReporteJornadaDto ObtenerReporteJornadaDetallado(int vendId, DateTime? fecha = null)
         {
             var parameter = new DynamicParameters();

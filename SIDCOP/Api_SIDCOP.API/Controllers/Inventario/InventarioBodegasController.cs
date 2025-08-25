@@ -52,5 +52,39 @@ namespace Api_SIDCOP.API.Controllers.Inventario
                 });
             }
         }
+
+
+
+        [HttpGet("IniciarJornada")]
+        public IActionResult IniciarJornada([FromQuery] int Vend_Id , [FromQuery] int Usuario_Creacion)
+        {
+            try
+            {
+                var list = _inventarioServices.IniciarJornada(Vend_Id, Usuario_Creacion);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+        [HttpGet("CierreJornada")]
+        public IActionResult CierreJornada([FromQuery] int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioServices.CierreJornada(Vend_Id);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+
+
     }
 }
