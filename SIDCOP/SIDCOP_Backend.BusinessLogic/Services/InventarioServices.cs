@@ -9,6 +9,7 @@ using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Reportes;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -21,6 +22,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
         private readonly PromocionesRepository _promocionesRepository;
+    
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
        InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
@@ -334,21 +336,90 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Inventario Bodega
 
-
-        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
+        public IEnumerable<IniciarJornada> IniciarJornada(int Usua_Creacion, int Vend_Id)
         {
             try
             {
-                var list = _inventarioBodegaRepository.Listprodvend(id);
+                var list = _inventarioBodegaRepository.InicioJornada( Usua_Creacion, Vend_Id);
                 return list;
             }
             catch (Exception)
             {
-                IEnumerable<tbInventarioBodegas> resultado = null;
+                IEnumerable<IniciarJornada> resultado = null;
                 return resultado;
             }
         }
-#endregion
+
+        public IEnumerable<CerrarJornada> CierreJornada(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.CierreJornada(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<CerrarJornada> resultado = null;
+                return resultado;
+            }
+        }
+
+
+        public ServiceResult ObtenerReporteJornadaDetallado(int vendId, DateTime? fecha = null)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // 🔹 Validación básica
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // 🔹 Llamar al repository
+                var reporte = _inventarioBodegaRepository.ObtenerReporteJornadaDetallado(vendId, fecha);
+
+                // 🔹 Verificar si hay error (en este caso lo detectamos por si en el detalle viene un "Error: ...")
+                if (reporte.Detalle.Any() && reporte.Detalle.First().Producto.StartsWith("Error:"))
+                {
+                    return result.Error(reporte.Detalle.First().Producto);
+                }
+
+                // 🔹 Validación adicional: si no hay datos en el detalle
+                if (!reporte.Detalle.Any())
+                {
+                    return result.Ok("No se encontraron registros de jornada para el vendedor especificado.");
+                }
+
+                // 🔹 Respuesta exitosa
+                return result.Ok(reporte);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al obtener el reporte de jornada: {ex.Message}");
+            }
+        }
+
+
+
+        public IEnumerable<InventarioAsignadoVendedorDTO> ObtenerInventarioAsignadoPorVendedor(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.ObtenerInventarioAsignadoPorVendedor(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<InventarioAsignadoVendedorDTO> resultado = null;
+                return resultado;
+            }
+        }
+
+
+
+        #endregion
 
         #region Descuentos
 
