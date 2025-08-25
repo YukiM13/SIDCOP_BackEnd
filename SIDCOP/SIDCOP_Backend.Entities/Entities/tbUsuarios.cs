@@ -196,6 +196,14 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbMarcasVehiculos> tbMarcasVehiculosUsua_ModificacionNavigation { get; set; } = new List<tbMarcasVehiculos>();
 
+    public virtual ICollection<tbMetasPorEmpleados> tbMetasPorEmpleadosUsua_CreacionNavigation { get; set; } = new List<tbMetasPorEmpleados>();
+
+    public virtual ICollection<tbMetasPorEmpleados> tbMetasPorEmpleadosUsua_ModificacionNavigation { get; set; } = new List<tbMetasPorEmpleados>();
+
+    public virtual ICollection<tbMetas> tbMetasUsua_CreacionNavigation { get; set; } = new List<tbMetas>();
+
+    public virtual ICollection<tbMetas> tbMetasUsua_ModificacionNavigation { get; set; } = new List<tbMetas>();
+
     public virtual ICollection<tbModelos> tbModelosUsua_CreacionNavigation { get; set; } = new List<tbModelos>();
 
     public virtual ICollection<tbModelos> tbModelosUsua_ModificacionNavigation { get; set; } = new List<tbModelos>();
@@ -290,6 +298,10 @@ public partial class tbUsuarios
 
     public virtual ICollection<tbTraslados> tbTrasladosUsua_ModificacionNavigation { get; set; } = new List<tbTraslados>();
 
+    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_CreacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
+
+    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_ModificacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
+
     public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRutaUsua_CreacionNavigation { get; set; } = new List<tbVendedoresPorRuta>();
 
     public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRutaUsua_ModificacionNavigation { get; set; } = new List<tbVendedoresPorRuta>();
@@ -297,8 +309,4 @@ public partial class tbUsuarios
     public virtual ICollection<tbVendedores> tbVendedoresUsua_CreacionNavigation { get; set; } = new List<tbVendedores>();
 
     public virtual ICollection<tbVendedores> tbVendedoresUsua_ModificacionNavigation { get; set; } = new List<tbVendedores>();
-
-    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_CreacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
-
-    public virtual ICollection<tbUnidadesDePeso> tbUnidadesDePesoUsua_ModificacionNavigation { get; set; } = new List<tbUnidadesDePeso>();
 }

@@ -116,6 +116,8 @@ public partial class tbVendedores
 
     public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 
+    public virtual ICollection<tbMetasPorEmpleados> tbMetasPorEmpleados { get; set; } = new List<tbMetasPorEmpleados>();
+
     public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 
     public virtual ICollection<tbVendedoresPorRuta> tbVendedoresPorRuta { get; set; } = new List<tbVendedoresPorRuta>();
