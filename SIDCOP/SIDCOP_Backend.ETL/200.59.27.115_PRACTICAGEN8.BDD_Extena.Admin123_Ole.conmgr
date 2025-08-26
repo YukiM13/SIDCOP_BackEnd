@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole"
+  DTS:DTSID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package-{2DF365BB-ADD6-4255-93CB-EECA886A5565}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWlXuj//YaUSwhkBF4yQ9NgAAAAACAAAAAAAQZgAAAAEAACAAAAD03vRRE9YTiaYoocT4FBW8Y+5+2SAX0IUVkt7dkEpKLAAAAAAOgAAAAAIAACAAAAAnyW4mgQ1kmPj+gXaptxojeFV1bYfmA7yDHOBewOnGk4AAAAB00ctbzTIOj2+itI16xznnqGK3s6S3QSWlrEbfURkuYLjhdfOQgimv/2k9R2VwgmkouY+msV11czrdTwNL+RRxrNoCRvnoF0zTfQf+t5vbnVa1acoST3X/3m06IUAJV8Gu4T9hUVQx8lspdaYr6supUtzotFXha3vEv6OhYIkvrEAAAAAV/UsHNUpsIypNkMwVv3zvHggKeBLmitwtm+3IUd8rHhJTW6G8TH+JLloN/m0gbOnRsgQHHbGjzQlJfSBrql9/</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
