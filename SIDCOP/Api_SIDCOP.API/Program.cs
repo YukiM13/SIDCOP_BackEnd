@@ -102,6 +102,7 @@ app.UseCors("AllowFlutter");
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
