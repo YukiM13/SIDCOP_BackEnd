@@ -40,6 +40,27 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
+        [HttpGet("Historial/{id}")]
+        public IActionResult Historial(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var invent = _inventarioServices.ListHistorialInve(id);
+            if (invent != null)
+            {
+                return Ok(invent);
+            }
+            else
+            {
+                return NotFound("Inventario No encontrados.");
+            }
+        }
+
+
+
+
         [HttpGet("ListarPorSucursal/{id}")]
         public IActionResult ListarPorSucursal(int id)
         {
