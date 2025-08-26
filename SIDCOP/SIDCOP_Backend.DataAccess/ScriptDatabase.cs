@@ -409,6 +409,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioSucursal_ListarPorSucursal = "[Inve].[SP_InventarioSucursal_ListarPorSucursal]";
         public static string InventarioSucursal_ActualizarPorSucursal = "[Inve].[SP_InventarioSucursal_ActualizarPorSucursal]";
         public static string InventarioSucursal_ActualizarCantidades = "[Inve].[SP_InventarioSucursal_ActualizarCantidades]";
+        public static string HistorialInventarioSucursal_ListarPorSucursal = "[Inve].[SP_HistorialInventarioSucursal_ListarPorSucursal]";
+
 
         public static string InventarioBodega_Listar = "";
         public static string InventarioBodega_Insertar = "";
