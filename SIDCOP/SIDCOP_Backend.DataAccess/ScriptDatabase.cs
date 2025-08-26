@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SIDCOP_Backend.DataAccess
 {
     public static class ScriptDatabase
     {
+
+        #region UnidadesDePeso
+        public static string UnPeso_Listar = "[Gral].[SP_UnidadesDePeso_Listar]";
+        public static string UnPeso_Insertar = "[Gral].[SP_UnidadesDePeso_Insertar]";
+        public static string UnPeso_Actualizar = "[Gral].[SP_UnidadesDePeso_Actualizar]";
+        public static string UnPeso_Eliminar = "[Gral].[SP_UnidadesDePeso_Eliminar]";
+        #endregion UnidadesDePeso
+
+
+
         #region Usuarios
 
         public const string Usuario_Insertar = "Acce.SP_Usuario_Insertar";
@@ -98,7 +100,6 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Producto_ClienteDescuentoLista = "[Inve].[SP_ProductosDescuentoPrecioPorCliente]";
 
-
         #endregion Productos
 
         #region Sucursales
@@ -146,18 +147,16 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion EstadosCiviles
 
-
         #region EstadosVisita
 
         public static string EstadosVisita_Listar = "[Gral].[SP_EstadosVisita_Listar]";
 
-        public static string EstadoVisita_Insertar      = "[Gral].[SP_EstadoVisita_Insertar]";
-        public static string EstadoVisita_Actualizar    = "[Gral].[SP_EstadoVisita_Actualizar]";
-        public static string EstadoVisita_Buscar        = "[Gral].[SP_EstadoVisita_Buscar]";
-        public static string EstadoVisita_Eliminar      = "[Gral].[SP_EstadoVisita_Eliminar]";
+        public static string EstadoVisita_Insertar = "[Gral].[SP_EstadoVisita_Insertar]";
+        public static string EstadoVisita_Actualizar = "[Gral].[SP_EstadoVisita_Actualizar]";
+        public static string EstadoVisita_Buscar = "[Gral].[SP_EstadoVisita_Buscar]";
+        public static string EstadoVisita_Eliminar = "[Gral].[SP_EstadoVisita_Eliminar]";
 
-        #endregion EstadosCiviles
-
+        #endregion EstadosVisita
 
         #region ConfiguracionFacturas
 
@@ -241,9 +240,12 @@ namespace SIDCOP_Backend.DataAccess
         #endregion Clientes
 
         #region ClientesVisitasHistorial
+
         public static string ClientesVisitas_Insertar = "[Gral].[SP_ClientesVisita_Insertar]";
         public static string ClientesVisitas_Listar = "[Gral].[SP_ClientesVisita_Listar]";
         public static string VisitasPorVendedor_Listar = "[Gral].[SP_Visitas_Listar_Vendedor]";
+        public static string VendedoresConVisitas_Listar = "[Gral].[SP_Vendedores_ListarVisitas]";
+
         #endregion ClientesVisitasHistorial
 
         #region Marcas
@@ -412,7 +414,10 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioBodega_Insertar = "";
         public static string InventarioBodega_Actualizar = "";
         public static string InventarioBodega_Eliminar = "";
-        public static string InventarioAsgnadoPorVendedor = "Inve.SP_InventarioAsignadoPorVendedor_Listar ";
+        public static string InventarioAsgnadoPorVendedor = "[Inve].[SP_InventarioAsignadoPorVendedor_Listar]";
+        public static string IniciarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Iniciar]";
+        public static string CerrarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Cerrar]";
+        public static string ReporteJornada = "[Logi].[SP_ReporteJornada_Detallado]";
 
         #endregion Inventario
 
@@ -458,8 +463,12 @@ namespace SIDCOP_Backend.DataAccess
 
         //public const string Venta_Insertar = "[Vnta].[SP_Facturas_Insertar]";
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
+
         public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
 
+        public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
+
+        public const string Venta_InsertarEnSucursal = "[Vnta].[SP_Venta_InsertarEnSucursal]";
 
         #endregion Venta
 
@@ -492,11 +501,13 @@ namespace SIDCOP_Backend.DataAccess
         #region Devolucion
 
         public const string Devoluciones_Listar = "[Vnta].[SP_Devoluciones_Listar]";
-        public const string Devolucion_Insertar = " [Vnta].[SP_Devolucion_Insertar]";
+        public const string Devolucion_Insertar = "[Vnta].[SP_Devolucion_Insertar]";
+        public static string Devolucion_Trasladar = "[Vnta].[SP_Devolucion_Trasladar]";
+
         #endregion Devolucion
 
+        #region Dashboards
 
-        #region Dashboards 
         public const string VentasPorMes = "[Vnta].[SP_VentasPorMes]";
         public const string VentasPorMesProductos = "[Vnta].[SP_VentasPorMesProductos]";
         public const string VentasPorMesCategorias = "[Vnta].[SP_VentasPorMesCategorias]";
@@ -504,8 +515,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Top5ProductosCategoria = "[Vnta].[SP_Top5ProductosCategoria]";
         public const string Top5MarcasMasVendidas = "[Gral].[SP_Marcas_DashboardProductosTop5Vendidos]";
         public const string DashboardPorMarcasVendidas = "[Inve].[SP_Productos_DashboardPorMarcasVendidas]";
-        #endregion
 
+        #endregion Dashboards
 
         #region DevolucionesDetalle
 
@@ -513,17 +524,18 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion DevolucionesDetalle
 
-
         #region ImagenesVisita
 
         public static string ImagenesVisita_Insertar = "[Gral].[SP_ImagenVisita_Insertar]";
         public static string ImagenesVisita_Listar = "[Gral].[SP_ImagenesVisita_Listar]";
+        public static string ImagenesVisita_ListarPorVisita = "[Gral].[SP_ImagenesVisita_ListarPorVisita]";
 
-        #endregion
+        #endregion ImagenesVisita
 
         #region FormasDePago
+
         public const string FormasDePago_Listar = "[Gral].[SP_FormasDePago_Listar]";
 
-        #endregion
+        #endregion FormasDePago
     }
 }

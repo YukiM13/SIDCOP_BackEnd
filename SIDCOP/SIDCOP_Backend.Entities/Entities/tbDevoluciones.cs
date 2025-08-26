@@ -10,8 +10,6 @@ public partial class tbDevoluciones
 {
     public int Devo_Id { get; set; }
 
-    public int Clie_Id { get; set; }
-
     public int? Fact_Id { get; set; }
 
     public DateTime Devo_Fecha { get; set; }
@@ -35,12 +33,18 @@ public partial class tbDevoluciones
     public string Clie_NombreNegocio { get; set; }
 
     [NotMapped]
+    public string Fact_Numero { get; set; }
+
+    [NotMapped]
     public string UsuarioCreacion { get; set; }
 
     [NotMapped]
     public string UsuarioModificacion { get; set; }
 
-    public virtual tbClientes Clie { get; set; }
+    [NotMapped]
+    public string devoDetalle_XML { get; set; }
+
+    public bool? Devo_EnSucursal { get; set; }
 
     public virtual tbFacturas Fact { get; set; }
 

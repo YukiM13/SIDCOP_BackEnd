@@ -2,42 +2,33 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
-public partial class tbCategorias
+public partial class tbUnidadesDePeso
 {
-    public int Cate_Id { get; set; }
+    public int UnPe_Id { get; set; }
 
-    public string Cate_Descripcion { get; set; }
+    public string UnPe_Descripcion { get; set; }
 
     public int Usua_Creacion { get; set; }
 
-    public DateTime Cate_FechaCreacion { get; set; }
+    public DateTime UnPe_FechaCreacion { get; set; }
 
     public int? Usua_Modificacion { get; set; }
-
-    public DateTime? Cate_FechaModificacion { get; set; }
-
-    public bool Cate_Estado { get; set; }
 
     [NotMapped]
     public string UsuarioCreacion { get; set; }
     [NotMapped]
-    public int Subc_Id { get; set; }
-    [NotMapped]
-    public string SubC_Descripcion { get; set; }
-    [NotMapped]
     public string UsuarioModificacion { get; set; }
+
     [NotMapped]
-    public int Secuencia { get; set; }
+    public string Secuencia { get; set; }
+    public DateTime? UnPe_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
-
-    public virtual ICollection<tbMetas> tbMetas { get; set; } = new List<tbMetas>();
-
-    public virtual ICollection<tbSubcategorias> tbSubcategorias { get; set; } = new List<tbSubcategorias>();
 }

@@ -21,22 +21,86 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
-        [HttpGet("Buscar/{id}")]
-        public IActionResult Buscar(int id)
+        [HttpGet("JornadaDetallada/{vendId}")]
+        public IActionResult ObtenerReporteJornadaDetallado(int vendId, [FromQuery] DateTime? fecha = null)
         {
-            if (id <= 0)
+            if (vendId <= 0)
             {
-                return BadRequest("Id Invalida.");
+                return BadRequest("ID de vendedor inválido.");
             }
-            var invent = _inventarioServices.BuscarInventarioPorVendedor(id);
-            if (invent != null)
+
+            try
             {
-                return Ok(invent);
+                var result = _inventarioServices.ObtenerReporteJornadaDetallado(vendId, fecha);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound("Inventario No encontrados.");
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
             }
         }
+
+
+
+        [HttpGet("IniciarJornada")]
+        public IActionResult IniciarJornada([FromQuery] int Vend_Id , [FromQuery] int Usuario_Creacion)
+        {
+            try
+            {
+                var list = _inventarioServices.IniciarJornada(Vend_Id, Usuario_Creacion);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+        [HttpGet("CierreJornada")]
+        public IActionResult CierreJornada([FromQuery] int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioServices.CierreJornada(Vend_Id);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+
+        [HttpGet("InventarioAsignado")]
+        public IActionResult ObtenerInventarioAsignadoPorVendedor([FromQuery] int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioServices.ObtenerInventarioAsignadoPorVendedor(Vend_Id);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                // Log del error si tienes sistema de logging
+                return StatusCode(500, "Error interno del servidor");
+            }
+        }
+
+
+
     }
 }

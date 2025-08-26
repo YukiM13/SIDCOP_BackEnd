@@ -106,6 +106,43 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+        [HttpPost("InsertarEnSucursal")]
+        public IActionResult InsertarEnSucursal([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
+        {
+            if (ventaDTO == null)
+            {
+                return BadRequest("Información de la venta inválida.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var result = _ventaServices.InsertVentasSucursal(ventaDTO);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
+
         [HttpPost("Validar")]
         public IActionResult Validar([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
         {
@@ -172,6 +209,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                     Message = "Error interno del servidor",
                     Details = ex.Message
                 });
+            }
+        }
+
+        [HttpPost("AnularFactura")]
+        public IActionResult AnularFactura([FromBody] FacturaAnularViewModel item)
+        {
+            var mapped = _mapper.Map<tbFacturas>(item);
+            var result = _ventaServices.AnularFactura(mapped);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
             }
         }
     }

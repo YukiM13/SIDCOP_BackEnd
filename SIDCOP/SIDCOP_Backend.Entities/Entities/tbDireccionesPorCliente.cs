@@ -58,5 +58,7 @@ public partial class tbDireccionesPorCliente
 
     public virtual ICollection<tbClientesVisita> tbClientesVisita { get; set; } = new List<tbClientesVisita>();
 
+    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
+
     public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 }

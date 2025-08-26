@@ -36,6 +36,8 @@ public partial class tbProductos
 
     public string Prod_EsPromo { get; set; }
 
+    public bool Prod_Impulsado { get; set; }
+
     public bool Prod_Estado { get; set; }
 
     public int Usua_Creacion { get; set; }
@@ -101,7 +103,7 @@ public partial class tbProductos
 
     public double? Impu_Valor { get; set; }
 
-
+    public virtual ICollection<tbMetas> tbMetas { get; set; } = new List<tbMetas>();
 
 
     public virtual tbImpuestos Impu { get; set; }

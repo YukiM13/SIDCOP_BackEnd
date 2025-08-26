@@ -116,16 +116,22 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        public IEnumerable<ReporteProductosVendidosRuta> ReporteVendedoresVentas(DateTime? fechaInicio = null,
+            
+            
+            DateTime? fechaFin = null, 
+             int? vendedorId = null, int? sucursalId = null
+
+            )
         {
             try
             {
-                var list = _reporteRepository.ReporteVendedoresVentas(fechaInicio, fechaFin);
+                var list = _reporteRepository.ReporteVendedoresVentas(fechaInicio, fechaFin, vendedorId, sucursalId);
                 return list;
             }
             catch (Exception ex)
             {
-                // Log del error si tienes sistema de logging
+      
                 return Enumerable.Empty<ReporteProductosVendidosRuta>();
             }
         }
@@ -146,11 +152,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
 
-        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null)
+        public IEnumerable<dynamic> ReportePedidosPorFecha(DateTime? fechaInicio = null, DateTime? fechaFin = null, 
+              int? vendedorId = null, int? sucu_Id = null, int? supervisorId = null)
         {
             try
             {
-                var list = _reporteRepository.ReportePedidosPorFecha(fechaInicio, fechaFin);
+                var list = _reporteRepository.ReportePedidosPorFecha(fechaInicio, fechaFin, vendedorId, sucu_Id, supervisorId);
                 return list;
             }
             catch (Exception ex)

@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -32,6 +33,9 @@ public partial class tbPagosCuentasPorCobrar
     public bool Pago_Anulado { get; set; }
 
     public int? FoPa_Id { get; set; }
+
+    [NotMapped]
+    public string FoPa_Descripcion { get; set; }
 
     public virtual tbCuentasPorCobrar CPCo { get; set; }
 

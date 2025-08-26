@@ -63,6 +63,9 @@ public partial class tbVendedores
     public string? Muni_Codigo { get; set; }
 
     [NotMapped]
+    public int? RegC_Id { get; set; }
+
+    [NotMapped]
     public string? Muni_Descripcion { get; set; }
 
     [NotMapped]
@@ -112,6 +115,8 @@ public partial class tbVendedores
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
+
+    public virtual ICollection<tbMetasPorEmpleados> tbMetasPorEmpleados { get; set; } = new List<tbMetasPorEmpleados>();
 
     public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 

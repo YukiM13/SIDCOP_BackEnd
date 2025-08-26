@@ -1,24 +1,41 @@
-
-
 using Api_SIDCOP.API.Extensions;
 using Api_Sistema_Reportes.API.Helpers;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using SIDCOP_Backend.BusinessLogic;
 using SIDCOP_Backend.DataAccess.Context;
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-var connectionString = builder.Configuration.GetConnectionString("SIDCOPConn");
+// Crear y registrar el DbContextFactory como singleton
+var dbContextFactory = new SIDCOP_Backend.DataAccess.DbContextFactory(builder.Configuration);
+builder.Services.AddSingleton(dbContextFactory);
 
-builder.Services.AddDbContext<BDD_SIDCOPContext>(option => option.UseSqlServer(connectionString));
+// Obtener la cadena de conexión inicial
+var initialConnectionString = dbContextFactory.GetConnectionString();
+
+// Configurar el contexto de base de datos con la cadena de conexión inicial
+builder.Services.AddDbContext<BDD_SIDCOPContext>(options => 
+{
+    options.UseSqlServer(initialConnectionString);
+});
+
+// Configurar SIDCOP_Context para usar el factory
+SIDCOP_Backend.DataAccess.SIDCOP_Context.SetFactory(dbContextFactory);
+
+// Establecer también la cadena de conexión estática como respaldo
+SIDCOP_Backend.DataAccess.SIDCOP_Context.BuildConnectionString(initialConnectionString);
 
 builder.Services.AddHttpContextAccessor();
-builder.Services.DataAccess(connectionString);
+// Configurar DataAccess para usar el DbContextFactory
+builder.Services.DataAccess(provider => 
+{
+    var factory = provider.GetRequiredService<SIDCOP_Backend.DataAccess.DbContextFactory>();
+    return factory.GetConnectionString();
+});
 builder.Services.BusinessLogic();
 
 builder.Services.AddAutoMapper(config =>
@@ -82,12 +99,8 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseCors("AllowFlutter");
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
 app.UseSwagger();
 app.UseSwaggerUI();
-//}
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();

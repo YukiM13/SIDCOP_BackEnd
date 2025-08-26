@@ -8,8 +8,6 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int Devo_Id { get; set; }
 
-        public int Clie_Id { get; set; }
-
         public int? Fact_Id { get; set; }
 
         public DateTime Devo_Fecha { get; set; }
@@ -26,6 +24,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public bool Devo_Estado { get; set; }
 
+        public bool Devo_EnSucursal { get; set; }
+
         public string Nombre_Completo { get; set; }
 
 
@@ -35,6 +35,8 @@ namespace Api_SIDCOP.API.Models.Ventas
         public string UsuarioCreacion { get; set; }
 
         public string UsuarioModificacion { get; set; }
+
+        public string devoDetalle_XML { get; set; }
 
 
 

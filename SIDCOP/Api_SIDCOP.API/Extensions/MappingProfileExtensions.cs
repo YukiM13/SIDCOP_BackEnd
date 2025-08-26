@@ -2,7 +2,6 @@ using Api_SIDCOP.API.Models.Acceso;
 using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Inventario;
 using Api_SIDCOP.API.Models.Logistica;
-using Api_SIDCOP.API.Models.Reportes;
 using Api_SIDCOP.API.Models.Ventas;
 using AutoMapper;
 using SIDCOP_Backend.Entities.Entities;
@@ -12,7 +11,7 @@ using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Extensions
 {
-    public class MappingProfileExtensions: Profile
+    public class MappingProfileExtensions : Profile
     {
         public MappingProfileExtensions()
         {
@@ -38,7 +37,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbCAIs, CaiSViewModel>().ReverseMap();
             CreateMap<tbCanales, CanalViewModel>().ReverseMap();
             CreateMap<tbCargos, CargoViewModel>().ReverseMap();
-            CreateMap<tbEmpleados, EmpleadoViewModel>().ReverseMap(); 
+            CreateMap<tbEmpleados, EmpleadoViewModel>().ReverseMap();
             CreateMap<tbRegistrosCAI, RegistrosCaiSViewModel>().ReverseMap();
             CreateMap<tbRoles, RolViewModel>().ReverseMap();
             CreateMap<tbVendedores, VendedoresViewModel>().ReverseMap();
@@ -49,7 +48,7 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbConfiguracionFacturas, ConfiguracionFacturaViewModel>().ReverseMap();
             CreateMap<tbBodegas, BodegaViewModel>().ReverseMap();
             CreateMap<tbPuntosEmision, PuntoEmisionViewModel>().ReverseMap();
-            CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();            
+            CreateMap<tbDireccionesPorCliente, DireccionesPorClienteViewModel>().ReverseMap();
             CreateMap<tbDescuentos, DescuentoViewModel>().ReverseMap();
             CreateMap<tbDescuentosDetalle, DescuentoDetalleViewModel>().ReverseMap();
             CreateMap<tbDescuentoPorClientes, DescuentoPorClienteViewModel>().ReverseMap();
@@ -79,6 +78,9 @@ namespace Api_SIDCOP.API.Extensions
             CreateMap<tbEstadosVisita, EstadoVisitaViewModel>().ReverseMap();
 
             CreateMap<tbImagenesVisita, ImagenVisitaViewModel>().ReverseMap();
+            CreateMap<tbFacturas, FacturaAnularViewModel>().ReverseMap();
+            CreateMap<tbDevoluciones, DevolucionesViewModel>().ReverseMap();
+            CreateMap<tbUnidadesDePeso, UnidadDePesoViewModel>().ReverseMap();
         }
     }
 }

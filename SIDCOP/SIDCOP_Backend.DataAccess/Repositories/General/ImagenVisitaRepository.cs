@@ -16,9 +16,25 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
-        public tbImagenesVisita Find(int? id)
+        public IEnumerable<tbImagenesVisita> ListPorVisita(int? id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var parameter = new DynamicParameters();
+                parameter.Add("@ClVi_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+                var result = db.Query<tbImagenesVisita>(ScriptDatabase.ImagenesVisita_ListarPorVisita, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+                if (result == null)
+                {
+                    throw new Exception("Visita no encontrada");
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error");
+            }
         }
 
         public RequestStatus Insert(tbImagenesVisita item)
@@ -60,6 +76,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
         public RequestStatus Update(tbImagenesVisita item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public tbImagenesVisita Find(int? id)
         {
             throw new NotImplementedException();
         }

@@ -65,28 +65,36 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         }
 
+        //public IEnumerable<tbClientesVisita> List()
+        //{
+
+        //    IEnumerable<tbClientesVisita> clientesVisitaHistorial = (from v in _bddContext.tbClientesVisita
+        //                                                                      select new tbClientesVisita
+        //                                                                      {
+        //                                                                          //HCVi_Id = v.HCVi_Id,
+        //                                                                          //VeRu_Id = v.VeRu_Id,
+        //                                                                          //Clie_Id = v.Clie_Id,
+        //                                                                          //HCVi_Foto = v.HCVi_Foto,
+        //                                                                          //HCVi_Observaciones = v.HCVi_Observaciones,
+        //                                                                          //HCVi_Fecha = v.HCVi_Fecha,
+        //                                                                          //HCVi_Latitud = v.HCVi_Latitud,
+        //                                                                          //HCVi_Longitud = v.HCVi_Longitud
+        //                                                                      });
+
+        //    //var parameter = new DynamicParameters();
+
+        //    //using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+        //    //var result = db.Query<tbClientesVisita>(ScriptDatabase.ClientesVisitasHistorial_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
+        //    return clientesVisitaHistorial;
+        //}
+
         public IEnumerable<tbClientesVisita> List()
         {
-
-            IEnumerable<tbClientesVisita> clientesVisitaHistorial = (from v in _bddContext.tbClientesVisita
-                                                                              select new tbClientesVisita
-                                                                              {
-                                                                                  //HCVi_Id = v.HCVi_Id,
-                                                                                  //VeRu_Id = v.VeRu_Id,
-                                                                                  //Clie_Id = v.Clie_Id,
-                                                                                  //HCVi_Foto = v.HCVi_Foto,
-                                                                                  //HCVi_Observaciones = v.HCVi_Observaciones,
-                                                                                  //HCVi_Fecha = v.HCVi_Fecha,
-                                                                                  //HCVi_Latitud = v.HCVi_Latitud,
-                                                                                  //HCVi_Longitud = v.HCVi_Longitud
-                                                                              });
-
-            //var parameter = new DynamicParameters();
-
-            //using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            //var result = db.Query<tbClientesVisita>(ScriptDatabase.ClientesVisitasHistorial_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
-
-            return clientesVisitaHistorial;
+            var parameter = new DynamicParameters();
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbClientesVisita>(ScriptDatabase.ClientesVisitas_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            return result.ToList();
         }
 
         public tbClientesVisita FindByVendedor(int? id)
@@ -166,6 +174,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             //_bddContext.SaveChanges();
             throw new NotImplementedException();
         }
+
 
         public RequestStatus Insert(tbClientesVisita item)
         {
