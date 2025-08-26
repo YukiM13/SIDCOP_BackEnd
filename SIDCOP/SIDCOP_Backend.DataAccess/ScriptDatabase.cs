@@ -10,7 +10,10 @@ namespace SIDCOP_Backend.DataAccess
         public static string UnPeso_Eliminar = "[Gral].[SP_UnidadesDePeso_Eliminar]";
         #endregion UnidadesDePeso
 
+        #region Migraciones
+        public static string Migracion_Listar = "[Acce].[SP_Migraciones_Listar]";
 
+        #endregion Migraciones
 
         #region Usuarios
 

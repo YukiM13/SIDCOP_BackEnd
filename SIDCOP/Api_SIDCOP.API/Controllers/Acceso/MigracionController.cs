@@ -1,5 +1,7 @@
 ﻿using Api_Sistema_Reportes.API.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using SIDCOP_Backend.BusinessLogic.Services;
 using System.Diagnostics;
 
 namespace Api_SIDCOP.API.Controllers.Acceso
@@ -10,8 +12,26 @@ namespace Api_SIDCOP.API.Controllers.Acceso
     [ApiKey]
     public class MigracionController : Controller
     {
+
+        public readonly AccesoServices _accesoServices;
+        public readonly IMapper _mapper;
+        //private readonly EmailService _emailService;
+
+        public MigracionController(AccesoServices accesoServices, IMapper mapper)
+        {
+            _accesoServices = accesoServices;
+            _mapper = mapper;
+        }
+
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            var list = _accesoServices.ListarMigraciones();
+            return Ok(list);
+        }
+
+
         [HttpPost("Migrar")]
-    
         public IActionResult EjecutarPaquete(string paquete)
         {
             try
