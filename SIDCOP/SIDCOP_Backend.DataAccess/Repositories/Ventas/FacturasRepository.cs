@@ -122,6 +122,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     facturaCompleta.Fact_AutorizadoPor = datosFactura.Fact_AutorizadoPor;
                     facturaCompleta.Fact_Latitud = datosFactura.Fact_Latitud;
                     facturaCompleta.Fact_Longitud = datosFactura.Fact_Longitud;
+                    facturaCompleta.Fact_Anulado = datosFactura.Fact_Anulado;
 
                     // Datos del cliente
                     facturaCompleta.Clie_Id = datosFactura.Clie_Id;
