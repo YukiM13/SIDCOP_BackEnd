@@ -16,9 +16,6 @@ namespace Api_SIDCOP.API.Models.Ventas
         [Range(0.01, double.MaxValue, ErrorMessage = "El monto debe ser mayor a cero")]
         public decimal Pago_Monto { get; set; }
 
-        [Required(ErrorMessage = "La forma de pago es requerida")]
-        [StringLength(50, ErrorMessage = "La forma de pago no puede exceder los 50 caracteres")]
-        public string Pago_FormaPago { get; set; }
 
         [StringLength(50, ErrorMessage = "El número de referencia no puede exceder los 50 caracteres")]
         public string Pago_NumeroReferencia { get; set; }
@@ -37,6 +34,10 @@ namespace Api_SIDCOP.API.Models.Ventas
         public bool Pago_Estado { get; set; }
 
         public bool Pago_Anulado { get; set; }
+
+        public int? FoPa_Id { get; set; }
+
+        public string FoPa_Descripcion { get; set; }
 
         // Propiedades adicionales para mostrar información relacionada - estas son opcionales para la inserción
         public string? UsuarioCreacion { get; set; }

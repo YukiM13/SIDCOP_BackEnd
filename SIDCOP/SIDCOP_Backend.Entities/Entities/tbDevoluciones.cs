@@ -2,14 +2,13 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbDevoluciones
 {
     public int Devo_Id { get; set; }
-
-    public int Clie_Id { get; set; }
 
     public int? Fact_Id { get; set; }
 
@@ -27,7 +26,25 @@ public partial class tbDevoluciones
 
     public bool Devo_Estado { get; set; }
 
-    public virtual tbFacturas Clie { get; set; }
+    [NotMapped]
+    public string Nombre_Completo { get; set; }
+
+    [NotMapped]
+    public string Clie_NombreNegocio { get; set; }
+
+    [NotMapped]
+    public string Fact_Numero { get; set; }
+
+    [NotMapped]
+    public string UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string UsuarioModificacion { get; set; }
+
+    [NotMapped]
+    public string devoDetalle_XML { get; set; }
+
+    public bool? Devo_EnSucursal { get; set; }
 
     public virtual tbFacturas Fact { get; set; }
 

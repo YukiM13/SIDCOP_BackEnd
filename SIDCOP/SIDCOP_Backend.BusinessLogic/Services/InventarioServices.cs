@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Repositories.Reportes;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -18,6 +22,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
         private readonly PromocionesRepository _promocionesRepository;
+    
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
        InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
@@ -241,6 +246,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbProductos> ListaPrecioClientes(int? id)
+        {
+            try
+            {
+                var producto = _productosRepository.ListaPrecio(id);
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
         public IEnumerable<tbProductos> BuscarProductoPorFactura(int? id)
         {
             try
@@ -295,26 +315,111 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error al actualizar producto: {ex.Message}");
             }
         }
+
+
+        public async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
+        {
+            try
+            {
+                var productos = await _productosRepository.ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(clieId, vendId);
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                // Loguear la excepción si tienes un sistema de logging
+                // _logger.LogError(ex, "Error al obtener productos con descuento por cliente y vendedor");
+                return Enumerable.Empty<ListasPreciosVendedor>();
+            }
+        }
         #endregion
 
 
         #region Inventario Bodega
 
- 
-        public IEnumerable<tbInventarioBodegas>BuscarInventarioPorVendedor(int id)
+        public IEnumerable<IniciarJornada> IniciarJornada(int Usua_Creacion, int Vend_Id)
         {
             try
             {
-                var list = _inventarioBodegaRepository.Listprodvend(id);
+                var list = _inventarioBodegaRepository.InicioJornada( Usua_Creacion, Vend_Id);
                 return list;
             }
             catch (Exception)
             {
-                IEnumerable<tbInventarioBodegas> resultado = null;
+                IEnumerable<IniciarJornada> resultado = null;
                 return resultado;
             }
         }
-#endregion
+
+        public IEnumerable<CerrarJornada> CierreJornada(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.CierreJornada(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<CerrarJornada> resultado = null;
+                return resultado;
+            }
+        }
+
+
+        public ServiceResult ObtenerReporteJornadaDetallado(int vendId, DateTime? fecha = null)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // 🔹 Validación básica
+                if (vendId <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                // 🔹 Llamar al repository
+                var reporte = _inventarioBodegaRepository.ObtenerReporteJornadaDetallado(vendId, fecha);
+
+                // 🔹 Verificar si hay error (en este caso lo detectamos por si en el detalle viene un "Error: ...")
+                if (reporte.Detalle.Any() && reporte.Detalle.First().Producto.StartsWith("Error:"))
+                {
+                    return result.Error(reporte.Detalle.First().Producto);
+                }
+
+                // 🔹 Validación adicional: si no hay datos en el detalle
+                if (!reporte.Detalle.Any())
+                {
+                    return result.Ok("No se encontraron registros de jornada para el vendedor especificado.");
+                }
+
+                // 🔹 Respuesta exitosa
+                return result.Ok(reporte);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al obtener el reporte de jornada: {ex.Message}");
+            }
+        }
+
+
+
+        public IEnumerable<InventarioAsignadoVendedorDTO> ObtenerInventarioAsignadoPorVendedor(int Vend_Id)
+        {
+            try
+            {
+                var list = _inventarioBodegaRepository.ObtenerInventarioAsignadoPorVendedor(Vend_Id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<InventarioAsignadoVendedorDTO> resultado = null;
+                return resultado;
+            }
+        }
+
+
+
+        #endregion
 
         #region Descuentos
 
@@ -412,6 +517,49 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return resultado;
             }
         }
+
+        public IEnumerable<tbInventarioSucursales>ListarPorSucursal(int id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ListadoPorSucursal(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarInventario(int sucu_id, int usua_id)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActulizarInventario(sucu_id, usua_id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
+        public IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
+        {
+            try
+            {
+                var list = _inventarioSucursalRepository.ActualizarCantidadesInventario(usua_id, inSu_FechaModificacion, xmlData);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+
 
         #endregion
 

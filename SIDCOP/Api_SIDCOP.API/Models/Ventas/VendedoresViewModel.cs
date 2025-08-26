@@ -44,6 +44,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public DateTime? Vend_FechaModificacion { get; set; }
 
+        public string Vend_Imagen { get; set; }
+
         public string? Sucu_Descripcion { get; set; }
 
         

@@ -23,7 +23,6 @@ namespace Api_SIDCOP.API.Controllers.General
         {
             _generalServices = generalServices;
             _mapper = mapper;
-
         }
 
         [HttpGet("Listar")]
@@ -32,6 +31,26 @@ namespace Api_SIDCOP.API.Controllers.General
             var list = _generalServices.ListClientesConfirmados();
             return Ok(list);
         }
+
+        [HttpGet("BuscarPorRuta/{id}")]
+        public IActionResult BuscarPorRuta(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var cliente = _generalServices.BuscarClientePorRuta(id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Cliente no encontrado.");
+            }
+        }
+
+
 
         [HttpGet("ListarSinConfirmacion")]
         public IActionResult ListarClienteSinConfirmacion()
@@ -52,9 +71,11 @@ namespace Api_SIDCOP.API.Controllers.General
         public IActionResult ActualizarCliente([FromBody] ClienteViewModel item)
         {
             var mapped = _mapper.Map<tbClientes>(item);
-            var insert = _generalServices. UpdateCliente(mapped);
+            var insert = _generalServices.UpdateCliente(mapped);
             return Ok(insert);
         }
+
+
 
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
@@ -74,24 +95,36 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
-
-        [HttpPut("CambioEstado")]
-        public IActionResult CambioEstado(int? id, DateTime? fecha)
+        [HttpGet("MostrarVendedor/{vend_Id}")]
+        public IActionResult ListarPorVendedor(int vend_Id)
         {
-            if (id <= 0)
+            if (vend_Id <= 0)
             {
                 return BadRequest("Id Invalida.");
             }
-            //var sucursal = _mapper.Map<SIDCOP_Backend.Entities.Entities.tbSucursales>(id);
-            var result = _generalServices.CambioEstadoCliente(id, fecha);
-            if (result.Success)
+            var cliente = _generalServices.BuscarVendedor(vend_Id);
+            if (cliente != null)
             {
-                return Ok(result);
+                return Ok(cliente);
             }
             else
             {
-                return BadRequest(result.Message);
+                return NotFound("Cliente no encontrado.");
             }
+        }
+
+        [HttpPost("CambiarEstado")]
+        public IActionResult CambiarEstado([FromBody] ClienteCambiarEstadoDTO dto)
+        {
+            if (dto == null || dto.Clie_Id <= 0)
+                return BadRequest("Datos inválidos.");
+
+            var result = _generalServices.CambiarEstadoCliente(dto.Clie_Id, dto.FechaActual);
+
+            if (result.code_Status == 1)
+                return Ok(result);
+            else
+                return BadRequest(result);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿   using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Inventario
 {
@@ -41,6 +41,8 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string Prod_EsPromo { get; set; }
 
+        public bool Prod_Impulsado { get; set; }
+
         public bool Prod_Estado { get; set; }
 
         public int Usua_Creacion { get; set; }
@@ -68,6 +70,18 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         
         public string? UsuarioModificacion { get; set; }
+
+        public string? ListasPrecio_JSON { get; set; }
+
+        public string? DescuentosEscala_JSON { get; set; }
+
+        public string? Desc_EspecificacionesJSON { get; set; }
+
+        public string? InfoPromocion_JSON { get; set; }
+
+        public double? Impu_Valor { get; set; }
+
+
 
     }
 }
