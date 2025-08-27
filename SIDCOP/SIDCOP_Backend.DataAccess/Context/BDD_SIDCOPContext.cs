@@ -184,6 +184,27 @@ public partial class BDD_SIDCOPContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<tbMetas>(entity =>
+        {
+            entity.HasKey(e => e.Meta_Id);
+
+            entity.HasOne(d => d.Usua_CreacionNavigation)
+                .WithMany(p => p.tbMetasUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_tbMetas_tbUsuarios");
+        });
+
+        modelBuilder.Entity<tbMetasPorEmpleados>(entity =>
+        {
+            entity.HasKey(e => e.Meta_Id);
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation)
+                .WithMany(p => p.tbMetasPorEmpleadosUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_tbMetasPorEmpleados_tbUsuarios");
+        });
         modelBuilder.Entity<tbAcciones>(entity =>
         {
             entity.HasKey(e => e.Acci_Id).HasName("PK_Acce_tbAcciones_Acci_Id");

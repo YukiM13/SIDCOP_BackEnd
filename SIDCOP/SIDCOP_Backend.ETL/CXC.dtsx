@@ -1,0 +1,1876 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2025 3:37:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-D1J21EQK"
+  DTS:CreatorName="LAPTOP-D1J21EQK\Sebas"
+  DTS:DTSID="{3F88D2ED-3F76-4856-B537-DAF4C466540E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="18442"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DE64B9A6-D390-4BC8-BA85-C428A70F6942}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar Ultima Migracion CXC"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{e83904bc-e039-4d51-82b7-5ce155c284cc}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar Ultima Migracion CXC"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'CXC'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Migraciion CuentasPorCobrar"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{72012e24-df11-44cb-8f70-25e2a654ec6d}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Migraciion CuentasPorCobrar"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Migraciion CuentasPorCobrar\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input].Columns[MCTipDoc]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="MCTipDoc"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input].Columns[MCHora]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="MCHora"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCHora]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input].Columns[MCAno]"
+                      cachedDataType="i4"
+                      cachedName="MCAno"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCAno]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input].Columns[MCMes]"
+                      cachedDataType="i4"
+                      cachedName="MCMes"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCMes]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]"
+                      name="MCTipDocC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="8"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]"
+                      name="MCHoraC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCHora]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]"
+                      name="MCAnoC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCAno]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]"
+                      name="MCMesC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCMes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."CARCXC"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCodigo]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigo"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCTipDoc]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="MCTipDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCNumDoc]"
+                      cachedDataType="numeric"
+                      cachedName="MCNumDoc"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCNumDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Serie]"
+                      cachedDataType="i2"
+                      cachedName="Serie"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Serie]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCFecEmi]"
+                      cachedDataType="dbDate"
+                      cachedName="MCFecEmi"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFecEmi]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecEmi]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCFecVen]"
+                      cachedDataType="dbDate"
+                      cachedName="MCFecVen"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFecVen]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecVen]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCValDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCValDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCValDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCValDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCSalDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCSalDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCSalDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSalDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCVenCod]"
+                      cachedDataType="i2"
+                      cachedName="MCVenCod"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCVenCod]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCVenCod]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCSubDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCSubDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCSubDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSubDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCDesDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCDesDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCDesDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCDesDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCImpDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCImpDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCImpDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCImpDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCExeDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCExeDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCExeDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCExeDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCGraDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCGraDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCGraDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCHoraC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="MCHoraC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCHora]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCAnoC]"
+                      cachedDataType="i2"
+                      cachedName="MCAnoC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCMesC]"
+                      cachedDataType="i2"
+                      cachedName="MCMesC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMes]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCCiaInv]"
+                      cachedDataType="i2"
+                      cachedName="MCCiaInv"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCialnv]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCiaInv]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
+                      dataType="numeric"
+                      name="DatCodigo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
+                      dataType="wstr"
+                      length="3"
+                      name="MCTipDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCNumDoc]"
+                      dataType="numeric"
+                      name="MCNumDoc"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Serie]"
+                      dataType="i2"
+                      name="Serie" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFecEmi]"
+                      dataType="dbTimeStamp"
+                      name="MCFecEmi" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCPlazo]"
+                      dataType="i2"
+                      name="MCPlazo" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFecVen]"
+                      dataType="dbTimeStamp"
+                      name="MCFecVen" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCValDoc]"
+                      dataType="numeric"
+                      name="MCValDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCSalDoc]"
+                      dataType="numeric"
+                      name="MCSalDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMes]"
+                      dataType="i2"
+                      name="MCMes" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
+                      dataType="i2"
+                      name="MCAno" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCNulo]"
+                      dataType="wstr"
+                      length="1"
+                      name="MCNulo" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCerrado]"
+                      dataType="wstr"
+                      length="1"
+                      name="MCCerrado" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCVenCod]"
+                      dataType="i2"
+                      name="MCVenCod" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFactor]"
+                      dataType="numeric"
+                      name="MCFactor"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCRefer]"
+                      dataType="wstr"
+                      length="60"
+                      name="MCRefer" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipvta]"
+                      dataType="i4"
+                      name="MCTipvta" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCClasi]"
+                      dataType="i2"
+                      name="MCClasi" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCRClas]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="MCRClas" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCFClas]"
+                      dataType="dbTimeStamp"
+                      name="MCFClas" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCSubDoc]"
+                      dataType="numeric"
+                      name="MCSubDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCDesDoc]"
+                      dataType="numeric"
+                      name="MCDesDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCImpDoc]"
+                      dataType="numeric"
+                      name="MCImpDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCExeDoc]"
+                      dataType="numeric"
+                      name="MCExeDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCGraDoc]"
+                      dataType="numeric"
+                      name="MCGraDoc"
+                      precision="19"
+                      scale="255" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMod]"
+                      dataType="wstr"
+                      length="3"
+                      name="MCMod" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCia]"
+                      dataType="i2"
+                      name="MCCia" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCajera]"
+                      dataType="i2"
+                      name="MCCajera" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCOP]"
+                      dataType="i4"
+                      name="MCOP" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCialnv]"
+                      dataType="i2"
+                      name="MCCialnv" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCHora]"
+                      dataType="wstr"
+                      length="8"
+                      name="MCHora" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAUsr]"
+                      dataType="wstr"
+                      length="10"
+                      name="MCAUsr" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAFec]"
+                      dataType="dbTimeStamp"
+                      name="MCAFec" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAHora]"
+                      dataType="wstr"
+                      length="8"
+                      name="MCAHora" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCSBTipo]"
+                      dataType="i2"
+                      name="MCSBTipo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migraciion CuentasPorCobrar\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CARCXC]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CARCXC]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ? and [refTable].[MCNumDoc] = ? and [refTable].[Serie] = ? and [refTable].[MCTipDoc] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DatCodigo" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCTipDoc" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCNumDoc" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Serie" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCFecEmi" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCPlazo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCFecVen" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCValDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCSalDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCMes" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCAno" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCNulo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCCerrado" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCVenCod" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCFactor" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="MCRefer" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCTipvta" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCClasi" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCRClas" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCFClas" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCSubDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCDesDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCImpDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCExeDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCGraDoc" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCMod" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCCia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCCajera" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCOP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCCialnv" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCHora" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCAUsr" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCAFec" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MCAHora" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MCSBTipo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]};#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]};#{Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]};#{Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migraciion CuentasPorCobrar\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input].Columns[DatCodigo]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigo"
+                      cachedPrecision="10"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DatCodigo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input].Columns[MCTipDocC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MCTipDocC"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MCTipDoc</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input].Columns[MCNumDoc]"
+                      cachedDataType="numeric"
+                      cachedName="MCNumDoc"
+                      cachedPrecision="10"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MCNumDoc</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input].Columns[Serie]"
+                      cachedDataType="i2"
+                      cachedName="Serie"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Serie</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migraciion CuentasPorCobrar\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.CARCXC
+
+SET MCFecEmi  = ?,
+    MCFecVen  = ?,
+    MCValDoc  = ?,
+    MCSalDoc  = ?,
+    MCMes     = ?,
+    MCAno     = ?,
+    MCVenCod  = ?,
+    MCSubDoc  = ?,
+    MCDesDoc  = ?,
+    MCImpDoc  = ?,
+    MCExeDoc  = ?,
+    MCGraDoc  = ?,
+    MCHora    = ?
+WHERE Cia       = ?
+  AND DatCodigo = ?
+  AND MCTipDoc  = ?
+  AND MCNumDoc  = ?
+  AND Serie     = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCFecEmi]"
+                      cachedDataType="dbDate"
+                      cachedName="MCFecEmi"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecEmi]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCFecVen]"
+                      cachedDataType="dbDate"
+                      cachedName="MCFecVen"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecVen]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[Serie]"
+                      cachedDataType="i2"
+                      cachedName="Serie"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCNumDoc]"
+                      cachedDataType="numeric"
+                      cachedName="MCNumDoc"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[DatCodigo]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigo"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCValDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCValDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCValDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCTipDocC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MCTipDocC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCSalDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCSalDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSalDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCMesC]"
+                      cachedDataType="i2"
+                      cachedName="MCMesC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCAnoC]"
+                      cachedDataType="i2"
+                      cachedName="MCAnoC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCVenCod]"
+                      cachedDataType="i2"
+                      cachedName="MCVenCod"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCVenCod]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCSubDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCSubDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSubDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCDesDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCDesDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCDesDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCImpDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCImpDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCImpDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCExeDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCExeDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCExeDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCGraDoc]"
+                      cachedDataType="cy"
+                      cachedName="MCGraDoc"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].Columns[MCHoraC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="MCHoraC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="cy"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="cy"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i2"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i2"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i2"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="cy"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="cy"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="cy"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="cy"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="cy"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      dataType="i2"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="numeric"
+                      name="Param_14"
+                      precision="10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      dataType="numeric"
+                      name="Param_16"
+                      precision="10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      dataType="i2"
+                      name="Param_17">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC Vnta.SP_CuentasPorCobrar_Migrar</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      name="Cia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCodigo]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]"
+                      name="DatCodigo"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCTipDoc]"
+                      length="3"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]"
+                      name="MCTipDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCNumDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCNumDoc]"
+                      name="MCNumDoc"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Serie]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Serie]"
+                      name="Serie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecEmi]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCFecEmi]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecEmi]"
+                      name="MCFecEmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecVen]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCFecVen]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCFecVen]"
+                      name="MCFecVen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCValDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCValDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCValDoc]"
+                      name="MCValDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSalDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCSalDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSalDoc]"
+                      name="MCSalDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCMes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCMes]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCMes]"
+                      name="MCMes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCAno]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCAno]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCAno]"
+                      name="MCAno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCVenCod]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCVenCod]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCVenCod]"
+                      name="MCVenCod"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSubDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCSubDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCSubDoc]"
+                      name="MCSubDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCDesDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCDesDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCDesDoc]"
+                      name="MCDesDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCImpDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCImpDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCImpDoc]"
+                      name="MCImpDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCExeDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCExeDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCExeDoc]"
+                      name="MCExeDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCGraDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]"
+                      name="MCGraDoc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCiaInv]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCCiaInv]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCiaInv]"
+                      name="MCCiaInv"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCHora]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCHora]"
+                      length="30"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCHora]"
+                      name="MCHora"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[DatCodigo]"
+                      dataType="numeric"
+                      name="DatCodigo"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCTipDoc]"
+                      dataType="wstr"
+                      length="3"
+                      name="MCTipDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCNumDoc]"
+                      dataType="numeric"
+                      name="MCNumDoc"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[Serie]"
+                      dataType="i2"
+                      name="Serie" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCFecEmi]"
+                      dataType="dbDate"
+                      name="MCFecEmi" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCFecVen]"
+                      dataType="dbDate"
+                      name="MCFecVen" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCValDoc]"
+                      dataType="cy"
+                      name="MCValDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCSalDoc]"
+                      dataType="cy"
+                      name="MCSalDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCMes]"
+                      dataType="i4"
+                      name="MCMes" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCAno]"
+                      dataType="i4"
+                      name="MCAno" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCVenCod]"
+                      dataType="i2"
+                      name="MCVenCod" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCSubDoc]"
+                      dataType="cy"
+                      name="MCSubDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCDesDoc]"
+                      dataType="cy"
+                      name="MCDesDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCImpDoc]"
+                      dataType="cy"
+                      name="MCImpDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCExeDoc]"
+                      dataType="cy"
+                      name="MCExeDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCGraDoc]"
+                      dataType="cy"
+                      name="MCGraDoc" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCCiaInv]"
+                      dataType="i2"
+                      name="MCCiaInv" />
+                    <externalMetadataColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[MCHora]"
+                      dataType="wstr"
+                      length="30"
+                      name="MCHora" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      name="Cia" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCodigo]"
+                      dataType="numeric"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[DatCodigo]"
+                      name="DatCodigo"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCTipDoc]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCTipDoc]"
+                      name="MCTipDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCNumDoc]"
+                      dataType="numeric"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCNumDoc]"
+                      name="MCNumDoc"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Serie]"
+                      dataType="i2"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[Serie]"
+                      name="Serie" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCFecEmi]"
+                      dataType="dbDate"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCFecEmi]"
+                      name="MCFecEmi" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCFecVen]"
+                      dataType="dbDate"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCFecVen]"
+                      name="MCFecVen" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCValDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCValDoc]"
+                      name="MCValDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCSalDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCSalDoc]"
+                      name="MCSalDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCMes]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCMes]"
+                      name="MCMes" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCAno]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCAno]"
+                      name="MCAno" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCVenCod]"
+                      dataType="i2"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCVenCod]"
+                      name="MCVenCod" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCSubDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCSubDoc]"
+                      name="MCSubDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCDesDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCDesDoc]"
+                      name="MCDesDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCImpDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCImpDoc]"
+                      name="MCImpDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCExeDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCExeDoc]"
+                      name="MCExeDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCGraDoc]"
+                      dataType="cy"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCGraDoc]"
+                      name="MCGraDoc" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCCiaInv]"
+                      dataType="i2"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCCiaInv]"
+                      name="MCCiaInv" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCHora]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[MCHora]"
+                      name="MCHora" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Migraciion CuentasPorCobrar.Paths[Data Conversion Output]"
+              endId="Package\Migraciion CuentasPorCobrar\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migraciion CuentasPorCobrar.Paths[Lookup Match Output]"
+              endId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Migraciion CuentasPorCobrar.Paths[Lookup No Match Output]"
+              endId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migraciion CuentasPorCobrar\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migraciion CuentasPorCobrar.Paths[Salida de origen de ADO NET]"
+              endId="Package\Migraciion CuentasPorCobrar\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{e564b64b-e94b-47fc-946a-06e4b1238116}"
+      DTS:From="Package\Migraciion CuentasPorCobrar"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Actualizar Ultima Migracion CXC" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Migraciion CuentasPorCobrar"
+          TopLeft="63.1249998292572,60" />
+        <NodeLayout
+          Size="229.6,41.6"
+          Id="Package\Actualizar Ultima Migracion CXC"
+          TopLeft="60,129.333332851198" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="172.762499914629,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.7333328511978"
+              Start="0,0"
+              End="0,20.2333328511978">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2333328511978" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Migraciion CuentasPorCobrar">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Lookup"
+          TopLeft="411.999993860722,245.999996334314" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Destino de ADO NET"
+          TopLeft="193.999997109175,340.799995589256" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Data Conversion"
+          TopLeft="390.999994173646,147.999997794628" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Origen de ADO NET"
+          TopLeft="393.999994128942,64.9999990314245" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\OLE DB Command"
+          TopLeft="586.999991253018,339.999994933605" />
+        <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup No Match Output]"
+          TopLeft="468.399993860722,287.599996334314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-185.999996751547,53.1999992549419"
+              Start="0,0"
+              End="-185.999996751547,45.6999992549419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5999996274709" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5999996274709"
+                    Point2="0,26.5999996274709"
+                    Point3="-4,26.5999996274709" />
+                  <mssgle:LineSegment
+                    End="-181.999996751547,26.5999996274709" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-181.999996751547,26.5999996274709"
+                    Point2="-185.999996751547,26.5999996274709"
+                    Point3="-185.999996751547,30.5999996274709" />
+                  <mssgle:LineSegment
+                    End="-185.999996751547,45.6999992549419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-148.806385094523,31.5999996274709,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Data Conversion Output]"
+          TopLeft="468.699994017184,189.599997794628">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3999985396862"
+              Start="0,0"
+              End="0,48.8999985396862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8999985396862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Salida de origen de ADO NET]"
+          TopLeft="480.399994128942,106.599999031425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.3999999552965,41.3999987632037"
+              Start="0,0"
+              End="-11.3999999552965,33.8999987632037">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6999993816018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6999993816018"
+                    Point2="0,20.6999993816018"
+                    Point3="-4,20.6999993816018" />
+                  <mssgle:LineSegment
+                    End="-7.39999995529649,20.6999993816018" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.39999995529649,20.6999993816018"
+                    Point2="-11.3999999552965,20.6999993816018"
+                    Point3="-11.3999999552965,24.6999993816018" />
+                  <mssgle:LineSegment
+                    End="-11.3999999552965,33.8999987632037" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup Match Output]"
+          TopLeft="485.866660527388,287.599996334314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.73333072563,52.3999985992908"
+              Start="0,0"
+              End="184.73333072563,44.8999985992908">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3997197076824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3997197076824"
+                    Point2="0,21.3997197076824"
+                    Point3="4,21.3997197076824" />
+                  <mssgle:LineSegment
+                    End="180.73333072563,21.3997197076824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="180.73333072563,21.3997197076824"
+                    Point2="184.73333072563,21.3997197076824"
+                    Point3="184.73333072563,25.3997197076824" />
+                  <mssgle:LineSegment
+                    End="184.73333072563,44.8999985992908" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="44.175278644065,26.3997197076824,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
