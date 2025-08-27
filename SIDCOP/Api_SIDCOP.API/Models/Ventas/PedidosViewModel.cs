@@ -8,7 +8,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int? Secuencia { get; set; }
 
- 
+        public string Pedi_Codigo { get; set; }
+
         public int Pedi_Id { get; set; }
 
         public int DiCl_Id { get; set; }

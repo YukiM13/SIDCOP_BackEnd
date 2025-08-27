@@ -49,16 +49,25 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Id", item.Vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pedi_Codigo", item.Pedi_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaPedido", item.Pedi_FechaPedido, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaEntrega", item.Pedi_FechaEntrega, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaCreacion", item.Pedi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             string detallesXml = item.Detalles != null && item.Detalles.Any()
-            ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
-                $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad><PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio></Deta>"))
-                + "</Detalles>"
-            : "<Detalles></Detalles>";
+             ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
+                 $"<Deta>" +
+                     $"<Prod_Id>{d.Prod_Id}</Prod_Id>" +
+                     $"<PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad>" +
+                     $"<PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio>" +
+                     $"<PeDe_Impuesto>{d.PeDe_Impuesto.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Impuesto>" +
+                     $"<PeDe_Descuento>{d.PeDe_Descuento.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Descuento>" +
+                     $"<PeDe_Subtotal>{d.PeDe_Subtotal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Subtotal>" +
+                     $"<PeDe_ProdPrecioFinal>{d.PeDe_ProdPrecioFinal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecioFinal>" +
+                 $"</Deta>"
+             )) + "</Detalles>"
+             : "<Detalles></Detalles>";
 
             parameter.Add("@Detalles", detallesXml, DbType.Xml);
 
@@ -96,6 +105,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var parameter = new DynamicParameters();
             parameter.Add("@Pedi_Id", item.Pedi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Pedi_Codigo", item.Pedi_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Id", item.Vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaPedido", item.Pedi_FechaPedido, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaEntrega", item.Pedi_FechaEntrega, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
@@ -103,10 +113,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Pedi_FechaModificacion", item.Pedi_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
             string detallesXml = item.Detalles != null && item.Detalles.Any()
-         ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
-             $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad><PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio></Deta>"))
-             + "</Detalles>"
-         : "<Detalles></Detalles>";
+             ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
+                 $"<Deta>" +
+                     $"<Prod_Id>{d.Prod_Id}</Prod_Id>" +
+                     $"<PeDe_Cantidad>{d.PeDe_Cantidad}</PeDe_Cantidad>" +
+                     $"<PeDe_ProdPrecio>{d.PeDe_ProdPrecio.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecio>" +
+                     $"<PeDe_Impuesto>{d.PeDe_Impuesto.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Impuesto>" +
+                     $"<PeDe_Descuento>{d.PeDe_Descuento.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Descuento>" +
+                     $"<PeDe_Subtotal>{d.PeDe_Subtotal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_Subtotal>" +
+                     $"<PeDe_ProdPrecioFinal>{d.PeDe_ProdPrecioFinal.ToString(System.Globalization.CultureInfo.InvariantCulture)}</PeDe_ProdPrecioFinal>" +
+                 $"</Deta>"
+             )) + "</Detalles>"
+             : "<Detalles></Detalles>";
+
 
             parameter.Add("@Detalles", detallesXml, DbType.Xml);
 

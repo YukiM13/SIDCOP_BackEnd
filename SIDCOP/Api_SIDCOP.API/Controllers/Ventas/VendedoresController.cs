@@ -23,7 +23,14 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
-            var list = _ventaServices.ListarVendedores();
+             var list = _ventaServices.ListarVendedores();
+            return Ok(list);
+        }
+
+        [HttpGet("ListarPorRutas")]
+        public IActionResult ListarVeRu()
+        {
+            var list = _ventaServices.ListarVendedoresPorRuta();
             return Ok(list);
         }
 
@@ -124,6 +131,14 @@ namespace Api_SIDCOP.API.Controllers.Ventas
                 return NotFound("Vendedor no encontrado.");
             }
         }
+
+        [HttpGet("ListarConVisitas")]
+        public IActionResult ListarConVisitas()
+        {
+            var list = _ventaServices.ListarVendedoresConVisita();
+            return Ok(list);
+        }
+
 
 
         //public IActionResult Index()

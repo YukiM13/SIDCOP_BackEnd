@@ -1,4 +1,6 @@
-﻿using Api_Sistema_Reportes.API.Helpers;
+﻿using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.Ventas;
+using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,9 +24,6 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             _mapper = mapper;
         }
 
-
-
-
         [HttpGet("Listar")]
         public IActionResult listar()
         {
@@ -33,7 +32,20 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(list);
         }
 
+        [HttpPost("Insertar")]
+        public IActionResult Insertar([FromBody] DevolucionesViewModel item)
+        {
+            var mapped = _mapper.Map<tbDevoluciones>(item);
+            var result = _ventaServices.InsertarDevolucion(mapped);
+            return Ok(result);
+        }
 
-
+        [HttpPost("Trasladar")]
+        public IActionResult Trasladar([FromBody] DevolucionesViewModel item)
+        {
+            var mapped = _mapper.Map<tbDevoluciones>(item);
+            var insert = _ventaServices.DevolucionTrasladar(mapped);
+            return Ok(insert);
+        }
     }
 }

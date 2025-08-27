@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -22,6 +23,33 @@ public partial class tbDevolucionesDetalle
     public DateTime? DevD_FechaModificacion { get; set; }
 
     public bool DevD_Estado { get; set; }
+
+    public int DevD_Cantidad { get; set; }
+
+    [NotMapped]
+    public int? Secuencia { get; set; }
+
+    [NotMapped]
+    public string? Cate_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Subc_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Prod_Imagen { get; set; }
+
+    [NotMapped]
+    public string? Prod_Descripcion { get; set; }
+    [NotMapped]
+    public string? Productos_Devueltos { get; set; }
+    [NotMapped]
+    public string? Prod_DescripcionCorta { get; set; }
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 
     public virtual tbDevoluciones Devo { get; set; }
 

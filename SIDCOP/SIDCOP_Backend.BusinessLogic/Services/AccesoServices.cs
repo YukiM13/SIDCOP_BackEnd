@@ -15,12 +15,14 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly UsuarioRepository _usuarioRepository;
         private readonly RolRepository _rolRepository;
         private readonly PermisoRepository _permisoRepository;
+        private readonly MigracionRepository _migracionRepository;
 
-        public AccesoServices(UsuarioRepository usuarioRepository, RolRepository rolRepository, PermisoRepository permisoRepository)
+        public AccesoServices(UsuarioRepository usuarioRepository, RolRepository rolRepository, PermisoRepository permisoRepository, MigracionRepository migracionRepository)
         {
             _usuarioRepository = usuarioRepository;
             _rolRepository = rolRepository;
             _permisoRepository = permisoRepository;
+            _migracionRepository = migracionRepository;
         }
 
         #region Usuarios
@@ -356,5 +358,24 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion Roles
+
+        #region Migraciones
+        public IEnumerable<tbControlMigraciones> ListarMigraciones()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _migracionRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbControlMigraciones> migra = null;
+                return migra;
+            }
+        }
+
+
+        #endregion
     }
 }

@@ -64,6 +64,24 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             }
         }
 
+        [HttpGet("ListaPrecio/{id}")]
+        public IActionResult ListaPrecio(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Id Invalida.");
+            }
+            var productos = _inventarioServices.ListaPrecioClientes(id);
+            if (productos != null)
+            {
+                return Ok(productos);
+            }
+            else
+            {
+                return NotFound("Productos No encontrados.");
+            }
+        }
+
         [HttpGet("BuscarPorFactura/{id}")]
         public IActionResult BuscarPorFactura(int id)
         {
@@ -118,6 +136,25 @@ namespace Api_SIDCOP.API.Controllers.Inventario
             else
             {
                 return BadRequest(result);
+            }
+        }
+
+        [HttpGet("ProductosDescuentoPorClienteVendedor/{clieId}/{vendId}")]
+        public async Task<IActionResult> ProductosDescuentoPorClienteVendedor(int clieId, int vendId)
+        {
+            if (clieId <= 0 || vendId <= 0)
+            {
+                return BadRequest("Id de Cliente o Id de Vendedor inválidos.");
+            }
+
+            var productos = await _inventarioServices.ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(clieId, vendId);
+            if (productos != null && productos.Any())
+            {
+                return Ok(productos);
+            }
+            else
+            {
+                return NotFound("Productos no encontrados para el cliente y vendedor especificados.");
             }
         }
 

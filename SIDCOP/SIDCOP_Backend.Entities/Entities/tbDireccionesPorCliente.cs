@@ -22,6 +22,17 @@ public partial class tbDireccionesPorCliente
 
     public decimal? DiCl_Longitud { get; set; }
 
+    public int Usua_Creacion { get; set; }
+
+    public DateTime DiCl_FechaCreacion { get; set; }
+
+    public int? Usua_Modificacion { get; set; }
+
+    public DateTime? DiCl_FechaModificacion { get; set; }
+
+    [NotMapped]
+    public string Colo_Descripcion { get; set; }
+
     [NotMapped]
     public string Muni_Descripcion { get; set; }
 
@@ -37,14 +48,6 @@ public partial class tbDireccionesPorCliente
     [NotMapped]
     public string Clie_Apellidos { get; set; }
 
-    public int Usua_Creacion { get; set; }
-
-    public DateTime DiCl_FechaCreacion { get; set; }
-
-    public int? Usua_Modificacion { get; set; }
-
-    public DateTime? DiCl_FechaModificacion { get; set; }
-
     public virtual tbClientes Clie { get; set; }
 
     public virtual tbColonias Colo { get; set; }
@@ -52,6 +55,10 @@ public partial class tbDireccionesPorCliente
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
+
+    public virtual ICollection<tbClientesVisita> tbClientesVisita { get; set; } = new List<tbClientesVisita>();
+
+    public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
     public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 }

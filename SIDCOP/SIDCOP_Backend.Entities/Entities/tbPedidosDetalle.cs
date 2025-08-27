@@ -17,6 +17,8 @@ public partial class tbPedidosDetalle
 
     public decimal PeDe_ProdPrecio { get; set; }
 
+    public decimal? PeDe_ProdPrecioFinal { get; set; }
+
     public int Usua_Creacion { get; set; }
 
     public DateTime PeDe_FechaCreacion { get; set; }
@@ -26,6 +28,12 @@ public partial class tbPedidosDetalle
     public DateTime? PeDe_FechaModificacion { get; set; }
 
     public bool PeDe_Estado { get; set; }
+
+    public decimal? PeDe_Impuesto { get; set; }
+
+    public decimal? PeDe_Descuento { get; set; }
+
+    public decimal? PeDe_Subtotal { get; set; }
 
     public virtual tbPedidos Pedi { get; set; }
 
