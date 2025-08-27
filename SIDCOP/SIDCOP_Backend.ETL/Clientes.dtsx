@@ -11,8 +11,9 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{1677D157-A6E4-41C8-A7D7-68B8C718B480}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{B3176ED6-727C-4EDE-A088-935F6DAA9A6B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>

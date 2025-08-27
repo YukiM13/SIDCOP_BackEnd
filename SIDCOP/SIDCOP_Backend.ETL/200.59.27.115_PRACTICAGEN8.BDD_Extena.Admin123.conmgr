@@ -8,7 +8,10 @@
       DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-SIDCOP_Backend.ETL-{BDF8B56D-683F-4747-96F4-18ECA7C573CE}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWlXuj//YaUSwhkBF4yQ9NgAAAAACAAAAAAAQZgAAAAEAACAAAAC333gizZVuPOYttFzhIUDZrGDZ93mEwoIJ2Rw7x/+n3AAAAAAOgAAAAAIAACAAAADecAJ/HuBB9WkIx9rrs3O9k2CObpxHBhbSijiOqnbCSoAAAADIbRlr/AKo3rpZszkwD8wOtMsafKpLfcL6f8oC8YwfwPLOeUtc1+HQDZZthdgQH6xZnsoi+jq0ZZ2pLAYiF/V+eMq+CaUs10zvvvEDYK131lRjXZnXtykRGtxJtR7NwsDDiOlzsdaID0s3Q3AyRMYig0u/KUjJ8cA3+jRwIMPtSEAAAAClG32Qk+S7gQ35pScbS2f9d+aT6PdEZwh8ZIWTyzmWzL4otPTIzaAIsX+IsDwZKGE6I/LQmKC+o/E3idxdemqc</DTS:Password>
+        Sensitive="1"
+        p4:Salt="JvfeISFWuZM="
+        p4:IV="z0o8qzvfSh1vS/owgGzd4w=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">J1gSIEsgMdw0mw3VWQpeSxxVxwGaFu8vXUiM+OHJ7sfOnxKNV4ERF+bo//g7flHjBd3PMyvlllfBldqd6P9iu4qm5KTv5Ja4DZFk2BXpy9556VZy2+2Ir5S+LkVCuVStHijspDjc1bP2egEChfTBL8On9GJ+2zqaLR42jXdlynI=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
