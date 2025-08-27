@@ -50,6 +50,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@CoFa_Telefono2", item.CoFa_Telefono2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_Logo", item.CoFa_Logo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_DiasDevolucion", item.CoFa_DiasDevolucion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@CoFa_RutaMigracion", item.CoFa_RutaMigracion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_FechaCreacion", item.CoFa_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
@@ -86,6 +87,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@CoFa_Telefono2", item.CoFa_Telefono2, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_Logo", item.CoFa_Logo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_DiasDevolucion", item.CoFa_DiasDevolucion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameters.Add("@CoFa_RutaMigracion", item.CoFa_RutaMigracion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameters.Add("@CoFa_FechaModificacion", item.CoFa_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
