@@ -179,6 +179,8 @@ public class FacturaCompletaDTO
     public decimal? Fact_Latitud { get; set; }
     public decimal? Fact_Longitud { get; set; }
 
+    public bool? Fact_Anulado { get; set; }
+
     // ===== DATOS DEL CLIENTE =====
     public int Clie_Id { get; set; }
     public string Cliente { get; set; }
