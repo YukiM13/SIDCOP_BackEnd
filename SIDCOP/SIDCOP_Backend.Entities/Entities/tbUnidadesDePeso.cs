@@ -20,12 +20,12 @@ public partial class tbUnidadesDePeso
     public int? Usua_Modificacion { get; set; }
 
     [NotMapped]
-    public string UsuarioCreacion { get; set; }
+    public string? UsuarioCreacion { get; set; }
     [NotMapped]
-    public string UsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     [NotMapped]
-    public string Secuencia { get; set; }
+    public string? Secuencia { get; set; }
     public DateTime? UnPe_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
