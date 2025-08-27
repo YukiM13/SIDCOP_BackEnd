@@ -11,8 +11,8 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{0773D1C2-B04D-48F7-8B08-42942A90CBD4}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{23E09FAC-8A18-46DC-ACC6-88667E8BAFEA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,6 +32,23 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Pedidos'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Agregar Identity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{2BA0EF9C-56C6-4EC0-9FB4-C94F042DF16D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Agregar Identity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbPedidos OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -428,6 +445,98 @@
               </outputs>
             </component>
             <component
+              refId="Package\Migracion Pedidos\Data Conversion 2"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Pedidos\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\Data Conversion 2.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\Data Conversion 3"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\Data Conversion 3.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Pedidos\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Migracion Pedidos\Destino de ADO NET"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
@@ -574,6 +683,12 @@
                       cachedName="UsuarioC"
                       externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usuario]"
                       lineageId="Package\Migracion Pedidos\Data Conversion.Outputs[Data Conversion Output].Columns[UsuarioC]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VendCodigo]"
+                      cachedDataType="i2"
+                      cachedName="VendCodigo"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenCodigo]"
+                      lineageId="Package\Migracion Pedidos\Poblar Pedidos.Outputs[Salida de origen de ADO NET].Columns[VendCodigo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1179,6 +1294,214 @@
               </outputs>
             </component>
             <component
+              refId="Package\Migracion Pedidos\Destino de ADO NET 2"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Vnta"."tbPedidosDetalle"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\Destino de ADO NET 2.Connections[IDbConnection]"
+                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Pedi_Id]"
+                      cachedDataType="i4"
+                      cachedName="Pedi_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Pedi_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Pedi_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Prod_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Prod_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_Cantidad]"
+                      cachedDataType="i4"
+                      cachedName="PeDe_Cantidad"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Cantidad]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Cantidad]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_ProdPrecioFinal]"
+                      cachedDataType="cy"
+                      cachedName="PeDe_ProdPrecioFinal"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_ProdPrecioFinal]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_ProdPrecioFinal]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_Impuesto]"
+                      cachedDataType="cy"
+                      cachedName="PeDe_Impuesto"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Impuesto]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Impuesto]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_Descuento]"
+                      cachedDataType="cy"
+                      cachedName="PeDe_Descuento"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Descuento]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Descuento]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_Subtotal]"
+                      cachedDataType="cy"
+                      cachedName="PeDe_Subtotal"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Subtotal]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Subtotal]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[Usua_Creacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Creacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Usua_Creacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="PeDe_FechaCreacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_FechaCreacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_FechaCreacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].Columns[PeDe_PrecioProd]"
+                      cachedDataType="numeric"
+                      cachedName="PeDe_PrecioProd"
+                      cachedPrecision="13"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_ProdPrecio]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_PrecioProd]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Id]"
+                      dataType="i4"
+                      name="PeDe_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Pedi_Id]"
+                      dataType="i4"
+                      name="Pedi_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Prod_Id]"
+                      dataType="i4"
+                      name="Prod_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Cantidad]"
+                      dataType="i4"
+                      name="PeDe_Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_ProdPrecio]"
+                      dataType="numeric"
+                      name="PeDe_ProdPrecio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_ProdPrecioFinal]"
+                      dataType="numeric"
+                      name="PeDe_ProdPrecioFinal"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="PeDe_FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="PeDe_FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Estado]"
+                      dataType="bool"
+                      name="PeDe_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Impuesto]"
+                      dataType="numeric"
+                      name="PeDe_Impuesto"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Descuento]"
+                      dataType="numeric"
+                      name="PeDe_Descuento"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET].ExternalColumns[PeDe_Subtotal]"
+                      dataType="numeric"
+                      name="PeDe_Subtotal"
+                      precision="8"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Destino de ADO NET 2.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Migracion Pedidos\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1633,6 +1956,304 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
               </outputs>
             </component>
             <component
+              refId="Package\Migracion Pedidos\Lookup 2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Vnta].[tbPedidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Vnta].[tbPedidos]) [refTable]
+where [refTable].[Pedi_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Pedi_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiCl_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_FechaPedido" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_FechaEntrega" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_Codigo" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\Lookup 2.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input].Columns[Pedi_Id]"
+                      cachedDataType="i4"
+                      cachedName="Pedi_Id"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Pedi_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\Lookup 3"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 3"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Vnta].[tbPedidosDetalle]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Vnta].[tbPedidosDetalle]) [refTable]
+where [refTable].[Pedi_Id] = ? and [refTable].[Prod_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PeDe_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_Cantidad" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_ProdPrecio" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;referenceColumn name="PeDe_ProdPrecioFinal" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeDe_Impuesto" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;referenceColumn name="PeDe_Descuento" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;referenceColumn name="PeDe_Subtotal" dataType="DT_NUMERIC" length="0" precision="8" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Pedi_Id]};#{Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Prod_Id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\Lookup 3.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input].Columns[Prod_Id]"
+                      cachedDataType="i4"
+                      cachedName="Prod_Id"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Prod_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Prod_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input].Columns[Pedi_Id]"
+                      cachedDataType="i4"
+                      cachedName="Pedi_Id"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Pedi_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Pedi_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Migracion Pedidos\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -2035,9 +2656,10 @@ Monhora = ?,
 Impphora = ?,
 Deschora =?,
 Subhora = ?,
-Porivahora = ?,
- CodProd = ?
-WHERE Cia = ? AND TipSerie = ? AND Noserie = ? 
+Porivahora = ?
+
+WHERE  CodProd = ?
+AND Cia = ? AND TipSerie = ? AND Noserie = ? 
 AND DatCodigo = ? AND PrLotes = ? AND
 CodUnd = ? AND SPSerCod = ?</property>
                 <property
@@ -2386,6 +3008,964 @@ CodUnd = ? AND SPSerCod = ?</property>
                       refId="Package\Migracion Pedidos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Migracion Pedidos\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\OLE DB Command 2"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Vnta.tbPedidos
+SET DiCl_Id  = ?,
+Vend_Id = ?,
+Pedi_FechaPedido = ?,
+Pedi_FechaEntrega = ?,
+Pedi_Codigo = ?,
+Usua_Modificacion = ?,
+Pedi_FechaModificacion = ?
+WHERE Pedi_Id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\OLE DB Command 2.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[DiCl_Id]"
+                      cachedDataType="i4"
+                      cachedName="DiCl_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[DiCl_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Vend_Id]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Vend_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Pedi_FechaPedido]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaPedido"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaPedido]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Pedi_FechaEntrega]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaEntrega"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaEntrega]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Pedi_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pedi_Codigo"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Codigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Usua_Creacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Creacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Usua_Creacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Pedi_FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaCreacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaCreacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Pedi_Id]"
+                      cachedDataType="i4"
+                      cachedName="Pedi_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="dbTimeStamp"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="dbTimeStamp"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Vnta].[tbPedidos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pedi_Id]"
+                      cachedDataType="i4"
+                      cachedName="Pedi_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DiCl_Id]"
+                      cachedDataType="i4"
+                      cachedName="DiCl_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiCl_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[DiCl_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Id]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Id"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Vend_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pedi_FechaPedido]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaPedido"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaPedido]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaPedido]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pedi_FechaEntrega]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaEntrega"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaEntrega]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaEntrega]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pedi_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Pedi_Codigo"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_Codigo]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Codigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Usua_Creacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Creacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Usua_Creacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pedi_FechaCreacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Pedi_FechaCreacion"
+                      externalMetadataColumnId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaCreacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaCreacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_Id]"
+                      dataType="i4"
+                      name="Pedi_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiCl_Id]"
+                      dataType="i4"
+                      name="DiCl_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Id]"
+                      dataType="i4"
+                      name="Vend_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaPedido]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaPedido" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaEntrega]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_Estado]"
+                      dataType="bool"
+                      name="Pedi_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pedi_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Pedi_Codigo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\Poblar CONHORAS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Poblar CONHORAS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CAST(Cia AS INT) AS Pedi_Id,
+		CAST(DatCodigo AS INT) AS DiCl_Id,
+		CAST(VenCodigo AS INT) AS Vend_Id,
+		Fechor AS Pedi_FechaPedido,
+		FEntrega AS Pedi_FechaEntrega,
+ 'PED-' + 
+    CAST(LEFT(CAST(Noserie AS VARCHAR(18)), LEN(CAST(Noserie AS VARCHAR(18))) - 7) AS VARCHAR(8)) 
+    + '-' + 
+    RIGHT(CAST(Noserie AS VARCHAR(18)), 7) AS Pedi_Codigo,
+	1 AS Usua_Creacion,
+	GETDATE() AS Pedi_FechaCreacion 
+FROM BDD_Extena.dbo.CONHORAS</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\Poblar CONHORAS.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Id]"
+                      name="Pedi_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[DiCl_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[DiCl_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[DiCl_Id]"
+                      name="DiCl_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      name="Vend_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaPedido]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaPedido]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaPedido]"
+                      name="Pedi_FechaPedido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaEntrega]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaEntrega]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaEntrega]"
+                      name="Pedi_FechaEntrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Codigo]"
+                      length="20"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_Codigo]"
+                      name="Pedi_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Usua_Creacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Usua_Creacion]"
+                      name="Usua_Creacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaCreacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].Columns[Pedi_FechaCreacion]"
+                      name="Pedi_FechaCreacion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Id]"
+                      dataType="i4"
+                      name="Pedi_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[DiCl_Id]"
+                      dataType="i4"
+                      name="DiCl_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      dataType="i4"
+                      name="Vend_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaPedido]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaPedido" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaEntrega]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaEntrega" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Pedi_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output].ExternalColumns[Pedi_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="Pedi_FechaCreacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_Id]"
+                      name="Pedi_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[DiCl_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[DiCl_Id]"
+                      name="DiCl_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      name="Vend_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaPedido]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaPedido]"
+                      name="Pedi_FechaPedido" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaEntrega]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaEntrega]"
+                      name="Pedi_FechaEntrega" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Usua_Creacion]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Usua_Creacion]"
+                      name="Usua_Creacion" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_FechaCreacion]"
+                      name="Pedi_FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Error Output].Columns[Pedi_Codigo]"
+                      name="Pedi_Codigo" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Pedidos\Poblar COTORDEN"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Poblar COTORDEN"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CAST(co.Cia AS INT) AS Pedi_Id,
+		CAST(p.Cia AS int) AS Prod_Id,
+		CAST(CanFacturada AS INT) AS PeDe_Cantidad,
+		Valhora AS PeDe_PrecioProd,
+		Monhora AS PeDe_ProdPrecioFinal,
+		Impphora AS PeDe_Impuesto,
+		Deschora AS PeDe_Descuento,
+		Subhora AS PeDe_Subtotal,
+		1 AS Usua_Creacion,
+		GETDATE() AS PeDe_FechaCreacion
+FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.CodProd = p.CodProd</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Pedidos\Poblar COTORDEN.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Pedi_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Pedi_Id]"
+                      name="Pedi_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Prod_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Prod_Id]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Prod_Id]"
+                      name="Prod_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Cantidad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Cantidad]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Cantidad]"
+                      name="PeDe_Cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_PrecioProd]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_PrecioProd]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_PrecioProd]"
+                      name="PeDe_PrecioProd"
+                      precision="13"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_ProdPrecioFinal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_ProdPrecioFinal]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_ProdPrecioFinal]"
+                      name="PeDe_ProdPrecioFinal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Impuesto]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Impuesto]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Impuesto]"
+                      name="PeDe_Impuesto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Descuento]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Descuento]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Descuento]"
+                      name="PeDe_Descuento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Subtotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Subtotal]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_Subtotal]"
+                      name="PeDe_Subtotal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Usua_Creacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[Usua_Creacion]"
+                      name="Usua_Creacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_FechaCreacion]"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].Columns[PeDe_FechaCreacion]"
+                      name="PeDe_FechaCreacion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Pedi_Id]"
+                      dataType="i4"
+                      name="Pedi_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Prod_Id]"
+                      dataType="i4"
+                      name="Prod_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Cantidad]"
+                      dataType="i4"
+                      name="PeDe_Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_PrecioProd]"
+                      dataType="numeric"
+                      name="PeDe_PrecioProd"
+                      precision="13"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_ProdPrecioFinal]"
+                      dataType="cy"
+                      name="PeDe_ProdPrecioFinal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Impuesto]"
+                      dataType="cy"
+                      name="PeDe_Impuesto" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Descuento]"
+                      dataType="cy"
+                      name="PeDe_Descuento" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_Subtotal]"
+                      dataType="cy"
+                      name="PeDe_Subtotal" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output].ExternalColumns[PeDe_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="PeDe_FechaCreacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Pedi_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Pedi_Id]"
+                      name="Pedi_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Prod_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Prod_Id]"
+                      name="Prod_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Cantidad]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Cantidad]"
+                      name="PeDe_Cantidad" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_PrecioProd]"
+                      dataType="numeric"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_PrecioProd]"
+                      name="PeDe_PrecioProd"
+                      precision="13"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_ProdPrecioFinal]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_ProdPrecioFinal]"
+                      name="PeDe_ProdPrecioFinal" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Impuesto]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Impuesto]"
+                      name="PeDe_Impuesto" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Descuento]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Descuento]"
+                      name="PeDe_Descuento" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Subtotal]"
+                      dataType="cy"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_Subtotal]"
+                      name="PeDe_Subtotal" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Usua_Creacion]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[Usua_Creacion]"
+                      name="Usua_Creacion" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[PeDe_FechaCreacion]"
+                      name="PeDe_FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3174,6 +4754,16 @@ CodUnd = ? AND SPSerCod = ?</property>
               name="Data Conversion Output"
               startId="Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\Migracion Pedidos.Paths[Data Conversion Output2]"
+              endId="Package\Migracion Pedidos\Lookup 2.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Pedidos\Data Conversion 2.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Pedidos.Paths[Data Conversion Output3]"
+              endId="Package\Migracion Pedidos\Lookup 3.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Pedidos\Data Conversion 3.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Migracion Pedidos.Paths[Lookup Match Output]"
               endId="Package\Migracion Pedidos\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
@@ -3184,6 +4774,11 @@ CodUnd = ? AND SPSerCod = ?</property>
               name="Lookup Match Output"
               startId="Package\Migracion Pedidos\Lookup 1.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Migracion Pedidos.Paths[Lookup Match Output2]"
+              endId="Package\Migracion Pedidos\OLE DB Command 2.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\Migracion Pedidos.Paths[Lookup No Match Output]"
               endId="Package\Migracion Pedidos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
@@ -3193,6 +4788,26 @@ CodUnd = ? AND SPSerCod = ?</property>
               endId="Package\Migracion Pedidos\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
               startId="Package\Migracion Pedidos\Lookup 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Pedidos.Paths[Lookup No Match Output2]"
+              endId="Package\Migracion Pedidos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Pedidos\Lookup 2.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Pedidos.Paths[Lookup No Match Output3]"
+              endId="Package\Migracion Pedidos\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Pedidos\Lookup 3.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Pedidos.Paths[OLE DB Source Output]"
+              endId="Package\Migracion Pedidos\Data Conversion 2.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Migracion Pedidos\Poblar CONHORAS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Migracion Pedidos.Paths[OLE DB Source Output1]"
+              endId="Package\Migracion Pedidos\Data Conversion 3.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Migracion Pedidos\Poblar COTORDEN.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Migracion Pedidos.Paths[Salida de origen de ADO NET]"
               endId="Package\Migracion Pedidos\Data Conversion.Inputs[Data Conversion Input]"
@@ -3207,15 +4822,48 @@ CodUnd = ? AND SPSerCod = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Quitar Identity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{DA620C91-746A-4E93-B7C9-AE454ACDC665}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Quitar Identity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbPedidos ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 7]"
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{65a389cd-e97a-473c-8e4b-dd9a89079a00}"
+      DTS:DTSID="{E3D24293-9916-4104-9AB9-899FE7D1DCEA}"
+      DTS:From="Package\Quitar Identity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Migracion Pedidos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{345B8E99-1608-4E6B-A603-4CFA1C36B2E3}"
       DTS:From="Package\Migracion Pedidos"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 7"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Agregar Identity" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6E559820-5938-4A26-AC57-B606CE90605F}"
+      DTS:From="Package\Agregar Identity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
       DTS:To="Package\Actualizar Ultima Migracion Pedidos" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -3229,29 +4877,105 @@ CodUnd = ? AND SPSerCod = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Pedidos"
-          TopLeft="94.3749981218327,60" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="244.8,41.6"
           Id="Package\Actualizar Ultima Migracion Pedidos"
-          TopLeft="60,132.583332828598" />
+          TopLeft="64.1666664390101,278.183331816114" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Pedidos"
+          TopLeft="96.0416646974367,129.333332851198" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Agregar Identity"
+          TopLeft="99.9999945362411,199.333331947194" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Quitar Identity"
+          TopLeft="96.6666613850331,58.9333329235183" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 7]"
-          TopLeft="179.387499060916,101.6">
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="168.266661385033,100.533332923518">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.9833328285978"
+              EndConnector="9.77500331240367,28.7999999276797"
               Start="0,0"
-              End="0,23.4833328285978">
+              End="9.77500331240367,21.2999999276797">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.4833328285978" />
+                    End="0,10.3999999638398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.3999999638398"
+                    Point2="0,14.3999999638398"
+                    Point3="4,14.3999999638398" />
+                  <mssgle:LineSegment
+                    End="5.77500331240367,14.3999999638398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.77500331240367,14.3999999638398"
+                    Point2="9.77500331240367,14.3999999638398"
+                    Point3="9.77500331240367,18.3999999638398" />
+                  <mssgle:LineSegment
+                    End="9.77500331240367,21.2999999276797" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="177.020829616839,170.933332851198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.3999990959963"
+              Start="0,0"
+              End="0,20.8999990959963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8999990959963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="175.999994536241,240.933331947194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.566671902769,37.2499998689195"
+              Start="0,0"
+              End="10.566671902769,29.7499998689195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6249999344598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6249999344598"
+                    Point2="0,18.6249999344598"
+                    Point3="4,18.6249999344598" />
+                  <mssgle:LineSegment
+                    End="6.56667190276897,18.6249999344598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.56667190276897,18.6249999344598"
+                    Point2="10.566671902769,18.6249999344598"
+                    Point3="10.566671902769,22.6249999344598" />
+                  <mssgle:LineSegment
+                    End="10.566671902769,29.7499998689195" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3267,7 +4991,27 @@ CodUnd = ? AND SPSerCod = ?</property>
     design-time-name="Package\Migracion Pedidos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Migracion Pedidos\Poblar Pedidos"
+          TopLeft="159.999997615814,75.9999988675118" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Pedidos\Data Conversion"
+          TopLeft="156.999997660518,158.999997630715" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Pedidos\Lookup 1"
+          TopLeft="581.999991327524,245.999996334314" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Pedidos\Destino de ADO NET 1"
+          TopLeft="481.99999281764,355.79999524653" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Pedidos\OLE DB Command 1"
+          TopLeft="718.999989286065,362.599994978309" />
         <NodeLayout
           Size="184,41.6"
           Id="Package\Migracion Pedidos\Poblar Pedidos Detalle"
@@ -3277,26 +5021,6 @@ CodUnd = ? AND SPSerCod = ?</property>
           Id="Package\Migracion Pedidos\OLE DB Command"
           TopLeft="255.999996185303,375.999994397163" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Pedidos\Data Conversion"
-          TopLeft="156.999997660518,158.999997630715" />
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Pedidos\Destino de ADO NET 1"
-          TopLeft="481.99999281764,355.79999524653" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Pedidos\Lookup 1"
-          TopLeft="581.999991327524,245.999996334314" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Pedidos\Lookup"
-          TopLeft="174.999997392297,235.999996483326" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Pedidos\OLE DB Command 1"
-          TopLeft="718.999989286065,362.599994978309" />
-        <NodeLayout
           Size="176.8,41.6"
           Id="Package\Migracion Pedidos\Destino de ADO NET"
           TopLeft="43.9999993443489,374.999994888902" />
@@ -3305,23 +5029,117 @@ CodUnd = ? AND SPSerCod = ?</property>
           Id="Package\Migracion Pedidos\Data Conversion 1"
           TopLeft="562.999991610646,152.999997720122" />
         <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Migracion Pedidos\Poblar Pedidos"
-          TopLeft="159.999997615814,75.9999988675118" />
+          Size="112.8,41.6"
+          Id="Package\Migracion Pedidos\Lookup"
+          TopLeft="174.999997392297,235.999996483326" />
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Salida de origen de ADO NET]"
-          TopLeft="234.699997638166,117.599998867512">
+          Id="Package\Migracion Pedidos.Paths[Lookup Match Output1]"
+          TopLeft="661.199991327524,287.599996334314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.3999987632035"
+              EndConnector="145.799997958541,74.9999986439944"
               Start="0,0"
-              End="0,33.8999987632035">
+              End="145.799997958541,67.4999986439944">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.8999987632035" />
+                    End="0,26.58823474108" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.58823474108"
+                    Point2="0,30.58823474108"
+                    Point3="4,30.58823474108" />
+                  <mssgle:LineSegment
+                    End="141.799997958541,30.58823474108" />
+                  <mssgle:CubicBezierSegment
+                    Point1="141.799997958541,30.58823474108"
+                    Point2="145.799997958541,30.58823474108"
+                    Point3="145.799997958541,34.58823474108" />
+                  <mssgle:LineSegment
+                    End="145.799997958541,67.4999986439944" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="24.7086122605205,35.58823474108,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Lookup Match Output]"
+          TopLeft="248.866664058964,277.599996483326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.7333321263391,98.3999979138374"
+              Start="0,0"
+              End="90.7333321263391,90.8999979138374">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.185733413763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.185733413763"
+                    Point2="0,40.185733413763"
+                    Point3="4,40.185733413763" />
+                  <mssgle:LineSegment
+                    End="86.7333321263391,40.185733413763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.7333321263391,40.185733413763"
+                    Point2="90.7333321263391,40.185733413763"
+                    Point3="90.7333321263391,44.185733413763" />
+                  <mssgle:LineSegment
+                    End="90.7333321263391,90.8999979138374" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.82472065558045,45.185733413763,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output1]"
+          TopLeft="643.699991469085,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.399998614192"
+              Start="0,0"
+              End="0,43.899998614192">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.899998614192" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output]"
+          TopLeft="233.199997526407,200.599997630715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.3999988526107"
+              Start="0,0"
+              End="0,27.8999988526107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8999988526107" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3353,25 +5171,61 @@ CodUnd = ? AND SPSerCod = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Data Conversion Output]"
-          TopLeft="233.199997526407,200.599997630715">
+          Id="Package\Migracion Pedidos.Paths[Salida de origen de ADO NET]"
+          TopLeft="234.699997638166,117.599998867512">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.3999988526107"
+              EndConnector="0,41.3999987632035"
               Start="0,0"
-              End="0,27.8999988526107">
+              End="0,33.8999987632035">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.8999988526107" />
+                    End="0,33.8999987632035" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Lookup No Match Output1]"
+          TopLeft="642.399991327524,287.599996334314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-67.5999985098837,68.1999989122153"
+              Start="0,0"
+              End="-67.5999985098837,60.6999989122153">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0999994561077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0999994561077"
+                    Point2="0,34.0999994561077"
+                    Point3="-4,34.0999994561077" />
+                  <mssgle:LineSegment
+                    End="-63.5999985098837,34.0999994561077" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.5999985098837,34.0999994561077"
+                    Point2="-67.5999985098837,34.0999994561077"
+                    Point3="-67.5999985098837,38.0999994561077" />
+                  <mssgle:LineSegment
+                    End="-67.5999985098837,60.6999989122153" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.6063859736919,39.0999994561077,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3410,20 +5264,52 @@ CodUnd = ? AND SPSerCod = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Pedidos\Poblar CONHORAS"
+          TopLeft="173.333323862818,461.53333088047" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Pedidos\Data Conversion 2"
+          TopLeft="168.2333242726,542.73333091663" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Pedidos\Lookup 2"
+          TopLeft="193.23332290666,611.39999766767" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Pedidos\OLE DB Destination"
+          TopLeft="63.2333300095467,699.59999743263" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Pedidos\OLE DB Command 2"
+          TopLeft="329.066648818388,697.466664653752" />
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Data Conversion Output1]"
-          TopLeft="643.699991469085,194.599997720122">
+          Id="Package\Migracion Pedidos.Paths[OLE DB Source Output]"
+          TopLeft="258.933323862818,503.13333088047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.399998614192"
+              EndConnector="-8.69999959021789,39.60000003616"
               Start="0,0"
-              End="0,43.899998614192">
+              End="-8.69999959021789,32.10000003616">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.899998614192" />
+                    End="0,15.80000001808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.80000001808"
+                    Point2="0,19.80000001808"
+                    Point3="-4,19.80000001808" />
+                  <mssgle:LineSegment
+                    End="-4.69999959021789,19.80000001808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.69999959021789,19.80000001808"
+                    Point2="-8.69999959021789,19.80000001808"
+                    Point3="-8.69999959021789,23.80000001808" />
+                  <mssgle:LineSegment
+                    End="-8.69999959021789,32.10000003616" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3433,115 +5319,288 @@ CodUnd = ? AND SPSerCod = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Lookup Match Output]"
-          TopLeft="248.866664058964,277.599996483326">
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output2]"
+          TopLeft="251.93332358963,584.33333091663">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90.7333321263391,98.3999979138374"
+              EndConnector="0,27.0666667510404"
               Start="0,0"
-              End="90.7333321263391,90.8999979138374">
+              End="0,19.5666667510404">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.185733413763" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.185733413763"
-                    Point2="0,40.185733413763"
-                    Point3="4,40.185733413763" />
+                    End="0,19.5666667510404" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Lookup No Match Output2]"
+          TopLeft="253.63332290666,652.99999766767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.799992897113,46.5999997649593"
+              Start="0,0"
+              End="-104.799992897113,39.0999997649593">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="86.7333321263391,40.185733413763" />
+                    End="0,19.2999998824797" />
                   <mssgle:CubicBezierSegment
-                    Point1="86.7333321263391,40.185733413763"
-                    Point2="90.7333321263391,40.185733413763"
-                    Point3="90.7333321263391,44.185733413763" />
+                    Point1="0,19.2999998824797"
+                    Point2="0,23.2999998824797"
+                    Point3="-4,23.2999998824797" />
                   <mssgle:LineSegment
-                    End="90.7333321263391,90.8999979138374" />
+                    End="-100.799992897113,23.2999998824797" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.799992897113,23.2999998824797"
+                    Point2="-104.799992897113,23.2999998824797"
+                    Point3="-104.799992897113,27.2999998824797" />
+                  <mssgle:LineSegment
+                    End="-104.799992897113,39.0999997649593" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-2.82472065558044,45.185733413763,96.3827734375,11.609375"
+              BoundingBox="-108.206383167307,28.2999998824797,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Lookup No Match Output1]"
-          TopLeft="642.399991327524,287.599996334314">
+          Id="Package\Migracion Pedidos.Paths[Lookup Match Output2]"
+          TopLeft="272.43332290666,652.99999766767">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-67.5999985098837,68.1999989122153"
+              EndConnector="144.633325911728,44.4666669860812"
               Start="0,0"
-              End="-67.5999985098837,60.6999989122153">
+              End="144.633325911728,36.9666669860812">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.0999994561077" />
+                    End="0,14.1354249668724" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.0999994561077"
-                    Point2="0,34.0999994561077"
-                    Point3="-4,34.0999994561077" />
+                    Point1="0,14.1354249668724"
+                    Point2="0,18.1354249668724"
+                    Point3="4,18.1354249668724" />
                   <mssgle:LineSegment
-                    End="-63.5999985098837,34.0999994561077" />
+                    End="140.633325911728,18.1354249668724" />
                   <mssgle:CubicBezierSegment
-                    Point1="-63.5999985098837,34.0999994561077"
-                    Point2="-67.5999985098837,34.0999994561077"
-                    Point3="-67.5999985098837,38.0999994561077" />
+                    Point1="140.633325911728,18.1354249668724"
+                    Point2="144.633325911728,18.1354249668724"
+                    Point3="144.633325911728,22.1354249668724" />
                   <mssgle:LineSegment
-                    End="-67.5999985098837,60.6999989122153" />
+                    End="144.633325911728,36.9666669860812" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-89.6063859736918,39.0999994561077,111.6127734375,11.609375"
+              BoundingBox="24.1252762371138,23.1354249668724,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Migracion Pedidos\Poblar COTORDEN"
+          TopLeft="622.066637617682,456.66666653408" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Pedidos\Data Conversion 3"
+          TopLeft="624.566637481088,527.733332706557" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Pedidos\Lookup 3"
+          TopLeft="644.566636388336,592.733332254555" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Pedidos\Destino de ADO NET 2"
+          TopLeft="628.733303920098,668.999998390873" />
         <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Lookup Match Output1]"
-          TopLeft="661.199991327524,287.599996334314">
+          Id="Package\Migracion Pedidos.Paths[OLE DB Source Output1]"
+          TopLeft="706.916637549385,498.26666653408">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="145.799997958541,74.9999986439944"
+              EndConnector="0,29.4666661724778"
               Start="0,0"
-              End="145.799997958541,67.4999986439944">
+              End="0,21.9666661724778">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.58823474108" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.58823474108"
-                    Point2="0,30.58823474108"
-                    Point3="4,30.58823474108" />
+                    End="0,21.9666661724778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output3]"
+          TopLeft="705.766636934712,569.333332706557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.399999547998"
+              Start="0,0"
+              End="0,15.899999547998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="141.799997958541,30.58823474108" />
-                  <mssgle:CubicBezierSegment
-                    Point1="141.799997958541,30.58823474108"
-                    Point2="145.799997958541,30.58823474108"
-                    Point3="145.799997958541,34.58823474108" />
+                    End="0,15.899999547998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Lookup No Match Output3]"
+          TopLeft="704.966636388336,634.333332254555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.5666675317619,34.6666661363178"
+              Start="0,0"
+              End="16.5666675317619,27.1666661363178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="145.799997958541,67.4999986439944" />
+                    End="0,13.3333330681589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3333330681589"
+                    Point2="0,17.3333330681589"
+                    Point3="4,17.3333330681589" />
+                  <mssgle:LineSegment
+                    End="12.5666675317619,17.3333330681589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.5666675317619,17.3333330681589"
+                    Point2="16.5666675317619,17.3333330681589"
+                    Point3="16.5666675317619,21.3333330681589" />
+                  <mssgle:LineSegment
+                    End="16.5666675317619,27.1666661363178" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="24.7086122605204,35.58823474108,96.3827734375,11.609375"
+              BoundingBox="-47.523052952869,22.3333330681589,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Poblar CONHORAS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Vnta].[tbPedidos]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Poblar COTORDEN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Lookup 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Vnta].[tbPedidosDetalle]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Destino de ADO NET 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
