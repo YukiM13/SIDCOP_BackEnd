@@ -50,7 +50,22 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                 // Ruta final del paquete
                 string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
                 // Argumentos para dtexec
-                string argumentos = $"/F \"{rutaPaquete}\"";
+                string rutaConmgr1 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole.conmgr");
+                string rutaConmgr2 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole.conmgr");
+                string rutaConmgr3 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123.conmgr");
+                string rutaConmgr4 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123.conmgr");
+                // Agrega los que necesites
+
+                string argumentos = $"/F \"{rutaPaquete}\" /ConfigFile \"{rutaConmgr1}\" /ConfigFile \"{rutaConmgr2}\" /ConfigFile \"{rutaConmgr3}\" /ConfigFile \"{rutaConmgr4}\" ";
+
+
+
+                if (!System.IO.File.Exists(rutaPaquete))
+                    return NotFound($"No se encontró el paquete: {rutaPaquete}");
+
+                if (!System.IO.File.Exists(rutaConmgr1))
+                    return NotFound($"No se encontró el archivo de configuración: {rutaConmgr1}");
+
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -72,7 +87,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                     if (proceso.ExitCode == 0)
                         return Ok($"Migracion de {paquete} ejecutada correctamente.\nSalida: {salida}");
                     else
-                        return BadRequest($"Error al migrar {paquete}.\nError: {error}");
+                        return BadRequest($"Error al ejecutar el paquete: {error}");
                 }
             }
             catch (Exception ex)
