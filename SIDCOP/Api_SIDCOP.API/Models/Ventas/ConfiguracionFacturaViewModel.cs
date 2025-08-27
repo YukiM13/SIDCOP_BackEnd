@@ -21,6 +21,8 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public string CoFa_Logo { get; set; }
 
+        public int CoFa_DiasDevolucion { get; set; }
+
         public int Colo_Id { get; set; }
 
         public int Usua_Creacion { get; set; }
