@@ -11,10 +11,101 @@
   DTS:LocaleID="18442"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{87799918-CE59-4F83-9421-5EABE0F5726A}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{B8ABBCDA-6477-4985-BA5C-4A19B138C368}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}"
+      DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-SIDCOP_Backend.ETL-{BDF8B56D-683F-4747-96F4-18ECA7C573CE}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="eZ5C8p0KEek="
+            IV="Wn340BKb8Ba6OLm71WgbTA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>Wn340BKb8Ba6OLm71WgbTPXxf5QixLBjC/YgGJljiEdUXsgPupu2msjzzl5g6geRlPtX4yFjMRmctsUlu9tV4GzQDZviOXdhmXJPRWup3rEZTOmeOVQHfmisdoBOpYilj5Fs80nikLNUwVwwchbjb2ABTu++9pULkpqkO2k81bGMwOY+hYN1wPoyTfguK7jp</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}"
+      DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package-{2DF365BB-ADD6-4255-93CB-EECA886A5565}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="A4DOnpEIO8M="
+            IV="LmcKvMybJ5nGTws9CXnuFA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>LmcKvMybJ5nGTws9CXnuFIwBW3/9oGl2CfIRt+JY40pzsHmTjPc/m/YpH39zFCun6a3lY0OHtCbnwrN1UCf3RLu7PB3gDd5BoanRHo5MXs04Qdx3N9uQNjGm2naQOJ0SlmA/zQHDaALEV8/S5XN4Ihl5VYDGqFNY7PZzuV1qo6/yyrYRYyRPHGvxetqyrxpN</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{9181EB00-B316-4947-9788-8E4229869B92}"
+      DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-SIDCOP_Backend.ETL-{9181EB00-B316-4947-9788-8E4229869B92}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="zC8eBJ/YQpw="
+            IV="o4EffaukCF/yNX7fDhAwrQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>o4EffaukCF/yNX7fDhAwrSMdXPkSag4GMBFCUkrK2BqbLnUFIp37KAc8Zsl8bMQEoaxVJsjP4HD9dN+GWJv0g/W7SzGAxAh2xtchkV5cJolz7JjX173Bxc8mdtUhOHzNfdhV4MfTGIojoAv4h0CBxYkzUuN6a3BRfHxU8vWynW/nnK1sNfS4PKigIJ5c01bd</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+      DTS:ObjectName="200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{D8BD17EF-490D-46B4-AB11-477E9E143436}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ORGM9fVgJnE="
+            IV="9sRLzWfIH3u+flMuHg7KOQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>9sRLzWfIH3u+flMuHg7KOSQglqaDF367DPelso8BqdJlNkdllIIk4CbR5tnJfkp5Di2ePyP/xr+ZrIUJHafcH9tS+9VLUvjVm6tn59kDNAG+L2HRde95KB0rPbrHrv3W1gK/PrRR76O9ZrpwfZbJoduCdkn5KcINHILoDe/i1+I1RNmUmj2rxASZserc2oBh</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -528,8 +619,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -714,8 +805,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Destino de ADO NET 1.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -974,8 +1065,8 @@ where [refTable].[Cia] = ? and [refTable].[CodBod] = ? and [refTable].[CodUnd] =
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1183,8 +1274,8 @@ where [refTable].[Cia] = ? and [refTable].[Codepo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1340,8 +1431,8 @@ where [refTable].[Bode_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Lookup 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1481,8 +1572,8 @@ where [refTable].[InBo_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Lookup 3.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1587,8 +1678,8 @@ AND CodUnd = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1843,8 +1934,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2115,8 +2206,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\OLE DB Command 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2449,8 +2540,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2710,8 +2801,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2889,8 +2980,8 @@ INNER JOIN [BDD_Extena].[dbo].[PRODUCTOS] p ON p.CodProd = b.CodProd</property
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Poblar Almacen.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3087,8 +3178,8 @@ INNER JOIN [BDD_Extena].[dbo].[PRODUCTOS] p ON p.CodProd = b.CodProd</property
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Poblar Bodegas.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -3363,8 +3454,8 @@ INNER JOIN [BDD_Extena].[dbo].[PRODUCTOS] p ON p.CodProd = b.CodProd</property
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Poblar Bodegas Detalle.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -3648,8 +3739,8 @@ WHERE b.DepUFecha  &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Bodegas\Poblar Depositos.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4562,7 +4653,7 @@ WHERE b.DepUFecha  &gt;= ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="27.8752760322229,25.7999999778785,96.3827734375,11.609375"
+              BoundingBox="27.875276032223,25.7999999778785,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4598,7 +4689,7 @@ WHERE b.DepUFecha  &gt;= ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-5.45805547985753,32.7877125313661,96.3827734375,11.609375"
+              BoundingBox="-5.45805547985751,32.7877125313661,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4844,6 +4935,14 @@ WHERE b.DepUFecha  &gt;= ?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Bodegas\Destino de ADO NET 1">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
