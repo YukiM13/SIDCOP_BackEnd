@@ -12,11 +12,99 @@
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{BC4DACB0-095D-4076-A35F-8283E2A1B522}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{B445D2CD-FCB4-4430-9A38-4AFAAF83EC08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B9A365B-28A1-4BE0-AE4E-169C4285E131}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{0B9A365B-28A1-4BE0-AE4E-169C4285E131}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="iVlkvA4NL3o="
+            IV="O7ITM+vzsjd3jcfHLhu9Vw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>O7ITM+vzsjd3jcfHLhu9V9FYGWNZ7lbZHuUnNSZnkK/lFzFw/sKhtdl53K1uqZkYNVprcsU+TTb5WdMor89xvA+FDGfGNiZpZeF882PWguic6Q/fEdYKgcgiktnbKaGIwwIoDuKQ0RKT8tNXJnIDGF71NwbW21wlxzp4x1+jwHSrVYHIpj7Bs0y0RP0Ngx1/</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="E3lW2Y80gzQ="
+            IV="9ZtiQl7M2RsWTpfiAdgHcg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>9ZtiQl7M2RsWTpfiAdgHckBGhOT9HnzbA7YYHVrsV4AgCS/LasI56pG6qt7LVKXjyt+MQ6Vkuy+KGWBs7YoF7cxlpc+c6dzjOkBqCO35tY9pIPgU/NehxaQD35usuwPQm9qm8ms7USG0KVbZEe+xTGhO+NE5uCI4QTElz2UAKBam3xxX+2whBwvvp1QKhFnC</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{FB3DA53B-C179-4F68-9696-8F61902D3B52}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="PpxAqMRpOBA="
+            IV="lU5fJWZzwhc2oMWPsrqiCg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>lU5fJWZzwhc2oMWPsrqiCuC10yekhv1Xkn5o7eWdyAlbkZeXVdd8miof7ntCLqYCQ6u4TQley9zmHcyhizVJxWaqYLLd8hgSC3zDfXDFRK2FAP8m/kbEBnuXyi1tK5hAMHmGJSonjkJ6VtgZQAA3ofSMgHIugzMX5b2nEp/JvsTvF/jW7FuWcftuAybkbjTL</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="BJx/CqVYgPk="
+            IV="JgE2aq6lxT+H+raLCL/xRA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>JgE2aq6lxT+H+raLCL/xRBuq9rDsETISf+w2BMXZ7/h24NjkSTqWZGtyhl5wGXmE+eW1DvhLn1OR6vINLbNlx8r5CYpqIVl7VBvQLu7DOU+fWEdOIHiDAbGeyg1rHIqVz7YhLhIwEeaHywueDyYjYAbShso8HkPfdvs+NSriaQX+2s5ICpmiBPmWRgADeHZV</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
@@ -27,12 +115,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{57CCFF97-C8F5-4363-8028-BFD2E5BEFA97}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ru2/kEOLKRM="
-            IV="B3qdoEZJcftTc6EnYgVuKQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ia7GJH5UMWU="
+            IV="kGZ4G42x5zS6maSsGzeMqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>B3qdoEZJcftTc6EnYgVuKSA158dxOe1m++3Cf+doSuZv04R+UgLlMGALKgtqbMbKa9y+ke5aVAxciLxSV8zGpLUof57VWof8xFZdaSxk4h/kzH0c62ksMFaTvBF8aGbRiFx0Iern9Am3kHu/9S8mOBUf3EtRFmqGG6jgEM3a9b8SSovwzP2V0SmfjJxWd6a8</CipherValue>
+              <CipherValue>kGZ4G42x5zS6maSsGzeMqIy0YGbN37HSEZ+tAoZvHSqh0g+mvldBKaawgXrpAqQFSfIaffCcVmk+8ywvZx3V4Uxc+LtxGtodCJEEiFClciVojk4JYKeOFKMKxKsHoqbBYzhUEE4mYXzQLgTK8jJ9QGen3Y7YxZp48lT6kScYLyfuiQZsSCAby8cxT5mPqI2S</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +138,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Clientes-{9846E725-7124-4087-914A-D3029ADB6E82}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="F0QIupd+57s="
-            IV="8VV4qmUWcOHYfsTLcTHcgQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="TuEZPwJ8MBw="
+            IV="2ZCJTTdBc60wE7oeCEDu+A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>8VV4qmUWcOHYfsTLcTHcgZL/se5qdwp1yQ0ErC1g3rQ1RwTtTuVIHYLqFnNTnH5LMbT0ftGIOtZhKx9qvKHidYpepHCuXYP0jaaMT0PRFIS3O/KYnsKI8dEAG+GURDBb6xv2+eQLZLajA04DgoVSP1k4p1I9DyG+u9C7G6UWRmw34ubdzqqtMt3K7a4UC5uQ</CipherValue>
+              <CipherValue>2ZCJTTdBc60wE7oeCEDu+GprlRFGGItUFGVjTYwgC6+7SUr+ItIaYTTExJmjVUeArSr9yfvMdv43eOUqAcgUKOkKBEkrRMtRTJobSpBf8X4cUbNcqtlgz5aWmx60oMawrf3wnPQwqEznSLRF9hjTgoeR8swFCH8oBmvS/Qf9jeygqFbs6cASkGissGW/Xhap</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +159,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{0C4417A8-CF90-4756-880A-948CEA21D989}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="z8au30L9ZtI="
-            IV="lLPQFm8t28OHQZ7/sx0dGQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="LHBKSUBIS1I="
+            IV="I/ZelCV/WwZlLV0pIJvHBg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>lLPQFm8t28OHQZ7/sx0dGRYjC2Rrr9gFtq/VXLxyRGkCdD1Pk3QYvalEHtrKwquJQnMCRCNeqiQv5PLXkdU/KTbX19OaOyoEFnuOP5bi1nB1avX6F+wBmKITHEmhXJLH5FGhN+cAFVlasXP1RXGJ0WqUPlyAMj7Bah2Zo1DftCQeP3oyxLMKRJ75sXgpUT25</CipherValue>
+              <CipherValue>I/ZelCV/WwZlLV0pIJvHBl6BMP6mi1nsp1hJxIDW6ek88kq7ERatFyLRG//kj1trIlXQiFARwMV+LmG1k3keAYWiAVMfpsAIb3gTo23ebBQ2uVgBARreTigrooVI+NzTe2TxO6jNcS5HyOpdtQmEYYzLFGkc1v75S/9bNAsmzNJt4Fq6LO6b4yPkRuJMJTu7</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +182,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="MQpf+vB6iuU="
-            IV="YX1I6RLGFDRvYCzeVTtVVw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="QA/doWA0c3Q="
+            IV="rr2SfVb3Q9U+nI5xoU3LcA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>YX1I6RLGFDRvYCzeVTtVVydUOuQUSlj56CTpYj0lYCNd2rBmsBK5sW4AjQDH2ulFKHRd7jAEBpUs94CwEQ+5ey1/k9dvYXa/Rzp1OHOTJqmk5MfFE60HvrFWs+NvAIP+7y5l1o8qiT3JzlCALMjXZb3kT9plBz1ozRroMOxonOnqyiLaTh2ynQAliwQc7uHr</CipherValue>
+              <CipherValue>rr2SfVb3Q9U+nI5xoU3LcIGqLQ50ofPxIGq+c6JQp/I4s3+RukAtE/ENCXaudeDE3k9oVZGGyE9lCL98fCRBXlgxXed+zSvWyu/xgQTzUnB/5+/JuLF64z0j/tKUQtXqoqWzrIw2bQYPGzXoJVi0JbxdgdTnKXupo9H500o4JRts4dq+RXCFbCVdIqIR466L</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -131,7 +219,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Clientes'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -149,7 +237,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbClientes OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -166,7 +254,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbDireccionesPorCliente OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -842,8 +930,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -861,11 +949,52 @@
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
                     <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCodigo]"
+                      cachedDataType="i2"
+                      cachedName="DatCodigo"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DatNombre"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDirec]"
+                      cachedDataType="wstr"
+                      cachedLength="90"
+                      cachedName="DatDirec"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatTel]"
+                      cachedDataType="wstr"
+                      cachedLength="17"
+                      cachedName="DatTel"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]" />
+                    <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatLimC]"
                       cachedDataType="cy"
                       cachedName="DatLimC"
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatLimC]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatLimC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatActivo]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatActivo"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatActivo]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatActivo]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatIdentidad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="DatIdentidad"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatIdentidad]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatIdentidad]" />
                     <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCiudad]"
                       cachedDataType="i2"
@@ -873,11 +1002,46 @@
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCiudad]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCiudad]" />
                     <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatEmail]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="DatEmail"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatEmail]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatEmail]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatRNE]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="DatRNE"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRNE]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatRNE]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDireAmp]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatDireAmp"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDireAmp]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDireAmp]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatObserva]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="DatObserva"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatObserva]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatObserva]" />
+                    <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DiasCred]"
                       cachedDataType="i2"
                       cachedName="DiasCred"
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DiasCred]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DiasCred]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatECivil]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="DatECivil"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatECivil]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]" />
                     <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatFNac]"
                       cachedDataType="dbTimeStamp"
@@ -909,99 +1073,12 @@
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatFUpdate]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatFUpdate]" />
                     <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCodigoC]"
-                      cachedDataType="numeric"
-                      cachedName="DatCodigoC"
-                      cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatCodigoC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatNombreC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="DatNombreC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatNombreC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDirecC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="90"
-                      cachedName="DatDirecC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDirecC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatTelC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="17"
-                      cachedName="DatTelC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatTelC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatRNEC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="16"
-                      cachedName="DatRNEC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatRNE]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatRNEC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatEmailC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="DatEmailC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatEmail]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatEmailC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatIdentidadC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="DatIdentidadC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatIdentidad]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatIdentidadC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatActivoC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="DatActivoC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatActivo]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatActivoC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatObservaC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="DatObservaC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatObserva]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatObservaC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDireAmpC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="DatDireAmpC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDireAmp]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDireAmpC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatUUpdateC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="DatUUpdateC"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatUUpdate]"
-                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatUUpdateC]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatECivil]"
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatUUpdate]"
                       cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="DatECivil"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatECivil]"
-                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatECivil]" />
+                      cachedLength="10"
+                      cachedName="DatUUpdate"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatUUpdate]"
+                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatUUpdate]" />
                     <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatGLoca]"
                       cachedDataType="wstr"
@@ -1459,8 +1536,8 @@ where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1617,8 +1694,8 @@ where [refTable].[Clie_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1758,8 +1835,8 @@ where [refTable].[DiCl_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup 2.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1877,8 +1954,8 @@ WHERE Cia = ? AND DatCodigo = ?;</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2390,8 +2467,8 @@ WHERE Clie_Id = ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2707,8 +2784,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command 1 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2966,8 +3043,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3396,8 +3473,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3594,8 +3671,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Origen de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -4162,8 +4239,8 @@ WHERE rn = 1 AND DatFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Poblar Clientes externa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4804,8 +4881,8 @@ WHERE DatFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Poblar Clientes externa 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5109,7 +5186,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbClientes ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5126,7 +5203,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbDireccionesPorCliente ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5143,7 +5220,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Clientes'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -5216,23 +5293,31 @@ WHERE DatFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="244.8,41.6"
+          Size="245,42"
           Id="Package\Actualizar Ultima Migracion Clientes"
           TopLeft="70.8333327414261,337.333331404791" />
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Agregar Identity"
           TopLeft="22.4999987706537,259.133331531352" />
         <NodeLayout
-          Size="164,41.6"
+          Size="152,42"
+          Id="Package\Agregar Identity 1"
+          TopLeft="210.833321813908,259.999998191992" />
+        <NodeLayout
+          Size="164,42"
           Id="Package\Migracion Clientes"
           TopLeft="116.458330248586,193.466665738557" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Quitar Identity"
           TopLeft="66.6666630241604,90.1333327065574" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="143,42"
+          Id="Package\Quitar Identity 1"
+          TopLeft="277.499984838069,124.799999132156" />
+        <NodeLayout
+          Size="161,42"
           Id="Package\Traer Fecha Filtro"
           TopLeft="102.499994399647,14.7333332308796" />
         <EdgeLayout
@@ -5261,82 +5346,6 @@ WHERE DatFUpdate &gt;= ?</property>
                     Point3="-44.6333313754866,20.8999997378389" />
                   <mssgle:LineSegment
                     End="-44.6333313754866,26.2999994756777" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="172.458330248586,235.066665738557">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-73.9583314779321,24.0666657927959"
-              Start="0,0"
-              End="-73.9583314779321,16.5666657927959">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,5.76618322026499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,5.76618322026499"
-                    Point2="0,9.76618322026499"
-                    Point3="-4,9.76618322026499" />
-                  <mssgle:LineSegment
-                    End="-69.9583314779321,9.76618322026499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-69.9583314779321,9.76618322026499"
-                    Point2="-73.9583314779321,9.76618322026499"
-                    Point3="-73.9583314779321,13.766183220265" />
-                  <mssgle:LineSegment
-                    End="-73.9583314779321,16.5666657927959" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Quitar Identity 1"
-          TopLeft="277.499984838069,124.799999132156" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\Agregar Identity 1"
-          TopLeft="210.833321813908,259.999998191992" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 7]"
-          TopLeft="286.833321813908,301.599998191992">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-54.1333224058156,35.733333212799"
-              Start="0,0"
-              End="-54.1333224058156,28.233333212799">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3007791489282" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3007791489282"
-                    Point2="0,21.3007791489282"
-                    Point3="-4,21.3007791489282" />
-                  <mssgle:LineSegment
-                    End="-50.1333224058156,21.3007791489282" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.1333224058156,21.3007791489282"
-                    Point2="-54.1333224058156,21.3007791489282"
-                    Point3="-54.1333224058156,25.3007791489282" />
-                  <mssgle:LineSegment
-                    End="-54.1333224058156,28.233333212799" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5380,6 +5389,62 @@ WHERE DatFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="172.458330248586,235.066665738557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.9583314779321,24.0666657927959"
+              Start="0,0"
+              End="-73.9583314779321,16.5666657927959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,5.76618322026499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,5.76618322026499"
+                    Point2="0,9.76618322026499"
+                    Point3="-4,9.76618322026499" />
+                  <mssgle:LineSegment
+                    End="-69.9583314779321,9.76618322026499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.9583314779321,9.76618322026499"
+                    Point2="-73.9583314779321,9.76618322026499"
+                    Point3="-73.9583314779321,13.766183220265" />
+                  <mssgle:LineSegment
+                    End="-73.9583314779321,16.5666657927959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="174.499998770654,280.366664861672">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.3333230432547,0"
+              Start="0,0"
+              End="28.8333230432547,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="28.8333230432547,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="349.099984838069,166.399999132156">
           <EdgeLayout.Curve>
@@ -5414,19 +5479,31 @@ WHERE DatFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="174.499998770654,280.366664861672">
+          Id="Package.PrecedenceConstraints[Restricción 7]"
+          TopLeft="286.833321813908,301.599998191992">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.3333230432547,0"
+              EndConnector="-54.1333224058156,35.733333212799"
               Start="0,0"
-              End="28.8333230432547,0">
+              End="-54.1333224058156,28.233333212799">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="28.8333230432547,0" />
+                    End="0,17.3007791489282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3007791489282"
+                    Point2="0,21.3007791489282"
+                    Point3="-4,21.3007791489282" />
+                  <mssgle:LineSegment
+                    End="-50.1333224058156,21.3007791489282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.1333224058156,21.3007791489282"
+                    Point2="-54.1333224058156,21.3007791489282"
+                    Point3="-54.1333224058156,25.3007791489282" />
+                  <mssgle:LineSegment
+                    End="-54.1333224058156,28.233333212799" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5444,53 +5521,65 @@ WHERE DatFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Migracion Clientes\Poblar Clientes externa"
-          TopLeft="120.833326731291,387.866664798392" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Clientes\OLE DB Command 1 1"
-          TopLeft="695.43329913931,638.799996203185" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Clientes\Data Conversion 2"
-          TopLeft="566.966649501358,452.133331079351" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Clientes\OLE DB Command 1"
-          TopLeft="268.799985794227,637.466663062705" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Clientes\OLE DB Command"
-          TopLeft="325.833315530586,278.999998065432" />
-        <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Migracion Clientes\Data Conversion 1"
           TopLeft="135.833325911728,471.93333088047" />
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Migracion Clientes\Poblar Clientes externa 1"
-          TopLeft="549.966639939779,386.599997956952" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Clientes\Lookup 1"
-          TopLeft="159.166657970184,539.533330410388" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Clientes\Destino de ADO NET"
-          TopLeft="13.3333326048318,273.866664762232" />
-        <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Migracion Clientes\Origen de ADO NET"
           TopLeft="165.8333242726,7.79999994575977" />
         <NodeLayout
-          Size="156,41.6"
+          Size="121,42"
+          Id="Package\Migracion Clientes\Lookup 2"
+          TopLeft="591.133314847616,524.999997233749" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migracion Clientes\Data Conversion 2"
+          TopLeft="566.966649501358,452.133331079351" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Migracion Clientes\OLE DB Command 1 1"
+          TopLeft="695.43329913931,638.799996203185" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Migracion Clientes\Poblar Clientes externa"
+          TopLeft="120.833326731291,387.866664798392" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Migracion Clientes\OLE DB Destination"
+          TopLeft="44.1666642535065,634.399998336633" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Migracion Clientes\OLE DB Destination 1"
+          TopLeft="499.166639393404,637.866664762232" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Migracion Clientes\Destino de ADO NET"
+          TopLeft="13.3333326048318,273.866664762232" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Migracion Clientes\OLE DB Command 1"
+          TopLeft="268.799985794227,637.466663062705" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Migracion Clientes\OLE DB Command"
+          TopLeft="325.833315530586,278.999998065432" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Migracion Clientes\Lookup"
+          TopLeft="189.166656331056,177.666665431195" />
+        <NodeLayout
+          Size="156,42"
           Id="Package\Migracion Clientes\Data Conversion"
           TopLeft="171.666657287214,88.3999993852774" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Clientes\Lookup 2"
-          TopLeft="591.133314847616,524.999997233749" />
+          Size="195,42"
+          Id="Package\Migracion Clientes\Poblar Clientes externa 1"
+          TopLeft="549.966639939779,386.599997956952" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Migracion Clientes\Lookup 1"
+          TopLeft="159.166657970184,539.533330410388" />
         <EdgeLayout
           Id="Package\Migracion Clientes.Paths[Salida de origen de ADO NET]"
           TopLeft="250.949990779907,49.3999999457598">
@@ -5555,6 +5644,150 @@ WHERE DatFUpdate &gt;= ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup No Match Output2]"
+          TopLeft="245.566656331056,219.266665431195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-143.833323726224,54.5999993310371"
+              Start="0,0"
+              End="-143.833323726224,47.0999993310371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2999996655186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2999996655186"
+                    Point2="0,27.2999996655186"
+                    Point3="-4,27.2999996655186" />
+                  <mssgle:LineSegment
+                    End="-139.833323726224,27.2999996655186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-139.833323726224,27.2999996655186"
+                    Point2="-143.833323726224,27.2999996655186"
+                    Point3="-143.833323726224,31.2999996655186" />
+                  <mssgle:LineSegment
+                    End="-143.833323726224,47.0999993310371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.723048581862,32.2999996655186,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup No Match Output1]"
+          TopLeft="632.733314847616,566.599997233749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.5666754542125,71.2666675284833"
+              Start="0,0"
+              End="-43.5666754542125,63.7666675284833">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0656212665187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.0656212665187"
+                    Point2="0,29.0656212665187"
+                    Point3="-4,29.0656212665187" />
+                  <mssgle:LineSegment
+                    End="-39.5666754542125,29.0656212665187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5666754542125,29.0656212665187"
+                    Point2="-43.5666754542125,29.0656212665187"
+                    Point3="-43.5666754542125,33.0656212665187" />
+                  <mssgle:LineSegment
+                    End="-43.5666754542125,63.7666675284833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-77.5897244458562,34.0656212665187,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup No Match Output]"
+          TopLeft="200.766657970184,581.133330410388">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.9999937166775,53.266667926245"
+              Start="0,0"
+              End="-70.9999937166775,45.766667926245">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7244449581548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7244449581548"
+                    Point2="0,21.7244449581548"
+                    Point3="-4,21.7244449581548" />
+                  <mssgle:LineSegment
+                    End="-66.9999937166775,21.7244449581548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.9999937166775,21.7244449581548"
+                    Point2="-70.9999937166775,21.7244449581548"
+                    Point3="-70.9999937166775,25.7244449581548" />
+                  <mssgle:LineSegment
+                    End="-70.9999937166775,45.766667926245" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.3063835770888,26.7244449581548,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Lookup Match Output2]"
+          TopLeft="263.033322997723,219.266665431195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.399992532863,59.7333326342371"
+              Start="0,0"
+              End="146.399992532863,52.2333326342371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3945917890871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3945917890871"
+                    Point2="0,24.3945917890871"
+                    Point3="4,24.3945917890871" />
+                  <mssgle:LineSegment
+                    End="142.399992532863,24.3945917890871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.399992532863,24.3945917890871"
+                    Point2="146.399992532863,24.3945917890871"
+                    Point3="146.399992532863,28.3945917890871" />
+                  <mssgle:LineSegment
+                    End="146.399992532863,52.2333326342371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.0086095476816,29.3945917890871,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5630,6 +5863,28 @@ WHERE DatFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Clientes.Paths[Data Conversion Output2]"
+          TopLeft="247.616656809135,129.999999385277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666660459175"
+              Start="0,0"
+              End="0,40.1666660459175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666660459175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Clientes.Paths[Data Conversion Output1]"
           TopLeft="650.249982174487,493.733331079351">
           <EdgeLayout.Curve>
@@ -5673,234 +5928,9 @@ WHERE DatFUpdate &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Clientes\OLE DB Destination"
-          TopLeft="44.1666642535065,634.399998336633" />
-        <EdgeLayout
-          Id="Package\Migracion Clientes.Paths[Lookup No Match Output]"
-          TopLeft="200.766657970184,581.133330410388">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-70.9999937166775,53.266667926245"
-              Start="0,0"
-              End="-70.9999937166775,45.766667926245">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.7244449581548" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.7244449581548"
-                    Point2="0,21.7244449581548"
-                    Point3="-4,21.7244449581548" />
-                  <mssgle:LineSegment
-                    End="-66.9999937166775,21.7244449581548" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-66.9999937166775,21.7244449581548"
-                    Point2="-70.9999937166775,21.7244449581548"
-                    Point3="-70.9999937166775,25.7244449581548" />
-                  <mssgle:LineSegment
-                    End="-70.9999937166775,45.766667926245" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.3063835770888,26.7244449581548,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Migracion Clientes\OLE DB Destination 1"
-          TopLeft="499.166639393404,637.866664762232" />
-        <EdgeLayout
-          Id="Package\Migracion Clientes.Paths[Lookup No Match Output1]"
-          TopLeft="632.733314847616,566.599997233749">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43.5666754542125,71.2666675284833"
-              Start="0,0"
-              End="-43.5666754542125,63.7666675284833">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.0656212665187" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.0656212665187"
-                    Point2="0,29.0656212665187"
-                    Point3="-4,29.0656212665187" />
-                  <mssgle:LineSegment
-                    End="-39.5666754542125,29.0656212665187" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.5666754542125,29.0656212665187"
-                    Point2="-43.5666754542125,29.0656212665187"
-                    Point3="-43.5666754542125,33.0656212665187" />
-                  <mssgle:LineSegment
-                    End="-43.5666754542125,63.7666675284833" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-77.5897244458562,34.0656212665187,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Clientes\Lookup"
-          TopLeft="189.166656331056,177.666665431195" />
-        <EdgeLayout
-          Id="Package\Migracion Clientes.Paths[Data Conversion Output2]"
-          TopLeft="247.616656809135,129.999999385277">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.6666660459175"
-              Start="0,0"
-              End="0,40.1666660459175">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.1666660459175" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Clientes.Paths[Lookup No Match Output2]"
-          TopLeft="245.566656331056,219.266665431195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-143.833323726224,54.5999993310371"
-              Start="0,0"
-              End="-143.833323726224,47.0999993310371">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.2999996655186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.2999996655186"
-                    Point2="0,27.2999996655186"
-                    Point3="-4,27.2999996655186" />
-                  <mssgle:LineSegment
-                    End="-139.833323726224,27.2999996655186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-139.833323726224,27.2999996655186"
-                    Point2="-143.833323726224,27.2999996655186"
-                    Point3="-143.833323726224,31.2999996655186" />
-                  <mssgle:LineSegment
-                    End="-143.833323726224,47.0999993310371" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.723048581862,32.2999996655186,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Clientes.Paths[Lookup Match Output2]"
-          TopLeft="263.033322997723,219.266665431195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="146.399992532863,59.7333326342371"
-              Start="0,0"
-              End="146.399992532863,52.2333326342371">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3945917890871" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3945917890871"
-                    Point2="0,24.3945917890871"
-                    Point3="4,24.3945917890871" />
-                  <mssgle:LineSegment
-                    End="142.399992532863,24.3945917890871" />
-                  <mssgle:CubicBezierSegment
-                    Point1="142.399992532863,24.3945917890871"
-                    Point2="146.399992532863,24.3945917890871"
-                    Point3="146.399992532863,28.3945917890871" />
-                  <mssgle:LineSegment
-                    End="146.399992532863,52.2333326342371" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.0086095476816,29.3945917890871,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Clientes\Poblar Clientes externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Clientes\Poblar Clientes externa 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Clientes\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Gral].[tbClientes]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Clientes\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Clientes\Origen de ADO NET">
     <Properties>
@@ -5933,6 +5963,14 @@ WHERE DatFUpdate &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Clientes\Poblar Clientes externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Clientes\OLE DB Destination">
     <Properties>
       <Property>
@@ -5959,6 +5997,14 @@ WHERE DatFUpdate &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Clientes\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Clientes\Lookup">
     <Properties>
       <Property>
@@ -5970,6 +6016,37 @@ WHERE DatFUpdate &gt;= ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[CLIENTES]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Clientes\Poblar Clientes externa 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Clientes\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Gral].[tbClientes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
