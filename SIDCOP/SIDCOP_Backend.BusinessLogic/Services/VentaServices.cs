@@ -33,6 +33,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
         private readonly FacturasRepository _facturasRepository;
         private readonly DevolucionesDetallesRepository _devolucionesDetallesRepository;
+        private readonly MetaRepository _metaRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
@@ -44,7 +45,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             PreciosPorProductoRepository preciosPorProductoRepository,
 
             PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository,
-            DevolucionesDetallesRepository devolucionesDetallesRepository
+            DevolucionesDetallesRepository devolucionesDetallesRepository,
+            MetaRepository metaRepository
                             )
 
         {
@@ -61,6 +63,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _facturasRepository = facturasRepository;
             _devolucionesRepository = devolucionesRepository;
             _devolucionesDetallesRepository = devolucionesDetallesRepository;
+            _metaRepository = metaRepository;
         }
 
         #region Pedidos
@@ -1129,5 +1132,68 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion DevolucionesDetalles
+
+
+        #region Metas
+
+        public IEnumerable<tbMetas> ListMetasCompleto()
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _metaRepository.ListCompleto();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbMetas> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult InsertMetasCompleto(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.InsertCompleto(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdateMetasCompleto(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.UpdateCompleto(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        ////public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
+        ////{
+        ////    var result = new ServiceResult();
+        ////    try
+        ////    {
+        ////        var response = _preciosPorProductoRepository.DeleteLista(item);
+        ////        return result.Ok(response);
+        ////    }
+        ////    catch (Exception ex)
+        ////    {
+        ////        return result.Error(ex.Message);
+        ////    }
+        ////}
+
+
+        #endregion
     }
 }
