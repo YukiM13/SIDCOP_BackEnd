@@ -39,6 +39,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
             var parameter = new DynamicParameters();
             parameter.Add("@UnPe_Descripcion", item.UnPe_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@UnPe_Abreviatura", item.UnPe_Abreviatura, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@UnPe_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
@@ -75,6 +77,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             var parameter = new DynamicParameters();
             parameter.Add("@UnPe_Id", item.UnPe_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@UnPe_Descripcion", item.UnPe_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@UnPe_Abreviatura", item.UnPe_Abreviatura, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@UnPe_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 

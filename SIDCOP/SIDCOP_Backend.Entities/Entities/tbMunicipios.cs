@@ -31,6 +31,9 @@ public partial class tbMunicipios
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
 
+    [NotMapped]
+    public string? Depa_Descripcion { get; set; }
+
     public virtual tbDepartamentos Depa_CodigoNavigation { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }

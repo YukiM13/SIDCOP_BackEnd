@@ -40,6 +40,7 @@ namespace SIDCOP_Backend.BusinessLogic
         [ExcludeFromCodeCoverage]
         private static void ConfigureRepositories(IServiceCollection services)
         {
+            services.AddScoped<HistorialInventarioSucursalesRepository>();
 
             services.AddScoped<MunicipioRepository>();
 
@@ -112,6 +113,7 @@ namespace SIDCOP_Backend.BusinessLogic
 
             services.AddScoped<UnidadesDePesoRepository>();
             services.AddScoped<MetaRepository>();
+            services.AddScoped<MigracionRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
@@ -127,7 +129,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<ReportesServices>();
             services.AddScoped<DashboardServices>();
 
-            services.AddScoped<LogisticaServices>();
+         
         }
     }
 }
