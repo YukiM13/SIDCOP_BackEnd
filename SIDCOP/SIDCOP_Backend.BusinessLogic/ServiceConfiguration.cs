@@ -111,6 +111,7 @@ namespace SIDCOP_Backend.BusinessLogic
             services.AddScoped<FormasDePagoRepository>();
 
             services.AddScoped<UnidadesDePesoRepository>();
+            services.AddScoped<MetaRepository>();
         }
 
         public static void BusinessLogic(this IServiceCollection services)
