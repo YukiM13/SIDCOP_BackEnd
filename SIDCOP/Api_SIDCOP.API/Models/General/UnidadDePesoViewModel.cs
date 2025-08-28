@@ -8,6 +8,8 @@ namespace Api_SIDCOP.API.Models.General
         public int UnPe_Id { get; set; }
         public string? Secuencia { get; set; }
         public string UnPe_Descripcion { get; set; }
+        public string UnPe_Abreviatura { get; set; }
+
 
         public int Usua_Creacion { get; set; }
 
