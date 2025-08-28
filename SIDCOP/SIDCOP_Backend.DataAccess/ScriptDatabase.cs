@@ -542,5 +542,14 @@ namespace SIDCOP_Backend.DataAccess
         public const string FormasDePago_Listar = "[Gral].[SP_FormasDePago_Listar]";
 
         #endregion FormasDePago
+
+
+        #region Metas
+
+        public const string Metas_InsertarCompleto = "[Vnta].[SP_Metas_InsertarCompleto]";
+        public const string Metas_EditarCompleto = "[Vnta].[SP_Metas_EditarCompleto]";
+        public const string Metas_ListarCompleto = "[Vnta].[SP_Metas_ListarCompleto]";
+
+        #endregion Metas
     }
 }

@@ -49,23 +49,10 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
                 // Ruta final del paquete
                 string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
+
+                string passwordPaquete ="admin123";
                 // Argumentos para dtexec
-                string rutaConmgr1 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole.conmgr");
-                string rutaConmgr2 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole.conmgr");
-                string rutaConmgr3 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123.conmgr");
-                string rutaConmgr4 = Path.Combine(rutaPaquetes, "200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123.conmgr");
-                // Agrega los que necesites
-
-                string argumentos = $"/F \"{rutaPaquete}\" /ConfigFile \"{rutaConmgr1}\" /ConfigFile \"{rutaConmgr2}\" /ConfigFile \"{rutaConmgr3}\" /ConfigFile \"{rutaConmgr4}\" ";
-
-
-
-                if (!System.IO.File.Exists(rutaPaquete))
-                    return NotFound($"No se encontró el paquete: {rutaPaquete}");
-
-                if (!System.IO.File.Exists(rutaConmgr1))
-                    return NotFound($"No se encontró el archivo de configuración: {rutaConmgr1}");
-
+                string argumentos = $"/F \"{rutaPaquete}\" /De \"{passwordPaquete}\"";
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
