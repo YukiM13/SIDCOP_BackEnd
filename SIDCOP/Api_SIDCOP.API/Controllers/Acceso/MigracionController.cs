@@ -49,8 +49,10 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
                 // Ruta final del paquete
                 string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
+
+                string passwordPaquete ="admin123";
                 // Argumentos para dtexec
-                string argumentos = $"/F \"{rutaPaquete}\"";
+                string argumentos = $"/F \"{rutaPaquete}\" /De \"{passwordPaquete}\"";
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
