@@ -12,10 +12,100 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{75F6D640-5A34-459D-A849-2A6FA9398BBF}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{FB1F45B9-8381-4C3E-B9E9-8946F94F8D07}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F13A19EF-3FF2-4BFD-B798-72489FC336A2}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{F13A19EF-3FF2-4BFD-B798-72489FC336A2}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="e3ihXlgU8SE="
+            IV="NeHIa6Dy7RHyd+E1aca56g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>NeHIa6Dy7RHyd+E1aca56o/WazjuGLelzDUAM2K0FurmCX/Ii1CSxNONRZ9eosMKjR1YOtIdCiHYDi9XEFiwTRtINvh7Z8AvYrxyNikECxuPGaOFkNx5F4XM/VQQtoRhbVlLSAN0cFAGIzR2hHwihO3VhUoEWgTDBLwJAauawP/+O9sYZGo1E5ZXNnweKhNO</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB7862C3-1368-42C5-8D18-7AC7A10F6F32}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{BB7862C3-1368-42C5-8D18-7AC7A10F6F32}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="L8TG9hrl95U="
+            IV="bXQsyQBbbFGe92wgam9u+g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>bXQsyQBbbFGe92wgam9u+pCeVukkzQnr/CqsKP8kFJGdVa5WH5UPeH1QlJ7fgHXwtzKjM3gJ3kOBJWP4G9CMZb8vHjLQ3PUyeSv2TulA7xZOCAim9JfnqwyifESg/j+/nrdpNG8fNlFoKDeHzcBvSR+EqLWPJ+zJKASf1MXKBUJZw3p+2cTzwUDHc/tpG6Lf</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{68EA5C1A-D18A-423E-9F3D-CEEB1177A8B8}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{68EA5C1A-D18A-423E-9F3D-CEEB1177A8B8}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="+SwEoxRaV/0="
+            IV="s65R8zfJztab+BwPuNctwA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>s65R8zfJztab+BwPuNctwLdai/rxs/39CNjiQUmVkMxm5mbTZ4IzkpdIr0W4A67yk4wefQfGfHyhGtPlQxhmJ63axpqaT+kYzDoTwEvNBdFOmhjomXq4Ow14Spcz5FMJgujdx4JN13ZzwxD3liXozYupKcgQJa4JG3lYdrqhM2sdOcsSDkAyE1nTEGlg80cZ</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{503219A9-6A5F-4971-AE9A-F94B12CE86BE}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="BbiZI2+gwnI="
+            IV="APlIIh4rQGbzORlc9t7wXw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>APlIIh4rQGbzORlc9t7wXzFzenFSzdASC5PDXvtrRgMccLUL1awd+5PhLN9zXDKVjuWJuTuSJEUbTC87L8WMCFzy56mOetBHI2/iRDwsGSqFmZExHSli7p/zpGg3Ae9463YzPeheuP/vm4USVV13FPu4Bed5XtXjVC4YS8OdOUgw1aoSiN2IAGUhaKAF5wdx</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -41,7 +131,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Vendedores'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -58,7 +148,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbVendedores OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -76,6 +166,163 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Migracion Vendedores\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[VENDEDOR]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[VENDEDOR]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[VenCodigo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenCodigo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenNombre" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenComISV" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenVehiculo" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlmacen" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlias" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenSCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda].Columns[VenCodigo]"
+                      cachedDataType="i2"
+                      cachedName="VenCodigo"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">VenCodigo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Migracion Vendedores\Data Conversion"
               componentClassID="Microsoft.DataConvert"
@@ -293,8 +540,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -431,163 +678,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Migracion Vendedores\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[VENDEDOR]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[VENDEDOR]) [refTable]
-where [refTable].[Cia] = ? and [refTable].[VenCodigo] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenCodigo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenNombre" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenComISV" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenVehiculo" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlmacen" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlias" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenSCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Migracion Vendedores\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input].Columns[Cia]"
-                      cachedDataType="i2"
-                      cachedName="Cia"
-                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Cia</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input].Columns[VenCodigo]"
-                      cachedDataType="i2"
-                      cachedName="VenCodigo"
-                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">VenCodigo</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Vendedores\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Migracion Vendedores\Lookup 1"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -657,8 +747,8 @@ where [refTable].[Vend_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -765,8 +855,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -980,8 +1070,8 @@ WHERE Vend_Id = ?;</property>
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1183,8 +1273,8 @@ WHERE Vend_Id = ?;</property>
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1523,8 +1613,8 @@ WHERE VenFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\Poblar Vendedor externa.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1967,8 +2057,8 @@ WHERE VenFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Vendedores\Poblar Vendedores.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2143,31 +2233,21 @@ WHERE VenFUpdate &gt;= ?</property>
           <paths>
             <path
               refId="Package\Migracion Vendedores.Paths[Data Conversion Output]"
-              endId="Package\Migracion Vendedores\Lookup.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
               endId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Vendedores.Paths[Lookup Match Output]"
-              endId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Vendedores\Lookup.Outputs[Lookup Match Output]" />
+              refId="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
+              endId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Vendedores.Paths[Lookup Match Output1]"
+              refId="Package\Migracion Vendedores.Paths[Lookup Match Output]"
               endId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Migracion Vendedores.Paths[Lookup No Match Output]"
-              endId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Vendedores\Lookup.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\Migracion Vendedores.Paths[Lookup No Match Output1]"
               endId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup No Match Output]" />
@@ -2176,6 +2256,16 @@ WHERE VenFUpdate &gt;= ?</property>
               endId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
               refId="Package\Migracion Vendedores.Paths[Salida de origen de ADO NET]"
               endId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input]"
@@ -2198,7 +2288,7 @@ WHERE VenFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbVendedores ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2215,7 +2305,7 @@ WHERE VenFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
           SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Vendedores';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2276,21 +2366,21 @@ WHERE VenFUpdate &gt;= ?</property>
           Id="Package\Actualizar Ultima Migracion Vendedores"
           TopLeft="155.833328097231,290.966665060553" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Migracion Vendedores"
-          TopLeft="191.759252060251,149.266666045917" />
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Traer Fecha Filtro"
-          TopLeft="205.833322087096,14.7333332308795" />
-        <NodeLayout
           Size="152,41.6"
           Id="Package\Agregar Identity"
           TopLeft="207.4999886627,217.533331820634" />
         <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Migracion Vendedores"
+          TopLeft="191.759252060251,149.266666045917" />
+        <NodeLayout
           Size="143.2,41.6"
           Id="Package\Quitar Identity"
           TopLeft="209.166655238304,84.9333327427175" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Traer Fecha Filtro"
+          TopLeft="205.833322087096,14.7333332308795" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="283.4999886627,56.3333332308795">
@@ -2392,51 +2482,51 @@ WHERE VenFUpdate &gt;= ?</property>
           Id="Package\Migracion Vendedores\OLE DB Command 1"
           TopLeft="781.666623958285,310.266664509111" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Vendedores\Data Conversion"
-          TopLeft="156.000000258286,164.399997529586" />
+          Size="193.6,41.6"
+          Id="Package\Migracion Vendedores\Poblar Vendedor externa"
+          TopLeft="624.999965851507,82.866666190558" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Migracion Vendedores\Lookup 1"
           TopLeft="656.666630787983,223.599998445113" />
         <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Command"
+          TopLeft="328.999997680386,316.39999526461" />
+        <NodeLayout
           Size="176.8,41.6"
           Id="Package\Migracion Vendedores\Destino de ADO NET"
           TopLeft="1.00000256796665,311.399995339115" />
         <NodeLayout
-          Size="193.6,41.6"
-          Id="Package\Migracion Vendedores\Poblar Vendedor externa"
-          TopLeft="624.999965851507,82.866666190558" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Vendedores\Data Conversion 1"
-          TopLeft="635.833298592933,149.933332290716" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Vendedores\Lookup"
-          TopLeft="181.999999870856,242.399996367296" />
+          Size="171.2,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Destination"
+          TopLeft="549.566643764411,312.799998987516" />
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Migracion Vendedores\Poblar Vendedores"
           TopLeft="146.000000407298,83.3999987365803" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Vendedores\OLE DB Command"
-          TopLeft="328.999997680386,316.39999526461" />
+          Size="164,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion 1"
+          TopLeft="635.833298592933,149.933332290716" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion"
+          TopLeft="147.666667380266,160.933330887026" />
         <EdgeLayout
           Id="Package\Migracion Vendedores.Paths[Salida de origen de ADO NET]"
-          TopLeft="231.800000332792,124.99999873658">
+          TopLeft="227.633333893782,124.99999873658">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.3999987930059"
+              EndConnector="0,35.9333321504458"
               Start="0,0"
-              End="0,31.8999987930059">
+              End="0,28.4333321504458">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.8999987930059" />
+                    End="0,28.4333321504458" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2469,42 +2559,42 @@ WHERE VenFUpdate &gt;= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Migracion Vendedores.Paths[Lookup No Match Output]"
-          TopLeft="238.399999870856,283.999996367296">
+          TopLeft="698.266630787983,265.199998445113">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-148.99999730289,27.3999989718199"
+              EndConnector="-63.099987023572,47.6000005424027"
               Start="0,0"
-              End="-148.99999730289,19.8999989718199">
+              End="-63.099987023572,40.1000005424027">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.69999948590993" />
+                    End="0,15.4133335545485" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.69999948590993"
-                    Point2="0,13.6999994859099"
-                    Point3="-4,13.6999994859099" />
+                    Point1="0,15.4133335545485"
+                    Point2="0,19.4133335545485"
+                    Point3="-4,19.4133335545485" />
                   <mssgle:LineSegment
-                    End="-144.99999730289,13.6999994859099" />
+                    End="-59.099987023572,19.4133335545485" />
                   <mssgle:CubicBezierSegment
-                    Point1="-144.99999730289,13.6999994859099"
-                    Point2="-148.99999730289,13.6999994859099"
-                    Point3="-148.99999730289,17.6999994859099" />
+                    Point1="-59.099987023572,19.4133335545485"
+                    Point2="-63.099987023572,19.4133335545485"
+                    Point3="-63.099987023572,23.4133335545485" />
                   <mssgle:LineSegment
-                    End="-148.99999730289,19.8999989718199" />
+                    End="-63.099987023572,40.1000005424027" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-130.306385370195,18.6999994859099,111.6127734375,11.609375"
+              BoundingBox="-87.356380230536,24.4133335545485,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Lookup Match Output1]"
+          Id="Package\Migracion Vendedores.Paths[Lookup Match Output]"
           TopLeft="735.866630787983,265.199998445114">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2540,43 +2630,7 @@ WHERE VenFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Lookup Match Output]"
-          TopLeft="255.866666537523,283.999996367296">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="156.733331142863,32.399998897314"
-              Start="0,0"
-              End="156.733331142863,24.899998897314">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.23188766156039" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.23188766156039"
-                    Point2="0,13.2318876615604"
-                    Point3="4,13.2318876615604" />
-                  <mssgle:LineSegment
-                    End="152.733331142863,13.2318876615604" />
-                  <mssgle:CubicBezierSegment
-                    Point1="152.733331142863,13.2318876615604"
-                    Point2="156.733331142863,13.2318876615604"
-                    Point3="156.733331142863,17.2318876615604" />
-                  <mssgle:LineSegment
-                    End="156.733331142863,24.899998897314" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="30.1752788526815,18.2318876615604,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
+          Id="Package\Migracion Vendedores.Paths[Data Conversion Output]"
           TopLeft="717.449964690458,191.533332290716">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2597,20 +2651,36 @@ WHERE VenFUpdate &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Migracion Vendedores\Búsqueda"
+          TopLeft="175.833323726224,240.266665196154" />
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Data Conversion Output]"
-          TopLeft="236.200000064571,205.999997529586">
+          Id="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
+          TopLeft="225.666667380266,202.533330887026">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.3999988377094"
+              EndConnector="12.9666563459583,37.7333343091278"
               Start="0,0"
-              End="0,28.8999988377094">
+              End="12.9666563459583,30.2333343091278">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8999988377094" />
+                    End="0,14.8666671545639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.8666671545639"
+                    Point2="0,18.8666671545639"
+                    Point3="4,18.8666671545639" />
+                  <mssgle:LineSegment
+                    End="8.96665634595831,18.8666671545639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.96665634595831,18.8666671545639"
+                    Point2="12.9666563459583,18.8666671545639"
+                    Point3="12.9666563459583,22.8666671545639" />
+                  <mssgle:LineSegment
+                    End="12.9666563459583,30.2333343091278" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2619,43 +2689,75 @@ WHERE VenFUpdate &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Vendedores\OLE DB Destination"
-          TopLeft="549.566643764411,312.799998987516" />
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Lookup No Match Output1]"
-          TopLeft="698.266630787983,265.199998445113">
+          Id="Package\Migracion Vendedores.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="238.633323726224,281.866665196154">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63.099987023572,47.6000005424027"
+              EndConnector="-149.233321158257,29.5333301429611"
               Start="0,0"
-              End="-63.099987023572,40.1000005424027">
+              End="-149.233321158257,22.0333301429611">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.4133335545485" />
+                    End="0,10.7666650714806" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.4133335545485"
-                    Point2="0,19.4133335545485"
-                    Point3="-4,19.4133335545485" />
+                    Point1="0,10.7666650714806"
+                    Point2="0,14.7666650714806"
+                    Point3="-4,14.7666650714806" />
                   <mssgle:LineSegment
-                    End="-59.099987023572,19.4133335545485" />
+                    End="-145.233321158257,14.7666650714806" />
                   <mssgle:CubicBezierSegment
-                    Point1="-59.099987023572,19.4133335545485"
-                    Point2="-63.099987023572,19.4133335545485"
-                    Point3="-63.099987023572,23.4133335545485" />
+                    Point1="-145.233321158257,14.7666650714806"
+                    Point2="-149.233321158257,14.7666650714806"
+                    Point3="-149.233321158257,18.7666650714806" />
                   <mssgle:LineSegment
-                    End="-63.099987023572,40.1000005424027" />
+                    End="-149.233321158257,22.0333301429611" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-87.356380230536,24.4133335545485,111.6127734375,11.609375"
+              BoundingBox="-181.505684016629,19.7666650714806,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="258.233323726224,281.866665196154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.366673954162,34.5333300684562"
+              Start="0,0"
+              End="154.366673954162,27.0333300684562">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0739609335595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0739609335595"
+                    Point2="0,14.0739609335595"
+                    Point3="4,14.0739609335595" />
+                  <mssgle:LineSegment
+                    End="150.366673954162,14.0739609335595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150.366673954162,14.0739609335595"
+                    Point2="154.366673954162,14.0739609335595"
+                    Point3="154.366673954162,18.0739609335595" />
+                  <mssgle:LineSegment
+                    End="154.366673954162,27.0333300684562" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.6356864604191,19.0739609335595,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2663,12 +2765,20 @@ WHERE VenFUpdate &gt;= ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedor externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Vendedores\Lookup 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2678,7 +2788,7 @@ WHERE VenFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2686,7 +2796,7 @@ WHERE VenFUpdate &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Vendedores\Poblar Vendedor externa">
+    design-time-name="Package\Migracion Vendedores\Destino de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2703,6 +2813,37 @@ WHERE VenFUpdate &gt;= ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[VENDEDOR]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
