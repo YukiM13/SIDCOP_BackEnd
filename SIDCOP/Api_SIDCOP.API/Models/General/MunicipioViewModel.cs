@@ -19,5 +19,7 @@ namespace Api_SIDCOP.API.Models.Acceso
         public DateTime? Muni_FechaModificacion { get; set; }
 
         public int? Secuencia { get; set; }
+
+        public string? Depa_Descripcion { get; set; }
     }
 }

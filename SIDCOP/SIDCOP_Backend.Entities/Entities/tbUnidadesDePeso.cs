@@ -11,6 +11,7 @@ public partial class tbUnidadesDePeso
     public int UnPe_Id { get; set; }
 
     public string UnPe_Descripcion { get; set; }
+    public string UnPe_Abreviatura { get; set; }
 
     public string UnPe_Abreviatura { get; set; }
 
@@ -23,12 +24,13 @@ public partial class tbUnidadesDePeso
     public DateTime? UnPe_FechaModificacion { get; set; }
 
     [NotMapped]
-    public string UsuarioCreacion { get; set; }
+    public string? UsuarioCreacion { get; set; }
     [NotMapped]
-    public string UsuarioModificacion { get; set; }
+    public string? UsuarioModificacion { get; set; }
 
     [NotMapped]
-    public string Secuencia { get; set; }
+    public string? Secuencia { get; set; }
+    public DateTime? UnPe_FechaModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
