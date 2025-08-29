@@ -12,8 +12,8 @@
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{D92BE5FF-681C-4EC6-B1A8-416CDA080965}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{C9F49E59-C53B-4BD1-BB66-C6AC637546EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,12 +29,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{0B9A365B-28A1-4BE0-AE4E-169C4285E131}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="soBSREBzibk="
-            IV="5CsR8zyfuhtA2d2Lub0nVw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="8uaGAPZnFw0="
+            IV="5/ICAYyjO5cMwr2O/vmPjQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>5CsR8zyfuhtA2d2Lub0nV5RY1usQpMW6JzRyvU1QhBfxZjsyG/xNbJCkXC75m/3PGYtYcvwKzcGx0+VO4ExV6BzFx7RgfiirrUd+ucMWds+3vSVG4gHT7qQLQ04AYr14KC70Np9SthoVvLhpWAasjRaok7JZbsPra+/sbh440ewAUbS8v17g8BKIfZQJYATy</CipherValue>
+              <CipherValue>5/ICAYyjO5cMwr2O/vmPjUptEzScipkO2bLjovKhh9FK0B2hZ6UNXu7kI2YKByg6gOyxJ/lyGM7c/sJ7rR7OPOsHRwKv+Kv2CgmVoZgYao/R7q4F94wm4c05dRI19P1W02VGJC8orL512GdblF5EXvAJcFrj8bq76RYlZES9vYgK6K/Qees0vFbwELZWwuXg</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ff+bLb5ReoY="
-            IV="A9nKWMwa977E2ksqoJHZsg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="PR9Wg74qGoE="
+            IV="nhxo7nXiGp7h+HeMygZIXQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>A9nKWMwa977E2ksqoJHZshHCZN4LCmcSjm4bsnd24KBk2LPkqtNaVAEcTmYGDSNjnoVS0xfGUh+RNl21KjqRRVRfoRwii4wPExcBPXxL4R6tyMj7k+kh6vwWxhGNeH4zJCqH04I7pBSD2XJujnPSqwirkvBWh3ZvAacNDhHjQevi9hzJvJIkHKLx3ojYBOZ9</CipherValue>
+              <CipherValue>nhxo7nXiGp7h+HeMygZIXdWIH8+qS59sSleZsfTj1ciRgYp++TGabsl1a6zjjcG7s9Eq1epRqdRwCZ26Avy1qRCHpsqqOCWrW/RCsmozm/lDX/MyRfJ/7PNPaO7I2oC09vKvlYl6AYrhXquilvfwm4k2O+PRXu/Rf8nx5XV5SRqku+7as3GxDPGsDeiWUt/k</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -73,12 +73,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{FB3DA53B-C179-4F68-9696-8F61902D3B52}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="MhgQgrMkqn0="
-            IV="zQHjETIlmI9P+LE9MXouqg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="8lt70KJyfb0="
+            IV="spdMeGadSfH8H6E+ahl9Ng==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>zQHjETIlmI9P+LE9MXouqlwoW9cbRroleSaNMD+aIhQ02dYzuN8TpBewABFqg84M0vKL2RePk0bXdMNNFtmMqY54fEWLYEWz9Lwyb0Du2h5bqccbS6pEVLwpfoTUs2DGwbJBRBDR3e/saGqIFd0cW8e2Q8iBhpiE0iFXOSW72PPB/YATh6BwMX5bi0+Jr7A0</CipherValue>
+              <CipherValue>spdMeGadSfH8H6E+ahl9NsMAtTVuHpkBc9PipsNnTzwQHOw22knHcl9RUeWp2h5BHGHVAC02IPlvm7u2ZcfZ9S7WtbTrdyo9JbeXDFjBOfqRBq6CMmf5REg0x1nsqaRnwZ+bCW4ykMNHF5ReXihWmbqPouOovv9OD0eA7wXS7psPrO6FvzL/NKvG/pqw98jE</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="bPZqm5Hdl8k="
-            IV="piW4AxTo5ITJkUwX/CHggQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ZNlSLyYwYKU="
+            IV="+5bZXk2qrfWMrqj3vSDong==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>piW4AxTo5ITJkUwX/CHggVbQhcBfqSFU5yAkr8WpUJDbPoWrIzFKlNTIWhdaftB28fBjBphk33EyFPvKWxTeGFX04NmlQs6yWwz/LnJhi1bZybYtzJHXmp8eIYwX4l3qEi5AQXTICQqSnNHMUAD8IN9VdHfCxOTkBRMEH1bL7gR6cFn+Gaigeiv5nCBknn3M</CipherValue>
+              <CipherValue>+5bZXk2qrfWMrqj3vSDonkafNkTxfYgqPCDnjy4o5IUjf0zpP3KlZ4UYY+Rbacmo+lqYzB05LdVtg8co+UuOFqh5f40Vw9cL1M+plam+GgdswCbC+cuk7ReyxvNONUbX2YxNVij+p7Du2YT1ftwWXR/rMue2tAVza4hm63pR2prs60vz0ZeXEhM0/8/73Mza</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -115,12 +115,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{57CCFF97-C8F5-4363-8028-BFD2E5BEFA97}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="2FpOmntlOQM="
-            IV="lAoV2/5Ts6hEEW56JcjnMA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="t4PQboOWP7s="
+            IV="O3ti5SEyOctElAE5opxk3Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>lAoV2/5Ts6hEEW56JcjnMCOGKNc09FWr2evYLIwkE/RvCDCv72HznwjQujr/SEgxPBHYUCLIhm3LVxKoaE7Lx2O9gRM3YO9ZdBAZnYYCEsGesKBG/knMfKpeh9dTN+DDkutxSqJvrp2k1vNkll0s6w6Nnw4gwMFKvGybTXW+2qvEkqc+0/OCfkha7Te7FtLr</CipherValue>
+              <CipherValue>O3ti5SEyOctElAE5opxk3aKk9+4Hlfo1D/LSJXLgA5/qC9l/Bbb2KIp5SNH9YnpaXbQW3iIdiQm5ENlppB36cbuxeuqWU2yczm1kzcMFWeeLJCejESDvmUkAoJht8Iuey6dWLyb9fywRRONaynEXe5ZW6/YYa66hkLyvsPrwB8J6EUMj3iEu0hPXp6mLK0Vf</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -138,12 +138,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Clientes-{9846E725-7124-4087-914A-D3029ADB6E82}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="aWVEWdR2qiM="
-            IV="SUgLzY+Lp0yRvmLYHg+jAw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Ll3jmeDA5u0="
+            IV="0/Q7QqoUCz8Hw9qmNW9IaQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>SUgLzY+Lp0yRvmLYHg+jA12yEIMefZT/7fDV8q88mZBDobfDb83f66FNzwgnxTzP0dMr9Rhtov+fPIYFgERerXY3w1DdtnAw+3En6p4/oL64XLp6toZiqRfeoTRCxVY2bJuXYoJu/Le1gQTPQpa8HXV0aDOPgUa9JtSFCHi9sOFLVHt7cyn5kARwKSj70ngM</CipherValue>
+              <CipherValue>0/Q7QqoUCz8Hw9qmNW9IaaWbrF3DiHq/lKKRvfXmCk+4YT84tJzNBrCGufGDaVtte30oF8nPL3jNS6YpGU4e45mVSE/FhpOytfDVOzHl3qLmRP9NSR0qvG2TKkozQVWlKL1E0UUlL7yqzCQugX6SP+cGy25rji9Y++ncq2IB+HitkK5O9Aj2gI/BfOY9ooQa</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -159,12 +159,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{0C4417A8-CF90-4756-880A-948CEA21D989}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ZXxkj59DHlM="
-            IV="4d0BWRkOM0pfFQORHrhmcQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Hc7ZUB8PRlU="
+            IV="pbpe//ETRDvtwt1dvbPfXg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>4d0BWRkOM0pfFQORHrhmcQoUe09A3q6qruW76Kj4b+E4mE3UNPJg6dOJHPrEBIBiL9U1aNhnwcEV8qlCEsmGXVzxA5BXT15B8BUTzwo3ZcDLT9v+7E05RXEdaQ7gfQThvZgbmdTPxOsidlSxoiok7p4NKurVYyp1lBWnq9UYzBLWZAI1pRltww24jzk9UwM5</CipherValue>
+              <CipherValue>pbpe//ETRDvtwt1dvbPfXk+GERLNUWlUeCwSqcShLYaAjrn4SYnl2trfbzyGgeKftMzpkod2xjHllKDKwEvmeejbT0cZ6GWME7RTKMa19gqB2YLPw1Pdrkc9QfH7cdGSmLia5YtwqtEU5Eg+nfCdbnGbQme7UG6aoWalJ1USCI/d8gtmLsa5oSX2Ukrsj9HF</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -182,12 +182,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="CzfCF/0Ncl8="
-            IV="KzJeLVYYQtSQDe4dlUaFHA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="yOH2Rc4te+A="
+            IV="gw18ushrg6NlOZ1HRyk0gA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>KzJeLVYYQtSQDe4dlUaFHJASBkzk+wIm9tiSuGJmTuSTWOWVGfiT81JRh63r1CxKDbkr8k7QR5qFM7Fh9YP+VBLu1v74YgMXicN3No+I/JBpOYmgRUr/dRevYU6+BGJaBMZbbOKUszWU30hZP7OKZu55kI4qYCqqTMSzv+VLjApSA1ioQhTpxvNDBgcdYyf8</CipherValue>
+              <CipherValue>gw18ushrg6NlOZ1HRyk0gE5KzFH4jxfn3RgC5+DiwnknBtcUgI/dLd3SQt5uvEeAvtP/vETuc2tLDt2G9yX5mCb6Lg6ueZcpwDD+IQAI8jm3bnaZ2v44gx17HfFwD1Csm6SGLq0F54GecMqk/kEaKptq/OUGxeetoGNHgbW2R4L3etOsmEyix4m+zr9wPy1w</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -219,7 +219,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Clientes'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -237,7 +237,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbClientes OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -254,7 +254,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbDireccionesPorCliente OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -930,8 +930,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -954,27 +954,6 @@
                       cachedName="DatCodigo"
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatNombre]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="DatNombre"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
-                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatNombre]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDirec]"
-                      cachedDataType="wstr"
-                      cachedLength="90"
-                      cachedName="DatDirec"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
-                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatDirec]" />
-                    <inputColumn
-                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatTel]"
-                      cachedDataType="wstr"
-                      cachedLength="17"
-                      cachedName="DatTel"
-                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
-                      lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatTel]" />
                     <inputColumn
                       refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatLimC]"
                       cachedDataType="cy"
@@ -1086,6 +1065,30 @@
                       cachedName="DatGLoca"
                       externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatGLoca]"
                       lineageId="Package\Migracion Clientes\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatGLoca]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatNombreC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DatNombreC"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatNombre]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatNombreC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatDirecC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="90"
+                      cachedName="DatDirecC"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatDirec]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatDirecC]" />
+                    <inputColumn
+                      refId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatTelC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="DatTelC"
+                      externalMetadataColumnId="Package\Migracion Clientes\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatTel]"
+                      lineageId="Package\Migracion Clientes\Data Conversion.Outputs[Data Conversion Output].Columns[DatTelC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1536,8 +1539,8 @@ where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1954,8 +1957,8 @@ WHERE Cia = ? AND DatCodigo = ?;</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3671,8 +3674,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Origen de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -5186,7 +5189,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbClientes ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5203,7 +5206,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Gral.tbDireccionesPorCliente ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5220,7 +5223,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+          SQLTask:Connection="{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}"
           SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Clientes'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -5313,9 +5316,9 @@ WHERE DatFUpdate &gt;= ?</property>
           Id="Package\Quitar Identity"
           TopLeft="66.6666630241604,90.1333327065574" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="152,41.6"
           Id="Package\Quitar Identity 1"
-          TopLeft="277.499984838069,124.799999132156" />
+          TopLeft="274.999984974663,124.799999132156" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Traer Fecha Filtro"
@@ -5360,26 +5363,26 @@ WHERE DatFUpdate &gt;= ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.6333218139088,34.666666425599"
+              EndConnector="65.1333219505026,34.6666664255986"
               Start="0,0"
-              End="60.1333218139088,34.666666425599">
+              End="57.6333219505026,34.6666664255986">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="29.8166609069544,0" />
+                    End="28.5666609752513,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="29.8166609069544,0"
-                    Point2="33.8166609069544,0"
-                    Point3="33.8166609069544,4" />
+                    Point1="28.5666609752513,0"
+                    Point2="32.5666609752513,0"
+                    Point3="32.5666609752513,4" />
                   <mssgle:LineSegment
-                    End="33.8166609069544,30.666666425599" />
+                    End="32.5666609752513,30.6666664255986" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.8166609069544,30.666666425599"
-                    Point2="33.8166609069544,34.666666425599"
-                    Point3="37.8166609069544,34.666666425599" />
+                    Point1="32.5666609752513,30.6666664255986"
+                    Point2="32.5666609752513,34.6666664255986"
+                    Point3="36.5666609752513,34.6666664255986" />
                   <mssgle:LineSegment
-                    End="60.1333218139088,34.666666425599" />
+                    End="57.6333219505026,34.6666664255986" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5446,30 +5449,30 @@ WHERE DatFUpdate &gt;= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="349.099984838069,166.399999132156">
+          TopLeft="350.999984974663,166.399999132156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150.641654589483,27.0666666064001"
+              EndConnector="-152.541654726077,27.066666606401"
               Start="0,0"
-              End="-150.641654589483,19.5666666064001">
+              End="-152.541654726077,19.566666606401">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.53333330320007" />
+                    End="0,9.53333330320049" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.53333330320007"
-                    Point2="0,13.5333333032001"
-                    Point3="-4,13.5333333032001" />
+                    Point1="0,9.53333330320049"
+                    Point2="0,13.5333333032005"
+                    Point3="-4,13.5333333032005" />
                   <mssgle:LineSegment
-                    End="-146.641654589483,13.5333333032001" />
+                    End="-148.541654726077,13.5333333032005" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146.641654589483,13.5333333032001"
-                    Point2="-150.641654589483,13.5333333032001"
-                    Point3="-150.641654589483,17.5333333032001" />
+                    Point1="-148.541654726077,13.5333333032005"
+                    Point2="-152.541654726077,13.5333333032005"
+                    Point3="-152.541654726077,17.5333333032005" />
                   <mssgle:LineSegment
-                    End="-150.641654589483,19.5666666064001" />
+                    End="-152.541654726077,19.566666606401" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
