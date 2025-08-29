@@ -12,10 +12,100 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{06D9D8E4-716C-405E-AFA0-58BDD7F7E428}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{FF151EF6-3889-4E0F-A363-EEDA89391D91}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{8DF25947-D2FD-449F-ADFE-00D78C13D0DB}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{8DF25947-D2FD-449F-ADFE-00D78C13D0DB}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ZsJWCwgpe4k="
+            IV="Jdh9H/eJUDaPeiWLLPgXbA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>Jdh9H/eJUDaPeiWLLPgXbHyKGhUNKiyOnAbBtuclp5/CG8yooLYTmhSilsK9kIbxjcMsSv1rNevX/egz+CwHONXmrEhVzeDBzXk0f8gy9BB70+zWju42xeS0MNjLbKEOSId5diFNQ1GYh67tPLo1N9LXmNTXHRiLKr0kckIlYykLF+/Ep9+5VMSV6g/0Dk56</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{95C63F57-D858-48AA-B1ED-B9DC997258F3}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{95C63F57-D858-48AA-B1ED-B9DC997258F3}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="siL50HU3lxo="
+            IV="rlZBeEE7PRostwK946h4vg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>rlZBeEE7PRostwK946h4vtC3zy48CiSj8AY58/NMurLTP9hXmE26Vk7JYeSjLow9HpOq79HBvDho+hBd7jx0eZt1FxC0+ySGmgN1Qa2QbALeQCE6y/aUvWHBiU1G7H/HnAAul4fm0W3WEtkXe20YREc9buSRGmb4zTNFU6icOFuIoeHhCS+Y3RxnJjo1/ces</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{65346A45-FCAE-4B63-9BDA-C0B1EDB956DF}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{65346A45-FCAE-4B63-9BDA-C0B1EDB956DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="xRoxDyQmnsI="
+            IV="XVZJdleXOrPzkgMrBg8W4Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>XVZJdleXOrPzkgMrBg8W4UqcmpkTNmPjCqCbwB7Lip+501eLPo4smYqaV8nEs96rviHMVJIf6bqY2mC02woZdhOnEi00BmRkRIVTbWxk2fQw0cFz1+W+D0pEZQ9V3u0sz5dlG8vwMnS3h+9DmpbOlJZAJuak4xmgAlTgcpqxeFM5OguAp2EY0p9LJnJnPAD8</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0F64C85F-E893-4B6A-A882-5495285258DF}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{0F64C85F-E893-4B6A-A882-5495285258DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="aEun7Dv6Cl0="
+            IV="H+jV83hlAE6PIqb08hPakw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>H+jV83hlAE6PIqb08hPak4T5lXZjNKJDkNW8S4s8XPBv2sjm1J48Pb4wZ3rWufYCSE1ZXpAKgiQKRiwI5rNesrb9T6SNMWzewazOkOHWoGGV4JSGKF17pVXAdX5BCzmO7T1rjyAB63WULnMzFp9EidU8aaT9YVItxbxJacWCTnbQoz3KKIe2Rc+NfH4/v/lc</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -31,7 +121,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{0F64C85F-E893-4B6A-A882-5495285258DF}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Facturas'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -48,7 +138,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{0F64C85F-E893-4B6A-A882-5495285258DF}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbFacturas OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -909,8 +999,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -927,6 +1017,13 @@
                       cachedName="Cia"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[numfac]"
+                      cachedDataType="numeric"
+                      cachedName="numfac"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[numfac]"
+                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[DatCodigo]"
                       cachedDataType="numeric"
@@ -1004,6 +1101,12 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DesFact]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[DesFact]" />
                     <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Totfact]"
+                      cachedDataType="cy"
+                      cachedName="Totfact"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Totfact]"
+                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Totfact]" />
+                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Reffac]"
                       cachedDataType="wstr"
                       cachedLength="90"
@@ -1024,25 +1127,11 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Anufac]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Anufac]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Tpfact]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="Tpfact"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Tpfact]"
-                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[Tpfact]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenCodigo]"
                       cachedDataType="i2"
                       cachedName="VenCodigo"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenCodigo]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[FcUser]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="FcUser"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[FcUser]"
-                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[FcUser]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Codepo]"
                       cachedDataType="i2"
@@ -1075,25 +1164,27 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Tipfac]"
                       lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TipfacC]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[numfac]"
-                      cachedDataType="numeric"
-                      cachedName="numfac"
-                      cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[numfac]"
-                      lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[TotfactC]"
-                      cachedDataType="numeric"
-                      cachedName="TotfactC"
-                      cachedPrecision="18"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Totfact]"
-                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TotfactC]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[FCHaCia]"
                       cachedDataType="i2"
                       cachedName="FCHaCia"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCHaCia]"
                       lineageId="Package\Migracion Facturas\Poblar Facturas.Outputs[Salida de origen de ADO NET].Columns[FCHaCia]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[FcUserC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="FcUserC"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[FcUser]"
+                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[FcUserC]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[TpfactC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="TpfactC"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Tpfact]"
+                      lineageId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output].Columns[TpfactC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1659,8 +1750,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Destino de ADO NET 1.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -1677,6 +1768,13 @@
                       cachedName="Cia"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[numfac]"
+                      cachedDataType="numeric"
+                      cachedName="numfac"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[numfac]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DatCodigo]"
                       cachedDataType="numeric"
@@ -1729,20 +1827,6 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Sub1Fac]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Sub1Fac]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Cosufa]"
-                      cachedDataType="numeric"
-                      cachedName="Cosufa"
-                      cachedPrecision="13"
-                      cachedScale="6"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cosufa]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosufa]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Costfa]"
-                      cachedDataType="cy"
-                      cachedName="Costfa"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Costfa]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Costfa]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Fcfecdet]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Fcfecdet"
@@ -1761,11 +1845,31 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCodSub]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCodSub]" />
                     <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FCodbar]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="FCodbar"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCodbar]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCodbar]" />
+                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[fCansalida]"
                       cachedDataType="cy"
                       cachedName="fCansalida"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[fCansalida]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[fCansalida]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FcExistencia]"
+                      cachedDataType="i4"
+                      cachedName="FcExistencia"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FcExistencia]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FcExistencia]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FCNomprod]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FCNomprod"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCNomprod]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCNomprod]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FCClieCod]"
                       cachedDataType="numeric"
@@ -1802,46 +1906,17 @@
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodUnd]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodUndC]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[MedfaC]"
-                      cachedDataType="i2"
-                      cachedName="MedfaC"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Medfa]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[MedfaC]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[AndfacC]"
                       cachedDataType="i2"
                       cachedName="AndfacC"
                       externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Andfac]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[AndfacC]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FcExistenciaC]"
+                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[MedfaC]"
                       cachedDataType="i2"
-                      cachedName="FcExistenciaC"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FcExistencia]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FcExistenciaC]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FCNomprodC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="FCNomprodC"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCNomprod]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FCNomprodC]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[FCodbarC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="13"
-                      cachedName="FCodbarC"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[FCodbar]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FCodbarC]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[numfac]"
-                      cachedDataType="numeric"
-                      cachedName="numfac"
-                      cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[numfac]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
+                      cachedName="MedfaC"
+                      externalMetadataColumnId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Medfa]"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[MedfaC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2238,8 +2313,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Destino de ADO NET 2.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2479,8 +2554,8 @@ where [refTable].[Cia] = ? and [refTable].[numfac] = ? and [refTable].[DatCodigo
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2670,8 +2745,8 @@ where [refTable].[Cia] = ? and [refTable].[numfac] = ? and [refTable].[DatCodigo
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2697,33 +2772,16 @@ where [refTable].[Cia] = ? and [refTable].[numfac] = ? and [refTable].[DatCodigo
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[TipfacC]"
-                      cachedDataType="i2"
-                      cachedName="TipfacC"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipfacC]">
+                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[numfac]"
+                      cachedDataType="numeric"
+                      cachedName="numfac"
+                      cachedPrecision="10"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Tipfac</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[CodProdC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="CodProdC"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodProdC]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">CodProd</property>
+                          name="JoinToReferenceColumn">numfac</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -2766,6 +2824,40 @@ where [refTable].[Cia] = ? and [refTable].[numfac] = ? and [refTable].[DatCodigo
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[TipfacC]"
+                      cachedDataType="i2"
+                      cachedName="TipfacC"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipfacC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Tipfac</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[CodProdC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodProdC"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodProdC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodProd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[CodUndC]"
                       cachedDataType="i2"
                       cachedName="CodUndC"
@@ -2791,23 +2883,6 @@ where [refTable].[Cia] = ? and [refTable].[numfac] = ? and [refTable].[DatCodigo
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">FCNoLinea</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input].Columns[numfac]"
-                      cachedDataType="numeric"
-                      cachedName="numfac"
-                      cachedPrecision="10"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">numfac</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -2929,8 +3004,8 @@ where [refTable].[Fact_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Lookup 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3014,14 +3089,14 @@ where [refTable].[Fact_Id] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Vnta].[tbFacturasDetalle]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Vnta].[tbFacturas]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Vnta].[tbFacturasDetalle]) [refTable]
-where [refTable].[Fact_Id] = ? and [refTable].[Prod_Id] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Vnta].[tbFacturas]) [refTable]
+where [refTable].[Fact_Id] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -3052,12 +3127,12 @@ where [refTable].[Fact_Id] = ? and [refTable].[Prod_Id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FaDe_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Prod_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Cantidad" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FaDe_PrecioUnitario" dataType="DT_NUMERIC" length="0" precision="13" scale="6" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Impuesto" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Descuento" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Subtotal" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Total" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FaDe_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FaDe_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FaDe_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Fact_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DiCl_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_Numero" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_TipoDeDocumento" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RegC_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_TipoVenta" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_FechaEmision" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_FechaLimiteEmision" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_RangoInicialAutorizado" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_RangoFinalAutorizado" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_TotalImpuesto15" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_TotalImpuesto18" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_ImporteExento" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_ImporteGravado15" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_ImporteGravado18" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_ImporteExonerado" dataType="DT_NUMERIC" length="0" precision="12" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_TotalDescuento" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_Subtotal" dataType="DT_NUMERIC" length="0" precision="11" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_Total" dataType="DT_NUMERIC" length="0" precision="11" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Fact_Latitud" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Fact_Longitud" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Fact_Referencia" dataType="DT_STR" length="90" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_AutorizadoPor" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Fact_Anulado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_Usuario" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fact_EsPedido" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Pedi_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Facturas\Poblar Factura2 externa.Outputs[OLE DB Source Output].Columns[Fact_Id]};#{Package\Migracion Facturas\Poblar Factura2 externa.Outputs[OLE DB Source Output].Columns[Prod_Id]};</property>
+                  name="ParameterMap">#{Package\Migracion Facturas\Poblar Factura2 externa.Outputs[OLE DB Source Output].Columns[Fact_Id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3070,8 +3145,8 @@ where [refTable].[Fact_Id] = ? and [refTable].[Prod_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Lookup 3.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3090,22 +3165,6 @@ where [refTable].[Fact_Id] = ? and [refTable].[Prod_Id] = ?</property>
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">Fact_Id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Facturas\Lookup 3.Inputs[Lookup Input].Columns[Prod_Id]"
-                      cachedDataType="i4"
-                      cachedName="Prod_Id"
-                      lineageId="Package\Migracion Facturas\Poblar Factura2 externa.Outputs[OLE DB Source Output].Columns[Prod_Id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Prod_Id</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -3211,8 +3270,8 @@ WHERE Cia       = ?
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3785,8 +3844,6 @@ SET Canfac      = ?,
     ValDcto     = ?,
     Imp1Fac     = ?,
     Sub1Fac     = ?,
-    Cosufa      = ?,
-    Costfa      = ?,
     Medfa       = ?,
     Andfac      = ?,
     Fcfecdet    = ?,
@@ -3813,8 +3870,8 @@ AND Cia       = ?
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3826,26 +3883,6 @@ AND Cia       = ?
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCNoLinea]"
-                      cachedDataType="i4"
-                      cachedName="FCNoLinea"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCNoLinea]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CodUndC]"
-                      cachedDataType="i2"
-                      cachedName="CodUndC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodUndC]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PrLotesC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="PrLotesC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[PrLotesC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Canfac]"
                       cachedDataType="cy"
@@ -3885,48 +3922,34 @@ AND Cia       = ?
                       externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Sub1Fac]" />
                     <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Cosufa]"
-                      cachedDataType="numeric"
-                      cachedName="Cosufa"
-                      cachedPrecision="13"
-                      cachedScale="6"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosufa]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Costfa]"
-                      cachedDataType="cy"
-                      cachedName="Costfa"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Costfa]" />
-                    <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[MedfaC]"
                       cachedDataType="i2"
                       cachedName="MedfaC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[MedfaC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AndfacC]"
                       cachedDataType="i2"
                       cachedName="AndfacC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[AndfacC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Fcfecdet]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Fcfecdet"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Fcfecdet]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCodEst]"
                       cachedDataType="i2"
                       cachedName="FCodEst"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCodEst]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCodSub]"
                       cachedDataType="i2"
                       cachedName="FCodSub"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCodSub]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCodbarC]"
@@ -3934,19 +3957,19 @@ AND Cia       = ?
                       cachedDataType="str"
                       cachedLength="13"
                       cachedName="FCodbarC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FCodbarC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[fCansalida]"
                       cachedDataType="cy"
                       cachedName="fCansalida"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[fCansalida]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FcExistenciaC]"
                       cachedDataType="i2"
                       cachedName="FcExistenciaC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FcExistenciaC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCNomprodC]"
@@ -3954,48 +3977,68 @@ AND Cia       = ?
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FCNomprodC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[FCNomprodC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCClieCod]"
                       cachedDataType="numeric"
                       cachedName="FCClieCod"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCClieCod]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DatCodigo]"
-                      cachedDataType="numeric"
-                      cachedName="DatCodigo"
-                      cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[numfac]"
-                      cachedDataType="numeric"
-                      cachedName="numfac"
-                      cachedPrecision="10"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
-                    <inputColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TipfacC]"
-                      cachedDataType="i2"
-                      cachedName="TipfacC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipfacC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CodProdC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="CodProdC"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodProdC]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FCNoLinea]"
+                      cachedDataType="i4"
+                      cachedName="FCNoLinea"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[FCNoLinea]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CodUndC]"
+                      cachedDataType="i2"
+                      cachedName="CodUndC"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodUndC]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PrLotesC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PrLotesC"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[PrLotesC]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DatCodigo]"
+                      cachedDataType="numeric"
+                      cachedName="DatCodigo"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[numfac]"
+                      cachedDataType="numeric"
+                      cachedName="numfac"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[numfac]" />
+                    <inputColumn
+                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TipfacC]"
+                      cachedDataType="i2"
+                      cachedName="TipfacC"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      lineageId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipfacC]" />
                     <inputColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Cia]"
                       cachedDataType="i2"
                       cachedName="Cia"
-                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      externalMetadataColumnId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -4070,10 +4113,8 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="numeric"
-                      name="Param_6"
-                      precision="13"
-                      scale="6">
+                      dataType="i2"
+                      name="Param_6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -4083,7 +4124,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="cy"
+                      dataType="i2"
                       name="Param_7">
                       <properties>
                         <property
@@ -4094,7 +4135,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      dataType="i2"
+                      dataType="dbTimeStamp"
                       name="Param_8">
                       <properties>
                         <property
@@ -4116,7 +4157,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      dataType="dbTimeStamp"
+                      dataType="i2"
                       name="Param_10">
                       <properties>
                         <property
@@ -4127,7 +4168,9 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      dataType="i2"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
                       name="Param_11">
                       <properties>
                         <property
@@ -4138,7 +4181,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      dataType="i2"
+                      dataType="cy"
                       name="Param_12">
                       <properties>
                         <property
@@ -4149,9 +4192,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      codePage="1252"
-                      dataType="str"
-                      length="13"
+                      dataType="cy"
                       name="Param_13">
                       <properties>
                         <property
@@ -4162,7 +4203,9 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                      dataType="cy"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Param_14">
                       <properties>
                         <property
@@ -4173,7 +4216,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                      dataType="cy"
+                      dataType="i4"
                       name="Param_15">
                       <properties>
                         <property
@@ -4186,7 +4229,7 @@ AND Cia       = ?
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="10"
                       name="Param_16">
                       <properties>
                         <property
@@ -4197,7 +4240,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      dataType="i4"
+                      dataType="i2"
                       name="Param_17">
                       <properties>
                         <property
@@ -4208,9 +4251,7 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
+                      dataType="i2"
                       name="Param_18">
                       <properties>
                         <property
@@ -4221,8 +4262,9 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                      dataType="i2"
-                      name="Param_19">
+                      dataType="numeric"
+                      name="Param_19"
+                      precision="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -4232,8 +4274,9 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                      dataType="i2"
-                      name="Param_20">
+                      dataType="numeric"
+                      name="Param_20"
+                      precision="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -4243,9 +4286,10 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
-                      dataType="numeric"
-                      name="Param_21"
-                      precision="10">
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_21">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -4255,9 +4299,8 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                      dataType="numeric"
-                      name="Param_22"
-                      precision="10">
+                      dataType="i2"
+                      name="Param_22">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -4267,37 +4310,13 @@ AND Cia       = ?
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
+                      dataType="i4"
                       name="Param_23">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                           name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
-                      dataType="i2"
-                      name="Param_24">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                      dataType="i4"
-                      name="Param_25">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -4380,8 +4399,8 @@ WHERE  Fact_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\OLE DB Command 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4824,8 +4843,8 @@ WHERE  Fact_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5304,8 +5323,8 @@ FROM BDD_Extena.dbo.FACTURA</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Poblar Factua externa.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5912,8 +5931,8 @@ FROM BDD_Extena.dbo.FACTURA</property>
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Poblar Factura Detalle.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -6053,26 +6072,6 @@ FROM BDD_Extena.dbo.FACTURA</property>
                       externalMetadataColumnId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Sub1Fac]"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Sub1Fac]"
                       name="Sub1Fac"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosufa]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cosufa]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Cosufa]"
-                      name="Cosufa"
-                      precision="13"
-                      scale="6"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Costfa]"
-                      dataType="cy"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Costfa]"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Costfa]"
-                      name="Costfa"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].Columns[Medfa]"
@@ -6233,16 +6232,6 @@ FROM BDD_Extena.dbo.FACTURA</property>
                       dataType="cy"
                       name="Sub1Fac" />
                     <externalMetadataColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Cosufa]"
-                      dataType="numeric"
-                      name="Cosufa"
-                      precision="13"
-                      scale="6" />
-                    <externalMetadataColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Costfa]"
-                      dataType="cy"
-                      name="Costfa" />
-                    <externalMetadataColumn
                       refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de origen de ADO NET].ExternalColumns[Medfa]"
                       dataType="i4"
                       name="Medfa" />
@@ -6368,18 +6357,6 @@ FROM BDD_Extena.dbo.FACTURA</property>
                       dataType="cy"
                       lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Sub1Fac]"
                       name="Sub1Fac" />
-                    <outputColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cosufa]"
-                      dataType="numeric"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Cosufa]"
-                      name="Cosufa"
-                      precision="13"
-                      scale="6" />
-                    <outputColumn
-                      refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Costfa]"
-                      dataType="cy"
-                      lineageId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Costfa]"
-                      name="Costfa" />
                     <outputColumn
                       refId="Package\Migracion Facturas\Poblar Factura Detalle.Outputs[Salida de error de origen de ADO NET].Columns[Medfa]"
                       dataType="i4"
@@ -6511,8 +6488,8 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Poblar Factura2 externa.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6775,8 +6752,8 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
               <connections>
                 <connection
                   refId="Package\Migracion Facturas\Poblar Facturas.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -7332,59 +7309,59 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           <paths>
             <path
               refId="Package\Migracion Facturas.Paths[Data Conversion Output]"
-              endId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Migracion Facturas.Paths[Data Conversion Output1]"
               endId="Package\Migracion Facturas\Lookup 2.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Migracion Facturas\Data Conversion 2.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Data Conversion Output2]"
+              refId="Package\Migracion Facturas.Paths[Data Conversion Output1]"
               endId="Package\Migracion Facturas\Lookup 3.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Migracion Facturas\Data Conversion 3.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Data Conversion Output3]"
+              refId="Package\Migracion Facturas.Paths[Data Conversion Output2]"
               endId="Package\Migracion Facturas\Lookup.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\Migracion Facturas\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup Match Output]"
-              endId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Facturas\Lookup 1.Outputs[Lookup Match Output]" />
+              refId="Package\Migracion Facturas.Paths[Data Conversion Output3]"
+              endId="Package\Migracion Facturas\Lookup 1.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Facturas\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup Match Output1]"
+              refId="Package\Migracion Facturas.Paths[Lookup Match Output]"
               endId="Package\Migracion Facturas\OLE DB Command 2.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Migracion Facturas\Lookup 2.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup Match Output2]"
+              refId="Package\Migracion Facturas.Paths[Lookup Match Output1]"
               endId="Package\Migracion Facturas\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Migracion Facturas\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup No Match Output]"
-              endId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Facturas\Lookup 1.Outputs[Lookup No Match Output]" />
+              refId="Package\Migracion Facturas.Paths[Lookup Match Output2]"
+              endId="Package\Migracion Facturas\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Facturas\Lookup 1.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
+              refId="Package\Migracion Facturas.Paths[Lookup No Match Output]"
               endId="Package\Migracion Facturas\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Migracion Facturas\Lookup 2.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup No Match Output2]"
+              refId="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
               endId="Package\Migracion Facturas\Destino de ADO NET 2.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
               startId="Package\Migracion Facturas\Lookup 3.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
+              refId="Package\Migracion Facturas.Paths[Lookup No Match Output2]"
               endId="Package\Migracion Facturas\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
               startId="Package\Migracion Facturas\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
+              endId="Package\Migracion Facturas\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Facturas\Lookup 1.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Migracion Facturas.Paths[OLE DB Source Output]"
               endId="Package\Migracion Facturas\Data Conversion 2.Inputs[Data Conversion Input]"
@@ -7422,7 +7399,7 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{0F64C85F-E893-4B6A-A882-5495285258DF}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbFacturas ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -7470,6 +7447,10 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           Id="Package\Actualizar Ultima Migracion Facturas"
           TopLeft="234.999990438422,261.716665263954" />
         <NodeLayout
+          Size="152,41.6"
+          Id="Package\Agregar Identity"
+          TopLeft="278.333318125871,189.799998680154" />
+        <NodeLayout
           Size="167.2,41.6"
           Id="Package\Migracion Facturas"
           TopLeft="264.166655511492,103.333333031999" />
@@ -7477,10 +7458,6 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           Size="143.2,41.6"
           Id="Package\Quitar Identity"
           TopLeft="273.333318399059,30.3333331223992" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\Agregar Identity"
-          TopLeft="278.333318125871,189.799998680154" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="356.666654282147,231.399998680154">
@@ -7556,61 +7533,77 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command 1"
-          TopLeft="802.499988141159,381.599994626046" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Facturas\Destino de ADO NET"
-          TopLeft="53.9999991953373,378.799994665384" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command 2"
-          TopLeft="308.528560559594,695.409521466002" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 2"
-          TopLeft="183.866662477785,549.933330699669" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\Migracion Facturas\Poblar Facturas"
-          TopLeft="215.999996781349,129.999998062849" />
-        <NodeLayout
           Size="180.8,41.6"
           Id="Package\Migracion Facturas\Poblar Factua externa"
           TopLeft="194.166656057868,473.599997324149" />
         <NodeLayout
-          Size="185.6,41.6"
+          Size="167.2,41.6"
+          Id="Package\Migracion Facturas\OLE DB Command"
+          TopLeft="297.999995559454,379.999994337559" />
+        <NodeLayout
+          Size="193.6,41.6"
           Id="Package\Migracion Facturas\Destino de ADO NET 1"
-          TopLeft="574.666658434603,375.666661385629" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 1"
-          TopLeft="672.999989971518,210.999996855855" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Facturas\OLE DB Destination"
-          TopLeft="62.1000025952855,703.866664798392" />
+          TopLeft="523.83332787868,376.533328046269" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Migracion Facturas\Lookup 2"
           TopLeft="200.433328370419,619.866664364471" />
         <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Facturas\OLE DB Command 2"
+          TopLeft="327.69522617904,709.276188036242" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Facturas\Data Conversion 2"
+          TopLeft="183.866662477785,549.933330699669" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Facturas\Destino de ADO NET 2"
+          TopLeft="646.428536109273,727.047615724329" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Facturas\Data Conversion 1"
+          TopLeft="672.999989971518,210.999996855855" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migracion Facturas\Lookup"
+          TopLeft="249.074060465267,290.740738885859" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Facturas\OLE DB Destination"
+          TopLeft="62.1000025952855,703.866664798392" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Facturas\OLE DB Command 1"
+          TopLeft="748.333324434028,374.666661340926" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Migracion Facturas\Poblar Facturas"
+          TopLeft="215.999996781349,129.999998062849" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Facturas\Lookup 3"
+          TopLeft="674.999963119628,652.380949711989" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Migracion Facturas\Poblar Factura2 externa"
+          TopLeft="630.49997145186,505.866666063997" />
+        <NodeLayout
           Size="181.6,41.6"
           Id="Package\Migracion Facturas\Poblar Factura Detalle"
           TopLeft="657.999990195036,133.999998003244" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 1"
-          TopLeft="692.999989673495,284.999995753169" />
+          Size="176.8,41.6"
+          Id="Package\Migracion Facturas\Destino de ADO NET"
+          TopLeft="53.9999991953373,378.799994665384" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Migracion Facturas\Data Conversion"
           TopLeft="219.999996721745,203.999996960163" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command"
-          TopLeft="297.999995559454,379.999994337559" />
+          Size="164,41.6"
+          Id="Package\Migracion Facturas\Data Conversion 3"
+          TopLeft="646.333303920098,579.333331874874" />
         <EdgeLayout
           Id="Package\Migracion Facturas.Paths[Salida de origen de ADO NET1]"
           TopLeft="751.899990083277,175.599998003244">
@@ -7656,6 +7649,28 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[OLE DB Source Output1]"
+          TopLeft="726.816637685979,547.466666063997">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.8666658108765"
+              Start="0,0"
+              End="0,24.3666658108765">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3666658108765" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Facturas.Paths[OLE DB Source Output]"
           TopLeft="284.566656057868,515.199997324149">
           <EdgeLayout.Curve>
@@ -7690,305 +7705,7 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
-          TopLeft="242.033328370419,661.466664364471">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-94.3333257751336,42.4000004339216"
-              Start="0,0"
-              End="-94.3333257751336,34.9000004339216">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.2925491965798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.2925491965798"
-                    Point2="0,17.2925491965798"
-                    Point3="-4,17.2925491965798" />
-                  <mssgle:LineSegment
-                    End="-90.3333257751336,17.2925491965798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-90.3333257751336,17.2925491965798"
-                    Point2="-94.3333257751336,17.2925491965798"
-                    Point3="-94.3333257751336,21.2925491965798" />
-                  <mssgle:LineSegment
-                    End="-94.3333257751336,34.9000004339216" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-102.973049606317,22.2925491965798,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output]"
-          TopLeft="734.599989673495,326.599995753169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-67.1333312388922,49.0666656324599"
-              Start="0,0"
-              End="-67.1333312388922,41.5666656324599">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.0115028461798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.0115028461798"
-                    Point2="0,20.0115028461798"
-                    Point3="-4,20.0115028461798" />
-                  <mssgle:LineSegment
-                    End="-63.1333312388922,20.0115028461798" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.1333312388922,20.0115028461798"
-                    Point2="-67.1333312388922,20.0115028461798"
-                    Point3="-67.1333312388922,24.0115028461798" />
-                  <mssgle:LineSegment
-                    End="-67.1333312388922,41.5666656324599" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-89.3730523381961,25.0115028461798,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output1]"
-          TopLeft="279.633328370419,661.466664364471">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.895232189175,33.9428571015305"
-              Start="0,0"
-              End="116.895232189175,26.4428571015305">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.84336132768304" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.84336132768304"
-                    Point2="0,13.843361327683"
-                    Point3="4,13.843361327683" />
-                  <mssgle:LineSegment
-                    End="112.895232189175,13.843361327683" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.895232189175,13.843361327683"
-                    Point2="116.895232189175,13.843361327683"
-                    Point3="116.895232189175,17.843361327683" />
-                  <mssgle:LineSegment
-                    End="116.895232189175,26.4428571015305" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.2562293758373,18.843361327683,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output]"
-          TopLeft="772.199989673495,326.599995753169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.299998467664,54.9999988728767"
-              Start="0,0"
-              End="118.299998467664,47.4999988728767">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.4313720893301" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.4313720893301"
-                    Point2="0,22.4313720893301"
-                    Point3="4,22.4313720893301" />
-                  <mssgle:LineSegment
-                    End="114.299998467664,22.4313720893301" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.299998467664,22.4313720893301"
-                    Point2="118.299998467664,22.4313720893301"
-                    Point3="118.299998467664,26.4313720893301" />
-                  <mssgle:LineSegment
-                    End="118.299998467664,47.4999988728767" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.9586125150821,27.4313720893301,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
-          TopLeft="263.349995424102,591.533330699669">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.3333336648019"
-              Start="0,0"
-              End="0,20.8333336648019">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.8333336648019" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output]"
-          TopLeft="754.199989822507,252.599996855855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.3999988973141"
-              Start="0,0"
-              End="0,24.8999988973141">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8999988973141" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Migracion Facturas\Poblar Factura2 externa"
-          TopLeft="630.49997145186,505.866666063997" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 3"
-          TopLeft="646.333303920098,579.333331874874" />
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[OLE DB Source Output1]"
-          TopLeft="726.816637685979,547.466666063997">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.8666658108765"
-              Start="0,0"
-              End="0,24.3666658108765">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.3666658108765" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 3"
-          TopLeft="674.999963119628,652.380949711989" />
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output2]"
-          TopLeft="731.866633519863,620.933331874874">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.4476178371152"
-              Start="0,0"
-              End="0,23.9476178371152">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9476178371152" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Facturas\Destino de ADO NET 2"
-          TopLeft="646.428536109273,727.047615724329" />
-        <EdgeLayout
           Id="Package\Migracion Facturas.Paths[Lookup No Match Output2]"
-          TopLeft="737.31424961445,693.980949711989">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.0666660123401"
-              Start="0,0"
-              End="0,25.5666660123401">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5666660123401" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,6.97864550617004,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Facturas\Lookup"
-          TopLeft="249.074060465267,290.740738885859" />
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output3]"
-          TopLeft="301.737028593506,245.599996960163">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.1407419256961"
-              Start="0,0"
-              End="0,37.6407419256961">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.6407419256961" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
           TopLeft="288.007393798601,332.340738885859">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8024,7 +7741,67 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output2]"
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output1]"
+          TopLeft="737.31424961445,693.980949711989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.0666660123401"
+              Start="0,0"
+              End="0,25.5666660123401">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5666660123401" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,6.97864550617004,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output]"
+          TopLeft="242.033328370419,661.466664364471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94.3333257751336,42.4000004339216"
+              Start="0,0"
+              End="-94.3333257751336,34.9000004339216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.2925491965798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.2925491965798"
+                    Point2="0,17.2925491965798"
+                    Point3="-4,17.2925491965798" />
+                  <mssgle:LineSegment
+                    End="-90.3333257751336,17.2925491965798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.3333257751336,17.2925491965798"
+                    Point2="-94.3333257751336,17.2925491965798"
+                    Point3="-94.3333257751336,21.2925491965798" />
+                  <mssgle:LineSegment
+                    End="-94.3333257751336,34.9000004339216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-102.973049606317,22.2925491965798,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output1]"
           TopLeft="322.940727131934,332.340738885859">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8059,25 +7836,209 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output]"
+          TopLeft="279.633328370419,661.466664364471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136.061897808621,47.8095236717706"
+              Start="0,0"
+              End="136.061897808621,40.3095236717706">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4987861249574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4987861249574"
+                    Point2="0,19.4987861249574"
+                    Point3="4,19.4987861249574" />
+                  <mssgle:LineSegment
+                    End="132.061897808621,19.4987861249574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="132.061897808621,19.4987861249574"
+                    Point2="136.061897808621,19.4987861249574"
+                    Point3="136.061897808621,23.4987861249574" />
+                  <mssgle:LineSegment
+                    End="136.061897808621,40.3095236717706" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.8395621855606,24.4987861249574,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output2]"
+          TopLeft="301.737028593506,245.599996960163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1407419256961"
+              Start="0,0"
+              End="0,37.6407419256961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6407419256961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
+          TopLeft="731.866633519863,620.933331874874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.4476178371152"
+              Start="0,0"
+              End="0,23.9476178371152">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9476178371152" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output]"
+          TopLeft="263.349995424102,591.533330699669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.3333336648019"
+              Start="0,0"
+              End="0,20.8333336648019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8333336648019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Facturas\Lookup 1"
+          TopLeft="696.09997145186,283.533332507677" />
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output3]"
+          TopLeft="755.749980711689,252.599996855855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9333356518216"
+              Start="0,0"
+              End="0,23.4333356518216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4333356518216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
+          TopLeft="756.49997145186,325.133332507677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135.866643573179,51.3999955385923"
+              Start="0,0"
+              End="-135.866643573179,43.8999955385923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6999977692962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6999977692962"
+                    Point2="0,25.6999977692962"
+                    Point3="-4,25.6999977692962" />
+                  <mssgle:LineSegment
+                    End="-131.866643573179,25.6999977692962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131.866643573179,25.6999977692962"
+                    Point2="-135.866643573179,25.6999977692962"
+                    Point3="-135.866643573179,29.6999977692962" />
+                  <mssgle:LineSegment
+                    End="-135.866643573179,43.8999955385923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.73970850534,30.6999977692962,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output2]"
+          TopLeft="775.29997145186,325.133332507677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.0333529821688,49.5333288332496"
+              Start="0,0"
+              End="61.0333529821688,42.0333288332496">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2018282300312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2018282300312"
+                    Point2="0,20.2018282300312"
+                    Point3="4,20.2018282300312" />
+                  <mssgle:LineSegment
+                    End="57.0333529821688,20.2018282300312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.0333529821688,20.2018282300312"
+                    Point2="61.0333529821688,20.2018282300312"
+                    Point3="61.0333529821688,24.2018282300312" />
+                  <mssgle:LineSegment
+                    End="61.0333529821688,42.0333288332496" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6747102276656,25.2018282300312,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Facturas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Facturas\Poblar Factua externa">
     <Properties>
@@ -8087,15 +8048,10 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\OLE DB Destination">
+    design-time-name="Package\Migracion Facturas\Destino de ADO NET 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8111,37 +8067,6 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[Vnta].[tbFacturas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Factura2 externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Lookup 3">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Vnta].[tbFacturasDetalle]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8173,6 +8098,97 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[FACTURA]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Facturas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Lookup 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Vnta].[tbFacturas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Factura2 externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Factura Detalle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FACTURA2]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

@@ -12,10 +12,100 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{BD3CEF16-03A5-484B-9CBC-28F5EDA92B22}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{B19CD616-917C-41F1-82E8-7BA2B798FD0F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{A8E1B0DE-75B5-44C6-B1B7-7F1489CE06B9}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{A8E1B0DE-75B5-44C6-B1B7-7F1489CE06B9}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="JfLCiqh70x4="
+            IV="0iGxeCCr9cXIiWcusIKlhg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>0iGxeCCr9cXIiWcusIKlhs6P7GVEGjOQaH3l6Am/T/FIN0+PA381VzdUA8GPvmwTzqH/LiA4MX/H4mLTHAXdt9BeAN499IWfl7/vqSp+49zu1dsAiBet1I4m0exk26sUujZcK1AES5WGgZMyNz0A1gak2CUegSTdX+GUeQYVBwZdCiYF2MdZlyIZlHqgV7Dy</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DDD98353-FFA4-4A6F-80B6-9AF4505BF80A}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{DDD98353-FFA4-4A6F-80B6-9AF4505BF80A}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="Q4bRQrFcdtQ="
+            IV="QL93r26PyfQpr6X899y7lg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>QL93r26PyfQpr6X899y7llNNFIwDB5WZJUw3PqH6wOekvP0heVUSujrRgzjyxkLcMWCQ7vKTtgk9PXXpcCZ8bQpRdHgqz/WG0M6yIcZXalrYqeCQDgj74KeKjyj2SOXBT1UNl3WS8DPgcGteRQzZl/cTyiRXcl/4LEAOh1zUdDTk1I9IdrHOarQgwuj2rSKK</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{DC9F8454-A93F-4682-8923-6DC5E5EF45DE}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{DC9F8454-A93F-4682-8923-6DC5E5EF45DE}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="051y+oOhz5g="
+            IV="roQU7SY7YH9rOTPdmeiDQw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>roQU7SY7YH9rOTPdmeiDQ+i3qE1hzb7kCUo7WBENPFuMaEZQOTwP/6bQ0ig+oM84FP8QUnH+qVlcybxJn7Fa3oYpSxIGu166EYe/EvwBJLUoDbRCe7jhiX01vFaoeKrm8eGETsiG6FCD/5UY2wvPMn3m1FJHChjHuuUVVvzV/q258150U0qWsIKGb3rhCjob</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ABDFE964-B221-41A4-B2EA-4C56A4E8A4EC}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{ABDFE964-B221-41A4-B2EA-4C56A4E8A4EC}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="9WtVqZR9ti0="
+            IV="kQdCMHFgpu6u16/XJvT5eA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>kQdCMHFgpu6u16/XJvT5eKaJumzBiVmsQqilo2C485akvpUeVOFds1Kso+4TwbR14X1TqFiw2IaG4Iq+BuKcaYtItSQUvid3ltNSGr1yOdjwgkFqflx+tDjigsEkVhouc0n644YcRfvAh7dOqg1tDKFG4o4EQmZZk1vfvzwy7Jj7BIwabFQsM5Jn82fhtp8g</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -31,7 +121,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{ABDFE964-B221-41A4-B2EA-4C56A4E8A4EC}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'CXC'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -316,8 +406,8 @@
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -341,13 +431,6 @@
                       cachedPrecision="10"
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[DatCodigo]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]" />
-                    <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCTipDoc]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="MCTipDoc"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCTipDoc]" />
                     <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCNumDoc]"
                       cachedDataType="numeric"
@@ -422,6 +505,14 @@
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCGraDoc]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]" />
                     <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCTipDocC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MCTipDocC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]" />
+                    <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCHoraC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -430,30 +521,31 @@
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCHora]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]" />
                     <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCAnoC]"
-                      cachedDataType="i2"
-                      cachedName="MCAnoC"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
-                    <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCMesC]"
                       cachedDataType="i2"
                       cachedName="MCMesC"
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMes]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]" />
                     <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCAnoC]"
+                      cachedDataType="i2"
+                      cachedName="MCAnoC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Copy of MCCerrado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Copy of MCCerrado"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCerrado]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of MCCerrado]" />
+                    <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCCiaInv]"
                       cachedDataType="i2"
                       cachedName="MCCiaInv"
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCialnv]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCiaInv]" />
-                    <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCCerrado]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
-                      cachedName="MCCerrado"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCerrado]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCerrado]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -726,8 +818,8 @@ where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ? and [refTable].[MCNumD
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -935,8 +1027,8 @@ where [refTable].[CPCo_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1053,8 +1145,8 @@ WHERE Cia       = ?
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1480,8 +1572,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1764,8 +1856,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1989,8 +2081,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2465,8 +2557,8 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Poblar CARCXC.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2832,21 +2924,45 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Data Conversion"
-          TopLeft="390.999994173646,147.999997794628" />
+          Size="112.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Lookup"
+          TopLeft="424.999976779025,251.066665159994" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Destino de ADO NET"
-          TopLeft="193.999997109175,340.799995589256" />
+          Size="171.2,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\OLE DB Destination"
+          TopLeft="200.833322360284,671.19999746879" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Data Conversion 1"
+          TopLeft="345.833314437834,511.59999750495" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\OLE DB Command 1"
+          TopLeft="467.499974456927,675.533331278231" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Poblar CARCXC"
+          TopLeft="353.333314028052,439.466664039029" />
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Migraciion CuentasPorCobrar\OLE DB Command"
           TopLeft="586.999991253018,339.999994933605" />
         <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Destino de ADO NET"
+          TopLeft="193.999997109175,340.799995589256" />
+        <NodeLayout
           Size="172.8,41.6"
           Id="Package\Migraciion CuentasPorCobrar\Origen de ADO NET"
           TopLeft="393.999994128942,64.9999990314245" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Data Conversion"
+          TopLeft="390.999994173646,147.999997794628" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migraciion CuentasPorCobrar\Lookup 1"
+          TopLeft="359.166647042666,587.46666418367" />
         <EdgeLayout
           Id="Package\Migraciion CuentasPorCobrar.Paths[Salida de origen de ADO NET]"
           TopLeft="480.399994128942,106.599999031425">
@@ -2881,42 +2997,62 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Lookup"
-          TopLeft="424.999976779025,251.066665159994" />
         <EdgeLayout
-          Id="Package\Migraciion CuentasPorCobrar.Paths[Data Conversion Output]"
-          TopLeft="468.999994173646,189.599997794628">
+          Id="Package\Migraciion CuentasPorCobrar.Paths[OLE DB Source Output]"
+          TopLeft="429.383314232943,481.066664039029">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.3999826053789,61.4666673653657"
+              EndConnector="0,30.5333334659205"
               Start="0,0"
-              End="12.3999826053789,53.9666673653657">
+              End="0,23.0333334659205">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.7333336826829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.7333336826829"
-                    Point2="0,30.7333336826829"
-                    Point3="4,30.7333336826829" />
-                  <mssgle:LineSegment
-                    End="8.39998260537885,30.7333336826829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.39998260537885,30.7333336826829"
-                    Point2="12.3999826053789,30.7333336826829"
-                    Point3="12.3999826053789,34.7333336826829" />
-                  <mssgle:LineSegment
-                    End="12.3999826053789,53.9666673653657" />
+                    End="0,23.0333334659205" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup No Match Output1]"
+          TopLeft="419.566647042666,629.06666418367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133.133324682382,42.1333332851198"
+              Start="0,0"
+              End="-133.133324682382,34.6333332851198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0666666425599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0666666425599"
+                    Point2="0,21.0666666425599"
+                    Point3="-4,21.0666666425599" />
+                  <mssgle:LineSegment
+                    End="-129.133324682382,21.0666666425599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129.133324682382,21.0666666425599"
+                    Point2="-133.133324682382,21.0666666425599"
+                    Point3="-133.133324682382,25.0666666425599" />
+                  <mssgle:LineSegment
+                    End="-133.133324682382,34.6333332851198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.373049059941,26.0666666425599,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2956,6 +3092,42 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup Match Output1]"
+          TopLeft="438.366647042666,629.06666418367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.133327414261,46.4666670945614"
+              Start="0,0"
+              End="117.133327414261,38.9666670945614">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9511112856251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9511112856251"
+                    Point2="0,18.9511112856251"
+                    Point3="4,18.9511112856251" />
+                  <mssgle:LineSegment
+                    End="113.133327414261,18.9511112856251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.133327414261,18.9511112856251"
+                    Point2="117.133327414261,18.9511112856251"
+                    Point3="117.133327414261,22.9511112856251" />
+                  <mssgle:LineSegment
+                    End="117.133327414261,38.9666670945614" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.3752769883806,23.9511112856251,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup Match Output]"
           TopLeft="498.866643445692,292.666665159994">
           <EdgeLayout.Curve>
@@ -2989,40 +3161,6 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
             <mssgm:EdgeLabel
               BoundingBox="37.6752871849133,24.3305346767755,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Poblar CARCXC"
-          TopLeft="353.333314028052,439.466664039029" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Data Conversion 1"
-          TopLeft="345.833314437834,511.59999750495" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\Lookup 1"
-          TopLeft="359.166647042666,587.46666418367" />
-        <EdgeLayout
-          Id="Package\Migraciion CuentasPorCobrar.Paths[OLE DB Source Output]"
-          TopLeft="429.383314232943,481.066664039029">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.5333334659205"
-              Start="0,0"
-              End="0,23.0333334659205">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.0333334659205" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3059,105 +3197,43 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\OLE DB Destination"
-          TopLeft="200.833322360284,671.19999746879" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migraciion CuentasPorCobrar\OLE DB Command 1"
-          TopLeft="467.499974456927,675.533331278231" />
         <EdgeLayout
-          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup No Match Output1]"
-          TopLeft="419.566647042666,629.06666418367">
+          Id="Package\Migraciion CuentasPorCobrar.Paths[Data Conversion Output]"
+          TopLeft="468.999994173646,189.599997794628">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-133.133324682382,42.1333332851198"
+              EndConnector="12.3999826053789,61.4666673653657"
               Start="0,0"
-              End="-133.133324682382,34.6333332851198">
+              End="12.3999826053789,53.9666673653657">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.0666666425599" />
+                    End="0,26.7333336826829" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.0666666425599"
-                    Point2="0,21.0666666425599"
-                    Point3="-4,21.0666666425599" />
+                    Point1="0,26.7333336826829"
+                    Point2="0,30.7333336826829"
+                    Point3="4,30.7333336826829" />
                   <mssgle:LineSegment
-                    End="-129.133324682382,21.0666666425599" />
+                    End="8.39998260537885,30.7333336826829" />
                   <mssgle:CubicBezierSegment
-                    Point1="-129.133324682382,21.0666666425599"
-                    Point2="-133.133324682382,21.0666666425599"
-                    Point3="-133.133324682382,25.0666666425599" />
+                    Point1="8.39998260537885,30.7333336826829"
+                    Point2="12.3999826053789,30.7333336826829"
+                    Point3="12.3999826053789,34.7333336826829" />
                   <mssgle:LineSegment
-                    End="-133.133324682382,34.6333332851198" />
+                    End="12.3999826053789,53.9666673653657" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.373049059941,26.0666666425599,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migraciion CuentasPorCobrar.Paths[Lookup Match Output1]"
-          TopLeft="438.366647042666,629.06666418367">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="117.133327414261,46.4666670945614"
-              Start="0,0"
-              End="117.133327414261,38.9666670945614">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9511112856251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9511112856251"
-                    Point2="0,18.9511112856251"
-                    Point3="4,18.9511112856251" />
-                  <mssgle:LineSegment
-                    End="113.133327414261,18.9511112856251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="113.133327414261,18.9511112856251"
-                    Point2="117.133327414261,18.9511112856251"
-                    Point3="117.133327414261,22.9511112856251" />
-                  <mssgle:LineSegment
-                    End="117.133327414261,38.9666670945614" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="10.3752769883806,23.9511112856251,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migraciion CuentasPorCobrar\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migraciion CuentasPorCobrar\Origen de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migraciion CuentasPorCobrar\Lookup">
     <Properties>
@@ -3182,7 +3258,36 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migraciion CuentasPorCobrar\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migraciion CuentasPorCobrar\Poblar CARCXC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migraciion CuentasPorCobrar\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migraciion CuentasPorCobrar\Origen de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3209,19 +3314,6 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migraciion CuentasPorCobrar\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
