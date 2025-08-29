@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{DB563CD2-2167-4692-A0EF-875AB350B5A6}">
+  DTS:VersionBuild="141"
+  DTS:VersionGUID="{00D49ACD-35BF-4555-A203-71FC08D15EE1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -29,13 +29,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Migrar Bodegas"
+      DTS:refId="Package\Migracion Bodegas"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{349ECB7A-D3FE-434A-A11F-EE4F31775435}"
+      DTS:DTSID="{3BB18575-8D89-4FE8-9B6F-13964FF157DB}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Bodegas"
+      DTS:ObjectName="Migracion Bodegas"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -46,13 +46,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Clientes"
+      DTS:refId="Package\Migracion Clientes"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{21D0F876-45EC-46F6-AA48-F5CD1B457E55}"
+      DTS:DTSID="{0F6BBCF3-C1AD-47CB-BE8F-D04DBC4A8267}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Clientes"
+      DTS:ObjectName="Migracion Clientes"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -63,13 +63,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Cxc"
+      DTS:refId="Package\Migracion CXC"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{8FF28914-394D-41F1-9316-6C217F1A2FC8}"
+      DTS:DTSID="{644FE4BD-07CE-48AA-BC12-E48A4F14AA1C}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Cxc"
+      DTS:ObjectName="Migracion CXC"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -80,13 +80,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Facturas"
+      DTS:refId="Package\Migracion Facturas"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{5296FE09-9375-4C3F-9051-F482EBB39947}"
+      DTS:DTSID="{01DDFA57-796B-4209-8BB3-AABE1F5BFDC3}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Facturas"
+      DTS:ObjectName="Migracion Facturas"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -97,30 +97,31 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Grupos"
+      DTS:refId="Package\Migracion Grupos"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{4FDC2ECE-7F0D-452F-A14E-99D50F56EAA8}"
+      DTS:DTSID="{1D4F6DE0-881C-45B5-8A4E-5FDBA06FE4D2}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Grupos"
+      DTS:ObjectName="Migracion Grupos"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
+          <ExecuteOutOfProcess>True</ExecuteOutOfProcess>
           <PackageName>Grupos.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Pedidos"
+      DTS:refId="Package\Migracion Pedidos"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{5244661A-69F9-4AEC-8969-87C419519B22}"
+      DTS:DTSID="{353F9FCC-48D1-4A4C-952D-BBA60105C7C2}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Pedidos"
+      DTS:ObjectName="Migracion Pedidos"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -131,13 +132,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Productos"
+      DTS:refId="Package\Migracion Productos"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{31800029-2924-4103-B18E-88C7ABECC423}"
+      DTS:DTSID="{817C8D52-C6FF-4257-8564-418EC51F0FB0}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Productos"
+      DTS:ObjectName="Migracion Productos"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -148,13 +149,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Migrar Vendedores"
+      DTS:refId="Package\Migracion Vendedores"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{EC728CA9-B006-47FA-AA65-D65626DD18EA}"
+      DTS:DTSID="{6A95B332-9467-4B24-9AE6-C90C74CBEEB3}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Migrar Vendedores"
+      DTS:ObjectName="Migracion Vendedores"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -169,59 +170,59 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{89F25CB1-A999-4369-8890-7AAC96FE9E9F}"
-      DTS:From="Package\Migrar Grupos"
+      DTS:DTSID="{9C9B1B86-795A-419F-A037-4EB3432DC58D}"
+      DTS:From="Package\Migracion Grupos"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Migrar Productos" />
+      DTS:To="Package\Migracion Productos" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{E42E371B-B2CD-47F1-A34F-34976C1A8CB0}"
-      DTS:From="Package\Migrar Productos"
+      DTS:DTSID="{A38111F7-1462-48A6-A302-BB78CB4D0878}"
+      DTS:From="Package\Migracion Productos"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Migrar Vendedores" />
+      DTS:To="Package\Migracion Vendedores" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E0BF8501-E342-405D-92DB-C9A23178C3F7}"
-      DTS:From="Package\Migrar Vendedores"
+      DTS:DTSID="{A04E9FE0-E0CC-4804-A5A7-90BAE7433395}"
+      DTS:From="Package\Migracion Vendedores"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
-      DTS:To="Package\Migrar Bodegas" />
+      DTS:To="Package\Migracion Bodegas" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
       DTS:CreationName=""
-      DTS:DTSID="{C46C9066-DDC6-4A1E-ADF7-45491DF2CA16}"
-      DTS:From="Package\Migrar Bodegas"
+      DTS:DTSID="{981C5637-1766-47E9-AD54-205D40E1D6A6}"
+      DTS:From="Package\Migracion Bodegas"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
-      DTS:To="Package\Migrar Clientes" />
+      DTS:To="Package\Migracion Clientes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
       DTS:CreationName=""
-      DTS:DTSID="{234500DC-339E-4BD8-B04F-D3AD118D8998}"
-      DTS:From="Package\Migrar Clientes"
+      DTS:DTSID="{9CED044A-AF19-4183-997B-77803B2CBFCA}"
+      DTS:From="Package\Migracion Clientes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 4"
-      DTS:To="Package\Migrar Pedidos" />
+      DTS:To="Package\Migracion Pedidos" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
       DTS:CreationName=""
-      DTS:DTSID="{76B16436-1842-48FA-A843-31ADE63947C2}"
-      DTS:From="Package\Migrar Pedidos"
+      DTS:DTSID="{17BB3793-92E7-4663-9461-6BBFF1AB3995}"
+      DTS:From="Package\Migracion Pedidos"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 5"
-      DTS:To="Package\Migrar Facturas" />
+      DTS:To="Package\Migracion Facturas" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
       DTS:CreationName=""
-      DTS:DTSID="{C24205D6-8735-4A52-AACF-87590A5FA99E}"
-      DTS:From="Package\Migrar Facturas"
+      DTS:DTSID="{7B2DC62B-14DD-4B7E-ABCD-12E8C7B3ED9C}"
+      DTS:From="Package\Migracion Facturas"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 6"
-      DTS:To="Package\Migrar Cxc" />
+      DTS:To="Package\Migracion CXC" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -236,51 +237,27 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Migrar Bodegas"
-          TopLeft="699.374961787837,87.7499993897974" />
+          Size="184.8,41.6"
+          Id="Package\Migracion Grupos"
+          TopLeft="42.4999976779025,28.5999998011192" />
         <NodeLayout
-          Size="148,41.6"
-          Id="Package\Migrar Clientes"
-          TopLeft="699.724961856133,193.483331987874" />
-        <NodeLayout
-          Size="128.8,41.6"
-          Id="Package\Migrar Cxc"
-          TopLeft="93.7499948777261,186.333332037595" />
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Migrar Facturas"
-          TopLeft="281.666651277079,188.499998689195" />
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Migrar Grupos"
-          TopLeft="68.3333295997647,86.0166660685174" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Migrar Pedidos"
-          TopLeft="490.416639871482,194.999998643995" />
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Migrar Productos"
-          TopLeft="291.249984086802,86.0166660685174" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Migrar Vendedores"
-          TopLeft="498.541639427552,86.0166660685174" />
+          Size="172.8,41.6"
+          Id="Package\Migracion Productos"
+          TopLeft="255.833319355217,26.8666664798392" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="213.133329599765,106.816666068517">
+          TopLeft="227.299997677902,48.5333331404792">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.1166544870374,0"
+              EndConnector="28.5333216773145,0"
               Start="0,0"
-              End="70.6166544870374,0">
+              End="21.0333216773145,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="70.6166544870374,0" />
+                    End="21.0333216773145,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -289,20 +266,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Migracion Vendedores"
+          TopLeft="473.333307471541,30.3333331223991" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="448.849984086802,106.816666068517">
+          TopLeft="428.633319355217,49.3999998011192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.6916553407499,0"
+              EndConnector="44.6999881163244,0"
               Start="0,0"
-              End="42.1916553407499,0">
+              End="37.1999881163244,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.1916553407499,0" />
+                    End="37.1999881163244,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -311,20 +292,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Bodegas"
+          TopLeft="714.999960934124,35.533333086239" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Clientes"
+          TopLeft="714.999960934124,116.999999186397" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Pedidos"
+          TopLeft="488.333306651978,118.733332507677" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Facturas"
+          TopLeft="251.666652916207,115.266665865117" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Migracion CXC"
+          TopLeft="30.8333316486743,112.666665883197" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="664.941639427552,107.683332729157">
+          TopLeft="655.733307471541,53.7333331043191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34.4333223602848,0"
+              EndConnector="59.2666534625826,0"
               Start="0,0"
-              End="26.9333223602848,0">
+              End="51.7666534625826,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="26.9333223602848,0" />
+                    End="51.7666534625826,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -335,18 +336,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="774.549961821985,129.349999389797">
+          TopLeft="797.799960934124,77.133333086239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.1333325980766"
+              EndConnector="0,39.8666661001576"
               Start="0,0"
-              End="0,56.6333325980766">
+              End="0,32.3666661001576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.6333325980766" />
+                    End="0,32.3666661001576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -357,18 +358,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="699.724961856133,215.041665315934">
+          TopLeft="714.999960934124,138.666665847037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-61.3083219846509,0"
+              EndConnector="-62.6666542821465,0"
               Start="0,0"
-              End="-53.8083219846509,0">
+              End="-55.1666542821465,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-53.8083219846509,0" />
+                    End="-55.1666542821465,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -379,18 +380,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 5]"
-          TopLeft="490.416639871482,212.549998666595">
+          TopLeft="488.333306651978,137.799999186397">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-57.5499885944031,0"
+              EndConnector="-69.4666537357707,0"
               Start="0,0"
-              End="-50.0499885944031,0">
+              End="-61.9666537357707,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-50.0499885944031,0" />
+                    End="-61.9666537357707,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -401,18 +402,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 6]"
-          TopLeft="281.666651277079,208.216665363395">
+          TopLeft="251.666652916207,134.766665874157">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.1166563993527,0"
+              EndConnector="-72.8333212675325,0"
               Start="0,0"
-              End="-51.6166563993527,0">
+              End="-65.3333212675325,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-51.6166563993527,0" />
+                    End="-65.3333212675325,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
