@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="141"
-  DTS:VersionGUID="{00D49ACD-35BF-4555-A203-71FC08D15EE1}">
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{4A1B0BCD-D265-462C-BACC-AD291FF7DEA5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -109,7 +109,6 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <ExecuteOutOfProcess>True</ExecuteOutOfProcess>
           <PackageName>Grupos.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
