@@ -12,10 +12,100 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{EF61E406-B619-4C27-8D29-B8B50075ADD9}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{706D2C78-45A8-46FA-A579-3FCCB8FC8606}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{EBDDD3DE-BBA0-437D-84F0-962A6AF0392E}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{EBDDD3DE-BBA0-437D-84F0-962A6AF0392E}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="bEzm8wkMK5A="
+            IV="ZMNcle0sQFFCc0MRYzLF3w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>ZMNcle0sQFFCc0MRYzLF3xD/0RSmJg/fcBO45q+GLs3lPkqV5Yv7z4QzdhRwj0OOVCj/hOrMEeIzhilj1y7HB/PincatPtReMcUCSEu8REkg1ZhQ5dhU7Kuh/rX615gOGmSuAGe9lqxDeOhQyV0Rrvmmm9Z3qo+J6ibPJwLfJPUcdAdOuumL8ahGnxWM2dx4</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ACE2B296-10E6-42F2-8AAD-4956A2E40F7C}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{ACE2B296-10E6-42F2-8AAD-4956A2E40F7C}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="OLl2lsgZOoo="
+            IV="48cvqgIYGuly6AqYe06M4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>48cvqgIYGuly6AqYe06M4EOsT9xk6XvndM5/AEsSNcOXXB1coBkMzzW2ASphDh6bK0xo5xW65h5Mif+wVG8Hf19POWa9ouV5AcElZPPZjWTz0mcpXHlDrtSmZ0n/P/vi0i9Hu6GwyEr49EK8r+9PImA9U+PEb/+XNWPg5AnT61E5V8htnM1QNKYZ3OaHRqGE</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{BB0DAD9F-14E0-403A-A5FC-850BA39862A6}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{BB0DAD9F-14E0-403A-A5FC-850BA39862A6}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="uvAMbo9OMOQ="
+            IV="1drUk7+o2ZZx9bfTAtaMtA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>1drUk7+o2ZZx9bfTAtaMtH3bk9kZ+2fhpVMe6AjTev+J0EhqRdWs+qlfl62MhiZMdM25fElhPRtga1cgo8Fze3z/XDrwSzWoPmyHxXMR4gMdvghXDF8s6ezRy4QXdKGzeBipJMPrbV5U7J4Mh9t+jeobJbimVKOTi9MUS8K9PlnHDec1l8CG7jw2SekpBRGy</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{73A43104-37AC-4B24-AA2F-05D491AA7D39}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="0TaTrACeXJU="
+            IV="U84FtMuA2sjWpm6xA/N6JA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>U84FtMuA2sjWpm6xA/N6JCA31PucG3i2nj5jPg7gDvZSX1mKZrGy9oLvdLqY+ZQ7KN5+fEatii1XxyVQa/kaKrLdosXcWbf0XST4PinCxLUqEsgjjYYPWrsgvsDQYoGWqkzCpyhsFj3TslBROa4dIx9ARL7rCgRXy/5jQSTxsNV18vh4DcHf9sneIqAc6te5</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -41,7 +131,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Grupos'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -58,7 +148,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Inve.tbCategorias OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -75,7 +165,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Inve.tbSubcategorias OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -93,6 +183,636 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Migracion Categoria y subcategoria\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[GRUPOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[GRUPOS]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[Codest] = ? and [refTable].[Nomest] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codest" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Nomest" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EstNPrecio" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EstNoCentro" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EstFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EstUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};#{Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[NomestC]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda].Columns[Codest]"
+                      cachedDataType="i2"
+                      cachedName="Codest"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Codest</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda].Columns[NomestC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="NomestC"
+                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[NomestC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Nomest</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Categoria y subcategoria\Búsqueda 1"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda 1"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[GRUPOS1]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[GRUPOS1]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[Codest] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codest" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codsub" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Dessub" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ctasub" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ctasubdh" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaInven" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaCosto" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaDescC" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaDescV" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TipoCSub" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ValoCSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CtaTraInv" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaPorCon" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaProVen" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaMPCosto" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaMaPri" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaInvCom" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SubFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SubUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SubCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CtaInvTran" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PConSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PCreSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PCobSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[Codest]"
+                      cachedDataType="i2"
+                      cachedName="Codest"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codest]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Codest</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Categoria y subcategoria\Búsqueda 2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda 2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Inve].[tbCategorias]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Inve].[tbCategorias]) [refTable]
+where [refTable].[Cate_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cate_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_Descripcion" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda].Columns[Copy of Cate_Id]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Cate_Id"
+                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cate_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Categoria y subcategoria\Búsqueda 3"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda 3"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Inve].[tbSubcategorias]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Inve].[tbSubcategorias]) [refTable]
+where [refTable].[Subc_Id] = ? and [refTable].[Cate_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Subc_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_Descripcion" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Cate_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Subc_IdC]};#{Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Cate_IdC]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda].Columns[Subc_IdC]"
+                      cachedDataType="i4"
+                      cachedName="Subc_IdC"
+                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Subc_IdC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Subc_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda].Columns[Cate_IdC]"
+                      cachedDataType="i4"
+                      cachedName="Cate_IdC"
+                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Cate_IdC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cate_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Migracion Categoria y subcategoria\Data Conversion"
               componentClassID="Microsoft.DataConvert"
@@ -575,8 +1295,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -600,27 +1320,25 @@
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codest]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]" />
                     <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Nomest]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Nomest"
+                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nomest]"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Nomest]" />
+                    <inputColumn
                       refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[EstFUpdate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="EstFUpdate"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstFUpdate]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[EstFUpdate]" />
                     <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[EstUUpdateC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[EstUUpdate]"
+                      cachedDataType="wstr"
                       cachedLength="10"
-                      cachedName="EstUUpdateC"
+                      cachedName="EstUUpdate"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstUUpdate]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[EstUUpdateC]" />
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[NomestC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="NomestC"
-                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nomest]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[NomestC]" />
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[EstUUpdate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -720,8 +1438,8 @@
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Connections[IDbConnection]"
-                  connectionManagerID="{BDF8B56D-683F-4747-96F4-18ECA7C573CE}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -751,27 +1469,25 @@
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codsub]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codsub]" />
                     <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[Dessub]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Dessub"
+                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Dessub]"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Dessub]" />
+                    <inputColumn
                       refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[SubFUpdate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="SubFUpdate"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[SubFUpdate]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[SubFUpdate]" />
                     <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[DessubC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="DessubC"
-                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[Dessub]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 1.Outputs[Data Conversion Output].Columns[DessubC]" />
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[SubUUpdateC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].Columns[SubUUpdate]"
+                      cachedDataType="wstr"
                       cachedLength="10"
-                      cachedName="SubUUpdateC"
+                      cachedName="SubUUpdate"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET].ExternalColumns[SubUUpdate]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 1.Outputs[Data Conversion Output].Columns[SubUUpdateC]" />
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[SubUUpdate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -928,618 +1644,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Migracion Categoria y subcategoria\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[GRUPOS]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[GRUPOS]) [refTable]
-where [refTable].[Cia] = ? and [refTable].[Codest] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codest" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Nomest" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EstNPrecio" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EstNoCentro" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EstFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EstUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Migracion Categoria y subcategoria\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input].Columns[Cia]"
-                      cachedDataType="i2"
-                      cachedName="Cia"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Cia</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input].Columns[Codest]"
-                      cachedDataType="i2"
-                      cachedName="Codest"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Codest</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Migracion Categoria y subcategoria\Lookup 1"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 1"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[GRUPOS1]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[GRUPOS1]) [refTable]
-where [refTable].[Cia] = ? and [refTable].[Codest] = ? and [refTable].[Codsub] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codest" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Codsub" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Dessub" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ctasub" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ctasubdh" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaInven" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaCosto" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaDescC" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaDescV" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TipoCSub" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ValoCSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CtaTraInv" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaPorCon" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaProVen" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaMPCosto" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaMaPri" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CtaInvCom" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SubFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SubUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SubCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CtaInvTran" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PConSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PCreSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PCobSub" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};#{Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codsub]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input].Columns[Cia]"
-                      cachedDataType="i2"
-                      cachedName="Cia"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Cia]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Cia</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input].Columns[Codest]"
-                      cachedDataType="i2"
-                      cachedName="Codest"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codest]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Codest</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input].Columns[Codsub]"
-                      cachedDataType="i2"
-                      cachedName="Codsub"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Outputs[Salida de origen de ADO NET].Columns[Codsub]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Codsub</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Migracion Categoria y subcategoria\Lookup 2"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 2"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Inve].[tbCategorias]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Inve].[tbCategorias]) [refTable]
-where [refTable].[Cate_Id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cate_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_Descripcion" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cate_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input].Columns[Copy of Cate_Id]"
-                      cachedDataType="i4"
-                      cachedName="Copy of Cate_Id"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Cate_Id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Migracion Categoria y subcategoria\Lookup 3"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup 3"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Inve].[tbSubcategorias]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Inve].[tbSubcategorias]) [refTable]
-where [refTable].[Subc_Id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Subc_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_Descripcion" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Cate_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Subc_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Subc_IdC]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 3.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input].Columns[Subc_IdC]"
-                      cachedDataType="i4"
-                      cachedName="Subc_IdC"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output].Columns[Subc_IdC]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Subc_Id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Migracion Categoria y subcategoria\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1570,8 +1674,8 @@ WHERE Cia = ? AND Codest = ?;</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1746,8 +1850,8 @@ WHERE Cia = ?  AND CodSub = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1934,8 +2038,8 @@ WHERE Cia = ?  AND CodSub = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Command 2.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2084,8 +2188,8 @@ WHERE Cia = ?  AND CodSub = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Command 3.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2283,8 +2387,8 @@ WHERE Cia = ?  AND CodSub = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2303,14 +2407,6 @@ WHERE Cia = ?  AND CodSub = ?</property>
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
                     <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Cate_Descripcion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="Copy of Cate_Descripcion"
-                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cate_Descripcion]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Descripcion]" />
-                    <inputColumn
                       refId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cate_FechaModificacion]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Cate_FechaModificacion"
@@ -2322,6 +2418,14 @@ WHERE Cia = ?  AND CodSub = ?</property>
                       cachedName="Copy of Cate_Id"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cate_Id]"
                       lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Cate_Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Copy of Cate_Descripcion"
+                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cate_Descripcion]"
+                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Cate_Descripcion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2442,8 +2546,8 @@ WHERE Cia = ?  AND CodSub = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="{D8BD17EF-490D-46B4-AB11-477E9E143436}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2611,8 +2715,8 @@ WHERE s.SubFUpdate   &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2809,8 +2913,8 @@ WHERE s.SubFUpdate   &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\Poblar Categorias.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2958,7 +3062,7 @@ WHERE s.SubFUpdate   &gt;= ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[GRUPOS]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3001,8 +3105,8 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Connections[OleDbConnection]"
-                  connectionManagerID="{2DF365BB-ADD6-4255-93CB-EECA886A5565}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_Extena.Admin123_Ole]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3014,7 +3118,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
                     <outputColumn
                       refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Cate_Id]"
                       dataType="i2"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Cate_Id]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Cate_Id]"
@@ -3024,7 +3128,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
                       refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Cate_Descripcion]"
                       codePage="1252"
                       dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Cate_Descripcion]"
                       length="30"
@@ -3034,31 +3138,31 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
                     <outputColumn
                       refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Cate_FechaModificacion]"
                       dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Cate_FechaModificacion]"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Cate_FechaModificacion]"
                       name="Cate_FechaModificacion"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Usuario]"
                       codePage="1252"
                       dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Usuario]"
                       length="10"
                       lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Usuario]"
                       name="Usua_Usuario"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
-                      lineageId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
-                      name="Usua_Modificacion"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -3078,15 +3182,15 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
                       dataType="dbTimeStamp"
                       name="Cate_FechaModificacion" />
                     <externalMetadataColumn
+                      refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
                       refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Usuario]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="Usua_Usuario" />
-                    <externalMetadataColumn
-                      refId="Package\Migracion Categoria y subcategoria\Poblar Depositos.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
-                      dataType="i4"
-                      name="Usua_Modificacion" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3181,8 +3285,8 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Categoria y subcategoria\Poblar Subcategorias.Connections[IDbConnection]"
-                  connectionManagerID="{9181EB00-B316-4947-9788-8E4229869B92}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[200.59.27.115_PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -3336,64 +3440,24 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           <paths>
             <path
               refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output]"
-              endId="Package\Migracion Categoria y subcategoria\Lookup.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
-              endId="Package\Migracion Categoria y subcategoria\Lookup 1.Inputs[Lookup Input]"
+              endId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Inputs[Entrada de búsqueda]"
               name="Data Conversion Output"
               startId="Package\Migracion Categoria y subcategoria\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
-              endId="Package\Migracion Categoria y subcategoria\Lookup 2.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output3]"
-              endId="Package\Migracion Categoria y subcategoria\Lookup 3.Inputs[Lookup Input]"
+              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
+              endId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Inputs[Entrada de búsqueda]"
               name="Data Conversion Output"
               startId="Package\Migracion Categoria y subcategoria\Data Conversion 3.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup Match Output]" />
+              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
+              endId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output1]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 1.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output2]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 2.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output3]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 3.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output]"
-              endId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output1]"
-              endId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 1.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output2]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 2.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output3]"
-              endId="Package\Migracion Categoria y subcategoria\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
-              name="Lookup No Match Output"
-              startId="Package\Migracion Categoria y subcategoria\Lookup 3.Outputs[Lookup No Match Output]" />
+              refId="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output3]"
+              endId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Inputs[Entrada de búsqueda]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Migracion Categoria y subcategoria.Paths[OLE DB Source Output]"
               endId="Package\Migracion Categoria y subcategoria\Data Conversion 2.Inputs[Data Conversion Input]"
@@ -3404,6 +3468,46 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
               endId="Package\Migracion Categoria y subcategoria\Data Conversion 3.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\Migracion Categoria y subcategoria\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda1]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda2]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 2.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda3]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Command 3.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 1.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda1]"
+              endId="Package\Migracion Categoria y subcategoria\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda2]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 2.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda3]"
+              endId="Package\Migracion Categoria y subcategoria\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Categoria y subcategoria\Búsqueda 3.Outputs[Salida de entradas no coincidentes de búsqueda]" />
             <path
               refId="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET]"
               endId="Package\Migracion Categoria y subcategoria\Data Conversion.Inputs[Data Conversion Input]"
@@ -3431,7 +3535,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Inve.tbCategorias ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3448,7 +3552,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D8BD17EF-490D-46B4-AB11-477E9E143436}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="SET IDENTITY_INSERT Inve.tbSubcategorias ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3465,7 +3569,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9181EB00-B316-4947-9788-8E4229869B92}"
+          SQLTask:Connection="{73A43104-37AC-4B24-AA2F-05D491AA7D39}"
           SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Grupos';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -3542,13 +3646,17 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Id="Package\Actualizar Ultima Migracion Grupos"
           TopLeft="269.328688988232,508.949996460826" />
         <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\Agregar Identity  Categoria"
+          TopLeft="274.166651686861,366.599997450709" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Agregar Identity Subcategoria"
+          TopLeft="260.833319082029,433.333330319988" />
+        <NodeLayout
           Size="241.6,48.8"
           Id="Package\Migracion Categoria y subcategoria"
           TopLeft="256.666652643019,284.868516537579" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Traer FechaFiltrado"
-          TopLeft="276.828688578451,81.4666661001576" />
         <NodeLayout
           Size="193.6,41.6"
           Id="Package\Quitar Identity  Categoria"
@@ -3557,20 +3665,36 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Size="207.2,41.6"
           Id="Package\Quitar Identity Subcategoria"
           TopLeft="258.333319218623,214.066665178074" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Traer FechaFiltrado"
+          TopLeft="276.828688578451,81.4666661001576" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="363.949985589336,190.666665630076">
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="361.933319218623,255.666665178074">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.3999995479982"
+              EndConnector="15.5333334243961,29.201851359505"
               Start="0,0"
-              End="0,15.8999995479982">
+              End="15.5333334243961,21.701851359505">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.8999995479982" />
+                    End="0,10.6009256797525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6009256797525"
+                    Point2="0,14.6009256797525"
+                    Point3="4,14.6009256797525" />
+                  <mssgle:LineSegment
+                    End="11.5333334243961,14.6009256797525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5333334243961,14.6009256797525"
+                    Point2="15.5333334243961,14.6009256797525"
+                    Point3="15.5333334243961,18.6009256797525" />
+                  <mssgle:LineSegment
+                    End="15.5333334243961,21.701851359505" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3579,14 +3703,28 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="202.4,41.6"
-          Id="Package\Agregar Identity  Categoria"
-          TopLeft="274.166651686861,366.599997450709" />
-        <NodeLayout
-          Size="216,41.6"
-          Id="Package\Agregar Identity Subcategoria"
-          TopLeft="260.833319082029,433.333330319988" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="363.949985589336,190.666665630076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.399999547998"
+              Start="0,0"
+              End="0,15.899999547998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.899999547998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="372.099985384445,408.199997450709">
@@ -3615,48 +3753,14 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.9999995299181"
+              EndConnector="0,25.9999995299184"
               Start="0,0"
-              End="0,18.4999995299181">
+              End="0,18.4999995299184">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4999995299181" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="361.933319218623,255.666665178074">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15.5333334243965,29.201851359505"
-              Start="0,0"
-              End="15.5333334243965,21.701851359505">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.6009256797525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.6009256797525"
-                    Point2="0,14.6009256797525"
-                    Point3="4,14.6009256797525" />
-                  <mssgle:LineSegment
-                    End="11.5333334243965,14.6009256797525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.5333334243965,14.6009256797525"
-                    Point2="15.5333334243965,14.6009256797525"
-                    Point3="15.5333334243965,18.6009256797525" />
-                  <mssgle:LineSegment
-                    End="15.5333334243965,21.701851359505" />
+                    End="0,18.4999995299184" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3730,49 +3834,53 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
+          TopLeft="208.999996885657,78.9999988228083" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Destination"
+          TopLeft="76.6666624777849,701.466664726072" />
+        <NodeLayout
           Size="176,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 2"
-          TopLeft="337.999994963408,690.199994769692" />
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 1"
+          TopLeft="835.999987542629,351.799995008111" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Categoria y subcategoria\Data Conversion 2"
           TopLeft="210.999997213483,537.799993786216" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Lookup 3"
-          TopLeft="648.999990329146,568.799996721745" />
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Depositos"
-          TopLeft="214.99999679625,443.999994039536" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Lookup"
-          TopLeft="230.999996557832,244.999996349216" />
+          Size="177.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Subcategorias"
+          TopLeft="663.999990105629,61.999999076128" />
         <NodeLayout
           Size="176.8,41.6"
           Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET"
           TopLeft="83.9999987483025,352.99999473989" />
         <NodeLayout
+          Size="180,41.6"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Destination 1"
+          TopLeft="578.499976915619,663.599998445114" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 2"
+          TopLeft="337.999994963408,690.199994769692" />
+        <NodeLayout
           Size="176,41.6"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Command 3"
           TopLeft="799.999988079071,652.79999576807" />
         <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Subcategorias"
-          TopLeft="663.999990105629,61.999999076128" />
+          Size="152,41.6"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Source"
+          TopLeft="648.999990329147,423.799998882413" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Command"
-          TopLeft="339.999994933605,355.799994948506" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Lookup 1"
-          TopLeft="692.999989673495,258.999996140599" />
+          Size="157.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Depositos"
+          TopLeft="214.166663508448,443.133327378896" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Categoria y subcategoria\Data Conversion 1"
-          TopLeft="678.999989882112,155.999997675419" />
+          TopLeft="676.499990018706,159.466664317979" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1"
@@ -3782,51 +3890,27 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Id="Package\Migracion Categoria y subcategoria\Data Conversion 3"
           TopLeft="637.999990493059,497.799997779727" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Lookup 2"
-          TopLeft="232.999996528029,609.199993950128" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Source"
-          TopLeft="648.999990329147,423.799998882413" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 1"
-          TopLeft="835.999987542629,351.799995008111" />
+          Size="167.2,41.6"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Command"
+          TopLeft="339.999994933605,355.799994948506" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Migracion Categoria y subcategoria\Data Conversion"
           TopLeft="209.999996870756,157.999997645617" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
-          TopLeft="208.999996885657,78.9999988228083" />
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET1]"
-          TopLeft="752.799990105629,103.599999076128">
+          TopLeft="755.649990062167,103.599999076128">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.19999977648285,52.3999985992909"
+              EndConnector="0,55.8666652418509"
               Start="0,0"
-              End="8.19999977648285,44.8999985992909">
+              End="0,48.3666652418509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.1999992996455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.1999992996455"
-                    Point2="0,26.1999992996455"
-                    Point3="4,26.1999992996455" />
-                  <mssgle:LineSegment
-                    End="4.19999977648285,26.1999992996455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.19999977648285,26.1999992996455"
-                    Point2="8.19999977648285,26.1999992996455"
-                    Point3="8.19999977648285,30.1999992996455" />
-                  <mssgle:LineSegment
-                    End="8.19999977648285,44.8999985992909" />
+                    End="0,48.3666652418509" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3837,18 +3921,18 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET]"
-          TopLeft="288.066663590405,120.599998822808">
+          TopLeft="288.899996878206,120.599998822808">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.3999988228083"
+              EndConnector="0,37.3999988228087"
               Start="0,0"
-              End="0,29.8999988228083">
+              End="0,29.8999988228087">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.8999988228083" />
+                    End="0,29.8999988228087" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3881,334 +3965,18 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[OLE DB Source Output]"
-          TopLeft="293.399997004867,485.599994039536">
+          TopLeft="292.983330360966,484.733327378896">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.1999997466802"
+              EndConnector="0,53.0666664073199"
               Start="0,0"
-              End="0,44.6999997466802">
+              End="0,45.5666664073199">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.6999997466802" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output1]"
-          TopLeft="753.399989673495,300.599996140599">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-51.5999987483025,57.3999987035989"
-              Start="0,0"
-              End="-51.5999987483025,49.8999987035989">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.6999993517994" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.6999993517994"
-                    Point2="0,28.6999993517994"
-                    Point3="-4,28.6999993517994" />
-                  <mssgle:LineSegment
-                    End="-47.5999987483025,28.6999993517994" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-47.5999987483025,28.6999993517994"
-                    Point2="-51.5999987483025,28.6999993517994"
-                    Point3="-51.5999987483025,32.6999993517994" />
-                  <mssgle:LineSegment
-                    End="-51.5999987483025,49.8999987035989" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-81.6063860929012,33.6999993517994,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output]"
-          TopLeft="287.399996557832,286.599996349216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114.999997809529,66.3999983906745"
-              Start="0,0"
-              End="-114.999997809529,58.8999983906745">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.1999991953373" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.1999991953373"
-                    Point2="0,33.1999991953373"
-                    Point3="-4,33.1999991953373" />
-                  <mssgle:LineSegment
-                    End="-110.999997809529,33.1999991953373" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-110.999997809529,33.1999991953373"
-                    Point2="-114.999997809529,33.1999991953373"
-                    Point3="-114.999997809529,37.1999991953373" />
-                  <mssgle:LineSegment
-                    End="-114.999997809529,58.8999983906745" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-113.306385623515,38.1999991953373,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output3]"
-          TopLeft="728.199990329146,610.399996721745">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159.799997749925,42.3999990463257"
-              Start="0,0"
-              End="159.799997749925,34.8999990463257">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.2925486306583" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.2925486306583"
-                    Point2="0,17.2925486306583"
-                    Point3="4,17.2925486306583" />
-                  <mssgle:LineSegment
-                    End="155.799997749925,17.2925486306583" />
-                  <mssgle:CubicBezierSegment
-                    Point1="155.799997749925,17.2925486306583"
-                    Point2="159.799997749925,17.2925486306583"
-                    Point3="159.799997749925,21.2925486306583" />
-                  <mssgle:LineSegment
-                    End="159.799997749925,34.8999990463257" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="31.7086121562125,22.2925486306583,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output2]"
-          TopLeft="312.199996528029,650.799993950129">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113.799998435378,39.400000819564"
-              Start="0,0"
-              End="113.799998435378,31.900000819564">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.0690199420967" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0690199420967"
-                    Point2="0,16.0690199420967"
-                    Point3="4,16.0690199420967" />
-                  <mssgle:LineSegment
-                    End="109.799998435378,16.0690199420967" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109.799998435378,16.0690199420967"
-                    Point2="113.799998435378,16.0690199420967"
-                    Point3="113.799998435378,20.0690199420967" />
-                  <mssgle:LineSegment
-                    End="113.799998435378,31.900000819564" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="8.708612498939,21.0690199420967,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output1]"
-          TopLeft="772.199989673495,300.599996140599">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="151.799997869134,51.1999988675119"
-              Start="0,0"
-              End="151.799997869134,43.6999988675119">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.8815681655734" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.8815681655734"
-                    Point2="0,20.8815681655734"
-                    Point3="4,20.8815681655734" />
-                  <mssgle:LineSegment
-                    End="147.799997869134,20.8815681655734" />
-                  <mssgle:CubicBezierSegment
-                    Point1="147.799997869134,20.8815681655734"
-                    Point2="151.799997869134,20.8815681655734"
-                    Point3="151.799997869134,24.8815681655734" />
-                  <mssgle:LineSegment
-                    End="151.799997869134,43.6999988675119" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="27.708612215817,25.8815681655734,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup Match Output]"
-          TopLeft="304.866663224498,286.599996349216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.733331709107,69.1999985992909"
-              Start="0,0"
-              End="118.733331709107,61.6999985992909">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2606987286615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.2606987286615"
-                    Point2="0,28.2606987286615"
-                    Point3="4,28.2606987286615" />
-                  <mssgle:LineSegment
-                    End="114.733331709107,28.2606987286615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.733331709107,28.2606987286615"
-                    Point2="118.733331709107,28.2606987286615"
-                    Point3="118.733331709107,32.2606987286615" />
-                  <mssgle:LineSegment
-                    End="118.733331709107,61.6999985992909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.1752791358035,33.2606987286615,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output3]"
-          TopLeft="719.999990493059,539.399997779727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.6000001639129,29.3999989420176"
-              Start="0,0"
-              End="-10.6000001639129,21.8999989420176">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.6999994710088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.6999994710088"
-                    Point2="0,14.6999994710088"
-                    Point3="-4,14.6999994710088" />
-                  <mssgle:LineSegment
-                    End="-6.60000016391291,14.6999994710088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.60000016391291,14.6999994710088"
-                    Point2="-10.6000001639129,14.6999994710088"
-                    Point3="-10.6000001639129,18.6999994710088" />
-                  <mssgle:LineSegment
-                    End="-10.6000001639129,21.8999989420176" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
-          TopLeft="293.199996870756,579.399993786216">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.8000001639126"
-              Start="0,0"
-              End="0,22.3000001639126">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.3000001639126" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
-          TopLeft="757.199989777803,197.599997675419">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.3999984651804"
-              Start="0,0"
-              End="0,53.8999984651804">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.8999984651804" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output]"
-          TopLeft="287.699996714294,199.599997645617">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.399998703599"
-              Start="0,0"
-              End="0,37.899998703599">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.899998703599" />
+                    End="0,45.5666664073199" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4225,82 +3993,418 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           Id="0545dbe5-8458-4c10-a73e-7db53db6676d"
           TopLeft="581.999991327524,366.799994784594" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Destination"
-          TopLeft="76.6666624777849,701.466664726072" />
+          Size="133.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 1"
+          TopLeft="692.49996216347,263.399998318553" />
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output2]"
-          TopLeft="274.599996528029,650.799993950128">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output]"
+          TopLeft="758.899976091088,201.066664317979">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-112.333334050244,50.6666707759439"
+              EndConnector="0,62.3333340005741"
               Start="0,0"
-              End="-112.333334050244,43.1666707759439">
+              End="0,54.8333340005741">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.6640539635222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.6640539635222"
-                    Point2="0,20.6640539635222"
-                    Point3="-4,20.6640539635222" />
+                    End="0,54.8333340005741" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="759.29996216347,304.999998318553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.4999712382768,52.999996525645"
+              Start="0,0"
+              End="-57.4999712382768,45.499996525645">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-108.333334050244,20.6640539635222" />
+                    End="0,22.4999982628225" />
                   <mssgle:CubicBezierSegment
-                    Point1="-108.333334050244,20.6640539635222"
-                    Point2="-112.333334050244,20.6640539635222"
-                    Point3="-112.333334050244,24.6640539635222" />
+                    Point1="0,22.4999982628225"
+                    Point2="0,26.4999982628225"
+                    Point3="-4,26.4999982628225" />
                   <mssgle:LineSegment
-                    End="-112.333334050244,43.1666707759439" />
+                    End="-53.4999712382768,26.4999982628225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53.4999712382768,26.4999982628225"
+                    Point2="-57.4999712382768,26.4999982628225"
+                    Point3="-57.4999712382768,30.4999982628225" />
+                  <mssgle:LineSegment
+                    End="-57.4999712382768,45.499996525645" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-111.973053743872,25.6640539635222,111.6127734375,11.609375"
+              BoundingBox="-135.639009056638,31.4999982628225,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="780.233295496803,304.999998318553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143.766692045826,46.799996689558"
+              Start="0,0"
+              End="143.766692045826,39.299996689558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0523063446248" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0523063446248"
+                    Point2="0,19.0523063446248"
+                    Point3="4,19.0523063446248" />
+                  <mssgle:LineSegment
+                    End="139.766692045826,19.0523063446248" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139.766692045826,19.0523063446248"
+                    Point2="143.766692045826,19.0523063446248"
+                    Point3="143.766692045826,23.0523063446248" />
+                  <mssgle:LineSegment
+                    End="143.766692045826,39.299996689558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.935677414587,24.0523063446248,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="180,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Destination 1"
-          TopLeft="578.499976915619,663.599998445114" />
+          Size="133.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 3"
+          TopLeft="660.833297226994,573.06666425599" />
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Lookup No Match Output3]"
-          TopLeft="690.599990329146,610.399996721745">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
+          TopLeft="723.816643860026,539.399997779727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-22.1000134135272,53.2000017233686"
+              EndConnector="0,33.6666664762631"
               Start="0,0"
-              End="-22.1000134135272,45.7000017233686">
+              End="0,26.1666664762631">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6972556048248" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6972556048248"
-                    Point2="0,21.6972556048248"
-                    Point3="-4,21.6972556048248" />
+                    End="0,26.1666664762631" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda"
+          TopLeft="235.833320447969,245.466665304634" />
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
+          TopLeft="287.999996870756,199.599997645617">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.6333235772126,45.8666676590174"
+              Start="0,0"
+              End="10.6333235772126,38.3666676590174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-18.1000134135272,21.6972556048248" />
+                    End="0,18.9333338295087" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.1000134135272,21.6972556048248"
-                    Point2="-22.1000134135272,21.6972556048248"
-                    Point3="-22.1000134135272,25.6972556048248" />
+                    Point1="0,18.9333338295087"
+                    Point2="0,22.9333338295087"
+                    Point3="4,22.9333338295087" />
                   <mssgle:LineSegment
-                    End="-22.1000134135272,45.7000017233686" />
+                    End="6.63332357721265,22.9333338295087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.63332357721265,22.9333338295087"
+                    Point2="10.6333235772126,22.9333338295087"
+                    Point3="10.6333235772126,26.9333338295087" />
+                  <mssgle:LineSegment
+                    End="10.6333235772126,38.3666676590174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda1]"
+          TopLeft="298.633320447969,287.066665304634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.233321699666,65.9333294352556"
+              Start="0,0"
+              End="-126.233321699666,58.4333294352556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9666647176278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9666647176278"
+                    Point2="0,32.9666647176278"
+                    Point3="-4,32.9666647176278" />
+                  <mssgle:LineSegment
+                    End="-122.233321699666,32.9666647176278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.233321699666,32.9666647176278"
+                    Point2="-126.233321699666,32.9666647176278"
+                    Point3="-126.233321699666,36.9666647176278" />
+                  <mssgle:LineSegment
+                    End="-126.233321699666,58.4333294352556" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.8563934255136,26.6972556048248,111.6127734375,11.609375"
+              BoundingBox="-170.005684287333,37.9666647176278,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="318.233320447969,287.066665304634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.366674485636,68.7333296438716"
+              Start="0,0"
+              End="105.366674485636,61.2333296438716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0120739680684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0120739680684"
+                    Point2="0,28.0120739680684"
+                    Point3="4,28.0120739680684" />
+                  <mssgle:LineSegment
+                    End="101.366674485636,28.0120739680684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.366674485636,28.0120739680684"
+                    Point2="105.366674485636,28.0120739680684"
+                    Point3="105.366674485636,32.0120739680684" />
+                  <mssgle:LineSegment
+                    End="105.366674485636,61.2333296438716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-47.1356861946818,33.0120739680684,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 2"
+          TopLeft="239.166653599177,614.933331838714" />
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output3]"
+          TopLeft="292.999997213483,579.399993786216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9666563856938,35.5333380524979"
+              Start="0,0"
+              End="12.9666563856938,28.0333380524979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.766669026249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.766669026249"
+                    Point2="0,17.766669026249"
+                    Point3="4,17.766669026249" />
+                  <mssgle:LineSegment
+                    End="8.9666563856938,17.766669026249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.9666563856938,17.766669026249"
+                    Point2="12.9666563856938,17.766669026249"
+                    Point3="12.9666563856938,21.766669026249" />
+                  <mssgle:LineSegment
+                    End="12.9666563856938,28.0333380524979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda2]"
+          TopLeft="305.966653599177,656.533331838714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-143.699991121392,44.9333328873581"
+              Start="0,0"
+              End="-143.699991121392,37.4333328873581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4666664436791"
+                    Point2="0,22.4666664436791"
+                    Point3="-4,22.4666664436791" />
+                  <mssgle:LineSegment
+                    End="-139.699991121392,22.4666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-139.699991121392,22.4666664436791"
+                    Point2="-143.699991121392,22.4666664436791"
+                    Point3="-143.699991121392,26.4666664436791" />
+                  <mssgle:LineSegment
+                    End="-143.699991121392,37.4333328873581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-178.739018998196,27.4666664436791,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="326.89998693251,656.533331838714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.100008030898,33.6666629309781"
+              Start="0,0"
+              End="99.100008030898,26.1666629309781">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.70571840030351" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.70571840030351"
+                    Point2="0,13.7057184003035"
+                    Point3="4,13.7057184003035" />
+                  <mssgle:LineSegment
+                    End="95.100008030898,13.7057184003035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.100008030898,13.7057184003035"
+                    Point2="99.100008030898,13.7057184003035"
+                    Point3="99.100008030898,17.7057184003035" />
+                  <mssgle:LineSegment
+                    End="99.100008030898,26.1666629309781" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-50.269019422051,18.7057184003035,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda3]"
+          TopLeft="727.633297226994,614.66666425599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.1333203113746,48.9333341891239"
+              Start="0,0"
+              End="-59.1333203113746,41.4333341891239">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.466667094562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.466667094562"
+                    Point2="0,24.466667094562"
+                    Point3="-4,24.466667094562" />
+                  <mssgle:LineSegment
+                    End="-55.1333203113746,24.466667094562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.1333203113746,24.466667094562"
+                    Point2="-59.1333203113746,24.466667094562"
+                    Point3="-59.1333203113746,28.466667094562" />
+                  <mssgle:LineSegment
+                    End="-59.1333203113746,41.4333341891239" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.455683593187,29.466667094562,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda3]"
+          TopLeft="748.566630560327,614.66666425599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.433357518744,38.1333315120798"
+              Start="0,0"
+              End="139.433357518744,30.6333315120798">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5241018226692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5241018226692"
+                    Point2="0,15.5241018226692"
+                    Point3="4,15.5241018226692" />
+                  <mssgle:LineSegment
+                    End="135.433357518744,15.5241018226692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135.433357518744,15.5241018226692"
+                    Point2="139.433357518744,15.5241018226692"
+                    Point3="139.433357518744,19.5241018226692" />
+                  <mssgle:LineSegment
+                    End="139.433357518744,30.6333315120798" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.102344678128,20.5241018226692,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4308,23 +4412,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Depositos">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\OLE DB Source">
+    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Categorias">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4345,6 +4433,22 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Subcategorias">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Categoria y subcategoria\OLE DB Destination 1">
     <Properties>
       <Property>
@@ -4354,6 +4458,127 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Depositos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[GRUPOS1]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Inve].[tbSubcategorias]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[GRUPOS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Inve].[tbCategorias]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
