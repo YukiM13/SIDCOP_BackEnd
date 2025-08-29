@@ -57,6 +57,7 @@ public partial class tbProductos
     public int Cate_Id { get; set; }
     [NotMapped]
     public string Cate_Descripcion { get; set; }
+
     [NotMapped]
     public int CantidadVendida { get; set; }
 
@@ -71,6 +72,8 @@ public partial class tbProductos
 
     [NotMapped]
     public string? Impu_Descripcion { get; set; }
+    [NotMapped]
+    public string Impulsacion { get; set; }
 
     [NotMapped]
     public string? UsuarioCreacion { get; set; }
