@@ -24,7 +24,8 @@ public partial class tbDevolucionesDetalle
 
     public bool DevD_Estado { get; set; }
 
-    public int DevD_Cantidad { get; set; }
+    public int? DevD_Cantidad { get; set; }
+
 
     [NotMapped]
     public int? Secuencia { get; set; }
