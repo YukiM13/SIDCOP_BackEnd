@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{1538D30E-0B98-4BBD-8747-54AA87B992AE}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{B1E1865A-796C-455F-A197-BEF0A7E28C04}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{014C5899-2100-4317-8729-912E62DFE56D}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="IiQp5Bl7EsA="
-            IV="6svvBno13sskFT/r3/a0RQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="QbJNtjTYqNk="
+            IV="VQXJ2RNj/DV+l5S1H3OLSw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>6svvBno13sskFT/r3/a0RVmkii0WNpMvCfHpKFlthBk/m/FuwzuZX8C5LbmDmY+v9BVbCdLyj+1GtmQoUkavRcbs7A4oX34FosxtphwN6OJ/++vMx7FjJmwVxnK2spf4EyqIMZNVsVJumUVHurMpwX/WY/TI/j30Bbsk1L9xWcKJU1oC/usuq8RJGCv/C+8O</CipherValue>
+              <CipherValue>VQXJ2RNj/DV+l5S1H3OLSyFc8djvYqiuqJ/Sn9MBkFApxwDzVAZwBKDiJayp3PkIeJ8EMLhZgYDAlUMbtfTV7cmAUKIFicgzENy168usKnBQb4NvlLVpSGWOhD6ebbAhROVBf3XaRHvRg+lOP62VsKzIs3/+DALhBqMVsOpgc+8jCKThNLlPlFudXhwz+UKD</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{F0F03674-5170-4E2B-9DCB-07384A065DA5}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="+5ICd0ITyYE="
-            IV="XKaj2V22SWB9Zmy+NaE1bw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="9hIJ7DJEq8s="
+            IV="YmZLLz0L2IaQ9e1abSWCpg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>XKaj2V22SWB9Zmy+NaE1b+5Y0edfN+5+VYdUyWksEGXsKTpG8PsaHdAJrR9JBjENzYLuaneLcajTJNRAzw5QWIknNQKiwRDGfkGXTC+V5VycnkfB8Xo0LNKkLhFcmGPZjzEuCGgSlJDb6XBwjcYzorWrAfnFpYpnhnjl2hSztZsQVk6oNbHOFjreGja0cwiP</CipherValue>
+              <CipherValue>YmZLLz0L2IaQ9e1abSWCpjbkjXIlhR9zUEXjic4/jcaYPP4D1RTAoBOapRoSMN+TZaUlf3KqBEDbfbF2RTn61bvKsRD1XB4Mf7Ufe1+Sf5Pr4MjfluER+exQzXKnBuEZzYIHjkRvUZZdVJy4rrHLQvO5nQvWSWhxJVn5ZpPtcmvQ+LeVgdBcPkyMc0n2VDFB</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{33C9EC2A-BE47-47DC-92DB-8391B50F5F44}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="+yj0KQctX38="
-            IV="/GGAs469ol0IhmJw/Z7TWg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="gcd26Tnn+Bw="
+            IV="UCUv43w12xOORohhbXIGkQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>/GGAs469ol0IhmJw/Z7TWo1oRJrJkExU+rR6TBnc1e7ZMJzd9ckU0Q3bf0NPnxF0IDT3oGwc/QRnMDojiHcC+lfRBBrkHVxGyJvwi+g+f6sApA1jRyhKLfXfg/F8LTFbOTlBixvN1UiDlRLbu9mrDgjk9D/aJ1nMnxNHZuuLCZyjKHLDQ9flRpIXtUjBrwy9</CipherValue>
+              <CipherValue>UCUv43w12xOORohhbXIGkV62vVxr5IBFBnSoe5r5ejDH7M/CRK+xoog0oBJWzwp4DiBMwpjWvTafKhF01unnqd1zXpQWR+2QpQS/PGw6sSkSRgNNndcVgvD5puXxaiKfLgnBJEJsUJt447zNfD9v/b8IRBo2PfI9qnfgLopBMqewhtz8RL2JPX/KgggA8LOh</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{EDA2CA9E-A6D4-4092-A04D-2B71CBB92A56}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="0ZOQkcZ+SMY="
-            IV="wA6Pgt7ZHeoEeGs72bdWVg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Pcx7M1F3f5c="
+            IV="YpHogHX/JbAPHAxOIuhByw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>wA6Pgt7ZHeoEeGs72bdWViQMn1bRrsPU0cDdkEBJZu/D2KB/q0OIKfuWn6OR3/NGZzq1yS+0ceRp9KQM+En57b1HCpaOB1brYgsHemzvxkVbYr3weA2YSahSyzIYbH99SiZjKtnOl7whRatWTLQHx64UQbWnVdT78t5Bc69sxNLOzE51xIQF0ProQIFuo1qH</CipherValue>
+              <CipherValue>YpHogHX/JbAPHAxOIuhBy2GU5IYB3PK1FEp4fafT6RkzF1tPEu+PgZ1kzsOMTrWVAg+RSAtiq7fYp4OJ1MBROz/5U7SUJgJXrrssiIqjDLNV80bKq4KKRntRd84PRqQ5HKYKb475/P+tI2U4DbUOMgNKrKKQFcuzNNMrarxtQ2YxLqBX4hgOVZyZyRYZRMsO</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -187,12 +187,12 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
                   dataType="System.Int32"
                   description="Especifica el tipo de caché de la tabla de búsqueda."
                   name="CacheType"
-                  typeConverter="CacheType">0</property>
+                  typeConverter="CacheType">2</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
@@ -312,7 +312,6 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
                 <output
                   refId="Package\Migracion Pedidos\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
                   errorOrTruncationOperation="Búsqueda"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Salida de entradas coincidentes de búsqueda"
                   synchronousInputId="Package\Migracion Pedidos\Búsqueda.Inputs[Entrada de búsqueda]">
@@ -5167,17 +5166,37 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Pedidos\Lookup 2"
+          TopLeft="193.23332290666,611.39999766767" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Migracion Pedidos\Búsqueda 1"
+          TopLeft="614.999966397883,258.799999240637" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Migracion Pedidos\Poblar Pedidos Detalle"
+          TopLeft="545.999991863966,68.9999989718199" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Migracion Pedidos\Destino de ADO NET 2"
+          TopLeft="649.566636115148,688.933331585592" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Pedidos\Data Conversion"
+          TopLeft="156.999997660518,158.133330970075" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Pedidos\Poblar CONHORAS"
+          TopLeft="173.333323862818,461.53333088047" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Pedidos\OLE DB Command 1"
+          TopLeft="718.999989286065,362.599994978309" />
+        <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Pedidos\Data Conversion 1"
           TopLeft="562.999991610646,152.999997720122" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Pedidos\Lookup 3"
-          TopLeft="644.566636388336,592.733332254555" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Migracion Pedidos\Poblar COTORDEN"
-          TopLeft="622.066637617682,456.66666653408" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Migracion Pedidos\Destino de ADO NET 1"
@@ -5187,6 +5206,14 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
           Id="Package\Migracion Pedidos\Destino de ADO NET"
           TopLeft="43.9999993443489,374.999994888902" />
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Migracion Pedidos\Poblar COTORDEN"
+          TopLeft="622.066637617682,456.66666653408" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Pedidos\Data Conversion 3"
+          TopLeft="624.566637481088,527.733332706557" />
+        <NodeLayout
           Size="148.8,41.6"
           Id="Package\Migracion Pedidos\Poblar Pedidos"
           TopLeft="159.166664328012,75.1333322068718" />
@@ -5195,45 +5222,25 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
           Id="Package\Migracion Pedidos\OLE DB Command 2"
           TopLeft="329.066648818388,697.466664653752" />
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Pedidos\Data Conversion 3"
-          TopLeft="624.566637481088,527.733332706557" />
+          Size="167.2,41.6"
+          Id="Package\Migracion Pedidos\OLE DB Command"
+          TopLeft="255.999996185303,375.999994397163" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Migracion Pedidos\OLE DB Destination"
           TopLeft="63.2333300095467,699.59999743263" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Pedidos\Poblar CONHORAS"
-          TopLeft="173.333323862818,461.53333088047" />
-        <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Pedidos\Data Conversion 2"
           TopLeft="168.2333242726,542.73333091663" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Pedidos\OLE DB Command"
-          TopLeft="255.999996185303,375.999994397163" />
-        <NodeLayout
-          Size="184,41.6"
-          Id="Package\Migracion Pedidos\Poblar Pedidos Detalle"
-          TopLeft="545.999991863966,68.9999989718199" />
-        <NodeLayout
           Size="120.8,41.6"
-          Id="Package\Migracion Pedidos\Lookup 2"
-          TopLeft="193.23332290666,611.39999766767" />
+          Id="Package\Migracion Pedidos\Lookup 3"
+          TopLeft="644.566636388336,592.733332254555" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Pedidos\OLE DB Command 1"
-          TopLeft="718.999989286065,362.599994978309" />
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Pedidos\Destino de ADO NET 2"
-          TopLeft="649.566636115148,688.933331585592" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Pedidos\Data Conversion"
-          TopLeft="156.999997660518,158.133330970075" />
+          Size="125.6,41.6"
+          Id="Package\Migracion Pedidos\Búsqueda"
+          TopLeft="156.666658106778,256.533331549433" />
         <EdgeLayout
           Id="Package\Migracion Pedidos.Paths[Salida de origen de ADO NET1]"
           TopLeft="641.499991737306,110.59999897182">
@@ -5276,6 +5283,150 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Salida de entradas no coincidentes de búsqueda1]"
+          TopLeft="681.799966397883,300.399999240637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.999973580243,55.3999960058932"
+              Start="0,0"
+              End="-106.999973580243,47.8999960058932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999980029466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6999980029466"
+                    Point2="0,27.6999980029466"
+                    Point3="-4,27.6999980029466" />
+                  <mssgle:LineSegment
+                    End="-102.999973580243,27.6999980029466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.999973580243,27.6999980029466"
+                    Point2="-106.999973580243,27.6999980029466"
+                    Point3="-106.999973580243,31.6999980029466" />
+                  <mssgle:LineSegment
+                    End="-106.999973580243,47.8999960058932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-160.389010227621,32.6999980029466,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="219.466658106778,298.133331549433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.0666587624288,76.8666633394694"
+              Start="0,0"
+              End="-87.0666587624288,69.3666633394694">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.4333316697347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.4333316697347"
+                    Point2="0,38.4333316697347"
+                    Point3="-4,38.4333316697347" />
+                  <mssgle:LineSegment
+                    End="-83.0666587624288,38.4333316697347" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.0666587624288,38.4333316697347"
+                    Point2="-87.0666587624288,38.4333316697347"
+                    Point3="-87.0666587624288,42.4333316697347" />
+                  <mssgle:LineSegment
+                    End="-87.0666587624288,69.3666633394694" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-150.422352818714,43.4333316697347,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="702.733299731216,300.399999240637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.266689554849,62.1999957376722"
+              Start="0,0"
+              End="104.266689554849,54.6999957376722">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3216550695375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3216550695375"
+                    Point2="0,25.3216550695375"
+                    Point3="4,25.3216550695375" />
+                  <mssgle:LineSegment
+                    End="100.266689554849,25.3216550695375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.266689554849,25.3216550695375"
+                    Point2="104.266689554849,25.3216550695375"
+                    Point3="104.266689554849,29.3216550695375" />
+                  <mssgle:LineSegment
+                    End="104.266689554849,54.6999957376722" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-47.6856786600756,30.3216550695375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="239.066658106778,298.133331549433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.533338078525,77.8666628477304"
+              Start="0,0"
+              End="100.533338078525,70.3666628477304">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7343380662448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7343380662448"
+                    Point2="0,31.7343380662448"
+                    Point3="4,31.7343380662448" />
+                  <mssgle:LineSegment
+                    End="96.5333380785253,31.7343380662448" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.5333380785253,31.7343380662448"
+                    Point2="100.533338078525,31.7343380662448"
+                    Point3="100.533338078525,35.7343380662448" />
+                  <mssgle:LineSegment
+                    End="100.533338078525,70.3666628477304" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.5523543982374,36.7343380662448,199.638046875,12.1953125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5443,6 +5594,74 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output3]"
+          TopLeft="644.999991610646,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.7999747872368,64.2000015205148"
+              Start="0,0"
+              End="36.7999747872368,56.7000015205148">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1000007602574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1000007602574"
+                    Point2="0,32.1000007602574"
+                    Point3="4,32.1000007602574" />
+                  <mssgle:LineSegment
+                    End="32.7999747872368,32.1000007602574" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.7999747872368,32.1000007602574"
+                    Point2="36.7999747872368,32.1000007602574"
+                    Point3="36.7999747872368,36.1000007602574" />
+                  <mssgle:LineSegment
+                    End="36.7999747872368,56.7000015205148" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Pedidos.Paths[Data Conversion Output2]"
+          TopLeft="234.999997660518,199.733330970075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.5333395537403,56.8000005793575"
+              Start="0,0"
+              End="-15.5333395537403,49.3000005793575">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4000002896788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4000002896788"
+                    Point2="0,28.4000002896788"
+                    Point3="-4,28.4000002896788" />
+                  <mssgle:LineSegment
+                    End="-11.5333395537403,28.4000002896788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5333395537403,28.4000002896788"
+                    Point2="-15.5333395537403,28.4000002896788"
+                    Point3="-15.5333395537403,32.4000002896788" />
+                  <mssgle:LineSegment
+                    End="-15.5333395537403,49.3000005793575" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Pedidos.Paths[Data Conversion Output1]"
           TopLeft="705.766636934712,569.333332706557">
           <EdgeLayout.Curve>
@@ -5486,246 +5705,26 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="125.6,41.6"
-          Id="Package\Migracion Pedidos\Búsqueda"
-          TopLeft="156.666658106778,256.533331549433" />
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Data Conversion Output2]"
-          TopLeft="234.999997660518,199.733330970075">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-15.5333395537403,56.8000005793575"
-              Start="0,0"
-              End="-15.5333395537403,49.3000005793575">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4000002896788" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.4000002896788"
-                    Point2="0,28.4000002896788"
-                    Point3="-4,28.4000002896788" />
-                  <mssgle:LineSegment
-                    End="-11.5333395537403,28.4000002896788" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11.5333395537403,28.4000002896788"
-                    Point2="-15.5333395537403,28.4000002896788"
-                    Point3="-15.5333395537403,32.4000002896788" />
-                  <mssgle:LineSegment
-                    End="-15.5333395537403,49.3000005793575" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="219.466658106778,298.133331549433">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87.0666587624288,76.8666633394694"
-              Start="0,0"
-              End="-87.0666587624288,69.3666633394694">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.4333316697347" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.4333316697347"
-                    Point2="0,38.4333316697347"
-                    Point3="-4,38.4333316697347" />
-                  <mssgle:LineSegment
-                    End="-83.0666587624288,38.4333316697347" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.0666587624288,38.4333316697347"
-                    Point2="-87.0666587624288,38.4333316697347"
-                    Point3="-87.0666587624288,42.4333316697347" />
-                  <mssgle:LineSegment
-                    End="-87.0666587624288,69.3666633394694" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-150.422352818714,43.4333316697347,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="239.066658106778,298.133331549433">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.533338078525,77.8666628477304"
-              Start="0,0"
-              End="100.533338078525,70.3666628477304">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.7343380662448" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.7343380662448"
-                    Point2="0,31.7343380662448"
-                    Point3="4,31.7343380662448" />
-                  <mssgle:LineSegment
-                    End="96.5333380785253,31.7343380662448" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.5333380785253,31.7343380662448"
-                    Point2="100.533338078525,31.7343380662448"
-                    Point3="100.533338078525,35.7343380662448" />
-                  <mssgle:LineSegment
-                    End="100.533338078525,70.3666628477304" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.5523543982374,36.7343380662448,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Migracion Pedidos\Búsqueda 1"
-          TopLeft="614.999966397883,258.799999240637" />
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Data Conversion Output3]"
-          TopLeft="644.999991610646,194.599997720122">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="36.7999747872368,64.2000015205148"
-              Start="0,0"
-              End="36.7999747872368,56.7000015205148">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1000007602574" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1000007602574"
-                    Point2="0,32.1000007602574"
-                    Point3="4,32.1000007602574" />
-                  <mssgle:LineSegment
-                    End="32.7999747872368,32.1000007602574" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32.7999747872368,32.1000007602574"
-                    Point2="36.7999747872368,32.1000007602574"
-                    Point3="36.7999747872368,36.1000007602574" />
-                  <mssgle:LineSegment
-                    End="36.7999747872368,56.7000015205148" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Salida de entradas no coincidentes de búsqueda1]"
-          TopLeft="681.799966397883,300.399999240637">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-106.999973580243,55.3999960058932"
-              Start="0,0"
-              End="-106.999973580243,47.8999960058932">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6999980029466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.6999980029466"
-                    Point2="0,27.6999980029466"
-                    Point3="-4,27.6999980029466" />
-                  <mssgle:LineSegment
-                    End="-102.999973580243,27.6999980029466" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-102.999973580243,27.6999980029466"
-                    Point2="-106.999973580243,27.6999980029466"
-                    Point3="-106.999973580243,31.6999980029466" />
-                  <mssgle:LineSegment
-                    End="-106.999973580243,47.8999960058932" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-160.389010227621,32.6999980029466,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Pedidos.Paths[Salida de entradas coincidentes de búsqueda1]"
-          TopLeft="702.733299731216,300.399999240637">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104.266689554849,62.1999957376722"
-              Start="0,0"
-              End="104.266689554849,54.6999957376722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3216550695375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.3216550695375"
-                    Point2="0,25.3216550695375"
-                    Point3="4,25.3216550695375" />
-                  <mssgle:LineSegment
-                    End="100.266689554849,25.3216550695375" />
-                  <mssgle:CubicBezierSegment
-                    Point1="100.266689554849,25.3216550695375"
-                    Point2="104.266689554849,25.3216550695375"
-                    Point3="104.266689554849,29.3216550695375" />
-                  <mssgle:LineSegment
-                    End="104.266689554849,54.6999957376722" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-47.6856786600756,30.3216550695375,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Lookup 3">
+    design-time-name="Package\Migracion Pedidos\Lookup 2">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[Vnta].[tbPedidosDetalle]</Value>
+          type="q3:string">[Vnta].[tbPedidos]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5733,7 +5732,46 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Poblar COTORDEN">
+    design-time-name="Package\Migracion Pedidos\Búsqueda 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[COTORDEN]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Poblar Pedidos Detalle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Destino de ADO NET 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Poblar CONHORAS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5750,6 +5788,14 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Pedidos\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Pedidos\Poblar COTORDEN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5778,47 +5824,23 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Poblar CONHORAS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Poblar Pedidos Detalle">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Lookup 2">
+    design-time-name="Package\Migracion Pedidos\Lookup 3">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[Vnta].[tbPedidos]</Value>
+          type="q3:string">[Vnta].[tbPedidosDetalle]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Destino de ADO NET 2">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -5826,29 +5848,6 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Pedidos\Búsqueda">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[COTORDEN]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Pedidos\Búsqueda 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>

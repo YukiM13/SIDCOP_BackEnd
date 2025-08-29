@@ -68,13 +68,13 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                 {
                     proceso.Start();
                     string salida = proceso.StandardOutput.ReadToEnd();
-                    string error = proceso.StandardError.ReadToEnd();
+                   string error = proceso.StandardError.ReadToEnd();
                     proceso.WaitForExit();
 
                     if (proceso.ExitCode == 0)
-                        return Ok($"Migracion de {paquete} ejecutada correctamente.\nSalida: {salida}");
+                        return Ok($"Migracion de {paquete} ejecutada correctamente.Salida:");
                     else
-                        return BadRequest($"Error al migrar {paquete}.\nError: {salida}");
+                        return BadRequest($"Error al migrar {paquete}.Error: ");
                 }
             }
             catch (Exception ex)
