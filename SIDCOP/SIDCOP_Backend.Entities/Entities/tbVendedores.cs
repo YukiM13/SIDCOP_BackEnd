@@ -50,6 +50,7 @@ public partial class tbVendedores
 
     public string Vend_Imagen { get; set; }
 
+
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
@@ -114,9 +115,9 @@ public partial class tbVendedores
 
     public virtual ICollection<tbFacturas> tbFacturas { get; set; } = new List<tbFacturas>();
 
-    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
-
     public virtual ICollection<tbMetasPorEmpleados> tbMetasPorEmpleados { get; set; } = new List<tbMetasPorEmpleados>();
+
+    public virtual ICollection<tbPedidos> tbPedidos { get; set; } = new List<tbPedidos>();
 
     public virtual ICollection<tbRecargas> tbRecargas { get; set; } = new List<tbRecargas>();
 

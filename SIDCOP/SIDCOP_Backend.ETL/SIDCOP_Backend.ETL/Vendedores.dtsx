@@ -1,0 +1,2851 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/19/2025 3:37:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-D1J21EQK"
+  DTS:CreatorName="LAPTOP-D1J21EQK\Sebas"
+  DTS:DTSID="{63ED0000-2E88-49A2-BCE9-F121E263B1BA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="18442"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{FB1F45B9-8381-4C3E-B9E9-8946F94F8D07}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F13A19EF-3FF2-4BFD-B798-72489FC336A2}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{F13A19EF-3FF2-4BFD-B798-72489FC336A2}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="e3ihXlgU8SE="
+            IV="NeHIa6Dy7RHyd+E1aca56g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>NeHIa6Dy7RHyd+E1aca56o/WazjuGLelzDUAM2K0FurmCX/Ii1CSxNONRZ9eosMKjR1YOtIdCiHYDi9XEFiwTRtINvh7Z8AvYrxyNikECxuPGaOFkNx5F4XM/VQQtoRhbVlLSAN0cFAGIzR2hHwihO3VhUoEWgTDBLwJAauawP/+O9sYZGo1E5ZXNnweKhNO</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BB7862C3-1368-42C5-8D18-7AC7A10F6F32}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{BB7862C3-1368-42C5-8D18-7AC7A10F6F32}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="L8TG9hrl95U="
+            IV="bXQsyQBbbFGe92wgam9u+g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>bXQsyQBbbFGe92wgam9u+pCeVukkzQnr/CqsKP8kFJGdVa5WH5UPeH1QlJ7fgHXwtzKjM3gJ3kOBJWP4G9CMZb8vHjLQ3PUyeSv2TulA7xZOCAim9JfnqwyifESg/j+/nrdpNG8fNlFoKDeHzcBvSR+EqLWPJ+zJKASf1MXKBUJZw3p+2cTzwUDHc/tpG6Lf</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{68EA5C1A-D18A-423E-9F3D-CEEB1177A8B8}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{68EA5C1A-D18A-423E-9F3D-CEEB1177A8B8}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="+SwEoxRaV/0="
+            IV="s65R8zfJztab+BwPuNctwA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>s65R8zfJztab+BwPuNctwLdai/rxs/39CNjiQUmVkMxm5mbTZ4IzkpdIr0W4A67yk4wefQfGfHyhGtPlQxhmJ63axpqaT+kYzDoTwEvNBdFOmhjomXq4Ow14Spcz5FMJgujdx4JN13ZzwxD3liXozYupKcgQJa4JG3lYdrqhM2sdOcsSDkAyE1nTEGlg80cZ</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+      DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{503219A9-6A5F-4971-AE9A-F94B12CE86BE}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="BbiZI2+gwnI="
+            IV="APlIIh4rQGbzORlc9t7wXw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>APlIIh4rQGbzORlc9t7wXzFzenFSzdASC5PDXvtrRgMccLUL1awd+5PhLN9zXDKVjuWJuTuSJEUbTC87L8WMCFzy56mOetBHI2/iRDwsGSqFmZExHSli7p/zpGg3Ae9463YzPeheuP/vm4USVV13FPu4Bed5XtXjVC4YS8OdOUgw1aoSiN2IAGUhaKAF5wdx</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F1C1E08C-0FDA-4553-BF8C-5F44E62D3280}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaFiltro">
+      <DTS:VariableValue
+        DTS:DataType="7">8/20/2025 8:58:31 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar Ultima Migracion Vendedores"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{b03e9631-71eb-4c5f-8cd8-6ec640ad8704}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar Ultima Migracion Vendedores"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+          SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'Vendedores'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Agregar Identity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{627D5831-1682-41B8-967E-4A669C0DF9EE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Agregar Identity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbVendedores OFF;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Migracion Vendedores"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{437384ed-20ed-4239-809d-0874b03cb386}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Migracion Vendedores"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Migracion Vendedores\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[VENDEDOR]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[VENDEDOR]) [refTable]
+where [refTable].[Cia] = ? and [refTable].[VenCodigo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Cia" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenCodigo" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenNombre" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenComISV" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenVehiculo" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlmacen" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenFUpdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenUUpdate" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenAlias" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VenCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VenSCentro" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">Cia</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda].Columns[VenCodigo]"
+                      cachedDataType="i2"
+                      cachedName="VenCodigo"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">VenCodigo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input].Columns[VenNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="VenNombre"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenNombre]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input].Columns[VenAlias]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VenAlias"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlias]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input].Columns[VenUUpdate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VenUUpdate"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenUUpdate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenNombreC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenNombreC]"
+                      name="VenNombreC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenNombre]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenAliasC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenAliasC]"
+                      name="VenAliasC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlias]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenUUpdateC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenUUpdateC]"
+                      name="VenUUpdateC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenUUpdate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."VENDEDOR"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenCodigo]"
+                      cachedDataType="i2"
+                      cachedName="VenCodigo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenCodigo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="VenNombre"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenNombre]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenNombre]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenAlmacen]"
+                      cachedDataType="i2"
+                      cachedName="VenAlmacen"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenAlmacen]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlmacen]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenAlias]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VenAlias"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenAlias]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlias]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenFUpdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="VenFUpdate"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenFUpdate]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenFUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[VenUUpdate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="VenUUpdate"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenUUpdate]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenUUpdate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenCodigo]"
+                      dataType="i2"
+                      name="VenCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenNombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="VenNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenComISV]"
+                      dataType="wstr"
+                      length="1"
+                      name="VenComISV" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenVehiculo]"
+                      dataType="wstr"
+                      length="20"
+                      name="VenVehiculo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenAlmacen]"
+                      dataType="i2"
+                      name="VenAlmacen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenFUpdate]"
+                      dataType="dbTimeStamp"
+                      name="VenFUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      name="VenUUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenAlias]"
+                      dataType="wstr"
+                      length="10"
+                      name="VenAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenCentro]"
+                      dataType="i2"
+                      name="VenCentro" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[VenSCentro]"
+                      dataType="i2"
+                      name="VenSCentro" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Lookup 1"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 1"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Vnta].[tbVendedores]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [Vnta].[tbVendedores]) [refTable]
+where [refTable].[Vend_Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Vend_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Codigo" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_DNI" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_Nombres" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_Apellidos" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_Telefono" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_Correo" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_Sexo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_DireccionExacta" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Sucu_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Colo_Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Supervisor" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Ayudante" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Tipo" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Vend_EsExterno" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Estado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Creacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_FechaCreacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Usua_Modificacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_FechaModificacion" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Vend_Imagen" dataType="DT_TEXT" length="0" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Lookup 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input].Columns[Vend_Id]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Id"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Vend_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE VENDEDOR
+
+SET 
+    VenNombre   = ?,
+    VenAlmacen  = ?,
+    VenAlias    = ?,
+    VenFUpdate  = ?,
+    VenUUpdate  = ?
+WHERE 
+    Cia        = ? 
+    AND VenCodigo = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenNombreC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="VenNombreC"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenNombreC]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenAlmacen]"
+                      cachedDataType="i2"
+                      cachedName="VenAlmacen"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlmacen]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenAliasC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="VenAliasC"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenAliasC]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenFUpdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="VenFUpdate"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenFUpdate]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenUUpdateC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="VenUUpdateC"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output].Columns[VenUUpdateC]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[Cia]"
+                      cachedDataType="i2"
+                      cachedName="Cia"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].Columns[VenCodigo]"
+                      cachedDataType="i2"
+                      cachedName="VenCodigo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i2"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i2"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i2"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Vnta.tbVendedores
+SET 
+    Vend_Nombres          = ?,
+    Vend_Apellidos        = ?,
+    Usua_Modificacion     = ?,
+    Vend_FechaModificacion= ?
+WHERE Vend_Id = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Vend_Id]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Id"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Vend_FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Vend_FechaModificacion"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Usua_Modificacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Modificacion"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Vend_Apellidos]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Vend_Apellidos"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Apellidos]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Vend_Nombres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Vend_Nombres"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Nombres]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="dbTimeStamp"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Vnta].[tbVendedores]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Id]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Id"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="Vend_Codigo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Codigo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Codigo]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Nombres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Vend_Nombres"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Nombres]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Nombres]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Apellidos]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Vend_Apellidos"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Apellidos]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Apellidos]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_DNI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="Vend_DNI"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_DNI]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DNI]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Telefono]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Vend_Telefono"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Telefono]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Telefono]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Correo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Vend_Correo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Correo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Correo]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Sexo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vend_Sexo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Sexo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Sexo]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_DireccionExacta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Vend_DireccionExacta"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_DireccionExacta]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DireccionExacta]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Imagen]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Vend_Imagen"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Imagen]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Imagen]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sucu_Id]"
+                      cachedDataType="i4"
+                      cachedName="Sucu_Id"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sucu_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Sucu_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Colo_Id]"
+                      cachedDataType="i4"
+                      cachedName="Colo_Id"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Colo_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Colo_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Supervisor]"
+                      cachedDataType="i4"
+                      cachedName="Vend_Supervisor"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Supervisor]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Supervisor]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Tipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vend_Tipo"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_EsExterno]"
+                      cachedDataType="i4"
+                      cachedName="Vend_EsExterno"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_EsExterno]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_EsExterno]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Vend_FechaModificacion"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_FechaCreacion]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_FechaModificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Usua_Modificacion]"
+                      cachedDataType="i4"
+                      cachedName="Usua_Modificacion"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Id]"
+                      dataType="i4"
+                      name="Vend_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vend_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_DNI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_DNI" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_Nombres" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Apellidos]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Vend_Telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Correo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_Correo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Sexo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Vend_Sexo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_DireccionExacta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Vend_DireccionExacta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sucu_Id]"
+                      dataType="i4"
+                      name="Sucu_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Colo_Id]"
+                      dataType="i4"
+                      name="Colo_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Supervisor]"
+                      dataType="i4"
+                      name="Vend_Supervisor" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Ayudante]"
+                      dataType="i4"
+                      name="Vend_Ayudante" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Vend_Tipo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_EsExterno]"
+                      dataType="bool"
+                      name="Vend_EsExterno" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Estado]"
+                      dataType="bool"
+                      name="Vend_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
+                      dataType="i4"
+                      name="Usua_Creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="Vend_FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Vend_FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Imagen]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Vend_Imagen" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Poblar Vendedor externa"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Poblar Vendedor externa"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  CAST(VenCodigo AS INT) AS Vend_Id,
+  'VEND-' + CAST(VenCodigo AS varchar(4)) AS Vend_Codigo,
+ SUBSTRING(VenNombre, 1, CHARINDEX(' ', VenNombre) - 1) AS Vend_Nombres,
+    SUBSTRING(VenNombre, CHARINDEX(' ', VenNombre) + 1, LEN(VenNombre)) AS Vend_Apellidos,
+	'N/A' + CAST(VenCodigo AS varchar(4)) AS Vend_DNI,
+	'N/A' AS Vend_Telefono,
+	'N/A' AS Vend_Correo,
+	'M' AS Vend_Sexo,
+	'N/A' AS Vend_DireccionExacta,
+	'N/A' AS Vend_Imagen,
+	1 AS Sucu_Id,
+	1 AS Colo_Id,
+	6 AS Vend_Supervisor,
+	'V' AS Vend_Tipo,
+	0 as Vend_EsExterno,
+	1 AS Usua_Modificacion,
+	ISNULL(VenFUpdate, GETDATE()) AS Vend_FechaModificacion
+
+		
+FROM BDD_Extena.dbo.VENDEDOR
+WHERE VenFUpdate &gt;= ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parámetro0:Input",{F1C1E08C-0FDA-4553-BF8C-5F44E62D3280};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Poblar Vendedor externa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Id]"
+                      name="Vend_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Codigo]"
+                      length="9"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Codigo]"
+                      name="Vend_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Nombres]"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Nombres]"
+                      name="Vend_Nombres"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Apellidos]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Apellidos]"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Apellidos]"
+                      name="Vend_Apellidos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DNI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_DNI]"
+                      length="7"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DNI]"
+                      name="Vend_DNI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Telefono]"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Telefono]"
+                      name="Vend_Telefono"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Correo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Correo]"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Correo]"
+                      name="Vend_Correo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Sexo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Sexo]"
+                      length="1"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Sexo]"
+                      name="Vend_Sexo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DireccionExacta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_DireccionExacta]"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_DireccionExacta]"
+                      name="Vend_DireccionExacta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Imagen]"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Imagen]"
+                      name="Vend_Imagen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Sucu_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Sucu_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Sucu_Id]"
+                      name="Sucu_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Colo_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Colo_Id]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Colo_Id]"
+                      name="Colo_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Supervisor]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Supervisor]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Supervisor]"
+                      name="Vend_Supervisor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Tipo]"
+                      length="1"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]"
+                      name="Vend_Tipo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_FechaModificacion]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_FechaModificacion]"
+                      name="Vend_FechaModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_EsExterno]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_EsExterno]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_EsExterno]"
+                      name="Vend_EsExterno"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Id]"
+                      dataType="i4"
+                      name="Vend_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="Vend_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_Nombres" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Apellidos]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Vend_Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_DNI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="Vend_DNI" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Vend_Telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Correo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Vend_Correo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Sexo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Vend_Sexo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_DireccionExacta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Vend_DireccionExacta" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Vend_Imagen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Sucu_Id]"
+                      dataType="i4"
+                      name="Sucu_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Colo_Id]"
+                      dataType="i4"
+                      name="Colo_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Supervisor]"
+                      dataType="i4"
+                      name="Vend_Supervisor" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Vend_Tipo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
+                      dataType="i4"
+                      name="Usua_Modificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="Vend_FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_EsExterno]"
+                      dataType="i4"
+                      name="Vend_EsExterno" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Id]"
+                      name="Vend_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Codigo]"
+                      name="Vend_Codigo" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Nombres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Nombres]"
+                      name="Vend_Nombres" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Apellidos]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Apellidos]"
+                      name="Vend_Apellidos" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_DNI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_DNI]"
+                      name="Vend_DNI" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Telefono]"
+                      name="Vend_Telefono" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Correo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Correo]"
+                      name="Vend_Correo" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Sexo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Sexo]"
+                      name="Vend_Sexo" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_DireccionExacta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_DireccionExacta]"
+                      name="Vend_DireccionExacta" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Imagen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Imagen]"
+                      name="Vend_Imagen" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Sucu_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Sucu_Id]"
+                      name="Sucu_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Colo_Id]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Colo_Id]"
+                      name="Colo_Id" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Supervisor]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Supervisor]"
+                      name="Vend_Supervisor" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
+                      name="Vend_Tipo" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_EsExterno]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_EsExterno]"
+                      name="Vend_EsExterno" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Usua_Modificacion]"
+                      name="Usua_Modificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_FechaModificacion]"
+                      name="Vend_FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Migracion Vendedores\Poblar Vendedores"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Poblar Vendedores"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC Vnta.SP_Vendedores_Migrar</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Migracion Vendedores\Poblar Vendedores.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[Cia]"
+                      name="Cia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenCodigo]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenCodigo]"
+                      name="VenCodigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenNombre]"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenNombre]"
+                      name="VenNombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlmacen]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenAlmacen]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlmacen]"
+                      name="VenAlmacen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlias]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenAlias]"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenAlias]"
+                      name="VenAlias"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenFUpdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenFUpdate]"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenFUpdate]"
+                      name="VenFUpdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenUUpdate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenUUpdate]"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].Columns[VenUUpdate]"
+                      name="VenUUpdate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[Cia]"
+                      dataType="i2"
+                      name="Cia" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenCodigo]"
+                      dataType="i2"
+                      name="VenCodigo" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenNombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="VenNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenAlmacen]"
+                      dataType="i2"
+                      name="VenAlmacen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenAlias]"
+                      dataType="wstr"
+                      length="10"
+                      name="VenAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenFUpdate]"
+                      dataType="dbTimeStamp"
+                      name="VenFUpdate" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET].ExternalColumns[VenUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      name="VenUUpdate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[Cia]"
+                      name="Cia" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenCodigo]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenCodigo]"
+                      name="VenCodigo" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenNombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenNombre]"
+                      name="VenNombre" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenAlmacen]"
+                      dataType="i2"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenAlmacen]"
+                      name="VenAlmacen" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenAlias]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenAlias]"
+                      name="VenAlias" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenFUpdate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenFUpdate]"
+                      name="VenFUpdate" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenUUpdate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[VenUUpdate]"
+                      name="VenUUpdate" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Migracion Vendedores.Paths[Data Conversion Output]"
+              endId="Package\Migracion Vendedores\Lookup 1.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
+              endId="Package\Migracion Vendedores\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Data Conversion Output"
+              startId="Package\Migracion Vendedores\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Lookup Match Output]"
+              endId="Package\Migracion Vendedores\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Lookup No Match Output]"
+              endId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Migracion Vendedores\Lookup 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[OLE DB Source Output]"
+              endId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Migracion Vendedores\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Salida de entradas no coincidentes de búsqueda]"
+              endId="Package\Migracion Vendedores\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de entradas no coincidentes de búsqueda"
+              startId="Package\Migracion Vendedores\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]" />
+            <path
+              refId="Package\Migracion Vendedores.Paths[Salida de origen de ADO NET]"
+              endId="Package\Migracion Vendedores\Data Conversion.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Migracion Vendedores\Poblar Vendedores.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Quitar Identity"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{44879009-CB5D-4C03-BB4A-ADF226D4291A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Quitar Identity"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+          SQLTask:SqlStatementSource="SET IDENTITY_INSERT Vnta.tbVendedores ON;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Traer Fecha Filtro"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{92E906BF-DF1D-4452-B628-185F95138360}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Traer Fecha Filtro"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{503219A9-6A5F-4971-AE9A-F94B12CE86BE}"
+          SQLTask:SqlStatementSource="SELECT CoMi_UltimaFechaMigracion&#xA;  FROM tbControlMigraciones&#xA;  WHERE CoMi_Tabla = 'Vendedores';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FechaFiltro" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{05EA8E34-584E-440A-925E-6792CC3EC650}"
+      DTS:From="Package\Traer Fecha Filtro"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Quitar Identity" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC18E5BE-512B-49BD-A7DC-C181D614F30E}"
+      DTS:From="Package\Quitar Identity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Migracion Vendedores" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA40E474-0D70-415C-8E28-3EA590F158D6}"
+      DTS:From="Package\Migracion Vendedores"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Agregar Identity" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF078E76-92CE-4ECA-A076-7EB2BD50F274}"
+      DTS:From="Package\Agregar Identity"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Actualizar Ultima Migracion Vendedores" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="263.2,41.6"
+          Id="Package\Actualizar Ultima Migracion Vendedores"
+          TopLeft="155.833328097231,290.966665060553" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Agregar Identity"
+          TopLeft="207.4999886627,217.533331820634" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Migracion Vendedores"
+          TopLeft="191.759252060251,149.266666045917" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Quitar Identity"
+          TopLeft="209.166655238304,84.9333327427175" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Traer Fecha Filtro"
+          TopLeft="205.833322087096,14.7333332308795" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="283.4999886627,56.3333332308795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.599999511838"
+              Start="0,0"
+              End="0,21.099999511838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.099999511838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="281.862953649278,126.533332742718">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.7333333031997"
+              Start="0,0"
+              End="0,15.2333333031997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2333333031997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="283.229620361476,190.866666045917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.6666657747165"
+              Start="0,0"
+              End="0,19.1666657747165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1666657747165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="285.466658379966,259.133331820634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.8333332399195"
+              Start="0,0"
+              End="0,24.3333332399195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3333332399195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Migracion Vendedores">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Command 1"
+          TopLeft="781.666623958285,310.266664509111" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Migracion Vendedores\Poblar Vendedor externa"
+          TopLeft="624.999965851507,82.866666190558" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Migracion Vendedores\Lookup 1"
+          TopLeft="656.666630787983,223.599998445113" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Command"
+          TopLeft="328.999997680386,316.39999526461" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Migracion Vendedores\Destino de ADO NET"
+          TopLeft="1.00000256796665,311.399995339115" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Destination"
+          TopLeft="549.566643764411,312.799998987516" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Vendedores\Poblar Vendedores"
+          TopLeft="146.000000407298,83.3999987365803" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion 1"
+          TopLeft="635.833298592933,149.933332290716" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion"
+          TopLeft="147.666667380266,160.933330887026" />
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Salida de origen de ADO NET]"
+          TopLeft="227.633333893782,124.99999873658">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9333321504458"
+              Start="0,0"
+              End="0,28.4333321504458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4333321504458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[OLE DB Source Output]"
+          TopLeft="719.81663222222,124.466666190558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.4666661001577"
+              Start="0,0"
+              End="0,17.9666661001577">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9666661001577" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Lookup No Match Output]"
+          TopLeft="698.266630787983,265.199998445113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.099987023572,47.6000005424027"
+              Start="0,0"
+              End="-63.099987023572,40.1000005424027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4133335545485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4133335545485"
+                    Point2="0,19.4133335545485"
+                    Point3="-4,19.4133335545485" />
+                  <mssgle:LineSegment
+                    End="-59.099987023572,19.4133335545485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.099987023572,19.4133335545485"
+                    Point2="-63.099987023572,19.4133335545485"
+                    Point3="-63.099987023572,23.4133335545485" />
+                  <mssgle:LineSegment
+                    End="-63.099987023572,40.1000005424027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-87.356380230536,24.4133335545485,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Lookup Match Output]"
+          TopLeft="735.866630787983,265.199998445114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.799993170301,45.0666660639976"
+              Start="0,0"
+              End="133.799993170301,37.5666660639976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3801304731598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3801304731598"
+                    Point2="0,18.3801304731598"
+                    Point3="4,18.3801304731598" />
+                  <mssgle:LineSegment
+                    End="129.799993170301,18.3801304731598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.799993170301,18.3801304731598"
+                    Point2="133.799993170301,18.3801304731598"
+                    Point3="133.799993170301,22.3801304731598" />
+                  <mssgle:LineSegment
+                    End="133.799993170301,37.5666660639976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.7086098664007,23.3801304731598,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Data Conversion Output]"
+          TopLeft="717.449964690458,191.533332290716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0666661543978"
+              Start="0,0"
+              End="0,24.5666661543978">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5666661543978" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Migracion Vendedores\Búsqueda"
+          TopLeft="175.833323726224,240.266665196154" />
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
+          TopLeft="225.666667380266,202.533330887026">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9666563459583,37.7333343091278"
+              Start="0,0"
+              End="12.9666563459583,30.2333343091278">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.8666671545639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.8666671545639"
+                    Point2="0,18.8666671545639"
+                    Point3="4,18.8666671545639" />
+                  <mssgle:LineSegment
+                    End="8.96665634595831,18.8666671545639" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.96665634595831,18.8666671545639"
+                    Point2="12.9666563459583,18.8666671545639"
+                    Point3="12.9666563459583,22.8666671545639" />
+                  <mssgle:LineSegment
+                    End="12.9666563459583,30.2333343091278" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="238.633323726224,281.866665196154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-149.233321158257,29.5333301429611"
+              Start="0,0"
+              End="-149.233321158257,22.0333301429611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7666650714806" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7666650714806"
+                    Point2="0,14.7666650714806"
+                    Point3="-4,14.7666650714806" />
+                  <mssgle:LineSegment
+                    End="-145.233321158257,14.7666650714806" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-145.233321158257,14.7666650714806"
+                    Point2="-149.233321158257,14.7666650714806"
+                    Point3="-149.233321158257,18.7666650714806" />
+                  <mssgle:LineSegment
+                    End="-149.233321158257,22.0333301429611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-181.505684016629,19.7666650714806,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="258.233323726224,281.866665196154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.366673954162,34.5333300684562"
+              Start="0,0"
+              End="154.366673954162,27.0333300684562">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0739609335595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0739609335595"
+                    Point2="0,14.0739609335595"
+                    Point3="4,14.0739609335595" />
+                  <mssgle:LineSegment
+                    End="150.366673954162,14.0739609335595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150.366673954162,14.0739609335595"
+                    Point2="154.366673954162,14.0739609335595"
+                    Point3="154.366673954162,18.0739609335595" />
+                  <mssgle:LineSegment
+                    End="154.366673954162,27.0333300684562" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.6356864604191,19.0739609335595,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedor externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Vnta].[tbVendedores]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[VENDEDOR]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

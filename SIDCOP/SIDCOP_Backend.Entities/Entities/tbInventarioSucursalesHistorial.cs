@@ -18,7 +18,6 @@ public partial class tbInventarioSucursalesHistorial
 
     public int? InSu_Cantidad { get; set; }
 
-    public int? InSu_NuevaCantidad { get; set; }
     public bool? InSu_Estado { get; set; }
 
     public string HISu_Accion { get; set; }
@@ -27,12 +26,12 @@ public partial class tbInventarioSucursalesHistorial
 
     public int HISu_UsuarioAccion { get; set; }
 
+    public int InSu_NuevaCantidad { get; set; }
+
     [NotMapped]
 
-    public string Prod_DescripcionCorta { get; set; }  
+    public string Prod_DescripcionCorta { get; set; }
     [NotMapped]
 
     public string Usua_Usuario { get; set; }
-
-
 }

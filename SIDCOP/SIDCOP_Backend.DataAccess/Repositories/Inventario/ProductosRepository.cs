@@ -125,7 +125,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Impu_Id", item.Impu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
+           
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Impulsado", item.Prod_Impulsado, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
@@ -177,7 +177,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Impu_Id", item.Impu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
+           
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Impulsado", item.Prod_Impulsado, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
