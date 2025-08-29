@@ -154,6 +154,8 @@ public class ListasPreciosVendedor
     public decimal Prod_PrecioUnitario { get; set; }
     public decimal Prod_CostoTotal { get; set; }
     public string Prod_PagaImpuesto { get; set; }
+
+    public bool Prod_Impulsado { get; set; }
     public int CantidadDisponible { get; set; }
     public string ListasPrecio_JSON { get; set; }
     public string DescuentosEscala_JSON { get; set; }
