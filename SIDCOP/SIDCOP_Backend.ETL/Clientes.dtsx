@@ -12,8 +12,8 @@
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{B445D2CD-FCB4-4430-9A38-4AFAAF83EC08}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{D92BE5FF-681C-4EC6-B1A8-416CDA080965}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,12 +29,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{0B9A365B-28A1-4BE0-AE4E-169C4285E131}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="iVlkvA4NL3o="
-            IV="O7ITM+vzsjd3jcfHLhu9Vw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="soBSREBzibk="
+            IV="5CsR8zyfuhtA2d2Lub0nVw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>O7ITM+vzsjd3jcfHLhu9V9FYGWNZ7lbZHuUnNSZnkK/lFzFw/sKhtdl53K1uqZkYNVprcsU+TTb5WdMor89xvA+FDGfGNiZpZeF882PWguic6Q/fEdYKgcgiktnbKaGIwwIoDuKQ0RKT8tNXJnIDGF71NwbW21wlxzp4x1+jwHSrVYHIpj7Bs0y0RP0Ngx1/</CipherValue>
+              <CipherValue>5CsR8zyfuhtA2d2Lub0nV5RY1usQpMW6JzRyvU1QhBfxZjsyG/xNbJCkXC75m/3PGYtYcvwKzcGx0+VO4ExV6BzFx7RgfiirrUd+ucMWds+3vSVG4gHT7qQLQ04AYr14KC70Np9SthoVvLhpWAasjRaok7JZbsPra+/sbh440ewAUbS8v17g8BKIfZQJYATy</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="E3lW2Y80gzQ="
-            IV="9ZtiQl7M2RsWTpfiAdgHcg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ff+bLb5ReoY="
+            IV="A9nKWMwa977E2ksqoJHZsg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>9ZtiQl7M2RsWTpfiAdgHckBGhOT9HnzbA7YYHVrsV4AgCS/LasI56pG6qt7LVKXjyt+MQ6Vkuy+KGWBs7YoF7cxlpc+c6dzjOkBqCO35tY9pIPgU/NehxaQD35usuwPQm9qm8ms7USG0KVbZEe+xTGhO+NE5uCI4QTElz2UAKBam3xxX+2whBwvvp1QKhFnC</CipherValue>
+              <CipherValue>A9nKWMwa977E2ksqoJHZshHCZN4LCmcSjm4bsnd24KBk2LPkqtNaVAEcTmYGDSNjnoVS0xfGUh+RNl21KjqRRVRfoRwii4wPExcBPXxL4R6tyMj7k+kh6vwWxhGNeH4zJCqH04I7pBSD2XJujnPSqwirkvBWh3ZvAacNDhHjQevi9hzJvJIkHKLx3ojYBOZ9</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -73,12 +73,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{FB3DA53B-C179-4F68-9696-8F61902D3B52}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="PpxAqMRpOBA="
-            IV="lU5fJWZzwhc2oMWPsrqiCg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="MhgQgrMkqn0="
+            IV="zQHjETIlmI9P+LE9MXouqg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>lU5fJWZzwhc2oMWPsrqiCuC10yekhv1Xkn5o7eWdyAlbkZeXVdd8miof7ntCLqYCQ6u4TQley9zmHcyhizVJxWaqYLLd8hgSC3zDfXDFRK2FAP8m/kbEBnuXyi1tK5hAMHmGJSonjkJ6VtgZQAA3ofSMgHIugzMX5b2nEp/JvsTvF/jW7FuWcftuAybkbjTL</CipherValue>
+              <CipherValue>zQHjETIlmI9P+LE9MXouqlwoW9cbRroleSaNMD+aIhQ02dYzuN8TpBewABFqg84M0vKL2RePk0bXdMNNFtmMqY54fEWLYEWz9Lwyb0Du2h5bqccbS6pEVLwpfoTUs2DGwbJBRBDR3e/saGqIFd0cW8e2Q8iBhpiE0iFXOSW72PPB/YATh6BwMX5bi0+Jr7A0</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="BJx/CqVYgPk="
-            IV="JgE2aq6lxT+H+raLCL/xRA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="bPZqm5Hdl8k="
+            IV="piW4AxTo5ITJkUwX/CHggQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>JgE2aq6lxT+H+raLCL/xRBuq9rDsETISf+w2BMXZ7/h24NjkSTqWZGtyhl5wGXmE+eW1DvhLn1OR6vINLbNlx8r5CYpqIVl7VBvQLu7DOU+fWEdOIHiDAbGeyg1rHIqVz7YhLhIwEeaHywueDyYjYAbShso8HkPfdvs+NSriaQX+2s5ICpmiBPmWRgADeHZV</CipherValue>
+              <CipherValue>piW4AxTo5ITJkUwX/CHggVbQhcBfqSFU5yAkr8WpUJDbPoWrIzFKlNTIWhdaftB28fBjBphk33EyFPvKWxTeGFX04NmlQs6yWwz/LnJhi1bZybYtzJHXmp8eIYwX4l3qEi5AQXTICQqSnNHMUAD8IN9VdHfCxOTkBRMEH1bL7gR6cFn+Gaigeiv5nCBknn3M</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -115,12 +115,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{57CCFF97-C8F5-4363-8028-BFD2E5BEFA97}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ia7GJH5UMWU="
-            IV="kGZ4G42x5zS6maSsGzeMqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="2FpOmntlOQM="
+            IV="lAoV2/5Ts6hEEW56JcjnMA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>kGZ4G42x5zS6maSsGzeMqIy0YGbN37HSEZ+tAoZvHSqh0g+mvldBKaawgXrpAqQFSfIaffCcVmk+8ywvZx3V4Uxc+LtxGtodCJEEiFClciVojk4JYKeOFKMKxKsHoqbBYzhUEE4mYXzQLgTK8jJ9QGen3Y7YxZp48lT6kScYLyfuiQZsSCAby8cxT5mPqI2S</CipherValue>
+              <CipherValue>lAoV2/5Ts6hEEW56JcjnMCOGKNc09FWr2evYLIwkE/RvCDCv72HznwjQujr/SEgxPBHYUCLIhm3LVxKoaE7Lx2O9gRM3YO9ZdBAZnYYCEsGesKBG/knMfKpeh9dTN+DDkutxSqJvrp2k1vNkll0s6w6Nnw4gwMFKvGybTXW+2qvEkqc+0/OCfkha7Te7FtLr</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -138,12 +138,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Clientes-{9846E725-7124-4087-914A-D3029ADB6E82}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="TuEZPwJ8MBw="
-            IV="2ZCJTTdBc60wE7oeCEDu+A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="aWVEWdR2qiM="
+            IV="SUgLzY+Lp0yRvmLYHg+jAw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>2ZCJTTdBc60wE7oeCEDu+GprlRFGGItUFGVjTYwgC6+7SUr+ItIaYTTExJmjVUeArSr9yfvMdv43eOUqAcgUKOkKBEkrRMtRTJobSpBf8X4cUbNcqtlgz5aWmx60oMawrf3wnPQwqEznSLRF9hjTgoeR8swFCH8oBmvS/Qf9jeygqFbs6cASkGissGW/Xhap</CipherValue>
+              <CipherValue>SUgLzY+Lp0yRvmLYHg+jA12yEIMefZT/7fDV8q88mZBDobfDb83f66FNzwgnxTzP0dMr9Rhtov+fPIYFgERerXY3w1DdtnAw+3En6p4/oL64XLp6toZiqRfeoTRCxVY2bJuXYoJu/Le1gQTPQpa8HXV0aDOPgUa9JtSFCHi9sOFLVHt7cyn5kARwKSj70ngM</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -159,12 +159,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{0C4417A8-CF90-4756-880A-948CEA21D989}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="LHBKSUBIS1I="
-            IV="I/ZelCV/WwZlLV0pIJvHBg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ZXxkj59DHlM="
+            IV="4d0BWRkOM0pfFQORHrhmcQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>I/ZelCV/WwZlLV0pIJvHBl6BMP6mi1nsp1hJxIDW6ek88kq7ERatFyLRG//kj1trIlXQiFARwMV+LmG1k3keAYWiAVMfpsAIb3gTo23ebBQ2uVgBARreTigrooVI+NzTe2TxO6jNcS5HyOpdtQmEYYzLFGkc1v75S/9bNAsmzNJt4Fq6LO6b4yPkRuJMJTu7</CipherValue>
+              <CipherValue>4d0BWRkOM0pfFQORHrhmcQoUe09A3q6qruW76Kj4b+E4mE3UNPJg6dOJHPrEBIBiL9U1aNhnwcEV8qlCEsmGXVzxA5BXT15B8BUTzwo3ZcDLT9v+7E05RXEdaQ7gfQThvZgbmdTPxOsidlSxoiok7p4NKurVYyp1lBWnq9UYzBLWZAI1pRltww24jzk9UwM5</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -182,12 +182,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="QA/doWA0c3Q="
-            IV="rr2SfVb3Q9U+nI5xoU3LcA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="CzfCF/0Ncl8="
+            IV="KzJeLVYYQtSQDe4dlUaFHA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>rr2SfVb3Q9U+nI5xoU3LcIGqLQ50ofPxIGq+c6JQp/I4s3+RukAtE/ENCXaudeDE3k9oVZGGyE9lCL98fCRBXlgxXed+zSvWyu/xgQTzUnB/5+/JuLF64z0j/tKUQtXqoqWzrIw2bQYPGzXoJVi0JbxdgdTnKXupo9H500o4JRts4dq+RXCFbCVdIqIR466L</CipherValue>
+              <CipherValue>KzJeLVYYQtSQDe4dlUaFHJASBkzk+wIm9tiSuGJmTuSTWOWVGfiT81JRh63r1CxKDbkr8k7QR5qFM7Fh9YP+VBLu1v74YgMXicN3No+I/JBpOYmgRUr/dRevYU6+BGJaBMZbbOKUszWU30hZP7OKZu55kI4qYCqqTMSzv+VLjApSA1ioQhTpxvNDBgcdYyf8</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -5293,31 +5293,31 @@ WHERE DatFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\Actualizar Ultima Migracion Clientes"
           TopLeft="70.8333327414261,337.333331404791" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity"
           TopLeft="22.4999987706537,259.133331531352" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 1"
           TopLeft="210.833321813908,259.999998191992" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Clientes"
           TopLeft="116.458330248586,193.466665738557" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity"
           TopLeft="66.6666630241604,90.1333327065574" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity 1"
           TopLeft="277.499984838069,124.799999132156" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Traer Fecha Filtro"
           TopLeft="102.499994399647,14.7333332308796" />
         <EdgeLayout
@@ -5521,63 +5521,63 @@ WHERE DatFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Clientes\Data Conversion 1"
           TopLeft="135.833325911728,471.93333088047" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Migracion Clientes\Origen de ADO NET"
           TopLeft="165.8333242726,7.79999994575977" />
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\Migracion Clientes\Lookup 2"
           TopLeft="591.133314847616,524.999997233749" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Clientes\Data Conversion 2"
           TopLeft="566.966649501358,452.133331079351" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Migracion Clientes\OLE DB Command 1 1"
           TopLeft="695.43329913931,638.799996203185" />
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Migracion Clientes\Poblar Clientes externa"
           TopLeft="120.833326731291,387.866664798392" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Migracion Clientes\OLE DB Destination"
           TopLeft="44.1666642535065,634.399998336633" />
         <NodeLayout
-          Size="180,42"
+          Size="180,41.6"
           Id="Package\Migracion Clientes\OLE DB Destination 1"
           TopLeft="499.166639393404,637.866664762232" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Migracion Clientes\Destino de ADO NET"
           TopLeft="13.3333326048318,273.866664762232" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Migracion Clientes\OLE DB Command 1"
           TopLeft="268.799985794227,637.466663062705" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Migracion Clientes\OLE DB Command"
           TopLeft="325.833315530586,278.999998065432" />
         <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Migracion Clientes\Lookup"
           TopLeft="189.166656331056,177.666665431195" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Migracion Clientes\Data Conversion"
           TopLeft="171.666657287214,88.3999993852774" />
         <NodeLayout
-          Size="195,42"
+          Size="195.2,41.6"
           Id="Package\Migracion Clientes\Poblar Clientes externa 1"
           TopLeft="549.966639939779,386.599997956952" />
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\Migracion Clientes\Lookup 1"
           TopLeft="159.166657970184,539.533330410388" />
         <EdgeLayout
@@ -5945,7 +5945,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5955,7 +5955,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6010,7 +6010,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6020,7 +6020,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6041,7 +6041,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6051,7 +6051,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
