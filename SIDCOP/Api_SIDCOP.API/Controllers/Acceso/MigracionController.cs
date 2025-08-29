@@ -72,9 +72,11 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                     proceso.WaitForExit();
 
                     if (proceso.ExitCode == 0)
-                        return Ok($"Migracion de {paquete} ejecutada correctamente.Salida:");
+                        return Ok(new { success = true, message = $"Migración de {paquete} ejecutada correctamente. Salida: {salida}" });
+
                     else
-                        return BadRequest($"Error al migrar {paquete}.Error: ");
+                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {error}" });
+
                 }
             }
             catch (Exception ex)
