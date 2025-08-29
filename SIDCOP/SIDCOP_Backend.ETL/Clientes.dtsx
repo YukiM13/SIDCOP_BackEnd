@@ -12,8 +12,8 @@
   DTS:ObjectName="Clientes"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{C9F49E59-C53B-4BD1-BB66-C6AC637546EF}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{D89877F1-9E9C-4773-A8B0-52163711FD08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,12 +29,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{0B9A365B-28A1-4BE0-AE4E-169C4285E131}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="8uaGAPZnFw0="
-            IV="5/ICAYyjO5cMwr2O/vmPjQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="o0uhTF5aybE="
+            IV="LP8UiBgbzl+j6pFO80eQcA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>5/ICAYyjO5cMwr2O/vmPjUptEzScipkO2bLjovKhh9FK0B2hZ6UNXu7kI2YKByg6gOyxJ/lyGM7c/sJ7rR7OPOsHRwKv+Kv2CgmVoZgYao/R7q4F94wm4c05dRI19P1W02VGJC8orL512GdblF5EXvAJcFrj8bq76RYlZES9vYgK6K/Qees0vFbwELZWwuXg</CipherValue>
+              <CipherValue>LP8UiBgbzl+j6pFO80eQcOssBNrZqyeVaudDraQrgrfui7ubU1Zcv4f1xNP5Bi84HCwyhu1HvYrxkwxDSbqiaGGGoMF1paNQSnrThNeIsyAtSLdHYAliSjPNY4l1sVh0Ol/NJ7SeKnvKIitrp36UjML3JxZ+/UEjh0gg0vtEh5h+nz3DVvkjxbEHfypRn1Y5</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="PR9Wg74qGoE="
-            IV="nhxo7nXiGp7h+HeMygZIXQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="6lFFwTn9iNY="
+            IV="FgdaAi9BX+HX/HYlRi2oQQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>nhxo7nXiGp7h+HeMygZIXdWIH8+qS59sSleZsfTj1ciRgYp++TGabsl1a6zjjcG7s9Eq1epRqdRwCZ26Avy1qRCHpsqqOCWrW/RCsmozm/lDX/MyRfJ/7PNPaO7I2oC09vKvlYl6AYrhXquilvfwm4k2O+PRXu/Rf8nx5XV5SRqku+7as3GxDPGsDeiWUt/k</CipherValue>
+              <CipherValue>FgdaAi9BX+HX/HYlRi2oQSXZ1H/Ue0Qv+G/zfGr5BtLqJJD/haP6dKJwUEl8t6yQadOuPVvSMYszsJtBupHrCLKZPq24GZPAudnxw/gQue3o4h+GIvHYZ3FzNASGbkaUy5v1+das6DFg9Bp8KSnU72HwrADZJA8J7jbHDhFC/SpAFV46OJj5muhlq9DSHNzY</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -73,12 +73,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{FB3DA53B-C179-4F68-9696-8F61902D3B52}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="8lt70KJyfb0="
-            IV="spdMeGadSfH8H6E+ahl9Ng==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="+qE+wCK6OSk="
+            IV="PFm5cHJ+RHN94BlXQyTROA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>spdMeGadSfH8H6E+ahl9NsMAtTVuHpkBc9PipsNnTzwQHOw22knHcl9RUeWp2h5BHGHVAC02IPlvm7u2ZcfZ9S7WtbTrdyo9JbeXDFjBOfqRBq6CMmf5REg0x1nsqaRnwZ+bCW4ykMNHF5ReXihWmbqPouOovv9OD0eA7wXS7psPrO6FvzL/NKvG/pqw98jE</CipherValue>
+              <CipherValue>PFm5cHJ+RHN94BlXQyTROPrm2XaZVruwn/QdlniJ/kaCdM1blQ+L2387mVbpZM2AvsrtsOkc7nldvZDGe5iK/lYhUq8RHBEmp0pPgHqDE1IXHe1Iq6HDWLeR4HZmphA4ixh1KFdIK5hjnKbdzNxCQKjEt0rkK7LYkt77VtxpeEYn+WEWm2bf1s9a9ZK4n+N3</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ZNlSLyYwYKU="
-            IV="+5bZXk2qrfWMrqj3vSDong==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="2GHh9SqkraI="
+            IV="jGot/n6ONtMOkbox7/t6/g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>+5bZXk2qrfWMrqj3vSDonkafNkTxfYgqPCDnjy4o5IUjf0zpP3KlZ4UYY+Rbacmo+lqYzB05LdVtg8co+UuOFqh5f40Vw9cL1M+plam+GgdswCbC+cuk7ReyxvNONUbX2YxNVij+p7Du2YT1ftwWXR/rMue2tAVza4hm63pR2prs60vz0ZeXEhM0/8/73Mza</CipherValue>
+              <CipherValue>jGot/n6ONtMOkbox7/t6/sQbS5JUd6bweiJi6s89lozu/bI7Yum3J+VDVFOLGcfRAubiNFX7Zprj07EobEfUGtIvllMH4tsNG52ByXwB70xNc3ROuiBKocwWJ5gHioW2mTr09/UuH80sewSe1dmZ2DgVKpgUJOl07FkKxV5sfG9b4KhKE94BAB/StgTlWuVl</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -115,12 +115,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{57CCFF97-C8F5-4363-8028-BFD2E5BEFA97}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="t4PQboOWP7s="
-            IV="O3ti5SEyOctElAE5opxk3Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="BzpSvl1Qj90="
+            IV="qACfTRSM09qemrWEfobyBQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>O3ti5SEyOctElAE5opxk3aKk9+4Hlfo1D/LSJXLgA5/qC9l/Bbb2KIp5SNH9YnpaXbQW3iIdiQm5ENlppB36cbuxeuqWU2yczm1kzcMFWeeLJCejESDvmUkAoJht8Iuey6dWLyb9fywRRONaynEXe5ZW6/YYa66hkLyvsPrwB8J6EUMj3iEu0hPXp6mLK0Vf</CipherValue>
+              <CipherValue>qACfTRSM09qemrWEfobyBaDVXsNeGzeVJd5CdJYODCBStYj99hymo2uCbLQBhnG+5xx1eI25WjUVXyIt18I1v+QhNY+1UxxZpPhJK1Siq87gAuJRy+C8EqqNewjCfQVqXKpsPGWrAxDd449qiJn1gA0NaUQlWyKQw649l5nPfMDlYtfz+Tehvd1kqCGhaInc</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -138,12 +138,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Clientes-{9846E725-7124-4087-914A-D3029ADB6E82}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Ll3jmeDA5u0="
-            IV="0/Q7QqoUCz8Hw9qmNW9IaQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ngSrC3K5KkE="
+            IV="rc7mjXMn7mCw7ghIH56oPQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>0/Q7QqoUCz8Hw9qmNW9IaaWbrF3DiHq/lKKRvfXmCk+4YT84tJzNBrCGufGDaVtte30oF8nPL3jNS6YpGU4e45mVSE/FhpOytfDVOzHl3qLmRP9NSR0qvG2TKkozQVWlKL1E0UUlL7yqzCQugX6SP+cGy25rji9Y++ncq2IB+HitkK5O9Aj2gI/BfOY9ooQa</CipherValue>
+              <CipherValue>rc7mjXMn7mCw7ghIH56oPbWOdAnG/G2cJzlzTc8PkhTkZw3HZvWIKSZAZCOvCoWVwG7OfHFfb0XgCnSWaP9X1/EfwnDMgkWuRRgnLl7cttBBdK/6AP9n1bZ7xD/BZSxxpsNFrN8GC1cRgsRglu/2oiUd5rpL52fNKsW2L/bxA8oTK7rksrc4quGQDjp5JVv/</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -159,12 +159,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{0C4417A8-CF90-4756-880A-948CEA21D989}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Hc7ZUB8PRlU="
-            IV="pbpe//ETRDvtwt1dvbPfXg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="QkbmCEuDIgI="
+            IV="tkIOC1LtPWx46u5JbLY9GQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>pbpe//ETRDvtwt1dvbPfXk+GERLNUWlUeCwSqcShLYaAjrn4SYnl2trfbzyGgeKftMzpkod2xjHllKDKwEvmeejbT0cZ6GWME7RTKMa19gqB2YLPw1Pdrkc9QfH7cdGSmLia5YtwqtEU5Eg+nfCdbnGbQme7UG6aoWalJ1USCI/d8gtmLsa5oSX2Ukrsj9HF</CipherValue>
+              <CipherValue>tkIOC1LtPWx46u5JbLY9GQ90wcSMgaMO/+A1FxCW8oSTHUY7NCoJUUUUjrusdGnnGsv7HTIb3ka9ljYt/34zz3SuZAA5gtrvFXpK19uSLWALvFt1h5UA9O7PqyrxmC15/UJuznhg/Fefy1LW9D5CPxi7fkdpeusdJu3UR+AQvyCpu8+x5RuU43UWlUM6FjhQ</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -182,12 +182,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{A2BC8A59-80C2-44CC-A2F7-A2F38A5AD4E5}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="yOH2Rc4te+A="
-            IV="gw18ushrg6NlOZ1HRyk0gA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Doo35/4GjJ0="
+            IV="/AOwEiT5UPTtCIxiLljxwQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>gw18ushrg6NlOZ1HRyk0gE5KzFH4jxfn3RgC5+DiwnknBtcUgI/dLd3SQt5uvEeAvtP/vETuc2tLDt2G9yX5mCb6Lg6ueZcpwDD+IQAI8jm3bnaZ2v44gx17HfFwD1Csm6SGLq0F54GecMqk/kEaKptq/OUGxeetoGNHgbW2R4L3etOsmEyix4m+zr9wPy1w</CipherValue>
+              <CipherValue>/AOwEiT5UPTtCIxiLljxwdNlXW1eBFddLCgDMtTTR5ZVFh+ZAUYZ7rqZ0SClAeqXqeumFppe2S4IuZ/OP2Wadv/kOK7IuPWyhwkn+ycCtRhK+RKK4RvIQY7MlUEwgASRm45XNHdwN+JlJABcx/RuisK9JxgeCF1ZrJ0R+I6i1Q2nGkpkBi/GVCjc/1NU84e3</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1697,8 +1697,8 @@ where [refTable].[Clie_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1838,8 +1838,8 @@ where [refTable].[DiCl_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Lookup 2.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2470,8 +2470,8 @@ WHERE Clie_Id = ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2787,8 +2787,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Command 1 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3046,8 +3046,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3476,8 +3476,8 @@ WHERE DiCl_Id= ?
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4242,8 +4242,8 @@ WHERE rn = 1 AND DatFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Poblar Clientes externa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4884,8 +4884,8 @@ WHERE DatFUpdate &gt;= ?</property>
               <connections>
                 <connection
                   refId="Package\Migracion Clientes\Poblar Clientes externa 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5948,7 +5948,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5958,7 +5958,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6013,7 +6013,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6023,7 +6023,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6044,7 +6044,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6054,7 +6054,7 @@ WHERE DatFUpdate &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
