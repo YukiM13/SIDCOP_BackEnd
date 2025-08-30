@@ -40,8 +40,6 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string Prod_PagaImpuesto { get; set; }
 
-        public int? Prod_PromODesc { get; set; }
-
         public string Prod_EsPromo { get; set; }
 
         public bool Prod_Impulsado { get; set; }
