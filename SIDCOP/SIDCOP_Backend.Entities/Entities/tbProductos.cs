@@ -20,6 +20,10 @@ public partial class tbProductos
 
     public string Prod_Imagen { get; set; }
 
+    public decimal Prod_Peso { get; set; }
+
+    public int UnPe_Id { get; set; }
+
     public int Subc_Id { get; set; }
 
     public int Marc_Id { get; set; }
@@ -46,10 +50,6 @@ public partial class tbProductos
 
     public DateTime? Prod_FechaModificacion { get; set; }
 
-    public int? UnPe_Id { get; set; }
-
-    public decimal? Prod_Peso { get; set; }
-
     [NotMapped]
     public int? Secuencia { get; set; }
 
@@ -74,6 +74,10 @@ public partial class tbProductos
     public string? Impu_Descripcion { get; set; }
     [NotMapped]
     public string Impulsacion { get; set; }
+    [NotMapped]
+    public string UnPe_Descripcion { get; set; }
+    [NotMapped]
+    public string UnPe_Abreviatura { get; set; }
 
     [NotMapped]
     public string? UsuarioCreacion { get; set; }
