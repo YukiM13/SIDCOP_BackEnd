@@ -114,6 +114,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 item.Impu_Id = null;
             }
+            if (item.Prod_CodigoBarra == "N/A")
+            {
+                item.Prod_CodigoBarra = "";
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
