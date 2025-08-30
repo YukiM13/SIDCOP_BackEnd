@@ -166,6 +166,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+            if (item.Impu_Id == 0)
+            {
+                item.Impu_Id = null;
+            }
+            if (item.Prod_CodigoBarra == "N/A")
+            {
+                item.Prod_CodigoBarra = "";
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
