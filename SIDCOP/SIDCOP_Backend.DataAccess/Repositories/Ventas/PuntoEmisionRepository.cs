@@ -4,6 +4,7 @@ using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,13 +25,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_FechaModificacion", item.PuEm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.PuntoEmision_Eliminar, parameters, commandType: System.Data.CommandType.StoredProcedure);
-
-            var status = new RequestStatus();
-            status.code_Status = result;
-
-            return status;
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.PuntoEmision_Eliminar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
 
         public tbPuntosEmision Find(int? id)
@@ -55,14 +63,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_FechaCreacion", item.PuEm_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Query<RequestStatus>(ScriptDatabase.PuntoEmision_Insertar, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
-            var status = new RequestStatus();
-            status = result.First();
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.PuntoEmision_Insertar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
 
-
-            return status;
         }
 
         public IEnumerable<tbPuntosEmision> List()
@@ -84,13 +100,20 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
             parameters.Add("@PuEm_FechaModificacion", item.PuEm_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
-            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-            var result = db.Execute(ScriptDatabase.PuntoEmision_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
-
-            var status = new RequestStatus();
-            status.code_Status = result;
-
-            return status;
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.PuntoEmision_Actualizar, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
         }
     }
 }
