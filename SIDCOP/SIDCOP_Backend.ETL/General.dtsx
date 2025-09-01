@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{DB563CD2-2167-4692-A0EF-875AB350B5A6}">
+  DTS:VersionBuild="138"
+  DTS:VersionGUID="{AD412EC9-B954-402B-B842-F12E3652DFE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -42,6 +42,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Bodegas.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="AnrRTyrYwQM="
+            IV="aXia7e6tMQ8mkFn4DquK4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>aXia7e6tMQ8mkFn4DquK4G9SqRedn1xU1SYoNMpn7s9Yo49aoMk9lno1niRzQcvLdDIyyUK4VgPBtVBCbjsOvdjK0K2q/Ns3BGeKSr4juq0=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -59,6 +69,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Clientes.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="DMboDmrkbyM="
+            IV="SY/PGewvNBDMdV+neqc5sA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>SY/PGewvNBDMdV+neqc5sBqSW2WG3zfaR0sS6jprDPJx+mH4jErQ8JqHFxTHdtRATD8iHnsZwcq01LG4oVXfPkLhR7ae6Vxl4k7nzaPTUmw=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -76,6 +96,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>CXC.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="DMOo0LDmHu8="
+            IV="C63aLrXwGeANIGEpMhOF6g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>C63aLrXwGeANIGEpMhOF6s7Z9l80BukL7t/RVysc2XaIubr0Lwr7eT7At9Y87LHOjWPmg1ahOGq9VnP1qh0rg4eYhmZ9lYxSwbrlAwqvtpw=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -93,6 +123,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Facturas.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ivhii4ad87A="
+            IV="g16mVuAXamuh7Gfrg5F6VQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>g16mVuAXamuh7Gfrg5F6VaZbHGbFOct6pHBjwopFRempMDYCMyqLh4W/MkjKhTBQtO4yA2Y5uRsVdNKxfPqP2Xb/2qwDXShqvQ5KTuawSZ8=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -110,6 +150,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Grupos.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="WCqEmf/NaXE="
+            IV="GY9LGvt4AjxDvTFr7Aw7pQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>GY9LGvt4AjxDvTFr7Aw7pTUt/p3Ay3oUR/ysHxvKDrOSCSualmCT2fPVHcoL78Gr3I+jxve75f+/jj7eYGRLOy3CWUp7qB4SCB1DYWOYMd8=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -127,6 +177,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Pedidos.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="T9nNSchN318="
+            IV="vABYkkx87xE2hh+tYnnPPg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>vABYkkx87xE2hh+tYnnPPj2yrFQCM7xF0QcV14hlDkgjkiUqiz3YSjUtg/c3rzLOGhGSiB42yUv6luR4k609bU/RedF4V7cG+D/JGWLb7m8=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -144,6 +204,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Productos.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="29BoJsDZHGA="
+            IV="hgUrVx5J1GugR4NzK6JSdg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>hgUrVx5J1GugR4NzK6JSdnjnCdbVlxzRHB0AUFafxBUMlhXlF81LQG8HTimchEqvcMejKAjMi0gVdm3ChvWRulEvibPN4Bw5Ah6lWFteYIQ=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -161,6 +231,16 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Vendedores.dtsx</PackageName>
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="EzI3Em/FGW4="
+            IV="xeB5MdwXdlXxZ5cdGZ0B5g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>xeB5MdwXdlXxZ5cdGZ0B5lqsV2R7WocLl98efXeKEZYlXgaCNFnxbvk0jiJBJ9Phw/x1BGXS2xw0wUly1ja6gNYUYuvv9X8iTEZy1KO2+60=</CipherValue>
+            </CipherData>
+          </EncryptedData>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -262,7 +342,7 @@
         <NodeLayout
           Size="157.6,41.6"
           Id="Package\Migrar Productos"
-          TopLeft="291.249984086802,86.0166660685174" />
+          TopLeft="292.916650662406,86.0166660685174" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Migrar Vendedores"
@@ -273,14 +353,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.1166544870374,0"
+              EndConnector="79.7833210626411,0"
               Start="0,0"
-              End="70.6166544870374,0">
+              End="72.2833210626411,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="70.6166544870374,0" />
+                    End="72.2833210626411,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -291,18 +371,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="448.849984086802,106.816666068517">
+          TopLeft="450.516650662406,106.816666068517">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.6916553407499,0"
+              EndConnector="48.0249887651462,0"
               Start="0,0"
-              End="42.1916553407499,0">
+              End="40.5249887651462,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.1916553407499,0" />
+                    End="40.5249887651462,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
