@@ -166,6 +166,26 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return clientesVisitasPorVendedor.ToList();
         }
 
+
+        public IEnumerable<tbClientesVisita> VisitasClienteHistorial(int clie_Id)
+        {
+            var visitas = (from cv in _bddContext.tbClientesVisita
+                           join dc in _bddContext.tbDireccionesPorCliente on cv.DiCl_Id equals dc.DiCl_Id
+                           join c in _bddContext.tbClientes on dc.Clie_Id equals c.Clie_Id
+                           where dc.Clie_Id == clie_Id
+                           orderby cv.ClVi_Fecha descending
+                           select new tbClientesVisita
+                           {
+                               ClVi_Id = cv.ClVi_Id,
+                               Clie_NombreNegocio = c.Clie_NombreNegocio,
+                               Cliente = c.Clie_Nombres + ' ' + c.Clie_Apellidos,
+                               ClVi_Fecha = cv.ClVi_Fecha,
+                               ClVi_Observaciones = cv.ClVi_Observaciones,
+                           }).ToList();
+
+            return visitas;
+        }
+
         public RequestStatus Update(tbClientesVisita item)
         {
             //var entity = _bddContext.tbClientesVisita.Find(item.HCVi_Id);
