@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{B1E1865A-796C-455F-A197-BEF0A7E28C04}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{14DE0AB7-07A0-4C9A-847D-DE79D8EBB337}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{014C5899-2100-4317-8729-912E62DFE56D}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="QbJNtjTYqNk="
-            IV="VQXJ2RNj/DV+l5S1H3OLSw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="h24oJYQtC3Q="
+            IV="Sz+auR8x+GFDT8UKtEzgBA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>VQXJ2RNj/DV+l5S1H3OLSyFc8djvYqiuqJ/Sn9MBkFApxwDzVAZwBKDiJayp3PkIeJ8EMLhZgYDAlUMbtfTV7cmAUKIFicgzENy168usKnBQb4NvlLVpSGWOhD6ebbAhROVBf3XaRHvRg+lOP62VsKzIs3/+DALhBqMVsOpgc+8jCKThNLlPlFudXhwz+UKD</CipherValue>
+              <CipherValue>Sz+auR8x+GFDT8UKtEzgBLiC2hxOG71ORXA3f5lLCpnY5AHC5mGaFUlthgecBSCWmts8It96DvU+qnI9fxzyO+V0hLTdUGZgvzRl/p2jp0HhMpBTFGkUXgMl74vg0/Vs0mBX7XVHKD1L3LDPIgpaie5PgNBOAVn41VrjUHANCu2H0A0fU3wUdTqiWbBvPcHy</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{F0F03674-5170-4E2B-9DCB-07384A065DA5}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="9hIJ7DJEq8s="
-            IV="YmZLLz0L2IaQ9e1abSWCpg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="zQs46mJ/heM="
+            IV="TYuRlmMowDo69GTn9XseHw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>YmZLLz0L2IaQ9e1abSWCpjbkjXIlhR9zUEXjic4/jcaYPP4D1RTAoBOapRoSMN+TZaUlf3KqBEDbfbF2RTn61bvKsRD1XB4Mf7Ufe1+Sf5Pr4MjfluER+exQzXKnBuEZzYIHjkRvUZZdVJy4rrHLQvO5nQvWSWhxJVn5ZpPtcmvQ+LeVgdBcPkyMc0n2VDFB</CipherValue>
+              <CipherValue>TYuRlmMowDo69GTn9XseHx0QB6u7lXB4vU0+mIMm11pgf0d8H4SmYhlWsiznDkumUAysvZltJVud7bSXp6geybk4mEo4R0kzOsWBmfgnbbed8JKZykZWTovJ1fMkaNmZ3vtkNMNoO83hCVyHySclePfDdXwvw5cuDJ//KFhkw+lJIlST/VsmacUZsQdYkEsJ</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{33C9EC2A-BE47-47DC-92DB-8391B50F5F44}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="gcd26Tnn+Bw="
-            IV="UCUv43w12xOORohhbXIGkQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="RPvb1V+NuM8="
+            IV="5YSJZsxy1Am+fzLd8nNxkA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>UCUv43w12xOORohhbXIGkV62vVxr5IBFBnSoe5r5ejDH7M/CRK+xoog0oBJWzwp4DiBMwpjWvTafKhF01unnqd1zXpQWR+2QpQS/PGw6sSkSRgNNndcVgvD5puXxaiKfLgnBJEJsUJt447zNfD9v/b8IRBo2PfI9qnfgLopBMqewhtz8RL2JPX/KgggA8LOh</CipherValue>
+              <CipherValue>5YSJZsxy1Am+fzLd8nNxkK6yJAYzFaJxHLONogd6HsMmPtxwYiFVG+biH3mVWVwLGiOSPoylvs+rLB0hxY6giTSZTaFiwpKuO4BcKANvVPLewVDuBzbffGOkBAuqRRpjpBJaYh7YHRQoQGCHSw/RTG9BR1Bt5edmVyAjcq1vPdndJDe7doRyZfTFFe8c+Zwm</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{EDA2CA9E-A6D4-4092-A04D-2B71CBB92A56}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Pcx7M1F3f5c="
-            IV="YpHogHX/JbAPHAxOIuhByw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="UbWK8Iezfco="
+            IV="BQF8x0alvJVXLsENsA2b/A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>YpHogHX/JbAPHAxOIuhBy2GU5IYB3PK1FEp4fafT6RkzF1tPEu+PgZ1kzsOMTrWVAg+RSAtiq7fYp4OJ1MBROz/5U7SUJgJXrrssiIqjDLNV80bKq4KKRntRd84PRqQ5HKYKb475/P+tI2U4DbUOMgNKrKKQFcuzNNMrarxtQ2YxLqBX4hgOVZyZyRYZRMsO</CipherValue>
+              <CipherValue>BQF8x0alvJVXLsENsA2b/EV1nDsDmeDaXOm2upPyHtXJs3F93qVUNUJI+CShal6qot6nA7UP9I2xz7xfoT8ymSKcF3YMRzRZ36d50C9VSKJmDZBGMjMNA+SOOmHZ+04Yk7ImwxLyOgczowd9Tm/3D92Lo20f0mjjCTFVKDxDLIedOyXKcEEG/MXB/Uba9jze</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -370,7 +370,7 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[COTORDEN]) [refTable]
-where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodigo] = ? and [refTable].[TipSerie] = ?</property>
+where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodigo] = ? and [refTable].[CodUnd] = ? and [refTable].[SPSerCod] = ? and [refTable].[TipSerie] = ? and [refTable].[CodProd] = ? and [refTable].[PrLotes] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
@@ -406,7 +406,7 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
                   containsID="true"
                   dataType="System.String"
                   description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[Noserie]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]};#{Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipSerieC]};</property>
+                  name="ParameterMap">#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[Noserie]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[DatCodigo]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]};#{Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[SPSerCod]};#{Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[TipSerieC]};#{Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodProdC]};#{Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[PrLotesC]};</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -494,6 +494,74 @@ where [refTable].[Cia] = ? and [refTable].[Noserie] = ? and [refTable].[DatCodig
                         <property
                           dataType="System.Null"
                           description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[CodUnd]"
+                      cachedDataType="i2"
+                      cachedName="CodUnd"
+                      lineageId="Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[CodUnd]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodUnd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[SPSerCod]"
+                      cachedDataType="i4"
+                      cachedName="SPSerCod"
+                      lineageId="Package\Migracion Pedidos\Poblar Pedidos Detalle.Outputs[Salida de origen de ADO NET].Columns[SPSerCod]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SPSerCod</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[PrLotesC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PrLotesC"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[PrLotesC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PrLotes</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Migracion Pedidos\Búsqueda 1.Inputs[Entrada de búsqueda].Columns[CodProdC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodProdC"
+                      lineageId="Package\Migracion Pedidos\Data Conversion 1.Outputs[Data Conversion Output].Columns[CodProdC]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CodProd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
@@ -5737,7 +5805,7 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5852,7 +5920,7 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5862,7 +5930,7 @@ FROM BDD_Extena.dbo.COTORDEN  co INNER JOIN BDD_Extena.dbo.PRODUCTOS p ON co.Cod
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
