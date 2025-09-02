@@ -339,6 +339,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public IEnumerable<tbFacturas> ListPorDevoLimite()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbFacturas>(ScriptDatabase.FacturasDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
         public RequestStatus AnularFactura(tbFacturas anular)
         {
             var parameter = new DynamicParameters();

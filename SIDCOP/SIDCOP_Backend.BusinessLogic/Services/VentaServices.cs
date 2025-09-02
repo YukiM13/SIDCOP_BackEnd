@@ -1054,6 +1054,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ListFacturasDevoLimite()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.ListPorDevoLimite();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult AnularFactura(tbFacturas item)
         {
             var result = new ServiceResult();

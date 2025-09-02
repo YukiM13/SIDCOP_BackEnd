@@ -37,6 +37,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        [HttpGet("ListarConLimiteDevolucion")]
+        public IActionResult ListarFactDevo()
+        {
+            var result = _ventaServices.ListFacturasDevoLimite();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
         [HttpGet("ObtenerCompleta/{id}")]
         public IActionResult ObtenerCompleta(int id)
         {
