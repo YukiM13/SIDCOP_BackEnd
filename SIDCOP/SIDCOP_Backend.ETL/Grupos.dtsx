@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{E70764ED-4F90-42DB-81C9-91470225BDF2}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{0315DD54-D577-4D48-AD8A-B46090B21C1B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{EBDDD3DE-BBA0-437D-84F0-962A6AF0392E}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="XjnQMBjdcGk="
-            IV="gHzMLWZtauxuMQBZ1EQUXw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ePgiDzTue3s="
+            IV="TbuMo3t8LowADBZ9wFWVlA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>gHzMLWZtauxuMQBZ1EQUX1ScLi0bVijqeIoykLI0JI1/A9ha6K0nmruSaJ2fEeovXsXRHav+ci6fsPSLlSobg3SBOsdXEBBlu26UuOSxWz6fHDymSv/bMLSzyarEsWdJd+hDlBP5B17MxL/lgmn0ik4K9mtb0xuwETYJkRu9wpFGr/F2KFvuyZ+bLxapGTfH</CipherValue>
+              <CipherValue>TbuMo3t8LowADBZ9wFWVlEtGGempSkNPeSBypu/iGkPIEW+gzQWpNuph6SpGHPVaMuE5Lrg+njzxBQr8Vcd7eF+b/Qz3WNAYFlFBtqx0xihO8v74nlz6Lam3LsQ3ShaEjNs1Kj8zWDZj7vo0b6aPMPs1YzxPw/AW+D4GNc/OJp/S011jSulcTbTTEOL79Q+e</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{ACE2B296-10E6-42F2-8AAD-4956A2E40F7C}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="vJymz09N84Y="
-            IV="QXTXl9XNbaZo6Kb2aiWmcw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="OaPqHUNna6g="
+            IV="1BrEDFXH+VJInvMLX+AEbg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>QXTXl9XNbaZo6Kb2aiWmc6QRMpxmHz4XrMn5Tm1/UJli/UhTBUqBL7L70gyliRqH1E07g7Cda/gllmlUMnfR1xFuyZht+aPfRgNLFRJmwljCjlQjYJw+FKFOH3llRQ/6RBoon/F57IDFOX2bkQg01ay1bDjmkNc7paSiU7Ow++1TX0m34Cg123SkfUWo84mq</CipherValue>
+              <CipherValue>1BrEDFXH+VJInvMLX+AEbigwPUJCONgz2r68o/e2NJZ1jS0lTDuIbHp+wVakjiuqu8/u4QPHWZZZD+wVzzOJU+jg+1o9uk0Cf9OUTFVZwki5ZsMqEEhFTrV5qetjegKRt23xhB8L3JB+ZF5wzc47baX9frqBixTnglzydlclkyoGII5cH50Adj+gVtCm6Pn8</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{BB0DAD9F-14E0-403A-A5FC-850BA39862A6}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="N3eMWgTJ9FY="
-            IV="Im8xBuBneBnm4jLfRgbFzg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="6Wl1o5yS84E="
+            IV="KR/S3CKOvNaLAeD4ic1pIA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Im8xBuBneBnm4jLfRgbFzkbMeeJiVVlZJgSjv80TYwvSFlHGoSSTkLwqdZVoEVgU5dWYo8Ce5l6VFCCvmomgwUFyDA7QEh0Z6PjLLPcH9u5vwaz7y7zIJw74TJCqzqPZMx3iaIIbyP/QDGfB9U11Q3MC6QHRcbPJWJthV8WPoXEPHmbMNQhurg2ENp2/4yN2</CipherValue>
+              <CipherValue>KR/S3CKOvNaLAeD4ic1pICjAipAxkoNlLhVmAzxX3qXqnT8kffo1AMIVz4B1JN8TpwGgKXe36jBdnHpZcRz4f41gxyVtWLjuJmu5z5oiqQ+CDe6aBzR+B2adcG51uSUVQHD6LnExwVWjHofhwqkJPC/1lXZVCxflCOAusRIjjcW+NKtMl6bGqzRASPRlG8Ui</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{73A43104-37AC-4B24-AA2F-05D491AA7D39}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="icbSag7fdsE="
-            IV="WI0rxKy5OoCI0puVJklFsQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="XmFLkNwmMtc="
+            IV="+JWOgUIK2ssnxpLLv6y7rw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>WI0rxKy5OoCI0puVJklFsXvZsl1KPvyJhngWtd27//N9XOpINe98otnBhYpQOZsl0lNA5LJFxxCrBY4wVCFHq+ga/htAxe2jWFw21amj6JECwv7k8a4PyP2MlZSvw2ccxG1CvtiqiArJqFYkWvWKLGj3dB6eoAgumIZKbPR3sO7cZ416BVCUkdjgvWcMU9nB</CipherValue>
+              <CipherValue>+JWOgUIK2ssnxpLLv6y7r50gj0qnxmIBtsppC3TrVHgsmW/47NLwtcVCH66NgjOqtj8zqcOsoX0vNPv0zKl6BtqDiKeyMBTd8mUvE4KA33Kp8942bfjr/wbZoxTdZXjhH45mx1z72gTircGMxUYB5nKJwTUc0C3nmFVbVtcS/B5op1vBa6pvRbTBvuncn6fX</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -204,7 +204,7 @@
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[GRUPOS]) [refTable]
-where [refTable].[Cia] = ? and [refTable].[Codest] = ? and [refTable].[Nomest] = ?</property>
+where [refTable].[Cia] = ? and [refTable].[Codest] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
@@ -240,7 +240,7 @@ where [refTable].[Cia] = ? and [refTable].[Codest] = ? and [refTable].[Nomest] =
                   containsID="true"
                   dataType="System.String"
                   description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};#{Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[NomestC]};</property>
+                  name="ParameterMap">#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Cia]};#{Package\Migracion Categoria y subcategoria\Poblar Categorias.Outputs[Salida de origen de ADO NET].Columns[Codest]};</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -289,24 +289,6 @@ where [refTable].[Cia] = ? and [refTable].[Codest] = ? and [refTable].[Nomest] =
                           dataType="System.String"
                           description="Especifica la columna de la tabla de referencia con la que se combina una columna."
                           name="JoinToReferenceColumn">Codest</property>
-                        <property
-                          dataType="System.Null"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Migracion Categoria y subcategoria\Búsqueda.Inputs[Entrada de búsqueda].Columns[NomestC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="NomestC"
-                      lineageId="Package\Migracion Categoria y subcategoria\Data Conversion.Outputs[Data Conversion Output].Columns[NomestC]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
-                          name="JoinToReferenceColumn">Nomest</property>
                         <property
                           dataType="System.Null"
                           description="Especifica la columna de la tabla de referencia de la que se copia una columna."
@@ -3834,111 +3816,191 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
-          TopLeft="208.999996885657,78.9999988228083" />
-        <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Destination"
           TopLeft="76.6666624777849,701.466664726072" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Command 1"
           TopLeft="835.999987542629,351.799995008111" />
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Data Conversion 2"
-          TopLeft="210.999997213483,537.799993786216" />
+          Size="156,42"
+          Id="Package\Migracion Categoria y subcategoria\Data Conversion"
+          TopLeft="209.999996870756,157.999997645617" />
         <NodeLayout
-          Size="177.6,41.6"
+          Size="134,42"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 1"
+          TopLeft="692.49996216347,263.399998318553" />
+        <NodeLayout
+          Size="178,42"
           Id="Package\Migracion Categoria y subcategoria\Poblar Subcategorias"
           TopLeft="663.999990105629,61.999999076128" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET"
-          TopLeft="83.9999987483025,352.99999473989" />
-        <NodeLayout
-          Size="180,41.6"
+          Size="180,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Destination 1"
           TopLeft="578.499976915619,663.599998445114" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Command 2"
           TopLeft="337.999994963408,690.199994769692" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 3"
-          TopLeft="799.999988079071,652.79999576807" />
+          Size="164,42"
+          Id="Package\Migracion Categoria y subcategoria\Data Conversion 2"
+          TopLeft="210.999997213483,537.799993786216" />
         <NodeLayout
-          Size="152,41.6"
+          Size="134,42"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 2"
+          TopLeft="239.166653599177,614.933331838714" />
+        <NodeLayout
+          Size="152,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Source"
           TopLeft="648.999990329147,423.799998882413" />
         <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Poblar Depositos"
-          TopLeft="214.166663508448,443.133327378896" />
+          Size="177,42"
+          Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET"
+          TopLeft="83.9999987483025,352.99999473989" />
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Data Conversion 1"
-          TopLeft="676.499990018706,159.466664317979" />
+          Size="162,42"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Categorias"
+          TopLeft="208.999996885657,78.9999988228083" />
         <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1"
-          TopLeft="608.999990925193,357.999994844198" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Data Conversion 3"
-          TopLeft="637.999990493059,497.799997779727" />
-        <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Migracion Categoria y subcategoria\OLE DB Command"
           TopLeft="339.999994933605,355.799994948506" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Data Conversion"
-          TopLeft="209.999996870756,157.999997645617" />
+          Size="176,42"
+          Id="Package\Migracion Categoria y subcategoria\OLE DB Command 3"
+          TopLeft="799.999988079071,652.79999576807" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migracion Categoria y subcategoria\Data Conversion 1"
+          TopLeft="676.499990018706,159.466664317979" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda 3"
+          TopLeft="660.833297226994,573.06666425599" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Migracion Categoria y subcategoria\Poblar Depositos"
+          TopLeft="214.166663508448,443.133327378896" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Migracion Categoria y subcategoria\Destino de ADO NET 1"
+          TopLeft="608.999990925193,357.999994844198" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Migracion Categoria y subcategoria\Búsqueda"
+          TopLeft="235.833320447969,245.466665304634" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migracion Categoria y subcategoria\Data Conversion 3"
+          TopLeft="637.999990493059,497.799997779727" />
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET1]"
-          TopLeft="755.649990062167,103.599999076128">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="326.89998693251,656.533331838714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.8666652418509"
+              EndConnector="99.100008030898,33.6666629309781"
               Start="0,0"
-              End="0,48.3666652418509">
+              End="99.100008030898,26.1666629309781">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.3666652418509" />
+                    End="0,9.70571840030351" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.70571840030351"
+                    Point2="0,13.7057184003035"
+                    Point3="4,13.7057184003035" />
+                  <mssgle:LineSegment
+                    End="95.100008030898,13.7057184003035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.100008030898,13.7057184003035"
+                    Point2="99.100008030898,13.7057184003035"
+                    Point3="99.100008030898,17.7057184003035" />
+                  <mssgle:LineSegment
+                    End="99.100008030898,26.1666629309781" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-50.269019422051,18.7057184003035,199.638046875,12.1953125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET]"
-          TopLeft="288.899996878206,120.599998822808">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="318.233320447969,287.066665304634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.3999988228087"
+              EndConnector="105.366674485636,68.7333296438716"
               Start="0,0"
-              End="0,29.8999988228087">
+              End="105.366674485636,61.2333296438716">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.8999988228087" />
+                    End="0,24.0120739680684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0120739680684"
+                    Point2="0,28.0120739680684"
+                    Point3="4,28.0120739680684" />
+                  <mssgle:LineSegment
+                    End="101.366674485636,28.0120739680684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.366674485636,28.0120739680684"
+                    Point2="105.366674485636,28.0120739680684"
+                    Point3="105.366674485636,32.0120739680684" />
+                  <mssgle:LineSegment
+                    End="105.366674485636,61.2333296438716" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-47.1356861946818,33.0120739680684,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="780.233295496803,304.999998318553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143.766692045826,46.799996689558"
+              Start="0,0"
+              End="143.766692045826,39.299996689558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0523063446248" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0523063446248"
+                    Point2="0,19.0523063446248"
+                    Point3="4,19.0523063446248" />
+                  <mssgle:LineSegment
+                    End="139.766692045826,19.0523063446248" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139.766692045826,19.0523063446248"
+                    Point2="143.766692045826,19.0523063446248"
+                    Point3="143.766692045826,23.0523063446248" />
+                  <mssgle:LineSegment
+                    End="143.766692045826,39.299996689558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.935677414587,24.0523063446248,199.638046875,12.1953125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3985,251 +4047,6 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="&#xA;"
-          ParentId="Package\Migracion Categoria y subcategoria"
-          FontInfo="{assembly:Null}"
-          Size="28.8,56"
-          Id="0545dbe5-8458-4c10-a73e-7db53db6676d"
-          TopLeft="581.999991327524,366.799994784594" />
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Búsqueda 1"
-          TopLeft="692.49996216347,263.399998318553" />
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output]"
-          TopLeft="758.899976091088,201.066664317979">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.3333340005741"
-              Start="0,0"
-              End="0,54.8333340005741">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.8333340005741" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda]"
-          TopLeft="759.29996216347,304.999998318553">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-57.4999712382768,52.999996525645"
-              Start="0,0"
-              End="-57.4999712382768,45.499996525645">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.4999982628225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.4999982628225"
-                    Point2="0,26.4999982628225"
-                    Point3="-4,26.4999982628225" />
-                  <mssgle:LineSegment
-                    End="-53.4999712382768,26.4999982628225" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-53.4999712382768,26.4999982628225"
-                    Point2="-57.4999712382768,26.4999982628225"
-                    Point3="-57.4999712382768,30.4999982628225" />
-                  <mssgle:LineSegment
-                    End="-57.4999712382768,45.499996525645" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-135.639009056638,31.4999982628225,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="780.233295496803,304.999998318553">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="143.766692045826,46.799996689558"
-              Start="0,0"
-              End="143.766692045826,39.299996689558">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.0523063446248" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.0523063446248"
-                    Point2="0,19.0523063446248"
-                    Point3="4,19.0523063446248" />
-                  <mssgle:LineSegment
-                    End="139.766692045826,19.0523063446248" />
-                  <mssgle:CubicBezierSegment
-                    Point1="139.766692045826,19.0523063446248"
-                    Point2="143.766692045826,19.0523063446248"
-                    Point3="143.766692045826,23.0523063446248" />
-                  <mssgle:LineSegment
-                    End="143.766692045826,39.299996689558" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.935677414587,24.0523063446248,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Búsqueda 3"
-          TopLeft="660.833297226994,573.06666425599" />
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
-          TopLeft="723.816643860026,539.399997779727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.6666664762631"
-              Start="0,0"
-              End="0,26.1666664762631">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.1666664762631" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="125.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Búsqueda"
-          TopLeft="235.833320447969,245.466665304634" />
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
-          TopLeft="287.999996870756,199.599997645617">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.6333235772126,45.8666676590174"
-              Start="0,0"
-              End="10.6333235772126,38.3666676590174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.9333338295087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.9333338295087"
-                    Point2="0,22.9333338295087"
-                    Point3="4,22.9333338295087" />
-                  <mssgle:LineSegment
-                    End="6.63332357721265,22.9333338295087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.63332357721265,22.9333338295087"
-                    Point2="10.6333235772126,22.9333338295087"
-                    Point3="10.6333235772126,26.9333338295087" />
-                  <mssgle:LineSegment
-                    End="10.6333235772126,38.3666676590174" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda1]"
-          TopLeft="298.633320447969,287.066665304634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-126.233321699666,65.9333294352556"
-              Start="0,0"
-              End="-126.233321699666,58.4333294352556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.9666647176278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.9666647176278"
-                    Point2="0,32.9666647176278"
-                    Point3="-4,32.9666647176278" />
-                  <mssgle:LineSegment
-                    End="-122.233321699666,32.9666647176278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-122.233321699666,32.9666647176278"
-                    Point2="-126.233321699666,32.9666647176278"
-                    Point3="-126.233321699666,36.9666647176278" />
-                  <mssgle:LineSegment
-                    End="-126.233321699666,58.4333294352556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-170.005684287333,37.9666647176278,213.778046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda1]"
-          TopLeft="318.233320447969,287.066665304634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="105.366674485636,68.7333296438716"
-              Start="0,0"
-              End="105.366674485636,61.2333296438716">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0120739680684" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.0120739680684"
-                    Point2="0,28.0120739680684"
-                    Point3="4,28.0120739680684" />
-                  <mssgle:LineSegment
-                    End="101.366674485636,28.0120739680684" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.366674485636,28.0120739680684"
-                    Point2="105.366674485636,28.0120739680684"
-                    Point3="105.366674485636,32.0120739680684" />
-                  <mssgle:LineSegment
-                    End="105.366674485636,61.2333296438716" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-47.1356861946818,33.0120739680684,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Migracion Categoria y subcategoria\Búsqueda 2"
-          TopLeft="239.166653599177,614.933331838714" />
         <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output3]"
           TopLeft="292.999997213483,579.399993786216">
@@ -4265,75 +4082,125 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda2]"
-          TopLeft="305.966653599177,656.533331838714">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output2]"
+          TopLeft="287.999996870756,199.599997645617">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.699991121392,44.9333328873581"
+              EndConnector="10.6333235772126,45.8666676590174"
               Start="0,0"
-              End="-143.699991121392,37.4333328873581">
+              End="10.6333235772126,38.3666676590174">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4666664436791" />
+                    End="0,18.9333338295087" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.4666664436791"
-                    Point2="0,22.4666664436791"
-                    Point3="-4,22.4666664436791" />
+                    Point1="0,18.9333338295087"
+                    Point2="0,22.9333338295087"
+                    Point3="4,22.9333338295087" />
                   <mssgle:LineSegment
-                    End="-139.699991121392,22.4666664436791" />
+                    End="6.63332357721265,22.9333338295087" />
                   <mssgle:CubicBezierSegment
-                    Point1="-139.699991121392,22.4666664436791"
-                    Point2="-143.699991121392,22.4666664436791"
-                    Point3="-143.699991121392,26.4666664436791" />
+                    Point1="6.63332357721265,22.9333338295087"
+                    Point2="10.6333235772126,22.9333338295087"
+                    Point3="10.6333235772126,26.9333338295087" />
                   <mssgle:LineSegment
-                    End="-143.699991121392,37.4333328873581" />
+                    End="10.6333235772126,38.3666676590174" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-178.739018998196,27.4666664436791,213.778046875,12.1953125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda2]"
-          TopLeft="326.89998693251,656.533331838714">
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output1]"
+          TopLeft="723.816643860026,539.399997779727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99.100008030898,33.6666629309781"
+              EndConnector="0,33.6666664762631"
               Start="0,0"
-              End="99.100008030898,26.1666629309781">
+              End="0,26.1666664762631">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.70571840030351" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.70571840030351"
-                    Point2="0,13.7057184003035"
-                    Point3="4,13.7057184003035" />
-                  <mssgle:LineSegment
-                    End="95.100008030898,13.7057184003035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95.100008030898,13.7057184003035"
-                    Point2="99.100008030898,13.7057184003035"
-                    Point3="99.100008030898,17.7057184003035" />
-                  <mssgle:LineSegment
-                    End="99.100008030898,26.1666629309781" />
+                    End="0,26.1666664762631" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-50.269019422051,18.7057184003035,199.638046875,12.1953125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Data Conversion Output]"
+          TopLeft="758.899976091088,201.066664317979">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.3333340005741"
+              Start="0,0"
+              End="0,54.8333340005741">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8333340005741" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET1]"
+          TopLeft="755.649990062167,103.599999076128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.8666652418509"
+              Start="0,0"
+              End="0,48.3666652418509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.3666652418509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de origen de ADO NET]"
+          TopLeft="288.899996878206,120.599998822808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3999988228087"
+              Start="0,0"
+              End="0,29.8999988228087">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8999988228087" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4373,6 +4240,114 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda2]"
+          TopLeft="305.966653599177,656.533331838714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-143.699991121392,44.9333328873581"
+              Start="0,0"
+              End="-143.699991121392,37.4333328873581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4666664436791"
+                    Point2="0,22.4666664436791"
+                    Point3="-4,22.4666664436791" />
+                  <mssgle:LineSegment
+                    End="-139.699991121392,22.4666664436791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-139.699991121392,22.4666664436791"
+                    Point2="-143.699991121392,22.4666664436791"
+                    Point3="-143.699991121392,26.4666664436791" />
+                  <mssgle:LineSegment
+                    End="-143.699991121392,37.4333328873581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-178.739018998196,27.4666664436791,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda1]"
+          TopLeft="298.633320447969,287.066665304634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.233321699666,65.9333294352556"
+              Start="0,0"
+              End="-126.233321699666,58.4333294352556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9666647176278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9666647176278"
+                    Point2="0,32.9666647176278"
+                    Point3="-4,32.9666647176278" />
+                  <mssgle:LineSegment
+                    End="-122.233321699666,32.9666647176278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.233321699666,32.9666647176278"
+                    Point2="-126.233321699666,32.9666647176278"
+                    Point3="-126.233321699666,36.9666647176278" />
+                  <mssgle:LineSegment
+                    End="-126.233321699666,58.4333294352556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.005684287333,37.9666647176278,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas no coincidentes de búsqueda]"
+          TopLeft="759.29996216347,304.999998318553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.4999712382768,52.999996525645"
+              Start="0,0"
+              End="-57.4999712382768,45.499996525645">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4999982628225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.4999982628225"
+                    Point2="0,26.4999982628225"
+                    Point3="-4,26.4999982628225" />
+                  <mssgle:LineSegment
+                    End="-53.4999712382768,26.4999982628225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53.4999712382768,26.4999982628225"
+                    Point2="-57.4999712382768,26.4999982628225"
+                    Point3="-57.4999712382768,30.4999982628225" />
+                  <mssgle:LineSegment
+                    End="-57.4999712382768,45.499996525645" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.639009056638,31.4999982628225,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Categoria y subcategoria.Paths[Salida de entradas coincidentes de búsqueda3]"
           TopLeft="748.566630560327,614.66666425599">
           <EdgeLayout.Curve>
@@ -4408,6 +4383,13 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="&#xA;"
+          ParentId="Package\Migracion Categoria y subcategoria"
+          FontInfo="{assembly:Null}"
+          Size="29,56"
+          Id="0545dbe5-8458-4c10-a73e-7db53db6676d"
+          TopLeft="581.999991327524,366.799994784594" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4565,7 +4547,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
