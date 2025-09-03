@@ -31,7 +31,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         }
 
 
-        [HttpPost("Migrar/{paquete}")]
+        [HttpPost("Migrar/{paquete},{rutaFisica}")]
         public IActionResult EjecutarPaquete(string paquete, string rutaFisica)
         {
             try
