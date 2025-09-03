@@ -33,7 +33,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Muni_Descripcion", item.Muni_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Depa_Codigo", item.Depa_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
 
-            parameter.Add("@Muni_FechaCreacion", item.Muni_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Muni_FechaCreacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             try
@@ -74,7 +74,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Muni_Descripcion", item.Muni_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Depa_Codigo", item.Depa_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
 
-            parameter.Add("@Muni_FechaModificacion", item.Muni_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+            parameter.Add("@Muni_FechaModificacion", DateTime.Now, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             try

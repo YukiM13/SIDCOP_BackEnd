@@ -114,3 +114,19 @@ public class InventarioAsignadoVendedorDTO
     public int SoldQuantity { get; set; }
 
 }
+
+
+public class JornadaActivaDto
+{
+    public int JorV_Id { get; set; }
+    public int Vend_Id { get; set; }
+    public DateTime JorV_Fecha { get; set; }
+    public DateTime? JorV_HoraInicio { get; set; }
+    public DateTime? JorV_HoraFin { get; set; }
+    public string JorV_Estado { get; set; }
+    public int Usua_Creacion { get; set; }
+    public DateTime JorV_FechaCreacion { get; set; }
+    public int? MinutosTranscurridos { get; set; }
+    public int TotalProductosAsignados { get; set; }
+    public int CantidadInicialTotal { get; set; }
+}
