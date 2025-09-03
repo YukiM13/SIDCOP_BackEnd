@@ -67,7 +67,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameter.Add("@Reca_Fecha", item.Reca_Fecha);
             parameter.Add("@Reca_Observaciones", item.Reca_Observaciones);
             parameter.Add("@Usua_Creacion", item.Usua_Creacion);
-            parameter.Add("@Reca_FechaCreacion", item.Reca_FechaCreacion);
+            parameter.Add("@Reca_FechaCreacion", DateTime.Now);
 
 
             string detallesXml = item.Detalles != null && item.Detalles.Any()
