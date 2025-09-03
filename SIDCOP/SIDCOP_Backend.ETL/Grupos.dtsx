@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{706D2C78-45A8-46FA-A579-3FCCB8FC8606}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{E70764ED-4F90-42DB-81C9-91470225BDF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,15 +24,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{EBDDD3DE-BBA0-437D-84F0-962A6AF0392E}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{EBDDD3DE-BBA0-437D-84F0-962A6AF0392E}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="bEzm8wkMK5A="
-            IV="ZMNcle0sQFFCc0MRYzLF3w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="XjnQMBjdcGk="
+            IV="gHzMLWZtauxuMQBZ1EQUXw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>ZMNcle0sQFFCc0MRYzLF3xD/0RSmJg/fcBO45q+GLs3lPkqV5Yv7z4QzdhRwj0OOVCj/hOrMEeIzhilj1y7HB/PincatPtReMcUCSEu8REkg1ZhQ5dhU7Kuh/rX615gOGmSuAGe9lqxDeOhQyV0Rrvmmm9Z3qo+J6ibPJwLfJPUcdAdOuumL8ahGnxWM2dx4</CipherValue>
+              <CipherValue>gHzMLWZtauxuMQBZ1EQUX1ScLi0bVijqeIoykLI0JI1/A9ha6K0nmruSaJ2fEeovXsXRHav+ci6fsPSLlSobg3SBOsdXEBBlu26UuOSxWz6fHDymSv/bMLSzyarEsWdJd+hDlBP5B17MxL/lgmn0ik4K9mtb0xuwETYJkRu9wpFGr/F2KFvuyZ+bLxapGTfH</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -47,15 +47,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{ACE2B296-10E6-42F2-8AAD-4956A2E40F7C}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{ACE2B296-10E6-42F2-8AAD-4956A2E40F7C}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="OLl2lsgZOoo="
-            IV="48cvqgIYGuly6AqYe06M4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="vJymz09N84Y="
+            IV="QXTXl9XNbaZo6Kb2aiWmcw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>48cvqgIYGuly6AqYe06M4EOsT9xk6XvndM5/AEsSNcOXXB1coBkMzzW2ASphDh6bK0xo5xW65h5Mif+wVG8Hf19POWa9ouV5AcElZPPZjWTz0mcpXHlDrtSmZ0n/P/vi0i9Hu6GwyEr49EK8r+9PImA9U+PEb/+XNWPg5AnT61E5V8htnM1QNKYZ3OaHRqGE</CipherValue>
+              <CipherValue>QXTXl9XNbaZo6Kb2aiWmc6QRMpxmHz4XrMn5Tm1/UJli/UhTBUqBL7L70gyliRqH1E07g7Cda/gllmlUMnfR1xFuyZht+aPfRgNLFRJmwljCjlQjYJw+FKFOH3llRQ/6RBoon/F57IDFOX2bkQg01ay1bDjmkNc7paSiU7Ow++1TX0m34Cg123SkfUWo84mq</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -68,15 +68,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{BB0DAD9F-14E0-403A-A5FC-850BA39862A6}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{BB0DAD9F-14E0-403A-A5FC-850BA39862A6}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="uvAMbo9OMOQ="
-            IV="1drUk7+o2ZZx9bfTAtaMtA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="N3eMWgTJ9FY="
+            IV="Im8xBuBneBnm4jLfRgbFzg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>1drUk7+o2ZZx9bfTAtaMtH3bk9kZ+2fhpVMe6AjTev+J0EhqRdWs+qlfl62MhiZMdM25fElhPRtga1cgo8Fze3z/XDrwSzWoPmyHxXMR4gMdvghXDF8s6ezRy4QXdKGzeBipJMPrbV5U7J4Mh9t+jeobJbimVKOTi9MUS8K9PlnHDec1l8CG7jw2SekpBRGy</CipherValue>
+              <CipherValue>Im8xBuBneBnm4jLfRgbFzkbMeeJiVVlZJgSjv80TYwvSFlHGoSSTkLwqdZVoEVgU5dWYo8Ce5l6VFCCvmomgwUFyDA7QEh0Z6PjLLPcH9u5vwaz7y7zIJw74TJCqzqPZMx3iaIIbyP/QDGfB9U11Q3MC6QHRcbPJWJthV8WPoXEPHmbMNQhurg2ENp2/4yN2</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -91,15 +91,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{73A43104-37AC-4B24-AA2F-05D491AA7D39}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{73A43104-37AC-4B24-AA2F-05D491AA7D39}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="0TaTrACeXJU="
-            IV="U84FtMuA2sjWpm6xA/N6JA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="icbSag7fdsE="
+            IV="WI0rxKy5OoCI0puVJklFsQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>U84FtMuA2sjWpm6xA/N6JCA31PucG3i2nj5jPg7gDvZSX1mKZrGy9oLvdLqY+ZQ7KN5+fEatii1XxyVQa/kaKrLdosXcWbf0XST4PinCxLUqEsgjjYYPWrsgvsDQYoGWqkzCpyhsFj3TslBROa4dIx9ARL7rCgRXy/5jQSTxsNV18vh4DcHf9sneIqAc6te5</CipherValue>
+              <CipherValue>WI0rxKy5OoCI0puVJklFsXvZsl1KPvyJhngWtd27//N9XOpINe98otnBhYpQOZsl0lNA5LJFxxCrBY4wVCFHq+ga/htAxe2jWFw21amj6JECwv7k8a4PyP2MlZSvw2ccxG1CvtiqiArJqFYkWvWKLGj3dB6eoAgumIZKbPR3sO7cZ416BVCUkdjgvWcMU9nB</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -3642,31 +3642,31 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="241.6,41.6"
+          Size="242,42"
           Id="Package\Actualizar Ultima Migracion Grupos"
           TopLeft="269.328688988232,508.949996460826" />
         <NodeLayout
-          Size="202.4,41.6"
+          Size="202,42"
           Id="Package\Agregar Identity  Categoria"
           TopLeft="274.166651686861,366.599997450709" />
         <NodeLayout
-          Size="216,41.6"
+          Size="216,42"
           Id="Package\Agregar Identity Subcategoria"
           TopLeft="260.833319082029,433.333330319988" />
         <NodeLayout
-          Size="241.6,48.8"
+          Size="242,49"
           Id="Package\Migracion Categoria y subcategoria"
           TopLeft="256.666652643019,284.868516537579" />
         <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Quitar Identity  Categoria"
           TopLeft="269.166651960049,149.066665630076" />
         <NodeLayout
-          Size="207.2,41.6"
+          Size="207,42"
           Id="Package\Quitar Identity Subcategoria"
           TopLeft="258.333319218623,214.066665178074" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Traer FechaFiltrado"
           TopLeft="276.828688578451,81.4666661001576" />
         <EdgeLayout
@@ -4412,14 +4412,6 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Categorias">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Migracion Categoria y subcategoria\OLE DB Destination">
     <Properties>
       <Property>
@@ -4433,15 +4425,30 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Subcategorias">
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 1">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[GRUPOS1]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Destino de ADO NET">
+    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Subcategorias">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4462,8 +4469,70 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Inve].[tbCategorias]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Categoria y subcategoria\OLE DB Source">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Poblar Categorias">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Inve].[tbSubcategorias]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -4491,58 +4560,12 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[GRUPOS1]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 3">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Inve].[tbSubcategorias]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4552,30 +4575,7 @@ WHERE  c.EstFUpdate  &gt;= ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Categoria y subcategoria\Búsqueda 2">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Inve].[tbCategorias]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

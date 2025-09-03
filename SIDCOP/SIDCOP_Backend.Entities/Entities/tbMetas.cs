@@ -42,6 +42,9 @@ public partial class tbMetas
     [NotMapped]
     public string VendedoresJson { get; set; }
 
+    [NotMapped]
+    public string DetallesXml { get; set; }
+
     public virtual tbCategorias Cate { get; set; }
 
     public virtual tbProductos Prod { get; set; }

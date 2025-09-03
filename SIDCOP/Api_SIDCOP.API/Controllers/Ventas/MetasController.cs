@@ -59,5 +59,13 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(result);
         }
 
+        [HttpPost("ActualizarProgreso")]
+        public IActionResult ActualizarProgreso(MetasViewModel item)
+        {
+            var mapped = _mapper.Map<tbMetas>(item);
+            var result = _ventaServices.ActualizarProgreso(mapped);
+
+            return Ok(result);
+        }
     }
 }

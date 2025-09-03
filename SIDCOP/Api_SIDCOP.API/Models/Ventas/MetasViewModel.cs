@@ -36,5 +36,7 @@
         
         public string? VendedoresJson { get; set; }
 
+        public string? DetallesXml { get; set; }
+
     }
 }

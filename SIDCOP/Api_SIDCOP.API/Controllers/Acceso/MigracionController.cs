@@ -32,23 +32,14 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
 
         [HttpPost("Migrar/{paquete}")]
-        public IActionResult EjecutarPaquete(string paquete)
+        public IActionResult EjecutarPaquete(string paquete, string rutaFisica)
         {
             try
             {
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
-
-                // Normaliza la ruta completa
-                basePath = Path.GetFullPath(basePath);
-
-                // Buscamos hasta la carpeta raíz del backend
-                string rootPath = basePath.Split(new string[] { "SIDCOP_BackEnd" }, StringSplitOptions.None)[0] + "SIDCOP_BackEnd";
-
-                // Ahora armamos la ruta hacia los paquetes
-                string rutaPaquetes = Path.Combine(rootPath, @"SIDCOP\SIDCOP_Backend.ETL");
+         
 
                 // Ruta final del paquete
-                string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
+                string rutaPaquete = Path.Combine(rutaFisica, paquete + ".dtsx");
 
                 string passwordPaquete ="admin123";
                 // Argumentos para dtexec
@@ -56,7 +47,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = @"C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe",
+                    FileName = @"C:\Program Files\Microsoft SQL Server\140\DTS\Binn\DTExec.exe",
                     Arguments = argumentos,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
