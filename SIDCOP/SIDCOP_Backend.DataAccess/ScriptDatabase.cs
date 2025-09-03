@@ -423,6 +423,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string IniciarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Iniciar]";
         public static string CerrarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Cerrar]";
         public static string ReporteJornada = "[Logi].[SP_ReporteJornada_Detallado]";
+        public static string ObtenerJornadaActiva => "[Logi].[SP_ObtenerJornadaActiva]";
 
         #endregion Inventario
 
@@ -553,5 +554,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Metas_ListarCompleto = "[Vnta].[SP_Metas_ListarCompleto]";
 
         #endregion Metas
+
+
     }
 }
