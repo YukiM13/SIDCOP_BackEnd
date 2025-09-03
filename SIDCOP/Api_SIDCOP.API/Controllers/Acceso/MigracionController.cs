@@ -66,7 +66,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                         return Ok(new { success = true, message = $"Migración de {paquete} ejecutada correctamente. Salida: {salida}" });
 
                     else
-                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {error}" });
+                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {salida}" });
 
                 }
             }
