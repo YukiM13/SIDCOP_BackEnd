@@ -1193,6 +1193,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ActualizarProgreso(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.ActualizarProgreso(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         ////public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
         ////{
         ////    var result = new ServiceResult();

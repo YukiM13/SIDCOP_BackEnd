@@ -12,11 +12,99 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{B19CD616-917C-41F1-82E8-7BA2B798FD0F}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{A4ABD25E-2977-4B0C-AF05-EEE9FCB17975}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B9A365B-28A1-4BE0-AE4E-169C4285E131}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{0B9A365B-28A1-4BE0-AE4E-169C4285E131}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="HLDIMPPXRPU="
+            IV="ofJl6io/xKLszMBavpF5xg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>ofJl6io/xKLszMBavpF5xuEPHotAePifbqlZe2rLZ/baQNejsmep4/g+12bxTjBqlTDzaKAYa2QkEuOmE6BL2xzyvd/+o4EQy7Pw3myqEMy/+pro994rmwKSeMRKl/jq9CcBRUC93c/Z0sGD7kQr7AvoajIXz+z3G7FGgBQDFQahT2pwRPcdPkhQeuVe9of0</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{C435EC67-F2BF-45A9-B532-2BC8FA1F90F6}192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="/HbiBWN9Ra4="
+            IV="s/8Gyo3uQNKeg/v9QA/zqw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>s/8Gyo3uQNKeg/v9QA/zqzX+wzA7qtM+eHY+zfjD2HMSkpGMk5KLPJy/9NtreK5asE44D3f2JM3vWoYDxGZL4DQH8hCCFC/qTbCHioL4RF9gujbUANUvGL3oB++0FbgJLnI7mTYWz/fqJgwHnkQ6K8k2mfh6HYEAMBp2ChcdWW1QwTd7yOfRLMlnj6hV3SHh</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Clientes-{FB3DA53B-C179-4F68-9696-8F61902D3B52}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="PDg1AbihhF8="
+            IV="fLaMsGCAIEPqfKJpwsVp8g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>fLaMsGCAIEPqfKJpwsVp8ut2/A7kZ5/CFDsxE7gslanYF4VyvWxdLpllQRymfGoOh/zlqzm0p375ITd8fWcJgiwGcvgqEe6kjWC1sSN7p5IbFwvWX+abIhMyEo1vvWRtKAXotF8hJ4+tXTisocA6V97PO2BgOl/QzHuIxFQCWExRB1xGgn2Fc8lgA+j00NCi</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}"
+      DTS:ObjectName="192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Clientes-{ACF00D9B-DEF5-4DED-80D0-3F7BAEB16D66}192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="gHk7HJ0lGes="
+            IV="L7QQBYxz1DpipVrrpL3ZKQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>L7QQBYxz1DpipVrrpL3ZKf1hcTDI4SRf/k9J4t1kr2nqaqXRhHurb4+Zx/iQP38JcmEKXfF8ZBjnpI2sqOca5Yhi4bWvcmf7jIz6vk5aw22GCpdpDSWuhk5uvOwnZqJm08oNm1IgdSEIK+0HnPzP83wDkRKlohJ0tBeXlvpNJPXTtdaRsUtTWCmNbHkwTXmm</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
@@ -27,12 +115,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{A8E1B0DE-75B5-44C6-B1B7-7F1489CE06B9}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="JfLCiqh70x4="
-            IV="0iGxeCCr9cXIiWcusIKlhg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="o5/1zFgYhiM="
+            IV="WPM6xfIZeCnffCqp78CjtA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>0iGxeCCr9cXIiWcusIKlhs6P7GVEGjOQaH3l6Am/T/FIN0+PA381VzdUA8GPvmwTzqH/LiA4MX/H4mLTHAXdt9BeAN499IWfl7/vqSp+49zu1dsAiBet1I4m0exk26sUujZcK1AES5WGgZMyNz0A1gak2CUegSTdX+GUeQYVBwZdCiYF2MdZlyIZlHqgV7Dy</CipherValue>
+              <CipherValue>WPM6xfIZeCnffCqp78CjtFPGWGaqxcePzIISmWag0zEHKs9zg2oQeM8xwNvvwyFunePHp6Zvg4RIg8zfJuOlNeogBcfMnlUYX0xFEhzFghv072RRHBPL0MOzV6RvTdLYH/kqsDaHE4Whl1+pYnYA/dolSqGx98/84oPT4hOAySbk1qHirPc+lkF8Pfsc1Q5z</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +138,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{DDD98353-FFA4-4A6F-80B6-9AF4505BF80A}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Q4bRQrFcdtQ="
-            IV="QL93r26PyfQpr6X899y7lg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Ik3uQcihBDs="
+            IV="cg3bhDDwgQTjqlTY/yj8Bw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>QL93r26PyfQpr6X899y7llNNFIwDB5WZJUw3PqH6wOekvP0heVUSujrRgzjyxkLcMWCQ7vKTtgk9PXXpcCZ8bQpRdHgqz/WG0M6yIcZXalrYqeCQDgj74KeKjyj2SOXBT1UNl3WS8DPgcGteRQzZl/cTyiRXcl/4LEAOh1zUdDTk1I9IdrHOarQgwuj2rSKK</CipherValue>
+              <CipherValue>cg3bhDDwgQTjqlTY/yj8B34pSDzX2nMCKQ4S+YEVkveHKMeSFHKr7zCCxBkWRDHGgSgqx5VHOVtW+AYd/5MCdH69qgNrW/XLLlpG/yHd8G5mNzGDSYDSdr2FzwLF+pswqj/t9KvIC5wobLJJyTPGAYeYsP3sqPQuUKe9u161tYYIRbMda/IJ5TUusWtAMNzu</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +159,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{DC9F8454-A93F-4682-8923-6DC5E5EF45DE}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="051y+oOhz5g="
-            IV="roQU7SY7YH9rOTPdmeiDQw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="6lxFYC2v13A="
+            IV="kV4r2Mqzk1R7axEdgzW6Cw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>roQU7SY7YH9rOTPdmeiDQ+i3qE1hzb7kCUo7WBENPFuMaEZQOTwP/6bQ0ig+oM84FP8QUnH+qVlcybxJn7Fa3oYpSxIGu166EYe/EvwBJLUoDbRCe7jhiX01vFaoeKrm8eGETsiG6FCD/5UY2wvPMn3m1FJHChjHuuUVVvzV/q258150U0qWsIKGb3rhCjob</CipherValue>
+              <CipherValue>kV4r2Mqzk1R7axEdgzW6C73JzoimOeXU4w+VmnxG5jCDAJOfeTPisM7ikIuIRPrqSt+/7ZCYTxyJ19/iCrpmezB1ReONecj8B3Jcsbwi2OjHfXJoRIdL4xSR34Nw6qr7hFgMqNqaoe6M+grA8gfzxFTtwFG9y48WoENFlQlWs6SqRFLjyfTMdk3sVwVqPFod</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +182,12 @@
           DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{ABDFE964-B221-41A4-B2EA-4C56A4E8A4EC}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="9WtVqZR9ti0="
-            IV="kQdCMHFgpu6u16/XJvT5eA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="s1H4faZO8XM="
+            IV="/B3IuD/mYbs0Sqpf9BlP4A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>kQdCMHFgpu6u16/XJvT5eKaJumzBiVmsQqilo2C485akvpUeVOFds1Kso+4TwbR14X1TqFiw2IaG4Iq+BuKcaYtItSQUvid3ltNSGr1yOdjwgkFqflx+tDjigsEkVhouc0n644YcRfvAh7dOqg1tDKFG4o4EQmZZk1vfvzwy7Jj7BIwabFQsM5Jn82fhtp8g</CipherValue>
+              <CipherValue>/B3IuD/mYbs0Sqpf9BlP4PxF5Qw/0j/BlFMI7QL0wl3eRHr/2VgZ+7LTNLo1q/vovhKz5jfda33s55ozJqbgCeuoP0tphvcem1OrjHVY5EsQCRvU8eb3uwDH1hKBvLeHHo/whm0VSdznid7M1zF8GcdfHPtJAKB29jxKLAEiRQatqb3NsbV0rc9sAVI1dzkM</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -121,7 +209,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{ABDFE964-B221-41A4-B2EA-4C56A4E8A4EC}"
+          SQLTask:Connection="{FB3DA53B-C179-4F68-9696-8F61902D3B52}"
           SQLTask:SqlStatementSource="UPDATE tbControlMigraciones&#xA;SET CoMi_UltimaFechaMigracion = GETDATE()&#xA;WHERE CoMi_Tabla = 'CXC'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -406,8 +494,8 @@
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin1231]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -505,13 +593,17 @@
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCGraDoc]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCGraDoc]" />
                     <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCTipDocC]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="3"
-                      cachedName="MCTipDocC"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]" />
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCAnoC]"
+                      cachedDataType="i2"
+                      cachedName="MCAnoC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCMesC]"
+                      cachedDataType="i2"
+                      cachedName="MCMesC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMes]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]" />
                     <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCHoraC]"
                       cachedCodepage="1252"
@@ -520,18 +612,6 @@
                       cachedName="MCHoraC"
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCHora]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCHoraC]" />
-                    <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCMesC]"
-                      cachedDataType="i2"
-                      cachedName="MCMesC"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCMes]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCMesC]" />
-                    <inputColumn
-                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCAnoC]"
-                      cachedDataType="i2"
-                      cachedName="MCAnoC"
-                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCAno]"
-                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCAnoC]" />
                     <inputColumn
                       refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Copy of MCCerrado]"
                       cachedCodepage="1252"
@@ -546,6 +626,14 @@
                       cachedName="MCCiaInv"
                       externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCCialnv]"
                       lineageId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[MCCiaInv]" />
+                    <inputColumn
+                      refId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[MCTipDocC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="MCTipDocC"
+                      externalMetadataColumnId="Package\Migraciion CuentasPorCobrar\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[MCTipDoc]"
+                      lineageId="Package\Migraciion CuentasPorCobrar\Data Conversion.Outputs[Data Conversion Output].Columns[MCTipDocC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -818,8 +906,8 @@ where [refTable].[Cia] = ? and [refTable].[DatCodigo] = ? and [refTable].[MCNumD
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1027,8 +1115,8 @@ where [refTable].[CPCo_Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Lookup 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1145,8 +1233,8 @@ WHERE Cia       = ?
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1572,8 +1660,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Command 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1856,8 +1944,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2081,8 +2169,8 @@ WHERE CPCo_Id = ?</property>
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Origen de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_SIDCOP.Admin1231]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -2557,8 +2645,8 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
               <connections>
                 <connection
                   refId="Package\Migraciion CuentasPorCobrar\Poblar CARCXC.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
-                  connectionManagerRefId="Package.ConnectionManagers[200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.146\PRACTICAGEN8.BDD_Extena.Admin123]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2886,11 +2974,11 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229.6,41.6"
+          Size="230,42"
           Id="Package\Actualizar Ultima Migracion CXC"
           TopLeft="60,129.333332851198" />
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Migraciion CuentasPorCobrar"
           TopLeft="63.1249998292572,60" />
         <EdgeLayout
@@ -2924,43 +3012,43 @@ FROM BDD_Extena.dbo.CARCXC cxc INNER JOIN BDD_Extena.dbo.FACTURA f ON cxc.Cia = 
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Migraciion CuentasPorCobrar\Lookup"
           TopLeft="424.999976779025,251.066665159994" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Migraciion CuentasPorCobrar\OLE DB Destination"
           TopLeft="200.833322360284,671.19999746879" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Migraciion CuentasPorCobrar\Data Conversion 1"
           TopLeft="345.833314437834,511.59999750495" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Migraciion CuentasPorCobrar\OLE DB Command 1"
           TopLeft="467.499974456927,675.533331278231" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Migraciion CuentasPorCobrar\Poblar CARCXC"
           TopLeft="353.333314028052,439.466664039029" />
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Migraciion CuentasPorCobrar\OLE DB Command"
           TopLeft="586.999991253018,339.999994933605" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Migraciion CuentasPorCobrar\Destino de ADO NET"
           TopLeft="193.999997109175,340.799995589256" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Migraciion CuentasPorCobrar\Origen de ADO NET"
           TopLeft="393.999994128942,64.9999990314245" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Migraciion CuentasPorCobrar\Data Conversion"
           TopLeft="390.999994173646,147.999997794628" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="121,42"
           Id="Package\Migraciion CuentasPorCobrar\Lookup 1"
           TopLeft="359.166647042666,587.46666418367" />
         <EdgeLayout

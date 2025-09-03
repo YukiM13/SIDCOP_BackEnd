@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{54A9AE11-A3DD-4166-9D31-FE758B6D9F15}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{9EFACF7D-E89D-4040-929D-6BA53AD809CE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,15 +24,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{7B6D7854-AE32-4444-8657-A7C5B0DF3F0F}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{7B6D7854-AE32-4444-8657-A7C5B0DF3F0F}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="oWWI72b80FM="
-            IV="BtA1ZUCAirEfI/OkLIjJnA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="EkPsRhvEq4c="
+            IV="DbhrMmI8wQVa7S5ho9AXoQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>BtA1ZUCAirEfI/OkLIjJnBiCwMBMMSAmthE9r0r3+Xyvj3AGj3683ixZwxZtlERZGkYxp/1wd2V5+DgH1HI8Mc+JtxNa/+Szom67toysi7OsIc9umd/NXkTvAarcXoyF06+FSgby83mYkCk9gNfwNn5Loovuc4U2xLBqPS65L3/gqCADSzoS8ZE557cV+AqC</CipherValue>
+              <CipherValue>DbhrMmI8wQVa7S5ho9AXocM7GEIQon3zg1vL1xW/P+tUHYT5ODmZ13RsDTtFYopxVivCIo7QaeIohnAuS2SUCYJhT+hHsWLmTrStlYH7Ukdn73o35JzFRKToxZCfjqookD+AyiP24I6MjT8mwjbBzeKYJJ50J2+xH2hUPOn3Zi0dJ6H76Jpv71woDNeXR/7R</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -47,15 +47,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{FB5C9B8C-42CC-4287-9299-AD538F5926C6}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{FB5C9B8C-42CC-4287-9299-AD538F5926C6}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="HJ+mhZIS7cM="
-            IV="L6pgJJmceFhMMhZfniA/cg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="TIGRD+vhmUA="
+            IV="VgkmoLRkLTjKrob1DRMXqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>L6pgJJmceFhMMhZfniA/cvTZS2o75mgmKBnBOV3Pr27n7Bs22684sOf1FcClB7wVnxQJTkxWsx12uefluNO/xmKKDpXUY8LGjGq2AWGe3YIXmYIWUcTHG0UHli5M6vxDgh88OwbsKtYK4jZ4EgxH5L64Aiirse1o2i7ReaDfJS4nXZokIOA+FjyD6Qj18YxR</CipherValue>
+              <CipherValue>VgkmoLRkLTjKrob1DRMXqCO0wyDAT1BoUzQLMg18qO+plDg4kVJZHti/W0fqs9+R2T17AHKH3LkFt9FeYjV6bcL4MGOy26NDxxVR0A1LBzW8phZ9HD4i0CZEuWbVz25cf/jkDcm4KgBAGzZqwSbX8HEBcGCt2e+87+/o1dlnjhhM7GiMUH8aXsw9T3Md+eqo</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -68,15 +68,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{E9994515-6A9C-4C51-9960-6C6E656EE8F1}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{E9994515-6A9C-4C51-9960-6C6E656EE8F1}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="NP1ALjwRHT0="
-            IV="yvqvqnm42AdLQ1hW9tWsNg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Vbmhxnilkk8="
+            IV="JRCCluIvZvXtGUoarTMgcQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>yvqvqnm42AdLQ1hW9tWsNpLwUEuHK7yhDqqVdJE3tx7r1zCqMRvdB68j3Dwj23flRXoarw23DTdfzd2jJBdRpKIwaTn5jG0HpflyXMhydMMrlP7ulqN5tVLtFABjDGCEZSpJFEcAKFjnVLL453KoFbIO2bWX7yjXG6yRAXelduTfxMJ17lgzGHRAjjuXQViX</CipherValue>
+              <CipherValue>JRCCluIvZvXtGUoarTMgcULPcTY+DOfDLr58TpOTXXss0Z/XbXgPoz8v5R8/vUF4fYG+YotBreKsOYbA+5U/Qa/9jqdVeyVuwMNKGDYqlENsm8O4c2rB9So/2wx/h392mHQeYV/nBsfNCahlPGXYDHJ+Ls/BZLRci9ZkpDD3Da4kqCC0zbCvWZkcOyIcFfCs</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -91,15 +91,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{C5C3751C-7B40-4230-90CC-7638D2A48BAF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{C5C3751C-7B40-4230-90CC-7638D2A48BAF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="yJZzkUmlr3Y="
-            IV="o6V/teJaGkc5hKrRQh5raw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="EWyaaKDy24M="
+            IV="VNmyPP0VFIMtYa1hfg2fYQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>o6V/teJaGkc5hKrRQh5ra1Y+4+GPSV9FRsoLfH8YYX+Cq2AJ7KmQBjw/qtiDC+1eNoCa1Hs8MD1v6EhjK56+OZ3iMTjNaWFYIMfFkZbha0w8ZlFcWvs1z/Syui/f2EQ7rXtveGSLUQn+0nCbKGt/NSii445da9rr1bAa27B+kxEoTPMPVfpMerK64SKbLCQa</CipherValue>
+              <CipherValue>VNmyPP0VFIMtYa1hfg2fYaC1XSF2NeS58nZaHFJq71Cui0yzG0KvSascOXubBrGi3kyMcTkIyM2VST8lKcOeUKTE8Yy+i0yAf+mN8FT8sTmP3oHMu1QrhtNw4ciYte0QBufYBeCAHEDyt3OgXcInm0dfDK+XuEybVZVyXPdJXBsJ/0XcK0RLyHLOpXB45bE5</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -5795,23 +5795,23 @@ WHERE
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="252,42.4"
+          Size="252,42"
           Id="Package\Actualizar ultima Migracion Productos"
           TopLeft="210.833325092164,325.199998155832" />
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Agregar Identity"
           TopLeft="243.333320038187,252.199998246233" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Migracion Productos"
           TopLeft="228.333324136006,183.066665810876" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Quitar Identity"
           TopLeft="238.333320311375,105.733332598077" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="244.999986613791,25.1333331585593" />
         <EdgeLayout
@@ -6382,7 +6382,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Poblar Productos">
+    design-time-name="Package\Migracion Productos\Origen de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6395,7 +6395,7 @@ WHERE
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6405,8 +6405,63 @@ WHERE
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Búsqueda 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[PRODUCTOS1]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Poblar Productos externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Poblar Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Productos\Destino de ADO NET 1">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -6426,44 +6481,12 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Destino de ADO NET 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Poblar Productos externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Origen de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Migracion Productos\Búsqueda">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6473,30 +6496,7 @@ WHERE
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Productos\Búsqueda 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[PRODUCTOS1]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
