@@ -101,5 +101,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             return status;
         }
+
+        public RequestStatus ActualizarProgreso(tbMetas item)
+        {
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@DetallesXml", item.DetallesXml, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+
+            parameters.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@MeEm_FechaModificacion", item.Meta_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<RequestStatus>(ScriptDatabase.Metas_ActualizarProgreso, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            var status = new RequestStatus();
+            status = result.First();
+
+            return status;
+        }
     }
 }
