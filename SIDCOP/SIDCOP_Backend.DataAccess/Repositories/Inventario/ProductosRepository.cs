@@ -114,18 +114,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 item.Impu_Id = null;
             }
+            if (item.Prod_CodigoBarra == "N/A")
+            {
+                item.Prod_CodigoBarra = "";
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Descripcion", item.Prod_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_DescripcionCorta", item.Prod_DescripcionCorta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Imagen", item.Prod_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_Peso", item.Prod_Peso, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
+            parameter.Add("@UnPe_Id", item.UnPe_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Subc_Id", item.Subc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Marc_Id", item.Marc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Impu_Id", item.Impu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Impulsado", item.Prod_Impulsado, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);
@@ -165,6 +170,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+            if (item.Impu_Id == 0)
+            {
+                item.Impu_Id = null;
+            }
+            if (item.Prod_CodigoBarra == "N/A")
+            {
+                item.Prod_CodigoBarra = "";
+            }
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -172,12 +185,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             parameter.Add("@Prod_Descripcion", item.Prod_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_DescripcionCorta", item.Prod_DescripcionCorta, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Imagen", item.Prod_Imagen, System.Data.DbType.String, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_Peso", item.Prod_Peso, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
+            parameter.Add("@UnPe_Id", item.UnPe_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Subc_Id", item.Subc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Marc_Id", item.Marc_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Impu_Id", item.Impu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
-            parameter.Add("@Prod_CostoTotal", item.Prod_CostoTotal, System.Data.DbType.Double, System.Data.ParameterDirection.Input);
+            parameter.Add("@Prod_PrecioUnitario", item.Prod_PrecioUnitario, System.Data.DbType.Double, System.Data.ParameterDirection.Input);        
             parameter.Add("@Prod_PagaImpuesto", item.Prod_PagaImpuesto, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_EsPromo", item.Prod_EsPromo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Impulsado", item.Prod_Impulsado, System.Data.DbType.Boolean, System.Data.ParameterDirection.Input);

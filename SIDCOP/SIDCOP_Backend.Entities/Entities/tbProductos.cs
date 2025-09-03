@@ -20,6 +20,10 @@ public partial class tbProductos
 
     public string Prod_Imagen { get; set; }
 
+    public decimal Prod_Peso { get; set; }
+
+    public int UnPe_Id { get; set; }
+
     public int Subc_Id { get; set; }
 
     public int Marc_Id { get; set; }
@@ -29,8 +33,6 @@ public partial class tbProductos
     public int? Impu_Id { get; set; }
 
     public decimal? Prod_PrecioUnitario { get; set; }
-
-    public decimal? Prod_CostoTotal { get; set; }
 
     public string Prod_PagaImpuesto { get; set; }
 
@@ -55,6 +57,7 @@ public partial class tbProductos
     public int Cate_Id { get; set; }
     [NotMapped]
     public string Cate_Descripcion { get; set; }
+
     [NotMapped]
     public int CantidadVendida { get; set; }
 
@@ -69,6 +72,12 @@ public partial class tbProductos
 
     [NotMapped]
     public string? Impu_Descripcion { get; set; }
+    [NotMapped]
+    public string Impulsacion { get; set; }
+    [NotMapped]
+    public string UnPe_Descripcion { get; set; }
+    [NotMapped]
+    public string UnPe_Abreviatura { get; set; }
 
     [NotMapped]
     public string? UsuarioCreacion { get; set; }
@@ -103,9 +112,6 @@ public partial class tbProductos
 
     public double? Impu_Valor { get; set; }
 
-    public virtual ICollection<tbMetas> tbMetas { get; set; } = new List<tbMetas>();
-
-
     public virtual tbImpuestos Impu { get; set; }
 
     public virtual tbMarcas Marc { get; set; }
@@ -113,6 +119,8 @@ public partial class tbProductos
     public virtual tbProveedores Prov { get; set; }
 
     public virtual tbSubcategorias Subc { get; set; }
+
+    public virtual tbUnidadesDePeso UnPe { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 
@@ -125,6 +133,8 @@ public partial class tbProductos
     public virtual ICollection<tbInventarioBodegas> tbInventarioBodegas { get; set; } = new List<tbInventarioBodegas>();
 
     public virtual ICollection<tbInventarioSucursales> tbInventarioSucursales { get; set; } = new List<tbInventarioSucursales>();
+
+    public virtual ICollection<tbMetas> tbMetas { get; set; } = new List<tbMetas>();
 
     public virtual ICollection<tbPedidosDetalle> tbPedidosDetalle { get; set; } = new List<tbPedidosDetalle>();
 
@@ -141,8 +151,6 @@ public partial class tbProductos
     public virtual ICollection<tbTrasladosDetalle> tbTrasladosDetalle { get; set; } = new List<tbTrasladosDetalle>();
 }
 
-
-
 public class ListasPreciosVendedor
 {
     public int Prod_Id { get; set; }
@@ -154,6 +162,8 @@ public class ListasPreciosVendedor
     public decimal Prod_PrecioUnitario { get; set; }
     public decimal Prod_CostoTotal { get; set; }
     public string Prod_PagaImpuesto { get; set; }
+
+    public bool Prod_Impulsado { get; set; }
     public int CantidadDisponible { get; set; }
     public string ListasPrecio_JSON { get; set; }
     public string DescuentosEscala_JSON { get; set; }

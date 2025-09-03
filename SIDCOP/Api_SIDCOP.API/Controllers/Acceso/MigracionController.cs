@@ -31,7 +31,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         }
 
 
-        [HttpPost("Migrar")]
+        [HttpPost("Migrar/{paquete}")]
         public IActionResult EjecutarPaquete(string paquete)
         {
             try
@@ -56,7 +56,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = "dtexec",
+                    FileName = @"C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe",
                     Arguments = argumentos,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
@@ -68,13 +68,15 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                 {
                     proceso.Start();
                     string salida = proceso.StandardOutput.ReadToEnd();
-                    string error = proceso.StandardError.ReadToEnd();
+                   string error = proceso.StandardError.ReadToEnd();
                     proceso.WaitForExit();
 
                     if (proceso.ExitCode == 0)
-                        return Ok($"Migracion de {paquete} ejecutada correctamente.\nSalida: {salida}");
+                        return Ok(new { success = true, message = $"Migración de {paquete} ejecutada correctamente. Salida: {salida}" });
+
                     else
-                        return BadRequest($"Error al migrar {paquete}.\nError: {error}");
+                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {error}" });
+
                 }
             }
             catch (Exception ex)

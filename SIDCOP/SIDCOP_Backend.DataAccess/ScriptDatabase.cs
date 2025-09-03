@@ -471,6 +471,8 @@ namespace SIDCOP_Backend.DataAccess
 
         public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
 
+        public const string FacturasDevoluciones = "[Vnta].[SP_FacturasDevoluciones_Listar]";
+
         public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
 
         public const string Venta_InsertarEnSucursal = "[Vnta].[SP_Venta_InsertarEnSucursal]";

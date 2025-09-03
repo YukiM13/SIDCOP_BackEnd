@@ -31,6 +31,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Fact_Referencia", venta.Fact_Referencia ?? string.Empty);
             parameter.Add("@Fact_AutorizadoPor", venta.Fact_AutorizadoPor ?? string.Empty);
             parameter.Add("@Usua_Creacion", venta.Usua_Creacion);
+            parameter.Add("@Fact_EsPedido", false); // Siempre es false para ventas normales
+            parameter.Add("@Pedi_Id", 0); // Siempre 0 para ventas normales
 
             // Convertir lista de detalles a XML (solo productos y cantidades)
             string detallesXml = venta.DetallesFacturaInput != null && venta.DetallesFacturaInput.Any()
@@ -333,6 +335,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbFacturas>(ScriptDatabase.Facturas_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<tbFacturas> ListPorDevoLimite()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbFacturas>(ScriptDatabase.FacturasDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
             return result;
         }
