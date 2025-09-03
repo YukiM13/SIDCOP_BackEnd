@@ -80,7 +80,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var parameters = new DynamicParameters();
 
             parameters.Add("@Meta_Id", item.Meta_Id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
-            parameters.Add("@Meta_Descripcion", item.Meta_Descripcion, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            parameters.Add("@Meta_Descripcion", item.Meta_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameters.Add("@Meta_FechaInicio", item.Meta_FechaInicio, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameters.Add("@Meta_FechaFin", item.Meta_FechaFin, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             parameters.Add("@Meta_Tipo", item.Meta_Tipo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
