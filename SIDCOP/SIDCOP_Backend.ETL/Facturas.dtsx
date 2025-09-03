@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{FF151EF6-3889-4E0F-A363-EEDA89391D91}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{B26DC405-A2FA-437B-B5CE-25D26E542F82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,15 +24,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{8DF25947-D2FD-449F-ADFE-00D78C13D0DB}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{8DF25947-D2FD-449F-ADFE-00D78C13D0DB}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ZsJWCwgpe4k="
-            IV="Jdh9H/eJUDaPeiWLLPgXbA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="q/BPS+qKwR0="
+            IV="QmOi72oP163U2zVA4z5VTw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Jdh9H/eJUDaPeiWLLPgXbHyKGhUNKiyOnAbBtuclp5/CG8yooLYTmhSilsK9kIbxjcMsSv1rNevX/egz+CwHONXmrEhVzeDBzXk0f8gy9BB70+zWju42xeS0MNjLbKEOSId5diFNQ1GYh67tPLo1N9LXmNTXHRiLKr0kckIlYykLF+/Ep9+5VMSV6g/0Dk56</CipherValue>
+              <CipherValue>QmOi72oP163U2zVA4z5VT8ywkcH4i1WSSwBuJcB57rPKLp7Lbxj31AURzVo6d7tyQ4XOrtshu0mIMrqZS0o6un5WsQy9qiHfiYhfP9/dGKgHlqYrFdsLqSrJluLe0Y8hBKYnHcNFJU1LzVwFRaFhuWLBZBS2gPLS3yMXJQd1IaFVKH28n/wVh0SHaGWklYtT</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -47,15 +47,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{95C63F57-D858-48AA-B1ED-B9DC997258F3}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Auto Translate=False;Application Name=SSIS-Package1-{95C63F57-D858-48AA-B1ED-B9DC997258F3}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="siL50HU3lxo="
-            IV="rlZBeEE7PRostwK946h4vg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="1bFF4/xE610="
+            IV="85+JrNSxy7QbTaB4/ZhhXQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>rlZBeEE7PRostwK946h4vtC3zy48CiSj8AY58/NMurLTP9hXmE26Vk7JYeSjLow9HpOq79HBvDho+hBd7jx0eZt1FxC0+ySGmgN1Qa2QbALeQCE6y/aUvWHBiU1G7H/HnAAul4fm0W3WEtkXe20YREc9buSRGmb4zTNFU6icOFuIoeHhCS+Y3RxnJjo1/ces</CipherValue>
+              <CipherValue>85+JrNSxy7QbTaB4/ZhhXSN3XY0Rmthx8yYA2FR7DBPanVnw1tlC+X9B7vAWfLqdzyHy/F3J/cvBQTNKMHNm9PMW51WYPAHvJjUObfkjv/8OqIEPiqvDMjX28Fr5LIiHqiBjTZsg/MIa8JuNBs0Q9uG4WleRGbwBiKzPK9J7i/Y4oNbDXe83I9pGcq6Cdt0u</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -68,15 +68,15 @@
       DTS:ObjectName="200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{65346A45-FCAE-4B63-9BDA-C0B1EDB956DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{65346A45-FCAE-4B63-9BDA-C0B1EDB956DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="xRoxDyQmnsI="
-            IV="XVZJdleXOrPzkgMrBg8W4Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="SwUXHxMlexg="
+            IV="AfZGr4FoHaQXOEvWI6EAmg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>XVZJdleXOrPzkgMrBg8W4UqcmpkTNmPjCqCbwB7Lip+501eLPo4smYqaV8nEs96rviHMVJIf6bqY2mC02woZdhOnEi00BmRkRIVTbWxk2fQw0cFz1+W+D0pEZQ9V3u0sz5dlG8vwMnS3h+9DmpbOlJZAJuak4xmgAlTgcpqxeFM5OguAp2EY0p9LJnJnPAD8</CipherValue>
+              <CipherValue>AfZGr4FoHaQXOEvWI6EAmg8QhQtrbAFokHv58jBVdhJws2n8TpKPOPBNJ3x2Fn/yW20tNGUkXRdjfQCsClK3GgvmC5woLM98RTwD5Z+uR5GIIxbjhkfaZg2Zb9HoNY+tV9Eot8l3GY82B+MRp1bZwqrjHH2D78C+O4iP9Nq31oKYxdFbZyI1vPveVyqJU4KM</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -91,15 +91,15 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=200.59.27.115\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{0F64C85F-E893-4B6A-A882-5495285258DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;Auto Translate=False;">
+          DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{0F64C85F-E893-4B6A-A882-5495285258DF}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="aEun7Dv6Cl0="
-            IV="H+jV83hlAE6PIqb08hPakw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="d3g2JpD0Lpc="
+            IV="byzrltyW9tlYBFVZYpFmsw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>H+jV83hlAE6PIqb08hPak4T5lXZjNKJDkNW8S4s8XPBv2sjm1J48Pb4wZ3rWufYCSE1ZXpAKgiQKRiwI5rNesrb9T6SNMWzewazOkOHWoGGV4JSGKF17pVXAdX5BCzmO7T1rjyAB63WULnMzFp9EidU8aaT9YVItxbxJacWCTnbQoz3KKIe2Rc+NfH4/v/lc</CipherValue>
+              <CipherValue>byzrltyW9tlYBFVZYpFms8fFdrG0BchRATwW38OA5+npZFHjFAA5bDITr+PoqVTZpFir1lfsWCZkMztJuUgvspurg5BFcPbhKTGQO47TM/bhti0OX19UrHXAPQL43HRPjUj9O0SVXAK2EnHpiW/AQL3y6vnxhlI3XI6xZYnj+NKwCrUvnevrS4TWVev58W43</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -7443,19 +7443,19 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248,41.6"
+          Size="248,42"
           Id="Package\Actualizar Ultima Migracion Facturas"
           TopLeft="234.999990438422,261.716665263954" />
         <NodeLayout
-          Size="152,41.6"
+          Size="152,42"
           Id="Package\Agregar Identity"
           TopLeft="278.333318125871,189.799998680154" />
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Migracion Facturas"
           TopLeft="264.166655511492,103.333333031999" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Quitar Identity"
           TopLeft="273.333318399059,30.3333331223992" />
         <EdgeLayout
@@ -7533,77 +7533,169 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Migracion Facturas\Poblar Factua externa"
-          TopLeft="194.166656057868,473.599997324149" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command"
-          TopLeft="297.999995559454,379.999994337559" />
-        <NodeLayout
-          Size="193.6,41.6"
+          Size="194,42"
           Id="Package\Migracion Facturas\Destino de ADO NET 1"
           TopLeft="523.83332787868,376.533328046269" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 2"
-          TopLeft="200.433328370419,619.866664364471" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command 2"
-          TopLeft="327.69522617904,709.276188036242" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 2"
-          TopLeft="183.866662477785,549.933330699669" />
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Facturas\Destino de ADO NET 2"
-          TopLeft="646.428536109273,727.047615724329" />
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Facturas\Data Conversion 1"
-          TopLeft="672.999989971518,210.999996855855" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Facturas\Lookup"
-          TopLeft="249.074060465267,290.740738885859" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Facturas\OLE DB Destination"
-          TopLeft="62.1000025952855,703.866664798392" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Facturas\OLE DB Command 1"
-          TopLeft="748.333324434028,374.666661340926" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\Migracion Facturas\Poblar Facturas"
-          TopLeft="215.999996781349,129.999998062849" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 3"
-          TopLeft="674.999963119628,652.380949711989" />
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Migracion Facturas\Poblar Factura2 externa"
-          TopLeft="630.49997145186,505.866666063997" />
-        <NodeLayout
-          Size="181.6,41.6"
+          Size="182,42"
           Id="Package\Migracion Facturas\Poblar Factura Detalle"
           TopLeft="657.999990195036,133.999998003244" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="167,42"
+          Id="Package\Migracion Facturas\OLE DB Command"
+          TopLeft="297.999995559454,379.999994337559" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Migracion Facturas\Destino de ADO NET 2"
+          TopLeft="646.428536109273,727.047615724329" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migracion Facturas\Data Conversion 2"
+          TopLeft="183.866662477785,549.933330699669" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Migracion Facturas\Data Conversion 1"
+          TopLeft="672.999989971518,210.999996855855" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Migracion Facturas\Lookup 2"
+          TopLeft="200.433328370419,619.866664364471" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Migracion Facturas\Lookup"
+          TopLeft="249.074060465267,290.740738885859" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Migracion Facturas\OLE DB Command 2"
+          TopLeft="327.69522617904,709.276188036242" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Migracion Facturas\Poblar Facturas"
+          TopLeft="215.999996781349,129.999998062849" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Migracion Facturas\Lookup 1"
+          TopLeft="696.09997145186,283.533332507677" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Migracion Facturas\Poblar Factura2 externa"
+          TopLeft="630.49997145186,505.866666063997" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Migracion Facturas\Poblar Factua externa"
+          TopLeft="194.166656057868,473.599997324149" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Migracion Facturas\OLE DB Command 1"
+          TopLeft="748.333324434028,374.666661340926" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Migracion Facturas\OLE DB Destination"
+          TopLeft="62.1000025952855,703.866664798392" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Migracion Facturas\Lookup 3"
+          TopLeft="674.999963119628,652.380949711989" />
+        <NodeLayout
+          Size="177,42"
           Id="Package\Migracion Facturas\Destino de ADO NET"
           TopLeft="53.9999991953373,378.799994665384" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Migracion Facturas\Data Conversion"
           TopLeft="219.999996721745,203.999996960163" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Migracion Facturas\Data Conversion 3"
           TopLeft="646.333303920098,579.333331874874" />
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output3]"
+          TopLeft="755.749980711689,252.599996855855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9333356518216"
+              Start="0,0"
+              End="0,23.4333356518216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4333356518216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output2]"
+          TopLeft="301.737028593506,245.599996960163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1407419256961"
+              Start="0,0"
+              End="0,37.6407419256961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6407419256961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
+          TopLeft="731.866633519863,620.933331874874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.4476178371152"
+              Start="0,0"
+              End="0,23.9476178371152">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9476178371152" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Data Conversion Output]"
+          TopLeft="263.349995424102,591.533330699669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.3333336648019"
+              Start="0,0"
+              End="0,20.8333336648019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8333336648019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Migracion Facturas.Paths[Salida de origen de ADO NET1]"
           TopLeft="751.899990083277,175.599998003244">
@@ -7705,6 +7797,42 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
+          TopLeft="756.49997145186,325.133332507677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135.866643573179,51.3999955385923"
+              Start="0,0"
+              End="-135.866643573179,43.8999955385923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6999977692962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6999977692962"
+                    Point2="0,25.6999977692962"
+                    Point3="-4,25.6999977692962" />
+                  <mssgle:LineSegment
+                    End="-131.866643573179,25.6999977692962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131.866643573179,25.6999977692962"
+                    Point2="-135.866643573179,25.6999977692962"
+                    Point3="-135.866643573179,29.6999977692962" />
+                  <mssgle:LineSegment
+                    End="-135.866643573179,43.8999955385923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.73970850534,30.6999977692962,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Facturas.Paths[Lookup No Match Output2]"
           TopLeft="288.007393798601,332.340738885859">
           <EdgeLayout.Curve>
@@ -7801,6 +7929,42 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Facturas.Paths[Lookup Match Output2]"
+          TopLeft="775.29997145186,325.133332507677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.0333529821688,49.5333288332496"
+              Start="0,0"
+              End="61.0333529821688,42.0333288332496">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2018282300312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2018282300312"
+                    Point2="0,20.2018282300312"
+                    Point3="4,20.2018282300312" />
+                  <mssgle:LineSegment
+                    End="57.0333529821688,20.2018282300312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.0333529821688,20.2018282300312"
+                    Point2="61.0333529821688,20.2018282300312"
+                    Point3="61.0333529821688,24.2018282300312" />
+                  <mssgle:LineSegment
+                    End="61.0333529821688,42.0333288332496" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6747102276656,25.2018282300312,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Facturas.Paths[Lookup Match Output1]"
           TopLeft="322.940727131934,332.340738885859">
           <EdgeLayout.Curve>
@@ -7872,181 +8036,9 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output2]"
-          TopLeft="301.737028593506,245.599996960163">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.1407419256961"
-              Start="0,0"
-              End="0,37.6407419256961">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.6407419256961" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output1]"
-          TopLeft="731.866633519863,620.933331874874">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.4476178371152"
-              Start="0,0"
-              End="0,23.9476178371152">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9476178371152" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output]"
-          TopLeft="263.349995424102,591.533330699669">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.3333336648019"
-              Start="0,0"
-              End="0,20.8333336648019">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.8333336648019" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Migracion Facturas\Lookup 1"
-          TopLeft="696.09997145186,283.533332507677" />
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Data Conversion Output3]"
-          TopLeft="755.749980711689,252.599996855855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.9333356518216"
-              Start="0,0"
-              End="0,23.4333356518216">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.4333356518216" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup No Match Output3]"
-          TopLeft="756.49997145186,325.133332507677">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-135.866643573179,51.3999955385923"
-              Start="0,0"
-              End="-135.866643573179,43.8999955385923">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.6999977692962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.6999977692962"
-                    Point2="0,25.6999977692962"
-                    Point3="-4,25.6999977692962" />
-                  <mssgle:LineSegment
-                    End="-131.866643573179,25.6999977692962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-131.866643573179,25.6999977692962"
-                    Point2="-135.866643573179,25.6999977692962"
-                    Point3="-135.866643573179,29.6999977692962" />
-                  <mssgle:LineSegment
-                    End="-135.866643573179,43.8999955385923" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-123.73970850534,30.6999977692962,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Facturas.Paths[Lookup Match Output2]"
-          TopLeft="775.29997145186,325.133332507677">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.0333529821688,49.5333288332496"
-              Start="0,0"
-              End="61.0333529821688,42.0333288332496">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.2018282300312" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2018282300312"
-                    Point2="0,20.2018282300312"
-                    Point3="4,20.2018282300312" />
-                  <mssgle:LineSegment
-                    End="57.0333529821688,20.2018282300312" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57.0333529821688,20.2018282300312"
-                    Point2="61.0333529821688,20.2018282300312"
-                    Point3="61.0333529821688,24.2018282300312" />
-                  <mssgle:LineSegment
-                    End="61.0333529821688,42.0333288332496" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.6747102276656,25.2018282300312,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Factua externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Facturas\Destino de ADO NET 1">
     <Properties>
@@ -8056,23 +8048,8 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Lookup 2">
+    design-time-name="Package\Migracion Facturas\Poblar Factura Detalle">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[Vnta].[tbFacturas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -8087,12 +8064,35 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[Vnta].[tbFacturas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Migracion Facturas\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8102,8 +8102,55 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Facturas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FACTURA2]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Factura2 externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Facturas\Poblar Factua externa">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -8123,20 +8170,12 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Facturas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Migracion Facturas\Lookup 3">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8146,24 +8185,8 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Factura2 externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Poblar Factura Detalle">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -8172,29 +8195,6 @@ FROM BDD_Extena.dbo.FACTURA2 f LEFT JOIN BDD_Extena.dbo.PRODUCTOS p ON p.CodProd
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Facturas\Destino de ADO NET">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Facturas\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[FACTURA2]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
