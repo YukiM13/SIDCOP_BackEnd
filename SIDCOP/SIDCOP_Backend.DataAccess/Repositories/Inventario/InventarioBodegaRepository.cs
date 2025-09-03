@@ -117,5 +117,21 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
                 };
             }
         }
+
+
+        public JornadaActivaDto ObtenerJornadaActiva(int Vend_Id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            parameters.Add("@Vend_Id", Vend_Id);
+
+            var result = db.QueryFirstOrDefault<JornadaActivaDto>(
+                ScriptDatabase.ObtenerJornadaActiva, // Necesitas agregar esta constante en ScriptDatabase
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
+
+            return result; // Retorna null si no encuentra jornada activa, o el objeto si la encuentra
+        }
     }
 }
