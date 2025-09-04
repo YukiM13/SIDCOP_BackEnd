@@ -31,24 +31,15 @@ namespace Api_SIDCOP.API.Controllers.Acceso
         }
 
 
-        [HttpPost("Migrar/{paquete}")]
-        public IActionResult EjecutarPaquete(string paquete)
+        [HttpPost("Migrar/{paquete},{rutaFisica}")]
+        public IActionResult EjecutarPaquete(string paquete, string rutaFisica)
         {
             try
             {
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
-
-                // Normaliza la ruta completa
-                basePath = Path.GetFullPath(basePath);
-
-                // Buscamos hasta la carpeta raíz del backend
-                string rootPath = basePath.Split(new string[] { "SIDCOP_BackEnd" }, StringSplitOptions.None)[0] + "SIDCOP_BackEnd";
-
-                // Ahora armamos la ruta hacia los paquetes
-                string rutaPaquetes = Path.Combine(rootPath, @"SIDCOP\SIDCOP_Backend.ETL");
+         
 
                 // Ruta final del paquete
-                string rutaPaquete = Path.Combine(rutaPaquetes, paquete + ".dtsx");
+                string rutaPaquete = Path.Combine(rutaFisica, paquete + ".dtsx");
 
                 string passwordPaquete ="admin123";
                 // Argumentos para dtexec
@@ -56,7 +47,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = @"C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe",
+                    FileName = @"C:\Program Files\Microsoft SQL Server\140\DTS\Binn\DTExec.exe",
                     Arguments = argumentos,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
@@ -75,7 +66,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
                         return Ok(new { success = true, message = $"Migración de {paquete} ejecutada correctamente. Salida: {salida}" });
 
                     else
-                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {error}" });
+                        return BadRequest(new { success = false, message = $"Error al migrar {paquete}. Error: {salida}" });
 
                 }
             }

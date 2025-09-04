@@ -421,6 +421,32 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
+        public ServiceResult ObtenerJornadaActiva(int Vend_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                // Validación básica
+                if (Vend_Id <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                var jornadaActiva = _inventarioBodegaRepository.ObtenerJornadaActiva(Vend_Id);
+
+                if (jornadaActiva == null)
+                {
+                    return result.Ok("No se encontró jornada activa para el vendedor especificado.");
+                }
+
+                return result.Ok(jornadaActiva);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al obtener la jornada activa: {ex.Message}");
+            }
+        }
+
 
         #endregion
 
