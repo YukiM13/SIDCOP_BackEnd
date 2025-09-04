@@ -11,9 +11,27 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class MetaRepository : IRepository<tbMetas>
     {
-        public RequestStatus Delete(int? id)
+        public RequestStatus Delete(int?  id)
         {
-            throw new NotImplementedException();
+            var parameter = new DynamicParameters();
+            parameter.Add("@Meta_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            try
+            {
+                var result = db.Query<RequestStatus>(ScriptDatabase.Metas_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure).First();
+
+                //string mensaje = (result == 0) ? "Error en base de datos" : "Exito";
+
+                //return new RequestStatus { code_Status = result, message_Status = mensaje };
+                return result;
+            }
+            catch (Exception)
+            {
+
+                return new RequestStatus { code_Status = 0, message_Status = "Error en base de datos" };
+            }
+
         }
 
         public tbMetas Find(int? id)
@@ -44,6 +62,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbMetas>(ScriptDatabase.Metas_ListarCompleto, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+
+        }
+
+        public IEnumerable<dynamic> ListarPorVendedor(int? id)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Vend_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
+
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<dynamic>(ScriptDatabase.Metas_ListarPorVendedor, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
             return result;
 
@@ -119,5 +149,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             return status;
         }
+
+
     }
 }

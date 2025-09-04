@@ -1165,6 +1165,35 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<dynamic> ListarPorVendedor(int? id)
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _metaRepository.ListarPorVendedor(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<dynamic> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult EliminarMeta(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _metaRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult InsertMetasCompleto(tbMetas item)
         {
             var result = new ServiceResult();
