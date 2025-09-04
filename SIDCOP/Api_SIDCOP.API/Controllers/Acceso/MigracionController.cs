@@ -30,10 +30,18 @@ namespace Api_SIDCOP.API.Controllers.Acceso
             return Ok(list);
         }
 
-
-        [HttpPost("Migrar/{paquete},{rutaFisica}")]
-        public IActionResult EjecutarPaquete(string paquete, string rutaFisica)
+        public class MigracionRequest
         {
+            public string Paquete { get; set; }
+            public string RutaFisica { get; set; }
+        }
+
+        [HttpPost("Migrar")]
+        public IActionResult EjecutarPaquete([FromBody] MigracionRequest request)
+        {
+            var paquete = request.Paquete;
+            var rutaFisica = request.RutaFisica;
+
             try
             {
          
