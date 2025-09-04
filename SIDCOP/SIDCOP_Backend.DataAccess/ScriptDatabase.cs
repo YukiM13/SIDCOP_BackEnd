@@ -553,6 +553,9 @@ namespace SIDCOP_Backend.DataAccess
         public const string Metas_EditarCompleto = "[Vnta].[SP_Metas_EditarCompleto]";
         public const string Metas_ListarCompleto = "[Vnta].[SP_Metas_ListarCompleto]";
         public const string Metas_ActualizarProgreso = "[Vnta].[SP_Metas_ActualizarProgreso]";
+        public const string Metas_Eliminar = "[Vnta].[SP_Metas_Eliminar]";
+        public const string Metas_ListarPorVendedor = "[Vnta].[SP_Metas_ListarPorVendedor]";
+
 
         #endregion Metas
 

@@ -31,6 +31,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(mapped);
         }
 
+        [HttpPut("ListarPorVendedor/{id}")]
+        public IActionResult ListarPorVendedor(int? id)
+        {
+            var list = _ventaServices.ListarPorVendedor(id);
+            //var mapped = _mapper.Map<IEnumerable<MetasViewModel>>(list);
+            return Ok(list);
+        }
+
+        [HttpPut("Eliminar/{id}")]
+        public IActionResult Eliminar(int? id)
+        {
+
+            var result = _ventaServices.EliminarMeta(id);
+            return Ok(result);
+        }
+
 
         [HttpPost("InsertarCompleto")]
         public IActionResult InsertarLista(MetasViewModel item)
@@ -67,5 +83,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
 
             return Ok(result);
         }
+
+        
     }
 }
