@@ -40,9 +40,9 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public string? DetallesXml { get; set; }
 
-        public string usuarioCreacion { get; set; }
+        public string? usuarioCreacion { get; set; }
 
-        public string usuarioModificacion { get; set; }
+        public string? usuarioModificacion { get; set; }
 
     }
 }
