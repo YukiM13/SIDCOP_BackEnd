@@ -45,6 +45,12 @@ public partial class tbMetas
     [NotMapped]
     public string DetallesXml { get; set; }
 
+    [NotMapped]
+    public string usuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string usuarioModificacion { get; set; }
+
     public virtual tbCategorias Cate { get; set; }
 
     public virtual tbProductos Prod { get; set; }
