@@ -1,4 +1,6 @@
-﻿namespace Api_SIDCOP.API.Models.Ventas
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api_SIDCOP.API.Models.Ventas
 {
     public class MetasViewModel
 
@@ -37,6 +39,10 @@
         public string? VendedoresJson { get; set; }
 
         public string? DetallesXml { get; set; }
+
+        public string? usuarioCreacion { get; set; }
+
+        public string? usuarioModificacion { get; set; }
 
     }
 }
