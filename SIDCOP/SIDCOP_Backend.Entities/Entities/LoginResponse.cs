@@ -62,6 +62,12 @@ namespace SIDCOP_Backend.Entities.Entities
         [NotMapped]
         public int? RegC_Id { get; set; }
 
+        [NotMapped]
+        public int? CantidadInventario { get; set; }
+
+        [NotMapped]
+        public string? Supervisor { get; set; }
+
         public string? PermisosJson { get; set; }
         public string? RutasDelDiaJson { get; set; }
         public int Usua_Creacion { get; set; }
