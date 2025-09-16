@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -34,6 +35,21 @@ public partial class tbMetas
     public int? Usua_Modificacion { get; set; }
 
     public DateTime? Meta_FechaModificacion { get; set; }
+
+    [NotMapped]
+    public string VendedoresXml { get; set; }
+
+    [NotMapped]
+    public string VendedoresJson { get; set; }
+
+    [NotMapped]
+    public string DetallesXml { get; set; }
+
+    [NotMapped]
+    public string usuarioCreacion { get; set; }
+
+    [NotMapped]
+    public string usuarioModificacion { get; set; }
 
     public virtual tbCategorias Cate { get; set; }
 

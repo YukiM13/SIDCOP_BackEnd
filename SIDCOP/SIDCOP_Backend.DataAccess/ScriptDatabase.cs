@@ -10,7 +10,10 @@ namespace SIDCOP_Backend.DataAccess
         public static string UnPeso_Eliminar = "[Gral].[SP_UnidadesDePeso_Eliminar]";
         #endregion UnidadesDePeso
 
+        #region Migraciones
+        public static string Migracion_Listar = "[Acce].[SP_Migraciones_Listar]";
 
+        #endregion Migraciones
 
         #region Usuarios
 
@@ -409,6 +412,8 @@ namespace SIDCOP_Backend.DataAccess
         public static string InventarioSucursal_ListarPorSucursal = "[Inve].[SP_InventarioSucursal_ListarPorSucursal]";
         public static string InventarioSucursal_ActualizarPorSucursal = "[Inve].[SP_InventarioSucursal_ActualizarPorSucursal]";
         public static string InventarioSucursal_ActualizarCantidades = "[Inve].[SP_InventarioSucursal_ActualizarCantidades]";
+        public static string HistorialInventarioSucursal_ListarPorSucursal = "[Inve].[SP_HistorialInventarioSucursal_ListarPorSucursal]";
+
 
         public static string InventarioBodega_Listar = "";
         public static string InventarioBodega_Insertar = "";
@@ -418,6 +423,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string IniciarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Iniciar]";
         public static string CerrarJornadaVendedor = "[Logi].[SP_JornadaVendedor_Cerrar]";
         public static string ReporteJornada = "[Logi].[SP_ReporteJornada_Detallado]";
+        public static string ObtenerJornadaActiva => "[Logi].[SP_ObtenerJornadaActiva]";
 
         #endregion Inventario
 
@@ -465,6 +471,8 @@ namespace SIDCOP_Backend.DataAccess
         public const string Venta_Insertar = "[Vnta].[SP_Venta_Insertar]";
 
         public const string Facturas_Listar = "[Vnta].[SP_Facturas_Listar]";
+
+        public const string FacturasDevoluciones = "[Vnta].[SP_FacturasDevoluciones_Listar]";
 
         public const string Anular_Factura = "[Vnta].[SP_Factura_Anular]";
 
@@ -537,5 +545,20 @@ namespace SIDCOP_Backend.DataAccess
         public const string FormasDePago_Listar = "[Gral].[SP_FormasDePago_Listar]";
 
         #endregion FormasDePago
+
+
+        #region Metas
+
+        public const string Metas_InsertarCompleto = "[Vnta].[SP_Metas_InsertarCompleto]";
+        public const string Metas_EditarCompleto = "[Vnta].[SP_Metas_EditarCompleto]";
+        public const string Metas_ListarCompleto = "[Vnta].[SP_Metas_ListarCompleto]";
+        public const string Metas_ActualizarProgreso = "[Vnta].[SP_Metas_ActualizarProgreso]";
+        public const string Metas_Eliminar = "[Vnta].[SP_Metas_Eliminar]";
+        public const string Metas_ListarPorVendedor = "[Vnta].[SP_Metas_ListarPorVendedor]";
+
+
+        #endregion Metas
+
+
     }
 }

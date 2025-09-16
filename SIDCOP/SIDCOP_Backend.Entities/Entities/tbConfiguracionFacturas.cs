@@ -24,6 +24,10 @@ public partial class tbConfiguracionFacturas
 
     public string CoFa_Logo { get; set; }
 
+    public int CoFa_DiasDevolucion { get; set; }
+
+    public string CoFa_RutaMigracion { get; set; }
+
     public int Colo_Id { get; set; }
 
     public int Usua_Creacion { get; set; }

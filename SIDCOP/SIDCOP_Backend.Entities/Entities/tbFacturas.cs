@@ -129,6 +129,9 @@ public class VentaInsertarDTO
     // Usuario que crea la venta
     public int Usua_Creacion { get; set; }
 
+    public bool Fact_EsPedido { get; set; } = false;
+    public int Pedi_Id { get; set; } = 0;
+
     // Lista de productos y cantidades (los cálculos los hace el SP)
     public List<VentaDetalleDTO> DetallesFacturaInput { get; set; } = new List<VentaDetalleDTO>();
 }
@@ -178,6 +181,8 @@ public class FacturaCompletaDTO
     public string Fact_AutorizadoPor { get; set; }
     public decimal? Fact_Latitud { get; set; }
     public decimal? Fact_Longitud { get; set; }
+
+    public bool? Fact_Anulado { get; set; }
 
     // ===== DATOS DEL CLIENTE =====
     public int Clie_Id { get; set; }

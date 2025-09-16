@@ -835,6 +835,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientesVisita> VisitasPorCliente(int clie_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lista = _clientesVisitaHistorialRepository.VisitasClienteHistorial(clie_Id);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientesVisita> visitas = null;
+                return visitas;
+            }
+        }
+
         public tbClientesVisita BuscarVisitaPorVendedor(int? id)
         {
             try

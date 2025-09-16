@@ -52,6 +52,13 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
+        [HttpGet("ListarVisitasPorCliente")]
+        public IActionResult ListVisitasPorCliente([FromQuery] int clie_Id)
+        {
+            var list = _generalServices.VisitasPorCliente(clie_Id);
+            return Ok(list);
+        }
+
         [HttpGet("ListarPorVendedor/{id}")]
         public IActionResult Buscar(int id)
         {

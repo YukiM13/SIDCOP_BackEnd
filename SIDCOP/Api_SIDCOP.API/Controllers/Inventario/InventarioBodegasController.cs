@@ -101,6 +101,38 @@ namespace Api_SIDCOP.API.Controllers.Inventario
         }
 
 
+        [HttpGet("JornadaActiva")]
+        public IActionResult ObtenerJornadaActiva([FromQuery] int Vend_Id)
+        {
+            if (Vend_Id <= 0)
+            {
+                return BadRequest("ID de vendedor inválido.");
+            }
+
+            try
+            {
+                var result = _inventarioServices.ObtenerJornadaActiva(Vend_Id);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
+
 
     }
 }

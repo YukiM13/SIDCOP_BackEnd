@@ -22,10 +22,12 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly InventarioSucursalRepository _inventarioSucursalRepository;
         private readonly DescuentosRepository _descuentosRepository;
         private readonly PromocionesRepository _promocionesRepository;
+        private readonly HistorialInventarioSucursalesRepository _historialInventarioSucursalesRepository;
     
         public InventarioServices(CategoriasRepository categoriasRepository, SubcategoriasRepository subcategoriasRepository,
        ProductosRepository productosRepository, InventarioSucursalRepository inventarioSucursalRepository,
-       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository)
+       InventarioBodegaRepository inventarioBodegaRepository, DescuentosRepository descuentosRepository, PromocionesRepository promocionesRepository, 
+       HistorialInventarioSucursalesRepository historialInventarioSucursalesRepository)
         {
             _categoriasRepository = categoriasRepository;
             _subcategoriasRepository = subcategoriasRepository;
@@ -34,6 +36,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _inventarioBodegaRepository = inventarioBodegaRepository;
             _descuentosRepository = descuentosRepository;
             _promocionesRepository = promocionesRepository;
+            _historialInventarioSucursalesRepository = historialInventarioSucursalesRepository;
         }
 
         #region Categorias
@@ -418,6 +421,32 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
+        public ServiceResult ObtenerJornadaActiva(int Vend_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                // Validación básica
+                if (Vend_Id <= 0)
+                {
+                    return result.Error("El ID del vendedor debe ser mayor a 0");
+                }
+
+                var jornadaActiva = _inventarioBodegaRepository.ObtenerJornadaActiva(Vend_Id);
+
+                if (jornadaActiva == null)
+                {
+                    return result.Ok("No se encontró jornada activa para el vendedor especificado.");
+                }
+
+                return result.Ok(jornadaActiva);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al obtener la jornada activa: {ex.Message}");
+            }
+        }
+
 
         #endregion
 
@@ -514,6 +543,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception)
             {
                 IEnumerable<tbInventarioSucursales> resultado = null;
+                return resultado;
+            }
+        }
+        public IEnumerable<tbInventarioSucursalesHistorial> ListHistorialInve(int id)
+        {
+            try
+            {
+                var list = _historialInventarioSucursalesRepository.ListHistorialInve(id);
+                return list;
+            }
+            catch (Exception)
+            {
+                IEnumerable<tbInventarioSucursalesHistorial> resultado = null;
                 return resultado;
             }
         }
