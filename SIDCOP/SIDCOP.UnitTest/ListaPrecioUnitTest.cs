@@ -2,6 +2,7 @@
 using Moq;
 using SIDCOP_Backend.BusinessLogic;
 using SIDCOP_Backend.BusinessLogic.Services;
+using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -76,8 +77,17 @@ namespace SIDCOP.UnitTest
             result.Should().ContainSingle(x => x.Prod_Id == 2);
         }
 
+        [Fact]
         public void ListaPrecioInsertar()
         {
+            var item = new tbPreciosPorProducto { Prod_Id = 10 };
+            _repository.Setup(pl => pl.InsertLista(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Exito" });
+
+            var result = _service.InsertPreciosPorProductoLista(item);
+
+            result.Success.Should().BeTrue();
+            _repository.Verify(r => r.InsertLista(item), Times.Once);
 
         }
 
