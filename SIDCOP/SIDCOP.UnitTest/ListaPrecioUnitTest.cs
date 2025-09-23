@@ -20,10 +20,11 @@ namespace SIDCOP.UnitTest
         //service que usa ese repositorio
         private readonly VentaServices _service;
 
-        //no se muy bien como funca ya investigo pero es para las funciones del repositorio y service
+        //prepara el entorno de pruebas 
         public ListaPrecioUnitTest()
         {
-            //definir el repo respecto al de arriva
+            //crear un mock del repositorio para no usar la bdd, aqui podemos controlar que devuelve cada funcion
+
             _repository = new Mock<PreciosPorProductoRepository>();
 
             //service con lo que se explica abajo usando el repo declarado arriba
@@ -42,7 +43,7 @@ namespace SIDCOP.UnitTest
             );
         }
 
-        //no se, ya investigo
+        //marca el metodo que le sigue como una prueba unitaria (xunit) que no toma argumentos y que representa un solo caso de prueba
         [Fact]
         //unit test del listar
         public void ListaPrecioListar()
@@ -81,15 +82,22 @@ namespace SIDCOP.UnitTest
         public void ListaPrecioInsertar()
         {
             //declaramos un elemento a insertar (que lleve algo aunque sea)
-
             var item = new tbPreciosPorProducto { Prod_Id = 10 };
+
+            //el insertar del repositorio
             _repository.Setup(pl => pl.InsertLista(item))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Precios registrados correctamente." });
+            //
 
+            //ejecuta el insert del service y da el result
             var result = _service.InsertPreciosPorProductoLista(item);
 
+            //success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde
+            //el sp en la base de datos
             result.Success.Should().BeTrue();
+            //si el code_Status es un entonces si se inserto, en caso que tire error es que no inserto nada
             ((int)result.Data.code_Status).Should().Be(1);
+            //si el message_Status es el esperado entonces se cumplio que si inserto
             ((string)result.Data.message_Status).Should().Be("Precios registrados correctamente.");
             _repository.Verify(r => r.InsertLista(item), Times.Once);
 
