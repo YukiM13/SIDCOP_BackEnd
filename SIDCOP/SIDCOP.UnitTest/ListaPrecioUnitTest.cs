@@ -15,7 +15,7 @@ namespace SIDCOP.UnitTest
 {
     public class ListaPrecioUnitTest
     {
-        //repositorio que se usara
+        //repositorio que se usara haciendolo con mock (explicacion mas abajo)
         private readonly Mock<PreciosPorProductoRepository> _repository;
         //service que usa ese repositorio
         private readonly VentaServices _service;
@@ -23,7 +23,8 @@ namespace SIDCOP.UnitTest
         //prepara el entorno de pruebas 
         public ListaPrecioUnitTest()
         {
-            //crear un mock del repositorio para no usar la bdd, aqui podemos controlar que devuelve cada funcion
+            //crear un mock del repositorio para no usar la bdd, aqui podemos controlar
+            //que devuelve cada funcion del repositorio
 
             _repository = new Mock<PreciosPorProductoRepository>();
 
@@ -35,7 +36,7 @@ namespace SIDCOP.UnitTest
             ventas {...}
             precioproductos {...}
             pedidos {...}
-            tendrían que ir 3 null antes de ponerlo y 1 despues
+            tendrían que ir 2 null antes de ponerlo y 1 despues
             */
             _service = new VentaServices( null, null, null, null, null, null, null, null, null,
                                         _repository.Object,
