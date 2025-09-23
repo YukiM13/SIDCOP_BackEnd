@@ -80,13 +80,17 @@ namespace SIDCOP.UnitTest
         [Fact]
         public void ListaPrecioInsertar()
         {
+            //declaramos un elemento a insertar (que lleve algo aunque sea)
+
             var item = new tbPreciosPorProducto { Prod_Id = 10 };
             _repository.Setup(pl => pl.InsertLista(item))
-              .Returns(new RequestStatus { code_Status = 1, message_Status = "Exito" });
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Precios registrados correctamente." });
 
             var result = _service.InsertPreciosPorProductoLista(item);
 
             result.Success.Should().BeTrue();
+            ((int)result.Data.code_Status).Should().Be(1);
+            ((string)result.Data.message_Status).Should().Be("Precios registrados correctamente.");
             _repository.Verify(r => r.InsertLista(item), Times.Once);
 
         }
