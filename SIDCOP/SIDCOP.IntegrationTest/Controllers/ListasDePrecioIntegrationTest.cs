@@ -1,89 +1,89 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SIDCOP.IntegrationTest.Mocks;
+using SIDCOP.IntegrationTest.Mocks;              
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
+using System.Net.Http;                            
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks;                    
 
 namespace SIDCOP.IntegrationTest.Controllers
 {
-    [TestClass]
+    [TestClass] // Contenedora de métodos de prueba
     public class ListasDePrecioIntegrationTest : BaseIntegrationTest
     {
-        // ApiKey - usando la misma que está configurada en appsettings.json
+        // Almacena la clave API para autenticación
         private const string ApiKey = "bdccf3f3-d486-4e1e-ab44-74081aefcdbc";
 
-        [TestMethod]
+        [TestMethod] // Atributo que marca este método como una prueba 
         public async Task PreciosPorProductoInsertar()
         {
-            // Creamos el cliente
+            // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
+            // Crea un cliente HTTP usando la factory heredada de BaseIntegrationTest
+            // Esta factory probablemente configura un servidor de pruebas en memoria
             var cliente = factory.CreateClient();
 
-            // Añadimos la apikey al header
+            // Añade la clave API al header de todas las peticiones de este cliente
+            // Esto simula la autenticación requerida por la API
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-            // Creamos el mock de datos
+            // Crea datos mock (simulados) usando una clase helper
+            // Estos datos representan una lista de precios que se va a insertar
             var preciosMock = ListaDePreciosMocks.CrearMockPreciosPorProducto();
 
-            // Serializa el objeto a JSON para enviarlo en el cuerpo de la petición
+            // PASO 3: SERIALIZACIÓN DE DATOS
+            // Convierte el objeto mock a JSON para enviarlo en la petición HTTP
             var contenido = new StringContent(
                 System.Text.Json.JsonSerializer.Serialize(preciosMock), 
-                System.Text.Encoding.UTF8, 
-                "application/json"
+                System.Text.Encoding.UTF8,                             
+                "application/json"                                      
             );
 
-            // Aquí hace la petición a la URL tipo Post
+            // Hace una petición POST al endpoint para insertar la lista de precios
             var response = await cliente.PostAsync("/PreciosPorProducto/InsertarLista", contenido);
-            
-            // Aserciones
+
+            // Verifica que la respuesta tenga código HTTP 200 (OK)
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
+
+            // Verifica que la respuesta no sea nula
             Assert.IsNotNull(response);
 
-            // Lee el contenido de la respuesta 
+            // Lee el contenido de la respuesta como string
             var responseContent = await response.Content.ReadAsStringAsync();
+
+            // Verifica que la respuesta no esté vacía
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
 
-            // Opcional: Verificar que la respuesta contiene información de éxito
-            // Puedes deserializar la respuesta si conoces el formato del RequestStatus
+            // Muestra la respuesta en consola para debugging/verificación manual
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
 
-        [TestMethod]
+        [TestMethod] // Segunda prueba para operación de actualización
         public async Task PreciosPorProductoActualizar()
         {
-            // Creamos el cliente
+            // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP (igual que arriba)
             var cliente = factory.CreateClient();
-
-            // Añadimos la apikey al header
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-            // Creamos el mock de datos para actualizar
+            // Usa un método diferente del mock para crear datos de actualización
             var preciosMock = ListaDePreciosMocks.CrearMockPreciosPorProductoParaActualizar();
 
-            // Serializa el objeto a JSON para enviarlo en el cuerpo de la petición
+            // PASO 3: SERIALIZACIÓN (igual que arriba)
             var contenido = new StringContent(
-                System.Text.Json.JsonSerializer.Serialize(preciosMock), 
-                System.Text.Encoding.UTF8, 
+                System.Text.Json.JsonSerializer.Serialize(preciosMock),
+                System.Text.Encoding.UTF8,
                 "application/json"
             );
 
-            // Aquí hace la petición a la URL tipo Post para actualizar
+            //  PETICIÓN A ENDPOINT DE ACTUALIZACIÓN
             var response = await cliente.PostAsync("/PreciosPorProducto/ActualizarLista", contenido);
-            
-            // Aserciones
+
+            // VERIFICACIONES 
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             Assert.IsNotNull(response);
-
-            // Lee el contenido de la respuesta 
             var responseContent = await response.Content.ReadAsStringAsync();
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
-
-            // Opcional: Verificar que la respuesta contiene información de éxito
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
-
-
     }
 }
