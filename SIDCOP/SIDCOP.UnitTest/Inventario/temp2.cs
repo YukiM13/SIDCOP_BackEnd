@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SIDCOP.UnitTest.General
+namespace SIDCOP.UnitTest.Inventario
 {
-    class temp
+    class temp2
     {
     }
 }
