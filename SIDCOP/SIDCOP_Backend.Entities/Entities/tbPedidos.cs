@@ -8,6 +8,22 @@ namespace SIDCOP_Backend.Entities.Entities;
 
 public partial class tbPedidos
 {
+    [NotMapped]
+    public string? CoFa_NombreEmpresa { get; set; }
+    [NotMapped]
+    public string? CoFa_DireccionEmpresa { get; set; }
+    [NotMapped]
+    public string? CoFa_RTN { get; set; }
+    [NotMapped]
+    public string? CoFa_Correo { get; set; }
+    [NotMapped]
+    public string? CoFa_Telefono1 { get; set; }
+    [NotMapped]
+    public string? CoFa_Telefono2 { get; set; }
+    [NotMapped]
+    public string? CoFa_Logo { get; set; }
+
+    public string Pedi_Codigo { get; set; }
     public int Pedi_Id { get; set; }
 
     public int DiCl_Id { get; set; }
@@ -90,6 +106,15 @@ public partial class tbPedidos
     [NotMapped]
     public int? PeDe_Cantidad { get; set; }
 
+    [NotMapped]
+    public decimal? PeDe_Impuesto { get; set; }
+
+    [NotMapped]
+    public decimal? PeDe_Descuento { get; set; }
+
+    [NotMapped]
+    public decimal? PeDe_Subtotal { get; set; }
+
 
     [NotMapped]
     public List<PedidoDetalleDTO> Detalles { get; set; }
@@ -108,8 +133,14 @@ public partial class tbPedidos
 public class PedidoDetalleDTO
 {
     public int Prod_Id { get; set; }
+
     public int PeDe_Cantidad { get; set; }
     public decimal PeDe_ProdPrecio { get; set; }
+    public decimal PeDe_Impuesto { get; set; }
+
+    public decimal PeDe_Descuento { get; set; }
+
+    public decimal PeDe_Subtotal { get; set; }
     public decimal PeDe_ProdPrecioFinal { get; set; }
     public string Prod_Imagen { get; set; }
 }

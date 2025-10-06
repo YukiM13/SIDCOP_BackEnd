@@ -3,12 +3,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_SIDCOP.API.Models.Ventas
 {
+    
     public class PedidosViewModel
     {
 
+        public string? CoFa_NombreEmpresa { get; set; }
+        public string? CoFa_DireccionEmpresa { get; set; }
+        public string? CoFa_RTN { get; set; }
+        public string? CoFa_Correo { get; set; }
+        public string? CoFa_Telefono1 { get; set; }
+        public string? CoFa_Telefono2 { get; set; }
+        public string? CoFa_Logo { get; set; }
+
         public int? Secuencia { get; set; }
 
- 
+        public string Pedi_Codigo { get; set; }
+
         public int Pedi_Id { get; set; }
 
         public int DiCl_Id { get; set; }

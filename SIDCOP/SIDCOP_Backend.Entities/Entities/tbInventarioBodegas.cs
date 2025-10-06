@@ -49,3 +49,84 @@ public partial class tbInventarioBodegas
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 }
+
+
+// DTO del encabezado
+public class ReporteJornadaHeaderDto
+{
+    public string RutaDescripcion { get; set; } = string.Empty;
+    public string Vendedor { get; set; } = string.Empty;
+}
+
+// DTO del detalle de productos
+public class ReporteJornadaDetalleDto
+{
+    public string Producto { get; set; } = string.Empty;
+    public string Codigo { get; set; } = string.Empty;
+    public int Inicial { get; set; }
+    public int Final { get; set; }
+    public int Vendido { get; set; }
+    public decimal SubTotal { get; set; }
+}
+
+
+public class IniciarJornada
+{
+    public int JornadaId { get; set; }
+}
+
+public class CerrarJornada
+{
+    public int JorV_Id { get; set; }
+    public DateTime JorV_HoraInicio { get; set; }
+    public DateTime? JorV_HoraFin { get; set; }
+    public int TotalProductos { get; set; }
+    public int TotalInicial { get; set; }
+    public int TotalFinal { get; set; }
+    public int TotalVendido { get; set; }
+    public decimal MontoTotal { get; set; }
+}
+
+
+
+// DTO del reporte completo (header + lista de detalle)
+public class ReporteJornadaDto
+{
+
+
+    public ReporteJornadaHeaderDto Header { get; set; } = new ReporteJornadaHeaderDto();
+    public List<ReporteJornadaDetalleDto> Detalle { get; set; } = new List<ReporteJornadaDetalleDto>();
+}
+
+
+
+public class InventarioAsignadoVendedorDTO
+{
+    public int Bode_Id { get; set; }
+    public int Prod_Id { get; set; }
+    public string Prod_Imagen { get; set; } = string.Empty;
+    public string Subc_Descripcion { get; set; } = string.Empty;
+    public string NombreProducto { get; set; } = string.Empty;
+    public string CodigoProducto { get; set; } = string.Empty;
+    public decimal Precio { get; set; }
+    public int CantidadAsignada { get; set; }
+    public int CurrentQuantity { get; set; }
+    public int SoldQuantity { get; set; }
+
+}
+
+
+public class JornadaActivaDto
+{
+    public int JorV_Id { get; set; }
+    public int Vend_Id { get; set; }
+    public DateTime JorV_Fecha { get; set; }
+    public DateTime? JorV_HoraInicio { get; set; }
+    public DateTime? JorV_HoraFin { get; set; }
+    public string JorV_Estado { get; set; }
+    public int Usua_Creacion { get; set; }
+    public DateTime JorV_FechaCreacion { get; set; }
+    public int? MinutosTranscurridos { get; set; }
+    public int TotalProductosAsignados { get; set; }
+    public int CantidadInicialTotal { get; set; }
+}

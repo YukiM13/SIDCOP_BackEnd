@@ -13,10 +13,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
     {
         public RequestStatus Delete(int? id)
         {
+            //metodo de interfaz no aplicado
             throw new NotImplementedException();
         }
 
-        public RequestStatus DeleteLista(tbPreciosPorProducto item)
+        public virtual RequestStatus DeleteLista(tbPreciosPorProducto item)
         {
             var parameters = new DynamicParameters();
 
@@ -35,15 +36,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public tbPreciosPorProducto Find(int? id)
         {
+            //metodod de interfaz no implementado
             throw new NotImplementedException();
         }
 
         public RequestStatus Insert(tbPreciosPorProducto item)
         {
+            //metodod de interfaz no implementado
             throw new NotImplementedException();
         }
 
-        public RequestStatus InsertLista(tbPreciosPorProducto item)
+        public virtual RequestStatus InsertLista(tbPreciosPorProducto item)
         {
             var parameters = new DynamicParameters();
 
@@ -67,7 +70,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return status;
         }
 
-        public RequestStatus UpdateLista(tbPreciosPorProducto item)
+        public virtual RequestStatus UpdateLista(tbPreciosPorProducto item)
         {
             var parameters = new DynamicParameters();
 
@@ -93,10 +96,11 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public IEnumerable<tbPreciosPorProducto> List()
         {
+            //metodod de interfaz no implementado
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbPreciosPorProducto> ListPorProducto(int? id)
+        public virtual IEnumerable<tbPreciosPorProducto> ListPorProducto(int? id)
         {
 
             var parameters = new DynamicParameters();
@@ -111,6 +115,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public RequestStatus Update(tbPreciosPorProducto item)
         {
+            //metodod de interfaz no implementado
             throw new NotImplementedException();
         }
     }

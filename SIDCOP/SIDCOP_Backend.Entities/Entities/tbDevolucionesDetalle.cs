@@ -24,11 +24,17 @@ public partial class tbDevolucionesDetalle
 
     public bool DevD_Estado { get; set; }
 
+    public int? DevD_Cantidad { get; set; }
+
+
     [NotMapped]
     public int? Secuencia { get; set; }
 
     [NotMapped]
     public string? Cate_Descripcion { get; set; }
+
+    [NotMapped]
+    public string? Subc_Descripcion { get; set; }
 
     [NotMapped]
     public string? Prod_Imagen { get; set; }
@@ -45,7 +51,6 @@ public partial class tbDevolucionesDetalle
 
     [NotMapped]
     public string? UsuarioModificacion { get; set; }
-
 
     public virtual tbDevoluciones Devo { get; set; }
 

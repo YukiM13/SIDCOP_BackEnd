@@ -1,13 +1,5 @@
-﻿using SIDCOP_Backend.DataAccess.Repositories.Acceso;
-using SIDCOP_Backend.DataAccess.Repositories.General;
+﻿using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SIDCOP_Backend.DataAccess.Repositories.Ventas;
-using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -35,6 +27,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly EstadoVisitaRepository _estadoVisitaRepository;
         private readonly ImagenVisitaRepository _imagenVisitaRepository;
         private readonly FormasDePagoRepository _formasDePagoRepository;
+        private readonly UnidadesDePesoRepository _unidadesDePesoRepository;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -46,7 +39,9 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ParentescoRepository parentescoRepository, ClientesVisitaHistorialRepository clientesVisitaHistorialRepository,
         EstadoVisitaRepository estadoVisitaRepository,
         ImagenVisitaRepository imagenVisitaRepository,
-        FormasDePagoRepository formasDePagoRepository
+        FormasDePagoRepository formasDePagoRepository,
+         UnidadesDePesoRepository unidadesDePesoRepository
+
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -79,6 +74,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _estadoVisitaRepository = estadoVisitaRepository;
             _imagenVisitaRepository = imagenVisitaRepository;
             _formasDePagoRepository = formasDePagoRepository;
+            _unidadesDePesoRepository = unidadesDePesoRepository;
         }
 
         #region Departamentos
@@ -835,6 +831,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             catch (Exception ex)
             {
                 IEnumerable<VisitaClientePorVendedorDTO> visitas = null;
+                return visitas;
+            }
+        }
+
+        public IEnumerable<tbClientesVisita> VisitasPorCliente(int clie_Id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var lista = _clientesVisitaHistorialRepository.VisitasClienteHistorial(clie_Id);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbClientesVisita> visitas = null;
                 return visitas;
             }
         }
@@ -1632,5 +1643,74 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
         #endregion
+
+
+
+
+
+        #region UnidadesDePeso
+
+        public IEnumerable<tbUnidadesDePeso> ListarUnidadDePeso()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _unidadesDePesoRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbUnidadesDePeso> UniPe = null;
+                return UniPe;
+            }
+        }
+
+        public ServiceResult InsertarUnidadDePeso(tbUnidadesDePeso item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _unidadesDePesoRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdateUnidadDePeso(tbUnidadesDePeso unipe)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _unidadesDePesoRepository.Update(unipe);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult DeleteUnidadPeso(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _unidadesDePesoRepository.Delete(id);
+                return result.Ok(deleteResult);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar : {ex.Message}");
+            }
+        }
+
+
+        #endregion 
+
+
+
     }
 }

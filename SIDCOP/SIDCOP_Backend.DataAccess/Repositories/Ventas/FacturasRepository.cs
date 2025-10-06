@@ -22,18 +22,17 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Fact_Numero", venta.Fact_Numero);
             parameter.Add("@Fact_TipoDeDocumento", venta.Fact_TipoDeDocumento);
             parameter.Add("@RegC_Id", venta.RegC_Id);
-            parameter.Add("@Clie_Id", venta.Clie_Id);
+            parameter.Add("@DiCl_Id", venta.DiCl_Id);
             parameter.Add("@Vend_Id", venta.Vend_Id);
             parameter.Add("@Fact_TipoVenta", venta.Fact_TipoVenta);
             parameter.Add("@Fact_FechaEmision", venta.Fact_FechaEmision);
-            parameter.Add("@Fact_FechaLimiteEmision", venta.Fact_FechaLimiteEmision);
-            parameter.Add("@Fact_RangoInicialAutorizado", venta.Fact_RangoInicialAutorizado);
-            parameter.Add("@Fact_RangoFinalAutorizado", venta.Fact_RangoFinalAutorizado);
             parameter.Add("@Fact_Latitud", venta.Fact_Latitud);
             parameter.Add("@Fact_Longitud", venta.Fact_Longitud);
             parameter.Add("@Fact_Referencia", venta.Fact_Referencia ?? string.Empty);
             parameter.Add("@Fact_AutorizadoPor", venta.Fact_AutorizadoPor ?? string.Empty);
             parameter.Add("@Usua_Creacion", venta.Usua_Creacion);
+            parameter.Add("@Fact_EsPedido", venta.Fact_EsPedido != null ? venta.Fact_EsPedido : false);
+            parameter.Add("@Pedi_Id", venta.Pedi_Id != 0 ? venta.Pedi_Id : 0); // Siempre 0 para ventas normales
 
             // Convertir lista de detalles a XML (solo productos y cantidades)
             string detallesXml = venta.DetallesFacturaInput != null && venta.DetallesFacturaInput.Any()
@@ -63,6 +62,69 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 {
                     code_Status = exitoso ? 1 : 0,
                     message_Status = exitoso ? $"Venta insertada correctamente. ID: {factId}. {mensaje}" : mensaje
+                };
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus
+                {
+                    code_Status = 0,
+                    message_Status = $"Error inesperado: {ex.Message}"
+                };
+            }
+        }
+
+        public RequestStatus InsertarVentaEnSucursal(VentaInsertarDTO venta)
+        {
+            var parameter = new DynamicParameters();
+
+            // Parámetros de entrada principales (actualizados)
+            parameter.Add("@Fact_TipoDeDocumento", venta.Fact_TipoDeDocumento);
+            parameter.Add("@RegC_Id", venta.RegC_Id);
+            parameter.Add("@DiCl_Id", venta.DiCl_Id);
+            parameter.Add("@Vend_Id", venta.Vend_Id);
+            parameter.Add("@Fact_TipoVenta", venta.Fact_TipoVenta);
+            parameter.Add("@Fact_FechaEmision", venta.Fact_FechaEmision);
+
+            parameter.Add("@Fact_Latitud", venta.Fact_Latitud);
+            parameter.Add("@Fact_Longitud", venta.Fact_Longitud);
+            parameter.Add("@Fact_Referencia", venta.Fact_Referencia ?? string.Empty);
+            parameter.Add("@Fact_AutorizadoPor", venta.Fact_AutorizadoPor ?? string.Empty);
+            parameter.Add("@Usua_Creacion", venta.Usua_Creacion);
+
+            // Convertir lista de detalles a XML (solo productos y cantidades)
+            string detallesXml = venta.DetallesFacturaInput != null && venta.DetallesFacturaInput.Any()
+                ? "<DetallesFactura>" + string.Join("", venta.DetallesFacturaInput.Select(det =>
+                    $"<Detalle Prod_Id=\"{det.Prod_Id}\" FaDe_Cantidad=\"{det.FaDe_Cantidad}\" />"))
+                    + "</DetallesFactura>"
+                : "<DetallesFactura></DetallesFactura>";
+
+            parameter.Add("@DetallesFacturaInput", detallesXml, DbType.Xml);
+
+            // Parámetros de salida
+            parameter.Add("@Fact_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            parameter.Add("@Fact_Numero", dbType: DbType.String, direction: ParameterDirection.Output, size: 20); // ✅ Nuevo: @Fact_Numero como salida
+            parameter.Add("@Mensaje", dbType: DbType.String, direction: ParameterDirection.Output, size: 500);
+            parameter.Add("@Exitoso", dbType: DbType.Boolean, direction: ParameterDirection.Output);
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                // ✅ Usar el nuevo SP
+                db.Execute(ScriptDatabase.Venta_InsertarEnSucursal, parameter, commandType: CommandType.StoredProcedure);
+
+                // Obtener valores de salida
+                var factId = parameter.Get<int>("@Fact_Id");
+                var factNumero = parameter.Get<string>("@Fact_Numero");
+                var mensaje = parameter.Get<string>("@Mensaje");
+                var exitoso = parameter.Get<bool>("@Exitoso");
+
+                return new RequestStatus
+                {
+                    code_Status = exitoso ? 1 : 0,
+                    message_Status = exitoso
+                        ? $"Venta insertada correctamente. Número: {factNumero}, ID: {factId}. {mensaje}"
+                        : mensaje
                 };
             }
             catch (Exception ex)
@@ -125,6 +187,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     facturaCompleta.Fact_AutorizadoPor = datosFactura.Fact_AutorizadoPor;
                     facturaCompleta.Fact_Latitud = datosFactura.Fact_Latitud;
                     facturaCompleta.Fact_Longitud = datosFactura.Fact_Longitud;
+                    facturaCompleta.Fact_Anulado = datosFactura.Fact_Anulado;
 
                     // Datos del cliente
                     facturaCompleta.Clie_Id = datosFactura.Clie_Id;
@@ -276,6 +339,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public IEnumerable<tbFacturas> ListPorDevoLimite()
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var result = db.Query<tbFacturas>(ScriptDatabase.FacturasDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
+
+            return result;
+        }
+
         public RequestStatus AnularFactura(tbFacturas anular)
         {
             var parameter = new DynamicParameters();
@@ -305,8 +376,5 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 };
             }
         }
-
-
-
     }
 }

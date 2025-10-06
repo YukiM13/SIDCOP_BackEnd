@@ -33,6 +33,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly PreciosPorProductoRepository _preciosPorProductoRepository;
         private readonly FacturasRepository _facturasRepository;
         private readonly DevolucionesDetallesRepository _devolucionesDetallesRepository;
+        private readonly MetaRepository _metaRepository;
 
         public VentaServices(
             CaiSRepository caiSrepository, RegistrosCaiSRepository registrosCaiSRepository,
@@ -44,7 +45,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             PreciosPorProductoRepository preciosPorProductoRepository,
 
             PagosCuentasPorCobrarRepository pagosCuentasPorCobrarRepository, DevolucionesRepository devolucionesRepository,
-            DevolucionesDetallesRepository devolucionesDetallesRepository
+            DevolucionesDetallesRepository devolucionesDetallesRepository,
+            MetaRepository metaRepository
                             )
 
         {
@@ -61,6 +63,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _facturasRepository = facturasRepository;
             _devolucionesRepository = devolucionesRepository;
             _devolucionesDetallesRepository = devolucionesDetallesRepository;
+            _metaRepository = metaRepository;
         }
 
         #region Pedidos
@@ -845,6 +848,80 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult InsertVentasSucursal(VentaInsertarDTO item)
+        {
+            var result = new ServiceResult();
+
+            try
+            {
+                // Validaciones básicas
+                if (item == null)
+                {
+                    return result.Error("Los datos de la venta son requeridos");
+                }
+
+                // ✅ Validar DiCl_Id en lugar de Clie_Id
+                if (item.DiCl_Id <= 0)
+                {
+                    return result.Error("La dirección del cliente (DiCl_Id) es requerida y debe ser válida");
+                }
+
+                // ❌ Eliminado: Validación de Fact_Numero (ahora lo genera el SP)
+
+                if (item.RegC_Id <= 0)
+                {
+                    return result.Error("El registro CAI (RegC_Id) es requerido");
+                }
+
+                if (item.Vend_Id <= 0)
+                {
+                    return result.Error("El vendedor (Vend_Id) es requerido");
+                }
+
+                if (string.IsNullOrWhiteSpace(item.Fact_TipoVenta))
+                {
+                    return result.Error("El tipo de venta (CONTADO/CREDITO) es requerido");
+                }
+
+                if (item.Fact_FechaEmision == default)
+                {
+                    return result.Error("La fecha de emisión es requerida");
+                }
+
+                if (item.DetallesFacturaInput == null || !item.DetallesFacturaInput.Any())
+                {
+                    return result.Error("Debe incluir al menos un producto en la venta");
+                }
+
+                // Validar que todos los detalles tengan datos válidos
+                var detallesInvalidos = item.DetallesFacturaInput
+                    .Where(d => d.Prod_Id <= 0 || d.FaDe_Cantidad <= 0)
+                    .ToList();
+
+                if (detallesInvalidos.Any())
+                {
+                    return result.Error("Todos los productos deben tener ID válido y cantidad mayor a 0");
+                }
+
+                // Llamar al repository para insertar la venta
+                var response = _facturasRepository.InsertarVentaEnSucursal(item);
+
+                if (response.code_Status == 1)
+                {
+                    // ✅ El mensaje de éxito ya incluye el Fact_Numero generado
+                    return result.Ok(response);
+                }
+                else
+                {
+                    return result.Error(response.message_Status);
+                }
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado al insertar venta: {ex.Message}");
+            }
+        }
+
         // Método adicional opcional para validar una venta antes de insertarla
         public ServiceResult ValidarVenta(VentaInsertarDTO item)
         {
@@ -860,23 +937,10 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 {
                     errores.Add("La fecha de emisión no puede ser futura");
                 }
-
-                if (item.Fact_FechaLimiteEmision < item.Fact_FechaEmision)
-                {
-                    errores.Add("La fecha límite no puede ser anterior a la fecha de emisión");
-                }
-
                 // Validar tipo de venta
                 if (!new[] { "CONTADO", "CREDITO" }.Contains(item.Fact_TipoVenta?.ToUpper()))
                 {
                     errores.Add("El tipo de venta debe ser CONTADO o CREDITO");
-                }
-
-                // Validar rangos autorizados
-                if (string.IsNullOrWhiteSpace(item.Fact_RangoInicialAutorizado) ||
-                    string.IsNullOrWhiteSpace(item.Fact_RangoFinalAutorizado))
-                {
-                    errores.Add("Los rangos autorizados son requeridos");
                 }
 
                 // Validar coordenadas geográficas
@@ -990,6 +1054,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ListFacturasDevoLimite()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _facturasRepository.ListPorDevoLimite();
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult AnularFactura(tbFacturas item)
         {
             var result = new ServiceResult();
@@ -1022,6 +1100,20 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult DevolucionTrasladar(tbDevoluciones item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _devolucionesRepository.Trasladar(item);
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
         public ServiceResult InsertarDevolucion(tbDevoluciones item)
         {
             var result = new ServiceResult();
@@ -1036,7 +1128,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        #endregion
+        #endregion Devoluciones
 
         #region DevolucionesDetalles
 
@@ -1054,5 +1146,111 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
         #endregion DevolucionesDetalles
+
+
+        #region Metas
+
+        public IEnumerable<tbMetas> ListMetasCompleto()
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _metaRepository.ListCompleto();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbMetas> result = null;
+                return result;
+            }
+        }
+
+        public IEnumerable<dynamic> ListarPorVendedor(int? id)
+        {
+            //var result = new ServiceResult();
+            try
+            {
+                var list = _metaRepository.ListarPorVendedor(id);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<dynamic> result = null;
+                return result;
+            }
+        }
+
+        public ServiceResult EliminarMeta(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var resultado = _metaRepository.Delete(id);
+                return result.Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult InsertMetasCompleto(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.InsertCompleto(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdateMetasCompleto(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.UpdateCompleto(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult ActualizarProgreso(tbMetas item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _metaRepository.ActualizarProgreso(item);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        ////public ServiceResult DeletePreciosPorProductoLista(tbPreciosPorProducto item)
+        ////{
+        ////    var result = new ServiceResult();
+        ////    try
+        ////    {
+        ////        var response = _preciosPorProductoRepository.DeleteLista(item);
+        ////        return result.Ok(response);
+        ////    }
+        ////    catch (Exception ex)
+        ////    {
+        ////        return result.Error(ex.Message);
+        ////    }
+        ////}
+
+
+        #endregion
     }
 }

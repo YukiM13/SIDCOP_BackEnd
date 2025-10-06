@@ -12,28 +12,15 @@ public partial class tbFacturas
 
     public int Fact_Id { get; set; }
 
+    public int DiCl_Id { get; set; }
+
     public string Fact_Numero { get; set; }
 
     public string Fact_TipoDeDocumento { get; set; }
 
     public int RegC_Id { get; set; }
 
-    public int Clie_Id { get; set; }
-
-    [NotMapped]
-    public string? Clie_NombreCompleto { get; set; }
-
-
-    [NotMapped]
-    public string? Clie_NombreNegocio { get; set; }
-
     public int Vend_Id { get; set; }
-
-    [NotMapped]
-    public string? Vend_NombreCompleto { get; set; }
-
-    [NotMapped]
-    public string? Motivo { get; set; }
 
     public string Fact_TipoVenta { get; set; }
 
@@ -85,7 +72,24 @@ public partial class tbFacturas
 
     public bool Fact_Estado { get; set; }
 
-    public virtual tbClientes Clie { get; set; }
+    public bool Fact_EsPedido { get; set; }
+
+    public int Pedi_Id { get; set; }
+
+    [NotMapped]
+    public string? Clie_NombreCompleto { get; set; }
+
+
+    [NotMapped]
+    public string? Clie_NombreNegocio { get; set; }
+
+    [NotMapped]
+    public string? Vend_NombreCompleto { get; set; }
+
+    [NotMapped]
+    public string? Motivo { get; set; }
+
+    public virtual tbDireccionesPorCliente DiCl { get; set; }
 
     public virtual tbRegistrosCAI RegC { get; set; }
 
@@ -102,19 +106,17 @@ public partial class tbFacturas
     public virtual ICollection<tbFacturasDetalle> tbFacturasDetalle { get; set; } = new List<tbFacturasDetalle>();
 }
 
+
 public class VentaInsertarDTO
 {
     // Datos básicos de la factura
     public string Fact_Numero { get; set; }
     public string Fact_TipoDeDocumento { get; set; }
     public int RegC_Id { get; set; }
-    public int Clie_Id { get; set; }
+    public int DiCl_Id { get; set; }
     public int Vend_Id { get; set; }
     public string Fact_TipoVenta { get; set; } // CONTADO o CREDITO
     public DateTime Fact_FechaEmision { get; set; }
-    public DateTime Fact_FechaLimiteEmision { get; set; }
-    public string Fact_RangoInicialAutorizado { get; set; }
-    public string Fact_RangoFinalAutorizado { get; set; }
 
     // Ubicación geográfica
     public decimal Fact_Latitud { get; set; }
@@ -126,6 +128,9 @@ public class VentaInsertarDTO
 
     // Usuario que crea la venta
     public int Usua_Creacion { get; set; }
+
+    public bool Fact_EsPedido { get; set; } = false;
+    public int Pedi_Id { get; set; } = 0;
 
     // Lista de productos y cantidades (los cálculos los hace el SP)
     public List<VentaDetalleDTO> DetallesFacturaInput { get; set; } = new List<VentaDetalleDTO>();
@@ -176,6 +181,8 @@ public class FacturaCompletaDTO
     public string Fact_AutorizadoPor { get; set; }
     public decimal? Fact_Latitud { get; set; }
     public decimal? Fact_Longitud { get; set; }
+
+    public bool? Fact_Anulado { get; set; }
 
     // ===== DATOS DEL CLIENTE =====
     public int Clie_Id { get; set; }
@@ -279,7 +286,7 @@ public class FacturaVendedorDTO
     public int Fact_Id { get; set; }
     public string Fact_Numero { get; set; }
     public string Fact_TipoDeDocumento { get; set; }
-    public int Clie_Id { get; set; }
+    public int DiCl_Id { get; set; }
     public string Cliente { get; set; }
     public string Fact_TipoVenta { get; set; }
     public DateTime Fact_FechaEmision { get; set; }
@@ -291,7 +298,3 @@ public class FacturaVendedorDTO
     public string Mensaje { get; set; }
     public bool Exitoso { get; set; }
 }
-
-
-
-

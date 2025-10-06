@@ -37,6 +37,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        [HttpGet("ListarConLimiteDevolucion")]
+        public IActionResult ListarFactDevo()
+        {
+            var result = _ventaServices.ListFacturasDevoLimite();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
+
         [HttpGet("ObtenerCompleta/{id}")]
         public IActionResult ObtenerCompleta(int id)
         {
@@ -85,6 +101,43 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             try
             {
                 var result = _ventaServices.InsertVentas(ventaDTO);
+
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Error interno del servidor",
+                    Details = ex.Message
+                });
+            }
+        }
+
+        [HttpPost("InsertarEnSucursal")]
+        public IActionResult InsertarEnSucursal([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
+        {
+            if (ventaDTO == null)
+            {
+                return BadRequest("Información de la venta inválida.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var result = _ventaServices.InsertVentasSucursal(ventaDTO);
 
                 if (result.Success)
                 {

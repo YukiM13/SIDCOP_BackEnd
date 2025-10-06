@@ -18,6 +18,10 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public string Prod_Imagen { get; set; }
 
+        public decimal Prod_Peso { get; set; }
+
+        public int UnPe_Id { get; set; }
+
         public int Cate_Id { get; set; }
         
         public string Cate_Descripcion { get; set; }
@@ -31,15 +35,14 @@ namespace Api_SIDCOP.API.Models.Inventario
 
         public int Impu_Id { get; set; }
 
-        public decimal? Prod_PrecioUnitario { get; set; }
 
-        public decimal? Prod_CostoTotal { get; set; }
+        public decimal? Prod_PrecioUnitario { get; set; }
 
         public string Prod_PagaImpuesto { get; set; }
 
-        public int? Prod_PromODesc { get; set; }
-
         public string Prod_EsPromo { get; set; }
+
+        public bool Prod_Impulsado { get; set; }
 
         public bool Prod_Estado { get; set; }
 
