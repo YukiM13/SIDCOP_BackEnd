@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SIDCOP.UnitTest
+namespace SIDCOP.UnitTest.Ventas
 {
     public class ListaPrecioUnitTest
     {
