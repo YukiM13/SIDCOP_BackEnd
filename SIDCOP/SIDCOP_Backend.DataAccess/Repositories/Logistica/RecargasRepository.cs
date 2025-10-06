@@ -95,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 
         }
 
-        public IEnumerable<tbRecargas> List()
+        public virtual IEnumerable<tbRecargas> List()
         {
             var parameter = new DynamicParameters();
 
