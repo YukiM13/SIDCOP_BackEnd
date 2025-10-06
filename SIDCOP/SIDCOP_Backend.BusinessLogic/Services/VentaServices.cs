@@ -145,6 +145,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
+                // Retorna null en lugar de lista vacía para indicar error
                 List<tbCAIs> lista = null;
                 return lista;
             }
@@ -156,6 +157,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
             try
             {
+                // Insert retorna RequestStatus, no una lista
                 var list = _caiSRepository.Insert(item);
                 return result.Ok(list);
             }
