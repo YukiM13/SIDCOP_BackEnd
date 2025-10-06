@@ -67,7 +67,7 @@ namespace SIDCOP.UnitTest.Logistica
         //Ya se explico arriba.
         [Fact]
         //Prueba Unitaria para insertar.
-        public void ListaPrecioInsertar()
+        public void BodegaInsertar()
         {
             //Declaramos un elemento a insertar (que lleve algo aunque sea)
             var item = new tbBodegas
@@ -100,7 +100,7 @@ namespace SIDCOP.UnitTest.Logistica
             //si el code_Status es un entonces si se inserto, en caso que tire error es que no inserto nada
             ((int)result.Data.code_Status).Should().Be(1);
             //si el message_Status es el esperado entonces se cumplio que si inserto
-            ((string)result.Data.message_Status).Should().Be("Precios registrados correctamente.");
+            ((string)result.Data.message_Status).Should().Be("Bodega registrada correctamente.");
             //validar que se llamo solo una vez durante la ejecucion
             _repository.Verify(r => r.Insert(item), Times.Once);
         }
