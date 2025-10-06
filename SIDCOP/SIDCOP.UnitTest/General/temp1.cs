@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SIDCOP.UnitTest.General
 {
-    class temp
+    class temp1
     {
     }
 }
