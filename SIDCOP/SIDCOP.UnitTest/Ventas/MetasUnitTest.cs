@@ -15,69 +15,122 @@ namespace SIDCOP.UnitTest.Ventas
 {
     public class MetasUnitTest
     {
-        //repositorio que se usara haciendolo con mock (explicacion mas abajo)
+       
         private readonly Mock<MetaRepository> _repository;
-        //service que usa ese repositorio
+
         private readonly VentaServices _service;
 
-        //prepara el entorno de pruebas 
+ 
         public MetasUnitTest()
         {
-            //crear un mock del repositorio para no usar la bdd, aqui podemos controlar
-            //que devuelve cada funcion del repositorio
+
 
             _repository = new Mock<MetaRepository>();
 
-            //service con lo que se explica abajo usando el repo declarado arriba
-            //9, 4 tiene que ir segun el lugar esta en el service 
-            /*
-            si el serivce esta
-            cais {...}
-            ventas {...}
-            precioproductos {...}
-            pedidos {...}
-            tendrían que ir 2 null antes de ponerlo y 1 despues
-            */
+
             _service = new VentaServices(null, null, null, null, null, null, null, null, null,
                                         null,
                                         null, null, null, _repository.Object
             );
         }
 
-        //marca el metodo que le sigue como una prueba unitaria (xunit) que no toma argumentos y que representa un solo caso de prueba
+
         [Fact]
-        //unit test del listar
-        public void MetasListar()
+        public void MetasListarCompleto()
         {
-            //declaracion de un lista de la tabla que se usará (llenar datos al menos 3 para cerciorarse
-            //que todo funcione bien
-            var modelo = new List<tbPreciosPorProducto>()
+
+            var modelo = new List<tbMetas>()
             {
-                new tbPreciosPorProducto { PreP_Id = 1, Prod_Id = 1, Clie_Id = 1,
-                                           PreP_PrecioContado = 100, PreP_PrecioCredito = 105,
-                                           PreP_InicioEscala = 1, PreP_FinEscala = 10, PreP_ListaPrecios = 1},
-                new tbPreciosPorProducto { PreP_Id = 2, Prod_Id = 1, Clie_Id = 1,
-                                           PreP_PrecioContado = 80, PreP_PrecioCredito = 85,
-                                           PreP_InicioEscala = 11, PreP_FinEscala = 20, PreP_ListaPrecios = 2},
-                new tbPreciosPorProducto { PreP_Id = 3, Prod_Id = 2, Clie_Id = 1,
-                                           PreP_PrecioContado = 100, PreP_PrecioCredito = 105,
-                                           PreP_InicioEscala = 1, PreP_FinEscala = 10, PreP_ListaPrecios = 1},
+               new tbMetas { Meta_Id = 1, Meta_Descripcion = "Meta 1",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo A", Meta_Ingresos = 1000, Meta_Unidades = 50,
+                                           Prod_Id = 2, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":22,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
+                new tbMetas { Meta_Id = 2, Meta_Descripcion = "Meta 2",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo B", Meta_Ingresos = 2000, Meta_Unidades = 100,
+                                           Prod_Id = 3, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":23,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
+                new tbMetas { Meta_Id = 3, Meta_Descripcion = "Meta 3",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo A", Meta_Ingresos = 1500, Meta_Unidades = 75,
+                                           Prod_Id = 2, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":21,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
             }.AsEnumerable();
 
-            //el numero es según la cantidad de objetos que le hayamos puesto a la tabla de arriba dado que es el
-            //"resultado esperado"
-            //esto ejecuta la funcion del repositorio
-            _repository.Setup(pl => pl.ListPorProducto(3))
+
+            _repository.Setup(pl => pl.ListCompleto())
                 .Returns(modelo);
 
-            //lo mismo aqui del "resultado esperado" ejecutando el service esta vez y guardando el result
-            var result = _service.ListPreciosPorProducto_PorProducto(3);
+            var result = _service.ListMetasCompleto();
 
-            //cantidad de objetos esperada
             result.Should().HaveCount(3);
 
-            //un registor que contenga algo en especifico y no se repita (sirve mas que nada para las pk)
-            result.Should().ContainSingle(x => x.Prod_Id == 2);
+            result.Should().ContainSingle(x => x.Meta_Id == 2);
+        }
+
+        [Fact]
+        public void MetasListarPorVendedor()
+        {
+
+            var modelo = new List<tbMetas>()
+            {
+                new tbMetas { Meta_Id = 1, Meta_Descripcion = "Meta 1",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo A", Meta_Ingresos = 1000, Meta_Unidades = 50,
+                                           Prod_Id = 2, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":22,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
+                new tbMetas { Meta_Id = 2, Meta_Descripcion = "Meta 2",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo B", Meta_Ingresos = 2000, Meta_Unidades = 100,
+                                           Prod_Id = 3, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":23,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
+                new tbMetas { Meta_Id = 3, Meta_Descripcion = "Meta 3",
+                                           Meta_FechaInicio = DateTime.Now, Meta_FechaFin = DateTime.Now.AddMonths(1),
+                                           Meta_Tipo = "Tipo A", Meta_Ingresos = 1500, Meta_Unidades = 75,
+                                           Prod_Id = 2, Cate_Id = null, Meta_Estado = true,
+                                           Usua_Creacion = 1, Meta_FechaCreacion = DateTime.Now,
+                                           Usua_Modificacion = null, Meta_FechaModificacion = null,
+                                           VendedoresXml =  null,
+                                           VendedoresJson = "[{\"Vend_Id\":21,\"Vend_NombreCompleto\":\"Daniel Fernández\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"},{\"Vend_Id\":18,\"Vend_NombreCompleto\":\"Josué Cerna\",\"MeEm_ProgresoIngresos\":0.00,\"MeEm_ProgresoUnidades\":0.00,\"Usua_Creacion\":1,\"MeEm_FechaCreacion\":\"2025-08-26T21:57:01.583\"}]",
+                                           DetallesXml = null,
+                                },
+            }.AsEnumerable();
+
+
+            _repository.Setup(pl => pl.ListarPorVendedor(22))
+                .Returns(modelo);
+
+            var result = _service.ListarPorVendedor(22);
+
+            result.Should().HaveCount(3);
+
+            //result.ListarPorVendedor(22).ContainSingle(x => x.Meta_Id == 2);
         }
 
         //ya se explico arriba
@@ -87,15 +140,15 @@ namespace SIDCOP.UnitTest.Ventas
         public void MetasInsertar()
         {
             //declaramos un elemento a insertar (que lleve algo aunque sea)
-            var item = new tbPreciosPorProducto { Prod_Id = 10 };
+            var item = new tbMetas { Prod_Id = 10 };
 
             //el insertar del repositorio con las cosas esperadas que devuelva
-            _repository.Setup(pl => pl.InsertLista(item))
+            _repository.Setup(pl => pl.InsertCompleto(item))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Precios registrados correctamente." });
             //
 
             //ejecuta el insert del service y guarda el result de este mismo
-            var result = _service.InsertPreciosPorProductoLista(item);
+            var result = _service.InsertMetasCompleto(item);
 
             //success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde
             //el sp en la base de datos
@@ -107,7 +160,7 @@ namespace SIDCOP.UnitTest.Ventas
             //si el message_Status es el esperado entonces se cumplio que si inserto
             ((string)result.Data.message_Status).Should().Be("Precios registrados correctamente.");
             //validar que se llamo solo una vez durante la ejecucion
-            _repository.Verify(r => r.InsertLista(item), Times.Once);
+            _repository.Verify(r => r.InsertCompleto(item), Times.Once);
 
         }
 
