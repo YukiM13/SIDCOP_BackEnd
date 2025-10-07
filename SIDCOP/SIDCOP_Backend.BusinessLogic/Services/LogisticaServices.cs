@@ -27,8 +27,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly RecargasRepository _recargasRepository;
 
         // Constructor que recibe los repositorios necesarios
-        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository, 
-        TrasladoRepository trasladoRepository, RecargasRepository recargasRepository)
+        public LogisticaServices(TrasladoRepository @object, RutasRepository rutasRepository, BodegaRepository bodegaRepository, 
+        TrasladoRepository trasladoRepository, RecargasRepository recargasRepository, object value)
         {
             // Asignaci�n de los repositorios a las variables de instancia
             _rutasRepository = rutasRepository;
