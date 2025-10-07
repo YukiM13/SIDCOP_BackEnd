@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -18,6 +18,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+            // Configuración de parámetros para el stored procedure
             var parameter = new DynamicParameters();
             parameter.Add("@NCai_Codigo", item.NCai_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@NCai_Descripcion", item.NCai_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -60,7 +61,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Ruta no encontrada");
+                // Mensaje de error por CAi no encontrado
+                throw new Exception("CAI no encontrado");
             }
             return result;
         }

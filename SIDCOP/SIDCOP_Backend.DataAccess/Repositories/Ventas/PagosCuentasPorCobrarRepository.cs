@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class PagosCuentasPorCobrarRepository
     {
-        public int InsertarPago(tbPagosCuentasPorCobrar item)
+        public virtual int InsertarPago(tbPagosCuentasPorCobrar item)
         {
             if (item == null)
             {
@@ -38,7 +38,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public IEnumerable<tbPagosCuentasPorCobrar> ListarPorCuentaPorCobrar(int cpcId)
+        public virtual IEnumerable<tbPagosCuentasPorCobrar> ListarPorCuentaPorCobrar(int cpcId)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@CPCo_Id", cpcId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -55,7 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public IEnumerable<dynamic> ListarCuentasPorCobrar(int? clienteId = null, bool soloActivas = true, bool soloVencidas = false)
+        public virtual IEnumerable<dynamic> ListarCuentasPorCobrar(int? clienteId = null, bool soloActivas = true, bool soloVencidas = false)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", clienteId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -74,7 +74,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public RequestStatus AnularPago(int pagoId, int usuarioModificacion, string motivoAnulacion)
+        public virtual RequestStatus AnularPago(int pagoId, int usuarioModificacion, string motivoAnulacion)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Pago_Id", pagoId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
