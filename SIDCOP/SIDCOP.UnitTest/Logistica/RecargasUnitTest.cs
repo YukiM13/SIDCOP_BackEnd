@@ -96,5 +96,55 @@ namespace SIDCOP.UnitTest.logistica
         }
 
 
+        [Fact]
+        public void RecargaFind2Listar()
+        {
+            // Arrange: preparamos una lista de recargas simulada
+            var modelo = new List<tbRecargas>()
+    {
+        new tbRecargas
+        {
+            Reca_Id = 1,
+            Recarga = "Recarga 1",
+            Vend_Id = 10,
+            Bode_Id = 100,
+            Reca_Fecha = DateTime.Now,
+            Reca_Observaciones = "Observación 1"
+        },
+        new tbRecargas
+        {
+            Reca_Id = 2,
+            Recarga = "Recarga 2",
+            Vend_Id = 10,
+            Bode_Id = 101,
+            Reca_Fecha = DateTime.Now,
+            Reca_Observaciones = "Observación 2"
+        },
+        new tbRecargas
+        {
+            Reca_Id = 3,
+            Recarga = "Recarga 3",
+            Vend_Id = 10,
+            Bode_Id = 102,
+            Reca_Fecha = DateTime.Now,
+            Reca_Observaciones = "Observación 3"
+        },
+    }.AsEnumerable();
+
+            // Act: configuramos el mock para que devuelva la lista cuando se llame Find2 con el id 10
+            _repository.Setup(pl => pl.Find2(10)).Returns(modelo);
+
+            // Llamada al método a probar
+            var result = _repository.Object.Find2(10);
+
+            // Assert: verificamos que la cantidad de elementos sea la esperada
+            result.Should().HaveCount(3);
+
+            // Verificamos que exista un registro con Reca_Id = 2
+            result.Should().ContainSingle(x => x.Reca_Id == 2);
+        }
+
+
+
     }
 }

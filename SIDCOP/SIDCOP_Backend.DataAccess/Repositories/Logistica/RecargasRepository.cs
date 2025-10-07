@@ -23,7 +23,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbRecargas> Find2(int? id)
+        public virtual IEnumerable<tbRecargas> Find2(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
