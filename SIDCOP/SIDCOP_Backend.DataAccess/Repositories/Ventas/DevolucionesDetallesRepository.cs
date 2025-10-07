@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -16,7 +16,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbDevolucionesDetalle> FindDetalle(int? id)
+        public virtual IEnumerable<tbDevolucionesDetalle> FindDetalle(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
