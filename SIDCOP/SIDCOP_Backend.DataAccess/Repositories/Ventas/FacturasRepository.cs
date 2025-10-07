@@ -14,7 +14,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class FacturasRepository
     {
-        public RequestStatus InsertarVenta(VentaInsertarDTO venta)
+
+        // Método para insertar venta con SP y retorno de estado
+        public virtual RequestStatus InsertarVenta(VentaInsertarDTO venta)
         {
             var parameter = new DynamicParameters();
 
@@ -74,7 +76,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public RequestStatus InsertarVentaEnSucursal(VentaInsertarDTO venta)
+        // Método para insertar venta en sucursal con SP específico y retorno del número de factura
+        public virtual RequestStatus InsertarVentaEnSucursal(VentaInsertarDTO venta)
         {
             var parameter = new DynamicParameters();
 
@@ -103,14 +106,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             // Parámetros de salida
             parameter.Add("@Fact_Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
-            parameter.Add("@Fact_Numero", dbType: DbType.String, direction: ParameterDirection.Output, size: 20); // ✅ Nuevo: @Fact_Numero como salida
+            parameter.Add("@Fact_Numero", dbType: DbType.String, direction: ParameterDirection.Output, size: 20); //  Nuevo: @Fact_Numero como salida
             parameter.Add("@Mensaje", dbType: DbType.String, direction: ParameterDirection.Output, size: 500);
             parameter.Add("@Exitoso", dbType: DbType.Boolean, direction: ParameterDirection.Output);
 
             try
             {
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                // ✅ Usar el nuevo SP
+                //  Usar el SP
                 db.Execute(ScriptDatabase.Venta_InsertarEnSucursal, parameter, commandType: CommandType.StoredProcedure);
 
                 // Obtener valores de salida
@@ -137,7 +140,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public FacturaCompletaDTO ObtenerFacturaCompleta(int factId)
+        // Método para obtener la factura completa con múltiples result sets
+
+        public virtual FacturaCompletaDTO ObtenerFacturaCompleta(int factId)
         {
             var parameter = new DynamicParameters();
 
@@ -293,7 +298,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         }
 
         // Método para agregar en FacturasRepository
-        public List<FacturaVendedorDTO> ListarFacturasPorVendedor(int vendId)
+        public virtual List<FacturaVendedorDTO> ListarFacturasPorVendedor(int vendId)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Vend_Id", vendId);
@@ -331,7 +336,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public IEnumerable<tbFacturas> List()
+        // Método para listar todas las facturas
+        public virtual IEnumerable<tbFacturas> List()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbFacturas>(ScriptDatabase.Facturas_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -339,7 +345,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public IEnumerable<tbFacturas> ListPorDevoLimite()
+
+        // Método para listar facturas con devoluciones próximas al límite 
+
+        public virtual IEnumerable<tbFacturas> ListPorDevoLimite()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbFacturas>(ScriptDatabase.FacturasDevoluciones, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -347,7 +356,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public RequestStatus AnularFactura(tbFacturas anular)
+
+        //Metodo para anular una factura
+
+        public virtual RequestStatus AnularFactura(tbFacturas anular)
         {
             var parameter = new DynamicParameters();
 
