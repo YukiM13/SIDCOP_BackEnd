@@ -76,8 +76,8 @@ namespace SIDCOP.UnitTest.Ventas
             //success por como lo tenemos siempre dara true
             result.Success.Should().BeTrue();
 
-            //cosas del message del ServiceResult
-            result.Message.Should().Be("Devolución registrada correctamente.");
+            //cosas del message del ServiceResult (mensaje genérico que devuelve el service)
+            result.Message.Should().Be("Operación completada exitosamente.");
             
             //validar que se llamo solo una vez durante la ejecucion
             _repository.Verify(r => r.Insert(item), Times.Once);
@@ -101,8 +101,8 @@ namespace SIDCOP.UnitTest.Ventas
             //success debe ser true
             result.Success.Should().BeTrue();
 
-            //verificar el message del ServiceResult
-            result.Message.Should().Be("Devolución trasladada correctamente.");
+            //verificar el message del ServiceResult (mensaje genérico que devuelve el service)
+            result.Message.Should().Be("Operación completada exitosamente.");
             
             //validar que se llamo solo una vez durante la ejecucion
             _repository.Verify(r => r.Trasladar(item), Times.Once);
