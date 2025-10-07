@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 
-namespace SIDCOP.UnitTest.Ventas
+namespace SIDCOP.UnitTest.Acceso
 {
     public class RolUnitTest
     {
@@ -48,7 +48,7 @@ namespace SIDCOP.UnitTest.Ventas
         //marca el metodo que le sigue como una prueba unitaria (xunit) que no toma argumentos y que representa un solo caso de prueba
         [Fact]
         //unit test del listar
-        public void RolesListar()
+        public void Roles_Listar()
         {
             //declaracion de un lista de la tabla que se usará (llenar datos al menos 3 para cerciorarse
             //que todo funcione bien
@@ -79,7 +79,7 @@ namespace SIDCOP.UnitTest.Ventas
         [Fact]
 
         //unit test para insertar lista precio
-        public void RolInsertar()
+        public void Rol_Insertar()
         {
             //declaramos un elemento a insertar (que lleve algo aunque sea)
             var item = new tbRoles { Role_Id = 10 };
@@ -107,7 +107,7 @@ namespace SIDCOP.UnitTest.Ventas
         }
 
         [Fact]
-        public void RolActualizar()
+        public void Rol_Actualizar()
         {
             // Arrange: creamos un objeto de prueba que será actualizado
             var item = new tbRoles
@@ -137,7 +137,7 @@ namespace SIDCOP.UnitTest.Ventas
         }
 
         [Fact]
-        public void RolEliminar()
+        public void Rol_Eliminar()
         {
             // Arrange: Id del rol que queremos eliminar
             int roleId = 1;
@@ -163,7 +163,7 @@ namespace SIDCOP.UnitTest.Ventas
         }
 
         [Fact]
-        public void PantallasListar()
+        public void Pantallas_Listar()
         {
             // Arrange: crear lista simulada de pantallas
             var modelo = new List<tbPantallas>()
@@ -189,7 +189,7 @@ namespace SIDCOP.UnitTest.Ventas
         }
 
         [Fact]
-        public void AccionesListar()
+        public void Acciones_Listar()
         {
             var modelo = new List<tbAccionesPorPantalla>()
             {
