@@ -203,6 +203,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         public tbRegistrosCAI BuscarRegistroCaiS(int? id)
         {
+            // Acceso directo a BD en lugar de usar el repositorio
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@RegC_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -262,6 +263,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             var result = new ServiceResult();
             try
             {
+                // Delete requiere entidad completa para auditoría (usuario y fecha modificación)
                 var list = _registrosCaiSRepository.Delete(item);
 
                 return result.Ok(list);
