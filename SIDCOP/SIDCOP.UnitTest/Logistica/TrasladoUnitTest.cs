@@ -19,7 +19,8 @@ namespace SIDCOP.UnitTest.Logistica
         public TrasladoUnitTest()
         {
             _repository = new Mock<TrasladoRepository>();
-            _service = new LogisticaServices(_repository.Object, null, null, null, null, null);
+            _service = new LogisticaServices(null, null, null, _repository.Object, null, null);
+
         }
 
         [Fact]

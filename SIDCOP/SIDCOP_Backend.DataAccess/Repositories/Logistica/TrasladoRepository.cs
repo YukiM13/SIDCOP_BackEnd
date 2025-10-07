@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
-
+ 
 namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 {
     public class TrasladoRepository : IRepository<tbTraslados>
@@ -16,7 +16,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbTraslados> ListTraslados()
+        public virtual IEnumerable<tbTraslados> ListTraslados()
         {
             var parameter = new DynamicParameters();
 
@@ -123,22 +123,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public tbTraslados Find(int? id)
+        public virtual tbTraslados Find(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbTraslados item)
+        public virtual RequestStatus Insert(tbTraslados item)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbTraslados> List()
+        public virtual IEnumerable<tbTraslados> List()
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Update(tbTraslados item)
+        public virtual RequestStatus Update(tbTraslados item)
         {
             throw new NotImplementedException();
         }
