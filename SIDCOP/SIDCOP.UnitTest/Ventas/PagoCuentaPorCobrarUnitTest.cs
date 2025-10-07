@@ -77,8 +77,8 @@ namespace SIDCOP.UnitTest.Ventas
             // Arrange
             var cuentas = new List<dynamic>
         {
-            new { CPCo_Id = 1, Clie_Id = 1, Saldo = 100m },
-            new { CPCo_Id = 2, Clie_Id = 2, Saldo = 200m }
+            new { CPCo_Id = 1, Clie_Id = 1, Saldo = 100 },
+            new { CPCo_Id = 2, Clie_Id = 2, Saldo = 200 }
         }.AsEnumerable();
 
             _repository.Setup(r => r.ListarCuentasPorCobrar(1, true, false)).Returns(cuentas);
