@@ -12,7 +12,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 {
     public class RolRepository : IRepository<tbRoles>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Role_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -32,7 +32,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public tbRoles Find(int? id)
+        public virtual tbRoles Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -45,7 +45,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus Insert(tbRoles item)
+        public virtual RequestStatus Insert(tbRoles item)
         {
             if (item == null)
             {
@@ -71,7 +71,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public IEnumerable<tbRoles> List()
+        public virtual IEnumerable<tbRoles> List()
         {
             var parameter = new DynamicParameters();
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -79,14 +79,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result.ToList();
         }
 
-        public string ListarPantallasJson()
+        public virtual string ListarPantallasJson()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.QueryFirstOrDefault<string>("Acce.SP_Pantallas_Listar", commandType: CommandType.StoredProcedure);
             return result;
         }
 
-        public IEnumerable<tbAccionesPorPantalla> ListAcciones()
+        public virtual IEnumerable<tbAccionesPorPantalla> ListAcciones()
         {
             var parameter = new DynamicParameters();
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -94,7 +94,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result.ToList();
         }
 
-        public RequestStatus Update(tbRoles item)
+        public virtual RequestStatus Update(tbRoles item)
         {
             if (item == null)
             {

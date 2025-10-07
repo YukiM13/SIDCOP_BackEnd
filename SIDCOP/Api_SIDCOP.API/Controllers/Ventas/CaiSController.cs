@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
@@ -32,6 +32,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         {
             var result = _ventaServices.BuscarCai(id);
 
+            // Retorna respuesta estructurada independientemente del resultado
             if (result == null)
             {
                 var notFoundResponse = new
@@ -62,6 +63,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         public IActionResult listar()
         {
             var list = _ventaServices.ListarCaiS();
+            // Mapeo redundante: la entidad ya es del tipo correcto
             list = _mapper.Map<IEnumerable<tbCAIs>>(list);
             return Ok(list);
         }
@@ -82,6 +84,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Id Invalida.");
             }
+            // Eliminación lógica mediante actualización de estado
             var delete = _ventaServices.EliminarCai(id);
             if (delete.Success)
             {

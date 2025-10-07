@@ -11,6 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class EmpleadoRepository : IRepository<tbEmpleados>
     {
+        //Método que elimina el empleado por su identificador (id)
         public RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
@@ -32,7 +33,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-
+        //Método que busca el empleado por su identificador (id)
         public tbEmpleados Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -46,7 +47,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-
+        //Método que inserta un nuevo empleado, recibe como parámetro un objeto de tipo tbEmpleados
         public RequestStatus Insert(tbEmpleados item)
         {
             if (item == null)
@@ -89,7 +90,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-
+        //Método que lista todos los empleados con un objeto de tipo IEnumerable de tbEmpleados
         public IEnumerable<tbEmpleados> List()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -97,6 +98,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
+        //Método que actualiza un empleado, recibe como parámetro un objeto de tipo tbEmpleados
         public RequestStatus Update(tbEmpleados item)
         {
             if (item == null)
