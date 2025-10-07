@@ -69,7 +69,7 @@ namespace SIDCOP.UnitTest.Logistica
         //Prueba Unitaria para insertar.
         public void BodegaInsertar()
         {
-            //Declaramos un elemento a insertar (que lleve algo aunque sea)
+            //Declaramos un elemento a insertar (que lleve algo aunque sea).
             var item = new tbBodegas
             {
                 Bode_Descripcion = "Camión de Choluteca",
@@ -84,25 +84,148 @@ namespace SIDCOP.UnitTest.Logistica
                 //Agregar los demas campos si es necesario.
             };
 
-            //El insertar del repositorio con las cosas esperadas que devuelva
+            //El insertar del repositorio con las cosas esperadas que devuelva.
             _repository.Setup(pl => pl.Insert(item))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Bodega registrada correctamente." });
             //
 
-            //Ejecuta el insert del service y guarda el result de este mismo
+            //Ejecuta el insertar del service y guarda el result de este mismo.
             var result = _service.InsertBodega(item);
 
-            //success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde
-            //el sp en la base de datos
+            //Success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde.
+            //El sp en la base de datos.
             result.Success.Should().BeTrue();
 
-            //cosas del data del sp
-            //si el code_Status es un entonces si se inserto, en caso que tire error es que no inserto nada
+            //Cosas del data del sp.
+            //Si el code_Status es un entonces si se insertó, en caso que tire error es que no insertó nada.
             ((int)result.Data.code_Status).Should().Be(1);
-            //si el message_Status es el esperado entonces se cumplio que si inserto
+            //Si el message_Status es el esperado entonces se cumplio que si insertó.
             ((string)result.Data.message_Status).Should().Be("Bodega registrada correctamente.");
-            //validar que se llamo solo una vez durante la ejecucion
+            //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.Insert(item), Times.Once);
+        }
+
+        //Ya se explico arriba.
+        [Fact]
+        //Prueba Unitaria para editar.
+        public void BodegaEditar()
+        {
+            //Declaramos un elemento a editar (que lleve algo aunque sea).
+            var item = new tbBodegas
+            {
+                Bode_Id = 3,
+                Bode_Descripcion = "Camión de Choloma",
+                Sucu_Id = 2,
+                RegC_Id = 22,
+                Vend_Id = 1,
+                Mode_Id = 15,
+                Bode_VIN = "ZS1FHDBF85DGZJ120",
+                Bode_Placa = "HDK-1522",
+                Bode_Capacidad = 200.55M,
+                Bode_TipoCamion = "M"
+                //Agregar los demas campos si es necesario.
+            };
+
+            //El editar del repositorio con las cosas esperadas que devuelva.
+            _repository.Setup(pl => pl.Update(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Bodega actualizada correctamente." });
+            //
+
+            //Ejecuta el editar del service y guarda el result de este mismo.
+            var result = _service.UpdateBodega(item);
+
+            //Success por como lo tenemos siempre dara true.
+            //Así que luego evaluamos lo del data que se manda desde el sp en la base de datos.
+            result.Success.Should().BeTrue();
+
+            //Cosas del data del sp.
+            //Si el code_Status es un entonces si se editó, en caso que tire error es que no editó nada.
+            ((int)result.Data.code_Status).Should().Be(1);
+            //Si el message_Status es el esperado entonces se cumplio que si editó.
+            ((string)result.Data.message_Status).Should().Be("Bodega actualizada correctamente.");
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.Update(item), Times.Once);
+        }
+
+        //Ya se explico arriba.
+        [Fact]
+        //Prueba Unitaria para eliminar.
+        public void BodegaEliminar()
+        {
+            //Declaramos el id a eliminar.
+            int BodeId = 10;
+
+            //El eliminar del repositorio con las cosas esperadas que devuelva.
+            _repository.Setup(pl => pl.Delete(BodeId))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Bodega eliminada correctamente." });
+            //
+
+            //Ejecuta el eliminar del service y guarda el result de este mismo.
+            var result = _service.DeleteBodega(BodeId);
+
+            //Success por como lo tenemos siempre dara true.
+            //Así que luego evaluamos lo del data que se manda desde el sp en la base de datos.
+            result.Success.Should().BeTrue();
+
+            //Cosas del data del sp.
+            //Si el code_Status es un entonces si se eliminó, en caso que tire error es que no eliminó nada.
+            ((int)result.Data.code_Status).Should().Be(1);
+            //Si el message_Status es el esperado entonces se cumplio que si eliminó.
+            ((string)result.Data.message_Status).Should().Be("Bodega eliminada correctamente.");
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.Delete(BodeId), Times.Once);
+        }
+
+        //Ya se explico arriba.
+        [Fact]
+        //Prueba Unitaria para buscar.
+        public void BodegaDetalles()
+        {
+            //Declaramos el id a buscar.
+            int BodeId = 5;
+            //Declaramos un objeto con los datos que esperamos que devuelva el buscar.
+            var bodegaEsperada = new tbBodegas
+            {
+                Bode_Id = BodeId,
+                Bode_Descripcion = "Camión de QA",
+                Sucu_Id = 2,
+                RegC_Id = 22,
+                Vend_Id = 1,
+                Mode_Id = 15,
+                Bode_VIN = "4S1EHDBF85DGZJ121",
+                Bode_Placa = "HDK-1522",
+                Bode_Capacidad = 100.50M,
+                Bode_TipoCamion = "P"
+            };  
+
+            //El buscar del repositorio con las cosas esperadas que devuelva.
+            _repository.Setup(r => r.Find(BodeId)).Returns(bodegaEsperada);
+
+            //Ejecuta el buscar del service y guarda el result de este mismo.
+            var result = _service.FindBodega(BodeId);
+            // Extraemos el objeto bodega desde el ServiceResult
+            var bodegaResultante = result.Data as tbBodegas;
+
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.Find(BodeId), Times.Once);
+            //Aserciones para verificar que los datos coinciden
+            //Verificar que el resultado no sea nulo
+            Assert.NotNull(result);
+            //Verificar que la operacion fue exitosa
+            Assert.True(result.Success);
+            //Verificar que el objeto no sea nulo
+            Assert.NotNull(bodegaResultante);
+            //Comparar cada propiedad del objeto esperado con el resultado
+            Assert.Equal(bodegaEsperada.Bode_Descripcion, bodegaResultante.Bode_Descripcion);
+            Assert.Equal(bodegaEsperada.Sucu_Id, bodegaResultante.Sucu_Id);
+            Assert.Equal(bodegaEsperada.RegC_Id, bodegaResultante.RegC_Id);
+            Assert.Equal(bodegaEsperada.Vend_Id, bodegaResultante.Vend_Id);
+            Assert.Equal(bodegaEsperada.RegC_Id, bodegaResultante.RegC_Id);
+            Assert.Equal(bodegaEsperada.Mode_Id, bodegaResultante.Mode_Id);
+            Assert.Equal(bodegaEsperada.Bode_VIN, bodegaResultante.Bode_VIN);
+            Assert.Equal(bodegaEsperada.Bode_Placa, bodegaResultante.Bode_Placa);
+            Assert.Equal(bodegaEsperada.Bode_Capacidad, bodegaResultante.Bode_Capacidad);
+            Assert.Equal(bodegaEsperada.Bode_TipoCamion, bodegaResultante.Bode_TipoCamion);
         }
     }
 }
