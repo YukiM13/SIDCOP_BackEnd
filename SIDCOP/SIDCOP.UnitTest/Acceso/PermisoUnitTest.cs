@@ -31,7 +31,7 @@ namespace SIDCOP.UnitTest.Acceso
         }
 
         [Fact]
-        public void PermisosListar()
+        public void Permisos_Listar()
         {
             var modelo = new List<tbPermisos>()
             {
@@ -51,7 +51,7 @@ namespace SIDCOP.UnitTest.Acceso
         }
 
         [Fact]
-        public void PermisoInsertar()
+        public void Permiso_Insertar()
         {
             var item = new tbPermisos { Role_Id = 1, AcPa_Id = 1 };
 
@@ -67,7 +67,7 @@ namespace SIDCOP.UnitTest.Acceso
         }
 
         [Fact]
-        public void PermisoActualizar()
+        public void Permiso_Actualizar()
         {
             var item = new tbPermisos
             {
@@ -96,7 +96,7 @@ namespace SIDCOP.UnitTest.Acceso
         }
 
         [Fact]
-        public void PermisoEliminar()
+        public void Permiso_Eliminar()
         {
             var item = new tbPermisos
             {
@@ -120,6 +120,28 @@ namespace SIDCOP.UnitTest.Acceso
 
             // Validamos que se llamó al método Delete exactamente una vez
             _repository.Verify(r => r.Delete(item), Times.Once);
+        }
+
+        [Fact]
+        public void Permiso_Buscar()
+        {
+            var item = new tbPermisos
+            {
+                Perm_Id = 1
+            };
+
+            _repository.Setup(r => r.FindPermission(item));
+
+            // Act: llamamos al método del servicio
+            var result = _service.BuscarPermiso(item);
+
+            // Assert: validamos que el resultado sea exitoso y tenga el mensaje esperado
+            //result.Success.Should().BeTrue();
+            //((int)result.Data.code_Status).Should().Be(1);
+            //((string)result.Data.message_Status).Should().Be("Permiso encontrado correctamente.");
+
+            // Validamos que se llamó al método Delete exactamente una vez
+            _repository.Verify(r => r.FindPermission(item), Times.Once);
         }
     }
 }
