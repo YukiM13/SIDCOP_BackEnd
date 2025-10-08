@@ -133,7 +133,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         
         }
 
-        public IEnumerable<tbClientes> ListConfirmados()
+        public virtual IEnumerable<tbClientes> ListConfirmados()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarConfirmados, commandType: System.Data.CommandType.StoredProcedure);

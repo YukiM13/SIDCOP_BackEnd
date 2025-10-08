@@ -799,6 +799,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Ventas
 
+        //Metodo para listar las ventas
         public ServiceResult InsertVentas(VentaInsertarDTO item)
         {
             var result = new ServiceResult();
@@ -852,6 +853,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        // Metodo para insertar ventas desde una sucursal (con algunas diferencias en validaciones)
         public ServiceResult InsertVentasSucursal(VentaInsertarDTO item)
         {
             var result = new ServiceResult();
@@ -971,6 +973,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        // Método para obtener una factura completa con sus detalles
         public ServiceResult ObtenerFacturaCompleta(int factId)
         {
             var result = new ServiceResult();
@@ -1005,6 +1008,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error($"Error inesperado al obtener la factura: {ex.Message}");
             }
         }
+
+        // Método para listar facturas por vendedor con validaciones y manejo de errores
 
         public ServiceResult ListarFacturasPorVendedor(int vendId)
         {
@@ -1044,6 +1049,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        // Metodo para listar todas las facturas con manejo de errores
         public ServiceResult ListFacturas()
         {
             var result = new ServiceResult();
@@ -1058,6 +1064,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+        //  Metodo para listar facturas que estan en el limite de devolucion
         public ServiceResult ListFacturasDevoLimite()
         {
             var result = new ServiceResult();
@@ -1072,6 +1080,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+        //Metodo para anular una factura
         public ServiceResult AnularFactura(tbFacturas item)
         {
             var result = new ServiceResult();

@@ -26,6 +26,8 @@ namespace Api_SIDCOP.API.Controllers.General
 
         }
 
+        /// Obtiene la lista completa de empleados registrados en el sistema.
+        /// Llama al servicio para recuperar los datos y los retorna en formato JSON.
         [HttpGet("Listar")]
         public IActionResult ListarEmpleado()
         {
@@ -33,7 +35,8 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(list);
         }
 
-
+        /// Inserta un nuevo empleado en la base de datos.
+        /// Recibe los datos desde el cliente, los mapea a la entidad y llama al servicio para realizar la inserción.
         [HttpPost("Insertar")]
         public IActionResult Insert([FromBody] EmpleadoViewModel item)
         {
@@ -42,7 +45,8 @@ namespace Api_SIDCOP.API.Controllers.General
             return Ok(result);
         }
 
-
+        /// Actualiza la información de un empleado existente.
+        /// Recibe los datos actualizados, los mapea y llama al servicio para modificar el registro.
         [HttpPut("Actualizar")]
         public IActionResult Update([FromBody] EmpleadoViewModel item)
         {
@@ -52,8 +56,8 @@ namespace Api_SIDCOP.API.Controllers.General
         }
 
 
-
-
+        /// Elimina un empleado según su identificador.
+        /// Valida el parámetro recibido y llama al servicio para realizar la eliminación lógica o física.
         [HttpPost("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {
@@ -72,6 +76,8 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
+        /// Busca y retorna los datos de un empleado por su identificador.
+        /// Valida el parámetro y retorna el empleado si existe, o un error si no se encuentra.
 
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
