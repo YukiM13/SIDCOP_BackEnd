@@ -65,7 +65,7 @@ namespace SIDCOP.UnitTest.General
         [Fact]
         public void UsuarioEditar()
         {
-            //Declaramos un elemento a insertar (que lleve algo aunque sea).
+            //Declaramos un elemento a editar (que lleve algo aunque sea).
             var item = new tbUsuarios
             {
                 Usua_Id = 1,
@@ -104,21 +104,86 @@ namespace SIDCOP.UnitTest.General
         [Fact]
         public void IniciarSesion()
         {
-            //Declaramos un elemento a insertar (que lleve algo aunque sea).
             var item = new LoginResponse
             {
                 Usua_Usuario = "Poncho",
                 Usua_Clave = "poncho123",
+            };
+
+            // Usa It.IsAny para que coincida con cualquier LoginResponse
+            _repository.Setup(pl => pl.Login(It.IsAny<LoginResponse>()))
+              .Returns(new LoginResponse
+              {
+                  code_Status = 1,
+                  message_Status = "Sesión iniciada correctamente."
+              });
+
+            var result = _service.IniciarSesion(item);
+
+            result.Success.Should().BeTrue();
+            ((int)result.Data.code_Status).Should().Be(1);
+            ((string)result.Data.message_Status).Should().Be("Sesión iniciada correctamente.");
+
+            _repository.Verify(r => r.Login(It.IsAny<LoginResponse>()), Times.Once);
+        }
+
+        [Fact]
+        public void BuscarUsuario()
+        {
+            //Declaramos un elemento a buscar (que lleve algo aunque sea).
+            var item = new tbUsuarios
+            {
+                Usua_Id = 5
+                //Agregar los demas campos si es necesario.
+            };
+
+            //Crear una lista de usuarios simulada que retornará FindUser
+            var usuariosEncontrados = new List<tbUsuarios>
+            {
+                new tbUsuarios
+                {
+                    Usua_Id = 5,
+                    //Agregar otros campos según tu entidad
+                }
+            };
+
+            //El buscar del repositorio retorna IEnumerable<tbUsuarios>
+            _repository.Setup(pl => pl.FindUser(item))
+                .Returns(usuariosEncontrados);
+
+            //Ejecuta el buscar del service y guarda el result de este mismo.
+            var result = _service.BuscarUsuario(item);
+
+            //Verificar que el resultado no sea nulo
+            result.Should().NotBeNull();
+
+            //Verificar que se encontró al menos un usuario
+            result.Should().HaveCount(1);
+
+            //Verificar que el usuario encontrado tiene el Id correcto
+            result.First().Usua_Id.Should().Be(5);
+
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.FindUser(item), Times.Once);
+        }
+
+        [Fact]
+        public void UsuarioCambiarEstado()
+        {
+            //Declaramos un elemento a insertar (que lleve algo aunque sea).
+            var item = new tbUsuarios
+            {
+                Usua_Id = 2
                 //Agregar los demas campos si es necesario.
             };
 
             //El insertar del repositorio con las cosas esperadas que devuelva.
-            _repository.Setup(pl => pl.Login(item))
-              .Returns(new RequestStatus { code_Status = 1, message_Status = "Sesión iniciada correctamente." });
+            _repository.Setup(pl => pl.ChangeUserState(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Estado de usuario cambiado correctamente." });
             //
 
             //Ejecuta el insertar del service y guarda el result de este mismo.
-            var result = _service.IniciarSesion(item);
+            var result = _service.CambiarEstadoUsuario(item);
 
             //Success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde.
             //El sp en la base de datos.
@@ -128,9 +193,50 @@ namespace SIDCOP.UnitTest.General
             //Si el code_Status es un entonces si se insertó, en caso que tire error es que no insertó nada.
             ((int)result.Data.code_Status).Should().Be(1);
             //Si el message_Status es el esperado entonces se cumplio que si insertó.
-            ((string)result.Data.message_Status).Should().Be("Sesión iniciada correctamente.");
+            ((string)result.Data.message_Status).Should().Be("Estado de usuario cambiado correctamente.");
             //Validar que se llamo solo una vez durante la ejecucion.
-            _repository.Verify(r => r.Login(item), Times.Once);
+            _repository.Verify(r => r.ChangeUserState(item), Times.Once);
+        }
+
+        [Fact]
+        public void UsuarioMostrarContrasena()
+        {
+            // Parámetros de entrada
+            int usuaId = 5;
+            string claveSeguridad = "hola";
+
+            // El mock del repositorio debe retornar RequestStatus
+            var expectedResponse = new RequestStatus
+            {
+                code_Status = 1,
+                message_Status = "Contraseña obtenida correctamente.",
+                data = "ContraseñaDesencriptada123" // La contraseña que retorna el SP
+            };
+
+            // Setup del repositorio con los parámetros correctos
+            _repository.Setup(pl => pl.ShowPassword(usuaId, claveSeguridad))
+                .Returns(expectedResponse);
+
+            // Ejecuta el método del service
+            var result = _service.MostrarContrasena(usuaId, claveSeguridad);
+
+            // Verificar que el resultado no sea nulo
+            result.Should().NotBeNull();
+
+            // Verificar que la operación fue exitosa
+            result.Success.Should().BeTrue();
+
+            // Verificar el code_Status
+            ((int)result.Data.code_Status).Should().Be(1);
+
+            // Verificar el message_Status
+            ((string)result.Data.message_Status).Should().Be("Contraseña obtenida correctamente.");
+
+            // Verificar que se obtuvo la contraseña
+            ((string)result.Data.data).Should().Be("ContraseñaDesencriptada123");
+
+            // Validar que se llamó solo una vez durante la ejecución
+            _repository.Verify(r => r.ShowPassword(usuaId, claveSeguridad), Times.Once);
         }
     }
 }

@@ -103,7 +103,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public RequestStatus ChangeUserState(tbUsuarios? item)
+        public virtual RequestStatus ChangeUserState(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, DbType.Int32, ParameterDirection.Input);
@@ -125,7 +125,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-        public IEnumerable<tbUsuarios> FindUser(tbUsuarios? item)
+        public virtual IEnumerable<tbUsuarios> FindUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -176,7 +176,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
+        public virtual RequestStatus ShowPassword(int usuaId, string claveSeguridad)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", usuaId, DbType.Int32, ParameterDirection.Input);
