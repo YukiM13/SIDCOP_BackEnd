@@ -346,7 +346,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
-        public ServiceResult InsertRecargas(tbRecargas item)
+        public virtual ServiceResult InsertRecargas(tbRecargas item)
         {
             var result = new ServiceResult();
             try
@@ -370,7 +370,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         }
 
 
-        public ServiceResult UpdateRecargas(tbRecargas item)
+        public virtual ServiceResult UpdateRecargas(tbRecargas item)
         {
             var result = new ServiceResult();
             try

@@ -12,7 +12,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
     public class ProveedoresRepository : IRepository<tbProveedores>
     {
 
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Prov_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -33,7 +33,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-        public tbProveedores Find(int? id)
+        public virtual tbProveedores Find(int? id)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +52,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-        public RequestStatus Insert(tbProveedores item)
+        public virtual RequestStatus Insert(tbProveedores item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Prov_Codigo", item.Prov_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -73,7 +73,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return new RequestStatus {code_Status = result, message_Status = mensaje };
         }
 
-        public IEnumerable<tbProveedores> List()
+        public virtual IEnumerable<tbProveedores> List()
         {
             var parameter = new DynamicParameters();
 
@@ -83,7 +83,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-        public RequestStatus Update(tbProveedores item)
+        public virtual RequestStatus Update(tbProveedores item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Prov_Id", item.Prov_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
