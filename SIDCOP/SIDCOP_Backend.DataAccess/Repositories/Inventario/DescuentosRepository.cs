@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using Newtonsoft.Json;
 using SIDCOP_Backend.Entities.Entities;
@@ -14,7 +14,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class DescuentosRepository : IRepository<tbDescuentos>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@desc_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -34,12 +34,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
-        public tbDescuentos Find(int? id)
+        public virtual tbDescuentos Find(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbDescuentos item)
+        public virtual RequestStatus Insert(tbDescuentos item)
         {
 
             if (item == null)
@@ -82,7 +82,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
        
 
-        public IEnumerable<tbDescuentos> List()
+        public virtual IEnumerable<tbDescuentos> List()
         {
             var parameter = new DynamicParameters();
 
@@ -92,7 +92,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
-        public RequestStatus Update(tbDescuentos item)
+        public virtual RequestStatus Update(tbDescuentos item)
         {
             if (item == null)
             {
