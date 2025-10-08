@@ -32,7 +32,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus Insert(tbUsuarios item)
+        public virtual RequestStatus Insert(tbUsuarios item)
         {
             if (item == null)
             {
@@ -67,7 +67,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public RequestStatus Update(tbUsuarios item)
+        public virtual RequestStatus Update(tbUsuarios item)
         {
             if (item == null)
             {

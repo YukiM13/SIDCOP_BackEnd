@@ -37,7 +37,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-        public RequestStatus Insert(tbImagenesVisita item)
+        public virtual RequestStatus Insert(tbImagenesVisita item)
         {
             if (item == null)
             {
