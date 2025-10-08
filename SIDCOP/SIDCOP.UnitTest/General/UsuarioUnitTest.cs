@@ -100,5 +100,37 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.Update(item), Times.Once);
         }
+
+        [Fact]
+        public void IniciarSesion()
+        {
+            //Declaramos un elemento a insertar (que lleve algo aunque sea).
+            var item = new LoginResponse
+            {
+                Usua_Usuario = "Poncho",
+                Usua_Clave = "poncho123",
+                //Agregar los demas campos si es necesario.
+            };
+
+            //El insertar del repositorio con las cosas esperadas que devuelva.
+            _repository.Setup(pl => pl.Login(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Sesión iniciada correctamente." });
+            //
+
+            //Ejecuta el insertar del service y guarda el result de este mismo.
+            var result = _service.IniciarSesion(item);
+
+            //Success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde.
+            //El sp en la base de datos.
+            result.Success.Should().BeTrue();
+
+            //Cosas del data del sp.
+            //Si el code_Status es un entonces si se insertó, en caso que tire error es que no insertó nada.
+            ((int)result.Data.code_Status).Should().Be(1);
+            //Si el message_Status es el esperado entonces se cumplio que si insertó.
+            ((string)result.Data.message_Status).Should().Be("Sesión iniciada correctamente.");
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.Login(item), Times.Once);
+        }
     }
 }

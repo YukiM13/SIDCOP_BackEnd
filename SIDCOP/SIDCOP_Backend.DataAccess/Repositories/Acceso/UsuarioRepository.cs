@@ -159,7 +159,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         //    return result;
         //}
 
-        public LoginResponse Login(LoginResponse item)
+        public virtual LoginResponse Login(LoginResponse item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario);
