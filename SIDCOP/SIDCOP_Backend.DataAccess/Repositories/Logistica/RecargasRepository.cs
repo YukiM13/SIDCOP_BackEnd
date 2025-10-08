@@ -23,7 +23,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbRecargas> Find2(int? id)
+        public virtual IEnumerable<tbRecargas> Find2(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -37,7 +37,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         }
 
 
-        public IEnumerable<tbRecargas> FindSucu(int id, bool esAdmin)
+        public virtual IEnumerable<tbRecargas> FindSucu(int id, bool esAdmin)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -58,7 +58,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 
 
 
-        public RequestStatus Insert(tbRecargas item)
+        public virtual RequestStatus Insert(tbRecargas item)
         {
             var parameter = new DynamicParameters();
 
@@ -95,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 
         }
 
-        public IEnumerable<tbRecargas> List()
+        public virtual IEnumerable<tbRecargas> List()
         {
             var parameter = new DynamicParameters();
 
@@ -105,7 +105,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result;
         }
 
-        public RequestStatus Update(tbRecargas item)
+        public virtual RequestStatus Update(tbRecargas item)
         {
             var parameter = new DynamicParameters();
 
@@ -142,7 +142,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             }
         }
 
-        public RequestStatus RecargasConfirm(tbRecargas item)
+        public virtual RequestStatus RecargasConfirm(tbRecargas item)
         {
 
             if (item == null)
