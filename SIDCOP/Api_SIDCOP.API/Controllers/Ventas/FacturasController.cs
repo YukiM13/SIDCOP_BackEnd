@@ -22,6 +22,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             _mapper = mapper;
         }
 
+
+        /// Obtiene la lista completa de facturas registradas en el sistema.
         [HttpGet("Listar")]
         public IActionResult Listar()
         {
@@ -38,6 +40,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         }
 
 
+        /// Obtiene la lista de facturas con límite para devoluciones.
         [HttpGet("ListarConLimiteDevolucion")]
         public IActionResult ListarFactDevo()
         {
@@ -53,6 +56,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        /// Obtiene la información completa de una factura específica por su ID.
         [HttpGet("ObtenerCompleta/{id}")]
         public IActionResult ObtenerCompleta(int id)
         {
@@ -85,6 +90,9 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+
+        /// Inserta una nueva factura en el sistema.
         [HttpPost("Insertar")]
         public IActionResult Insertar([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
         {
@@ -122,6 +130,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        /// Inserta una nueva factura en una sucursal específica.
         [HttpPost("InsertarEnSucursal")]
         public IActionResult InsertarEnSucursal([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
         {
@@ -159,6 +169,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        /// Valida los datos de una factura antes de su inserción.
         [HttpPost("Validar")]
         public IActionResult Validar([FromBody] SIDCOP_Backend.Entities.Entities.VentaInsertarDTO ventaDTO)
         {
@@ -196,6 +208,9 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        /// Obtiene la lista de facturas asociadas a un vendedor específico por su ID.
+
         [HttpGet("ListarPorVendedor/{vendId}")]
         public IActionResult ListarPorVendedor(int vendId)
         {
@@ -228,6 +243,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+
+        // Anula una factura existente en el sistema.
         [HttpPost("AnularFactura")]
         public IActionResult AnularFactura([FromBody] FacturaAnularViewModel item)
         {

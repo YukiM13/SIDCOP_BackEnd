@@ -31,7 +31,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbCuentasPorCobrar> List()
+        public virtual IEnumerable<tbCuentasPorCobrar> List()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -49,7 +49,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-        public tbCuentasPorCobrar GetDetalle(int cuentaPorCobrarId)
+        public virtual tbCuentasPorCobrar GetDetalle(int cuentaPorCobrarId)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();
@@ -63,7 +63,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public IEnumerable<tbCuentasPorCobrar> ResumenAntiguedad()
+        public virtual IEnumerable<tbCuentasPorCobrar> ResumenAntiguedad()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenAntiguedad, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -71,7 +71,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public IEnumerable<tbCuentasPorCobrar> ResumenCliente()
+        public virtual IEnumerable<tbCuentasPorCobrar> ResumenCliente()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenPorCliente, commandType: System.Data.CommandType.StoredProcedure).ToList();
@@ -79,7 +79,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-        public IEnumerable<tbCuentasPorCobrar> timeLineCliente(int Clie_Id)
+        public virtual IEnumerable<tbCuentasPorCobrar> timeLineCliente(int Clie_Id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameters = new DynamicParameters();

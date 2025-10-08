@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -21,7 +21,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbDevoluciones item)
+        public virtual RequestStatus Insert(tbDevoluciones item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@fact_Id", item.Fact_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -51,7 +51,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         }
 
-        public RequestStatus Trasladar(tbDevoluciones item)
+        public virtual RequestStatus Trasladar(tbDevoluciones item)
         {
             if (item == null)
             {
@@ -76,7 +76,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public IEnumerable<tbDevoluciones> List()
+        public virtual IEnumerable<tbDevoluciones> List()
         {
             var parameter = new DynamicParameters();
 

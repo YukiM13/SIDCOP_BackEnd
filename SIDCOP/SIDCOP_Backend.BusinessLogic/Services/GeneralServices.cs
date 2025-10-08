@@ -248,6 +248,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Empleados
 
+        //Obtiene la lista de todos los empleados registrados
         public IEnumerable<tbEmpleados> ListarEmpleado()
         {
             var result = new ServiceResult();
@@ -263,6 +264,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+
+        //Inserta un nuevo empleado
         public ServiceResult InsertarEmpleados(tbEmpleados item)
         {
             var result = new ServiceResult();
@@ -277,6 +280,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        //Actualiza los datos de un empleado existente
         public ServiceResult UpdateEmpleados(tbEmpleados empleados)
         {
             var result = new ServiceResult();
@@ -291,6 +295,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        //Elimina un empleado por su identificador (id)
         public ServiceResult DeleteEmpleado(int? id)
         {
             var result = new ServiceResult();
@@ -312,6 +317,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        //Busca un empleado por su identificador (id)
         public tbEmpleados FindEmpleados(int? id)
         {
             try
