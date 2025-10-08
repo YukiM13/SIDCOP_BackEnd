@@ -55,7 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
         }
 
 
-        public IEnumerable<tbMetas> ListCompleto()
+        public virtual IEnumerable<tbMetas> ListCompleto()
         {
             //var parameters = new DynamicParameters();
             //parameters.Add("@Prod_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
@@ -67,7 +67,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         }
 
-        public IEnumerable<dynamic> ListarPorVendedor(int? id)
+        public virtual IEnumerable<dynamic> ListarPorVendedor(int? id)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Vend_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
@@ -79,7 +79,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         }
 
-        public RequestStatus InsertCompleto(tbMetas item)
+        public virtual RequestStatus InsertCompleto(tbMetas item)
         {
             var parameters = new DynamicParameters();
 
@@ -105,7 +105,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return status;
         }
 
-        public RequestStatus UpdateCompleto(tbMetas item)
+        public virtual RequestStatus UpdateCompleto(tbMetas item)
         {
             var parameters = new DynamicParameters();
 
@@ -132,7 +132,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return status;
         }
 
-        public RequestStatus ActualizarProgreso(tbMetas item)
+        public virtual RequestStatus ActualizarProgreso(tbMetas item)
         {
             var parameters = new DynamicParameters();
 

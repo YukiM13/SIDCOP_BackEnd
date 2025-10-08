@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 {
     public class PermisoRepository
     {
-        public IEnumerable<tbPermisos> List()
+        public virtual IEnumerable<tbPermisos> List()
         {
             var parameter = new DynamicParameters();
 
@@ -22,7 +22,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             return result;
         }
-        public RequestStatus Insert(tbPermisos item)
+        public virtual RequestStatus Insert(tbPermisos item)
         {
             if (item == null)
             {
@@ -52,7 +52,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public RequestStatus Update(tbPermisos item)
+        public virtual RequestStatus Update(tbPermisos item)
         {
             if (item == null)
             {
@@ -82,7 +82,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public IEnumerable<tbPermisos> FindPermission(tbPermisos? item)
+        public virtual IEnumerable<tbPermisos> FindPermission(tbPermisos? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Role_Id", item.Role_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -93,7 +93,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus Delete(tbPermisos? item)
+        public virtual RequestStatus Delete(tbPermisos? item)
         {
             if (item == null)
             {

@@ -12,7 +12,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class PedidoRepository : IRepository<tbPedidos>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Pedi_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -37,7 +37,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbPedidos item)
+        public virtual RequestStatus Insert(tbPedidos item)
         {
 
             if (item == null)
@@ -88,14 +88,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public IEnumerable<tbPedidos> List()
+        public virtual IEnumerable<tbPedidos> List()
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbPedidos>(ScriptDatabase.Pedidos_Listar, commandType: System.Data.CommandType.StoredProcedure);
             return result;
         }
 
-        public RequestStatus Update(tbPedidos item)
+        public virtual RequestStatus Update(tbPedidos item)
         {
             if (item == null)
             {
