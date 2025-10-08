@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.General;
+using Api_SIDCOP.API.Models.General;
 using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
