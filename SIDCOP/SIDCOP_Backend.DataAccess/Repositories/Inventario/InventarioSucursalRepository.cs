@@ -26,7 +26,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbInventarioSucursales> ListInve(int id)
+        public virtual IEnumerable<tbInventarioSucursales> ListInve(int id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -40,7 +40,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
-        public IEnumerable<tbInventarioSucursales> ListadoPorSucursal(int id)
+        public virtual IEnumerable<tbInventarioSucursales> ListadoPorSucursal(int id)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
-        public IEnumerable<tbInventarioSucursales> ActulizarInventario(int sucu_id, int usua_id)
+        public virtual IEnumerable<tbInventarioSucursales> ActulizarInventario(int sucu_id, int usua_id)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
-        public IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
+        public virtual IEnumerable<tbInventarioSucursales> ActualizarCantidadesInventario(int usua_id, DateTime inSu_FechaModificacion, string xmlData)
         {
             try
             {

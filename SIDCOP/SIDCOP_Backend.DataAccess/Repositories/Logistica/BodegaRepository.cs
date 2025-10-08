@@ -14,7 +14,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
     {
 
         
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -33,7 +33,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public tbBodegas Find(int? id)
+        public virtual tbBodegas Find(int? id)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -49,7 +49,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result.First();
         }
 
-        public RequestStatus Insert(tbBodegas item)
+        public virtual RequestStatus Insert(tbBodegas item)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -77,7 +77,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public IEnumerable<tbBodegas> List()
+        public virtual IEnumerable<tbBodegas> List()
         {
             //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -89,7 +89,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result;
         }
 
-        public RequestStatus Update(tbBodegas item)
+        public virtual RequestStatus Update(tbBodegas item)
         {
             var parameters = new DynamicParameters();
 
