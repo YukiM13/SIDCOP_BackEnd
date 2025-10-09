@@ -30,8 +30,8 @@ namespace SIDCOP.UnitTest.General
             // Arrange
             var empleadosMock = new List<tbEmpleados>
     {
-        new tbEmpleados { Empl_Id = 1, Empl_Nombres = "Juan", Empl_Apellidos = "Pérez" },
-        new tbEmpleados { Empl_Id = 2, Empl_Nombres = "María", Empl_Apellidos = "González" }
+        new tbEmpleados { Empl_Id = 1, Empl_Nombres = "Juan", Empl_Apellidos = "Perez" },
+        new tbEmpleados { Empl_Id = 2, Empl_Nombres = "Maria", Empl_Apellidos = "Gonzalez" }
     }.AsQueryable();
 
             _repository.Setup(r => r.List()).Returns(empleadosMock);
@@ -43,7 +43,7 @@ namespace SIDCOP.UnitTest.General
             resultado.Should().NotBeNull();
             resultado.Should().HaveCount(2);
             resultado.Should().Contain(e => e.Empl_Nombres == "Juan");
-            resultado.Should().Contain(e => e.Empl_Nombres == "María");
+            resultado.Should().Contain(e => e.Empl_Nombres == "Maria");
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace SIDCOP.UnitTest.General
             var nuevoEmpleado = new tbEmpleados
             {
                 Empl_Nombres = "Carlos",
-                Empl_Apellidos = "López",
+                Empl_Apellidos = "Lopez",
                 Empl_DNI = "12345678",
                 // ... otros campos requeridos
             };
@@ -82,8 +82,8 @@ namespace SIDCOP.UnitTest.General
             {
                 Empl_Id = 1,
                 Empl_Nombres = "Carlos",
-                Empl_Apellidos = "López Modificado",
-                // ... otros campos
+                Empl_Apellidos = "Lopez Modificado",
+                
             };
 
             _repository.Setup(r => r.Update(It.IsAny<tbEmpleados>()))
@@ -141,7 +141,7 @@ namespace SIDCOP.UnitTest.General
             {
                 Empl_Id = idEmpleado,
                 Empl_Nombres = "Juan",
-                Empl_Apellidos = "Pérez"
+                Empl_Apellidos = "Perez"
             };
 
             _repository.Setup(r => r.Find(idEmpleado)).Returns(empleadoEsperado);
