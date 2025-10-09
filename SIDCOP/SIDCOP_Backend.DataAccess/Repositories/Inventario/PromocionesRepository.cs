@@ -12,7 +12,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class PromocionesRepository : IRepository<tbProductos>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             if (id == null)
             {
@@ -44,7 +44,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbProductos item)
+        public virtual RequestStatus Insert(tbProductos item)
         {
             if (item == null)
             {
@@ -85,7 +85,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
-        public IEnumerable<tbProductos> List()
+        public virtual IEnumerable<tbProductos> List()
         {
             var parameter = new DynamicParameters();
 
@@ -95,7 +95,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             return result;
         }
 
-        public RequestStatus Update(tbProductos item)
+        public virtual RequestStatus Update(tbProductos item)
         {
             if (item == null)
             {
