@@ -18,7 +18,7 @@ namespace SIDCOP.IntegrationTest.Mocks.Ventas
                 Meta_Ingresos = 50000.00m,
                 Meta_FechaInicio = new DateTime(2025, 1, 1),
                 Meta_FechaFin = new DateTime(2025, 12, 31),
-                Meta_Tipo = "IT",
+                Meta_Tipo = "IT", 
                 Meta_Unidades = 0,
                 Usua_Creacion = 1, // ID del usuario que crea la meta
                 Meta_FechaCreacion = DateTime.Now,
