@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class RegistrosCaiSRepository : IRepository<tbRegistrosCAI>
     {
-        public RequestStatus Insert(tbRegistrosCAI item)
+        public virtual RequestStatus Insert(tbRegistrosCAI item)
         {
             if (item == null)
             {
@@ -43,11 +43,10 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             {
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
-
         }
-        public IEnumerable<tbRegistrosCAI> List()
-        {
 
+        public virtual IEnumerable<tbRegistrosCAI> List()
+        {
             var parameter = new DynamicParameters();
 
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -56,8 +55,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-
-        public tbRegistrosCAI Find(int? id)
+        public virtual tbRegistrosCAI Find(int? id)
         {
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
@@ -70,8 +68,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
-
-        public RequestStatus Delete(tbRegistrosCAI item)
+        public virtual RequestStatus Delete(tbRegistrosCAI item)
         {
             // Eliminación lógica con auditoría de usuario y fecha
             var parameter = new DynamicParameters();
@@ -94,7 +91,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
         }
 
-        public RequestStatus Update(tbRegistrosCAI item)
+        public virtual RequestStatus Update(tbRegistrosCAI item)
         {
             if (item == null)
             {
@@ -128,11 +125,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
         // Implementaciones de interfaz no utilizadas - patrón de diseño inconsistente
         IEnumerable<tbRegistrosCAI> IRepository<tbRegistrosCAI>.List()
         {
             throw new NotImplementedException();
         }
+
         tbRegistrosCAI IRepository<tbRegistrosCAI>.Find(int? id)
         {
             throw new NotImplementedException();

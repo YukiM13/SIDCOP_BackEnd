@@ -45,12 +45,12 @@ namespace SIDCOP.UnitTest.General
         }
         //marca el metodo que le sigue como una prueba unitaria (xunit) que no toma argumentos y que representa un solo caso de prueba
         [Fact]
-            //unit test del listar
-            public void ClientesListar()
-            {
-                //declaracion de un lista de la tabla que se usará (llenar datos al menos 3 para cerciorarse
-                //que todo funcione bien
-                var modelo = new List<tbClientes>()
+        //unit test del listar
+        public void ClientesListar()
+        {
+            //declaracion de un lista de la tabla que se usará (llenar datos al menos 3 para cerciorarse
+            //que todo funcione bien
+            var modelo = new List<tbClientes>()
             {
                 new tbClientes {
         Clie_Id = 1,
@@ -138,22 +138,114 @@ namespace SIDCOP.UnitTest.General
     }
 }.AsEnumerable();
 
-                //el numero es según la cantidad de objetos que le hayamos puesto a la tabla de arriba dado que es el
-                //"resultado esperado"
-                //esto ejecuta la funcion del repositorio
-                _repository.Setup(pl => pl.ListConfirmados())
-                    .Returns(modelo);
+            //el numero es según la cantidad de objetos que le hayamos puesto a la tabla de arriba dado que es el
+            //"resultado esperado"
+            //esto ejecuta la funcion del repositorio
+            _repository.Setup(pl => pl.ListConfirmados())
+                .Returns(modelo);
 
-                //lo mismo aqui del "resultado esperado" ejecutando el service esta vez y guardando el result
-                var result = _service.ListClientesConfirmados();
+            //lo mismo aqui del "resultado esperado" ejecutando el service esta vez y guardando el result
+            var result = _service.ListClientesConfirmados();
 
-                //cantidad de objetos esperada
-                result.Should().HaveCount(3);
+            //cantidad de objetos esperada
+            result.Should().HaveCount(3);
 
-                //un registor que contenga algo en especifico y no se repita (sirve mas que nada para las pk)
+            //un registor que contenga algo en especifico y no se repita (sirve mas que nada para las pk)
 
-            }
         }
 
+        [Fact]
+
+        public void ClienteInsertar()
+        {
+            //declaramos un elemento a insertar (que lleve algo aunque sea)
+            var item = new tbClientes { Clie_Id = 10 };
+
+            //el insertar del repositorio con las cosas esperadas que devuelva
+            _repository.Setup(pl => pl.Insert(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Cliente registrado correctamente." });
+            //
+
+            //ejecuta el insert del service y guarda el result de este mismo
+            var result = _service.InsertCliente(item);
+
+            //success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde
+            //el sp en la base de datos
+            result.Success.Should().BeTrue();
+
+            //cosas del data del sp
+            //si el code_Status es un entonces si se inserto, en caso que tire error es que no inserto nada
+            ((int)result.Data.code_Status).Should().Be(1);
+            //si el message_Status es el esperado entonces se cumplio que si inserto
+            ((string)result.Data.message_Status).Should().Be("Cliente registrado correctamente.");
+            //validar que se llamo solo una vez durante la ejecucion
+            _repository.Verify(r => r.Insert(item), Times.Once);
+
+        }
+
+        [Fact]
+
+        public void ClienteActualizar()
+        {
+            // Arrange: creamos un objeto de prueba que será actualizado
+            var item = new tbClientes
+            {
+                Clie_Id = 1,
+                Clie_Nombres = "AlexUwUActualizado"
+            };
+
+            // Simulamos la respuesta esperada del repositorio al actualizar
+            _repository.Setup(r => r.Update(item))
+                .Returns(new RequestStatus
+                {
+                    code_Status = 1,
+                    message_Status = "Cliente actualizado correctamente."
+                });
+
+            // Act: llamamos al método del servicio
+            var result = _service.UpdateCliente(item);
+
+            // Assert: validamos que el resultado sea exitoso y tenga el mensaje esperado
+            result.Success.Should().BeTrue();
+            ((int)result.Data.code_Status).Should().Be(1);
+            ((string)result.Data.message_Status).Should().Be("Cliente actualizado correctamente.");
+
+            // Validamos que se llamó al método Update exactamente una vez
+            _repository.Verify(r => r.Update(item), Times.Once);
+        }
+
+        //[Fact]
+
+        //public void ClienteEliminar()
+        //{
+        //    // Arrange: Id del rol que queremos eliminar
+        //    int ClienteId = 1;
+
+        //    // Simulamos la respuesta esperada del repositorio
+        //    _repository.Setup(r => r.Delete(ClienteId))
+        //        .Returns(new RequestStatus
+        //        {
+        //            code_Status = 1,
+        //            message_Status = "Cliente eliminado correctamente."
+        //        });
+
+        //    // Act: llamamos al método del servicio
+        //    var result = _service.CambiarEstadoCliente(ClienteId);
+
+        //    // Assert: validamos que el resultado sea exitoso y tenga el mensaje esperado
+        //    result.Success.Should().BeTrue();
+        //    ((int)result.Data.code_Status).Should().Be(1);
+        //    ((string)result.Data.message_Status).Should().Be("Rol eliminado correctamente.");
+
+        //    // Validamos que se llamó al método Delete exactamente una vez
+        //    _repository.Verify(r => r.Delete(), Times.Once);
+        //}
+
+
+
     }
+
+    
+
+}
 

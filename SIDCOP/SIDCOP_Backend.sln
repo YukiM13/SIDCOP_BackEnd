@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIDCOP_Backend.Entities", "SIDCOP_Backend.Entities\SIDCOP_Backend.Entities.csproj", "{6D8AAC9A-A5CD-45FF-B265-B156B6B32D05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIDCOP_Backend.Entities", "SIDCOP_Backend.Entities\SIDCOP_Backend.Entities.csproj", "{6D8AAC9A-A5CD-45FF-B265-B156B6B32D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIDCOP_Backend.DataAccess", "SIDCOP_Backend.DataAccess\SIDCOP_Backend.DataAccess.csproj", "{5155B015-CC89-4A1A-84F7-05831A67207E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIDCOP_Backend.DataAccess", "SIDCOP_Backend.DataAccess\SIDCOP_Backend.DataAccess.csproj", "{5155B015-CC89-4A1A-84F7-05831A67207E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIDCOP_Backend.BusinessLogic", "SIDCOP_Backend.BusinessLogic\SIDCOP_Backend.BusinessLogic.csproj", "{0C079E27-A557-48CB-BCC9-7E0E18ED975D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIDCOP_Backend.BusinessLogic", "SIDCOP_Backend.BusinessLogic\SIDCOP_Backend.BusinessLogic.csproj", "{0C079E27-A557-48CB-BCC9-7E0E18ED975D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api_SIDCOP.API", "Api_SIDCOP.API\Api_SIDCOP.API.csproj", "{18AA9EE8-B8A7-4935-BE1F-076C4E922760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api_SIDCOP.API", "Api_SIDCOP.API\Api_SIDCOP.API.csproj", "{18AA9EE8-B8A7-4935-BE1F-076C4E922760}"
 EndProject
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SIDCOP_Backend.ETL", "SIDCOP_Backend.ETL\SIDCOP_Backend.ETL.dtproj", "{DE123331-39D3-7106-8F60-CD8F54860FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIDCOP.UnitTest", "SIDCOP.UnitTest\SIDCOP.UnitTest.csproj", "{C4A25F52-93FA-4A74-99C5-EC5890231897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIDCOP.UnitTest", "SIDCOP.UnitTest\SIDCOP.UnitTest.csproj", "{C4A25F52-93FA-4A74-99C5-EC5890231897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIDCOP.IntegrationTest", "SIDCOP.IntegrationTest\SIDCOP.IntegrationTest.csproj", "{B6FB55D6-2499-49A9-A639-45BFC05F631B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,12 @@ Global
 		{C4A25F52-93FA-4A74-99C5-EC5890231897}.Development|Any CPU.Build.0 = Release|Any CPU
 		{C4A25F52-93FA-4A74-99C5-EC5890231897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A25F52-93FA-4A74-99C5-EC5890231897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6FB55D6-2499-49A9-A639-45BFC05F631B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class ClienteRepository : IRepository<tbClientes>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
@@ -80,7 +80,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-        public RequestStatus Insert(tbClientes item)
+        public virtual RequestStatus Insert(tbClientes item)
         {
             if (item == null)
             {
@@ -147,7 +147,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-        public RequestStatus Update(tbClientes item)
+        public virtual RequestStatus Update(tbClientes item)
         {
             if (item == null)
             {
