@@ -88,36 +88,25 @@ namespace SIDCOP.IntegrationTest.Controllers
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
 
-        //[TestMethod] // Tercera prueba para operación de listar
-        //public async Task BodegasListar()
-        //{
-        //    // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
-        //    var cliente = factory.CreateClient();
-        //    cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
+        [TestMethod] // Tercera prueba para operación de listar
+        public async Task BodegasListar()
+        {
+            // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
+            var cliente = factory.CreateClient();
+            cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-        //    // PASO 2: CREAR DATOS MOCKS (SIMULADOS)
-        //    // Usa un método diferente del mock para listar datos del mock
-        //    var bodegaMock = BodegasMocks.MockBodegaListar();
+            // PASO 2: PETICIÓN A ENDPOINT DE LISTAR
+            var response = await cliente.GetAsync("/Bodega/Listar");
 
-        //    // PASO 3: SERIALIZACIÓN DE DATOS
-        //    var contenido = new StringContent(
-        //        System.Text.Json.JsonSerializer.Serialize(bodegaMock),
-        //        System.Text.Encoding.UTF8,
-        //        "application/json"
-        //    );
+            // PASO 3: VERIFICACIONES
+            Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
+            Assert.IsNotNull(response);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Assert.IsFalse(string.IsNullOrEmpty(responseContent));
+            Console.WriteLine($"Respuesta del servidor: {responseContent}");
+        }
 
-        //    //  PETICIÓN A ENDPOINT DE ACTUALIZACIÓN
-        //    var response = await cliente.GetAsync("/Bodega/Listar", contenido);
-
-        //    // PASO 4: VERIFICACIONES
-        //    Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
-        //    Assert.IsNotNull(response);
-        //    var responseContent = await response.Content.ReadAsStringAsync();
-        //    Assert.IsFalse(string.IsNullOrEmpty(responseContent));
-        //    Console.WriteLine($"Respuesta del servidor: {responseContent}");
-        //}
-
-        [TestMethod] // Segunda prueba para operación de actualización
+        [TestMethod] // Cuarta prueba para operación de actualización
         public async Task BodegaEliminar()
         {
             // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP

@@ -14,15 +14,15 @@ namespace SIDCOP.IntegrationTest.Mocks
             return new BodegaViewModel
             {
                 Bode_Descripcion = "Camión de La Lima",
-                Sucu_Id = 3,
-                RegC_Id = 1,
-                Vend_Id = 1,
-                Mode_Id = 1,
+                Sucu_Id = 1,
+                RegC_Id = 19,
+                Vend_Id = 2,
+                Mode_Id = 29,
                 Bode_VIN = "1HGCM82633A123456",
                 Bode_Placa = "HRK-5522",
                 Bode_Capacidad = 200.50M,
                 Bode_TipoCamion = "M",
-                Usua_Creacion = 15,
+                Usua_Creacion = 24,
                 Bode_FechaCreacion = DateTime.Now
             };
         }
@@ -31,39 +31,16 @@ namespace SIDCOP.IntegrationTest.Mocks
         {
             return new BodegaViewModel
             {
-                Bode_Id = 20,
+                Bode_Id = 47,
                 Bode_Descripcion = "Camión de La Lopez",
-                Sucu_Id = 5,
-                RegC_Id = 10,
-                Vend_Id = 22,
-                Mode_Id = 5,
+                Sucu_Id = 2,
+                RegC_Id = 19,
+                Vend_Id = 2,
+                Mode_Id = 25,
                 Bode_VIN = "1HGCM82633A123456",
                 Bode_Placa = "HDP-2033",
                 Bode_Capacidad = 100.55M,
                 Bode_TipoCamion = "P",
-                Usua_Creacion = 15,
-                Bode_FechaCreacion = DateTime.Now,
-                Usua_Modificacion = 30,
-                Bode_FechaModificacion = DateTime.Now
-            };
-        }
-
-        public static BodegaViewModel MockBodegaListar()
-        {
-            return new BodegaViewModel
-            {
-                Bode_Id = 20,
-                Bode_Descripcion = "Camión de La Lopez",
-                Sucu_Id = 5,
-                RegC_Id = 10,
-                Vend_Id = 22,
-                Mode_Id = 5,
-                Bode_VIN = "1HGCM82633A123456",
-                Bode_Placa = "HDP-2033",
-                Bode_Capacidad = 100.55M,
-                Bode_TipoCamion = "P",
-                Usua_Creacion = 15,
-                Bode_FechaCreacion = DateTime.Now,
                 Usua_Modificacion = 30,
                 Bode_FechaModificacion = DateTime.Now
             };
