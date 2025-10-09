@@ -164,5 +164,35 @@ namespace SIDCOP.UnitTest.Ventas
 
         }
 
+        [Fact]
+        public void MetasUpdateCompleto()
+        {
+            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
+
+            var result = _service.UpdateMetasCompleto(It.IsAny<tbMetas>());
+
+            result.Success.Should().BeTrue();
+
+            ((int)result.Data.code_Status).Should().Be(1);
+            ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
+            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+        }
+
+        [Fact]
+        public void MetasUpdateProgreso()
+        {
+            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
+
+            var result = _service.ActualizarProgreso(It.IsAny<tbMetas>());
+
+            result.Success.Should().BeTrue();
+
+            ((int)result.Data.code_Status).Should().Be(1);
+            ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
+            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+        }
+
     }
 }
