@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SIDCOP.IntegrationTest.Mocks
+namespace SIDCOP.IntegrationTest.Mocks.Logistica
 {
     class RecargasMocks
     {

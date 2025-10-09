@@ -1,10 +1,11 @@
-﻿using System;
+﻿using SIDCOP.IntegrationTest.Mocks.Logistica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SIDCOP.IntegrationTest.Controllers
+namespace SIDCOP.IntegrationTest.Controllers.Logistica
 {
 
     [TestClass]
@@ -32,7 +33,7 @@ namespace SIDCOP.IntegrationTest.Controllers
         {
             var cliente = factory.CreateClient();
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
-            var nuevoRecarga = Mocks.RecargasMocks.CrearMockRecargas();
+            var nuevoRecarga = RecargasMocks.CrearMockRecargas();
             var jsonContent = System.Text.Json.JsonSerializer.Serialize(nuevoRecarga);
             var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             var response = await cliente.PostAsync("/Recargas/Insertar", contentString);
@@ -50,7 +51,7 @@ namespace SIDCOP.IntegrationTest.Controllers
         {
             var cliente = factory.CreateClient();
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
-            var actualizarRecarga = Mocks.RecargasMocks.ActualizarMockRecargas();
+            var actualizarRecarga = RecargasMocks.ActualizarMockRecargas();
             var jsonContent = System.Text.Json.JsonSerializer.Serialize(actualizarRecarga);
             var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             var response = await cliente.PutAsync("/Recargas/Actualizar", contentString);
@@ -67,7 +68,7 @@ namespace SIDCOP.IntegrationTest.Controllers
         {
             var cliente = factory.CreateClient();
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
-            var actualizarRecarga = Mocks.RecargasMocks.CrearMockRecargas();
+            var actualizarRecarga = RecargasMocks.CrearMockRecargas();
             var jsonContent = System.Text.Json.JsonSerializer.Serialize(actualizarRecarga);
             var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             var response = await cliente.PutAsync("/Recargas/Confirmar", contentString);
