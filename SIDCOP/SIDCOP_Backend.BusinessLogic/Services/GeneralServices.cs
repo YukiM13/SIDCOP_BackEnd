@@ -647,7 +647,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Clientes
 
-        public ServiceResult InsertCliente(tbClientes item)
+        public virtual ServiceResult InsertCliente(tbClientes item)
         {
             var result = new ServiceResult();
             try
@@ -660,7 +660,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 return result.Error(ex.Message);
             }
         }
-        public ServiceResult UpdateCliente(tbClientes item)
+        public virtual ServiceResult UpdateCliente(tbClientes item)
         {
             var result = new ServiceResult();
             try
@@ -1713,8 +1713,13 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public object CambiarEstadoCliente(int clienteId)
+        {
+            throw new NotImplementedException();
+        }
 
-        #endregion 
+
+        #endregion
 
 
 

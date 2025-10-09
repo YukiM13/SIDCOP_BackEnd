@@ -11,18 +11,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
     public class SucursalesRepository : IRepository<tbSucursales>
     {
+        //Metodo que elimina una sucursal
         public RequestStatus Delete(int? id)
         {
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+                //Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)
@@ -31,25 +35,32 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+        //Metodo que busca una sucursal por su id
         public tbSucursales Find(int? id)
         {
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
+            //Envio del parametro al procedimiento almacenado
             parameter.Add("@Sucu_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.QueryFirstOrDefault<tbSucursales>(ScriptDatabase.Sucursal_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Sucursal no encontrada");
             }
+            // Retorno del resultado de la operacion en formato de lista tbSucursales
             return result;
         }
 
+        //Metodo que inserta una sucursal
         public RequestStatus Insert(tbSucursales item)
         {
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+
+            //Envio de los parámetros al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Sucu_Descripcion", item.Sucu_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Colo_Id", item.Colo_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -63,12 +74,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                //Ejecutar el procedimiento almacenado
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+                //Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)
@@ -77,23 +91,29 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+        //Metodo que lista todas las sucursales
         public IEnumerable<tbSucursales> List()
         {
             var parameter = new DynamicParameters();
 
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            //Ejecutar el procedimiento almacenado
             var result = db.Query<tbSucursales>(ScriptDatabase.Sucursales_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
-
+            // Retorno del resultado de la operacion en formato de lista tbSucursales
             return result;
         }
 
+        //Metodo que actualiza una sucursal
         public RequestStatus Update(tbSucursales item)
         {
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+
+            //Envio de los parámetros al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Sucu_Id", item.Sucu_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Sucu_Descripcion", item.Sucu_Descripcion, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -108,12 +128,15 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                //Ejecutar el procedimiento almacenado
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Sucursal_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+                //Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)

@@ -12,18 +12,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 {
     public class ProductosRepository : IRepository<tbProductos>
     {
+        //Metodo que elimina un producto por su id
         public RequestStatus Delete(int? id)
         {
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                //Ejecutar el procedimiento almacenado
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Producto_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+                //Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)
@@ -32,40 +37,57 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
+        //Metodo que busca un producto por su id
         public tbProductos Find(int? id)
         {
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            //  Asignacion del resultado de la consulta a una variable de tipo tbProductos
             var result = db.QueryFirstOrDefault<tbProductos>(ScriptDatabase.Producto_Buscar, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Producto no encontrado");
             }
+            // Retorno del resultado de la operacion en formato tbProductos
             return result;
         }
 
+        //Metodo que busca un producto por su codigo
         public IEnumerable<tbProductos> ListaPrecio(int? id)
         {
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            // Asignacion del resultado de la consulta a una variable de tipo lista
             var result = db.Query<tbProductos>(ScriptDatabase.Producto_ClienteDescuentoLista, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Producto no encontrado");
             }
+            // Retorno del resultado de la operacion en formato de lista tbProductos
             return result;
         }
 
+        // Metodo que obtiene los productos con descuento y precio especial por cliente y vendedor
         public async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
         {
+            // Configuración de los parámetros para el procedimiento almacenado
             var parameters = new DynamicParameters();
             parameters.Add("@Clie_Id", clieId, DbType.Int32, ParameterDirection.Input);
             parameters.Add("@Vend_Id", vendId, DbType.Int32, ParameterDirection.Input);
 
             try
             {
+                // Conexión a la base de datos y ejecución del procedimiento almacenado
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = await db.QueryAsync<ListasPreciosVendedor>(
                     "[Inve].[SP_ProductosDescuentoPrecioPorCliente_Vendedor]",
@@ -79,6 +101,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
                     throw new Exception("No se pudieron obtener los productos");
                 }
 
+                // Retorno del resultado de la operación en formato de lista
                 return result;
             }
             catch (SqlException ex)
@@ -91,21 +114,31 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             }
         }
 
+        // Metodo que obtiene los productos con descuento y precio especial por cliente y vendedor
         public IEnumerable<tbProductos> FindFactura(int? id)
         {
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Fact_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            // Asignacion del resultado de la consulta a una variable de tipo lista
             var result = db.Query<tbProductos>(ScriptDatabase.Producto_BuscarPorFactura, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Producto no encontrado");
             }
+
+            // Retorno del resultado de la operacion en formato de lista tbProductos
             return result;
         }
 
+        //Metodo que inserta un nuevo producto
         public RequestStatus Insert(tbProductos item)
         {
+            //Validacion de que el objeto no venga nulo
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
@@ -118,6 +151,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 item.Prod_CodigoBarra = "";
             }
+
+            //Envio de los parámetros al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_CodigoBarra", item.Prod_CodigoBarra, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -139,12 +174,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+                //Ejecutar el procedimiento almacenado
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Producto_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+
+                // Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)
@@ -154,18 +195,24 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
         }
 
+        //Metodo que lista todos los productos
         public IEnumerable<tbProductos> List()
         {
             var parameter = new DynamicParameters();
 
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Asignacion del resultado de la consulta a una variable de tipo lista
             var result = db.Query<tbProductos>(ScriptDatabase.Productos_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
             return result;
         }
 
+        //Metodo que actualiza un producto
         public RequestStatus Update(tbProductos item)
         {
+            //Validaciones de que el objeto no venga nulo
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
@@ -178,6 +225,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
             {
                 item.Prod_CodigoBarra = "";
             }
+
+            //Envio de los parámetros al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Prod_Id", item.Prod_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Prod_Codigo", item.Prod_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -200,12 +249,16 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+                //Ejecutar el procedimiento almacenado y asignacion del resultado a una variable
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Producto_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
+                // Retorno del resultado de la operacion en formato RequestStatus
                 return result;
             }
             catch (Exception ex)
