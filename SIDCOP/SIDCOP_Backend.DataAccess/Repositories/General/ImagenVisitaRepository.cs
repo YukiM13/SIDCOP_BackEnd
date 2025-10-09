@@ -16,7 +16,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbImagenesVisita> ListPorVisita(int? id)
+        public virtual IEnumerable<tbImagenesVisita> ListPorVisita(int? id)
         {
             try
             {

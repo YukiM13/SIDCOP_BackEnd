@@ -66,5 +66,55 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.Insert(item), Times.Once);
         }
+
+        [Fact]
+        public void ListImagenesPorVisita()
+        {
+            // Arrange
+            int visitaId = 5;
+
+            // Crear una lista simulada de imágenes que retornará el repositorio
+            var imagenesEsperadas = new List<tbImagenesVisita>
+    {
+        new tbImagenesVisita
+        {
+            ImVi_Id = 1,
+            ClVi_Id = 5,
+            ImVi_Imagen = "imagen1.jpg",
+            // Agregar otros campos según tu entidad
+        },
+        new tbImagenesVisita
+        {
+            ImVi_Id = 2,
+            ClVi_Id = 5,
+            ImVi_Imagen = "imagen2.jpg",
+        }
+    };
+
+            // Setup del repositorio
+            _repository.Setup(r => r.ListPorVisita(visitaId))
+                .Returns(imagenesEsperadas);
+
+            // Act
+            var result = _service.ListPorVisita(visitaId); // O el nombre que tenga en tu service
+
+            // Assert
+            // Verificar que el resultado no sea nulo
+            result.Should().NotBeNull();
+
+            // Verificar que se encontraron 2 imágenes
+            result.Should().HaveCount(2);
+
+            // Verificar que todas las imágenes pertenecen a la visita correcta
+            result.Should().OnlyContain(img => img.ClVi_Id == visitaId);
+
+            // Verificar que contiene las imágenes esperadas
+            result.First().ImVi_Id.Should().Be(1);
+            result.First().ImVi_Imagen.Should().Be("imagen1.jpg");
+
+            // Validar que se llamó solo una vez durante la ejecución
+            _repository.Verify(r => r.ListPorVisita(visitaId), Times.Once);
+        }
+
     }
 }

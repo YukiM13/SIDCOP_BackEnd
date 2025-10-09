@@ -24,6 +24,40 @@ namespace SIDCOP.UnitTest.General
             _service = new AccesoServices(_repository.Object, null, null, null);
         }
 
+        #region Listar
+        [Fact]
+        //Prueba Unitaria de listar.
+        public void UsuarioListar()
+        {
+            //Declaracion de una lista de la tabla que se usará (llenar al menos 3 registros para cerciorarse que todo funcione bien).
+            var modelo = new List<tbUsuarios>()
+            {
+                new tbUsuarios { Usua_Id = 1, Usua_Usuario = "sloshy", Usua_Clave = "hola", Usua_Imagen = "imagen.jpg",
+                                 Usua_EsAdmin = true, Usua_TienePermisos = true, Role_Id = 25, Usua_IdPersona = 20},
+
+                new tbUsuarios { Usua_Id = 2, Usua_Usuario = "wilcrack", Usua_Clave = "chilly_willy", Usua_Imagen = "imagen.jpg",
+                                 Usua_EsAdmin = false, Usua_TienePermisos = true, Role_Id = 5, Usua_IdPersona = 31},
+
+                new tbUsuarios { Usua_Id = 3, Usua_Usuario = "deyby", Usua_Clave = "tuttopassa", Usua_Imagen = "imagen.jpg",
+                                 Usua_EsAdmin = true, Usua_TienePermisos = false, Role_Id = 18, Usua_IdPersona = 8},
+            }.AsEnumerable();
+
+            //Esto ejecuta la funcion del repositorio.
+            _repository.Setup(pl => pl.List())
+                .Returns(modelo);
+
+            //Lo mismo aqui, ejecutando el service esta vez y guardando el result.
+            var result = _service.ListUsuarios();
+
+            //Cantidad de objetos esperada
+            result.Should().HaveCount(3);
+
+            //Un registro que contenga algo en especifico y no se repita (sirve mas que nada para las pk).
+            result.Should().ContainSingle(x => x.Usua_Id == 3);
+        }
+        #endregion
+
+        #region Insertar
         [Fact]
         public void UsuarioInsertar()
         {
@@ -61,7 +95,9 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.Insert(item), Times.Once);
         }
+        #endregion
 
+        #region Editar
         [Fact]
         public void UsuarioEditar()
         {
@@ -100,7 +136,9 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.Update(item), Times.Once);
         }
+        #endregion
 
+        #region Iniciar Sesión
         [Fact]
         public void IniciarSesion()
         {
@@ -126,7 +164,9 @@ namespace SIDCOP.UnitTest.General
 
             _repository.Verify(r => r.Login(It.IsAny<LoginResponse>()), Times.Once);
         }
+        #endregion 
 
+        #region Buscar
         [Fact]
         public void BuscarUsuario()
         {
@@ -142,7 +182,7 @@ namespace SIDCOP.UnitTest.General
             {
                 new tbUsuarios
                 {
-                    Usua_Id = 5,
+                    Usua_Id = 5
                     //Agregar otros campos según tu entidad
                 }
             };
@@ -166,7 +206,9 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.FindUser(item), Times.Once);
         }
+        #endregion
 
+        #region Cambiar Estado
         [Fact]
         public void UsuarioCambiarEstado()
         {
@@ -197,7 +239,9 @@ namespace SIDCOP.UnitTest.General
             //Validar que se llamo solo una vez durante la ejecucion.
             _repository.Verify(r => r.ChangeUserState(item), Times.Once);
         }
+        #endregion
 
+        #region Mostrar Contraseña
         [Fact]
         public void UsuarioMostrarContrasena()
         {
@@ -238,5 +282,40 @@ namespace SIDCOP.UnitTest.General
             // Validar que se llamó solo una vez durante la ejecución
             _repository.Verify(r => r.ShowPassword(usuaId, claveSeguridad), Times.Once);
         }
+        #endregion
+
+        #region Restablecer Contraseña
+        [Fact]
+        public void UsuarioRestablecerContrasena()
+        {
+            //Declaramos un elemento a insertar (que lleve algo aunque sea).
+            var item = new tbUsuarios
+            {
+                Usua_Id = 3,
+                Usua_Clave = "hola"
+                //Agregar los demas campos si es necesario.
+            };
+
+            //El insertar del repositorio con las cosas esperadas que devuelva.
+            _repository.Setup(pl => pl.RestorePassword(item))
+              .Returns(new RequestStatus { code_Status = 1, message_Status = "Contraseña restablecida correctamente." });
+            //
+
+            //Ejecuta el insertar del service y guarda el result de este mismo.
+            var result = _service.RestablecerContrasena(item);
+
+            //Success por como lo tenemos siempre dara true así que luego evaluamos lo del data que se manda desde.
+            //El sp en la base de datos.
+            result.Success.Should().BeTrue();
+
+            //Cosas del data del sp.
+            //Si el code_Status es un entonces si se insertó, en caso que tire error es que no insertó nada.
+            ((int)result.Data.code_Status).Should().Be(1);
+            //Si el message_Status es el esperado entonces se cumplio que si insertó.
+            ((string)result.Data.message_Status).Should().Be("Contraseña restablecida correctamente.");
+            //Validar que se llamo solo una vez durante la ejecucion.
+            _repository.Verify(r => r.RestorePassword(item), Times.Once);
+        }
+        #endregion
     }
 }

@@ -22,7 +22,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbUsuarios> List()
+        public virtual IEnumerable<tbUsuarios> List()
         {
             var parameter = new DynamicParameters();
 
@@ -211,7 +211,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-        public RequestStatus RestorePassword(tbUsuarios item)
+        public virtual RequestStatus RestorePassword(tbUsuarios item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
