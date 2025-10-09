@@ -601,59 +601,83 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region PagosCuentasPorCobrar
 
+        /// <summary>
+        /// Inserta un nuevo pago de cuenta por cobrar
+        /// </summary>
+        /// <param name="item">Datos del pago a insertar</param>
+        /// <returns>ServiceResult con el ID del pago insertado si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult InsertarPagoCuentaPorCobrar(tbPagosCuentasPorCobrar item)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _pagosCuentasPorCobrarRepository.InsertarPago(item);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resultado exitoso con el ID del pago
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Lista todos los pagos asociados a una cuenta por cobrar específica
+        /// </summary>
+        /// <param name="cuentaPorCobrarId">ID de la cuenta por cobrar</param>
+        /// <returns>ServiceResult con la lista de pagos si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ListarPagosPorCuentaPorCobrar(int cuentaPorCobrarId)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _pagosCuentasPorCobrarRepository.ListarPorCuentaPorCobrar(cuentaPorCobrarId);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el listado de pagos
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Lista las cuentas por cobrar con filtros opcionales
+        /// </summary>
+        /// <param name="clienteId">ID del cliente para filtrar (opcional)</param>
+        /// <param name="soloActivas">Indica si solo se deben mostrar cuentas activas</param>
+        /// <param name="soloVencidas">Indica si solo se deben mostrar cuentas vencidas</param>
+        /// <returns>ServiceResult con la lista de cuentas por cobrar si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ListarCuentasPorCobrar(int? clienteId = null, bool soloActivas = true, bool soloVencidas = false)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _pagosCuentasPorCobrarRepository.ListarCuentasPorCobrar(clienteId, soloActivas, soloVencidas);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el listado de cuentas por cobrar filtrado
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Anula un pago de cuenta por cobrar
+        /// </summary>
+        /// <param name="pagoId">ID del pago a anular</param>
+        /// <param name="usuarioId">ID del usuario que realiza la anulación</param>
+        /// <param name="motivo">Motivo de la anulación</param>
+        /// <returns>ServiceResult con el estado de la operación si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult AnularPagoCuentaPorCobrar(int pagoId, int usuarioId, string motivo)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _pagosCuentasPorCobrarRepository.AnularPago(pagoId, usuarioId, motivo);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resultado de la anulación
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
@@ -661,6 +685,11 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region CuentasPorCobrar
 
+        /// <summary>
+        /// Obtiene el detalle de una cuenta por cobrar específica
+        /// </summary>
+        /// <param name="cuentaPorCobrarId">ID de la cuenta por cobrar</param>
+        /// <returns>ServiceResult con el detalle de la cuenta si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ObtenerDetalleCuentaPorCobrar(int cuentaPorCobrarId)
         {
             var result = new ServiceResult();
@@ -668,69 +697,86 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             {
                 var response = _cuentasporcobrarRepository.GetDetalle(cuentaPorCobrarId);
                 if (response == null)
-                    return result.Error("No se encontró la cuenta por cobrar especificada.");
+                    return result.Error("No se encontró la cuenta por cobrar especificada."); // Retorna error si no existe
 
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el detalle de la cuenta por cobrar
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Lista todas las cuentas por cobrar
+        /// </summary>
+        /// <returns>ServiceResult con la lista de todas las cuentas por cobrar si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ListCuentasPorCobrar()
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.List();
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el listado completo de cuentas por cobrar
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Obtiene el resumen de antigüedad de las cuentas por cobrar
+        /// </summary>
+        /// <returns>ServiceResult con el resumen de antigüedad si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ResumenAntiguedad()
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.ResumenAntiguedad();
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resumen de antigüedad
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Obtiene el resumen de cuentas por cobrar por cliente
+        /// </summary>
+        /// <returns>ServiceResult con el resumen por cliente si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult ResumenCliente()
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.ResumenCliente();
-                return result.Ok(response);
+                return result.Ok(response); // Retorna el resumen por cliente
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        /// <summary>
+        /// Obtiene la línea de tiempo de cuentas por cobrar de un cliente específico
+        /// </summary>
+        /// <param name="clie_Id">ID del cliente</param>
+        /// <returns>ServiceResult con la línea de tiempo si es exitoso, o mensaje de error si falla</returns>
         public ServiceResult timeLineCliente(int clie_Id)
         {
             var result = new ServiceResult();
             try
             {
                 var response = _cuentasporcobrarRepository.timeLineCliente(clie_Id);
-                return result.Ok(response);
+                return result.Ok(response); // Retorna la línea de tiempo del cliente
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
