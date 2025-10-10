@@ -20,22 +20,23 @@ namespace SIDCOP_Backend.BusinessLogic.Services
     public class LogisticaServices
     {
 
-        // Repositorios para manejar las operaciones de acceso a datos
         private readonly RutasRepository _rutasRepository;
         private readonly BodegaRepository _bodegaRepository;
         private readonly TrasladoRepository _trasladoRepository;
         private readonly RecargasRepository _recargasRepository;
 
-        // Constructor que recibe los repositorios necesarios
-        public LogisticaServices(RutasRepository rutasRepository, BodegaRepository bodegaRepository, 
-        TrasladoRepository trasladoRepository, RecargasRepository recargasRepository)
+        public LogisticaServices(
+RutasRepository rutasRepository,
+BodegaRepository bodegaRepository,
+TrasladoRepository trasladoRepository,
+RecargasRepository recargasRepository)
         {
-            // Asignaci�n de los repositorios a las variables de instancia
             _rutasRepository = rutasRepository;
             _bodegaRepository = bodegaRepository;
             _trasladoRepository = trasladoRepository;
             _recargasRepository = recargasRepository;
         }
+
 
         #region Rutas
 
