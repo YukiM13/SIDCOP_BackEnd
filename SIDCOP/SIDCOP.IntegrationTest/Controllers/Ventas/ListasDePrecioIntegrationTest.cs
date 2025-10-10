@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SIDCOP.IntegrationTest.Mocks;
+using SIDCOP.IntegrationTest.Mocks.Inventario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
