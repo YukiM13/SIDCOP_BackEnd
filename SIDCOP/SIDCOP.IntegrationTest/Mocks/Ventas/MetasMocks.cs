@@ -43,6 +43,8 @@ namespace SIDCOP.IntegrationTest.Mocks.Ventas
             };
         }
 
+
+
         public static MetasViewModel CrearMockMetaValoresExtremos()
         {
             return new MetasViewModel
