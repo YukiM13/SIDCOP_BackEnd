@@ -14,13 +14,18 @@ namespace SIDCOP.IntegrationTest.Mocks
             return new PagosCuentasPorCobrarViewModel
             {
                 CPCo_Id = 81,
-                Pago_Monto = 69,
+                Pago_Monto = 100,
                 FoPa_Id = 1,
-                Pago_NumeroReferencia = "123456",
-                Pago_Observaciones = "Pago de prueba 2.0",
-                Usua_Creacion = 1
+                Pago_NumeroReferencia = "REF123456",
+                Pago_Observaciones = "Pago de prueba unit test",
+                Usua_Creacion = 1,
+                Pago_Fecha = DateTime.Now,
+                Pago_FechaCreacion = DateTime.Now,
+                Pago_Estado = true,
+                Pago_Anulado = false
             };
         }
+
 
         public static PagosCuentasPorCobrarViewModel CrearMockPagoCuentaPorCobrarListarCuentaPorCobrar()
         {

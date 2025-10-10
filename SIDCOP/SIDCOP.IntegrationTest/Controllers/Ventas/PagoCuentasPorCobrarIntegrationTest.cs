@@ -17,6 +17,7 @@ namespace SIDCOP.IntegrationTest.Controllers
         public async Task PagosCuentasPorCobrar_Insertar()
         {
             var cliente = factory.CreateClient();
+
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
             var pagoMock = PagoCuentaPorCobrarMocks.CrearMockPagoCuentaPorCobrarInsertar();
@@ -28,12 +29,19 @@ namespace SIDCOP.IntegrationTest.Controllers
             );
 
             var response = await cliente.PostAsync("/PagosCuentasPorCobrar/Insertar", contenido);
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            // Imprime el código y el contenido de la respuesta
+            Console.WriteLine($"Código de estado: {response.StatusCode}");
+            Console.WriteLine($"Contenido de la respuesta: {responseContent}");
+
+            // Validación
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             Assert.IsNotNull(response);
-            var responseContent = await response.Content.ReadAsStringAsync();
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
-            Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+
 
         [TestMethod]
         public async Task PagosCuentasPorCobrar_ListarPorCuentaPorCobrar()
