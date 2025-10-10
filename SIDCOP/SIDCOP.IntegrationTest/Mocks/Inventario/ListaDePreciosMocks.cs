@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SIDCOP.IntegrationTest.Mocks
+namespace SIDCOP.IntegrationTest.Mocks.Inventario
 {
     public class ListaDePreciosMocks
     {
@@ -59,27 +59,27 @@ namespace SIDCOP.IntegrationTest.Mocks
                 // IDs negativos o inválidos
                 Prod_Id = -1,
                 Clie_Id = -999,
-                
+
                 // Precios negativos (no válidos para un negocio)
                 PreP_PrecioContado = -50.00m,
                 PreP_PrecioCredito = -75.00m,
-                
+
                 // Escala inválida (fin menor que inicio)
                 PreP_InicioEscala = 10,
                 PreP_FinEscala = 5,
-                
+
                 // Lista de precios inválida
                 PreP_ListaPrecios = -1,
-                
+
                 // Usuario inválido
                 Usua_Creacion = -1,
-                
+
                 // Fecha futura (podría no ser válida según reglas de negocio)
                 PreP_FechaCreacion = DateTime.Now.AddYears(10),
-                
+
                 // Estado inválido podría ser null en algunos casos
                 PreP_Estado = false,
-                
+
                 // XML malformado
                 ClientesXml = "<Clientes><Cliente><Id>INVALID_ID</Cliente></Clientes>"
             };
@@ -95,26 +95,26 @@ namespace SIDCOP.IntegrationTest.Mocks
                 // IDs con valores extremos
                 Prod_Id = int.MaxValue,
                 Clie_Id = 0, // ID cero que podría no existir
-                
+
                 // Precios con valores extremos
                 PreP_PrecioContado = decimal.MaxValue,
                 PreP_PrecioCredito = 0.00m, // Precio cero
-                
+
                 // Escalas con valores extremos
                 PreP_InicioEscala = int.MaxValue,
                 PreP_FinEscala = int.MaxValue,
-                
+
                 // Lista de precios inexistente
                 PreP_ListaPrecios = 99999,
-                
+
                 // Usuario inexistente
                 Usua_Creacion = 99999,
-                
+
                 // Fecha muy antigua
                 PreP_FechaCreacion = DateTime.MinValue,
-                
+
                 PreP_Estado = true,
-                
+
                 // XML vacío
                 ClientesXml = ""
             };

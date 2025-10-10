@@ -37,7 +37,7 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int? FoPa_Id { get; set; }
 
-        public string FoPa_Descripcion { get; set; }
+        public string? FoPa_Descripcion { get; set; }
 
         // Propiedades adicionales para mostrar información relacionada - estas son opcionales para la inserción
         public string? UsuarioCreacion { get; set; }
