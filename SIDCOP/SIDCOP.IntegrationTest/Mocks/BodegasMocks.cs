@@ -45,21 +45,5 @@ namespace SIDCOP.IntegrationTest.Mocks
                 Bode_FechaModificacion = DateTime.Now
             };
         }
-
-        public static BodegaViewModel MockBodegaEliminar()
-        {
-            return new BodegaViewModel
-            {
-                Bode_Id = 5
-            };
-        }
-
-        public static BodegaViewModel MockBodegaDetalle()
-        {
-            return new BodegaViewModel
-            {
-                Bode_Id = 3
-            };
-        }
     }
 }

@@ -109,23 +109,19 @@ namespace SIDCOP.IntegrationTest.Controllers
         [TestMethod] // Cuarta prueba para operación de actualización
         public async Task BodegaEliminar()
         {
+            int BodeId = 47; // ID de la bodega a eliminar (debe existir en la base de datos)
+
             // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
             var cliente = factory.CreateClient();
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-            // PASO 2: CREAR DATOS MOCKS (SIMULADOS)
-            // Usa un método diferente del mock para crear el id a eliminar
-            var bodegaMock = BodegasMocks.MockBodegaEliminar();
+            // PASO 2: BUSCAR LA BODEGA A ELIMINAR
+            // Verificamos primero que la bodega existe
+            var responseBuscar = await cliente.GetAsync($"/Bodega/Buscar/{BodeId}");
+            Assert.AreEqual(System.Net.HttpStatusCode.OK, responseBuscar.StatusCode, $"La bodega con ID {BodeId} no existe");
 
-            // PASO 3: SERIALIZACIÓN DE DATOS
-            var contenido = new StringContent(
-                System.Text.Json.JsonSerializer.Serialize(bodegaMock),
-                System.Text.Encoding.UTF8,
-                "application/json"
-            );
-
-            //  PETICIÓN A ENDPOINT DE ACTUALIZACIÓN
-            var response = await cliente.PostAsync("/Bodega/Eliminar/{id}", contenido);
+            // PASO 3: PETICIÓN A ENDPOINT DE ELIMINAR
+            var response = await cliente.PostAsync($"/Bodega/Eliminar/{BodeId}", null);
 
             // PASO 4: VERIFICACIONES
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
@@ -133,6 +129,11 @@ namespace SIDCOP.IntegrationTest.Controllers
             var responseContent = await response.Content.ReadAsStringAsync();
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
+
+            // Verificar que la bodega ya no exista
+            var responseBuscarDespues = await cliente.GetAsync($"/Bodega/Buscar/{BodeId}");
+            Assert.AreEqual(System.Net.HttpStatusCode.OK, responseBuscarDespues.StatusCode,
+                "La bodega se desactivó");
         }
     }
 }
