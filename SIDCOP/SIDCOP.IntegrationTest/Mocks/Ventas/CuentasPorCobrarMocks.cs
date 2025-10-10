@@ -14,7 +14,7 @@ namespace SIDCOP.IntegrationTest.Mocks
         {
             return new CuentasPorCobrarViewModel
             {
-                Clie_Id = 1158
+                Clie_Id = 3285
             };
         }
 
@@ -30,7 +30,7 @@ namespace SIDCOP.IntegrationTest.Mocks
         {
             return new CuentasPorCobrarViewModel
             {
-                Clie_Id = 1158
+                Clie_Id = 3285
             };
         }
     }

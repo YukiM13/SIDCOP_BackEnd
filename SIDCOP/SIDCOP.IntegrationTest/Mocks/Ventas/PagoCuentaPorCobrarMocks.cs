@@ -14,7 +14,7 @@ namespace SIDCOP.IntegrationTest.Mocks
             return new PagosCuentasPorCobrarViewModel
             {
                 CPCo_Id = 81,
-                Pago_Monto = 100,
+                Pago_Monto = 10,
                 FoPa_Id = 1,
                 Pago_NumeroReferencia = "REF123456",
                 Pago_Observaciones = "Pago de prueba unit test",
