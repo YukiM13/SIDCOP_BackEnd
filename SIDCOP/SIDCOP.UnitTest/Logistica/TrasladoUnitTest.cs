@@ -19,18 +19,23 @@ namespace SIDCOP.UnitTest.Logistica
         public TrasladoUnitTest()
         {
             _repository = new Mock<TrasladoRepository>();
-            _service = new LogisticaServices(null, null, null, _repository.Object, null, null);
 
+            _service = new LogisticaServices(
+                null,
+                null,
+                _repository.Object,
+                null
+            );
         }
 
         [Fact]
         public void TrasladoListar()
         {
             var modelo = new List<tbTraslados>
-    {
-        new tbTraslados { Tras_Id = 1, Tras_Origen = 1, Tras_Destino = 2, Tras_Fecha = DateTime.Now },
-        new tbTraslados { Tras_Id = 2, Tras_Origen = 2, Tras_Destino = 3, Tras_Fecha = DateTime.Now }
-    }.AsEnumerable();
+            {
+                new tbTraslados { Tras_Id = 1, Tras_Origen = 1, Tras_Destino = 2, Tras_Fecha = DateTime.Now },
+                new tbTraslados { Tras_Id = 2, Tras_Origen = 2, Tras_Destino = 3, Tras_Fecha = DateTime.Now }
+            }.AsEnumerable();
 
             _repository.Setup(r => r.ListTraslados()).Returns(modelo);
 
@@ -55,18 +60,64 @@ namespace SIDCOP.UnitTest.Logistica
         }
 
         [Fact]
-        public void TrasladoEditar()
+        public void TrasladoInsertarDetalle()
         {
-            _repository.Setup(r => r.Update(It.IsAny<tbTraslados>()))
-                .Returns(new RequestStatus { code_Status = 1, message_Status = "Traslado editado correctamente." });
+            var detalle = new tbTrasladosDetalle
+            {
+                TrDe_Id = 1,
+                Tras_Id = 1,
+                Prod_Id = 10,
+                TrDe_Cantidad = 5,
+                TrDe_Observaciones = "Obs",
+                Usua_Creacion = 1
+            };
 
-            var traslado = new tbTraslados { Tras_Id = 1, Tras_Origen = 1, Tras_Destino = 2, Tras_Fecha = DateTime.Now };
-            var result = _service.UpdateTraslado(traslado);
+            _repository.Setup(r => r.InsertTrasladoDetalle(It.IsAny<tbTrasladosDetalle>()))
+                .Returns(new RequestStatus { code_Status = 1, message_Status = "Detalle insertado correctamente." });
+
+            var result = _service.InsertTrasladoDetalle(detalle);
 
             result.Success.Should().BeTrue();
             ((int)result.Data.code_Status).Should().Be(1);
-            ((string)result.Data.message_Status).Should().Be("Traslado editado correctamente.");
-            _repository.Verify(r => r.Update(It.IsAny<tbTraslados>()), Times.Once);
+            ((string)result.Data.message_Status).Should().Be("Detalle insertado correctamente.");
+            _repository.Verify(r => r.InsertTrasladoDetalle(It.IsAny<tbTrasladosDetalle>()), Times.Once);
+        }
+
+        [Fact]
+        public void TrasladoBuscar()
+        {
+            var traslado = new tbTraslados
+            {
+                Tras_Id = 1,
+                Tras_Origen = 1,
+                Tras_Destino = 2,
+                Tras_Fecha = DateTime.Now
+            };
+
+            _repository.Setup(r => r.BuscarTraslado(1)).Returns(traslado);
+
+            var result = _service.BuscarTraslado(1);
+
+            result.Success.Should().BeTrue();
+            ((tbTraslados)result.Data).Tras_Id.Should().Be(1);
+            _repository.Verify(r => r.BuscarTraslado(1), Times.Once);
+        }
+
+        [Fact]
+        public void TrasladoBuscarDetalle()
+        {
+            var detalles = new List<tbTrasladosDetalle>
+            {
+                new tbTrasladosDetalle { TrDe_Id = 1, Tras_Id = 1, Prod_Id = 10, TrDe_Cantidad = 5, TrDe_Observaciones = "Obs", Usua_Creacion = 1 }
+            }.AsEnumerable();
+
+            _repository.Setup(r => r.BuscarTrasladoDetalle(1)).Returns(detalles);
+
+            var result = _service.BuscarTrasladoDetalle(1);
+
+            result.Success.Should().BeTrue();
+            ((IEnumerable<tbTrasladosDetalle>)result.Data).Should().HaveCount(1);
+            _repository.Verify(r => r.BuscarTrasladoDetalle(1), Times.Once);
         }
 
         [Fact]
@@ -82,8 +133,5 @@ namespace SIDCOP.UnitTest.Logistica
             ((string)result.Data.message_Status).Should().Be("Traslado eliminado correctamente.");
             _repository.Verify(r => r.EliminarTraslado(1), Times.Once);
         }
-
-
-
     }
 }
