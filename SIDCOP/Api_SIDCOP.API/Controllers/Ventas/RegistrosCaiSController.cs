@@ -1,4 +1,4 @@
-﻿using Api_SIDCOP.API.Models.Logistica;
+using Api_SIDCOP.API.Models.Logistica;
 using Api_SIDCOP.API.Models.Ventas;
 using Api_Sistema_Reportes.API.Helpers;
 using AutoMapper;
@@ -30,20 +30,22 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             {
                 return BadRequest("Id Invalida.");
             }
-            var sucursal = _ventaServices.BuscarRegistroCaiS(id);
-            if (sucursal != null)
+            
+            var registro = _ventaServices.BuscarRegistroCaiS(id);
+            if (registro != null)
             {
-                return Ok(sucursal);
+                return Ok(registro);
             }
             else
             {
-                return NotFound("Cai not found.");
+                return NotFound("Registro no encontrado.");
             }
         }
 
         [HttpGet("Listar")]
         public IActionResult listar()
         {
+            // Mapeo de la lista de registros CAI
             var list = _ventaServices.ListarRegistrosCaiS();
             list = _mapper.Map<IEnumerable<tbRegistrosCAI>>(list);
             return Ok(list);
@@ -74,25 +76,5 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             var update = _ventaServices.EliminarRegistroCai(mapped);
             return Ok(update);
         }
-
-
-
-        //[HttpPost("Eliminar/{id}")]
-        //public IActionResult Eliminar(int? id)
-        //{
-        //    if (id <= 0)
-        //    {
-        //        return BadRequest("Id Invalida.");
-        //    }
-        //    var result = _ventaServices.EliminarRegistroCai(id);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(result.Message);
-        //    }
-        //}
     }
 }

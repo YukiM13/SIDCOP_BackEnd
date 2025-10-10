@@ -35,7 +35,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
         public IActionResult ListarPorVendedor(int? id)
         {
             var list = _ventaServices.ListarPorVendedor(id);
-            //var mapped = _mapper.Map<IEnumerable<MetasViewModel>>(list);
+            var mapped = _mapper.Map<IEnumerable<MetasViewModel>>(list);
             return Ok(list);
         }
 
