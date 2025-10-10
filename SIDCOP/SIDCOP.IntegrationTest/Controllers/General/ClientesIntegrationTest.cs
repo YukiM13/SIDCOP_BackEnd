@@ -56,5 +56,29 @@ namespace SIDCOP.IntegrationTest.Controllers.General
             // Muestra la respuesta en consola para debugging/verificación manual
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+
+        [TestMethod]
+        public async Task Cliente_Buscar()
+        {
+            // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
+            var cliente = factory.CreateClient();
+            cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
+            // Usa un método diferente del mock para crear datos de búsqueda
+            var ClienteMock = ClientesMocks.CrearMockClienteBuscar();
+            // PASO 3: SERIALIZACIÓN 
+            var contenido = new StringContent(
+                System.Text.Json.JsonSerializer.Serialize(ClienteMock),
+                System.Text.Encoding.UTF8,
+                "application/json"
+            );
+            //  PETICIÓN A ENDPOINT DE BÚSQUEDA
+            var response = await cliente.GetAsync($"/Cliente/Buscar/{ClienteMock.Clie_Id}");
+            // VERIFICACIONES 
+            Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
+            Assert.IsNotNull(response);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Assert.IsFalse(string.IsNullOrEmpty(responseContent));
+            Console.WriteLine($"Respuesta del servidor: {responseContent}");
+        }
     }
 }

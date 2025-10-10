@@ -42,5 +42,13 @@ namespace SIDCOP.IntegrationTest.Mocks.General
                 Clie_FechaCreacion = DateTime.Now
             };
         }
+
+        public static ClienteViewModel CrearMockClienteBuscar()
+        {
+            return new ClienteViewModel
+            {
+                Clie_Id = 4459
+            };
+        }
     }
 }
