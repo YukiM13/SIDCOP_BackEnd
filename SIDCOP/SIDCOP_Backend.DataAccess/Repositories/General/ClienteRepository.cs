@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -11,20 +11,29 @@ using Api_SIDCOP.API.Models;
 
 namespace SIDCOP_Backend.DataAccess.Repositories.General
 {
+
     public class ClienteRepository : IRepository<tbClientes>
     {
+ 
+        /// Elimina un cliente por su ID (método no implementado)
+   
         public virtual RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
 
+   
+        /// Cambia el estado de un cliente específico
+ 
         public ClienteCambiarEstadoDTO ChangeState(int? id, DateTime? fecha)
         {
+            // Configuración de parámetros para el procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@FechaActual", fecha, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
             try
             {
+                // Ejecuta el procedimiento almacenado para cambiar estado del cliente
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<ClienteCambiarEstadoDTO>(
                     ScriptDatabase.Cliente_CambiarEstado,
@@ -43,8 +52,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
+        /// Busca un cliente específico por su ID
+      
+        /// <exception cref="Exception">Se lanza cuando el cliente no es encontrado</exception>
         public tbClientes Find(int? id)
         {
+            // Ejecuta búsqueda de cliente por ID usando procedimiento almacenado
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -56,8 +69,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
+      
+        /// Lista los clientes asignados a un vendedor específico
+
         public IEnumerable<ClientesPorVendedorDTO> ListarVendedorPorCliente(int vend_Id)
         {
+            // Obtiene lista de clientes asociados a un vendedor específico
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Vend_Id", vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -66,8 +83,12 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
+   
+        /// Busca clientes por ruta de vendedor
+
         public IEnumerable<tbClientes> FindPorVendedor(int? id)
         {
+            // Busca clientes asignados a la ruta de un vendedor específico
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Vend_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -80,12 +101,18 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
+       
+        /// Inserta un nuevo cliente en la base de datos
+
         public virtual RequestStatus Insert(tbClientes item)
         {
+            // Validación de datos de entrada
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
+            
+            // Configuración de parámetros para inserción de cliente
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Codigo", item.Clie_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Nacionalidad", item.Clie_Nacionalidad, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -115,6 +142,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             try
             {
+                // Ejecuta procedimiento almacenado para insertar cliente
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Insertar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 
@@ -133,26 +161,38 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         
         }
 
+
+        /// Lista todos los clientes que han sido confirmados
+ 
         public virtual IEnumerable<tbClientes> ListConfirmados()
         {
+            // Obtiene lista de clientes con estado confirmado
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarConfirmados, commandType: System.Data.CommandType.StoredProcedure);
             return result;
         }
 
+        /// Lista todos los clientes que están pendientes de confirmación
+     
         public IEnumerable<tbClientes> ListSinConfirmacion()
         {
+            // Obtiene lista de clientes pendientes de confirmación
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbClientes>(ScriptDatabase.Clientes_ListarSinConfirmacion, commandType: System.Data.CommandType.StoredProcedure);
             return result;
         }
 
+        /// Actualiza la información de un cliente existente
+
         public virtual RequestStatus Update(tbClientes item)
         {
+            // Validación de datos de entrada
             if (item == null)
             {
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacíos o datos erroneos" };
             }
+            
+            // Configuración de parámetros para actualización de cliente
             var parameter = new DynamicParameters();
             parameter.Add("@Clie_Id", item.Clie_Id, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Codigo", item.Clie_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -183,6 +223,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
             try
             {
+                // Ejecuta procedimiento almacenado para actualizar cliente
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cliente_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
@@ -196,6 +237,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
+
+        /// Lista todos los clientes (método no implementado)
 
         public IEnumerable<tbClientes> List()
         {

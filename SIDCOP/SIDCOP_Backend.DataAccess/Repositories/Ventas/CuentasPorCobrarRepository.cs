@@ -33,9 +33,13 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public virtual IEnumerable<tbCuentasPorCobrar> List()
         {
+            //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Ejecuta el procedimiento y trae una lista de cuentas por cobrar
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_Listar, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
+            //Retorna la lista de cuentas por cobrar
             return result;
         }
 
@@ -51,46 +55,64 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
         public virtual tbCuentasPorCobrar GetDetalle(int cuentaPorCobrarId)
         {
+            //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
             var parameters = new DynamicParameters();
+            //Declaracion de parametros
             parameters.Add("@CPCo_Id", cuentaPorCobrarId);
 
+            //Ejecuta el procedimiento con el parametro y obtiene el detalle de la cuenta por cobrar
             var result = db.QueryFirstOrDefault<tbCuentasPorCobrar>(
                 ScriptDatabase.CuentaPorCobrar_Detalle,
                 parameters,
                 commandType: System.Data.CommandType.StoredProcedure);
 
+            //Retorna el detalle de la cuenta por cobrar
             return result;
         }
 
         public virtual IEnumerable<tbCuentasPorCobrar> ResumenAntiguedad()
         {
+            //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Ejecuta el procedimiento y trae el resumen de antigüedad de cuentas por cobrar
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenAntiguedad, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
+            //Retorna el resumen de antigüedad
             return result;
         }
 
         public virtual IEnumerable<tbCuentasPorCobrar> ResumenCliente()
         {
+            //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+            //Ejecuta el procedimiento y trae el resumen de cuentas por cobrar por cliente
             var result = db.Query<tbCuentasPorCobrar>(ScriptDatabase.CuentasPorCobrar_ResumenPorCliente, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
+            //Retorna el resumen por cliente
             return result;
         }
 
         public virtual IEnumerable<tbCuentasPorCobrar> timeLineCliente(int Clie_Id)
         {
+            //Se llama el ConnectionString para conectarse a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
             var parameters = new DynamicParameters();
+            //Declaracion de parametros
             parameters.Add("@Clie_Id", Clie_Id);
 
+            //Ejecuta el procedimiento con el parametro y obtiene la línea de tiempo del cliente
             var result = db.Query<tbCuentasPorCobrar>(
                 ScriptDatabase.CuentasPorCobrar_TimelineCliente,
                 parameters,
                 commandType: System.Data.CommandType.StoredProcedure
             );
 
+            //Retorna la línea de tiempo del cliente
             return result;
         }
 

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using SIDCOP_Backend.Entities.Entities;
-
+ 
 namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 {
     public class TrasladoRepository : IRepository<tbTraslados>
     {
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbTraslados> ListTraslados()
+        public virtual IEnumerable<tbTraslados> ListTraslados()
         {
             var parameter = new DynamicParameters();
 
@@ -28,7 +28,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result;
         }
 
-        public RequestStatus InsertTraslado(tbTraslados item)
+        public virtual RequestStatus InsertTraslado(tbTraslados item)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -53,7 +53,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public RequestStatus InsertTrasladoDetalle(tbTrasladosDetalle item)
+        public virtual RequestStatus InsertTrasladoDetalle(tbTrasladosDetalle item)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -76,7 +76,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public tbTraslados BuscarTraslado(int? id)
+        public virtual  tbTraslados BuscarTraslado(int? id)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -92,7 +92,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result.First();
         }
 
-        public IEnumerable<tbTrasladosDetalle> BuscarTrasladoDetalle(int? id)
+        public virtual IEnumerable<tbTrasladosDetalle> BuscarTrasladoDetalle(int? id)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Tras_Id", id, System.Data.DbType.Int64, System.Data.ParameterDirection.Input);
@@ -104,7 +104,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return result.ToList(); // Devuelve todos los registros
         }
 
-        public RequestStatus EliminarTraslado(int? id)
+        public virtual RequestStatus EliminarTraslado(int? id)
         {
             var parameters = new DynamicParameters();
             //Declaracion de parametros
@@ -123,22 +123,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             return status;
         }
 
-        public tbTraslados Find(int? id)
+        public virtual tbTraslados Find(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Insert(tbTraslados item)
+        public virtual RequestStatus Insert(tbTraslados item)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbTraslados> List()
+        public virtual IEnumerable<tbTraslados> List()
         {
             throw new NotImplementedException();
         }
 
-        public RequestStatus Update(tbTraslados item)
+        public virtual RequestStatus Update(tbTraslados item)
         {
             throw new NotImplementedException();
         }
