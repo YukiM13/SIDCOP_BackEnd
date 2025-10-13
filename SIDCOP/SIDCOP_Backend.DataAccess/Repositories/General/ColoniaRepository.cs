@@ -17,12 +17,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
     public class ColoniaRepository : IRepository<tbColonias>
     {
 
-
-        /// <summary>
         /// Elimina una colonia específica por su ID
-        /// </summary>
-        /// <param name="id">ID de la colonia a eliminar</param>
-        /// <returns>Estado de la operación de eliminación</returns>
+
         public RequestStatus Delete(int? id)
         {
             // Configuración de parámetros para eliminación de colonia
@@ -45,12 +41,9 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             }
         }
 
-        /// <summary>
+    
         /// Busca una colonia específica por su ID
-        /// </summary>
-        /// <param name="id">ID de la colonia a buscar</param>
-        /// <returns>Entidad de la colonia encontrada</returns>
-        /// <exception cref="Exception">Se lanza cuando la colonia no es encontrada</exception>
+
         public tbColonias Find(int? id)
         {
             // Ejecuta búsqueda de colonia por ID usando procedimiento almacenado
@@ -65,14 +58,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-
-
-
-        /// <summary>
         /// Inserta una nueva colonia en la base de datos
-        /// </summary>
-        /// <param name="item">Entidad de la colonia a insertar</param>
-        /// <returns>Estado de la operación de inserción</returns>
+
         public RequestStatus Insert(tbColonias item)
         {
             // Validación de datos de entrada
@@ -108,10 +95,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
 
 
-        /// <summary>
         /// Lista todas las colonias disponibles
-        /// </summary>
-        /// <returns>Colección de todas las colonias</returns>
+
         public IEnumerable<tbColonias> List()
         {
             // Obtiene lista completa de colonias
@@ -120,10 +105,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
              return result;
         }
 
-        /// <summary>
         /// Lista colonias con información de municipios y departamentos
-        /// </summary>
-        /// <returns>Colección de colonias con datos de municipios y departamentos</returns>
+
         public IEnumerable<tbColonias> ListMunicipiosyDepartamentos()
         {
             // Obtiene lista de colonias incluyendo información de municipios y departamentos
@@ -133,14 +116,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-
-
-
-        /// <summary>
         /// Actualiza la información de una colonia existente
-        /// </summary>
-        /// <param name="item">Entidad de la colonia con datos actualizados</param>
-        /// <returns>Estado de la operación de actualización</returns>
+
         public RequestStatus Update(tbColonias item)
         {
             // Validación de datos de entrada
