@@ -167,7 +167,9 @@ namespace SIDCOP.UnitTest.Ventas
         [Fact]
         public void MetasUpdateCompleto()
         {
-            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+            var item = new tbMetas { Prod_Id = 10 };
+
+            _repository.Setup(pl => pl.UpdateCompleto(It.IsAny<tbMetas>()))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
 
             var result = _service.UpdateMetasCompleto(It.IsAny<tbMetas>());
@@ -176,13 +178,13 @@ namespace SIDCOP.UnitTest.Ventas
 
             ((int)result.Data.code_Status).Should().Be(1);
             ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
-            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+            _repository.Verify(r => r.UpdateCompleto(It.IsAny<tbMetas>()), Times.Once);
         }
 
         [Fact]
         public void MetasUpdateProgreso()
         {
-            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+            _repository.Setup(pl => pl.ActualizarProgreso(It.IsAny<tbMetas>()))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
 
             var result = _service.ActualizarProgreso(It.IsAny<tbMetas>());
@@ -191,7 +193,7 @@ namespace SIDCOP.UnitTest.Ventas
 
             ((int)result.Data.code_Status).Should().Be(1);
             ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
-            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+            _repository.Verify(r => r.ActualizarProgreso(It.IsAny<tbMetas>()), Times.Once);
         }
 
     }
