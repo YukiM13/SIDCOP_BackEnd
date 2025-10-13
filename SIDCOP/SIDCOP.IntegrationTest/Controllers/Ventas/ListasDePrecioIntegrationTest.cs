@@ -1,13 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SIDCOP.IntegrationTest.Mocks;              
+using SIDCOP.IntegrationTest.Mocks.Inventario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;                            
+using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;                    
+using System.Threading.Tasks;
 
-namespace SIDCOP.IntegrationTest.Controllers
+namespace SIDCOP.IntegrationTest.Controllers.Ventas
 {
     [TestClass] // Contenedora de métodos de prueba
     public class ListasDePrecioIntegrationTest : BaseIntegrationTest
@@ -34,9 +34,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             // PASO 3: SERIALIZACIÓN DE DATOS
             // Convierte el objeto mock a JSON para enviarlo en la petición HTTP
             var contenido = new StringContent(
-                System.Text.Json.JsonSerializer.Serialize(preciosMock), 
-                System.Text.Encoding.UTF8,                             
-                "application/json"                                      
+                System.Text.Json.JsonSerializer.Serialize(preciosMock),
+                Encoding.UTF8,
+                "application/json"
             );
 
             // Hace una petición POST al endpoint para insertar la lista de precios
@@ -71,7 +71,7 @@ namespace SIDCOP.IntegrationTest.Controllers
             // PASO 3: SERIALIZACIÓN 
             var contenido = new StringContent(
                 System.Text.Json.JsonSerializer.Serialize(preciosMock),
-                System.Text.Encoding.UTF8,
+                Encoding.UTF8,
                 "application/json"
             );
 
@@ -86,7 +86,7 @@ namespace SIDCOP.IntegrationTest.Controllers
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
 
-     
+
 
         [TestMethod] // Prueba con valores extremos que también debería fallar
         public async Task PreciosPorProductoInsertar_DeberiaFallar()
@@ -102,7 +102,7 @@ namespace SIDCOP.IntegrationTest.Controllers
             // PASO 3: SERIALIZACIÓN DE DATOS EXTREMOS
             var contenido = new StringContent(
                 System.Text.Json.JsonSerializer.Serialize(preciosExtremos),
-                System.Text.Encoding.UTF8,
+                Encoding.UTF8,
                 "application/json"
             );
 
@@ -114,15 +114,15 @@ namespace SIDCOP.IntegrationTest.Controllers
             // - 400 Bad Request (validación)
             // - 404 Not Found (IDs inexistentes)
             // - 500 Internal Server Error (overflow o errores de BD)
-            
+
             var esExitoso = response.StatusCode == System.Net.HttpStatusCode.OK;
             var responseContent = await response.Content.ReadAsStringAsync();
-            
+
             if (esExitoso)
             {
                 Console.WriteLine("⚠️ ADVERTENCIA: La API aceptó valores extremos que podrían ser problemáticos");
                 Console.WriteLine($"Respuesta: {responseContent}");
-                
+
                 // Si la API acepta estos valores, al menos documentamos que pasó
                 Assert.IsTrue(true, "La API manejó valores extremos sin error - verificar si esto es el comportamiento esperado");
             }
@@ -130,7 +130,7 @@ namespace SIDCOP.IntegrationTest.Controllers
             {
                 Console.WriteLine($"✅ La API correctamente rechazó valores extremos con código: {response.StatusCode}");
                 Console.WriteLine($"Mensaje de error: {responseContent}");
-                
+
                 // Verifica que sea un código de error apropiado
                 Assert.IsTrue(
                     response.StatusCode >= System.Net.HttpStatusCode.BadRequest,

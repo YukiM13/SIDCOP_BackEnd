@@ -30,7 +30,7 @@ namespace Api_SIDCOP.API.Models.Logistica
 
         public int? Usua_Modificacion { get; set; }
 
-        public string UsuaModificacion { get; set; }
+        public string? UsuaModificacion { get; set; }
 
         public DateTime? Tras_FechaModificacion { get; set; }
 
