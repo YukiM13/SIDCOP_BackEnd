@@ -17,7 +17,7 @@ namespace SIDCOP.UnitTest.Ventas
     {
        
         private readonly Mock<MetaRepository> _repository;
-
+        //crear una instancia del repositorio y el servicio
         private readonly VentaServices _service;
 
  
