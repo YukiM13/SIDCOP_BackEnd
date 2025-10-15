@@ -179,13 +179,13 @@ namespace SIDCOP.IntegrationTest.Controllers
 
             if (esExitoso)
             {
-                Console.WriteLine("⚠️ ADVERTENCIA: La API aceptó datos inválidos que podrían ser problemáticos");
+                Console.WriteLine("ADVERTENCIA: La API aceptó datos inválidos que podrían ser problemáticos");
                 Console.WriteLine($"Respuesta: {responseContent}");
                 Assert.IsTrue(true, "La API manejó datos inválidos sin error - verificar si esto es el comportamiento esperado");
             }
             else
             {
-                Console.WriteLine($"✅ La API correctamente rechazó datos inválidos con código: {response.StatusCode}");
+                Console.WriteLine($"La API correctamente rechazó datos inválidos con código: {response.StatusCode}");
                 Console.WriteLine($"Mensaje de error: {responseContent}");
                 Assert.IsTrue(
                     response.StatusCode >= System.Net.HttpStatusCode.BadRequest,
@@ -220,13 +220,13 @@ namespace SIDCOP.IntegrationTest.Controllers
 
             if (esExitoso)
             {
-                Console.WriteLine("⚠️ ADVERTENCIA: La API aceptó valores extremos que podrían ser problemáticos");
+                Console.WriteLine("ADVERTENCIA: La API aceptó valores extremos que podrían ser problemáticos");
                 Console.WriteLine($"Respuesta: {responseContent}");
                 Assert.IsTrue(true, "La API manejó valores extremos sin error - verificar si esto es el comportamiento esperado");
             }
             else
             {
-                Console.WriteLine($"✅ La API correctamente rechazó valores extremos con código: {response.StatusCode}");
+                Console.WriteLine($"La API correctamente rechazó valores extremos con código: {response.StatusCode}");
                 Console.WriteLine($"Mensaje de error: {responseContent}");
                 Assert.IsTrue(
                     response.StatusCode >= System.Net.HttpStatusCode.BadRequest,
@@ -261,13 +261,13 @@ namespace SIDCOP.IntegrationTest.Controllers
 
             if (esExitoso)
             {
-                Console.WriteLine("⚠️ ADVERTENCIA: La API aceptó una factura sin detalles");
+                Console.WriteLine("ADVERTENCIA: La API aceptó una factura sin detalles");
                 Console.WriteLine($"Respuesta: {responseContent}");
                 Assert.IsTrue(true, "La API manejó factura sin detalles - verificar si esto es el comportamiento esperado");
             }
             else
             {
-                Console.WriteLine($"✅ La API correctamente rechazó factura sin detalles con código: {response.StatusCode}");
+                Console.WriteLine($" La API correctamente rechazó factura sin detalles con código: {response.StatusCode}");
                 Console.WriteLine($"Mensaje de error: {responseContent}");
                 Assert.IsTrue(
                     response.StatusCode >= System.Net.HttpStatusCode.BadRequest,

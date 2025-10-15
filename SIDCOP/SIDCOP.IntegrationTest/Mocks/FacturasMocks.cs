@@ -51,10 +51,10 @@ namespace SIDCOP.IntegrationTest.Mocks
             return new VentaInsertarDTO
             {
                 // No se envía Fact_Numero porque lo genera el SP
-                Fact_TipoDeDocumento = "1",
-                RegC_Id = 1,
-                DiCl_Id = 1,
-                Vend_Id = 1,
+                Fact_TipoDeDocumento = "01",
+                RegC_Id = 21,
+                DiCl_Id = 1150,
+                Vend_Id = 11,
                 Fact_TipoVenta = "CREDITO",
                 Fact_FechaEmision = DateTime.Now,
                 Fact_Latitud = 14.0823m,
@@ -66,12 +66,12 @@ namespace SIDCOP.IntegrationTest.Mocks
                 {
                     new VentaDetalleDTO
                     {
-                        Prod_Id = 1,
-                        FaDe_Cantidad = 10
+                        Prod_Id = 149,
+                        FaDe_Cantidad = 5
                     },
                     new VentaDetalleDTO
                     {
-                        Prod_Id = 3,
+                        Prod_Id = 126,
                         FaDe_Cantidad = 2
                     }
                 }
