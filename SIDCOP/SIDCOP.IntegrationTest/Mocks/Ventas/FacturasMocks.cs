@@ -2,7 +2,7 @@ using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace SIDCOP.IntegrationTest.Mocks
+namespace SIDCOP.IntegrationTest.Mocks.Ventas
 {
     public class FacturasMocks
     {

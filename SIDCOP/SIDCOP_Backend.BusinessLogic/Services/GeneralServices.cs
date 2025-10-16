@@ -1,4 +1,5 @@
-﻿using SIDCOP_Backend.DataAccess.Repositories.General;
+﻿using SIDCOP_Backend.DataAccess.Context;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
@@ -28,6 +29,29 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ImagenVisitaRepository _imagenVisitaRepository;
         private readonly FormasDePagoRepository _formasDePagoRepository;
         private readonly UnidadesDePesoRepository _unidadesDePesoRepository;
+        private BDD_SIDCOPContext bddContext;
+        private object value1;
+        private object value2;
+        private object value3;
+        private object value4;
+        private object value5;
+        private object value6;
+        private object value7;
+        private object value8;
+        private object value9;
+        private object value10;
+        private object value11;
+        private object value12;
+        private object value13;
+        private object value14;
+        private object value15;
+        private object value16;
+        private object value17;
+        private object value18;
+        private object value19;
+        private object value20;
+        private object value21;
+        private object value22;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -75,6 +99,33 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _imagenVisitaRepository = imagenVisitaRepository;
             _formasDePagoRepository = formasDePagoRepository;
             _unidadesDePesoRepository = unidadesDePesoRepository;
+        }
+
+        public GeneralServices(BDD_SIDCOPContext bddContext, object value1, object value2, object value3, object value4, object value5, object value6, object value7, object value8, object value9, object value10, object value11, object value12, object value13, object value14, object value15, object value16, object value17, object value18, object value19, object value20, object value21, object value22)
+        {
+            this.bddContext = bddContext;
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.value4 = value4;
+            this.value5 = value5;
+            this.value6 = value6;
+            this.value7 = value7;
+            this.value8 = value8;
+            this.value9 = value9;
+            this.value10 = value10;
+            this.value11 = value11;
+            this.value12 = value12;
+            this.value13 = value13;
+            this.value14 = value14;
+            this.value15 = value15;
+            this.value16 = value16;
+            this.value17 = value17;
+            this.value18 = value18;
+            this.value19 = value19;
+            this.value20 = value20;
+            this.value21 = value21;
+            this.value22 = value22;
         }
 
         #region Departamentos

@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SIDCOP.IntegrationTest.Mocks;
+using SIDCOP.IntegrationTest.Mocks.Ventas;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
