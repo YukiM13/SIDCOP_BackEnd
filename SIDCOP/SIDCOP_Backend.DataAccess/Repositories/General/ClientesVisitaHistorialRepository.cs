@@ -29,7 +29,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             throw new NotImplementedException();
         }
 
-        public RequestStatus InsertVisita(VisitaClientePorVendedorDTO item)
+        public virtual RequestStatus InsertVisita(VisitaClientePorVendedorDTO item)
         {
 
             //_bddContext.tbClientesVisita.Add(item);
@@ -200,5 +200,6 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         {
             throw new NotImplementedException();
         }
+
     }
 }

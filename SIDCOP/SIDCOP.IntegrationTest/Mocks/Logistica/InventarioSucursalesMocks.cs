@@ -1,13 +1,12 @@
-﻿using Api_SIDCOP.API.Models.Inventario;
+using Api_SIDCOP.API.Models.Inventario;
+using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIDCOP.IntegrationTest.Mocks.Logistica
 {
-    public class InventarioSucursalesMocks
+    public static class InventarioSucursalesMocks
     {
         public static InventarioSucursalesViewModel CrearMockInventarioItem()
         {
@@ -31,9 +30,42 @@ namespace SIDCOP.IntegrationTest.Mocks.Logistica
         {
             return new List<InventarioSucursalesViewModel>
             {
-                new InventarioSucursalesViewModel { InSu_Id = 1, Sucu_Id = 1, Prod_Id = 10, Prod_Descripcion = "Producto A", InSu_Cantidad = 15 },
-                new InventarioSucursalesViewModel { InSu_Id = 2, Sucu_Id = 1, Prod_Id = 11, Prod_Descripcion = "Producto B", InSu_Cantidad = 25 },
-                new InventarioSucursalesViewModel { InSu_Id = 3, Sucu_Id = 1, Prod_Id = 12, Prod_Descripcion = "Producto C", InSu_Cantidad = 30 }
+                new() { 
+                    InSu_Id = 1, 
+                    Sucu_Id = 1, 
+                    Prod_Id = 10, 
+                    Sucu_Descripcion = "Sucursal Central",
+                    Prod_Descripcion = "Producto A",
+                    Prod_DescripcionCorta = "ProdA",
+                    InSu_Cantidad = 15,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-10),
+                    InSu_Estado = true
+                },
+                new() { 
+                    InSu_Id = 2, 
+                    Sucu_Id = 1, 
+                    Prod_Id = 11, 
+                    Sucu_Descripcion = "Sucursal Central",
+                    Prod_Descripcion = "Producto B",
+                    Prod_DescripcionCorta = "ProdB",
+                    InSu_Cantidad = 25,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-5),
+                    InSu_Estado = true
+                },
+                new() { 
+                    InSu_Id = 3, 
+                    Sucu_Id = 1, 
+                    Prod_Id = 12, 
+                    Sucu_Descripcion = "Sucursal Central",
+                    Prod_Descripcion = "Producto C",
+                    Prod_DescripcionCorta = "ProdC",
+                    InSu_Cantidad = 30,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-2),
+                    InSu_Estado = true
+                }
             };
         }
 
@@ -41,12 +73,26 @@ namespace SIDCOP.IntegrationTest.Mocks.Logistica
         {
             return new List<InventarioSucursalesViewModel>
             {
-                new InventarioSucursalesViewModel { InSu_Id = 1, Prod_Id = 8, InSu_Cantidad = 100 },
-                new InventarioSucursalesViewModel { InSu_Id = 2, Prod_Id = 9, InSu_Cantidad = 200 }
+                new() { 
+                    InSu_Id = 1, 
+                    Prod_Id = 8, 
+                    InSu_Cantidad = 100,
+                    Sucu_Id = 1,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now
+                },
+                new() { 
+                    InSu_Id = 2, 
+                    Prod_Id = 9, 
+                    InSu_Cantidad = 200,
+                    Sucu_Id = 1,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now
+                }
             };
         }
 
-        public static InventarioSucursalesViewModel CrearMockInventarioInvalidos()
+        public static InventarioSucursalesViewModel CrearMockInventarioInvalido()
         {
             return new InventarioSucursalesViewModel
             {
@@ -71,6 +117,79 @@ namespace SIDCOP.IntegrationTest.Mocks.Logistica
                 Usua_Creacion = int.MaxValue,
                 InSu_FechaCreacion = DateTime.MinValue,
                 InSu_Estado = true
+            };
+        }
+
+        public static tbInventarioSucursales CrearEntidadInventarioSucursal()
+        {
+            return new tbInventarioSucursales
+            {
+                InSu_Id = 1,
+                Sucu_Id = 1,
+                Prod_Id = 10,
+                InSu_Cantidad = 50,
+                Usua_Creacion = 1,
+                InSu_FechaCreacion = DateTime.Now,
+                InSu_Estado = true,
+                Prod = new tbProductos
+                {
+                    Prod_Id = 10,
+                    Prod_Descripcion = "Producto A",
+                    Prod_DescripcionCorta = "ProdA"
+                },
+                Sucu = new tbSucursales
+                {
+                    Sucu_Id = 1,
+                    Sucu_Descripcion = "Sucursal Central"
+                },
+                Usua_CreacionNavigation = new tbUsuarios
+                {
+                    Usua_Id = 1,
+                  
+                }
+            };
+        }
+
+        public static List<tbInventarioSucursales> CrearListaEntidadInventarioSucursal()
+        {
+            return new List<tbInventarioSucursales>
+            {
+                new()
+                {
+                    InSu_Id = 1,
+                    Sucu_Id = 1,
+                    Prod_Id = 10,
+                    InSu_Cantidad = 15,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-10),
+                    InSu_Estado = true,
+                    Prod = new tbProductos { Prod_Descripcion = "Producto A", Prod_DescripcionCorta = "ProdA" },
+                    Sucu = new tbSucursales { Sucu_Descripcion = "Sucursal Central" }
+                },
+                new()
+                {
+                    InSu_Id = 2,
+                    Sucu_Id = 1,
+                    Prod_Id = 11,
+                    InSu_Cantidad = 25,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-5),
+                    InSu_Estado = true,
+                    Prod = new tbProductos { Prod_Descripcion = "Producto B", Prod_DescripcionCorta = "ProdB" },
+                    Sucu = new tbSucursales { Sucu_Descripcion = "Sucursal Central" }
+                },
+                new()
+                {
+                    InSu_Id = 3,
+                    Sucu_Id = 1,
+                    Prod_Id = 12,
+                    InSu_Cantidad = 30,
+                    Usua_Creacion = 1,
+                    InSu_FechaCreacion = DateTime.Now.AddDays(-2),
+                    InSu_Estado = true,
+                    Prod = new tbProductos { Prod_Descripcion = "Producto C", Prod_DescripcionCorta = "ProdC" },
+                    Sucu = new tbSucursales { Sucu_Descripcion = "Sucursal Central" }
+                }
             };
         }
     }

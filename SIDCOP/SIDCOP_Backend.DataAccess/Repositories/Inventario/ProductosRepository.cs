@@ -13,7 +13,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
     public class ProductosRepository : IRepository<tbProductos>
     {
         //Metodo que elimina un producto por su id
-        public RequestStatus Delete(int? id)
+        public virtual RequestStatus Delete(int? id)
         {
             //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
@@ -38,7 +38,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         //Metodo que busca un producto por su id
-        public tbProductos Find(int? id)
+        public  virtual tbProductos Find(int? id)
         {
             //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -58,7 +58,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         //Metodo que busca un producto por su codigo
-        public IEnumerable<tbProductos> ListaPrecio(int? id)
+        public  virtual IEnumerable<tbProductos> ListaPrecio(int? id)
         {
             //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -78,7 +78,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         // Metodo que obtiene los productos con descuento y precio especial por cliente y vendedor
-        public async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
+        public virtual async Task<IEnumerable<ListasPreciosVendedor>> ObtenerProductosDescuentoPrecioPorClienteVendedorAsync(int clieId, int vendId)
         {
             // Configuración de los parámetros para el procedimiento almacenado
             var parameters = new DynamicParameters();
@@ -115,7 +115,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         // Metodo que obtiene los productos con descuento y precio especial por cliente y vendedor
-        public IEnumerable<tbProductos> FindFactura(int? id)
+        public virtual IEnumerable<tbProductos> FindFactura(int? id)
         {
             //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
@@ -136,7 +136,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         //Metodo que inserta un nuevo producto
-        public RequestStatus Insert(tbProductos item)
+        public  virtual RequestStatus Insert(tbProductos item)
         {
             //Validacion de que el objeto no venga nulo
             if (item == null)
@@ -196,7 +196,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         //Metodo que lista todos los productos
-        public IEnumerable<tbProductos> List()
+        public virtual IEnumerable<tbProductos> List()
         {
             var parameter = new DynamicParameters();
 
@@ -210,7 +210,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Inventario
         }
 
         //Metodo que actualiza un producto
-        public RequestStatus Update(tbProductos item)
+        public virtual  RequestStatus Update(tbProductos item)
         {
             //Validaciones de que el objeto no venga nulo
             if (item == null)

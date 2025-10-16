@@ -36,7 +36,7 @@ public class MetasIntegrationTest: BaseIntegrationTest
         );
 
         // Hace una petición POST al endpoint para insertar la lista de precios
-        var response = await cliente.PostAsync("/Metas/InsertarMeta", contenido);
+        var response = await cliente.PostAsync("/Metas/InsertarCompleto", contenido);
 
         // Verifica que la respuesta tenga código HTTP 200 (OK)
         Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
@@ -67,7 +67,7 @@ public class MetasIntegrationTest: BaseIntegrationTest
             System.Text.Encoding.UTF8,
             "application/json"
         );
-        var response = await cliente.PutAsync("/Metas/ActualizarMeta", contenido);
+        var response = await cliente.PostAsync("/Metas/ActualizarCompleto", contenido);
 
         Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
         Assert.IsNotNull(response);
