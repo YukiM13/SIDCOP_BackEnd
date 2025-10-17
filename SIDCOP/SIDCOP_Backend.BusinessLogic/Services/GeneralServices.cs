@@ -130,74 +130,79 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region Departamentos
 
+        // Inserta un nuevo departamento en el sistema
         public ServiceResult InsertarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.Insert(item);
-                return result.Ok(list);
+                var response = _departamentoRepository.Insert(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Actualiza un departamento existente en el sistema
         public ServiceResult EditarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.Update(item);
-                return result.Ok(list);
+                var response = _departamentoRepository.Update(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Elimina un departamento por código
         public ServiceResult EliminarDepartamento(string id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.DeleteConCodigo(id);
-                return result.Ok(list);
+                var response = _departamentoRepository.DeleteConCodigo(id);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Busca un departamento por código
         public tbDepartamentos BuscarDepartamento(string id)
         {
-            //  var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.FindConCodigo(id);
-                return list;
+                var response = _departamentoRepository.FindConCodigo(id);
+                return response; // Retorna el departamento encontrado
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Lista todos los departamentos registrados en el sistema
         public IEnumerable<tbDepartamentos> ListarDepartamentos()
         {
-            var result = new ServiceResult();
             try
             {
                 var list = _departamentoRepository.List();
-                return list;
+                return list; // Retorna el listado
             }
             catch (Exception ex)
             {
-                IEnumerable<tbDepartamentos> usua = null;
-                return usua;
+                // En caso de error, retorna null
+                IEnumerable<tbDepartamentos> result = null;
+                return result;
             }
         }
 
@@ -205,34 +210,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region MarcasVehiculos
 
+        // Inserta una nueva marca de vehículo en el sistema
         public ServiceResult InsertarMarcaVehiculo(tbMarcasVehiculos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _marcaVehiculoRepository.Insert(item);
-                return result.Ok(list);
+                var response = _marcaVehiculoRepository.Insert(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Actualiza una marca de vehículo existente en el sistema
         public ServiceResult EditarMarcaVehiculo(tbMarcasVehiculos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _marcaVehiculoRepository.Update(item);
-                return result.Ok(list);
+                var response = _marcaVehiculoRepository.Update(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Elimina una marca de vehículo por ID
         public ServiceResult EliminarMarcavehiculo(int? id)
         {
             var result = new ServiceResult();
@@ -241,57 +249,62 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _marcaVehiculoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult);
+                    return result.Ok(deleteResult); // Retorna el resultado exitoso
                 }
                 else
                 {
-                    return result.Error(deleteResult);
+                    return result.Error(deleteResult); // Retorna el mensaje de error si falla
                 }
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+                return result.Error($"Error al eliminar marca de vehículo: {ex.Message}"); // Retorna el mensaje de error si falla
             }
         }
 
+        // Busca una marca de vehículo por ID
         public tbMarcasVehiculos BuscarMarcaVehiculo(int id)
         {
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Find(id);
-                return marcavehiculo;
+                return marcavehiculo; // Retorna la marca de vehículo encontrada
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Busca los modelos de una marca de vehículo por ID
         public tbMarcasVehiculos BuscarModeloDeMarca(int id)
         {
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Modelos(id);
-                return marcavehiculo;
+                return marcavehiculo; // Retorna los modelos de la marca encontrados
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Lista todas las marcas de vehículos registradas en el sistema
         public IEnumerable<tbMarcasVehiculos> ListarMarcaVehiculo()
         {
-            var result = new ServiceResult();
             try
             {
                 var list = _marcaVehiculoRepository.List();
-                return list;
+                return list; // Retorna el listado
             }
             catch (Exception ex)
             {
-                IEnumerable<tbMarcasVehiculos> usua = null;
-                return usua;
+                // En caso de error, retorna null
+                IEnumerable<tbMarcasVehiculos> result = null;
+                return result;
             }
         }
 
