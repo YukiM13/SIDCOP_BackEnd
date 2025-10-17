@@ -47,6 +47,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             var parameter = new DynamicParameters();
 
+            //Los parametros necesarios para la cabecera de pedidos
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Vend_Id", item.Vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_Codigo", item.Pedi_Codigo, System.Data.DbType.String, System.Data.ParameterDirection.Input);
@@ -55,6 +56,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Usua_Creacion", item.Usua_Creacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaCreacion", item.Pedi_FechaCreacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
+            //enviamos los parametros de los detalles como un xml debido a la versión del sql usado
             string detallesXml = item.Detalles != null && item.Detalles.Any()
              ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
                  $"<Deta>" +
@@ -102,6 +104,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 return new RequestStatus { code_Status = 0, message_Status = "Los datos llegaron vacios o datos erroneos" };
             }
 
+            //Parametros necesarios para la actualización de pedidos en la parte de la cabecera
             var parameter = new DynamicParameters();
             parameter.Add("@Pedi_Id", item.Pedi_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@DiCl_Id", item.DiCl_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -112,6 +115,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             parameter.Add("@Usua_Modificacion", item.Usua_Modificacion, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Pedi_FechaModificacion", item.Pedi_FechaModificacion, System.Data.DbType.DateTime, System.Data.ParameterDirection.Input);
 
+            //enviamos los parametros de los detalles como un xml debido a la versión del sql usado
             string detallesXml = item.Detalles != null && item.Detalles.Any()
              ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
                  $"<Deta>" +
