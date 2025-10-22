@@ -136,7 +136,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public IEnumerable<tbUsuarios> VerificateExistingUser(tbUsuarios? item)
+        public virtual IEnumerable<tbUsuarios> VerificateExistingUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, DbType.String, ParameterDirection.Input);

@@ -35,21 +35,18 @@ namespace SIDCOP.IntegrationTest.Mocks.General
             };
         }
 
-        // Mock con fecha personalizada
-        //public static ClientesVisitaHistorialViewModel CrearMockVisitaConFecha(DateTime fecha)
-        //{
-        //    var mock = CrearMockVisitaInsertar();
-        //    mock.ClVi_Fecha = fecha;
-        //    return mock;
-        //}
-
-        //// Mock para diferentes estados de visita
-        //public static ClientesVisitaHistorialViewModel CrearMockVisitaPorEstado(int estadoId, string observacion)
-        //{
-        //    var mock = CrearMockVisitaInsertar();
-        //    mock.EsVi_Id = estadoId;
-        //    mock.ClVi_Observaciones = observacion;
-        //    return mock;
-        //}
+        public static VisitaClientePorVendedorDTO InsertarVisitaMock()
+        {
+            return new VisitaClientePorVendedorDTO
+            {
+                VeRu_Id = 1076,
+                DiCl_Id = 3199,
+                EsVi_Id = 3,
+                ClVi_Observaciones = "Negocio cerrado",
+                ClVi_Fecha = new DateTime(2025, 9, 15),
+                Usua_Creacion = 1,
+                ClVi_FechaCreacion = DateTime.Now
+            };
+        }
     }
 }

@@ -1,8 +1,14 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.SqlServer.Management.Smo.Wmi;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using SIDCOP.IntegrationTest.Mocks.General;
+using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess;
+using SIDCOP_Backend.DataAccess.Context;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,11 +21,16 @@ using System.Threading.Tasks;
 namespace SIDCOP.IntegrationTest.Controllers.General
 {
     [TestClass]
-    public class VisitasClienteIntegrationTest : BaseIntegrationTest 
+    public class VisitasClienteIntegrationTest : BaseIntegrationTest
     {
         // Almacena la clave API para autenticación
         private const string ApiKey = "bdccf3f3-d486-4e1e-ab44-74081aefcdbc";
 
+        private readonly BDD_SIDCOPContext _context;
+        private readonly GeneralServices _service;
+        private readonly ClientesVisitaHistorialRepository _repository;
+
+        #region Listar Por Vendedor
         [TestMethod]
         public async Task VisitasPorVendedor()
         {
@@ -46,56 +57,38 @@ namespace SIDCOP.IntegrationTest.Controllers.General
             // Opcional: Verificar que retorna un array
             Assert.IsTrue(responseContent.Contains("["), "Debería retornar un array JSON");
         }
+        #endregion
 
-        //[TestMethod]
-        //public async Task InsertVisita()
-        //{
-        //    var cliente = factory.CreateClient();
-        //    cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-        //    // ✅ Ahora crear la visita con el ID válido
-        //    var visitaMock = VisitasClienteMocks.ObtenerVisitaValida();
-        //    // Usar el ID que acabamos de crear o uno que sabemos que existe
-        //    visitaMock.VeRu_Id = 20; // ID válido
+        #region Insertar
+        [TestMethod]
+        public async Task InsertarVisita()
+        {
+            // Arrange
+            var visita = VisitasClienteMocks.InsertarVisitaMock();
+            var json = JsonConvert.SerializeObject(visita);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-        //    var contenido = new StringContent(
-        //        System.Text.Json.JsonSerializer.Serialize(visitaMock),
-        //        System.Text.Encoding.UTF8,
-        //        "application/json"
-        //    );
+            // ⚙️ Agregar ApiKey
+            client.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-        //    var response = await cliente.PostAsync("/VisitasClienteHistorial/Insertar", contenido);
-        //    var responseContent = await response.Content.ReadAsStringAsync();
+            // Act
+            var response = await client.PostAsync("/ClientesVisitaHistorial/Insertar", content);
 
-        //    Console.WriteLine($"Respuesta: {responseContent}");
+            // Assert
+            if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                Assert.Fail("❌ La API rechazó la ApiKey. Verifica que coincida con la configurada en el servidor.");
 
-        //    var apiResponse = System.Text.Json.JsonSerializer.Deserialize<ApiResponse<VisitaResponseData>>(
-        //        responseContent,
-        //        new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-        //    );
+            response.EnsureSuccessStatusCode();
+            var responseBody = await response.Content.ReadAsStringAsync();
 
-        //    Assert.IsNotNull(apiResponse);
-        //    Assert.IsTrue(apiResponse.success);
-        //    Assert.AreEqual(0, apiResponse.data.code_Status,
-        //        $"Error en BD: {apiResponse.data.message_Status}");
-        //}
-    }
+            Assert.IsTrue(responseBody.Contains("éxito")
+                       || responseBody.Contains("success")
+                       || responseBody.Contains("insertado"),
+                       $"El resultado no indica éxito: {responseBody}");
+        }
+        #endregion
 
-    // Clases para deserializar la respuesta
-    public class ApiResponse<T>
-    {
-        public int code { get; set; }
-        public bool success { get; set; }
-        public string message { get; set; }
-        public T data { get; set; }
-    }
-
-    public class VisitaResponseData
-    {
-        public int code_Status { get; set; }
-        public string message_Status { get; set; }
-        public object data { get; set; }
-        public string tras_Id { get; set; }
     }
 
 }

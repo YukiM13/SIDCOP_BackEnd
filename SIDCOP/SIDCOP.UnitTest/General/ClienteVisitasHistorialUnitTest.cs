@@ -5,6 +5,7 @@ using SIDCOP_Backend.BusinessLogic;
 using SIDCOP_Backend.BusinessLogic.Services;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.DataAccess.Context;
+using SIDCOP_Backend.DataAccess.Repositories.Acceso;
 using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -16,6 +17,7 @@ namespace SIDCOP.UnitTest.General
     public class ClienteVisitasHistorialUnitTest
     {
         private readonly BDD_SIDCOPContext _bddContext;
+        private readonly Mock<ClientesVisitaHistorialRepository> _repository;
         private readonly GeneralServices _service;
 
         public ClienteVisitasHistorialUnitTest()
@@ -26,17 +28,19 @@ namespace SIDCOP.UnitTest.General
                 .Options;
 
             _bddContext = new BDD_SIDCOPContext(options);
+            _repository = new Mock<ClientesVisitaHistorialRepository>(_bddContext);
 
             // Crear el servicio con el contexto en memoria
             _service = new GeneralServices(
                 _bddContext,  // Pasar el contexto en memoria aquí
                 null, null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null, null,
-                null, null, null, null, null, null
+                null, null, _repository, null, null, null
             );
+
         }
 
-        #region Prueba Listar Visitas de Clientes Por Vendedor
+        #region Listar Visitas de Clientes Por Vendedor
         [Fact]
         public void ClientesVisitasPorVendedor()
         {
@@ -164,6 +168,36 @@ namespace SIDCOP.UnitTest.General
             Assert.Equal("Tienda El Ahorro", visitaResultante.Clie_NombreNegocio);
         }
 
+        #endregion
+
+        #region Insertar
+        [Fact]
+        public void InsertarVisita()
+        {
+            // Arrange
+            var dto = new VisitaClientePorVendedorDTO
+            {
+                VeRu_Id = 1076,
+                DiCl_Id = 3125,
+                EsVi_Id = 3,
+                ClVi_Observaciones = "Observación de prueba",
+                ClVi_Fecha = DateTime.Now,
+                Usua_Creacion = 1,
+                ClVi_FechaCreacion = DateTime.Now
+            };
+
+            // Configura el mock para que devuelva éxito
+            _repository.Setup(r => r.InsertVisita(It.IsAny<VisitaClientePorVendedorDTO>()))
+                .Returns(new RequestStatus { code_Status = 1, message_Status = "Visita registrada correctamente." });
+
+            // Act
+            var result = _repository.Object.InsertVisita(dto);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(1, result.code_Status);
+            Assert.Equal("Visita registrada correctamente.", result.message_Status);
+        }
         #endregion
 
         // Limpiar recursos después de cada prueba
