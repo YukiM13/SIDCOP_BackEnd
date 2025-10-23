@@ -30,7 +30,7 @@ namespace Api_SIDCOP.API.Models.Ventas
 
         public int? Vend_Ayudante { get; set; }
 
-        public string Vend_Tipo { get; set; }
+        public int TiVe_Id { get; set; }
 
         public bool? Vend_EsExterno { get; set; }
 
