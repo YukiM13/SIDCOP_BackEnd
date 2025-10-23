@@ -98,6 +98,10 @@ public partial class tbVendedores
     [NotMapped]
     public string? rutas { get; set; }
 
+
+    [NotMapped]
+    public string? tive_Descripcion { get; set; }
+
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbSucursales Sucu { get; set; }
