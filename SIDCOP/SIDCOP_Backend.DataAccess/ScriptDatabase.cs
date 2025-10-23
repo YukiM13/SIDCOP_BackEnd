@@ -2,6 +2,15 @@ namespace SIDCOP_Backend.DataAccess
 {
     public static class ScriptDatabase
     {
+        #region TiposVendedor
+        public static string TiVe_Listar          = "[Gral].[SP_TiposDeVendedores_Listar]";
+        public static string TiVe_Insertar        = "[Gral].[SP_TipoDeVendedor_Insertar]";
+        public static string TiVe_Actualizar      = "[Gral].[SP_TipoDeVendedor_Actualizar]";
+        public static string TiVe_Eliminar        = "[Gral].[SP_TipoDeVendedor_Eliminar]";
+        #endregion UnidadesDePeso
+
+        
+
 
         #region UnidadesDePeso
         public static string UnPeso_Listar = "[Gral].[SP_UnidadesDePeso_Listar]";
