@@ -28,7 +28,7 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public string? Vend_Telefono { get; set; }
 
-        public string? Vend_Tipo { get; set; }
+        public int? Vend_Tipo { get; set; }
 
         public string? Vend_Imagen { get; set; }
 
