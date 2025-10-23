@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIDCOP_Backend.Entities.Entities;
 
@@ -18,6 +19,16 @@ public partial class tbTiposDeVendedor
     public int? Usua_Modificacion { get; set; }
 
     public DateTime? TiVe_FechaModificacion { get; set; }
+
+    [NotMapped]
+    public string? Secuencia { get; set; }
+
+
+    [NotMapped]
+    public string? UsuarioCreacion { get; set; }
+
+      [NotMapped]
+    public string? UsuarioModificacion { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

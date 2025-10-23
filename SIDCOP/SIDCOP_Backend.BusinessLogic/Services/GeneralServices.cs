@@ -29,6 +29,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ImagenVisitaRepository _imagenVisitaRepository;
         private readonly FormasDePagoRepository _formasDePagoRepository;
         private readonly UnidadesDePesoRepository _unidadesDePesoRepository;
+        private readonly TipoDeVendedorRepository _tipoDeVendedorRepository;
         private BDD_SIDCOPContext bddContext;
         private object value1;
         private object value2;
@@ -64,8 +65,8 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         EstadoVisitaRepository estadoVisitaRepository,
         ImagenVisitaRepository imagenVisitaRepository,
         FormasDePagoRepository formasDePagoRepository,
-         UnidadesDePesoRepository unidadesDePesoRepository
-
+         UnidadesDePesoRepository unidadesDePesoRepository,
+            TipoDeVendedorRepository tiposDeVendedorRepository
         )
         {
             _direccionesPorClienteRepository = direccionesPorClienteRepository;
@@ -99,6 +100,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _imagenVisitaRepository = imagenVisitaRepository;
             _formasDePagoRepository = formasDePagoRepository;
             _unidadesDePesoRepository = unidadesDePesoRepository;
+            _tipoDeVendedorRepository = tiposDeVendedorRepository;
         }
 
         public GeneralServices(BDD_SIDCOPContext bddContext, object value1, object value2, object value3, object value4, object value5, object value6, object value7, object value8, object value9, object value10, object value11, object value12, object value13, object value14, object value15, object value16, object value17, object value18, object value19, object value20, object value21, object value22)
@@ -1780,6 +1782,68 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         public object CambiarEstadoCliente(int clienteId)
         {
             throw new NotImplementedException();
+        }
+
+
+        #endregion
+
+        #region TiposDeVendedor
+
+        public IEnumerable<tbTiposDeVendedor> ListarTipoDeVendedor()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _tipoDeVendedorRepository.List();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                IEnumerable<tbTiposDeVendedor> UniPe = null;
+                return UniPe;
+            }
+        }
+
+        public ServiceResult InsertarTipoDeVendedor(tbTiposDeVendedor item)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var list = _tipoDeVendedorRepository.Insert(item);
+                return result.Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult UpdateTipoDeVendedor(tbTiposDeVendedor unipe)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _tipoDeVendedorRepository.Update(unipe);
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
+
+        public ServiceResult DeleteTipoDeVendedor(int? id)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var deleteResult = _tipoDeVendedorRepository.Delete(id);
+                return result.Ok(deleteResult);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error al eliminar : {ex.Message}");
+            }
         }
 
 
