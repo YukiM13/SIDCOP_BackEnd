@@ -108,7 +108,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             {
                 // Ejecuta procedimiento almacenado para actualizar tipos de vendedor
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
-                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.TiVe_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.TiVe_Actualizar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
