@@ -141,7 +141,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                                                                             Vend_Codigo = v.Vend_Codigo,
                                                                             Vend_Nombres = v.Vend_Nombres,
                                                                             Vend_Apellidos = v.Vend_Apellidos,
-                                                                            Vend_Tipo = v.Vend_Tipo,
+                                                                            Vend_Tipo = v.TiVe_Id,
                                                                             Vend_Telefono = v.Vend_Telefono,
                                                                             Ruta_Id = rv.Ruta_Id,
                                                                             Ruta_Descripcion = r.Ruta_Descripcion,

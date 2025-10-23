@@ -76,6 +76,10 @@ public partial class tbUsuarios
 
     public virtual tbUsuarios Usua_ModificacionNavigation { get; set; }
 
+    public virtual ICollection<tbTiposDeVendedor> tbTiposDeVendedorUsua_ModificacionNavigation { get; set; } = new List<tbTiposDeVendedor>();
+
+    public virtual ICollection<tbTiposDeVendedor> tbTiposDeVendedorUsua_CreacionNavigation { get; set; } = new List<tbTiposDeVendedor>();
+
     public virtual ICollection<tbAvales> tbAvalesUsua_CreacionNavigation { get; set; } = new List<tbAvales>();
 
     public virtual ICollection<tbAvales> tbAvalesUsua_ModificacionNavigation { get; set; } = new List<tbAvales>();
