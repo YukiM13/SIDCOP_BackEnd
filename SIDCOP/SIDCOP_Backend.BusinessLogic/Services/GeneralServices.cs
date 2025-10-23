@@ -1,4 +1,5 @@
-﻿using SIDCOP_Backend.DataAccess.Repositories.General;
+﻿using SIDCOP_Backend.DataAccess.Context;
+using SIDCOP_Backend.DataAccess.Repositories.General;
 using SIDCOP_Backend.Entities.Entities;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
@@ -28,6 +29,29 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         private readonly ImagenVisitaRepository _imagenVisitaRepository;
         private readonly FormasDePagoRepository _formasDePagoRepository;
         private readonly UnidadesDePesoRepository _unidadesDePesoRepository;
+        private BDD_SIDCOPContext bddContext;
+        private object value1;
+        private object value2;
+        private object value3;
+        private object value4;
+        private object value5;
+        private object value6;
+        private object value7;
+        private object value8;
+        private object value9;
+        private object value10;
+        private object value11;
+        private object value12;
+        private object value13;
+        private object value14;
+        private object value15;
+        private object value16;
+        private object value17;
+        private object value18;
+        private object value19;
+        private object value20;
+        private object value21;
+        private object value22;
 
         public GeneralServices(EstadoCivilRepository estadocivilRepository, SucursalesRepository sucursalesRepository,
         ColoniaRepository coloniaRepository, ClienteRepository clienteRepository, CanalRepository canalRepository,
@@ -77,76 +101,108 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             _unidadesDePesoRepository = unidadesDePesoRepository;
         }
 
+        public GeneralServices(BDD_SIDCOPContext bddContext, object value1, object value2, object value3, object value4, object value5, object value6, object value7, object value8, object value9, object value10, object value11, object value12, object value13, object value14, object value15, object value16, object value17, object value18, object value19, object value20, object value21, object value22)
+        {
+            this.bddContext = bddContext;
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.value4 = value4;
+            this.value5 = value5;
+            this.value6 = value6;
+            this.value7 = value7;
+            this.value8 = value8;
+            this.value9 = value9;
+            this.value10 = value10;
+            this.value11 = value11;
+            this.value12 = value12;
+            this.value13 = value13;
+            this.value14 = value14;
+            this.value15 = value15;
+            this.value16 = value16;
+            this.value17 = value17;
+            this.value18 = value18;
+            this.value19 = value19;
+            this.value20 = value20;
+            this.value21 = value21;
+            this.value22 = value22;
+        }
+
         #region Departamentos
 
+        // Inserta un nuevo departamento en el sistema
         public ServiceResult InsertarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.Insert(item);
-                return result.Ok(list);
+                var response = _departamentoRepository.Insert(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Actualiza un departamento existente en el sistema
         public ServiceResult EditarDepartamento(tbDepartamentos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.Update(item);
-                return result.Ok(list);
+                var response = _departamentoRepository.Update(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Elimina un departamento por código
         public ServiceResult EliminarDepartamento(string id)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.DeleteConCodigo(id);
-                return result.Ok(list);
+                var response = _departamentoRepository.DeleteConCodigo(id);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Busca un departamento por código
         public tbDepartamentos BuscarDepartamento(string id)
         {
-            //  var result = new ServiceResult();
             try
             {
-                var list = _departamentoRepository.FindConCodigo(id);
-                return list;
+                var response = _departamentoRepository.FindConCodigo(id);
+                return response; // Retorna el departamento encontrado
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Lista todos los departamentos registrados en el sistema
         public IEnumerable<tbDepartamentos> ListarDepartamentos()
         {
-            var result = new ServiceResult();
             try
             {
                 var list = _departamentoRepository.List();
-                return list;
+                return list; // Retorna el listado
             }
             catch (Exception ex)
             {
-                IEnumerable<tbDepartamentos> usua = null;
-                return usua;
+                // En caso de error, retorna null
+                IEnumerable<tbDepartamentos> result = null;
+                return result;
             }
         }
 
@@ -154,34 +210,37 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
         #region MarcasVehiculos
 
+        // Inserta una nueva marca de vehículo en el sistema
         public ServiceResult InsertarMarcaVehiculo(tbMarcasVehiculos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _marcaVehiculoRepository.Insert(item);
-                return result.Ok(list);
+                var response = _marcaVehiculoRepository.Insert(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Actualiza una marca de vehículo existente en el sistema
         public ServiceResult EditarMarcaVehiculo(tbMarcasVehiculos item)
         {
             var result = new ServiceResult();
             try
             {
-                var list = _marcaVehiculoRepository.Update(item);
-                return result.Ok(list);
+                var response = _marcaVehiculoRepository.Update(item);
+                return result.Ok(response); // Retorna el resultado exitoso
             }
             catch (Exception ex)
             {
-                return result.Error(ex.Message);
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
             }
         }
 
+        // Elimina una marca de vehículo por ID
         public ServiceResult EliminarMarcavehiculo(int? id)
         {
             var result = new ServiceResult();
@@ -190,57 +249,62 @@ namespace SIDCOP_Backend.BusinessLogic.Services
                 var deleteResult = _marcaVehiculoRepository.Delete(id);
                 if (deleteResult.code_Status == 1)
                 {
-                    return result.Ok(deleteResult);
+                    return result.Ok(deleteResult); // Retorna el resultado exitoso
                 }
                 else
                 {
-                    return result.Error(deleteResult);
+                    return result.Error(deleteResult); // Retorna el mensaje de error si falla
                 }
             }
             catch (Exception ex)
             {
-                return result.Error($"Error al eliminar sucursal: {ex.Message}");
+                return result.Error($"Error al eliminar marca de vehículo: {ex.Message}"); // Retorna el mensaje de error si falla
             }
         }
 
+        // Busca una marca de vehículo por ID
         public tbMarcasVehiculos BuscarMarcaVehiculo(int id)
         {
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Find(id);
-                return marcavehiculo;
+                return marcavehiculo; // Retorna la marca de vehículo encontrada
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Busca los modelos de una marca de vehículo por ID
         public tbMarcasVehiculos BuscarModeloDeMarca(int id)
         {
             try
             {
                 var marcavehiculo = _marcaVehiculoRepository.Modelos(id);
-                return marcavehiculo;
+                return marcavehiculo; // Retorna los modelos de la marca encontrados
             }
             catch (Exception ex)
             {
+                // En caso de error, retorna null
                 return null;
             }
         }
 
+        // Lista todas las marcas de vehículos registradas en el sistema
         public IEnumerable<tbMarcasVehiculos> ListarMarcaVehiculo()
         {
-            var result = new ServiceResult();
             try
             {
                 var list = _marcaVehiculoRepository.List();
-                return list;
+                return list; // Retorna el listado
             }
             catch (Exception ex)
             {
-                IEnumerable<tbMarcasVehiculos> usua = null;
-                return usua;
+                // En caso de error, retorna null
+                IEnumerable<tbMarcasVehiculos> result = null;
+                return result;
             }
         }
 

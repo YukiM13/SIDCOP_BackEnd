@@ -13,10 +13,10 @@ public partial class BDD_SIDCOPContext : DbContext
         : base(options)
     {
     }
+
     public BDD_SIDCOPContext()
     {
     }
-
 
     public virtual DbSet<tbAcciones> tbAcciones { get; set; }
 
@@ -171,6 +171,8 @@ public partial class BDD_SIDCOPContext : DbContext
     public virtual DbSet<tbSubcategorias> tbSubcategorias { get; set; }
 
     public virtual DbSet<tbSucursales> tbSucursales { get; set; }
+
+    public virtual DbSet<tbTiposDeVendedor> tbTiposDeVendedor { get; set; }
 
     public virtual DbSet<tbTiposDeVivienda> tbTiposDeVivienda { get; set; }
 
@@ -466,7 +468,6 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasIndex(e => e.Clie_Codigo, "UQ_tbClientes_Clie_Codigo").IsUnique();
 
             entity.Property(e => e.Clie_Apellidos)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Codigo)
@@ -497,7 +498,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Nombres)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_ObservacionRetiro)
@@ -520,37 +520,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(17)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Vencido).HasDefaultValue(false);
-
-            entity.HasOne(d => d.Cana).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.Cana_Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbClientes_Gral_tbCanales_Cana_Id");
-
-            entity.HasOne(d => d.Clie_NacionalidadNavigation).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.Clie_Nacionalidad)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbClientes_Clie_Nacionalidad_Gral_tbPaises_Pais_Codigo");
-
-            entity.HasOne(d => d.EsCv).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.EsCv_Id)
-                .HasConstraintName("FK_Gral_tbClientes_Gral_tbEstadosCiviles_EsCv_Id");
-
-            entity.HasOne(d => d.Ruta).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.Ruta_Id)
-                .HasConstraintName("FK_Gral_tbClientes_Logi_tbRutas_Ruta_Id");
-
-            entity.HasOne(d => d.TiVi).WithMany(p => p.tbClientes)
-                .HasForeignKey(d => d.TiVi_Id)
-                .HasConstraintName("FK_Gral_tbClientes_Gral_tbTiposDeVivienda_TiVi_Id");
-
-            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbClientesUsua_CreacionNavigation)
-                .HasForeignKey(d => d.Usua_Creacion)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Gral_tbClientes_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
-
-            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbClientesUsua_ModificacionNavigation)
-                .HasForeignKey(d => d.Usua_Modificacion)
-                .HasConstraintName("FK_Gral_tbClientes_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbClientesVisita>(entity =>
@@ -1190,6 +1159,7 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.ToTable("tbEstadosVisita", "Gral");
 
             entity.Property(e => e.EsVi_Descripcion)
+                .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.EsVi_FechaCreacion).HasColumnType("datetime");
@@ -1197,6 +1167,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbEstadosVisitaUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Gral_tbEstadosVisita_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbEstadosVisitaUsua_ModificacionNavigation)
@@ -1404,6 +1375,7 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbFormasDePagoUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Gral_tbFormasDePago_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
 
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbFormasDePagoUsua_ModificacionNavigation)
@@ -2289,8 +2261,6 @@ public partial class BDD_SIDCOPContext : DbContext
 
             entity.ToTable("tbPuntosEmision", "Vnta");
 
-            entity.HasIndex(e => e.PuEm_Codigo, "UQ_tbPuntosEmision_PuEm_Codigo").IsUnique();
-
             entity.Property(e => e.PuEm_Codigo)
                 .IsRequired()
                 .HasMaxLength(3)
@@ -2572,6 +2542,7 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasIndex(e => e.Sucu_Codigo, "UQ_Gral_tbSucursales_Sucu_Codigo").IsUnique();
 
             entity.Property(e => e.Sucu_Codigo)
+                .IsRequired()
                 .HasMaxLength(3)
                 .IsUnicode(false);
             entity.Property(e => e.Sucu_Correo)
@@ -2610,6 +2581,29 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbSucursalesUsua_ModificacionNavigation)
                 .HasForeignKey(d => d.Usua_Modificacion)
                 .HasConstraintName("FK_Gral_tbSucursales_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
+        });
+
+        modelBuilder.Entity<tbTiposDeVendedor>(entity =>
+        {
+            entity.HasKey(e => e.TiVe_Id).HasName("PK_Gral_tbTiposDeVendedor_TiVe_Id");
+
+            entity.ToTable("tbTiposDeVendedor", "Gral");
+
+            entity.Property(e => e.TiVe_FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.TiVe_FechaModificacion).HasColumnType("datetime");
+            entity.Property(e => e.TiVe_TipoVendedor)
+                .IsRequired()
+                .HasMaxLength(60)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbTiposDeVendedorUsua_CreacionNavigation)
+                .HasForeignKey(d => d.Usua_Creacion)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Gral_tbTiposDeVendedor_Usua_Creacion_Acce_tbUsuarios_Usua_Id");
+
+            entity.HasOne(d => d.Usua_ModificacionNavigation).WithMany(p => p.tbTiposDeVendedorUsua_ModificacionNavigation)
+                .HasForeignKey(d => d.Usua_Modificacion)
+                .HasConstraintName("FK_Gral_tbTiposDeVendedor_Usua_Modificacion_Acce_tbUsuarios_Usua_Id");
         });
 
         modelBuilder.Entity<tbTiposDeVivienda>(entity =>
@@ -2852,10 +2846,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsRequired()
                 .HasMaxLength(10)
                 .IsUnicode(false);
-            entity.Property(e => e.Vend_Tipo)
-                .HasMaxLength(1)
-                .IsUnicode(false)
-                .IsFixedLength();
 
             entity.HasOne(d => d.Colo).WithMany(p => p.tbVendedores)
                 .HasForeignKey(d => d.Colo_Id)
@@ -2866,6 +2856,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasForeignKey(d => d.Sucu_Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbVendedores_Gral_tbSucursales_Sucu_Id");
+
+            entity.HasOne(d => d.TiVe).WithMany(p => p.tbVendedores)
+                .HasForeignKey(d => d.TiVe_Id)
+                .HasConstraintName("FK_Vnta_tbVendedores_Gral_tbTiposDeVendedor_TiVe_Id");
 
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbVendedoresUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)

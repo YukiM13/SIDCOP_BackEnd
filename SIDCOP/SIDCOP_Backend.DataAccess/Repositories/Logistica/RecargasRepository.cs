@@ -25,12 +25,14 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
 
         public virtual IEnumerable<tbRecargas> Find2(int? id)
         {
+            //Se busca las recargas que ha hecho el vendedor del que se ingrasa el id
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var parameter = new DynamicParameters();
             parameter.Add("@Vend_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.Query<tbRecargas>(ScriptDatabase.Recargas_Listar_Vendedor, parameter, commandType: System.Data.CommandType.StoredProcedure);
             if (result == null)
             {
+                //en caso devuelva null significa que el vendedor no tiene recargas hechas
                 throw new Exception("Vendedor sin recargas no encontrada");
             }
             return result;
@@ -62,6 +64,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         {
             var parameter = new DynamicParameters();
 
+            //los parametros de la cabecera de la recarga
             parameter.Add("@Vend_Id", item.Vend_Id);
             parameter.Add("@Bode_Id", item.Bode_Id);
             parameter.Add("@Reca_Fecha", item.Reca_Fecha);
@@ -69,7 +72,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameter.Add("@Usua_Creacion", item.Usua_Creacion);
             parameter.Add("@Reca_FechaCreacion", DateTime.Now);
 
-
+            //para los parametros de los detalles dado la version de sql usada mandamos un xml con estos para procesarlos en el procedimiento almacenado
             string detallesXml = item.Detalles != null && item.Detalles.Any()
             ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
                 $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><ReDe_Cantidad>{d.ReDe_Cantidad}</ReDe_Cantidad><ReDe_Observaciones>{System.Security.SecurityElement.Escape(d.ReDe_Observaciones ?? "")}</ReDe_Observaciones></Deta>"))
@@ -99,6 +102,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         {
             var parameter = new DynamicParameters();
 
+            //un listar completo de las recargas en caso se quiera manejar la logica desde el front-end
+
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbRecargas>(ScriptDatabase.Recargas_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure).ToList();
 
@@ -109,6 +114,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
         {
             var parameter = new DynamicParameters();
 
+            //los parametros de la cabecera de la recarga
             parameter.Add("@Reca_Id", item.Reca_Id);
             parameter.Add("@Vend_Id", item.Vend_Id);
             parameter.Add("@Bode_Id", item.Bode_Id);
@@ -118,6 +124,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Logistica
             parameter.Add("@Reca_FechaModificacion", item.Reca_FechaModificacion);
 
 
+            //para los parametros de los detalles dado la version de sql usada mandamos un xml con estos para procesarlos en el procedimiento almacenado
             string detallesXml = item.Detalles != null && item.Detalles.Any()
             ? "<Detalles>" + string.Join("", item.Detalles.Select(d =>
                 $"<Deta><Prod_Id>{d.Prod_Id}</Prod_Id><ReDe_Cantidad>{d.ReDe_Cantidad}</ReDe_Cantidad><ReDe_Observaciones>{System.Security.SecurityElement.Escape(d.ReDe_Observaciones ?? "")}</ReDe_Observaciones></Deta>"))
