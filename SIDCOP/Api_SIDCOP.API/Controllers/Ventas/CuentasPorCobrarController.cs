@@ -91,6 +91,52 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+        [HttpGet("ListaFiltrada/{id}")]
+        public IActionResult ListarFiltrado(int id)
+        {
+            // Validación del ID recibido
+            if (id <= 0)
+            {
+                return BadRequest("El ID de la cuenta por cobrar debe ser mayor a cero.");
+            }
+
+            // Busca el detalle de la cuenta por cobrar
+            var result = _ventaServices.ListarFiltrado(id);
+
+            // Retorna resultado según el éxito de la operación
+            if (result.Success)
+            {
+                return Ok(result); // Retorna el detalle encontrado
+            }
+            else
+            {
+                return BadRequest(result); // Retorna error
+            }
+        }
+
+        [HttpGet("ListaResumenFiltrao/{id}")]
+        public IActionResult ListarResumenFiltrado(int id)
+        {
+            // Validación del ID recibido
+            if (id <= 0)
+            {
+                return BadRequest("El ID de la cuenta por cobrar debe ser mayor a cero.");
+            }
+
+            // Busca el detalle de la cuenta por cobrar
+            var result = _ventaServices.ListarResumenFiltrado(id);
+
+            // Retorna resultado según el éxito de la operación
+            if (result.Success)
+            {
+                return Ok(result); // Retorna el detalle encontrado
+            }
+            else
+            {
+                return BadRequest(result); // Retorna error
+            }
+        }
+
         // GET: /CuentasPorCobrar/ResumenAntiguedad
         // Obtiene un resumen de las cuentas por cobrar agrupadas por antigüedad (ej. 0-30 días, 31-60 días, etc.)
         // GET: /CuentasPorCobrar/ResumenAntiguedad
