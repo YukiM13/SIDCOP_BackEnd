@@ -66,6 +66,8 @@ public partial class tbClientes
 
     public bool Clie_Estado { get; set; }
 
+    public string? Clie_DiaVisita { get; set; }
+
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
