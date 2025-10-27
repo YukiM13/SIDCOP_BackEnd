@@ -348,6 +348,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string CuentasPorCobrar_ResumenAntiguedad = "[Vnta].[SP_CuentasPorCobrar_ResumenAntiguedad]";
         public static string CuentasPorCobrar_ResumenPorCliente = "[Vnta].[SP_CuentasPorCobrar_ResumenPorCliente]";
         public static string CuentasPorCobrar_TimelineCliente = "[Vnta].[SP_CuentasPorCobrar_TimelineCliente]";
+        public static string CuentasPorCobrarFiltro_Listar = "Vnta.ListarCuentasPorCobrarFiltradas";
 
         #endregion CuentasPorCobrar
 

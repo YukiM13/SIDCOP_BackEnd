@@ -707,6 +707,25 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult ListarFiltrado(int vendId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.ListarFiltrado(vendId);
+
+                // Validar si la lista está vacía o es nula
+                if (response == null || !response.Any())
+                    return result.Error("No se encontraron cuentas por cobrar para el vendedor especificado.");
+
+                return result.Ok(response); // Retorna la lista de cuentas por cobrar
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message); // Retorna el mensaje de error si falla
+            }
+        }
+
         /// <summary>
         /// Lista todas las cuentas por cobrar
         /// </summary>
