@@ -317,5 +317,45 @@ namespace SIDCOP.UnitTest.General
             _repository.Verify(r => r.RestorePassword(item), Times.Once);
         }
         #endregion
+
+        #region Verificar Usuario Existente
+        [Fact]
+        public void VerificarUsuarioExistente()
+        {
+            // Arrange
+            var item = new tbUsuarios
+            {
+                Usua_Id = 7
+            };
+
+            var usuariosEncontrados = new List<tbUsuarios>
+    {
+        new tbUsuarios
+        {
+            Usua_Id = 7
+        }
+    };
+
+            _repository.Setup(pl => pl.VerificateExistingUser(It.IsAny<tbUsuarios>()))
+                .Returns(usuariosEncontrados);
+
+            // Act
+            var result = _service.VerificarUsuarioExistente(item);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotNull(result.Data);
+
+            // Convierte result.Data a lista usando Assert tradicional
+            var usuarios = result.Data as IEnumerable<tbUsuarios>;
+            Assert.NotNull(usuarios);
+
+            var listaUsuarios = usuarios.ToList();
+            Assert.Single(listaUsuarios);
+            Assert.Equal(7, listaUsuarios[0].Usua_Id);
+
+            _repository.Verify(r => r.VerificateExistingUser(It.IsAny<tbUsuarios>()), Times.Once);
+        }
+        #endregion
     }
 }
