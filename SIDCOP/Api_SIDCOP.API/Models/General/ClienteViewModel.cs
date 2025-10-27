@@ -68,6 +68,8 @@
 
         public bool Clie_Estado { get; set; }
 
+        public string? Clie_DiaVisita { get; set; }
+
         public string? UsuaC_Nombre { get; set; }
         public string? UsuaM_Nombre { get; set; }
 
