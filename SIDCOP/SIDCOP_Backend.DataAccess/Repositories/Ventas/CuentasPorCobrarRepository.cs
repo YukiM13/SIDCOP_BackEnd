@@ -88,6 +88,23 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public virtual IEnumerable<tbCuentasPorCobrar> ListarResumenFiltrado(int ventId)
+        {
+            //Se llama el ConnectionString para conectarse a la base de datos
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameters = new DynamicParameters();
+            //Declaracion de parametros
+            parameters.Add("@Vend_Id", ventId);
+            //Ejecuta el procedimiento con el parametro y obtiene todas las cuentas por cobrar
+            var result = db.Query<tbCuentasPorCobrar>(
+                ScriptDatabase.CuentasPorCobrarResumen_ListarFiltrado,
+                parameters,
+                commandType: System.Data.CommandType.StoredProcedure);
+            //Retorna todas las cuentas por cobrar
+            return result;
+        }
+
+
         public virtual IEnumerable<tbCuentasPorCobrar> ResumenAntiguedad()
         {
             //Se llama el ConnectionString para conectarse a la base de datos
