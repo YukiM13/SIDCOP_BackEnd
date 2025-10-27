@@ -130,6 +130,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Cana_Id", item.Cana_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@EsCv_Id", item.EsCv_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Id", item.Ruta_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_DiaVisita", item.Clie_DiaVisita, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_LimiteCredito", item.Clie_LimiteCredito, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_DiasCredito", item.Clie_DiasCredito, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Saldo", item.Clie_Saldo, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
@@ -211,6 +212,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             parameter.Add("@Cana_Id", item.Cana_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@EsCv_Id", item.EsCv_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Ruta_Id", item.Ruta_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            parameter.Add("@Clie_DiaVisita", item.Clie_DiaVisita, System.Data.DbType.String, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_LimiteCredito", item.Clie_LimiteCredito, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_DiasCredito", item.Clie_DiasCredito, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             parameter.Add("@Clie_Saldo", item.Clie_Saldo, System.Data.DbType.Decimal, System.Data.ParameterDirection.Input);
