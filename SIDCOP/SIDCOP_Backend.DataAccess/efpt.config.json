@@ -127,6 +127,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[Gral].[tbTiposDeVendedor]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[Gral].[tbTiposDeVivienda]",
          "ObjectType": 0
       },

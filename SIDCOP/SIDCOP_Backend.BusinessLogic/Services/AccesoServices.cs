@@ -152,7 +152,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public ServiceResult MostrarContrasena(int usuaId, string claveSeguridad)
+        public virtual ServiceResult MostrarContrasena(int usuaId, string claveSeguridad)
         {
             var result = new ServiceResult();
             try

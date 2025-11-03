@@ -32,7 +32,7 @@ namespace SIDCOP.UnitTest.Ventas
 
 
         [Fact]
-        public void ListaPrecioListar()
+        public void PedidoListar()
         {
            
             var modelo = new List<tbPedidos>()

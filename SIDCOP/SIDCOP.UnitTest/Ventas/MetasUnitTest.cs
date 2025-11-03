@@ -17,7 +17,7 @@ namespace SIDCOP.UnitTest.Ventas
     {
        
         private readonly Mock<MetaRepository> _repository;
-
+        //crear una instancia del repositorio y el servicio
         private readonly VentaServices _service;
 
  
@@ -38,7 +38,7 @@ namespace SIDCOP.UnitTest.Ventas
         [Fact]
         public void MetasListarCompleto()
         {
-
+            //se crea el modelo con datos para probar el listar
             var modelo = new List<tbMetas>()
             {
                new tbMetas { Meta_Id = 1, Meta_Descripcion = "Meta 1",
@@ -79,8 +79,10 @@ namespace SIDCOP.UnitTest.Ventas
 
             var result = _service.ListMetasCompleto();
 
+            //en caso de que el resultado tenga 3 (la cantidad de arriba) elementos esta correcto
             result.Should().HaveCount(3);
 
+            //se puede validar que contenga un solo elemento con id 2 en metas
             result.Should().ContainSingle(x => x.Meta_Id == 2);
         }
 
@@ -88,6 +90,7 @@ namespace SIDCOP.UnitTest.Ventas
         public void MetasListarPorVendedor()
         {
 
+            //se crea el modelo con datos para probar el listar de vendedores
             var modelo = new List<tbMetas>()
             {
                 new tbMetas { Meta_Id = 1, Meta_Descripcion = "Meta 1",
@@ -123,6 +126,7 @@ namespace SIDCOP.UnitTest.Ventas
             }.AsEnumerable();
 
 
+            //el setup del listar por vendedor con el id esperado y que devuelva el modelo
             _repository.Setup(pl => pl.ListarPorVendedor(22))
                 .Returns(modelo);
 
@@ -167,7 +171,11 @@ namespace SIDCOP.UnitTest.Ventas
         [Fact]
         public void MetasUpdateCompleto()
         {
-            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+            //declaramos un elemento a insertar (que lleve algo aunque sea un campo)
+            var item = new tbMetas { Prod_Id = 10 };
+
+            //el actualizar del repositorio con las cosas esperadas que devuelva
+            _repository.Setup(pl => pl.UpdateCompleto(It.IsAny<tbMetas>()))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
 
             var result = _service.UpdateMetasCompleto(It.IsAny<tbMetas>());
@@ -176,13 +184,14 @@ namespace SIDCOP.UnitTest.Ventas
 
             ((int)result.Data.code_Status).Should().Be(1);
             ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
-            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+            _repository.Verify(r => r.UpdateCompleto(It.IsAny<tbMetas>()), Times.Once);
         }
 
         [Fact]
         public void MetasUpdateProgreso()
         {
-            _repository.Setup(pl => pl.Update(It.IsAny<tbMetas>()))
+            //el actualizar del repositorio con las cosas esperadas que devuelva
+            _repository.Setup(pl => pl.ActualizarProgreso(It.IsAny<tbMetas>()))
               .Returns(new RequestStatus { code_Status = 1, message_Status = "Pedido editado correctamente." });
 
             var result = _service.ActualizarProgreso(It.IsAny<tbMetas>());
@@ -191,7 +200,7 @@ namespace SIDCOP.UnitTest.Ventas
 
             ((int)result.Data.code_Status).Should().Be(1);
             ((string)result.Data.message_Status).Should().Be("Pedido editado correctamente.");
-            _repository.Verify(r => r.Update(It.IsAny<tbMetas>()), Times.Once);
+            _repository.Verify(r => r.ActualizarProgreso(It.IsAny<tbMetas>()), Times.Once);
         }
 
     }

@@ -8,25 +8,28 @@ using SIDCOP_Backend.Entities.Entities;
 
 namespace Api_SIDCOP.API.Controllers.Ventas
 {
+    // Controlador para manejar las operaciones relacionadas con CAIs
     [ApiController]
     [Route("[controller]")]
-    [ApiKey]
+    [ApiKey] // Protección con API Key
 
     public class CaiSController : Controller
     {
         private readonly VentaServices _ventaServices;
         private readonly IMapper _mapper;
 
-
+        // Constructor que recibe los servicios y el mapeador
         public CaiSController(VentaServices ventaServices, IMapper mapper)
         {
+            // Asignación de servicios a las variables de instancia
             _ventaServices = ventaServices;
             _mapper = mapper;
         }
 
 
 
-
+        // GET: /CAIs/Buscar
+        // Lista un registro en especifico de CAI el cual busca con el parametro:
         [HttpGet("Buscar/{id}")]
         public IActionResult Buscar(int id)
         {
@@ -59,6 +62,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+        // GET: /CAIs/Listar
+        // Lista todas los registros de CAIs registrados en el sistema
         [HttpGet("Listar")]
         public IActionResult listar()
         {
@@ -68,7 +73,8 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(list);
         }
 
-
+        // POST: /CAIs/Crear
+        // Crea un nuevo registro de CAI con los datos proporcionados en el cuerpo de la solicitud
         [HttpPost("Crear")]
         public IActionResult Insert([FromBody] CaiSViewModel item)
         {
@@ -77,6 +83,7 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(result);
         }
 
+        //
         [HttpPut("Eliminar/{id}")]
         public IActionResult Eliminar(int? id)
         {

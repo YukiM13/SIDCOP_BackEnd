@@ -34,8 +34,6 @@ public partial class tbVendedores
 
     public int? Vend_Ayudante { get; set; }
 
-    public string Vend_Tipo { get; set; }
-
     public bool? Vend_EsExterno { get; set; }
 
     public bool Vend_Estado { get; set; }
@@ -50,6 +48,10 @@ public partial class tbVendedores
 
     public string Vend_Imagen { get; set; }
 
+    public int? TiVe_Id { get; set; }
+
+    [NotMapped]
+    public string? TiVe_Descripcion { get; set; }
 
     [NotMapped]
     public string? Sucu_Descripcion { get; set; }
@@ -99,9 +101,15 @@ public partial class tbVendedores
     [NotMapped]
     public string? rutas { get; set; }
 
+
+    [NotMapped]
+    public string? tive_Descripcion { get; set; }
+
     public virtual tbColonias Colo { get; set; }
 
     public virtual tbSucursales Sucu { get; set; }
+
+    public virtual tbTiposDeVendedor TiVe { get; set; }
 
     public virtual tbUsuarios Usua_CreacionNavigation { get; set; }
 

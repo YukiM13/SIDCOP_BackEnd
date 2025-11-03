@@ -22,7 +22,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             throw new NotImplementedException();
         }
 
-        public IEnumerable<tbUsuarios> List()
+        public virtual IEnumerable<tbUsuarios> List()
         {
             var parameter = new DynamicParameters();
 
@@ -32,7 +32,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus Insert(tbUsuarios item)
+        public virtual RequestStatus Insert(tbUsuarios item)
         {
             if (item == null)
             {
@@ -67,7 +67,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public RequestStatus Update(tbUsuarios item)
+        public virtual RequestStatus Update(tbUsuarios item)
         {
             if (item == null)
             {
@@ -103,7 +103,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             }
         }
 
-        public RequestStatus ChangeUserState(tbUsuarios? item)
+        public virtual RequestStatus ChangeUserState(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, DbType.Int32, ParameterDirection.Input);
@@ -125,7 +125,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-        public IEnumerable<tbUsuarios> FindUser(tbUsuarios? item)
+        public virtual IEnumerable<tbUsuarios> FindUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
@@ -136,7 +136,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public IEnumerable<tbUsuarios> VerificateExistingUser(tbUsuarios? item)
+        public virtual IEnumerable<tbUsuarios> VerificateExistingUser(tbUsuarios? item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario, DbType.String, ParameterDirection.Input);
@@ -159,7 +159,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
         //    return result;
         //}
 
-        public LoginResponse Login(LoginResponse item)
+        public virtual LoginResponse Login(LoginResponse item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Usuario", item.Usua_Usuario);
@@ -176,7 +176,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             return result;
         }
 
-        public RequestStatus ShowPassword(int usuaId, string claveSeguridad)
+        public virtual RequestStatus ShowPassword(int usuaId, string claveSeguridad)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", usuaId, DbType.Int32, ParameterDirection.Input);
@@ -211,7 +211,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
             };
         }
 
-        public RequestStatus RestorePassword(tbUsuarios item)
+        public virtual RequestStatus RestorePassword(tbUsuarios item)
         {
             var parameter = new DynamicParameters();
             parameter.Add("@Usua_Id", item.Usua_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
