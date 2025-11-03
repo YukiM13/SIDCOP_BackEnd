@@ -471,7 +471,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Codigo)
-                .IsRequired()
                 .HasMaxLength(20)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Confirmacion).HasDefaultValue(false);
@@ -481,20 +480,19 @@ public partial class BDD_SIDCOPContext : DbContext
             entity.Property(e => e.Clie_DNI)
                 .HasMaxLength(15)
                 .IsUnicode(false);
+            entity.Property(e => e.Clie_DiaVisita)
+                .HasMaxLength(15)
+                .IsUnicode(false);
             entity.Property(e => e.Clie_Estado).HasDefaultValue(true);
             entity.Property(e => e.Clie_FechaCreacion).HasColumnType("datetime");
             entity.Property(e => e.Clie_FechaModificacion).HasColumnType("datetime");
             entity.Property(e => e.Clie_FechaNacimiento).HasColumnType("datetime");
-            entity.Property(e => e.Clie_ImagenDelNegocio)
-                .IsRequired()
-                .IsUnicode(false);
+            entity.Property(e => e.Clie_ImagenDelNegocio).IsUnicode(false);
             entity.Property(e => e.Clie_LimiteCredito).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Clie_Nacionalidad)
-                .IsRequired()
                 .HasMaxLength(3)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_NombreNegocio)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Nombres)
@@ -511,12 +509,10 @@ public partial class BDD_SIDCOPContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Saldo).HasColumnType("decimal(12, 2)");
             entity.Property(e => e.Clie_Sexo)
-                .IsRequired()
                 .HasMaxLength(1)
                 .IsUnicode(false)
                 .IsFixedLength();
             entity.Property(e => e.Clie_Telefono)
-                .IsRequired()
                 .HasMaxLength(17)
                 .IsUnicode(false);
             entity.Property(e => e.Clie_Vencido).HasDefaultValue(false);
