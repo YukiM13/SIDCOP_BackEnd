@@ -113,6 +113,24 @@ namespace Api_SIDCOP.API.Controllers.General
             }
         }
 
+        [HttpGet("DiasDisponibles/{veru_id}")]
+        public IActionResult ListarDiasDisponibles(int veru_id)
+        {
+            if (veru_id <= 0)
+            {
+                return BadRequest("Id invalido");
+            }
+            var cliente = _generalServices.DiasDisponibles(veru_id);
+            if (cliente != null)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return NotFound("Días disponibles no encontrados");
+            }
+        }
+
         [HttpPost("CambiarEstado")]
         public IActionResult CambiarEstado([FromBody] ClienteCambiarEstadoDTO dto)
         {

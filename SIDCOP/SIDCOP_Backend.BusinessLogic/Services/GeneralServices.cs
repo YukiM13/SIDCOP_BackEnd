@@ -813,6 +813,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> DiasDisponibles(int veru_id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.ListarDiasDisponibles(veru_id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public ClienteCambiarEstadoDTO CambiarEstadoCliente(int clie_Id, DateTime fechaActual)
         {
             return _clienteRepository.ChangeState(clie_Id, fechaActual);

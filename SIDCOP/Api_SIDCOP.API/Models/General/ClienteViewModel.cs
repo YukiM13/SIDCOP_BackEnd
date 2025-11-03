@@ -70,6 +70,10 @@
 
         public string? Clie_DiaVisita { get; set; }
 
+        public string? veru_Id { get; set; }
+
+        public string? veru_Dias { get; set; }
+
         public string? UsuaC_Nombre { get; set; }
         public string? UsuaM_Nombre { get; set; }
 
