@@ -2904,10 +2904,6 @@ public partial class BDD_SIDCOPContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Vnta_tbVendedores_Gral_tbSucursales_Sucu_Id");
 
-            entity.HasOne(d => d.TiVe).WithMany(p => p.tbVendedores)
-                .HasForeignKey(d => d.TiVe_Id)
-                .HasConstraintName("FK_Vnta_tbVendedores_Gral_tbTiposDeVendedor_TiVe_Id");
-
             entity.HasOne(d => d.Usua_CreacionNavigation).WithMany(p => p.tbVendedoresUsua_CreacionNavigation)
                 .HasForeignKey(d => d.Usua_Creacion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
