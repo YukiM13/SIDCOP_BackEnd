@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace SIDCOP_Backend.DataAccess
 {
     public static class ScriptDatabase
@@ -258,6 +260,7 @@ namespace SIDCOP_Backend.DataAccess
         public static string ClientesVisitas_Listar = "[Gral].[SP_ClientesVisita_Listar]";
         public static string VisitasPorVendedor_Listar = "[Gral].[SP_Visitas_Listar_Vendedor]";
         public static string VendedoresConVisitas_Listar = "[Gral].[SP_Vendedores_ListarVisitas]";
+        public static string ClienteVisita_ListarPorVendedor = "[Gral].[SP_ClienteVisita_ListarPorVendedor]";
 
         #endregion ClientesVisitasHistorial
 

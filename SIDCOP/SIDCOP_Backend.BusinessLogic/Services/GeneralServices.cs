@@ -905,7 +905,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
+        public IEnumerable<tbClientesVisita> VisitasPorVendedor(int vend_Id)
         {
             var result = new ServiceResult();
             try
@@ -915,7 +915,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                IEnumerable<VisitaClientePorVendedorDTO> visitas = null;
+                IEnumerable<tbClientesVisita> visitas = null;
                 return visitas;
             }
         }
