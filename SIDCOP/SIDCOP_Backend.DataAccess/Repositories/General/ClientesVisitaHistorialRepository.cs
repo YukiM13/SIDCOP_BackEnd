@@ -110,65 +110,69 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
             return result;
         }
 
-        public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
+        public IEnumerable<tbClientesVisita> VisitasPorVendedor(int vend_Id)
         {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@Vend_Id", vend_Id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<tbClientesVisita>(ScriptDatabase.ClienteVisita_ListarPorVendedor, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Error al cargar las visitas");
+            }
+            return result;
+            //List<tbVendedoresPorRuta> rutasPorVendedor = _bddContext.tbVendedoresPorRuta.AsNoTracking().Where(vpr => vpr.Vend_Id == vend_Id).ToList();
 
-            var rutasPorVendedor = _bddContext.tbVendedoresPorRuta.AsNoTracking().Where(vpr => vpr.Vend_Id == vend_Id).ToList();
+            //var visitasClientes = (from cv in _bddContext.tbClientesVisita
+            //                                where cv.VeRu_Id.HasValue && cv.DiCl_Id.HasValue && cv.EsVi_Id.HasValue && cv.Usua_Creacion.HasValue
+            //                                select new
+            //                                {
+            //                                    cv.ClVi_Id,
+            //                                    VeRu_Id = cv.VeRu_Id.Value,
+            //                                    DiCl_Id = cv.DiCl_Id.Value,
+            //                                    EsVi_Id = cv.EsVi_Id.Value,
+            //                                    cv.ClVi_Observaciones,
+            //                                    cv.ClVi_Fecha,
+            //                                    Usua_Creacion = cv.Usua_Creacion.Value,
+            //                                    cv.ClVi_FechaCreacion,
+            //                                }).ToList();
 
-            var visitasClientes = (from cv in _bddContext.tbClientesVisita
-                                            where cv.VeRu_Id.HasValue && cv.DiCl_Id.HasValue && cv.EsVi_Id.HasValue && cv.Usua_Creacion.HasValue
-                                            select new
-                                            {
-                                                cv.ClVi_Id,
-                                                VeRu_Id = cv.VeRu_Id.Value,
-                                                DiCl_Id = cv.DiCl_Id.Value,
-                                                EsVi_Id = cv.EsVi_Id.Value,
-                                                cv.ClVi_Observaciones,
-                                                cv.ClVi_Fecha,
-                                                Usua_Creacion = cv.Usua_Creacion.Value,
-                                                cv.ClVi_FechaCreacion,
-                                            }).ToList();
+            //IEnumerable<VisitaClientePorVendedorDTO> clientesVisitasPorVendedor = (from cv in visitasClientes
+            //                                                            join rv in rutasPorVendedor on cv.VeRu_Id equals rv.VeRu_Id
+            //                                                            join v in _bddContext.tbVendedores on rv.Vend_Id equals v.Vend_Id
+            //                                                            join dc in _bddContext.tbDireccionesPorCliente on cv.DiCl_Id equals dc.DiCl_Id
+            //                                                            join c in _bddContext.tbClientes on dc.Clie_Id equals c.Clie_Id
+            //                                                            join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
+            //                                                            join esv in _bddContext.tbEstadosVisita on cv.EsVi_Id equals esv.EsVi_Id                                                                   select new VisitaClientePorVendedorDTO
+            //                                                            {
+            //                                                                ClVi_Id = cv.ClVi_Id,
+            //                                                                Vend_Id = v.Vend_Id,
+            //                                                                Vend_Codigo = v.Vend_Codigo,
+            //                                                                Vend_Nombres = v.Vend_Nombres,
+            //                                                                Vend_Apellidos = v.Vend_Apellidos,
+            //                                                                Vend_Tipo = v.TiVe_Id,
+            //                                                                Vend_Telefono = v.Vend_Telefono,
+            //                                                                Ruta_Id = rv.Ruta_Id,
+            //                                                                Ruta_Descripcion = r.Ruta_Descripcion,
+            //                                                                VeRu_Id = cv.VeRu_Id,
+            //                                                                VeRu_Dias = rv.VeRu_Dias,
+            //                                                                Clie_Id = dc.Clie_Id,
+            //                                                                Clie_Codigo = c.Clie_Codigo,
+            //                                                                Clie_Nombres = c.Clie_Nombres,
+            //                                                                Clie_Apellidos = c.Clie_Apellidos,
+            //                                                                Clie_NombreNegocio = c.Clie_NombreNegocio,
+            //                                                                ClVi_Fecha = cv.ClVi_Fecha,
+            //                                                                ClVi_Observaciones = cv.ClVi_Observaciones,
+            //                                                                EsVi_Id = cv.EsVi_Id,
+            //                                                                EsVi_Descripcion = esv.EsVi_Descripcion,
+            //                                                                DiCl_Id = dc.DiCl_Id,
+            //                                                                DiCl_Latitud = dc.DiCl_Latitud,
+            //                                                                DiCl_Longitud = dc.DiCl_Longitud,
+            //                                                                Usua_Creacion = cv.Usua_Creacion,
+            //                                                                ClVi_FechaCreacion = (DateTime)cv.ClVi_FechaCreacion,
+            //                                                            });
 
-            IEnumerable<VisitaClientePorVendedorDTO> clientesVisitasPorVendedor = (from cv in visitasClientes
-                                                                        join rv in rutasPorVendedor on cv.VeRu_Id equals rv.VeRu_Id
-                                                                        join v in _bddContext.tbVendedores on rv.Vend_Id equals v.Vend_Id
-                                                                        join dc in _bddContext.tbDireccionesPorCliente on cv.DiCl_Id equals dc.DiCl_Id
-                                                                        join c in _bddContext.tbClientes on dc.Clie_Id equals c.Clie_Id
-                                                                        join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
-                                                                        join tive in _bddContext.tbTiposDeVendedor on v.TiVe_Id equals tive.TiVe_Id
-                                                                        join esv in _bddContext.tbEstadosVisita on cv.EsVi_Id equals esv.EsVi_Id                                                                  select new VisitaClientePorVendedorDTO
-                                                                        
-                                                                        {
-                                                                            ClVi_Id = cv.ClVi_Id,
-                                                                            Vend_Id = v.Vend_Id,
-                                                                            Vend_Codigo = v.Vend_Codigo,
-                                                                            Vend_Nombres = v.Vend_Nombres,
-                                                                            Vend_Apellidos = v.Vend_Apellidos,
-                                                                            TiVe_Id = v.TiVe_Id,
-                                                                            Vend_Telefono = v.Vend_Telefono,
-                                                                            Ruta_Id = rv.Ruta_Id,
-                                                                            Ruta_Descripcion = r.Ruta_Descripcion,
-                                                                            VeRu_Id = cv.VeRu_Id,
-                                                                            VeRu_Dias = rv.VeRu_Dias,
-                                                                            Clie_DiaVisita = c.Clie_DiaVisita,
-                                                                            Clie_Id = dc.Clie_Id,
-                                                                            Clie_Codigo = c.Clie_Codigo,
-                                                                            Clie_Nombres = c.Clie_Nombres,
-                                                                            Clie_Apellidos = c.Clie_Apellidos,
-                                                                            Clie_NombreNegocio = c.Clie_NombreNegocio,
-                                                                            ClVi_Fecha = cv.ClVi_Fecha,
-                                                                            ClVi_Observaciones = cv.ClVi_Observaciones,
-                                                                            EsVi_Id = cv.EsVi_Id,
-                                                                            EsVi_Descripcion = esv.EsVi_Descripcion,
-                                                                            DiCl_Id = dc.DiCl_Id,
-                                                                            DiCl_Latitud = dc.DiCl_Latitud,
-                                                                            DiCl_Longitud = dc.DiCl_Longitud,
-                                                                            Usua_Creacion = cv.Usua_Creacion,
-                                                                            ClVi_FechaCreacion = (DateTime)cv.ClVi_FechaCreacion,
-                                                                        });
-
-            
-            return clientesVisitasPorVendedor.ToList();
+            //return clientesVisitasPorVendedor.ToList();
         }
 
 

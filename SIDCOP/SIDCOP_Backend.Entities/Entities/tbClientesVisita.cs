@@ -19,6 +19,24 @@ public partial class tbClientesVisita
     public string? Vendedor { get; set; }
 
     [NotMapped]
+    public string? vend_Nombres { get; set; }
+
+    [NotMapped]
+    public string? vend_Apellidos { get; set; }
+
+    [NotMapped]
+    public int? ruta_Id { get; set; }
+
+    [NotMapped]
+    public string? ruta_Codigo { get; set; }
+
+    [NotMapped]
+    public string? ruta_Descripcion { get; set; }
+    
+    [NotMapped]
+    public string? veru_Descripcion { get; set; }
+
+    [NotMapped]
     public string? Cliente { get; set; }
 
     [NotMapped]

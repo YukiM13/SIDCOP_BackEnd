@@ -69,6 +69,12 @@ public partial class tbClientes
     public string? Clie_DiaVisita { get; set; }
 
     [NotMapped]
+    public string? veru_Id { get; set; }
+
+    [NotMapped]
+    public string? veru_Dias { get; set; }
+
+    [NotMapped]
     public string? UsuaC_Nombre { get; set; }
     [NotMapped]
 

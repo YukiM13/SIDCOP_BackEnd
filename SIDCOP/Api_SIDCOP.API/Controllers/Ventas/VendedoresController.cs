@@ -74,8 +74,9 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
 
             var xml = new XElement("Ruta",
-               vendedoresViewModel.rutas_Json.Select(e =>
+               vendedoresViewModel.rutas_Json_Actualizar.Select(e =>
                    new XElement("Ruta",
+                       new XElement("veRu_Id", e.veRu_Id),
                        new XElement("Id", e.ruta_Id),
                        new XElement("dias", e.veRu_Dias)
                )

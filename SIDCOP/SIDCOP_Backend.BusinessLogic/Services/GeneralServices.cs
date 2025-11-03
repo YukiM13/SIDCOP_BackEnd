@@ -813,6 +813,19 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbClientes> DiasDisponibles(int veru_id)
+        {
+            try
+            {
+                var cliente = _clienteRepository.ListarDiasDisponibles(veru_id);
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public ClienteCambiarEstadoDTO CambiarEstadoCliente(int clie_Id, DateTime fechaActual)
         {
             return _clienteRepository.ChangeState(clie_Id, fechaActual);
@@ -892,7 +905,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
-        public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
+        public IEnumerable<tbClientesVisita> VisitasPorVendedor(int vend_Id)
         {
             var result = new ServiceResult();
             try
@@ -902,7 +915,7 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
             catch (Exception ex)
             {
-                IEnumerable<VisitaClientePorVendedorDTO> visitas = null;
+                IEnumerable<tbClientesVisita> visitas = null;
                 return visitas;
             }
         }
