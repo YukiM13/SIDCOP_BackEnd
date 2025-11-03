@@ -11,7 +11,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 {
     public class CaiSRepository : IRepository<tbCAIs>
     {
-
+        //Metodo que inserta un CAI 
         public RequestStatus Insert(tbCAIs item)
         {
             if (item == null)
@@ -27,6 +27,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cai_Agregar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
@@ -37,25 +38,32 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             }
             catch (Exception ex)
             {
+                //Retorno del resultado de la operacion
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
 
         }
+        //Metodo que lista todos los registros de la tabla tbModelo
         public IEnumerable<tbCAIs> List()
         {
 
             var parameter = new DynamicParameters();
 
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
             var result = db.Query<tbCAIs>(ScriptDatabase.Cai_Listar, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
+            //Retorno del resultado de la operacion
             return result;
         }
 
 
+        //Metodo que busca un CAI por su Id
         public tbCAIs BuscarCai(int? id)
         {
+            //Conexion a la base de datos
             using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
             var result = db.QueryFirstOrDefault<tbCAIs>(ScriptDatabase.Cai_Filtrar, parameter, commandType: System.Data.CommandType.StoredProcedure);
@@ -64,27 +72,32 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                 // Mensaje de error por CAi no encontrado
                 throw new Exception("CAI no encontrado");
             }
+            //Retorno del resultado de la operacion
             return result;
         }
 
         // Es un update disfrazado de delete
         public RequestStatus EliminarCai(int? id)
         {
+            //Envio del parametro al procedimiento almacenado
             var parameter = new DynamicParameters();
             parameter.Add("@NCai_Id", id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
 
             try
             {
+                //Conexion a la base de datos
                 using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
                 var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.Cai_Eliminar, parameter, commandType: System.Data.CommandType.StoredProcedure);
                 if (result == null)
                 {
+                    // Retorno del resultado de la operacion
                     return new RequestStatus { code_Status = 0, message_Status = "Error desconocido" };
                 }
                 return result;
             }
             catch (Exception ex)
             {
+                //Retorno del resultado de la operacion
                 return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
             }
         }
