@@ -33,7 +33,7 @@ namespace SIDCOP_Backend.Entities.Entities
         public int Vend_Ayudante { get; set; }
         public string NombreAyudante { get; set; }
         public string ApellidoAyudante { get; set; }
-        public string Vend_Tipo { get; set; }
+        public int TiVe_Id { get; set; }
         public bool Vend_EsExterno { get; set; }
         public int RegC_Id { get; set; }
         public string Vend_Imagen { get; set; }
