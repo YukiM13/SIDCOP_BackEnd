@@ -28,7 +28,7 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public string? Vend_Telefono { get; set; }
 
-        public int? Vend_Tipo { get; set; }
+        public int? TiVe_Id { get; set; }
 
         public string? Vend_Imagen { get; set; }
 
@@ -52,7 +52,9 @@ namespace SIDCOP_Backend.Entities.Entities
 
         public string? ImVi_Imagen { get; set; }
 
-        public string? Clie_Telefono { get; set; }
+        public string? Clie_Telefono { get; set; }  
+
+        public string? Clie_DiaVisita { get; set; }
         public int? EsVi_Id { get; set; }
         public string? EsVi_Descripcion { get; set; }
 

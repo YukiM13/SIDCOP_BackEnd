@@ -377,5 +377,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
 
 
         #endregion
+
+
+
+        public ServiceResult HealthCheck()
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var insert = _usuarioRepository.HealthCheck();
+                return result.Ok(insert);
+            }
+            catch (Exception ex)
+            {
+                return result.Error(ex.Message);
+            }
+        }
     }
 }
