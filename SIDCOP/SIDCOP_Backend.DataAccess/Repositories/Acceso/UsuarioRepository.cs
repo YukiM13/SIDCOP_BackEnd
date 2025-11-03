@@ -226,5 +226,27 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Acceso
 
             return new RequestStatus { code_Status = result, message_Status = mensaje };
         }
+
+
+        public RequestStatus HealthCheck()
+        {
+
+            try
+            {
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+                var result = db.QueryFirstOrDefault<RequestStatus>(ScriptDatabase.healthCheck, commandType: System.Data.CommandType.StoredProcedure);
+
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido." };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+        }
+
     }
 }

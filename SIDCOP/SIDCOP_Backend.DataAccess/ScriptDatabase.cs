@@ -559,6 +559,6 @@ namespace SIDCOP_Backend.DataAccess
 
         #endregion Metas
 
-
+        public const string healthCheck = "[dbo].[SP_HEALTY]";
     }
 }
