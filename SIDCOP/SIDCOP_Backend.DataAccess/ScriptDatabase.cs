@@ -248,6 +248,7 @@ namespace SIDCOP_Backend.DataAccess
         public const string Clientes_ListarSinConfirmacion = "Gral.SP_Clientes_ListarSinConfirmacion";
         public const string Clientes_ListarPorRuta = "[Gral].[SP_Clientes_ListarPorVendedor]";
         public const string Cliente_ListarVendedor = "Gral.SP_Clientes_Listar_Vendedor";
+        public const string Cliente_DiasDisponibles = "[Gral].[SP_Clientes_DiasDisponibles]";
 
         #endregion Clientes
 

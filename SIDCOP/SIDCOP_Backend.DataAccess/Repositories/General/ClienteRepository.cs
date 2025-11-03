@@ -101,7 +101,19 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
         }
 
 
-       
+        public virtual IEnumerable<tbClientes> ListarDiasDisponibles(int? veru_id)
+        {
+            using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+            var parameter = new DynamicParameters();
+            parameter.Add("@VeRu_Id", veru_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var result = db.Query<tbClientes>(ScriptDatabase.Cliente_DiasDisponibles, parameter, commandType: System.Data.CommandType.StoredProcedure);
+            if (result == null)
+            {
+                throw new Exception("Error al obtener los días disponibles,");
+            }
+            return result;
+        }
+
         /// Inserta un nuevo cliente en la base de datos
 
         public virtual RequestStatus Insert(tbClientes item)
