@@ -10,33 +10,33 @@ public partial class tbClientes
 {
     public int Clie_Id { get; set; }
 
-    public string Clie_Codigo { get; set; }
+    public string? Clie_Codigo { get; set; }
 
-    public string Clie_Nacionalidad { get; set; }
+    public string? Clie_Nacionalidad { get; set; }
 
-    public string Clie_DNI { get; set; }
+    public string? Clie_DNI { get; set; }
 
-    public string Clie_RTN { get; set; }
+    public string? Clie_RTN { get; set; }
 
-    public string Clie_Nombres { get; set; }
+    public string? Clie_Nombres { get; set; }
 
-    public string Clie_Apellidos { get; set; }
+    public string? Clie_Apellidos { get; set; }
 
-    public string Clie_NombreNegocio { get; set; }
+    public string? Clie_NombreNegocio { get; set; }
 
-    public string Clie_ImagenDelNegocio { get; set; }
+    public string? Clie_ImagenDelNegocio { get; set; }
 
-    public string Clie_Telefono { get; set; }
+    public string? Clie_Telefono { get; set; }
 
-    public string Clie_Correo { get; set; }
+    public string? Clie_Correo { get; set; }
 
-    public string Clie_Sexo { get; set; }
+    public string? Clie_Sexo { get; set; }
 
     public DateTime? Clie_FechaNacimiento { get; set; }
 
     public int? TiVi_Id { get; set; }
 
-    public int Cana_Id { get; set; }
+    public int? Cana_Id { get; set; }
 
     public int? EsCv_Id { get; set; }
 
@@ -50,9 +50,9 @@ public partial class tbClientes
 
     public bool? Clie_Vencido { get; set; }
 
-    public string Clie_Observaciones { get; set; }
+    public string? Clie_Observaciones { get; set; }
 
-    public string Clie_ObservacionRetiro { get; set; }
+    public string? Clie_ObservacionRetiro { get; set; }
 
     public bool? Clie_Confirmacion { get; set; }
 
@@ -65,6 +65,8 @@ public partial class tbClientes
     public DateTime? Clie_FechaModificacion { get; set; }
 
     public bool Clie_Estado { get; set; }
+
+    public string? Clie_DiaVisita { get; set; }
 
     [NotMapped]
     public string? UsuaC_Nombre { get; set; }

@@ -27,6 +27,9 @@ public partial class tbClientesVisita
     [NotMapped]
     public string? EsVi_Descripcion { get; set; }
 
+    [NotMapped]
+    public string? Clie_DiaVisita { get; set; }
+
     public string ClVi_Observaciones { get; set; }
 
     public DateTime? ClVi_Fecha { get; set; }

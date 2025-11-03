@@ -162,6 +162,23 @@ namespace SIDCOP.IntegrationTest.Mocks
                 Usua_Estado = false,
             };
         }
+
+        public static tbUsuarios VerificarUsuarioExistenteMock()
+        {
+            return new tbUsuarios
+            {
+                Usua_Id = 74,
+                Usua_Usuario = "heuceda",
+                Usua_Clave = "euceda123@",
+                Usua_Imagen = "heuceda.jpg",
+                Role_Id = 3,
+                Role_Descripcion = "Supervisor(a)",
+                Usua_EsAdmin = true,
+                Usua_Estado = true,
+                Usua_Creacion = 1,
+                Usua_FechaCreacion = DateTime.Now
+            };
+        }
     }
 }
 

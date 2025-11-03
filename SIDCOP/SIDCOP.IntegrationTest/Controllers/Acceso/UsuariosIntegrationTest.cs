@@ -1,4 +1,7 @@
-﻿using SIDCOP.IntegrationTest.Mocks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SIDCOP.IntegrationTest.Mocks;
+using SIDCOP_Backend.BusinessLogic;
 using SIDCOP_Backend.DataAccess;
 using SIDCOP_Backend.Entities.Entities;
 using System;
@@ -18,6 +21,7 @@ namespace SIDCOP.IntegrationTest.Controllers
         private const string ApiKey = "bdccf3f3-d486-4e1e-ab44-74081aefcdbc";
 
 
+        #region Listar
         [TestMethod]
         public async Task UsuarioListar()
         {
@@ -52,8 +56,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Console.WriteLine($"✅ Se obtuvieron {usuarios.Count} usuarios correctamente.");
             Console.WriteLine($"Primer usuario: {usuarios[0].Usua_Usuario}");
         }
+        #endregion
 
-
+        #region Insertar
         [TestMethod]
         public async Task UsuarioInsertar()
         {
@@ -91,8 +96,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsNotNull(response);
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
         }
+        #endregion
 
-
+        #region Actualizar
         [TestMethod] // Segunda prueba para operación de actualización
         public async Task UsuariosActualizar()
         {
@@ -120,7 +126,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+        #endregion
 
+        #region Cambiar Estado
         [TestMethod] // Segunda prueba para operación de actualización
         public async Task CambiarEstadoUsuarios()
         {
@@ -148,7 +156,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+        #endregion
 
+        #region Buscar
         [TestMethod] // Segunda prueba para operación de actualización
         public async Task BuscarUsuario()
         {
@@ -176,7 +186,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+        #endregion
 
+        #region Mostrar Contraseña
         [TestMethod]
         public async Task UsuarioMostrarContrasena()
         {
@@ -229,9 +241,11 @@ namespace SIDCOP.IntegrationTest.Controllers
                 Console.WriteLine($"✅ Contraseña obtenida: {resultado.data}");
             }
         }
+        #endregion
 
+        #region Iniciar Sesión
         [TestMethod] // Segunda prueba para operación de actualización
-        public async Task UsuariosIniciarSesion()
+        public async Task IniciarSesion()
         {
             // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
             var cliente = factory.CreateClient();
@@ -257,7 +271,9 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+        #endregion
 
+        #region Restablecer Contraseña
         [TestMethod] // Segunda prueba para operación de actualización
         public async Task RestablecerComtrasena()
         {
@@ -285,59 +301,73 @@ namespace SIDCOP.IntegrationTest.Controllers
             Assert.IsFalse(string.IsNullOrEmpty(responseContent));
             Console.WriteLine($"Respuesta del servidor: {responseContent}");
         }
+        #endregion
 
-        // Sad path, para las pruebas de integración
+        #region Verificar Usuario Existente
+        [TestMethod]
 
-        [TestMethod] // Prueba con valores extremos que también debería fallar
-        public async Task PreciosPorProductoInsertar_DeberiaFallar()
+        public async Task VerificarUsuarioExistente()
         {
-            // PASO 1: CONFIGURACIÓN DEL CLIENTE HTTP
+            // Arrange
             var cliente = factory.CreateClient();
             cliente.DefaultRequestHeaders.Add("X-API-Key", ApiKey);
 
-            // PASO 2: CREAR DATOS CON VALORES EXTREMOS
-            // Usa valores extremos que podrían causar overflow o errores de validación
-            var preciosExtremos = ListaDePreciosMocks.CrearMockPreciosPorProductoValoresExtremos();
+            var usuarioMock = UsuarioMocks.VerificarUsuarioExistenteMock();
 
-            // PASO 3: SERIALIZACIÓN DE DATOS EXTREMOS
-            var contenido = new StringContent(
-                System.Text.Json.JsonSerializer.Serialize(preciosExtremos),
-                System.Text.Encoding.UTF8,
-                "application/json"
-            );
+            // 2. Ahora sí, verifica el usuario existente
+            var buscarUsuario = new
+            {
+                Usua_Id = usuarioMock.Usua_Id,
+                Usua_Usuario = usuarioMock.Usua_Usuario,
+                Usua_Clave = usuarioMock.Usua_Clave,
+                Role_Descripcion = usuarioMock.Role_Descripcion
+            };
+            var buscarJson = JsonSerializer.Serialize(buscarUsuario);
+            var buscarContenido = new StringContent(buscarJson, Encoding.UTF8, "application/json");
 
-            // PASO 4: PETICIÓN QUE DEBERÍA FALLAR
-            var response = await cliente.PostAsync("/PreciosPorProducto/InsertarLista", contenido);
-
-            // PASO 5: VERIFICACIONES DE FALLO
-            // Esta prueba puede fallar de diferentes maneras:
-            // - 400 Bad Request (validación)
-            // - 404 Not Found (IDs inexistentes)
-            // - 500 Internal Server Error (overflow o errores de BD)
-
-            var esExitoso = response.StatusCode == System.Net.HttpStatusCode.OK;
+            // Act
+            var response = await cliente.PostAsync("/Usuarios/VerificarUsuario", buscarContenido);
             var responseContent = await response.Content.ReadAsStringAsync();
 
-            if (esExitoso)
-            {
-                Console.WriteLine("ADVERTENCIA: La API aceptó valores extremos que podrían ser problemáticos");
-                Console.WriteLine($"Respuesta: {responseContent}");
+            Console.WriteLine($"Status Code: {response.StatusCode}");
+            Console.WriteLine($"Respuesta: {responseContent}");
 
-                // Si la API acepta estos valores, al menos documentamos que pasó
-                Assert.IsTrue(true, "La API manejó valores extremos sin error - verificar si esto es el comportamiento esperado");
-            }
-            else
-            {
-                Console.WriteLine($"La API correctamente rechazó valores extremos con código: {response.StatusCode}");
-                Console.WriteLine($"Mensaje de error: {responseContent}");
+            // Assert
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode, "El código de respuesta no fue OK");
+            Assert.IsFalse(string.IsNullOrEmpty(responseContent), "La respuesta está vacía");
 
-                // Verifica que sea un código de error apropiado
-                Assert.IsTrue(
-                    response.StatusCode >= System.Net.HttpStatusCode.BadRequest,
-                    $"Se esperaba un código de error, pero se recibió: {response.StatusCode}"
+            // Deserializa el ServiceResult
+            var serviceResult = JsonSerializer.Deserialize<ServiceResult>(
+                responseContent,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+            );
+
+            Assert.IsNotNull(serviceResult, "El ServiceResult no debe ser nulo");
+            Assert.IsTrue(serviceResult.Success, $"La operación no fue exitosa: {serviceResult.Message}");
+            Assert.IsNotNull(serviceResult.Data, "La data no debe ser nula");
+
+            // Deserializa la lista de usuarios desde Data
+            var usuariosJson = serviceResult.Data.ToString();
+            var usuarios = JsonSerializer.Deserialize<List<tbUsuarios>>(usuariosJson ?? "[]", new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            Assert.IsNotNull(usuarios, "La lista de usuarios no debe ser nula");
+
+            // Si usuarios ya es List<tbUsuarios>, usa directamente.
+            // Si usuarios es dynamic, deserializa así:
+            var usuariosList = usuarios as List<tbUsuarios>;
+            if (usuariosList == null)
+            {
+                usuariosList = JsonSerializer.Deserialize<List<tbUsuarios>>(
+                    usuarios.ToString(),
+                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                 );
             }
+
+            Assert.IsNotNull(usuariosList, "La lista de usuarios no debe ser nula");
+            Assert.IsTrue(usuariosList.Any(u => u.Usua_Id == usuarioMock.Usua_Id), "No se encontró el usuario esperado");
+            Console.WriteLine($"✅ Usuario existente verificado correctamente (ID: {usuarioMock.Usua_Id})");
         }
+        #endregion
 
     }
 
