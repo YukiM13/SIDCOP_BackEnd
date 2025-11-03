@@ -22,23 +22,41 @@ namespace Api_SIDCOP.API.Models.General
 
 
         [NotMapped]
-        public string Veru_Dias { get; set; }
+        public string? Veru_Dias { get; set; }
 
 
         [NotMapped]
-        public string Cliente { get; set; }
+        public string? Cliente { get; set; }
 
         [NotMapped]
-        public string Clie_NombreNegocio { get; set; }
+        public string? Clie_NombreNegocio { get; set; }
 
         [NotMapped]
-        public string DiCl_Latitud { get; set; }
+        public string? DiCl_Latitud { get; set; }
 
         [NotMapped]
         public string DiCl_Longitud { get; set; }
 
         [NotMapped]
-        public string EsV_Descripcion { get; set; }
+        public string? EsV_Descripcion { get; set; }
+
+        [NotMapped]
+        public string? vend_Nombres { get; set; }
+
+        [NotMapped]
+        public string? vend_Apellidos { get; set; }
+
+        [NotMapped]
+        public int? ruta_Id { get; set; }
+
+        [NotMapped]
+        public string? ruta_Codigo { get; set; }
+
+        [NotMapped]
+        public string? ruta_Descripcion { get; set; }
+
+        [NotMapped]
+        public string? veru_Descripcion { get; set; }
 
         [NotMapped]
         public int? Secuencia { get; set; }
