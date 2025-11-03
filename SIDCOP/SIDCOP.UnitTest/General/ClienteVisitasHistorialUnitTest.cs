@@ -63,7 +63,6 @@ namespace SIDCOP.UnitTest.General
                 Vend_DNI = "0801199012345",
                 Vend_Correo = "juan.perez@email.com",
                 Vend_DireccionExacta = "Col. Mangandi, al final del muro del Perla, Tortillería la Hondureñita derecha, 3 cuadras exactas",
-                Vend_Tipo = "A",
                 Vend_Telefono = "99887766",
                 Vend_Estado = true,
                 Usua_Creacion = 1,
