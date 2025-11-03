@@ -112,7 +112,8 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
 
         public IEnumerable<VisitaClientePorVendedorDTO> VisitasPorVendedor(int vend_Id)
         {
-            List<tbVendedoresPorRuta> rutasPorVendedor = _bddContext.tbVendedoresPorRuta.AsNoTracking().Where(vpr => vpr.Vend_Id == vend_Id).ToList();
+
+            var rutasPorVendedor = _bddContext.tbVendedoresPorRuta.AsNoTracking().Where(vpr => vpr.Vend_Id == vend_Id).ToList();
 
             var visitasClientes = (from cv in _bddContext.tbClientesVisita
                                             where cv.VeRu_Id.HasValue && cv.DiCl_Id.HasValue && cv.EsVi_Id.HasValue && cv.Usua_Creacion.HasValue
@@ -134,19 +135,22 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                                                                         join dc in _bddContext.tbDireccionesPorCliente on cv.DiCl_Id equals dc.DiCl_Id
                                                                         join c in _bddContext.tbClientes on dc.Clie_Id equals c.Clie_Id
                                                                         join r in _bddContext.tbRutas on rv.Ruta_Id equals r.Ruta_Id
-                                                                        join esv in _bddContext.tbEstadosVisita on cv.EsVi_Id equals esv.EsVi_Id                                                                   select new VisitaClientePorVendedorDTO
+                                                                        join tive in _bddContext.tbTiposDeVendedor on v.TiVe_Id equals tive.TiVe_Id
+                                                                        join esv in _bddContext.tbEstadosVisita on cv.EsVi_Id equals esv.EsVi_Id                                                                  select new VisitaClientePorVendedorDTO
+                                                                        
                                                                         {
                                                                             ClVi_Id = cv.ClVi_Id,
                                                                             Vend_Id = v.Vend_Id,
                                                                             Vend_Codigo = v.Vend_Codigo,
                                                                             Vend_Nombres = v.Vend_Nombres,
                                                                             Vend_Apellidos = v.Vend_Apellidos,
-                                                                            Vend_Tipo = v.TiVe_Id,
+                                                                            TiVe_Id = v.TiVe_Id,
                                                                             Vend_Telefono = v.Vend_Telefono,
                                                                             Ruta_Id = rv.Ruta_Id,
                                                                             Ruta_Descripcion = r.Ruta_Descripcion,
                                                                             VeRu_Id = cv.VeRu_Id,
                                                                             VeRu_Dias = rv.VeRu_Dias,
+                                                                            Clie_DiaVisita = c.Clie_DiaVisita,
                                                                             Clie_Id = dc.Clie_Id,
                                                                             Clie_Codigo = c.Clie_Codigo,
                                                                             Clie_Nombres = c.Clie_Nombres,
@@ -163,6 +167,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.General
                                                                             ClVi_FechaCreacion = (DateTime)cv.ClVi_FechaCreacion,
                                                                         });
 
+            
             return clientesVisitasPorVendedor.ToList();
         }
 

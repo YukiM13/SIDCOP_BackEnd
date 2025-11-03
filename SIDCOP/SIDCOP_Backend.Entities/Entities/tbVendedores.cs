@@ -51,6 +51,9 @@ public partial class tbVendedores
     public int? TiVe_Id { get; set; }
 
     [NotMapped]
+    public string? TiVe_Descripcion { get; set; }
+
+    [NotMapped]
     public string? Sucu_Descripcion { get; set; }
 
     [NotMapped]
