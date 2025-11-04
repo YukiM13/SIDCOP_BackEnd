@@ -137,6 +137,41 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             }
         }
 
+        [HttpGet("IrCuentasCobrar/{id}")]
+        public IActionResult IrCuentasCobrar(int id)
+        {
+            // Validación del ID recibido
+            if (id <= 0)
+            {
+                return Ok(new
+                {
+                    code = 200,
+                    success = false,
+                    message = "El ID del cliente debe ser mayor a cero.",
+                    data = new { code_Status = 0, message_Status = "El ID del cliente debe ser mayor a cero." }
+                });
+            }
+
+            try
+            {
+                // Busca si el cliente tiene cuentas por cobrar
+                var result = _ventaServices.IrCuentasPorCobrar(id);
+
+                // Siempre retorna 200 OK, pero con el code_Status en data
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new
+                {
+                    code = 200,
+                    success = false,
+                    message = $"Error interno del servidor: {ex.Message}",
+                    data = new { code_Status = 0, message_Status = $"Error interno: {ex.Message}" }
+                });
+            }
+        }
+
         // GET: /CuentasPorCobrar/ResumenAntiguedad
         // Obtiene un resumen de las cuentas por cobrar agrupadas por antigüedad (ej. 0-30 días, 31-60 días, etc.)
         // GET: /CuentasPorCobrar/ResumenAntiguedad

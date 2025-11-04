@@ -104,6 +104,37 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
             return result;
         }
 
+        public virtual RequestStatus IrCuentasPorCobrar(int clieId)
+        {
+            var parameters = new DynamicParameters();
+            //Declaracion de parametros
+            parameters.Add("@Clie_Id", clieId, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+
+            try
+            {
+                //Se llama el ConnectionString para conectarse a la base de datos
+                using var db = new SqlConnection(SIDCOP_Context.ConnectionString);
+
+                //Ejecuta el procedimiento con el parametro
+                var result = db.QueryFirstOrDefault<RequestStatus>(
+                    ScriptDatabase.IrCuentasPorCobrar,
+                    parameters,
+                    commandType: System.Data.CommandType.StoredProcedure);
+
+                if (result == null)
+                {
+                    return new RequestStatus { code_Status = 0, message_Status = "Error desconocido al verificar el cliente." };
+                }
+
+                //Retorna el status del procedimiento para saber si se realizo
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new RequestStatus { code_Status = 0, message_Status = $"Error inesperado: {ex.Message}" };
+            }
+        }
+
 
         public virtual IEnumerable<tbCuentasPorCobrar> ResumenAntiguedad()
         {
