@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
@@ -15,6 +18,7 @@ using SIDCOP_Backend.DataAccess.Repositories.Inventario;
 using SIDCOP_Backend.DataAccess.Repositories.Logistica;
 using SIDCOP_Backend.DataAccess.Repositories.Ventas;
 using SIDCOP_Backend.Entities.Entities;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SIDCOP_Backend.BusinessLogic.Services
 {
@@ -1349,6 +1353,289 @@ namespace SIDCOP_Backend.BusinessLogic.Services
         ////}
 
 
+        #endregion
+
+
+        #region ZPL
+        public string ConvertImageToZpl(byte[] imageBytes, int threshold = 128)
+        {
+            try
+            {
+                using (var ms = new MemoryStream(imageBytes))
+                using (var image = System.Drawing.Image.FromStream(ms))
+                using (var bitmap = new Bitmap(image))
+                {
+                    return ConvertBitmapToZpl(bitmap, threshold);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al convertir imagen a ZPL: {ex.Message}", ex);
+            }
+        }
+
+        /// <summary>
+        /// Convierte un Bitmap a formato ZPL ASCII
+        /// </summary>
+        private string ConvertBitmapToZpl(Bitmap bitmap, int threshold)
+        {
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+
+            // Aplicar Floyd-Steinberg dithering para mejor calidad
+            var grayscale = ConvertToGrayscale(bitmap);
+            var binaryData = ApplyDithering(grayscale, width, height, threshold);
+
+            // Convertir datos binarios a formato hexadecimal
+            int bytesPerRow = (int)Math.Ceiling(width / 8.0);
+            int totalBytes = bytesPerRow * height;
+
+            var hexString = ConvertBinaryToHex(binaryData, width, height, bytesPerRow);
+
+            // Comprimir usando formato ZPL ASCII
+            var compressedData = CompressZplData(hexString);
+
+            // Generar comando ZPL completo
+            return $"^GFA,{totalBytes},{totalBytes},{bytesPerRow},{compressedData}";
+        }
+
+        /// <summary>
+        /// Convierte la imagen a escala de grises
+        /// </summary>
+        private double[] ConvertToGrayscale(Bitmap bitmap)
+        {
+            int width = bitmap.Width;
+            int height = bitmap.Height;
+            var grayscale = new double[width * height];
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    var pixel = bitmap.GetPixel(x, y);
+
+                    // Si es transparente, considerar como blanco
+                    if (pixel.A < 128)
+                    {
+                        grayscale[y * width + x] = 255;
+                    }
+                    else
+                    {
+                        // Conversión estándar a escala de grises
+                        double gray = 0.299 * pixel.R + 0.587 * pixel.G + 0.114 * pixel.B;
+                        grayscale[y * width + x] = gray;
+                    }
+                }
+            }
+
+            return grayscale;
+        }
+
+        /// <summary>
+        /// Aplica algoritmo Floyd-Steinberg dithering para mejor calidad
+        /// </summary>
+        private int[] ApplyDithering(double[] grayscale, int width, int height, int threshold)
+        {
+            var binaryData = new int[width * height];
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    int idx = y * width + x;
+                    double oldPixel = grayscale[idx];
+                    int newPixel = oldPixel < threshold ? 0 : 255;
+                    binaryData[idx] = newPixel == 0 ? 1 : 0; // 1 = negro, 0 = blanco
+
+                    double error = oldPixel - newPixel;
+
+                    // Distribuir el error a píxeles vecinos
+                    if (x + 1 < width)
+                    {
+                        grayscale[idx + 1] += error * 7.0 / 16.0;
+                    }
+                    if (y + 1 < height)
+                    {
+                        if (x > 0)
+                        {
+                            grayscale[idx + width - 1] += error * 3.0 / 16.0;
+                        }
+                        grayscale[idx + width] += error * 5.0 / 16.0;
+                        if (x + 1 < width)
+                        {
+                            grayscale[idx + width + 1] += error * 1.0 / 16.0;
+                        }
+                    }
+                }
+            }
+
+            return binaryData;
+        }
+
+        /// <summary>
+        /// Convierte datos binarios a formato hexadecimal
+        /// </summary>
+        private string ConvertBinaryToHex(int[] binaryData, int width, int height, int bytesPerRow)
+        {
+            var hexBuilder = new StringBuilder();
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int byteIndex = 0; byteIndex < bytesPerRow; byteIndex++)
+                {
+                    byte byteValue = 0;
+                    for (int bit = 0; bit < 8; bit++)
+                    {
+                        int x = byteIndex * 8 + bit;
+                        if (x < width)
+                        {
+                            int pixelIndex = y * width + x;
+                            if (binaryData[pixelIndex] == 1)
+                            {
+                                byteValue |= (byte)(1 << (7 - bit));
+                            }
+                        }
+                    }
+                    hexBuilder.Append(byteValue.ToString("X2"));
+                }
+            }
+
+            return hexBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Comprime los datos hexadecimales usando formato de compresión ZPL ASCII
+        /// </summary>
+        private string CompressZplData(string hexString)
+        {
+            var compressed = new StringBuilder();
+            int i = 0;
+            const int maxLineLength = 60;
+            int currentLineLength = 0;
+
+            while (i < hexString.Length)
+            {
+                string currentChar = hexString.Substring(i, Math.Min(2, hexString.Length - i));
+                if (currentChar.Length < 2) break;
+
+                int count = 1;
+
+                // Contar repeticiones (máximo 400)
+                while (i + (count * 2) < hexString.Length &&
+                       hexString.Substring(i + (count * 2), 2) == currentChar &&
+                       count < 400)
+                {
+                    count++;
+                }
+
+                string encoded = EncodeRepetition(count, currentChar);
+
+                
+
+                compressed.Append(encoded);
+                currentLineLength += encoded.Length;
+                i += count * 2;
+            }
+
+            return compressed.ToString();
+        }
+
+        /// <summary>
+        /// Codifica una repetición según el formato ZPL
+        /// G-Z = 1-19, g-z = múltiplos de 20 (20-400)
+        /// </summary>
+        private string EncodeRepetition(int count, string hexByte)
+        {
+            if (count == 1)
+            {
+                return hexByte;
+            }
+            else if (count == 2)
+            {
+                return hexByte + hexByte;
+            }
+            else if (count <= 19)
+            {
+                // G=1, H=2, ..., Z=19
+                char encodedChar = (char)('G' + count - 1);
+                return encodedChar + hexByte;
+            }
+            else if (count <= 400)
+            {
+                // g=20, h=40, i=60, ..., z=400
+                int twenties = count / 20;
+                int remainder = count % 20;
+
+                var result = new StringBuilder();
+
+                if (twenties >= 1 && twenties <= 20)
+                {
+                    char encodedChar = (char)('g' + twenties - 1);
+                    result.Append(encodedChar);
+                }
+                else
+                {
+                    result.Append(count.ToString());
+                }
+
+                if (remainder > 0)
+                {
+                    char remainderChar = (char)('G' + remainder - 1);
+                    result.Append(remainderChar);
+                }
+
+                return result.ToString() + hexByte;
+            }
+            else
+            {
+                // Fuera de rango, usar formato numérico
+                return count.ToString() + hexByte;
+            }
+        }
+
+        /// <summary>
+        /// Valida que la imagen tenga un tamaño razonable
+        /// </summary>
+        public bool ValidateImageSize(byte[] imageBytes, int maxWidth = 500, int maxHeight = 500)
+        {
+            try
+            {
+                using (var ms = new MemoryStream(imageBytes))
+                using (var image = System.Drawing.Image.FromStream(ms))
+                {
+                    return image.Width <= maxWidth && image.Height <= maxHeight;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Redimensiona la imagen si es necesario
+        /// </summary>
+        public byte[] ResizeImage(byte[] imageBytes, int targetWidth, int targetHeight)
+        {
+            using (var ms = new MemoryStream(imageBytes))
+            using (var image = System.Drawing.Image.FromStream(ms))
+            using (var resized = new Bitmap(targetWidth, targetHeight))
+            using (var graphics = Graphics.FromImage(resized))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+
+                graphics.DrawImage(image, 0, 0, targetWidth, targetHeight);
+
+                using (var outputMs = new MemoryStream())
+                {
+                    resized.Save(outputMs, ImageFormat.Png);
+                    return outputMs.ToArray();
+                }
+            }
+        }
         #endregion
     }
 }
