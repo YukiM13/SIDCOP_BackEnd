@@ -173,6 +173,7 @@ namespace SIDCOP_Backend.DataAccess.Repositories.Ventas
                     facturaCompleta.CoFa_Telefono1 = configuracion.CoFa_Telefono1;
                     facturaCompleta.CoFa_Telefono2 = configuracion.CoFa_Telefono2;
                     facturaCompleta.CoFa_Logo = configuracion.CoFa_Logo;
+                    facturaCompleta.CoFa_LogoZPL = configuracion.CoFa_LogoZPL;
                 }
 
                 // 2. Leer datos principales de la factura (segundo result set)

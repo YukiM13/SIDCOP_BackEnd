@@ -168,6 +168,8 @@ public class FacturaCompletaDTO
     public string CoFa_Telefono2 { get; set; }
     public string CoFa_Logo { get; set; }
 
+    public string CoFa_LogoZPL { get; set; }
+
     // ===== DATOS DE LA FACTURA =====
     public int Fact_Id { get; set; }
     public string Fact_Numero { get; set; }

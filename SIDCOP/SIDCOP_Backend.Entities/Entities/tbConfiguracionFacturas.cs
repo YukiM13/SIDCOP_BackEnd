@@ -23,6 +23,7 @@ public partial class tbConfiguracionFacturas
     public string CoFa_Telefono2 { get; set; }
 
     public string CoFa_Logo { get; set; }
+    public string CoFa_LogoZPL { get; set; }
 
     public int CoFa_DiasDevolucion { get; set; }
 
