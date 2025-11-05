@@ -749,6 +749,39 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public ServiceResult IrCuentasPorCobrar(int clieId)
+        {
+            var result = new ServiceResult();
+            try
+            {
+                var response = _cuentasporcobrarRepository.IrCuentasPorCobrar(clieId);
+
+                // Validar si la respuesta es nula
+                if (response == null)
+                {
+                    return result.Error("No se pudo obtener respuesta del servidor.");
+                }
+
+                // Validar el código de estado
+                if (response.code_Status == 0)
+                {
+                    // CAMBIO AQUÍ: Usar result.Ok() en lugar de result.Error()
+                    // para que siempre pase el objeto response en data
+                    result.Success = false;
+                    result.Message = response.message_Status;
+                    result.Data = response; // Pasa el objeto completo
+                    return result;
+                }
+
+                // Si el código es 1, retorna el objeto completo en data
+                return result.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return result.Error($"Error inesperado: {ex.Message}");
+            }
+        }
+
         /// <summary>
         /// Lista todas las cuentas por cobrar
         /// </summary>
