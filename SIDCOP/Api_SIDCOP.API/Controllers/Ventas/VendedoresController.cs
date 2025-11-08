@@ -27,6 +27,13 @@ namespace Api_SIDCOP.API.Controllers.Ventas
             return Ok(list);
         }
 
+        [HttpGet("ListarDDL")]
+        public IActionResult ListarDDL()
+        {
+            var list = _ventaServices.ListarVendedoresDDL();
+            return Ok(list);
+        }
+
         [HttpGet("ListarPorRutas")]
         public IActionResult ListarVeRu()
         {
