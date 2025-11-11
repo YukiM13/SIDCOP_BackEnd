@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{CD67A719-1CE9-4754-AD9F-700D16088D0A}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{0C4D0731-33EB-44E7-8540-6BD6CADC28BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{F13A19EF-3FF2-4BFD-B798-72489FC336A2}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="wbOWCqOr5B4="
-            IV="kjQzf1poPhVQP8kP3AEBFw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="ZLDAIT6/Umg="
+            IV="5W4rGD3j9Jwj/5J7CQvn+Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>kjQzf1poPhVQP8kP3AEBFz8Hj61DWtdmvK5IG2FDekTQsxNHcL1JlZ4gjmvB1PfKypF8+39z1PID3TnL53XpBJVSHUOC72cHwqR9xusM+zuLzn1cuVSfjzD4lu0PG/9dWnjIRaqg5Fya4fGW240Sm4K4WyrPjnX1TO29tlqmPGpmeUWxzpT06CnuwBxxseaE</CipherValue>
+              <CipherValue>5W4rGD3j9Jwj/5J7CQvn+YdYFZNNd7yHprEFdaeVoBX6O5R+4tpithc+C2mxHEwQFnmTLKq+BIE5/oykBCzg6NhqzDrkXllHEMaL7r2pt5nKN3wc1gRch32/3+0haVzRZUfefSb2kzPg5+U6qJ3D19vQSfDbfcK7djg7i2rnlcE/qGACflfEewE9aymm+m89</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{BB7862C3-1368-42C5-8D18-7AC7A10F6F32}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="7JVILurXN/k="
-            IV="vUnR5oOLx5oFv3AedOeGMA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="TwHUZvMVxHk="
+            IV="ZRN25Z/Z+Cf4Hg+aBPfWlg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>vUnR5oOLx5oFv3AedOeGMN0mmMJpMMjXQ7rXEwts1KbM4oq0NazS9xcy0ScE7TM/CmMFxA2MmOLY6GOmgU5Jq1vb84egbin/M3LzGDNb+0yCmYUt0Eloy0aMHiCrwzOGKFeLxbbg8tjHnLwXHXdQWm967/bs8cqZ4caDr/lLtwOfxewGp3L6goPkCJMwNbYd</CipherValue>
+              <CipherValue>ZRN25Z/Z+Cf4Hg+aBPfWlrBpQR2VLB2pbSKhI5Qzla0UapTsN1DbH0+axk82x0lu95f4mTaRCtBarR5baZIEB45mGQ8+yjCaHhuGuK62SqqlsTnDHYQblGunwLVzUwCvEBDzXF2H9+e9r+M1IdXDOWppkKS+QNQntGBkLt9mSYK53OU8F7SQBB7+j7BKf6mh</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;Encrypt=True;TrustServerCertificate=True;Application Name=SSIS-Package1-{68EA5C1A-D18A-423E-9F3D-CEEB1177A8B8}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="dt6Bn1mrQ1k="
-            IV="pBR3pGGf1nwQzY/kTIjy9g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="YRAD7gKAdLc="
+            IV="8e0SQyLoSmcmKuVDbdnxiQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>pBR3pGGf1nwQzY/kTIjy9gCyVJDAbgc9AD7+0UVgFuvG9u5SZufQRNzeItIjqXIOC6Tpq11RE7F0HdiKw2JSPeZmntoUvPFt/dRnO28GpDvs53aGblmHg6/p9CMFnjnuicVYcZkMt9xQ8AjrhfXqYxUxfGxdv3bIy7B46F0XISRUMoGso+kU5FhOPyi+caUw</CipherValue>
+              <CipherValue>8e0SQyLoSmcmKuVDbdnxiWFXZWBQt7dxEiM7tRsdGeAuB2PvbKFWaNmMmwIfIK/oBoyVGejjeVfLb9PBS4uzy5FmwQQdiPLzufejpTmMpnFKRhweOwIrxLjQ6A461jAJg17Vz4VhYqrvgaa3ODMUD+tS4R+DGi4GFDOxJMqRYEXxminNlSr8CCi1tvhstmg+</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{503219A9-6A5F-4971-AE9A-F94B12CE86BE}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="yFx1bzG4MBc="
-            IV="OrNZH68pcYItukzNRRSoaQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="YwMpy8WdP78="
+            IV="xsWW8iTKadBPP/MAQuSqmA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>OrNZH68pcYItukzNRRSoaYKCeECe9GLq6DIdj9MUVVo3aoDxbHY1aPImMfu90lwyMjXIj4yVVihi8J1YFOnXaPADbMRbWqK4AKZM0FhwWV7UgIzKSF2Fkno4v6W73IPMis4ERNO+RW/Jnef1ZR+oQYdWOrxJ6erZk3K3xxjmr0tZMP1Z9D/NfTOyFMSPsTmz</CipherValue>
+              <CipherValue>xsWW8iTKadBPP/MAQuSqmBYxUCCyfC6gPhgyiBUfbI2zdRlUQKesIMWlHylnZL7BnWsS5mwqKHmKAEPjDUmcDkapRnHo/Qil1pO5FyK60VzD9KsFN7QvFdy91J9yBzWEtB6sgQ5u5WjsAQQr9Lri15TnlpVMJp8WYJzTkWKlim+3rCLqm4gWH3rE9BrwJSEo</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -468,6 +468,15 @@ where [refTable].[Cia] = ? and [refTable].[VenCodigo] = ?</property>
                 <input
                   refId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input].Columns[Vend_Tipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vend_Tipo"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -477,6 +486,28 @@ where [refTable].[Cia] = ? and [refTable].[VenCodigo] = ?</property>
                   exclusionGroup="1"
                   name="Data Conversion Output"
                   synchronousInputId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]"
+                      name="Vend_TipoF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -1383,14 +1414,6 @@ WHERE Vend_Id = ?;</property>
                       externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Supervisor]"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Supervisor]" />
                     <inputColumn
-                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Tipo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="Vend_Tipo"
-                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
-                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]" />
-                    <inputColumn
                       refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_EsExterno]"
                       cachedDataType="i4"
                       cachedName="Vend_EsExterno"
@@ -1408,6 +1431,12 @@ WHERE Vend_Id = ?;</property>
                       cachedName="Usua_Modificacion"
                       externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_TipoF]"
+                      cachedDataType="i4"
+                      cachedName="Vend_TipoF"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiVe_Id]"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1480,12 +1509,6 @@ WHERE Vend_Id = ?;</property>
                       dataType="i4"
                       name="Vend_Ayudante" />
                     <externalMetadataColumn
-                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="Vend_Tipo" />
-                    <externalMetadataColumn
                       refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_EsExterno]"
                       dataType="bool"
                       name="Vend_EsExterno" />
@@ -1514,6 +1537,10 @@ WHERE Vend_Id = ?;</property>
                       codePage="1252"
                       dataType="text"
                       name="Vend_Imagen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiVe_Id]"
+                      dataType="i4"
+                      name="TiVe_Id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1580,7 +1607,7 @@ WHERE Vend_Id = ?;</property>
 	1 AS Sucu_Id,
 	1 AS Colo_Id,
 	6 AS Vend_Supervisor,
-	'V' AS Vend_Tipo,
+	1 AS Vend_Tipo,
 	0 as Vend_EsExterno,
 	1 AS Usua_Modificacion,
 	ISNULL(VenFUpdate, GETDATE()) AS Vend_FechaModificacion
@@ -1871,9 +1898,7 @@ WHERE VenFUpdate &gt;= ?</property>
                       name="Vend_Supervisor" />
                     <externalMetadataColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
+                      dataType="i4"
                       name="Vend_Tipo" />
                     <externalMetadataColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
@@ -1979,9 +2004,7 @@ WHERE VenFUpdate &gt;= ?</property>
                       name="Vend_Supervisor" />
                     <outputColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
+                      dataType="i4"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
                       name="Vend_Tipo" />
                     <outputColumn
@@ -2362,23 +2385,23 @@ WHERE VenFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\Actualizar Ultima Migracion Vendedores"
           TopLeft="155.833328097231,290.966665060553" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity"
           TopLeft="207.4999886627,217.533331820634" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Migracion Vendedores"
           TopLeft="191.759252060251,149.266666045917" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity"
           TopLeft="209.166655238304,84.9333327427175" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Traer Fecha Filtro"
           TopLeft="205.833322087096,14.7333332308795" />
         <EdgeLayout
@@ -2478,43 +2501,43 @@ WHERE VenFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Migracion Vendedores\OLE DB Command 1"
           TopLeft="781.666623958285,310.266664509111" />
         <NodeLayout
-          Size="194,42"
+          Size="193.6,41.6"
           Id="Package\Migracion Vendedores\Poblar Vendedor externa"
           TopLeft="624.999965851507,82.866666190558" />
         <NodeLayout
-          Size="121,42"
+          Size="120.8,41.6"
           Id="Package\Migracion Vendedores\Lookup 1"
           TopLeft="656.666630787983,223.599998445113" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Vendedores\Data Conversion 1"
           TopLeft="635.833298592933,149.933332290716" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Migracion Vendedores\Data Conversion"
           TopLeft="147.666667380266,160.933330887026" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Migracion Vendedores\Poblar Vendedores"
           TopLeft="146.000000407298,83.3999987365803" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Migracion Vendedores\OLE DB Destination"
           TopLeft="549.566643764411,312.799998987516" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Migracion Vendedores\OLE DB Command"
           TopLeft="328.999997680386,316.39999526461" />
         <NodeLayout
-          Size="126,42"
+          Size="126.4,41.6"
           Id="Package\Migracion Vendedores\Búsqueda"
           TopLeft="175.833323726224,240.266665196154" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Migracion Vendedores\Destino de ADO NET"
           TopLeft="1.00000256796665,311.399995339115" />
         <EdgeLayout

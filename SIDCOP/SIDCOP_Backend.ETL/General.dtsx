@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="175"
-  DTS:VersionGUID="{1701F640-F51E-4C40-8B26-55D8756894F0}">
+  DTS:VersionBuild="177"
+  DTS:VersionGUID="{32DAF6C9-746C-43C8-ACD1-BEE5959631CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package-{F429586E-7965-424B-9773-FE8CCE2E4102}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Hc+Us2ZDwH8="
-            IV="yJj4IREtufkwSug1WCONsg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="3+VyN112HWA="
+            IV="RkKk1dYZPwnhXC0vgOYzXw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>yJj4IREtufkwSug1WCONsn4ahtQT7RXr8DJGsbSZDz8UDNLNqPQ3pagWf/RmIGA1obIvjm9qEL1Pbz8L8GAxKmQMFTpU77AGdnL/wzrXmwMWfv74sRpLvZz4ezyxLeTy+TuUpoJi9s8d/T4NKYttBqOj+iQPY/mHeoC1Yhi8bkWiqvZ3HveYh5doZQIA9/v/</CipherValue>
+              <CipherValue>RkKk1dYZPwnhXC0vgOYzX7QiDim49uQfPXIURZh4wpvs1mPAWgHMlTw0BJkf1SwRfUXtq9/inLPC3iLr/i5WgzdHX26D1Jkv708QyqvWN/cY5iMSmdRKtqeojuZqFLthxZODXxI0IHzrzb4pB5oSXQJwYYiJgMYUSy/yKukKJqe9NGP4PuQy1ERQoDxI++QO</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -50,12 +50,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_Extena;Provider=SQLNCLI11.1;Auto Translate=False;Application Name=SSIS-Package-{5159EE88-11D6-4F18-8646-519205E239A8}200.59.27.115\PRACTICAGEN8.BDD_Extena.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="zvfrzj9X8sU="
-            IV="R3H74KYFYJswWalB8J4MAA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="q3VQJfi9Wk8="
+            IV="d9UAGB2a7YeCXFJpLoZaKQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>R3H74KYFYJswWalB8J4MAPepOoAQmky4JQ0N5RtaifUhLZCHjEebkG0fZBJdWJOoXPGDoQ7GY2b3zsB6RDWYUAEBQ/sizytrL580SsGF8PGaAf/CObQyRFIqtHQU4nwfzX1a9zziVzTUS2A/K238GECZWonqLdvre4dSfWvleXybquybrFebvSelT1Vt7EfZ</CipherValue>
+              <CipherValue>d9UAGB2a7YeCXFJpLoZaKRxAyENE5DqK5BEXuDPI3iV9V5vc/EcfnTFUIqoBSNFYifWS6ir5sooWiBfKbs+d4ibwY6vmFgaB2yGr7NdWIFKVe1grup6Hb/2HbPjRLPU2o1/3NQXdKUYV19nXyEGN17shISmGlt+2pZo+8Hcv/mudSSFmOR58kNVRwTeThWSR</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Persist Security Info=True;TrustServerCertificate=True;Application Name=SSIS-Package-{B4DE3F97-6CC8-42D5-A303-EEABFA31F65E}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin123;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="8fJwbjsvxCE="
-            IV="Hokpq4dQAD9cDpa05mgdHw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="8izxWEkV7BQ="
+            IV="oLLGtTuNY9WaHTadmGb/1A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Hokpq4dQAD9cDpa05mgdH9t+yEQrHm3CR+3LICaj+38y5k4x92SK1GI00Bf2pWfkjd5VgpsM6YPTC5tnvkTMyfzfsOD182ORT8eakbD7Xwd6p0FFFB5u0v0AQVgVYG7sBfumUHyL8egRge2s66N06Za4jbjJuL6IiGgSzq+8hPWUqtn50AEYZHP1ssZ7oWQN</CipherValue>
+              <CipherValue>oLLGtTuNY9WaHTadmGb/1PUX3MZpYPfjJB1EA2tuhfe+6iDGYDc4ApjDV3O92GWRbPDz5Wlyj/P6Ygv7DBxfeJfdk5UXZFbUcjrL1ZXVn1IvJYKMwVyQM6LiCCvqEI6RwGsxg5ppkvMOv4Ujo3DythIVI8RnVEmXZt1RbIkiSBq4YMhGgiPJKbkCvfoDqHcP</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -94,12 +94,12 @@
           DTS:ConnectionString="Data Source=192.168.1.146\PRACTICAGEN8;User ID=Admin123;Initial Catalog=BDD_SIDCOP;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package-{9F5822E6-258E-4B33-9629-CFBBEA9362F5}200.59.27.115\PRACTICAGEN8.BDD_SIDCOP.Admin1231;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="EYc71bl1PEc="
-            IV="3BWDlESYyPCllyBVtJ92oQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="05q4n1IEaVQ="
+            IV="mTQpjRiUANpOn/mzXGF9eA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>3BWDlESYyPCllyBVtJ92oRJIMeHVHpVlrIJ5u+ARh3b8NnsP/olKJO0sg4zWAhae67EHmFaVv1CMGu09N5mwYwQNjzZR7Pakrq8fQpev+WFuaeUO7B1A7IzfDYqGTJ5ffNMHfbs3Vbhtwhw29RkHVP4KtQdUHvXxy6o2ETHS8MCreXU+X/zKHnGg0KdPp69+</CipherValue>
+              <CipherValue>mTQpjRiUANpOn/mzXGF9eBQqj5oqiQ7118dzsnXcOt5y/nGnU1wVs/vk9q3bEG3cIR6JEr1gToSZy6sQPvDJoX5MfdB4UTIXuK73AKCSfPxtnz0G974H3Wc0yV6otWpX6+xhVo7d5r8LwA3jTa0GF+FHlUljJVIrM803St7za+hdlzgdebiTSSlGNmHqDRFf</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -30715,7 +30715,7 @@ WHERE
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC [Inve].[SP_Producto_Actualizar] ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC [Inve].[SP_Producto_Actualizar] ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 </property>
                 <property
                   dataType="System.Int32"
@@ -30854,6 +30854,12 @@ WHERE
                       cachedName="UnPe_Id"
                       externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@UnPe_Id]"
                       lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[UnPe_Id]" />
+                    <inputColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Prod_FechaModificacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Prod_FechaModificacion"
+                      externalMetadataColumnId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_FechaModificacion]"
+                      lineageId="Package\Migracion Productos\Poblar Productos externa.Outputs[OLE DB Source Output].Columns[Prod_FechaModificacion]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -31059,6 +31065,17 @@ WHERE
                           dataType="System.Int32"
                           description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
                           name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Migracion Productos\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[@Prod_FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="@Prod_FechaModificacion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -33195,6 +33212,15 @@ WHERE
                 <input
                   refId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input].Columns[Vend_Tipo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vend_Tipo"
+                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -33204,6 +33230,28 @@ WHERE
                   exclusionGroup="1"
                   name="Data Conversion Output"
                   synchronousInputId="Package\Migracion Vendedores\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]"
+                      name="Vend_TipoF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -34267,14 +34315,6 @@ WHERE Vend_Id = ?;</property>
                       externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Supervisor]"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Supervisor]" />
                     <inputColumn
-                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_Tipo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="Vend_Tipo"
-                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
-                      lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Vend_Tipo]" />
-                    <inputColumn
                       refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_EsExterno]"
                       cachedDataType="i4"
                       cachedName="Vend_EsExterno"
@@ -34292,6 +34332,12 @@ WHERE Vend_Id = ?;</property>
                       cachedName="Usua_Modificacion"
                       externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Usua_Creacion]"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].Columns[Usua_Modificacion]" />
+                    <inputColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vend_TipoF]"
+                      cachedDataType="i4"
+                      cachedName="Vend_TipoF"
+                      externalMetadataColumnId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiVe_Id]"
+                      lineageId="Package\Migracion Vendedores\Data Conversion 1.Outputs[Data Conversion Output].Columns[Vend_TipoF]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -34364,12 +34410,6 @@ WHERE Vend_Id = ?;</property>
                       dataType="i4"
                       name="Vend_Ayudante" />
                     <externalMetadataColumn
-                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="Vend_Tipo" />
-                    <externalMetadataColumn
                       refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vend_EsExterno]"
                       dataType="bool"
                       name="Vend_EsExterno" />
@@ -34398,6 +34438,10 @@ WHERE Vend_Id = ?;</property>
                       codePage="1252"
                       dataType="text"
                       name="Vend_Imagen" />
+                    <externalMetadataColumn
+                      refId="Package\Migracion Vendedores\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiVe_Id]"
+                      dataType="i4"
+                      name="TiVe_Id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -34464,7 +34508,7 @@ WHERE Vend_Id = ?;</property>
 	1 AS Sucu_Id,
 	1 AS Colo_Id,
 	6 AS Vend_Supervisor,
-	'V' AS Vend_Tipo,
+	1 AS Vend_Tipo,
 	0 as Vend_EsExterno,
 	1 AS Usua_Modificacion,
 	ISNULL(VenFUpdate, GETDATE()) AS Vend_FechaModificacion
@@ -34755,9 +34799,7 @@ WHERE VenFUpdate &gt;= ?</property>
                       name="Vend_Supervisor" />
                     <externalMetadataColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
+                      dataType="i4"
                       name="Vend_Tipo" />
                     <externalMetadataColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Output].ExternalColumns[Usua_Modificacion]"
@@ -34863,9 +34905,7 @@ WHERE VenFUpdate &gt;= ?</property>
                       name="Vend_Supervisor" />
                     <outputColumn
                       refId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
+                      dataType="i4"
                       lineageId="Package\Migracion Vendedores\Poblar Vendedor externa.Outputs[OLE DB Source Error Output].Columns[Vend_Tipo]"
                       name="Vend_Tipo" />
                     <outputColumn
@@ -35742,159 +35782,159 @@ WHERE VenFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="243,42"
+          Size="243.2,41.6"
           Id="Package\Actualizar Ultima Migracion Bodega"
           TopLeft="635.185150480198,1273.51110585584" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\Actualizar Ultima Migracion Clientes"
           TopLeft="609.523129706698,1887.62036031801" />
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Actualizar Ultima Migracion CXC"
           TopLeft="634.337939887436,2540.09628569669" />
         <NodeLayout
-          Size="248,42"
+          Size="248,41.6"
           Id="Package\Actualizar Ultima Migracion Facturas"
           TopLeft="634.023136672991,2372.05184171429" />
         <NodeLayout
-          Size="242,42"
+          Size="241.6,41.6"
           Id="Package\Actualizar Ultima Migracion Grupos"
           TopLeft="292.370365979127,499.633329858946" />
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\Actualizar Ultima Migracion Pedidos"
           TopLeft="297.91204392618,2128.8814674038" />
         <NodeLayout
-          Size="252,42"
+          Size="252,41.6"
           Id="Package\Actualizar ultima Migracion Productos"
           TopLeft="314.814797614093,957.47407050962" />
         <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\Actualizar Ultima Migracion Vendedores"
           TopLeft="282.829630742616,1560.67962072703" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity"
           TopLeft="347.314792560116,884.474070600021" />
         <NodeLayout
-          Size="202,42"
+          Size="201.6,41.6"
           Id="Package\Agregar Identity  Categoria"
           TopLeft="297.208328677756,357.283330848829" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 1"
           TopLeft="683.518477894459,1197.04443930368" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 1 1"
           TopLeft="749.52311877918,1810.28702710521" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 2"
           TopLeft="334.496291308086,1487.24628748711" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 3"
           TopLeft="561.189795735926,1809.42036044457" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 4"
           TopLeft="333.745372023411,2050.03146753488" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Agregar Identity 5"
           TopLeft="677.356464360439,2300.13517513049" />
         <NodeLayout
-          Size="216,42"
+          Size="216,41.6"
           Id="Package\Agregar Identity Subcategoria"
           TopLeft="283.874996072924,424.016663718108" />
         <NodeLayout
-          Size="215,42"
+          Size="215.2,41.6"
           Id="Package\Migraciion CuentasPorCobrar"
           TopLeft="637.462939716693,2470.76295284549" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Migracion Bodegas"
           TopLeft="676.851814870298,1127.91110686832" />
         <NodeLayout
-          Size="242,49"
+          Size="241.6,48.8"
           Id="Package\Migracion Categoria y subcategoria"
           TopLeft="279.708329633914,275.551849935699" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Clientes"
           TopLeft="655.148127213858,1743.75369465178" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Migracion Facturas"
           TopLeft="663.18980174606,2213.66850948233" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Migracion Pedidos"
           TopLeft="329.787042184606,1980.03146843888" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Migracion Productos"
           TopLeft="332.314796657935,815.340738164664" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Migracion Vendedores"
           TopLeft="318.755554705636,1418.9796217124" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity"
           TopLeft="342.314792833304,738.007404951865" />
         <NodeLayout
-          Size="194,42"
+          Size="193.6,41.6"
           Id="Package\Quitar Identity  Categoria"
           TopLeft="292.208328950944,139.749999028196" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Quitar Identity 1"
           TopLeft="683.518481172714,1044.911108152" />
         <NodeLayout
-          Size="152,42"
+          Size="152,41.6"
           Id="Package\Quitar Identity 1 1"
           TopLeft="813.689781939935,1675.08702804538" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity 2"
           TopLeft="336.16295788369,1354.6462884092" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity 3"
           TopLeft="605.356459989433,1640.42036161978" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity 4"
           TopLeft="330.412038872203,1909.6314685112" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Quitar Identity 5"
           TopLeft="672.356464633627,2140.66850957273" />
         <NodeLayout
-          Size="207,42"
+          Size="207.2,41.6"
           Id="Package\Quitar Identity Subcategoria"
           TopLeft="281.374996209518,204.749998576194" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="348.98145913572,657.407405512348" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL 1"
           TopLeft="677.685144879845,977.777774161762" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Traer Fecha Filtro"
           TopLeft="332.829624732482,1284.44628889736" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\Traer Fecha Filtro 1"
           TopLeft="641.189791364919,1565.0203621441" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Traer FechaFiltrado"
           TopLeft="299.870365569346,72.1499994982778" />
         <EdgeLayout
@@ -40664,13 +40704,13 @@ WHERE VenFUpdate &gt;= ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Migracion Productos\Origen de ADO NET"
-          TopLeft="643.999988416831,39.9999994039536" />
+          Size="112.8,41.6"
+          Id="Package\Migracion Productos\Lookup"
+          TopLeft="667.999990046024,186.599998673797" />
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Productos\Data Conversion 1"
-          TopLeft="652.999988282721,115.999998271465" />
+          Size="176.8,41.6"
+          Id="Package\Migracion Productos\Destino de ADO NET"
+          TopLeft="22.6666664613614,276.466662264599" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Migracion Productos\Lookup 2"
@@ -40680,13 +40720,17 @@ WHERE VenFUpdate &gt;= ?</property>
           Id="Package\Migracion Productos\OLE DB Command 2"
           TopLeft="531.533306651978,619.199998047352" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Migracion Productos\Destino de ADO NET"
-          TopLeft="22.6666664613614,276.466662264599" />
-        <NodeLayout
           Size="156,41.6"
           Id="Package\Migracion Productos\Data Conversion"
           TopLeft="173.999995420377,139.999997913838" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Migracion Productos\Poblar Productos externa"
+          TopLeft="419.966645949915,377.53333088047" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Migracion Productos\Origen de ADO NET"
+          TopLeft="643.999988416831,39.9999994039536" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Migracion Productos\Data Conversion 2"
@@ -40696,121 +40740,29 @@ WHERE VenFUpdate &gt;= ?</property>
           Id="Package\Migracion Productos\OLE DB Command"
           TopLeft="329.666658111744,284.333328924246" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Migracion Productos\OLE DB Command 1"
-          TopLeft="778.999986405174,301.999995499849" />
-        <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Migracion Productos\Poblar Productos externa"
-          TopLeft="419.966645949915,377.53333088047" />
+          Size="185.6,41.6"
+          Id="Package\Migracion Productos\Destino de ADO NET 1"
+          TopLeft="551.999989787738,296.999995574355" />
         <NodeLayout
           Size="158.4,45.6"
           Id="Package\Migracion Productos\Poblar Productos"
           TopLeft="163.999995569389,47.9999992847442" />
         <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Migracion Productos\Destino de ADO NET 1"
-          TopLeft="551.999989787738,296.999995574355" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Migracion Productos\OLE DB Destination"
           TopLeft="265.476175971212,623.164017680976" />
         <NodeLayout
+          Size="176,41.6"
+          Id="Package\Migracion Productos\OLE DB Command 1"
+          TopLeft="778.999986405174,301.999995499849" />
+        <NodeLayout
           Size="125.6,41.6"
           Id="Package\Migracion Productos\Búsqueda"
           TopLeft="211.66665510171,211.466665196154" />
-        <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Lookup Match Output]"
-          TopLeft="512.39997869134,565.399997920791">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.133327960638,53.8000001265608"
-              Start="0,0"
-              End="107.133327960638,46.3000001265608">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.9419608359307" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.9419608359307"
-                    Point2="0,21.9419608359307"
-                    Point3="4,21.9419608359307" />
-                  <mssgle:LineSegment
-                    End="103.133327960638,21.9419608359307" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.133327960638,21.9419608359307"
-                    Point2="107.133327960638,21.9419608359307"
-                    Point3="107.133327960638,25.9419608359307" />
-                  <mssgle:LineSegment
-                    End="107.133327960638,46.3000001265608" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="5.37527726156876,26.9419608359307,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Data Conversion Output1]"
-          TopLeft="251.999995420377,181.599997913838">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.4666596813339,29.8666672823159"
-              Start="0,0"
-              End="22.4666596813339,22.3666672823159">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.933333641158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.933333641158"
-                    Point2="0,14.933333641158"
-                    Point3="4,14.933333641158" />
-                  <mssgle:LineSegment
-                    End="18.4666596813339,14.933333641158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.4666596813339,14.933333641158"
-                    Point2="22.4666596813339,14.933333641158"
-                    Point3="22.4666596813339,18.933333641158" />
-                  <mssgle:LineSegment
-                    End="22.4666596813339,22.3666672823159" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Data Conversion Output]"
-          TopLeft="496.483312457222,501.066664545271">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.73333337552"
-              Start="0,0"
-              End="0,15.23333337552">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.23333337552" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Productos\Data Conversion 1"
+          TopLeft="652.999988282721,115.999998271465" />
         <EdgeLayout
           Id="Package\Migracion Productos.Paths[Salida de origen de ADO NET1]"
           TopLeft="732.699988349776,81.5999994039536">
@@ -40974,80 +40926,6 @@ WHERE VenFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Lookup No Match Output]"
-          TopLeft="474.799978691341,565.399997920791">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-123.723802720129,57.7640197601852"
-              Start="0,0"
-              End="-123.723802720129,50.2640197601852">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5586590394481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5586590394481"
-                    Point2="0,23.5586590394481"
-                    Point3="-4,23.5586590394481" />
-                  <mssgle:LineSegment
-                    End="-119.723802720129,23.5586590394481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-119.723802720129,23.5586590394481"
-                    Point2="-123.723802720129,23.5586590394481"
-                    Point3="-123.723802720129,27.5586590394481" />
-                  <mssgle:LineSegment
-                    End="-123.723802720129,50.2640197601852" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.668288078814,28.5586590394481,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Productos\Lookup"
-          TopLeft="667.999990046024,186.599998673797" />
-        <EdgeLayout
-          Id="Package\Migracion Productos.Paths[Data Conversion Output2]"
-          TopLeft="734.999988282721,157.599998271465">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.5999982366966,29.0000004023317"
-              Start="0,0"
-              End="-10.5999982366966,21.5000004023317">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5000002011658" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5000002011658"
-                    Point2="0,14.5000002011658"
-                    Point3="-4,14.5000002011658" />
-                  <mssgle:LineSegment
-                    End="-6.59999823669659,14.5000002011658" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.59999823669659,14.5000002011658"
-                    Point2="-10.5999982366966,14.5000002011658"
-                    Point3="-10.5999982366966,18.5000002011658" />
-                  <mssgle:LineSegment
-                    End="-10.5999982366966,21.5000004023317" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Migracion Productos.Paths[Lookup No Match Output1]"
           TopLeft="724.399990046024,228.199998673797">
           <EdgeLayout.Curve>
@@ -41080,6 +40958,42 @@ WHERE VenFUpdate &gt;= ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-95.6063868478932,39.3999984502792,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup No Match Output]"
+          TopLeft="474.799978691341,565.399997920791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.723802720129,57.7640197601852"
+              Start="0,0"
+              End="-123.723802720129,50.2640197601852">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5586590394481" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5586590394481"
+                    Point2="0,23.5586590394481"
+                    Point3="-4,23.5586590394481" />
+                  <mssgle:LineSegment
+                    End="-119.723802720129,23.5586590394481" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-119.723802720129,23.5586590394481"
+                    Point2="-123.723802720129,23.5586590394481"
+                    Point3="-123.723802720129,27.5586590394481" />
+                  <mssgle:LineSegment
+                    End="-123.723802720129,50.2640197601852" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.668288078814,28.5586590394481,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -41117,6 +41031,132 @@ WHERE VenFUpdate &gt;= ?</property>
             <mssgm:EdgeLabel
               BoundingBox="14.3752781274914,35.1392994030871,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Lookup Match Output]"
+          TopLeft="512.39997869134,565.399997920791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.133327960638,53.8000001265608"
+              Start="0,0"
+              End="107.133327960638,46.3000001265608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9419608359307" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9419608359307"
+                    Point2="0,21.9419608359307"
+                    Point3="4,21.9419608359307" />
+                  <mssgle:LineSegment
+                    End="103.133327960638,21.9419608359307" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.133327960638,21.9419608359307"
+                    Point2="107.133327960638,21.9419608359307"
+                    Point3="107.133327960638,25.9419608359307" />
+                  <mssgle:LineSegment
+                    End="107.133327960638,46.3000001265608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="5.37527726156876,26.9419608359307,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Data Conversion Output2]"
+          TopLeft="734.999988282721,157.599998271465">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5999982366966,29.0000004023317"
+              Start="0,0"
+              End="-10.5999982366966,21.5000004023317">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5000002011658" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5000002011658"
+                    Point2="0,14.5000002011658"
+                    Point3="-4,14.5000002011658" />
+                  <mssgle:LineSegment
+                    End="-6.59999823669659,14.5000002011658" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.59999823669659,14.5000002011658"
+                    Point2="-10.5999982366966,14.5000002011658"
+                    Point3="-10.5999982366966,18.5000002011658" />
+                  <mssgle:LineSegment
+                    End="-10.5999982366966,21.5000004023317" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Data Conversion Output1]"
+          TopLeft="251.999995420377,181.599997913838">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.4666596813339,29.8666672823159"
+              Start="0,0"
+              End="22.4666596813339,22.3666672823159">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.933333641158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.933333641158"
+                    Point2="0,14.933333641158"
+                    Point3="4,14.933333641158" />
+                  <mssgle:LineSegment
+                    End="18.4666596813339,14.933333641158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.4666596813339,14.933333641158"
+                    Point2="22.4666596813339,14.933333641158"
+                    Point3="22.4666596813339,18.933333641158" />
+                  <mssgle:LineSegment
+                    End="22.4666596813339,22.3666672823159" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Productos.Paths[Data Conversion Output]"
+          TopLeft="496.483312457222,501.066664545271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.73333337552"
+              Start="0,0"
+              End="0,15.23333337552">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.23333337552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -41252,22 +41292,6 @@ WHERE VenFUpdate &gt;= ?</property>
           Id="Package\Migracion Vendedores\Lookup 1"
           TopLeft="656.666630787983,223.599998445113" />
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Migracion Vendedores\Data Conversion 1"
-          TopLeft="635.833298592933,149.933332290716" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Migracion Vendedores\Data Conversion"
-          TopLeft="147.666667380266,160.933330887026" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Migracion Vendedores\Poblar Vendedores"
-          TopLeft="146.000000407298,83.3999987365803" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Migracion Vendedores\OLE DB Destination"
-          TopLeft="549.566643764411,312.799998987516" />
-        <NodeLayout
           Size="167.2,41.6"
           Id="Package\Migracion Vendedores\OLE DB Command"
           TopLeft="328.999997680386,316.39999526461" />
@@ -41275,6 +41299,26 @@ WHERE VenFUpdate &gt;= ?</property>
           Size="176.8,41.6"
           Id="Package\Migracion Vendedores\Destino de ADO NET"
           TopLeft="1.00000256796665,311.399995339115" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Migracion Vendedores\OLE DB Destination"
+          TopLeft="549.566643764411,312.799998987516" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Migracion Vendedores\Poblar Vendedores"
+          TopLeft="146.000000407298,83.3999987365803" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Migracion Vendedores\Lookup"
+          TopLeft="176.999997362494,243.799997392297" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion 1"
+          TopLeft="635.833298592933,149.933332290716" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Migracion Vendedores\Data Conversion"
+          TopLeft="147.666667380266,160.933330887026" />
         <EdgeLayout
           Id="Package\Migracion Vendedores.Paths[Salida de origen de ADO NET]"
           TopLeft="227.633333893782,124.99999873658">
@@ -41320,6 +41364,42 @@ WHERE VenFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Lookup No Match Output1]"
+          TopLeft="233.399997362495,285.399997392297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-143.999994794528,25.9999979468182"
+              Start="0,0"
+              End="-143.999994794528,18.4999979468182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.99999897340908" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.99999897340908"
+                    Point2="0,12.9999989734091"
+                    Point3="-4,12.9999989734091" />
+                  <mssgle:LineSegment
+                    End="-139.999994794528,12.9999989734091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-139.999994794528,12.9999989734091"
+                    Point2="-143.999994794528,12.9999989734091"
+                    Point3="-143.999994794528,16.9999989734091" />
+                  <mssgle:LineSegment
+                    End="-143.999994794528,18.4999979468182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.806384116014,17.9999989734091,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Migracion Vendedores.Paths[Lookup No Match Output]"
           TopLeft="698.266630787983,265.199998445113">
           <EdgeLayout.Curve>
@@ -41352,6 +41432,42 @@ WHERE VenFUpdate &gt;= ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-87.356380230536,24.4133335545485,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Migracion Vendedores.Paths[Lookup Match Output1]"
+          TopLeft="250.866664029161,285.399997392297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161.733333651225,30.9999978723132"
+              Start="0,0"
+              End="161.733333651225,23.4999978723132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.66013899121043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.66013899121043"
+                    Point2="0,12.6601389912104"
+                    Point3="4,12.6601389912104" />
+                  <mssgle:LineSegment
+                    End="157.733333651225,12.6601389912104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="157.733333651225,12.6601389912104"
+                    Point2="161.733333651225,12.6601389912104"
+                    Point3="161.733333651225,16.6601389912104" />
+                  <mssgle:LineSegment
+                    End="161.733333651225,23.4999978723132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.6752801068624,17.6601389912104,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -41392,32 +41508,6 @@ WHERE VenFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Data Conversion Output]"
-          TopLeft="717.449964690458,191.533332290716">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.0666661543978"
-              Start="0,0"
-              End="0,24.5666661543978">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5666661543978" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Migracion Vendedores\Lookup"
-          TopLeft="176.999997362494,243.799997392297" />
-        <EdgeLayout
           Id="Package\Migracion Vendedores.Paths[Data Conversion Output1]"
           TopLeft="229.53333237138,202.533330887026">
           <EdgeLayout.Curve>
@@ -41440,114 +41530,30 @@ WHERE VenFUpdate &gt;= ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Lookup No Match Output1]"
-          TopLeft="233.399997362495,285.399997392297">
+          Id="Package\Migracion Vendedores.Paths[Data Conversion Output]"
+          TopLeft="717.449964690458,191.533332290716">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.999994794528,25.9999979468182"
+              EndConnector="0,32.0666661543978"
               Start="0,0"
-              End="-143.999994794528,18.4999979468182">
+              End="0,24.5666661543978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.99999897340908" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.99999897340908"
-                    Point2="0,12.9999989734091"
-                    Point3="-4,12.9999989734091" />
-                  <mssgle:LineSegment
-                    End="-139.999994794528,12.9999989734091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-139.999994794528,12.9999989734091"
-                    Point2="-143.999994794528,12.9999989734091"
-                    Point3="-143.999994794528,16.9999989734091" />
-                  <mssgle:LineSegment
-                    End="-143.999994794528,18.4999979468182" />
+                    End="0,24.5666661543978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.806384116014,17.9999989734091,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Migracion Vendedores.Paths[Lookup Match Output1]"
-          TopLeft="250.866664029161,285.399997392297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="161.733333651225,30.9999978723132"
-              Start="0,0"
-              End="161.733333651225,23.4999978723132">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.66013899121043" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.66013899121043"
-                    Point2="0,12.6601389912104"
-                    Point3="4,12.6601389912104" />
-                  <mssgle:LineSegment
-                    End="157.733333651225,12.6601389912104" />
-                  <mssgle:CubicBezierSegment
-                    Point1="157.733333651225,12.6601389912104"
-                    Point2="161.733333651225,12.6601389912104"
-                    Point3="161.733333651225,16.6601389912104" />
-                  <mssgle:LineSegment
-                    End="161.733333651225,23.4999978723132" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="32.6752801068624,17.6601389912104,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Vendedores\Poblar Vendedor externa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Vendedores\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string">[Vnta].[tbVendedores]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Migracion Vendedores\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Migracion Vendedores\OLE DB Destination">
     <Properties>
@@ -41562,7 +41568,15 @@ WHERE VenFUpdate &gt;= ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Migracion Vendedores\Poblar Vendedores">
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedor externa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Destino de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -41586,6 +41600,32 @@ WHERE VenFUpdate &gt;= ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Poblar Vendedores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Migracion Vendedores\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[Vnta].[tbVendedores]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
