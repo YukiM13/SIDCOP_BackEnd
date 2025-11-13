@@ -350,6 +350,21 @@ namespace SIDCOP_Backend.BusinessLogic.Services
             }
         }
 
+        public IEnumerable<tbVendedores> ListarVendedoresDDL()
+        {
+            try
+            {
+                var list = _vendedorRepository.ListDDL();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                //throw new Exception("Error al listar vendedores: " + ex.Message);
+                return null;
+            }
+        }
+
         public IEnumerable<tbVendedoresPorRuta> ListarVendedoresPorRuta()
         {
             try
