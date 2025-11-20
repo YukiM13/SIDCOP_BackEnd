@@ -197,7 +197,7 @@ namespace Api_SIDCOP.API.Controllers.Acceso
 </head>
 <body>
    <div class='container'>
-    <img src='https://firebasestorage.googleapis.com/v0/b/fir-upload-pdf-d2c3f.firebasestorage.app/o/logo%2Flogo_original.png?alt=media&token=bb1b29e0-0494-4873-a6e6-cef4c02d6c52' alt='Logo' class='logo' />
+    <img src='https://i.ibb.co/DgVMsbbg/Portadas-SIDCOP.png' alt='Logo' class='logo' />
     <h2 style=""color: #ffffff;"">Tu código de verificación</h2>
     <div class='code'>{item.codigo}</div>
     <p style=""color: #ffffff;"">No compartas este código con nadie. Si no fuiste tú quien lo solicitó, te recomendamos cambiar tu contraseña.</p>
