@@ -40,6 +40,12 @@ public partial class tbClientesVisita
     public string? Cliente { get; set; }
 
     [NotMapped]
+    public string? VeRu_Dias { get; set; }
+
+    [NotMapped]
+    public string? TiVe_TipoVendedor { get; set; }
+
+    [NotMapped]
     public string? Clie_NombreNegocio { get; set; }
 
     [NotMapped]

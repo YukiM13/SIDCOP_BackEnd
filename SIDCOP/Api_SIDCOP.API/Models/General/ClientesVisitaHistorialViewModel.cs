@@ -20,10 +20,11 @@ namespace Api_SIDCOP.API.Models.General
 
         public DateTime ClVi_FechaCreacion { get; set; }
 
+        [NotMapped]
+        public string? VeRu_Dias { get; set; }
 
         [NotMapped]
-        public string? Veru_Dias { get; set; }
-
+        public string? TiVe_TipoVendedor { get; set; }
 
         [NotMapped]
         public string? Cliente { get; set; }

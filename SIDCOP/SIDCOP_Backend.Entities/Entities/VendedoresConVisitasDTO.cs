@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,15 @@ namespace SIDCOP_Backend.Entities.Entities
         public int TiVe_Id { get; set; }
         public bool Vend_EsExterno { get; set; }
         public int RegC_Id { get; set; }
+
+        [NotMapped]
+        public string? VeRu_Dias { get; set; }
+        
+        [NotMapped]
+        public string? Ruta_Descripcion { get; set; }
+
+        [NotMapped]
+        public string? TiVe_TipoVendedor { get; set; }
         public string Vend_Imagen { get; set; }
         public int Usua_Creacion { get; set; }
         public string UsuarioCreacion { get; set; }
